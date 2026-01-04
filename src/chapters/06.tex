@@ -1,4 +1,145 @@
 \chapter{The Clock Problem, Part One}
 \label{ch:clock-problem-1}
 
-% Content to be written.
+\section{The Triumph and the Mockery}
+\label{sec:triumph-mockery}
+
+Christiaan Huygens was sixty-five years old when he died in The Hague in 1695. Among his last satisfactions was the knowledge that his pendulum clock, perfected over decades, had become the standard of precision in Europe. A clock made to his design could keep time to within fifteen seconds per day---a revolution in accuracy. Before the pendulum, the best mechanical clocks erred by ten or fifteen minutes. The gap between the medieval water-clock and the modern pendulum clock was the gap between no measurement and the first real approach to precision.
+Yet a decade before his death, Huygens had written to the director of the French Academy of Sciences expressing a troubling observation. The pendulum clock was beautiful in the laboratory, magnificent in the astronomer's tower. But it was useless at sea. A ship's deck is not a stable platform. The perpetual motion of the ocean---heaving, rolling, pitching---sets every pendulum into chaos. The regular swing becomes irregular. The precise beat becomes erratic. The beautiful precision of the laboratory becomes mockery in the cabin.
+This was the core of the longitude problem. To determine longitude, one needed to know the time at a reference location (Greenwich, say) with high precision. Huygens's pendulum clock could achieve that precision on land. But the moment such a clock was brought aboard ship, the ocean's motion rendered it useless. The clock that solved the problem of timekeeping on land created a new problem: how to keep time on water.
+
+\section{The Physics of the Simple Pendulum}
+\label{sec:pendulum-physics}
+
+A pendulum is one of nature's simplest oscillators. A mass $m$ hangs from a rigid rod of length $L$. Release it from some initial angle $\theta_0$, and it swings back and forth. The period of oscillation---the time for one complete cycle---depends only on the length and local gravity:
+\[
+T = 2\pi\sqrt{\frac{L}{g}}
+\]
+This formula is exact for small angles. Let us derive it from first principles.
+Consider a pendulum bob of mass $m$ at angle $\theta$ from the vertical. The restoring force (the component of gravity pulling the bob back toward vertical) is $F = -mg\sin\theta$. For small angles, $\sin\theta \approx \theta$, so:
+\[
+F \approx -mg\theta
+\]
+This is a linear restoring force, proportional to displacement. The arc length from vertical is $s = L\theta$, so the equation of motion is:
+\[
+m\frac{d^2s}{dt^2} = -mg\frac{s}{L}
+\]
+or
+\[
+\frac{d^2s}{dt^2} = -\frac{g}{L}s
+\]
+This is simple harmonic motion with angular frequency $\omega = \sqrt{g/L}$. The period is:
+\[
+T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{L}{g}}
+\]
+This is a striking result. The period depends only on length and gravity, not on mass or amplitude (as long as angles remain small). A pendulum one meter long at Earth's surface has a period of roughly two seconds. A pendulum four meters long has a period of four seconds. This length-independence of frequency was the key insight that made the pendulum useful: you could adjust the length to get whatever frequency you wanted.
+
+\section{The Small-Angle Approximation Breaks Down}
+\label{sec:small-angle-limit}
+
+The formula $T = 2\pi\sqrt{L/g}$ assumes small angles. But what if the amplitude is not small?
+For larger amplitudes, the true period is longer than the small-angle approximation predicts. This effect is called \emph{circular error} or the finite-amplitude correction. If a pendulum starts at angle $\theta_0$ measured in radians, the true period is approximately:
+\[
+T_{\text{true}} = T_0 \left(1 + \frac{\theta_0^2}{16} + \frac{11\theta_0^4}{3072} + \ldots\right)
+\]
+where $T_0 = 2\pi\sqrt{L/g}$ is the small-angle result.
+For an amplitude of 15 degrees (0.26 radians), the correction is roughly 0.5\%. For 30 degrees, the correction is about 1.7\%. This might seem small, but consider a pendulum clock running for twenty-four hours. A 1\% error in period translates to about 14 minutes of error per day. This is unacceptable for any precision measurement. Huygens and the clock makers who followed him took great care to keep the pendulum amplitude small, typically below 5 degrees, to keep the finite-amplitude effect below 0.05\%.
+
+\section{Temperature: Thermal Expansion}
+\label{sec:temperature-expansion}
+
+The most insidious enemy of the pendulum clock is temperature change. When the ambient temperature rises, the pendulum rod expands slightly. Its length $L$ increases. According to the period formula, if $L$ increases, the period $T$ increases, and the clock runs slow.
+Let the length expansion be:
+\[
+L_{\text{new}} = L_0(1 + \alpha \Delta T)
+\]
+where $\alpha$ is the linear expansion coefficient of the rod material and $\Delta T$ is the temperature change in degrees Celsius. For brass, $\alpha \approx 19 \times 10^{-6} \, \text{°C}^{-1}$.\footnote{Steel has $\alpha \approx 12 \times 10^{-6} \, \text{°C}^{-1}$. This difference is crucial to the gridiron design.}
+The new period is:
+\[
+T_{\text{new}} = 2\pi\sqrt{\frac{L_0(1 + \alpha \Delta T)}{g}} = T_0\sqrt{1 + \alpha \Delta T} \approx T_0\left(1 + \frac{\alpha \Delta T}{2}\right)
+\]
+If the period increases by a fraction $\alpha \Delta T / 2$, and we measure time over a day (86400 seconds), the clock will lose approximately:
+\[
+\Delta t_{\text{day}} \approx 86400 \times \frac{\alpha \Delta T}{2}
+\]
+For brass with $\alpha = 19 \times 10^{-6}$ and a temperature swing of 10°C:
+\[
+\Delta t_{\text{day}} \approx 86400 \times \frac{19 \times 10^{-6} \times 10}{2} \approx 8.2 \text{ seconds}
+\]
+This is a substantial error for astronomical observation. The practical implication is that pendulum clocks kept indoors (where temperature was somewhat stable) could work reasonably well, but clocks exposed to the temperature swings of a ship's cabin were doomed.
+By the early 18th century, clockmakers had developed the \emph{gridiron pendulum}, an elegant solution to the temperature problem.
+
+\section{The Gridiron Pendulum}
+\label{sec:gridiron-design}
+
+The gridiron consists of alternating rods of brass and steel, arranged so that their thermal expansions cancel.\footnote{The invention is sometimes attributed to John Harrison, but the idea predates him. George Graham developed a working gridiron design around 1720.} Since brass expands more than steel, if we arrange them properly, the expansion of the brass rods can be made to cancel the expansion of the steel rods, leaving the effective length of the pendulum nearly constant.
+Let the pendulum consist of $n$ brass rods of initial length $L_B$ each and $n$ steel rods of initial length $L_S$ each, alternating vertically. The effective length is:
+\[
+L_{\text{eff}} = n(L_B + L_S)
+\]
+When temperature increases by $\Delta T$, the new effective length is:
+\[
+L_{\text{eff,new}} = n[L_B(1 + \alpha_B \Delta T) - L_S(1 + \alpha_S \Delta T)]
+\]
+For the length to remain constant (zero thermal drift), we require:
+\[
+L_B(1 + \alpha_B \Delta T) = L_S(1 + \alpha_S \Delta T)
+\]
+at the reference temperature. More precisely, we want the effective thermal expansion to be zero:
+\[
+\frac{dL_{\text{eff}}}{dT} = 0
+\]
+This is achieved by choosing the ratio of lengths such that:
+\[
+L_B \alpha_B = L_S \alpha_S
+\]
+With $\alpha_B \approx 19 \times 10^{-6}$ for brass and $\alpha_S \approx 12 \times 10^{-6}$ for steel, the optimal ratio is:
+\[
+\frac{L_B}{L_S} = \frac{\alpha_S}{\alpha_B} \approx \frac{12}{19} \approx 0.63
+\]
+In practice, if a pendulum needs to be one meter long, a gridiron design might use brass and steel rods in lengths roughly 0.63:1 to achieve near-perfect temperature compensation.
+The gridiron pendulum reduced temperature drift from several seconds per day to a fraction of a second, a tenfold improvement. But temperature stability still required care: the clock had to be shielded from direct sunlight and rapid air currents.
+
+\section{Gravity Varies with Latitude}
+\label{sec:gravity-variation}
+
+Earth is not a perfect sphere. It bulges at the equator due to its rotation, making it oblate. This means that the radius is greater at the equator than at the poles. Since gravity decreases with distance from Earth's center, the value of $g$ varies with latitude.
+At the pole, $g \approx 9.832 \, \text{m/s}^2$. At the equator, $g \approx 9.780 \, \text{m/s}^2$. This difference of about 0.05\% seems small, but for a clock it is significant.
+A pendulum clock rated (calibrated) in London---at latitude roughly $51\degree$N---will have a slightly different period at the equator due to the different local gravity. If a clock is set to the correct rate in London and then transported to Jamaica (latitude $18\degree$N), the period of its pendulum will change.
+The period ratio is:
+\[
+\frac{T_{\text{Jamaica}}}{T_{\text{London}}} = \sqrt{\frac{g_{\text{London}}}{g_{\text{Jamaica}}}} \approx \sqrt{\frac{9.812}{9.786}} \approx 1.00132
+\]
+This means the clock runs slow at Jamaica by a factor of 0.132\%. Over a day, this translates to roughly:
+\[
+86400 \times 0.00132 \approx 114 \text{ seconds} \approx 2 \text{ minutes}
+\]
+A clock that keeps perfect time in London will lose about two minutes per day in the Caribbean. This effect can be compensated by adjusting the pendulum length (shortening it at the equator), but it requires a portable adjustment mechanism. Sailors did not have the precision tools needed to make such adjustments reliably at sea.
+
+\section{Motion: Why Pendulums Fail at Sea}
+\label{sec:motion-at-sea}
+
+The deepest problem is not temperature or gravity. It is motion. A ship at sea is not an inertial reference frame. It accelerates, pitches, rolls, and heaves. A pendulum clock fundamentally depends on gravity providing a stable vertical reference. But in an accelerating frame, the concept of ``vertical'' becomes ambiguous.
+Consider a ship that is accelerating forward. From the perspective of someone on the ship, there is a fictitious force pushing backward (this is the ``centrifugal force'' of the accelerating frame). A pendulum hanging from the ceiling will not hang vertically relative to the ship; it will hang at an angle. The effective direction of gravity has shifted.
+More subtly, when the ship pitches or rolls, the pendulum experiences oscillatory forces that are not its natural frequency. These forced oscillations can knock the pendulum out of phase with its escapement mechanism. The escapement delivers a regular push at the bottom of each swing; if the swing is disrupted by the ship's motion, the escapement's push may land at the wrong time, causing the clock to lose synchronization.
+The fundamental constraint is this: a pendulum clock requires a stable gravitational reference. The ocean provides anything but stability. Even the best pendulum clock, perfectly compensated for temperature and perfectly adjusted for latitude, will fail when subjected to the relentless motion of a ship at sea.
+This is not a problem that could be solved by making the clock more elaborate or more carefully built. It is a fundamental limit imposed by physics. The longitude problem, therefore, could not be solved by improving the pendulum clock. A new approach---a clock mechanism that was fundamentally indifferent to motion---was required. \cref{ch:harrison-chronometers} takes up the story of how John Harrison escaped this constraint.
+
+\begin{table}[htbp]
+\centering
+\caption{Best pendulum clock precision, selected examples, 1660--1750.}
+\label{tab:pendulum-precision}
+\small
+\begin{tabular}{lll}
+\toprule
+\textbf{Clock / Maker} & \textbf{Year} & \textbf{Daily Error} \\
+\midrule
+Huygens's original & 1660 & $\pm 15$ seconds \\
+Improved Huygens design & 1675 & $\pm 5$ seconds \\
+Graham's vacuum-sealed & 1715 & $\pm 2$ seconds \\
+Harrison's regulator (H5 standards) & 1750 & $\pm 1$ second \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The precision achieved by the best pendulum clocks on land was extraordinary. By 1750, clocks were keeping time to better than one second per day. But this precision was achieved under ideal conditions: stable temperature, constant gravity, zero acceleration. Remove any of these conditions, and the error cascaded catastrophically. The pendulum clock was the capstone of centuries of horological progress---and also a dead end for sea-based timekeeping.
