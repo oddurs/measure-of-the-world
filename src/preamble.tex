@@ -225,13 +225,12 @@
 %   Body text:      12pt (roman)
 
 % CHAPTER HEADING
-% \chapnamefont controls "Chapter X" label
-% \chapnumfont controls the chapter number
-% \chaptitlefont controls "Chapter Title" text
-% Small caps (\scshape) creates visual impact without being aggressive
-\renewcommand{\chapnamefont}{\normalfont\scshape\fontsize{16}{19}\selectfont}
-\renewcommand{\chapnumfont}{\normalfont\scshape\fontsize{16}{19}\selectfont}
-\renewcommand{\chaptitlefont}{\normalfont\scshape\fontsize{18}{21.6}\selectfont}
+% \chapnamefont controls "Chapter X" label (14pt italic dark gray, like H2)
+% \chapnumfont controls the chapter number (14pt italic dark gray)
+% \chaptitlefont controls "Chapter Title" text (small caps, dominant size, black)
+\renewcommand{\chapnamefont}{\normalfont\itshape\fontsize{14}{16.8}\selectfont\color[HTML]{333333}}
+\renewcommand{\chapnumfont}{\normalfont\itshape\fontsize{14}{16.8}\selectfont\color[HTML]{333333}}
+\renewcommand{\chaptitlefont}{\normalfont\scshape\fontsize{18}{21.6}\selectfont\color{black}}
 
 % Chapter spacing:
 % \beforechapskip = space before chapter heading (relative to text)
