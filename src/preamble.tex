@@ -77,7 +77,18 @@
 % Provides align*, equation*, gather* and other math environments
 \usepackage{amsmath,amssymb,mathtools}
 
-% Configure math spacing
+% --------- GLOBAL MATH SPACING CONTROL ---------
+% Master variable: adjust this single length to globally control spacing around
+% all display math formulas. Roughly equivalent to:
+%   0.5\baselineskip = minimal spacing
+%   1\baselineskip = single blank line
+%   1.5\baselineskip = 1.5 blank lines
+%   2\baselineskip = double blank line (two carriage returns)
+% EDIT THIS VALUE TO ADJUST ALL MATH SPACING AT ONCE:
+\newlength{\displaymathspacing}
+\setlength{\displaymathspacing}{1.5\baselineskip}
+
+% Configure math spacing around display formulas
 % Use these commands to control display math spacing:
 %   \displaystyle     - Full-size math (default in display mode)
 %   \textstyle        - Inline-size math (smaller, more compact)
@@ -85,11 +96,11 @@
 %   \scriptscriptstyle - Smallest (for nested scripts)
 
 % Spacing before and after display math environments
-% Adjust these lengths to control white space around formulas
-\setlength{\abovedisplayskip}{0.5\baselineskip}    % Space before display math
-\setlength{\belowdisplayskip}{0.5\baselineskip}    % Space after display math
-\setlength{\abovedisplayshortskip}{0.25\baselineskip}  % Space before short display
-\setlength{\belowdisplayshortskip}{0.25\baselineskip}  % Space after short display
+% These use the global spacing length defined above for consistency
+\setlength{\abovedisplayskip}{\displaymathspacing}    % Space before display math
+\setlength{\belowdisplayskip}{\displaymathspacing}    % Space after display math
+\setlength{\abovedisplayshortskip}{0.75\displaymathspacing}  % Space before short display (75% of main)
+\setlength{\belowdisplayshortskip}{0.75\displaymathspacing}  % Space after short display (75% of main)
 
 % Inline math spacing (control whitespace around $ ... $ math)
 % \thinmuskip = space around binary operators in inline math (default 3mu)
