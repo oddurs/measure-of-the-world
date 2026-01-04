@@ -479,31 +479,48 @@
 % SECTION 18: FOOTNOTE STYLING
 % =====================================================================
 % Footnotes provide expanded commentary and context without disrupting narrative
+% All spacing, colors, and dimensions are configurable below
 
-% Footnote rule: thin horizontal divider between text and footnotes
-% Color: dark gray (#333333), with padding above and below
+% --------- FOOTNOTE RULE STYLING ---------
+% Horizontal divider between body text and footnotes
+\newcommand{\footnoterulecolor}{333333}          % Rule color (hex, no # prefix)
+\newcommand{\footnoterulewidth}{2in}             % Width of divider rule
+\newcommand{\footnoterulethickness}{0.5pt}       % Thickness of divider line
+\newcommand{\footnoterulekernabove}{0.75\baselineskip}  % Space above divider
+\newcommand{\footnoterulekernbelow}{0.75\baselineskip}  % Space below divider
+
+% Apply configurable footnote rule with spacing
 \renewcommand{\footnoterule}{%
-  \kern -3pt
-  \color[HTML]{333333}\hrule width 2in height 0.5pt%
-  \kern 2.86pt}
+  \kern -\footnoterulekernabove%
+  \color[HTML]{\footnoterulecolor}\hrule width \footnoterulewidth height \footnoterulethickness%
+  \kern \footnoterulekernbelow}
 
-% Space before the first footnote (reduced from default)
-\setlength{\skip\footins}{0.5\baselineskip}
+% --------- FOOTNOTE SPACING ---------
+% Space between footnote area and body text
+\newcommand{\skippagefootins}{1\baselineskip}   % Gap before first footnote
+\setlength{\skip\footins}{\skippagefootins}
 
-% Space between individual footnotes (3pt as requested)
-\setlength{\footnotesep}{3pt}
+% Space between individual footnote items
+\newcommand{\footnoteseparation}{0.5\baselineskip}  % Gap between footnotes
+\setlength{\footnotesep}{\footnoteseparation}
 
-% Footnote font: slightly smaller than body text but readable
+% --------- FOOTNOTE FONT SIZING ---------
+% Font size for footnote text (smaller than body, but readable)
 \renewcommand{\footnotesize}{\fontsize{10}{12}\selectfont}
 
 % =====================================================================
 % SECTION 19: FOOTER SPACING
 % =====================================================================
-% Reduce space above footer to bring it closer to body text
+% Control space above footer to create breathing room
 
-% Existing footskip (distance from baseline to footer): currently 0.75in
-% Adjust if needed for tighter footer positioning
-% (This is set in \geometry{} command in Section 1; modify there if needed)
+% --------- FOOTER GAP CONFIGURATION ---------
+% Distance from body text baseline to footer line (higher = more space)
+% Currently set in \geometry{} command (Section 1)
+% Default: 0.5in (increased from 0.75in for compact spacing)
+\newcommand{\customfootskip}{0.5in}
+
+% Note: To adjust, modify the geometry footskip parameter in Section 1
+% OR change \customfootskip above and apply in geometry settings
 % =====================================================================
 % All document-wide settings are now complete. The document class,
 % typography, spacing, colors, and styling are now ready for use.
