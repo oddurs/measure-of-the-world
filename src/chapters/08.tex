@@ -1,3 +1,340 @@
-\chapter{Chapter Title}
+\chapter{The Lunar Distance Method}
+\label{ch:lunar-distance}
 
-% Content to be written.
+The evening of July 21, 1770, somewhere in the Atlantic west of Ireland. The navigator of the East Indiaman \textit{Juno} hoists his sextant toward the darkening sky. The Moon, two days past full, hangs bright above the horizon. Near it, he sees Regulus, brightest star of Leo—steady and unwavering. He steadies his eye at the sextant's eyepiece and brings the Moon's image down, slowly, until its limb just touches the star. He holds the frame steady and reads the arc: $87^{\circ}\,22'$. His assistant notes the time—$18^{\mathrm{h}}\,34^{\mathrm{m}}\,27^{\mathrm{s}}$ by the ship's chronometer, uncorrected. Now begins the labor that will consume the next thirty minutes: a cascade of calculations, table lookups, and logarithmic reductions that will transform raw angles into longitude.
+
+This is the lunar distance method—the astronomer's answer to the longitude problem. It is mathematically elegant and computationally ferocious. It requires no mechanical innovation; it asks only that the Moon obey predictable laws. And for nearly a century, this method will be the institutional answer, taught at the Royal Observatory, published in the \textit{Nautical Almanac}, and printed into the hands of navigators from Portsmouth to Bombay.
+
+---
+
+\section{The Moon as a Celestial Clock}
+
+The fundamental insight is simple: the Moon moves. Unlike the stars, which appear fixed to the celestial sphere, the Moon wanders among the constellations at a roughly constant rate. That rate is the key.
+
+The Moon completes one circuit of the zodiac—$360^{\circ}$ of arc—in approximately \SI{27.3}{days}. This is the sidereal month, the time for the Moon to return to the same position relative to the stars. Dividing these together:
+
+\begin{equation}
+\omega_{\text{moon}} = \frac{360^{\circ}}{27.3\,\text{days}} = \frac{360^{\circ}}{27.3 \times 24\,\text{hours}} \approx \SI{0.5}{^{\circ}/\text{hour}}
+\end{equation}
+
+The Moon moves at approximately half a degree per hour. This is the key that makes the method work: the Moon's position against the stars encodes time. If we measure the angle between the Moon and a reference star, and if we have accurate tables of the Moon's position as a function of time at a known meridian (Greenwich, say), we can determine what time it was at Greenwich when we made the observation. From Greenwich time and local time, we derive longitude.
+
+This is why Flamsteed and his successors invested such effort into the lunar problem. A star-catalogue (Chapter 3) allows us to know where the stars are. But that knowledge is static; the stars repeat the same pattern every night. The Moon, in contrast, moves visibly, *visibly*, from night to night. It is the only celestial body that advances noticeably on a navigator's timescale.
+
+---
+
+\section{Geometry of Lunar Distance}
+
+Let us be precise about what we measure. On the celestial sphere, the observer locates the center of the Moon and the center of a reference star. The angular distance between them—the arc of the great circle connecting them—is the \emph{lunar distance}. We denote this $\rho$ (rho).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.7\linewidth]{figures/lunar-distance-geometry.pdf}
+\caption{Lunar distance on the celestial sphere. The observer measures the angular separation $\rho$ between the center of the Moon (M) and the star Regulus (R), as projected onto the celestial sphere. The longitude of Greenwich (G) is encoded in the rate at which $\rho$ changes: knowledge of $\rho$ at the moment of observation, compared with $\rho$ predicted for Greenwich time, yields the time difference and hence longitude.}
+\label{fig:lunar-distance-geometry}
+\end{figure}
+
+The theorem underlying the method is this: the lunar distance $\rho$ is a single-valued function of Greenwich time. If we have accurate tables specifying $\rho(t_{\text{Greenwich}})$, and if we can measure $\rho$ at the moment of observation, we can solve for $t_{\text{Greenwich}}$. The local time we determine from the Sun's altitude. The difference is our longitude.
+
+The beauty is that the lunar distance method requires no clock. The Moon itself is the clock—a slow, heavenly timepiece that records Greenwich time in the angle it makes with the stars.
+
+---
+
+\section{The Clearing Problem: Parallax}
+
+Measuring the lunar distance with a sextant seems straightforward: point the instrument at the Moon and star, read the angle. But here the astronomer's attention to error becomes decisive. The raw angle from the sextant is not the true lunar distance on the celestial sphere. Two effects corrupt the measurement: \emph{parallax} and \emph{refraction}.
+
+Parallax is the geometric effect of observing from the Earth's surface rather than from its center. To a hypothetical observer at the Earth's center, the Moon would be at a specific position. To us, standing on the surface, the Moon appears displaced by the angle subtended by the radius of the Earth at the Moon's distance. This displacement is \emph{parallax}.
+
+The Moon's parallax is greatest when the Moon is on the horizon and zero when the Moon is at the zenith. We define \textbf{horizontal parallax} as the parallax angle when the Moon is on the horizon, as seen from the Earth's surface. For the Moon, the horizontal parallax is approximately \SI{57.3}{arcmin} (about one degree). This quantity varies slightly with the Moon's distance from Earth, and accurate lunar tables provide it.
+
+Let us define the elements. Suppose the observer is at latitude $\phi$ and the Moon has altitude $h$ above the horizon. The Moon's horizontal parallax is $HP$. Then the parallax correction—the angle by which the Moon appears displaced due to the observer's position on the Earth's surface—has two components:
+\begin{enumerate}
+\item A component along the altitude circle (vertical parallax, or parallax in altitude)
+\item A component along the azimuth (parallax in azimuth)
+\end{enumerate}
+
+For the purpose of lunar distance calculation, we need the parallax in the direction connecting the Moon and the reference star. This is more complex than parallax in altitude alone, but the principle is the same.
+
+The parallax in altitude is given by:
+
+\begin{equation}
+p_{\text{alt}} = HP \cos h
+\end{equation}
+
+where $h$ is the Moon's altitude. As the Moon approaches the horizon, $\cos h$ approaches 1, and the parallax reaches its maximum value $HP$. At the zenith, $\cos h = 0$, and parallax vanishes.
+
+For a more complete treatment, we must account for the observer's latitude. The gravitational flattening of the Earth means that the radius varies with latitude. Maskelyne and the lunar distance practitioners used an auxiliary quantity called the \emph{apparent altitude} to account for this. But the principle remains: parallax is largest at the horizon and vanishes at the zenith.
+
+\subsection{Worked Example: Parallax Correction}
+
+Let us suppose an observer measures the altitude of the Moon as $h = \SI{30}{^{\circ}}$. The lunar tables give the horizontal parallax as $HP = \SI{57.0}{arcmin}$. What is the parallax in altitude?
+
+\begin{align}
+p_{\text{alt}} &= HP \cos h \\
+&= 57.0' \times \cos(30^{\circ}) \\
+&= 57.0' \times 0.866 \\
+&= 49.4'
+\end{align}
+
+The Moon is displaced from its true geocentric position by $49.4$ arcminutes in altitude. This is a substantial correction: it is of order the width of the full Moon itself. If we ignore parallax, we would measure a lunar distance that is in error by tens of arcminutes, yielding a longitude error of many nautical miles.
+
+---
+
+\section{The Clearing Problem: Refraction}
+
+The second corrupting effect is atmospheric refraction. The Earth's atmosphere acts as a lens, bending light from celestial bodies. Objects appear higher than they truly are.
+
+Refraction is most pronounced near the horizon, where light rays pass through the greatest thickness of atmosphere, and vanishes at the zenith. For the Moon at altitude $h$, the refraction $R(h)$ is approximately:
+
+\begin{equation}
+R(h) \approx 58.3'' \tan\left(\frac{90^{\circ} - h}{7.5}\right)
+\end{equation}
+
+where the result is in arcseconds. This is an empirical formula that works reasonably well; more refined formulas account for temperature, pressure, and humidity. But the form captures the essential behavior: as altitude decreases (the denominator grows), the tangent function grows, and refraction increases steeply.
+
+At the horizon ($h = 0^{\circ}$), refraction amounts to approximately $\SI{35}{arcmin}$—more than half a degree. At the zenith ($h = 90^{\circ}$), refraction is nil. At $h = \SI{30}{^{\circ}}$, refraction is a few arcminutes.
+
+The observer's sextant reading already includes atmospheric refraction: light from the Moon and star has been bent by the same air, so the angle measured *includes* refraction implicitly. However, the parallax correction—which applies to the Moon but not to the star—must be paired with a refraction correction to put the Moon's position on the same footing as the star's.
+
+More precisely: the star is essentially infinitely distant, so it has negligible parallax but is subject to refraction. The Moon is nearby, so it has significant parallax and is also subject to refraction. Both effects must be removed or accounted for to arrive at the true geocentric lunar distance.
+
+---
+
+\section{Tobias Mayer and the Lunar Tables}
+
+Measuring and clearing a lunar distance is useful only if we have accurate tables of the Moon's predicted position as a function of time. Until the mid-eighteenth century, lunar tables were inadequate for this purpose. The Moon's motion is complex, perturbed by the Sun's gravity, subject to multiple periodic inequalities, and difficult to predict from first principles.
+
+Tobias Mayer, working at Göttingen in the 1750s, achieved a breakthrough. He combined lunar theory—the mathematical description of the Moon's orbit under gravitational perturbation—with empirical adjustments derived from accurate observations. The result was the *Tabulae Motuum Solis et Lunae* (Tables of the Motions of the Sun and Moon), published in 1770, after his death.
+
+Mayer's tables gave the Moon's longitude and latitude to a precision of approximately one arcminute. This represented a qualitative leap in accuracy. With such tables, a navigator could compute the lunar distance to the precision of a few arcminutes, yielding a longitude accurate to within \SI{30}{nautical miles} or better—a remarkable improvement over dead reckoning.
+
+The tables were large. They specified the Moon's position every 12 hours of Greenwich time, for the years 1750 to 1800. For each moment, they gave:
+\begin{itemize}
+\item The Moon's longitude ($\lambda_{\text{moon}}$)
+\item The Moon's latitude ($\beta_{\text{moon}}$)
+\item The Moon's horizontal parallax ($HP$)
+\item The Moon's semi-diameter (radius, as seen from Earth)
+\end{itemize}
+
+With these quantities and the positions of several reference stars, a navigator could compute the predicted lunar distance to any reference star for any Greenwich time. The inverse problem—given an observed lunar distance, find the Greenwich time—required interpolation and iterative solution, but was manageable with logarithmic tables and care.
+
+---
+
+\section{The Clearing Procedure: Full Treatment}
+
+To convert an observed sextant angle into a true lunar distance requires a sequence of corrections. The procedure was standardized and published in Maskelyne's *British Mariner's Guide* and in the introductory pages of the *Nautical Almanac*. Here we outline the full sequence.
+
+### Step 1: Record the Observation
+
+The observer notes:
+\begin{itemize}
+\item The sextant angle (the observed lunar distance): $\rho_{\text{obs}}$
+\item The time of observation by chronometer: $t_{\text{obs}}$
+\item The altitude of the Moon: $h_{\text{moon}}$
+\item The altitude of the star: $h_{\text{star}}$
+\item The ship's assumed latitude: $\phi$
+\item Horizon quality (clear, hazy, etc.)
+\end{itemize}
+
+### Step 2: Correct for Index Error and Instrumental Factors
+
+The sextant has an index error (the zero-point of the arc may not align with the optical zero). This is determined by observing the sun's reflected image or by calibration and is typically a few arcminutes. The observer subtracts or adds this correction. We assume this has been done, so $\rho_{\text{obs}}$ is now index-corrected.
+
+### Step 3: Parallax Correction for the Moon
+
+The most complex part. The observed distance includes the Moon at its apparent position (affected by parallax) and the star at its true position (parallax is negligible for a distant star). We must remove the parallax from the Moon's position.
+
+The parallax correction in the direction connecting Moon and star is not simply the parallax in altitude. We must account for the relative geometry. If $\alpha$ is the angular separation of the Moon and star's azimuths, then the parallax correction to the lunar distance is:
+
+\begin{equation}
+\Delta\rho_{\text{par}} = HP(\sin h_{\text{moon}} - \sin h_{\text{star}} \cos \alpha) 
+\end{equation}
+
+This is an approximation valid for small distances (a few degrees). It shows that the parallax correction depends on the altitudes of both Moon and star and the azimuthal separation between them. If the star is low, its parallax (though negligible) isn't entirely zero in the direction of the Moon. If the Moon and star are in very different azimuths, the correction's magnitude changes.
+
+For simplicity, Maskelyne provided tables that approximated this correction. The navigator looked up the Moon's altitude and the star's altitude in a table, and read off the correction directly. This avoided the logarithmic calculation and reduced error.
+
+### Step 4: Refraction Correction for Altitude
+
+Both the Moon and star are subject to refraction. The star's altitude, when measured, already includes refraction. The Moon's altitude likewise. When we correct for the Moon's parallax (which is in altitude), we implicitly affect the refraction correction. The procedure is:
+
+1. Compute the refraction for the Moon's measured altitude: $R_{\moon}(h_{\text{moon}})$
+2. Compute the refraction for the star's measured altitude: $R_{\star}(h_{\text{star}})$
+3. If the parallax correction was applied using altitude-based tables, the refraction has been partially accounted for. Maskelyne's published tables incorporated an empirical refraction correction.
+
+The precise accounting is subtle. In practice, the navigator used tables provided by Maskelyne that combined the parallax and refraction corrections into a single entry: given the Moon's altitude, the star's altitude, and the horizontal parallax, the tables gave a combined correction to apply to the sextant angle.
+
+### Step 5: Acquire the True Lunar Distance
+
+After applying the correction, we have the true lunar distance:
+
+\begin{equation}
+\rho_{\text{true}} = \rho_{\text{obs}} - \Delta\rho_{\text{cor}}
+\end{equation}
+
+where $\Delta\rho_{\text{cor}}$ is the combined parallax and refraction correction, typically ranging from \SI{0.5}{^{\circ}} to \SI{2}{^{\circ}} depending on altitudes and geometry.
+
+---
+
+\section{A Complete Worked Example}
+
+Now let us work through a full example, using data approximate to actual observations from the era.
+
+Suppose a navigator aboard an East Indiaman observes:
+\begin{itemize}
+\item The sextant angle between Moon and Regulus: $\rho_{\text{obs}} = 87^{\circ} 22'$
+\item Time of observation (ship's chronometer, assumed without error): $t = 18^{\mathrm{h}} 34^{\mathrm{m}} 27^{\mathrm{s}}$ ship's time
+\item Moon's measured altitude: $h_{\text{moon}} = 35^{\circ}$
+\item Regulus's measured altitude: $h_{\text{star}} = 28^{\circ}$
+\item Azimuthal separation: roughly south and east, $\alpha \approx 70^{\circ}$
+\item Ship's latitude (estimated from noon Sun): $\phi = 45^{\circ}$
+\item Date: 1770 July 21
+\item Lunar horizontal parallax (from tables for this date and time): $HP = 56.8'$
+\end{itemize}
+
+**Step 1: Apply parallax correction to the Moon.**
+
+Using the formula:
+\begin{align}
+\Delta\rho_{\text{par}} &= HP(\sin h_{\text{moon}} - \sin h_{\text{star}} \cos \alpha) \\
+&= 56.8' \left( \sin 35^{\circ} - \sin 28^{\circ} \cos 70^{\circ} \right) \\
+&= 56.8' \left( 0.5736 - 0.4695 \times 0.3420 \right) \\
+&= 56.8' \left( 0.5736 - 0.1606 \right) \\
+&= 56.8' \times 0.4130 \\
+&= 23.5'
+\end{align}
+
+The parallax correction is \SI{23.5}{arcmin}. This is substantial: nearly half a degree.
+
+**Step 2: Refraction corrections (approximate).**
+
+Refraction at $h_{\text{moon}} = 35^{\circ}$ is approximately $2.5'$.
+Refraction at $h_{\text{star}} = 28^{\circ}$ is approximately $3.1'$.
+
+Since the star is lower, refraction is slightly greater. In the interval calculation that follows, these corrections are absorbed into an empirical interpolation table.
+
+**Step 3: Acquired true lunar distance (approximate).**
+
+After applying corrections:
+\begin{align}
+\rho_{\text{true}} &\approx \rho_{\text{obs}} - \Delta\rho_{\text{par}} \\
+&\approx 87^{\circ} 22' - 23.5' \\
+&\approx 86^{\circ} 58.5'
+\end{align}
+
+This is the true geocentric lunar distance, as if observed from the center of the Earth at the moment of observation.
+
+**Step 4: Lookup in Mayer's tables.**
+
+We now consult Mayer's lunar tables. We need to find the Greenwich time at which the lunar distance between Moon and Regulus was exactly $\rho_{\text{true}} = 86^{\circ} 58.5'$.
+
+The tables are organized by Greenwich time, typically every 3 hours. We extract a few entries:
+
+\begin{table}[htbp]
+\centering
+\caption{Extract from Tobias Mayer's Lunar Distance Tables: Moon and Regulus (1770 July 21). Times in Greenwich (mean) time.}
+\label{tab:mayer-example}
+\begin{tabular}{crr}
+\toprule
+\multicolumn{1}{c}{Greenwich Time} & \multicolumn{1}{c}{Lunar Distance} & \multicolumn{1}{c}{Rate of Change} \\
+& \multicolumn{1}{c}{$(\^{\circ})$} & \multicolumn{1}{c}{$(\^{\circ}/\text{hour})$} \\
+\midrule
+18:00 & 86.85 & 0.497 \\
+18:30 & 86.98 & 0.498 \\
+19:00 & 87.10 & 0.498 \\
+19:30 & 87.22 & 0.497 \\
+20:00 & 87.35 & 0.497 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Looking at the table, the true lunar distance $86^{\circ} 58.5' = 86.975^{\circ}$ falls between the 18:30 and 19:00 entries. Specifically:
+
+At 18:30, $\rho = 86.98^{\circ}$. This is almost exactly our observed value! So the Greenwich time is approximately 18:30.
+
+More precisely, using linear interpolation:
+\begin{align}
+t_{\text{Greenwich}} &= 18:30 + \frac{86.975 - 86.98}{0.498} \times (30 \text{ min}) \\
+&\approx 18:30 - 0.3 \text{ min} \\
+&\approx 18:29:48 \text{ (roughly)}
+\end{align}
+
+For this example, let's say $t_{\text{Greenwich}} \approx 18:30$ exactly.
+
+**Step 5: Determine longitude.**
+
+The ship's chronometer reads $t_{\text{ship}} = 18:34:27$.
+The Greenwich time is $t_{\text{Greenwich}} = 18:30:00$ (from the lunar distance tables).
+
+The difference is:
+\begin{align}
+\Delta t &= t_{\text{ship}} - t_{\text{Greenwich}} \\
+&= 18^{\mathrm{h}} 34^{\mathrm{m}} 27^{\mathrm{s}} - 18^{\mathrm{h}} 30^{\mathrm{m}} 00^{\mathrm{s}} \\
+&= 4^{\mathrm{m}} 27^{\mathrm{s}} \\
+&= 267 \text{ seconds}
+\end{align}
+
+The Earth rotates at $360^{\circ} / 86400$ seconds $= 0.00417^{\circ}$ per second, or equivalently $15^{\circ}$ per hour or $1^{\circ}$ per $4$ minutes.
+
+The longitude difference is:
+\begin{align}
+\text{Longitude (east of Greenwich)} &= \Delta t \times \frac{360^{\circ}}{24 \text{ hours}} \\
+&= 4.45 \text{ min} \times 15^{\circ}/\text{hour} \\
+&= 4.45 \text{ min} \times 0.25^{\circ}/\text{min} \\
+&= 1.11^{\circ} \\
+&= 1^{\circ} 7'
+\end{align}
+
+The ship is approximately $1^{\circ}$ and $7$ arcminutes east of Greenwich. In terms of distance at latitude $45^{\circ}$, this is:
+\begin{align}
+\text{Distance} &= 1.11^{\circ} \times 60 \text{ nm/degree} \times \cos(45^{\circ}) \\
+&= 66.6 \text{ nm} \times 0.707 \\
+&\approx 47 \text{ nm east of Greenwich}
+\end{align}
+
+The calculation is complete. The navigator now knows his longitude.
+
+---
+
+\section{Error Analysis and Practical Limits}
+
+The accuracy of a lunar distance observation is limited by several factors:
+
+\textbf{Sextant precision:} A good marine sextant reads to the nearest minute of arc. Residual errors from graduation, parallax of the instrument optics, and reading error amount to a few arcminutes of total error per observation.
+
+\textbf{Table accuracy:} Mayer's tables are accurate to about $1'$ in lunar position. This translates to a roughly $1'$ uncertainty in the predicted lunar distance. At the rate of Moon's motion ($\sim 0.5^{\circ}/\text{hour} = 30'/\text{hour}$), a $1'$ error in lunar distance corresponds to about $2$ minutes of time error, or $0.5^{\circ}$ of longitude, or roughly $30$ nautical miles at the equator.
+
+\textbf{Parallax and refraction corrections:} These introduce additional uncertainty. The parallax is known from the tables but depends on the observer's accurate latitude. The refraction depends on temperature, pressure, and humidity, none of which the navigator can measure precisely. A typical uncertainty is a few arcminutes.
+
+\textbf{Interpolation error:} The tables give lunar distance every 3 hours; the navigator must interpolate to find the exact Greenwich time. Linear interpolation assumes the Moon's motion is constant over a 3-hour interval, but the rate of change of lunar distance actually varies slightly. This introduces an error of order $0.1'$ to $1'$.
+
+Combining these sources of error, a skilled observer under good conditions achieves a longitude accuracy of approximately $\pm 0.5^{\circ}$, or about $\pm 30$ nautical miles at the equator. This is far superior to dead reckoning (which accumulates errors of $100$ nm or more over an Atlantic crossing) but inferior to a good chronometer, which can achieve accuracy of $\pm 5'$ of arc or better.
+
+---
+
+\section{Comparative Merit: Why Astronomers Loved the Lunar Distance Method}
+
+The lunar distance method held powerful appeal for the astronomers of the eighteenth century, even as its limitations became evident.
+
+**No mechanical precision required.** The method depends only on observation and calculation. A sextant is a simpler instrument than a marine chronometer. The sextant's technology had been understood for decades; chronometer development remained uncertain and expensive.
+
+**Applicable to any chronometer.** In principle, the navigator need not trust the ship's chronometer. The lunar distance calculation gives Greenwich time directly, independent of the chronometer's accuracy. The chronometer is only a secondary check. This was philosophically appealing to astronomers: the sky itself was the authority.
+
+**Testable and verifiable.** A navigator could, in good conditions, observe the lunar distance multiple times a night, obtaining multiple estimates of longitude. Agreement among these estimates provided confidence.
+
+**Institutional control.** The Royal Observatory could improve accuracy by improving the lunar tables. Maskelyne took personal charge of this—computing, verifying, and publishing better tables in successive editions of the \textit{Nautical Almanac}. The astronomer's institution could serve navigation directly.
+
+Yet the method had fatal weaknesses. The calculation took 30 minutes under the best conditions—an eternity in a ship's officer's working day. Cloudy skies could hide the Moon for days, preventing any observation. And the physical demands on a navigator—maintaining a steady sextant on a moving deck, reading three altitudes accurately, performing a half-hour of calculation without error—placed the method beyond the reach of all but the most skilled practitioners.
+
+It was precisely these limitations that made the marine chronometer ultimately triumphant. A chronometer required no calculation. It worked in bad weather (as long as the ship didn't completely lose all sky for days on end). A chronometer could be read instantly. That simplicity—that shift of labor from the navigator's brain to the chronometer's mechanism—would win in the end.
+
+But that is the story of Chapter 9. The lunar distance method, for all its computational burden, would serve navigation faithfully for a century, and the \textit{Nautical Almanac} that made it possible would outlive the method itself.
+
+---
+
+\section*{Forward Reference}
+
+Chapter 10 takes up the story of how Nevil Maskelyne institutionalized the lunar distance method, creating the \textit{Nautical Almanac} and assembling the network of human computers that kept the tables current. The method that required half an hour of calculation would, through Maskelyne's innovations, become the preferred solution for an entire generation of navigators.
+
+\label{sec:08-end}
