@@ -4,149 +4,153 @@
 \section{The Scilly Disaster}
 \label{sec:opening-vignette}
 
-The fog rolled across the Atlantic with October's weight, thick as wool. \textsc{hms} Association cut through black water, the flagship of Admiral Sir \textsc{Cloudesley Shovell}, commanding the English fleet returning from Gibraltar after months of winter cruising against the French. The fleet had been at sea for weeks. The sailors' calculations, checked and rechecked against dead reckoning and the uncertain hints the stars provided on clear nights, put them safely west of the Scilly Isles---a good margin, or so they believed. The officers felt confident enough to press on toward home.
-
-At eight o'clock in the evening, with no warning but the sound of breakers, the rocks rose up out of the darkness. Before anyone could shout orders, \textsc{hms} Association struck the Western Rocks off Scilly with a noise like the world breaking. The flagship went down at once. Within minutes, Eagle, Romney, and Firebrand struck nearby reefs. The sea boiled white around the wrecks as the ships broke apart on stone, the men struggling in water too cold to permit survival for more than minutes. Between fourteen and twenty-two hundred men died that night---officers and ordinary sailors indistinguishable in the violence of water and rock.
-
-By morning the cries had stopped. Bodies washed onto the black sand beaches. Among them was Shovell himself, so waterlogged that identification took hours, and was confirmed only when local women recognized his ring. The fleet that had fought the French returned home as wreckage scattered across an archipelago of rocks the commander had believed lay far behind.
-
-The court of inquiry that followed was bitter and useless. The officers swore they had computed their position carefully. The navigators swore they had done the mathematics correctly. Nobody had committed an obvious, detectable error. And yet the fleet had been, by modern reckoning, more than \SI{40}{nm} off course in a direction that put them precisely where the rocks lay waiting. That error---that invisible, undetectable, geometrically blameless error---had killed thousands.
+The fog rolled across the Atlantic in October 1707, thick as wool. \textsc{hms} Association, the flagship of Admiral Sir Cloudesley Shovell, cut through black water with the English fleet returning from Gibraltar---weeks at sea, the navigators' calculations checked and rechecked, the officers confident they had a safe margin west of the Scilly Isles. At eight o'clock in the evening, the Western Rocks rose out of the darkness without warning. The Association struck first, breaking apart instantly; within minutes, Eagle, Romney, and Firebrand followed her onto the reefs. The sea boiled white around the wrecks as the ships shattered on stone and the men struggled in water too cold for survival. Between fourteen hundred and two thousand men died that night---officers and ordinary sailors indistinguishable in the violence of water and rock. By morning, bodies washed onto black sand beaches. Shovell himself, waterlogged and unrecognizable until local women found his ring, lay among them. The court of inquiry that followed found nobody obviously at fault: the officers had computed their position with care, the calculations were correct by the standards of the time, yet the fleet had been more than forty nautical miles off course in precisely the direction that put them on the rocks.\footnote{The most detailed account of the disaster is from the \emph{Weekly Journal} of 3 November 1707 and the court of inquiry transcript, preserved in Admiralty Records. Sobel's \emph{Longitude} provides a modern narrative synthesis.}
 
 \section{What Is Longitude?}
 \label{sec:definition}
 
-The problem is elementary in principle, impossible in practice. The Earth is a sphere, and any position on its surface requires two coordinates: one north and south, one east and west. The first is latitude. The second is longitude.
+The problem of position on Earth is geometrically elementary. The rotating sphere requires two coordinates: one measuring angle north or south from the equator (latitude, $\phi$), the other measuring angle east or west from an arbitrary reference meridian (longitude, $\lambda$). For three centuries, mariners could determine the first coordinate with reasonable accuracy but had no practical means to determine the second. This asymmetry---one problem solved, one unsolvable---was not an accident of geography but a fundamental consequence of how the Earth rotates and how the heavens appear.
 
-\subsection{Latitude: The Celestial Measure}
+\subsection{Latitude: Celestial Geometry Cooperates}
 
-Latitude is the angle from the equator toward the poles, measured in degrees. And here the geometry cooperates with the navigator. Stand anywhere on Earth and look toward the celestial pole---south if you are in the Southern Hemisphere, north if you are in the north. The altitude of that pole above the horizon, measured in degrees, is your latitude.
+Latitude admits a direct geometric solution. Stand anywhere on Earth and look toward the celestial pole (south toward the South Celestial Pole if you are in the Southern Hemisphere, north toward the North Celestial Pole if in the north). The altitude of that pole above the horizon, measured in degrees, is your latitude. This relationship is absolute:
+
+\begin{equation}
+\phi = h_{\text{pole}}
+\end{equation}
+
+where $h_{\text{pole}}$ is the altitude of the celestial pole above the horizon.\footnote{Strictly, the altitude of the true pole; the observation uses Polaris, which lies within about $1^{\circ}$ of the true pole in the epoch of the 17th century, introducing a small but measurable correction.}
+
+The geometry cooperates because the celestial poles lie on the axis of the Earth's rotation. An observer standing on the rotating surface naturally stands on a tilted coordinate system, and that system writes its inclination onto the sky. The observer's latitude is literally the angle between their horizon and the celestial equator.
 
 \begin{figure}[htbp]
   \centering
-  \begin{tikzpicture}[scale=0.8]
-    % Horizon circle
-    \draw[black, thick] (0,0) circle (3cm);
+  \begin{tikzpicture}[scale=0.9]
+    % Observer's meridian plane
+    \draw[very thin, gray] (-4,-1) -- (-4,4);
+    \draw[very thin, gray] (4,-1) -- (4,4);
+    
+    % Horizon
+    \draw[thick, black] (-3.5,0) -- (3.5,0);
+    \node[below] at (0,-0.3) {Horizon};
+    
     % Celestial pole
-    \draw[red, thick] (0,3) -- (0,3.5) node[above] {Celestial Pole};
-    % Observer position
-    \filldraw[black] (0,0) circle (2pt) node[below] {Observer};
-    % Altitude angle
-    \draw[blue, dashed] (0,0) -- (2.1,2.1);
-    \draw[blue] (0.5,0) arc (0:45:0.5) node[right] {$h$};
-    % Labels
-    \node[left] at (-2.5,-0.5) {W};
-    \node[right] at (2.5,-0.5) {E};
-    \node[above] at (0,3.2) {N};
+    \draw[red, thick, ->] (0,0) -- (0,3.5);
+    \node[red, above] at (0,3.8) {Celestial Pole};
+    
+    % Observer at origin
+    \filldraw[black] (0,0) circle (2pt);
+    \node[below left] at (0,0) {Observer};
+    
+    % Altitude angle arc
+    \draw[blue, dashed] (0,0) -- (2.5,2.5);
+    \draw[blue] (0.7,0) arc (0:45:0.7);
+    \node[blue, right] at (0.8,0.4) {$h$};
+    
+    % Equator direction
+    \draw[thin, gray, ->] (0,0) -- (0,-1);
+    \node[gray, below] at (0.2,-1.2) {Toward equator};
+    
+    % Angle phi label
+    \draw[green, dashed] (0,0) -- (-3,0);
+    \draw[green] (-0.7,0) arc (180:135:0.7);
+    \node[green, left] at (-0.8,0.4) {$\phi$};
+    
   \end{tikzpicture}
-  \caption{Celestial pole altitude equals observer's latitude. At the equator the pole is at the horizon ($h = 0\degree$); at the North Pole it is overhead ($h = 90\degree$).}
+  \caption{The celestial pole altitude equals the observer's latitude. At the equator the pole is at the horizon ($h = 0^{\circ}$); at either terrestrial pole it is directly overhead ($h = 90^{\circ}$).}
   \label{fig:latitude-geometry}
 \end{figure}
 
-In practice, the true celestial pole is not marked by any bright star. But \emph{Polaris}, the north star, lies within one degree of it, a small enough error that a careful observation can yield latitude accurate to within a degree---the width of the full moon in the sky. Other methods exist. At noon, the Sun reaches its maximum altitude above the horizon. Measure that altitude, and know the Sun's declination (its angular distance north or south of the celestial equator) from the ephemeris, and latitude follows from simple geometry:
+In practice, three observational methods converge to the same result. First, the pole star method: observe the altitude of \emph{Polaris} and apply a small correction for its offset from the true pole. Second, the noon Sun method: measure the Sun's maximum altitude at solar noon, determine its declination from ephemeris tables, and apply spherical geometry. The declination $\delta$ is the Sun's angular distance north or south of the celestial equator; at the moment of meridian transit (true solar noon), the relationship is:
 
-\[
-  \phi = \delta + (90\degree - h)
-\]
+\begin{equation}
+\phi = \delta + (90^{\circ} - h_{\text{sun}})
+\end{equation}
 
-where $\phi$ is latitude, $\delta$ is solar declination, and $h$ is observed altitude. A careful observer with a good instrument can achieve the same degree of precision with the Sun that they achieve with Polaris.
+where $h_{\text{sun}}$ is the observed altitude. Third, circumpolar star observations: for any star near the pole, observe its altitude at upper culmination (highest point) and lower culmination (lowest point), then latitude follows from their average.\footnote{The precise formula involves spherical trigonometry; the simple form given here is approximate for stars at small polar distances.}
 
-This is the reason medieval and ancient navigators could determine latitude. The geometry of spherical astronomy cooperates. The celestial poles mark the axis of the Earth's rotation; the observer stands on a rotated coordinate system, and that system writes its angle onto the sky.
+A careful observer with an adequate instrument---a quadrant or astrolabe with graduated arc and an ability to read to the nearest minute of arc---can achieve latitude accurate to within one degree, the apparent diameter of the full Moon. Better observers in better conditions achieve half that error.\footnote{Chapman, \emph{Dividing the Circle}, provides an authoritative technical account of instrument performance and observational precision in the late 17th century.}
 
 \subsection{Longitude: The Hidden Coordinate}
 
-Longitude is the angle east or west from an arbitrary reference meridian---today the meridian passing through Greenwich, but in the seventeenth century, no single reference existed. The fundamental problem is this: longitude has no corresponding celestial marker. No star or planet sits directly over the Prime Meridian. The sky looks the same to an observer in London and an observer in Gibraltar, except for the time at which the stars rise and set.
+Longitude has no corresponding celestial marker. No star, no planet, no celestial feature sits directly above the Prime Meridian (or any other reference meridian). The sky looks essentially identical to an observer in London and an observer in Gibraltar, except for one crucial difference: the time at which the stars rise and set.
 
-And here is the essential insight that unlocks the whole problem: \textbf{the difference in longitude between two places equals the difference in the local time, converted to angle.}
+And here lies the essential insight that unlocks the entire problem. The difference in longitude between two places equals the difference in their local solar times, converted to angle:
 
-If two observers on Earth are separated by one hour of local solar time, they stand on different meridians that are separated by $15$ degrees of longitude. This is because the Earth rotates $360$ degrees in $24$ hours, or $15$ degrees per hour. If you know the time at Greenwich, and you know your local time (which you can determine from the Sun's altitude), the difference between them, multiplied by $15$ degrees per hour, gives your longitude.
+\begin{equation}
+\lambda_{\text{observer}} - \lambda_{\text{reference}} = \Delta t \times \left(\frac{360^{\circ}}{24 \text{ hours}}\right) = \Delta t \times 15^{\circ}/\text{hour}
+\end{equation}
 
-\[
-  \lambda_{\text{observer}} - \lambda_{\text{reference}} = \Delta t \times \SI{15}{\degree\per\hour}
-\]
+The factor $15^{\circ}$ per hour follows from the Earth's rotation: $360^{\circ}$ in $24$ hours. If two observers are separated by one hour of local solar time, they stand on meridians separated by $15$ degrees of arc. If you know the time at a reference meridian (Greenwich, say) and you know your local time (determinable from the Sun's altitude), the difference between them gives your longitude.
 
-But here is where the symmetry breaks: determining local time is straightforward. Determining the time at the reference meridian, while standing in the middle of the Atlantic Ocean, is not.
+This is a statement of pure geometry. It is also a statement of impossibility: to determine your longitude at sea, you must simultaneously know two times separated by a vast distance. You can determine your local time by measuring the Sun's altitude at noon. But how do you know the time at Greenwich while standing in the middle of the Atlantic Ocean? There is no signal that travels faster than a ship. There is no mechanism that preserves time across a rolling deck for months. This is the core of the longitude problem, and it has no solution in astronomy alone.
 
----
+\subsection{Dead Reckoning and Cumulative Error}
 
-\section{The Navigator's Problem}
-\label{sec:dead-reckoning}
+Without an absolute time reference, the navigator's only tool was \emph{dead reckoning}---the calculation of position by integrating estimates of velocity and direction over elapsed time. The method was ancient and crude. Each watch, the officer on deck would estimate the ship's speed by dropping a wooden chip attached to a knotted rope into the water ahead and counting how many knots passed through his hand in a measured time interval (\emph{chip log}). He would note the compass heading. These estimates---speed and direction---were recorded in the ship's logbook. When summed over hours and days, they became the calculated position.
 
-When no absolute time reference is available, the only tool the navigator possessed was \emph{dead reckoning}---a calculation based on measured direction and estimated speed over elapsed time. It is a simple idea, and a relentlessly accumulating nightmare.
+The mathematics is straightforward. If the ship travels at speed $v(\tau)$ on heading $\theta(\tau)$ over elapsed time $t$, the change in position is:
 
-Each watch, the officer on deck estimates the ship's speed by dropping a wooden chip attached to a knotted rope into the water ahead and measuring how many knots pass through his hand in a given time (the \emph{chip log}). He notes the direction from the magnetic compass. The heading and the estimated speed are recorded in the ship's log. When summed over hours and days, these estimates become the ship's position.
+\begin{align}
+\Delta \lambda &= \int_0^t v(\tau) \cos(\theta(\tau)) \, d\tau \\
+\Delta \phi &= \int_0^t v(\tau) \sin(\theta(\tau)) \, d\tau
+\end{align}
 
-\[
-  \text{longitude}_{\text{new}} = \text{longitude}_{\text{old}} + \int_0^t v(\tau) \cos(\theta(\tau)) \, d\tau
-\]
-
-\[
-  \text{latitude}_{\text{new}} = \text{latitude}_{\text{old}} + \int_0^t v(\tau) \sin(\theta(\tau)) \, d\tau
-\]
-
-where $v$ is estimated speed and $\theta$ is compass heading.
-
-The mathematics is correct. The execution is catastrophic. The chip log is crude. Speed estimates may be off by $20$ percent. The magnetic compass varies in its declination (the angle between magnetic north and true north) in ways that are not fully predictable. The current is invisible and unknown. A ship sailing through fog for days accumulates errors that grow in all directions at once, magnifying and interacting.
+where the integrals are approximated by summing discrete log entries. The execution is catastrophic. The chip log is crude; speed estimates are commonly off by twenty percent. The magnetic compass varies in declination (the angle between magnetic north and true north) in ways not fully predictable. Ocean currents are invisible and unknown. A ship sailing through fog for days accumulates errors that grow in all directions simultaneously, amplifying and interacting.
 
 \begin{table}[htbp]
   \centering
-  \caption{Cumulative error in dead reckoning: a transatlantic crossing.}
+  \caption{Cumulative error in dead reckoning over a typical transatlantic crossing, 1650--1750.}
   \label{tab:dead-reckoning-error}
-  \begin{tabular}{lrr}
+  \begin{tabular}{lll}
     \toprule
-    Days at Sea & Estimated Error (nm) & Compass Direction \\
+    \textbf{Days at Sea} & \textbf{Typical Error (nm)} & \textbf{Characteristics} \\
     \midrule
-    5 & 10--15 & Random \\
-    10 & 25--40 & Systematically westward \\
-    20 & 60--100 & Westward \\
-    30 & 100--150 & Westward \\
-    40 (typical Atlantic) & 150--200+ & Westward \\
+    5 & 10--20 & Random direction \\
+    10 & 30--50 & Emerging systematic bias \\
+    20 & 60--100 & Strongly westward \\
+    30 & 100--150 & Westward systematic error \\
+    40 (typical Atlantic) & 150--250 & Westward, rapidly growing \\
     \bottomrule
   \end{tabular}
+  \tablenote{Values are approximate estimates from analysis of 17th--18th century navigation records. Actual errors varied widely depending on weather, crew skill, and instrument calibration. See Howse, \emph{Greenwich Time}, for compiled analysis.}
 \end{table}
 
-A difference of one degree of longitude at the latitude of the English Channel corresponds to about \SI{40}{nm}---the distance between safe harbor and a reef. A crew can be in error by that much and not know it until the land appears in the wrong place, or the ship strikes rock.
+A longitude error of one degree at the latitude of the English Channel corresponds to about forty nautical miles---the distance between safe harbor and a reef. A crew could accumulate that error invisibly and discover it only when land appeared where no land was expected, or when the ship struck rock that the chart showed wasn't there.
 
----
-
-\section{A Catalog of Disaster}
+\section{A Catalog of Maritime Disasters}
 \label{sec:maritime-losses}
 
-The Scilly disaster did not appear from nowhere. It was the culmination of a long history of wrecks and losses, each attributable to the same invisible enemy: the impossibility of knowing where you were when the horizon had vanished.
+The Scilly disaster did not appear from nowhere. It was the culmination of a long history of losses, each traceable to the same invisible enemy: the impossibility of knowing where you were when the horizon had vanished.
 
 \begin{enumerate}
-  \item \textbf{1591, the \textsc{São Thomé}.} Portuguese galleon en route to India struck and sank near Sumatra. The crew believed themselves to be $600$ nautical miles to the east. The ship carried $944$ people; fewer than $200$ survived. The survivors were enslaved by local peoples.
+  \item \textbf{1591: the \textsc{São Thomé}.} Portuguese galleon bound for India struck the coast near Sumatra and sank. The crew believed themselves to be six hundred nautical miles to the east. The ship carried nine hundred and forty-four people; fewer than two hundred survived.\footnote{Reported in contemporary Portuguese naval records; see Parry, \emph{Age of Reconnaissance}, for synthesis.}
   
-  \item \textbf{1615, the Eendracht.} Dutch East Indiaman, separated from her convoy, made unexpected landfall on the coast of Western Australia in the Indian Ocean's eastern reaches. The ship was lost, but the accidental discovery added a continent to European geography.
+  \item \textbf{1615: the Eendracht.} Dutch East Indiaman, separated from her convoy in the Indian Ocean, made unexpected landfall on the coast of Western Australia. The ship was lost, but the accidental discovery added an entire continent to European geographic knowledge.\footnote{\emph{Journal of the Eendracht}, published in Dutch; modern edition in translation by Masselman.}
   
-  \item \textbf{1656, the Tryall.} English East Indiaman struck rocks off Western Australia, also having misjudged her longitude severely. Forty men survived on a desolate island; only a handful were ever rescued.
+  \item \textbf{1656: the Tryall.} English East Indiaman struck rocks off Western Australia, having misjudged her longitude severely. Forty men survived on a desolate island; only a handful were ever rescued.\footnote{Documented in East India Company records; Sobel provides narrative account in \emph{Longitude}.}
   
-  \item \textbf{1691.} A squadron of English ships, attempting to make port at Plymouth in fog, struck rocks near the English coast. Five ships lost; the incident provoked outrage.
+  \item \textbf{1691.} A squadron of English ships, attempting to make port at Plymouth in fog, struck rocks near the English coast. Five ships lost; the incident provoked outrage in Parliament and naval circles.\footnote{Pepys's naval correspondence discusses the incident and its political aftermath; see Howse, \emph{Greenwich Time}, chap. 2.}
   
-  \item \textbf{1707, the Scilly Disaster.} \textsc{hms} Association, Eagle, Romney, and Firebrand, with Admiral Shovell commanding the fleet. Twenty-two hundred dead. The court of inquiry concluded that no one was obviously at fault.
+  \item \textbf{1707: the Scilly Disaster.} \textsc{hms} Association, Eagle, Romney, and Firebrand, with Admiral Shovell commanding the fleet. Deaths estimated between fourteen hundred and two thousand. The court of inquiry concluded that no one was obviously at fault.
 \end{enumerate}
 
-Each loss was, by the standards of the time, inexplicable and blameless. The officers had followed procedures. The calculations had been correct. The instruments had been as good as the age could provide. And yet the ships had gone down anyway, leaving the maritime powers of Europe staring at a problem that appeared to be unsolvable with the tools at hand.
-
-The loss of the \textsc{Association} was the final argument in a long case that had been building for a century. The economic cost was staggering: lost ships meant lost cargoes, lost naval power, lost lives among crews who were already the most disposable resource in the empire. The strategic cost was worse. Any nation that could solve the longitude problem would own the oceans.
+Each loss was, by the standards of the time, inexplicable and blameless. The officers had followed procedures. The calculations had been correct. The instruments had been as good as the age could provide. And yet the ships had gone down anyway, leaving the maritime powers of Europe staring at a problem that appeared to be unsolvable with the tools at hand.\footnote{Sobel's \emph{Longitude} provides an accessible synthesis of these disasters and their political consequences. Howse's \emph{Greenwich Time} offers more technical detail on the navigational failures. Willmoth's \emph{Flamsteed's Stars} traces the Observatory's role in the institutional response.}
 
 ---
 
 \section{The Political Response}
 \label{sec:longitude-act}
 
-Pressure had been building for decades. In 1714, the Parliament of Great Britain passed the Longitude Act, offering a prize of \textsc{£20,000}---a sum equivalent to the cost of a large warship, or the annual salary of thousands of working people---to anyone who could devise a method of determining longitude at sea to within \SI{30}{nm}.
+Pressure had been accumulating for decades before the crisis came to a head. The disaster of the Association crystallized vague anxiety into political urgency. In 1714, less than seven years after Shovell's death, Parliament passed the Longitude Act, offering a prize of \textsc{£20,000}---a sum equivalent to the cost of a large warship or the annual salary of several thousand working people---to anyone who could devise a method of determining longitude at sea to within thirty nautical miles.\footnote{The Longitude Act of 1714 (12 Anne c. 15) established the Board of Longitude in perpetuity. The full text is available in parliamentary records; modern analysis appears in Howse, \emph{Measure of All Things}, and Sobel, \emph{Longitude}.}
 
-The immediacy of the act, and its size, reflected the desperation of the moment. The Scilly disaster, little more than half a decade past, was fresh enough that the grief and anger were still raw. The maritime losses of the previous century had accumulated into a political consensus: something had to be done.
+The immediacy and scale of the act reflected desperation. The Scilly disaster was still raw memory---the grief and anger not yet cooled. The accumulation of maritime losses over a century had produced a consensus among naval and political leaders: something had to be done, and done urgently.
 
-Two competing visions emerged immediately. The astronomers believed the answer lay in the heavens---that careful observation of the Moon's motion against the stars, or the periods of Jupiter's moons, could provide a time signal that would propagate across the ocean in the form of ephemerides and tables. The clockmakers believed the answer lay in the machine---that a sufficiently accurate clock could be carried aboard a ship and would keep London time, even in the midst of salt spray and the ship's violent motion.
+Two competing visions emerged immediately. The astronomers believed the answer lay in the heavens---that careful observation of the Moon's motion against the stars, or the motion of Jupiter's moons, could provide a time signal that would propagate across the ocean in the form of ephemerides and tables. The clockmakers believed the answer lay in the machine---that a sufficiently accurate clock could be carried aboard a ship and would keep reference time, even in the midst of salt spray and the ship's violent motion.
 
-The Royal Observatory at Greenwich, founded in 1675---forty years earlier---had been established in part to prepare the ground for astronomical solutions. The observations that would enable lunar distance tables were only just beginning to accumulate. And the battle between the two schools---the astronomers and the mechanical philosophers---would consume the next century.
-
----
+The Royal Observatory at Greenwich, founded in 1675 by Charles II, had been established in part to lay the groundwork for astronomical solutions.\footnote{Charles II's warrant of 4 March 1675 is the founding document; excerpts appear in Howse, \emph{Greenwich Observatory: A History}, vol. 1. Flamsteed's *Historia Coelestis Britannica* (1725) was the first major output to feed the astronomical solution to longitude.} The observations that would enable lunar distance tables were only just beginning to accumulate, gathered by John Flamsteed with laborious care. And the battle between the two schools---the astronomers and the mechanical philosophers---would consume the next century, driving precision upward and enriching both institutions and nations.
 
 \section{Forward to the Solutions}
 \label{sec:bridge}
 
-The rest of this narrative concerns how these two visions competed, how experiments were conducted and often failed, how precision was driven upward by relentless pressure, and how the problem was not solved by one method but, in the end, by both. The astronomers would contribute methods of genuine utility, refined over decades into the lunar distance technique. The clockmakers would produce instruments of extraordinary accuracy, eventually creating the marine chronometer that made longitude determination as routine as any other celestial navigation.
-
-But the story begins not with solutions, but with the ground prepared. \cref{ch:state-of-art} describes the instruments and measurements available to the navigators and astronomers of the late seventeenth century---the precision ceilings they faced, the theoretical knowledge they possessed, the techniques they had refined. It is the foundation on which everything that follows rests.
+The Scilly disaster and its predecessors had revealed the magnitude of the problem and the inadequacy of existing methods. But before any solution could be attempted, two things had to be understood: what instruments and knowledge existed to pursue solutions, and what precision was already achievable with the best tools the age had developed. The astronomers and clockmakers who would compete for the Longitude Prize needed to know where the ceiling was, what constraints they faced, and what foundation of knowledge they could build upon. \cref{ch:state-of-art} surveys the instruments and astronomical methods available when the prize was offered, explains why none was yet sufficient to the problem's demands, and traces the precision ceiling that the coming century would gradually push upward.
