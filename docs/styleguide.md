@@ -111,7 +111,258 @@ The package handles spacing, formatting, and notation automatically. Never write
 
 ---
 
-## Part III: Text and Formatting
+## Part III: Mathematical Exposition Sequence
+
+Chapters containing substantial mathematical or derivation-heavy content should follow a consistent six-step sequence. This structure has proven effective across Chapters 4–7 and should be the default for technical chapters.
+
+### The Six-Step Pattern
+
+1. **Motivation.** State the problem the reader needs solved, in concrete historical terms. What did the astronomer need to compute? What precision mattered? What happened if the calculation failed?
+
+2. **Geometric Setup.** Define the configuration with a labeled diagram. Introduce notation carefully. A clear figure often eliminates the need for paragraphs of description. Show what quantities matter and how they relate.
+
+3. **Derivation.** Work through the mathematics step by step. Show reasoning, not just results. Where algebraic manipulation is routine, indicate the method and state the result. Where conceptual insight is required, slow down. Use "we" to invite reader participation: "If we correct the observed altitude for refraction..."
+
+4. **Worked Example.** Apply the formula to a specific historical observation with actual numbers. Reproduce a calculation from Flamsteed's ledger, Maskelyne's almanac, or Bradley's notebooks. Let readers verify the result against real data. This step bridges abstract formula to practical use.
+
+5. **Error Analysis.** Quantify uncertainty. What were dominant error sources? How did instrumental limits, atmospheric effects, temperature variation, or human reaction time bound precision? Make uncertainty visible and mathematical. Provide an error budget table if multiple sources exist.
+
+6. **Historical Resolution.** How did practitioners of the period handle this calculation? What shortcuts, tables, approximations, or workarounds did they use? This step grounds the mathematics in the lived experience of the Observatory.
+
+### Abbreviations and Variations
+
+**For computational chapters** (where multiple derivations appear): You may compress steps 3–5. Skip intermediate worked examples if multiple calculations appear in a section. Provide one comprehensive worked example near the end of the section.
+
+**For narrative-driven chapters** (emphasis on story over equations): You may reduce mathematical detail. Provide the diagram and formula, then jump directly to historical resolution. Use footnotes for detailed derivations if they're essential but tangential.
+
+**For historiographical chapters** (focus on context and competing interpretations): Keep mathematics light. One diagram and formula per major concept; emphasize historical context over derivation detail.
+
+### Decision Framework
+
+Ask yourself: **What chapter type is this?**
+
+- **Technical-Method Chapters** (4, 5, 6, 8, 9): Use all six steps. Reader expects complete mathematical exposition. Each section should follow the pattern: Motivation → Diagram → Derivation → Worked example → Error analysis → Historical context.
+
+- **Narrative-Driven Chapters** (1, 2, 3): Use steps 1, 2, 6 fully; abbreviate 3–5. Story dominates. Mathematics supports narrative. One worked example per chapter is often sufficient.
+
+- **Historiographical Chapters** (7, 10, 18): Use steps 1, 6 fully; abbreviate 2–5. History and scholarly debate dominate. Mathematics illustrates key concepts but doesn't anchor the chapter.
+
+---
+
+## Part IV: Bridge Sections and Narrative Pacing
+
+### Purpose of Bridge Sections
+
+Bridge sections are concluding paragraphs or short subsections that explicitly connect the current chapter to future chapters. They serve three functions:
+
+1. **Pacing:** They signal to the reader that a major topic is complete and a new one awaits.
+2. **Continuity:** They establish narrative momentum across chapter boundaries.
+3. **Orientation:** They prepare the reader for what comes next.
+
+Bridge sections are **optional but strongly encouraged** for chapters that build toward later chapters.
+
+### When to Use a Bridge Section
+
+Use a bridge section when:
+- The current chapter solves a problem that the next chapter builds upon
+- You've introduced an observation or technique that the next chapter develops
+- The narrative has natural pause points between chapters
+
+Examples from Chapters 1–7:
+
+- **Ch. 1 ending:** "The Act had created not a solution but a framework within which solutions could emerge. \cref{ch:lunar-distance} takes up the story of the method that astronomers believed held the greatest promise."
+
+- **Ch. 3 ending:** "The next chapter describes how these tools [the mural arc and clock]...combined to produce..."
+
+### Placement and Structure
+
+**Placement:** A bridge section typically occupies the final paragraph(s) of a chapter. It's not a separate subsection but rather the logical conclusion of the last major section.
+
+**Structure:** Use one of these templates:
+
+**Template 1: Simple forward reference**
+```
+[Conclusion of current topic]. [Forward-looking statement about next problem].
+\cref{ch:next-chapter} takes up [specific aspect of next chapter].
+```
+
+**Template 2: Problem-solution bridge**
+```
+[Current solution explained]. But [new problem that solution creates or reveals].
+The next chapter addresses [how subsequent work tackled that problem].
+```
+
+**Template 3: Historical cascade**
+```
+[Historical outcome of current chapter]. This success prompted [response described in next chapter].
+\cref{ch:next-chapter} examines [the response and its consequences].
+```
+
+### Examples
+
+**Ch. 1 → Ch. 2:**
+```
+The Longitude Act had created political urgency and financial incentive. But what tools
+and knowledge existed to pursue solutions? \cref{ch:state-of-art} surveys the instruments
+and astronomical methods available when Flamsteed began observing, and explains why none was
+yet sufficient to the problem's demands.
+```
+
+**Ch. 5 → Ch. 6:**
+```
+Flamsteed's reduction procedures demanded extraordinary precision in intermediate steps.
+The errors came not from the method itself but from the instruments and natural world:
+temperature swings that changed the arc's size, pendulum drift that altered clock rate,
+atmospheric turbulence that blurred the star. \cref{ch:pendulum-clocks} turns to the
+problem that obsessed instrument makers for the next century: how to build a device whose
+accuracy survives the chaos of the sea.
+```
+
+### Cautions
+
+- **Don't spoil the next chapter.** Bridge sections should orient, not summarize.
+- **Keep them brief.** One to three sentences. A bridge should feel lightweight, not heavy.
+- **Don't force them.** If no natural connection exists, omit the bridge. Not every chapter needs one.
+- **Use \cref** consistently for cross-chapter references.
+
+---
+
+## Part V: Table Architecture and Templates
+
+Tables are reference anchors. They should communicate clearly and follow consistent patterns.
+
+### Standard Error-Source Table
+
+Use this three-column structure for tables listing error sources or specifications:
+
+**Column 1:** Source name (or parameter name)  
+**Column 2:** Magnitude (or value)  
+**Column 3:** Impact or context (effect, notes, conditions)
+
+**Example:**
+
+```latex
+\begin{table}[htbp]
+  \centering
+  \caption{Error sources in meridian transit observations (Flamsteed era).}
+  \label{tab:error-sources}
+  \small
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Error Source} & \textbf{Magnitude} & \textbf{Impact} \\
+    \midrule
+    Graduation errors & $\pm 5''$--$10''$ & Systematic, difficult to detect \\
+    Flexure & $\pm 2''$--$5''$ & Varies with position, temperature \\
+    Collimation & $\pm 3''$--$8''$ & Constant offset, can be calibrated \\
+    Refraction correction & $\pm 2''$--$10''$ & Larger near horizon, varies nightly \\
+    Reaction time & $\pm 0.5''$--$1''$ & Random, averages to zero \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+```
+
+### Specification Table
+
+For listing instrument or method specifications:
+
+**Column 1:** Parameter name  
+**Column 2:** Value  
+**Column 3:** Year or source context
+
+**Example:**
+
+```latex
+\begin{table}[htbp]
+  \centering
+  \caption{Precision of navigational instruments, circa 1675.}
+  \label{tab:instrument-precision}
+  \small
+  \begin{tabular}{lrr}
+    \toprule
+    \textbf{Instrument} & \textbf{Achievable Precision} & \textbf{Notes} \\
+    \midrule
+    Backstaff & $\pm 15'$--$30'$ & Altitude only; careful observer \\
+    Cross-staff & $\pm 30'$--$60'$ & Altitude only; limited precision \\
+    Astrolabe & $\pm 10'$--$20'$ & Altitude; encumbered by size \\
+    Quadrant & $\pm 5'$--$10'$ & Large format; best ground-based \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+```
+
+### Comparison Table
+
+For comparing methods, observations, or approaches:
+
+**Column 1:** Item/method/source  
+**Column 2:** Key metric  
+**Column 3+:** Additional metrics or properties
+
+**Example:**
+
+```latex
+\begin{table}[htbp]
+  \centering
+  \caption{Competing methods for longitude determination, ranked by feasibility (1714).}
+  \label{tab:longitude-methods}
+  \small
+  \begin{tabular}{lllll}
+    \toprule
+    \textbf{Method} & \textbf{Basis} & \textbf{Precision Potential} & \textbf{Observational Burden} & \textbf{Status} \\
+    \midrule
+    Lunar distance & Celestial geometry & High ($\sim 1'$) & Extreme (30 min calculation) & Theoretical \\
+    Jupiter's moons & Orbital mechanics & Perfect (clocks) & Impossible at sea & Impractical \\
+    Magnetic variation & Geophysics & Poor ($\sim 1°$) & Minimal & Unpromising \\
+    Chronometer & Mechanics & High if feasible & Nil (just reading time) & Visionary \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+```
+
+### Caption Pattern
+
+Table captions should embed **context + what's measured**:
+
+```
+[Time/historical period] + [subject of measurement] + [scope]
+```
+
+**Examples:**
+
+- "Error sources in meridian transit observations (Flamsteed era)." 
+- "Precision of navigational instruments, circa 1675."
+- "Competing methods for longitude determination, ranked by feasibility (1714)."
+- "Pendulum clock precision improvements, 1660–1750."
+
+### Table Notes
+
+For supplementary information below tables, use the `\tablenote{}` or `\begin{tablenotes}` environments defined in the preamble:
+
+```latex
+\begin{table}[htbp]
+  ...
+  \begin{tabular}{...}
+    ...
+  \end{tabular}
+  \tablenote{Magnitudes are approximate; values from contemporary sources vary.}
+\end{table}
+```
+
+Or for multiple notes:
+
+```latex
+\begin{table}[htbp]
+  ...
+  \begin{tablenotes}
+    \item Magnitudes are approximate estimates from historical records.
+    \item $'$ denotes arc-minutes; $''$ denotes arc-seconds.
+  \end{tablenotes}
+\end{table}
+```
+
+---
+
+## Part VI: Text and Formatting
 
 ### Chapter and Section Structure
 
@@ -194,7 +445,7 @@ The document uses `memoir` class with sections numbered down to subsection level
 
 ---
 
-## Part IV: LaTeX Source Code Practices
+## Part VII: LaTeX Source Code Practices
 
 ### Clean LaTeX Output: Readability First
 
@@ -275,7 +526,7 @@ Footnotes are automatically numbered and placed at the bottom of the page. The m
 
 ---
 
-## Part V: Figures and Diagrams
+## Part VIII: Figures and Diagrams
 
 ### Photographs and Raster Images
 
@@ -377,7 +628,7 @@ Or load data from a CSV file:
 
 ---
 
-## Part VI: Tables
+## Part IX: Tables
 
 ### Philosophy: Minimal, Professional Design
 
@@ -444,7 +695,7 @@ For tables spanning pages:
 
 ---
 
-## Part VII: Bibliography and Citations
+## Part X: Bibliography and Citations
 
 ### Setup
 
@@ -528,7 +779,7 @@ Output: "(Flamsteed 1725, p. 42)"
 
 ---
 
-## Part VIII: Glossaries and Acronyms
+## Part XI: Glossaries and Acronyms
 
 ### Defining Terms
 
@@ -582,7 +833,7 @@ Output: "The RGO quickly became renowned."
 
 ---
 
-## Part IX: Cross-References and Links
+## Part XII: Cross-References and Links
 
 ### Creating Labels
 
@@ -634,7 +885,7 @@ Output: "Figures 1.1 and 1.2 show the impact."
 
 ---
 
-## Part X: Epigraphs
+## Part XIII: Epigraphs
 
 For chapter-opening quotes:
 
@@ -655,7 +906,7 @@ Epigraphs are optional but encouraged for chapter openings. They set tone and co
 
 ---
 
-## Part XI: Instruments and Technical Description
+## Part XIV: Instruments and Technical Description
 
 ### Describing Instruments
 
@@ -673,7 +924,7 @@ Quantify uncertainty throughout. What were dominant error sources? How did instr
 
 ---
 
-## Part XII: LaTeX Package Reference
+## Part XV: LaTeX Package Reference
 
 ### The Nine Core Packages
 
@@ -791,7 +1042,7 @@ Chapter-opening quotations with proper attribution.
 
 ---
 
-## Part XIII: Common Pitfalls and Solutions
+## Part XVI: Common Pitfalls and Solutions
 
 ### Problem: "Undefined reference to ..."
 
@@ -851,7 +1102,7 @@ Chapter-opening quotations with proper attribution.
 
 ---
 
-## Part XIV: Mathematical Writing Conventions
+## Part XVII: Mathematical Writing Conventions
 
 **Always define notation.** "Let $T$ be the period (in seconds) of the pendulum."
 
@@ -899,7 +1150,7 @@ All intermediate files go to `build/tmp/`. The final PDF is `build/out/measure-o
 
 ---
 
-## Part XVI: Accessibility and Best Practices
+## Part XIX: Accessibility and Best Practices
 
 **Use descriptive labels:** `\label{fig:harrison-chronometer}` (not `fig:1`)
 
@@ -913,7 +1164,7 @@ All intermediate files go to `build/tmp/`. The final PDF is `build/out/measure-o
 
 ---
 
-## Part XVII: File Organization and Workflow
+## Part XX: File Organization and Workflow
 
 - Each chapter in its own file: `src/chapters/01.tex`, `src/chapters/02.tex`, etc.
 - Figures organized by format: `src/figures/jpg/`, `src/figures/png/`, `src/figures/pdf/`
@@ -938,7 +1189,7 @@ Add Chapter 3: Founding the Observatory
 
 ---
 
-## Part XVIII: When to Break These Rules
+## Part XXI: When to Break These Rules
 
 If a situation produces worse output while following these guidelines, **document the exception**:
 
