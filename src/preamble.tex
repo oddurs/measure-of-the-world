@@ -1,11 +1,36 @@
-% Layout / typography
-\usepackage{geometry}
-\geometry{paper=letterpaper, inner=1.5in, outer=1.25in, top=1.25in, bottom=1.25in}
-\usepackage{microtype}
-\microtypesetup{expansion=true, protrusion=true, tracking=true}
+% ===== TYPOGRAPHY (Elements of Typographic Style) =====
+% Paper: US Letter 8.5" x 11"
+% Font: 12pt serif, yields ~65 characters per line (optimal for readability)
+% Margins: Fibonacci-like ratio creates visual balance
 
-% Line spacing via memoir
-\DoubleSpacing
+\usepackage{geometry}
+\geometry{%
+  paper=letterpaper,
+  inner=1.5in,
+  outer=1.25in,
+  top=1.25in,
+  bottom=1.5in,
+  headsep=0.5in,
+  footskip=0.75in%
+}
+
+\usepackage{microtype}
+\microtypesetup{%
+  expansion=true,
+  protrusion=true,
+  tracking=true,
+  kerning=true,
+  spacing=true%
+}
+\SetTracking[context=proof]{encoding=*}{70}
+\microtypecontext{spacing=nonfrench}
+
+% Line height: 1.5× font size (12pt × 1.5 = 18pt leading)
+\linespread{1.1}\selectfont
+
+% Paragraph spacing
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.75\baselineskip}
 
 % Math
 \usepackage{amsmath,amssymb,mathtools}
@@ -29,35 +54,69 @@
 \usepackage{cleveref}
 \hypersetup{
   colorlinks=true,
-  linkcolor=blue,
-  citecolor=blue,
-  urlcolor=blue
+  linkcolor=black,
+  citecolor=black,
+  urlcolor=black
 }
 
-% Tables
-\usepackage{booktabs,longtable}
+% Tables and lists
+\usepackage{booktabs,longtable,enumitem}
 
 % Glossary
 \usepackage{glossaries}
 
-% Epigraphs
+% Epigraphs and decorative elements
 \usepackage{epigraph}
+\setlength{\epigraphwidth}{0.6\textwidth}
+\setlength{\epigraphrule}{0pt}
+\setlength{\beforeepigraphskip}{1.5\baselineskip}
+\setlength{\afterepigraphskip}{1.5\baselineskip}
 
-% Memoir niceties
+% Memoir configuration
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
 
-% Chapter and heading styling (Elements of Typographic Style)
-\renewcommand{\chapnamefont}{\normalfont\scshape\large}
-\renewcommand{\chapnumfont}{\normalfont\scshape\large}
-\renewcommand{\chaptitlefont}{\normalfont\scshape\Large}
-\setlength{\beforechapskip}{-0.5cm}
-\setlength{\afterchapskip}{1.5cm}
+% ===== HEADING HIERARCHY (Typographic Scale 1.2×) =====
+% Chapter (18pt), Section (14.4pt), Subsection (13pt), Body (12pt)
 
-% Section and subsection styling
-\setsecheadstyle{\normalfont\scshape\large}
-\setsubsecheadstyle{\normalfont\itshape\normalsize}
-\setsubsubsecheadstyle{\normalfont\itshape\small}
+% Chapter: 16-18pt small caps, strong visual presence
+\renewcommand{\chapnamefont}{\normalfont\scshape\fontsize{16}{19}\selectfont}
+\renewcommand{\chapnumfont}{\normalfont\scshape\fontsize{16}{19}\selectfont}
+\renewcommand{\chaptitlefont}{\normalfont\scshape\fontsize{18}{21.6}\selectfont}
+\setlength{\beforechapskip}{1.5\baselineskip}
+\setlength{\afterchapskip}{1.5\baselineskip}
+\setlength{\midchapskip}{0pt}
+
+% Section: 14pt small caps, secondary hierarchy
+\setsecheadstyle{\normalfont\scshape\fontsize{14}{16.8}\selectfont}
+\setbeforesecskip{1.25\baselineskip}
+\setaftersecskip{0.75\baselineskip}
+
+% Subsection: 12pt italic, tertiary hierarchy
+\setsubsecheadstyle{\normalfont\itshape\fontsize{12}{14.4}\selectfont}
+\setbeforesubsecskip{1.1\baselineskip}
+\setaftersubsecskip{0.6\baselineskip}
+
+% Subsubsection: 12pt italic, minimal emphasis
+\setsubsubsecheadstyle{\normalfont\itshape\fontsize{12}{14.4}\selectfont}
+
+% ===== LISTS AND ENUMERATED ELEMENTS =====
+% Proper spacing for lists following typographic hierarchy
+\setlist[itemize]{%
+  topsep=0.75\baselineskip,
+  itemsep=0.5\baselineskip,
+  parsep=0pt%
+}
+\setlist[enumerate]{%
+  topsep=0.75\baselineskip,
+  itemsep=0.5\baselineskip,
+  parsep=0pt%
+}
+
+% ===== TABLE TYPOGRAPHY =====
+% Tables should be compact but readable
+\setlength{\LTpre}{0.5\baselineskip}
+\setlength{\LTpost}{0.5\baselineskip}
 
 % Treat common "badness" as errors (strict builds)
 % NOTE: Commented out during initial development to allow build with incomplete
