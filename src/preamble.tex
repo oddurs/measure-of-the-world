@@ -25,7 +25,7 @@
   top=1.5in,                 % Top margin: 1.5 inches
   bottom=1.75in,             % Bottom margin: 1.75 inches
   headsep=0.5in,             % Distance from header to body text
-  footskip=0.75in%           % Distance from baseline to footer
+  footskip=0.5in%            % Distance from baseline to footer (reduced for less space above)
 }
 
 % =====================================================================
@@ -181,7 +181,10 @@
 
 % Package: enumitem - Fine-grained list control
 % Provides [noitemsep], [nolistsep] and spacing customization
-\usepackage{booktabs,longtable,enumitem}
+
+% Package: caption - Enhanced caption formatting
+% Provides \captionsetup for customizing figure and table captions
+\usepackage{booktabs,longtable,enumitem,caption}
 
 % =====================================================================
 % SECTION 9: GLOSSARIES AND ACRONYMS
@@ -408,6 +411,11 @@
   \end{table}%
 }
 
+% --------- TABLE CAPTION STYLING ---------
+% Captions are set in small font (like footnotes) for visual hierarchy
+% Font is slightly smaller than body text to visually subordinate the caption
+\captionsetup{font=small,labelfont=small,justification=centering}
+
 % =====================================================================
 % SECTION 16: HEADER AND FOOTER TYPOGRAPHY
 % =====================================================================
@@ -468,7 +476,34 @@
 \newcommand{\marginnotesep}{0.25in}
 
 % =====================================================================
-% END OF PREAMBLE
+% SECTION 18: FOOTNOTE STYLING
+% =====================================================================
+% Footnotes provide expanded commentary and context without disrupting narrative
+
+% Footnote rule: thin horizontal divider between text and footnotes
+% Color: dark gray (#333333), with padding above and below
+\renewcommand{\footnoterule}{%
+  \kern -3pt
+  \color[HTML]{333333}\hrule width 2in height 0.5pt%
+  \kern 2.86pt}
+
+% Space before the first footnote (reduced from default)
+\setlength{\skip\footins}{0.5\baselineskip}
+
+% Space between individual footnotes (3pt as requested)
+\setlength{\footnotesep}{3pt}
+
+% Footnote font: slightly smaller than body text but readable
+\renewcommand{\footnotesize}{\fontsize{10}{12}\selectfont}
+
+% =====================================================================
+% SECTION 19: FOOTER SPACING
+% =====================================================================
+% Reduce space above footer to bring it closer to body text
+
+% Existing footskip (distance from baseline to footer): currently 0.75in
+% Adjust if needed for tighter footer positioning
+% (This is set in \geometry{} command in Section 1; modify there if needed)
 % =====================================================================
 % All document-wide settings are now complete. The document class,
 % typography, spacing, colors, and styling are now ready for use.
