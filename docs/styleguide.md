@@ -194,7 +194,88 @@ The document uses `memoir` class with sections numbered down to subsection level
 
 ---
 
-## Part IV: Figures and Diagrams
+## Part IV: LaTeX Source Code Practices
+
+### Clean LaTeX Output: Readability First
+
+The source code is read by humans. Preserve its clarity and maintainability:
+
+**Omit unnecessary marks and separators.** Do not use `---` or `***` or other decorative marks to separate sections. These clutter the source code and add no semantic meaning. Let section headings (`\section{}`, `\subsection{}`) convey organization. The typeset document handles visual hierarchy; the source code should be lean.
+
+**Minimize excessive blank lines.** A single blank line between paragraphs is sufficient. Multiple carriage returns make the source harder to scan and edit. Reserve white space for logical grouping:
+- One blank line between paragraphs
+- One blank line before section headings
+- No blank lines within equations or command sequences
+- No trailing whitespace at line ends
+
+**Bad practice:**
+```latex
+This is a paragraph.
+
+
+This is another paragraph after excessive whitespace.
+
+---
+
+Another separation with decorative marks.
+
+\section{Next Section}
+```
+
+**Good practice:**
+```latex
+This is a paragraph.
+
+This is another paragraph with proper spacing.
+
+\section{Next Section}
+```
+
+**Rationale:** The LaTeX source is itself a document. It should be scannable, editable, and maintainable. The compiled PDF handles all display concerns; the `.tex` file is for human authors and future editors. Clean source code saves hours in collaborative editing and debugging.
+
+### Footnotes for Extended Commentary
+
+Use footnotes to expand on topics without disrupting narrative flow. Footnotes are ideal for:
+- **Technical asides:** Clarifications that are interesting but not essential to the argument
+- **Historical details:** Context, anecdotes, or biographical information interesting but tangential
+- **Related concepts:** References to related topics not fully developed in this chapter
+- **Caveats and qualifications:** Conditions, exceptions, or nuances that would awkwardly interrupt prose if placed inline
+
+**Example usage:**
+
+```latex
+The mural arc's precision of ten arc-seconds seems modest by modern standards,\footnote{Modern
+telescopes achieve sub-arcsecond precision routinely. The achievement lies not in absolute
+precision but in the systematic approach---averaging hundreds of observations and quantifying
+error sources---that made Flamsteed's catalog reliable for a century.} but it represented a
+tenfold improvement over Tycho Brahe's work.
+```
+
+**When to use footnotes:**
+- Explanatory comments (definitions of period terminology, clarifications of historical context)
+- Comparative context (how something compares to modern practice without distracting from the main narrative)
+- Quantitative caveats or qualifications that merit mention but interrupt the main text
+- Acknowledgment of scholarly debate or historiographical nuance
+
+**When NOT to use footnotes:**
+- Essential arguments (these belong in the main text)
+- Citations (use `\citep{}` in parentheses or `\citet{}` as subject; bibliography handles citations)
+- Simple definitions that fit naturally in parentheses or appositives
+- Anything longer than 2-3 sentences (move to main text or appendix instead)
+
+**Syntax:**
+
+```latex
+Flamsteed's catalog was meticulous.\footnote{So meticulous that some entries contain observations
+separated by decades, all averaged together to produce a single final position.} The care he took
+was essential to the work's subsequent influence.
+```
+
+Footnotes are automatically numbered and placed at the bottom of the page. The memoir class manages numbering and placement across pages.
+
+---
+
+## Part V: Figures and Diagrams
 
 ### Photographs and Raster Images
 
@@ -296,7 +377,7 @@ Or load data from a CSV file:
 
 ---
 
-## Part V: Tables
+## Part VI: Tables
 
 ### Philosophy: Minimal, Professional Design
 
@@ -363,7 +444,7 @@ For tables spanning pages:
 
 ---
 
-## Part VI: Bibliography and Citations
+## Part VII: Bibliography and Citations
 
 ### Setup
 
@@ -447,7 +528,7 @@ Output: "(Flamsteed 1725, p. 42)"
 
 ---
 
-## Part VII: Glossaries and Acronyms
+## Part VIII: Glossaries and Acronyms
 
 ### Defining Terms
 
@@ -501,7 +582,7 @@ Output: "The RGO quickly became renowned."
 
 ---
 
-## Part VIII: Cross-References and Links
+## Part IX: Cross-References and Links
 
 ### Creating Labels
 
@@ -553,7 +634,7 @@ Output: "Figures 1.1 and 1.2 show the impact."
 
 ---
 
-## Part IX: Epigraphs
+## Part X: Epigraphs
 
 For chapter-opening quotes:
 
@@ -574,7 +655,7 @@ Epigraphs are optional but encouraged for chapter openings. They set tone and co
 
 ---
 
-## Part X: Instruments and Technical Description
+## Part XI: Instruments and Technical Description
 
 ### Describing Instruments
 
@@ -592,7 +673,7 @@ Quantify uncertainty throughout. What were dominant error sources? How did instr
 
 ---
 
-## Part XI: LaTeX Package Reference
+## Part XII: LaTeX Package Reference
 
 ### The Nine Core Packages
 
@@ -710,7 +791,7 @@ Chapter-opening quotations with proper attribution.
 
 ---
 
-## Part XII: Common Pitfalls and Solutions
+## Part XIII: Common Pitfalls and Solutions
 
 ### Problem: "Undefined reference to ..."
 
@@ -770,7 +851,7 @@ Chapter-opening quotations with proper attribution.
 
 ---
 
-## Part XIII: Mathematical Writing Conventions
+## Part XIV: Mathematical Writing Conventions
 
 **Always define notation.** "Let $T$ be the period (in seconds) of the pendulum."
 
@@ -790,7 +871,7 @@ Not `sin`, `cos`, etc. in math mode.
 
 ---
 
-## Part XIV: Build System and Workflow
+## Part XV: Build System and Workflow
 
 ### What Happens When You Run `make build`
 
@@ -818,7 +899,7 @@ All intermediate files go to `build/tmp/`. The final PDF is `build/out/measure-o
 
 ---
 
-## Part XV: Accessibility and Best Practices
+## Part XVI: Accessibility and Best Practices
 
 **Use descriptive labels:** `\label{fig:harrison-chronometer}` (not `fig:1`)
 
@@ -832,7 +913,7 @@ All intermediate files go to `build/tmp/`. The final PDF is `build/out/measure-o
 
 ---
 
-## Part XVI: File Organization and Workflow
+## Part XVII: File Organization and Workflow
 
 - Each chapter in its own file: `src/chapters/01.tex`, `src/chapters/02.tex`, etc.
 - Figures organized by format: `src/figures/jpg/`, `src/figures/png/`, `src/figures/pdf/`
@@ -857,7 +938,7 @@ Add Chapter 3: Founding the Observatory
 
 ---
 
-## Part XVII: When to Break These Rules
+## Part XVIII: When to Break These Rules
 
 If a situation produces worse output while following these guidelines, **document the exception**:
 
