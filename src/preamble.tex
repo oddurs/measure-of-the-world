@@ -80,15 +80,25 @@
 % --------- GLOBAL MATH SPACING CONTROL ---------
 % Fixed spacing: all display math formulas use consistent 12pt spacing
 % This ensures visual height consistency across all equations
-% The \strut in \everydisplay ensures baseline alignment
-\setlength{\abovedisplayskip}{12pt}
-\setlength{\belowdisplayskip}{12pt}
-\setlength{\abovedisplayshortskip}{12pt}
-\setlength{\belowdisplayshortskip}{12pt}
+% Spacing is LOCKED (no stretch/shrink) to prevent variable heights
+\setlength{\abovedisplayskip}{12pt plus 0pt minus 0pt}
+\setlength{\belowdisplayskip}{12pt plus 0pt minus 0pt}
+\setlength{\abovedisplayshortskip}{12pt plus 0pt minus 0pt}
+\setlength{\belowdisplayshortskip}{12pt plus 0pt minus 0pt}
 
-% Consistent formula heights: add invisible vertical strut to every display
-% This prevents formulas with different content heights from looking misaligned
-\everydisplay{\displaystyle\strut}
+% IMPORTANT: For consistent formula heights across the document:
+% 1. Use \[ ... \] for display math (preferred - uses fixed spacing above)
+% 2. All equations will have exactly 12pt above and below
+% 3. Formulas with varying content heights will still align consistently
+% 4. If a specific formula needs different spacing, wrap it:
+%    \vspace{-6pt}\[...\]\vspace{-6pt}  to reduce spacing by 6pt above/below
+
+% Configure math spacing around display formulas
+% Use these commands to control display math spacing:
+%   \displaystyle     - Full-size math (default in display mode)
+%   \textstyle        - Inline-size math (smaller, more compact)
+%   \scriptstyle      - Even smaller (for sub/superscripts)
+%   \scriptscriptstyle - Smallest (for nested scripts)
 
 % Configure math spacing around display formulas
 % Use these commands to control display math spacing:
