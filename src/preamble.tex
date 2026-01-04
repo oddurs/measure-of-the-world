@@ -202,6 +202,10 @@
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
 
+% Configure chapter opening pages to use the 'chapter' page style
+% instead of memoir's default 'plain' style (which centers page numbers)
+\aliaspagestyle{chapter}{chapter}
+
 % Disable memoir's built-in paragraph break decorations
 % By default, memoir adds a small ornamental rule between paragraphs
 % This command disables it for a cleaner appearance
@@ -301,6 +305,16 @@
 \makeevenhead{frontmatter}{}{}{}             % No header (left page)
 \makeoddfoot{frontmatter}{}{\footerpagenumber{\thepage}}{} % Centered (recto)
 \makeevenfoot{frontmatter}{}{\footerpagenumber{\thepage}}{}% Centered (verso)
+
+% CHAPTER OPENING PAGE STYLE
+% Chapter opening pages should have page numbers in the outer corner,
+% not centered. This overrides memoir's default centered behavior.
+\makepagestyle{chapter}
+\makeheadrule{chapter}{\textwidth}{0pt}     % No rule
+\makeoddhead{chapter}{}{}{}                 % No header (right page)
+\makeevenhead{chapter}{}{}{}                % No header (left page)
+\makeoddfoot{chapter}{}{}{\footerpagenumber{\thepage}}   % Right corner (recto)
+\makeevenfoot{chapter}{\footerpagenumber{\thepage}}{}{}  % Left corner (verso)
 
 % =====================================================================
 % SECTION 14: LIST FORMATTING
