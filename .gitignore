@@ -11,6 +11,7 @@ Thumbs.db
 # Build artifacts
 /build/tmp/
 /build/out/
+/src/build/  # Ensure no build artifacts in src/
 
 # LaTeX intermediates (belt & suspenders)
 *.aux

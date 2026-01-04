@@ -1,8 +1,9 @@
 # latexmkrc configuration for "The Measure of the World"
 # Handles output directories, biber, glossaries, and strict error handling
+# All build artifacts are output to the project root's build/ directory
 
-$out_dir = "build/tmp";
-$pdf_dir = "build/out";
+$out_dir = "../build/tmp";
+$pdf_dir = "../build/out";
 
 # Use pdflatex engine with strict error handling
 $pdflatex = "pdflatex -interaction=nonstopmode -halt-on-error -file-line-error %O %S";
@@ -15,7 +16,7 @@ $biber = "biber %O %B";
 add_cus_dep('glo', 'gls', 0, 'makeglossaries');
 sub makeglossaries {
   my ($base_name, $path) = fileparse( $_[0] );
-  my $result = system("makeglossaries -d build/tmp \"$base_name\" 2>/dev/null");
+  my $result = system("makeglossaries -d ../build/tmp \"$base_name\" 2>/dev/null");
   # Ignore errors from empty glossaries (return code 1 is acceptable)
   return 0 if $result == 256; # makeglossaries returns 1 (256 in perl) for empty glossaries
   return $result;
