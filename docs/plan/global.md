@@ -102,7 +102,178 @@ You are writing a technical history of the Royal Observatory, Greenwich. The boo
 
 ---
 
-## VII. Figures and Diagrams: Use Them Liberally
+## VII. Chapter Roles and Mathematical Depth
+
+Not all chapters have the same balance of narrative, mathematics, and analysis. Different chapter types require different ratios of exposition.
+
+### Chapter Role Categories
+
+**Narrative-Driven Chapters** (Examples: 1, 2, 3, 11)
+- **Purpose:** Establish context, introduce people and problems, set historical stakes
+- **Narrative:** 55–60% of chapter content
+- **Mathematics:** 15–20% (light derivations, mostly explanatory)
+- **Analysis/Context:** 25–30%
+- **Examples per chapter:** 1–2 worked examples, often brief
+- **Diagrams per chapter:** 2–4
+- **Guidance:** Include full exposition of major concepts but don't dwell on algebraic details. One thorough worked example per chapter is sufficient. Emphasize narrative flow over mathematical rigor.
+
+**Technical-Method Chapters** (Examples: 4, 5, 6, 8, 9, 12, 13)
+- **Purpose:** Develop a specific method, instrument, or mathematical technique
+- **Narrative:** 25–30% (supporting context, human stakes)
+- **Mathematics:** 50–60% (detailed derivations, multiple worked examples)
+- **Analysis/Context:** 15–25%
+- **Examples per chapter:** 3–5 worked examples with real data
+- **Diagrams per chapter:** 4–8, often multi-step or detailed
+- **Guidance:** Reader expects complete mathematical exposition. Include all six steps of the exposition sequence (from styleguide Part III) for each major concept. Don't abbreviate algebraic steps.
+
+**Historiographical Chapters** (Examples: 7, 10, 18, 19)
+- **Purpose:** Examine competing interpretations, evaluate evidence, discuss how historians have understood a period
+- **Narrative:** 35–40% (historical events and contexts)
+- **Mathematics:** 10–15% (minimal; illustrative only)
+- **Analysis/Historiography:** 50–55% (scholarly debate, evidence evaluation, competing narratives)
+- **Examples per chapter:** 0–2 brief worked examples if needed for context
+- **Diagrams per chapter:** 1–3, mostly for clarification
+- **Guidance:** Focus on engaging with historical scholarship. Present competing views neutrally, then offer nuanced assessment. Mathematics appears to support claims but isn't the chapter's primary focus. Dense citations to primary sources and historiographical scholarship.
+
+**Synthesis/Overview Chapters** (Examples: 20, 25)
+- **Purpose:** Draw together multiple threads, show long-term patterns, assess overall impact
+- **Narrative:** 40–45%
+- **Mathematics:** 5–10% (summary level only)
+- **Analysis/Context:** 45–50%
+- **Examples per chapter:** Brief summaries of earlier examples, no new detailed worked examples
+- **Diagrams per chapter:** 1–3, comparative or summary in nature
+- **Guidance:** Focus on synthesis and big-picture understanding. Reference earlier chapters with \cref{}. Avoid deep technical dives; instead, show connections and implications.
+
+### Decision Framework for Authors
+
+Before starting a chapter, ask:
+
+1. **What is this chapter's primary purpose?** 
+   - If establishing context or introducing problems: **Narrative-Driven**
+   - If developing a technique or instrument: **Technical-Method**
+   - If evaluating competing interpretations: **Historiographical**
+   - If showing patterns across time: **Synthesis**
+
+2. **How much mathematics will I need?**
+   - Narrative-Driven: sketch and explain, light detail
+   - Technical-Method: full exposition, algebraic steps, derivations
+   - Historiographical: minimal; use mainly for context
+   - Synthesis: very light; summative only
+
+3. **How many worked examples do I need?**
+   - Narrative-Driven: 1–2, brief
+   - Technical-Method: 3–5, detailed, with real historical data
+   - Historiographical: 0–2, only if directly relevant to argument
+   - Synthesis: 0–1, summative
+
+4. **What's my citation density?**
+   - All chapters: dense, multiple per page
+   - Technical-Method: especially dense in mathematics sections
+   - Historiographical: very dense, cite all competing interpretations
+
+---
+
+## VIII. Historiography and Scholarly Debate
+
+**Treat history as an argument.** History is not a sequence of facts that happened and then were recorded. It is a contested field where scholars interpret evidence differently. Your role as author is to acknowledge this reality and engage with it thoughtfully.
+
+### When to Include Historiographical Perspective
+
+Include historiographical discussion when:
+
+- **Interpretations genuinely diverge.** Multiple credible scholars disagree on meaning or causation.
+- **The disagreement illuminates the subject.** The debate reveals something about the period, the people, or the problem.
+- **You have evidence to evaluate.** Don't describe debates you can't assess; instead, cite works that present the evidence.
+
+Examples from Chapters 1–7:
+
+- **Ch. 3 (Flamsteed's Funding):** How much financial hardship did Flamsteed really face? Was he the victim of royal neglect, or a man managing modest resources in an impoverished state? Sources differ; acknowledge both views and present evidence.
+
+- **Ch. 7 (Board Historiography):** "Traditional narrative" (Harrison vs. obstructionist Board) versus "revisionist view" (Board's skepticism was reasonable given evidence). Present both, then offer nuanced assessment.
+
+### Structural Pattern for Including Historiography
+
+**Three-part movement:** Traditional view → Revisionist view → Synthesis
+
+Example template:
+
+For two centuries, historians described [subject] as [traditional interpretation]. [Citation for traditional view]. This narrative emphasized [what traditional view highlights].
+
+More recent scholarship questions this account. [Revisionist historians] have argued that [alternative interpretation], citing [specific evidence]. [Citations for revisionist view]. This reinterpretation draws attention to [what revisionist view highlights].
+
+A careful reading of [primary sources or careful scholars] suggests [nuanced synthesis]. [Specific evidence for synthesis]. The truth seems to lie in [how views complement or overlap].
+
+### Timing in the Chapter
+
+**Where does historiographical discussion belong?**
+
+- **If the historiography is essential to the chapter's argument:** Include it mid-chapter, where it logically arises.
+- **If the historiography is context but not essential:** Include it late in the section, after technical exposition.
+- **If the historiography is tangential:** Defer to a footnote or back reference.
+
+Example from Ch. 7: The historiography section came mid-chapter, *after* explaining the Board's composition and institutional context. This ordering let readers understand the facts before grappling with their interpretation.
+
+### Cautions
+
+- **Don't present historiography as trivia.** Include it only when it illuminates the subject.
+- **Don't hide behind "some say."** Name the scholars or works; provide citations.
+- **Don't assume the reader knows the debate.** Explain each view clearly and fairly.
+- **Don't overstate disagreement.** Most scholarly disagreements are subtle refinements, not polar opposites.
+
+---
+
+## IX. Appendix Linking and Deferred Content
+
+### Philosophy
+
+Technical sufficiency in the main text; complete detail in appendices. Readers should be able to follow the main argument without consulting appendices, but appendices should provide everything for readers wanting deeper understanding.
+
+### When to Defer Content to Appendix
+
+**Defer to appendix if:**
+
+- The content is essential for completeness but not essential for understanding the narrative.
+- The content would interrupt the chapter flow if included inline.
+- Multiple chapters reference the same detailed material (centralize it).
+- The content is a lengthy worked example, full derivation, or historical document.
+
+**Keep inline if:**
+
+- The content is essential to the argument.
+- Removing it would leave readers confused.
+- It's brief enough not to disrupt flow (under 10 lines of text or one equation).
+
+### Examples of Appendix Content
+
+- **Full worked examples:** A chapter's data reduction could be expanded to an appendix showing all intermediate steps.
+- **Lengthy derivations:** The full derivation of parallax formulas or nutation coefficients.
+- **Primary source documents:** Full transcriptions of letters, excerpts from *Philosophical Transactions*, Board of Longitude minutes.
+- **Historical data tables:** Extended comparison tables (all 50 stars vs. main text's 5).
+- **Mathematical detail:** Proofs, alternative derivations, extension to 3D cases.
+- **Instrument specifications:** Detailed mechanical drawings, material specifications, calibration procedures.
+
+### Linking to Appendices Naturally
+
+**Bad:** "See Appendix A for the full calculation."  
+**Good:** "The complete reduction of this observation, showing all intermediate steps, appears in Appendix A; here we focus on the method and key steps."
+
+**Pattern for natural appendix reference:**
+
+[Main text describes method and gives key steps with one worked example]. Observers who wished to master the technique worked through complete examples like the one detailed in \cref{app:flamsteed-reduction}, where every step—clock correction, time conversion, refraction correction, coordinate transformation—is shown with actual numbers from Flamsteed's ledger.
+
+This structure lets the reader stay engaged in the narrative while knowing where to find deeper detail.
+
+### Appendix Organization
+
+- **Appendix A–C:** Technical (derivations, worked examples, mathematical detail)  
+- **Appendix D–E:** Historical documents (excerpts from primary sources, transcriptions)  
+- **Appendix F–G:** Data and tables (extended reference tables, instrument specifications)  
+- **Appendix H–J:** Biographical (brief biographies of key figures, if separate section is needed)  
+- **Appendix K:** Bibliography (if separate from main bibliography)
+
+---
+
+## X. Figures and Diagrams: Use Them Liberally
 
 **Use figures, diagrams, and tables plentifully.** They are not supplementary; they are primary evidence. Include:
 
@@ -135,7 +306,7 @@ Later, replace `placeholder.pdf` with the actual image and update the caption. T
 
 ---
 
-## VIII. Information Architecture
+## XI. Information Architecture
 
 **Appendices.** Reserve for:
 - Extended derivations that would interrupt narrative flow
@@ -146,7 +317,7 @@ Later, replace `placeholder.pdf` with the actual image and update the caption. T
 
 ---
 
-## IX. Prose and Tone
+## XII. Prose and Tone
 
 **Warm but precise.** Enthusiasm for an elegant mechanism or a clever proof can show—but earn it with rigor, not exclamation points.
 
@@ -160,7 +331,7 @@ Later, replace `placeholder.pdf` with the actual image and update the caption. T
 
 ---
 
-## X. Avoid
+## XIII. Avoid
 
 - Anecdotes without analytical payoff
 - Claims without citation
@@ -176,7 +347,7 @@ Later, replace `placeholder.pdf` with the actual image and update the caption. T
 
 ---
 
-## XI. Literary Models and Hybrid Voice
+## XIV. Literary Models and Hybrid Voice
 
 This book synthesizes techniques from several master science writers. Think of it as a deliberate hybrid:
 
@@ -202,7 +373,7 @@ Imagine: Gleick's intellectual ambition and rigor as the foundation. Sobel's acc
 
 ---
 
-## XII. Before Writing Any Chapter
+## XV. Before Writing Any Chapter
 
 1. **Read this global guide** in full before starting
 2. **Locate the chapter materials**
@@ -214,7 +385,7 @@ Imagine: Gleick's intellectual ambition and rigor as the foundation. Sobel's acc
 
 ---
 
-## XIII. Writing a Chapter
+## XVI. Writing a Chapter
 
 ### Step 1: Set Up the Prompt
 
@@ -295,7 +466,7 @@ If Chapter 8 introduces "clearing the distance":
 
 ---
 
-## XIV. Quality Checklist
+## XVII. Quality Checklist
 
 Before finalizing any chapter, verify:
 
@@ -341,7 +512,7 @@ Before finalizing any chapter, verify:
 
 ---
 
-## XV. Sample Prompt for Generating a Chapter
+## XVIII. Sample Prompt for Generating a Chapter
 
 ```
 I am writing Chapter 12 of "The Measure of the World," a technical history of the Royal Observatory, Greenwich.
@@ -369,7 +540,7 @@ Please write the complete chapter.
 
 ---
 
-## XVI. Sample Passage Architecture
+## XIX. Sample Passage Architecture
 
 A section on stellar aberration might proceed:
 
