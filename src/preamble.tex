@@ -421,6 +421,28 @@
 % Font is slightly smaller than body text to visually subordinate the caption
 \captionsetup{font=small,labelfont=small,justification=centering}
 
+% --------- TABLE NOTES STYLING ---------
+% Table notes appear below the table in the same style as captions
+% Use \tablenote{} for single notes or \begin{tablenotes} for multiple
+\newcommand{\tablenote}[1]{%
+  \par\vspace{6pt}%
+  {\small #1}%
+}
+
+% Multiple table notes environment (like footnotes within tables)
+\newenvironment{tablenotes}{%
+  \par\vspace{6pt}%
+  \small%
+  \begin{list}{}{%
+    \setlength{\leftmargin}{0pt}%
+    \setlength{\itemindent}{0pt}%
+    \setlength{\labelsep}{0.5em}%
+  }%
+  \item%
+}{%
+  \end{list}%
+}
+
 % =====================================================================
 % SECTION 16: HEADER AND FOOTER TYPOGRAPHY
 % =====================================================================
