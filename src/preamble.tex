@@ -26,11 +26,11 @@
 \microtypecontext{spacing=nonfrench}
 
 % Line height: 1.5× font size (12pt × 1.5 = 18pt leading)
-\linespread{1}\selectfont
+\linespread{1.25}\selectfont
 
 % Paragraph spacing
 \setlength{\parindent}{16pt}
-\setlength{\parskip}{0.1\baselineskip}
+\setlength{\parskip}{0\baselineskip}
 
 % Math
 \usepackage{amsmath,amssymb,mathtools}
@@ -83,9 +83,9 @@
 \renewcommand{\chapnamefont}{\normalfont\scshape\fontsize{16}{19}\selectfont}
 \renewcommand{\chapnumfont}{\normalfont\scshape\fontsize{16}{19}\selectfont}
 \renewcommand{\chaptitlefont}{\normalfont\scshape\fontsize{18}{21.6}\selectfont}
-\setlength{\beforechapskip}{1.5\baselineskip}
+\setlength{\beforechapskip}{10\baselineskip}
 \setlength{\afterchapskip}{1.5\baselineskip}
-\setlength{\midchapskip}{0pt}
+\setlength{\midchapskip}{6pt}
 
 % Section: 14pt small caps, secondary hierarchy
 \setsecheadstyle{\normalfont\scshape\fontsize{14}{16.8}\selectfont}
@@ -99,6 +99,36 @@
 
 % Subsubsection: 12pt italic, minimal emphasis
 \setsubsubsecheadstyle{\normalfont\itshape\fontsize{12}{14.4}\selectfont}
+
+% ===== PAGE STYLES (Headers, Footers, Page Numbers) =====
+% Configure memoir page styles using typography variables
+
+% Define page styles for main matter
+\makepagestyle{mainmatter}
+% Header setup for main matter pages
+\makeheadrule{mainmatter}{\textwidth}{\headerrulethickness}
+% Verso (left) page headers - chapter title
+\makeoddhead{mainmatter}{\rectoheader{\rightmark}}{}{\footerpagenumber{\thepage}}
+% Recto (right) page headers - chapter name
+\makeevenhead{mainmatter}{\footerpagenumber{\thepage}}{}{\versoheader{\leftmark}}
+% Footer setup - all blank
+\makeoddfoot{mainmatter}{}{}{}
+\makeevenfoot{mainmatter}{}{}{}
+
+% Configure chapter marks for headers
+\createmark{chapter}{left}{shownumber}{}{. \ }
+\createmark{section}{right}{shownumber}{}{. \ }
+
+% Set default page style
+\pagestyle{mainmatter}
+
+% Title page and front matter style (no headers, centered page numbers)
+\makepagestyle{frontmatter}
+\makeheadrule{frontmatter}{\textwidth}{0pt}
+\makeoddhead{frontmatter}{}{}{}
+\makeevenhead{frontmatter}{}{}{}
+\makeoddfoot{frontmatter}{}{\footerpagenumber{\thepage}}{}
+\makeevenfoot{frontmatter}{}{\footerpagenumber{\thepage}}{}
 
 % ===== LISTS AND ENUMERATED ELEMENTS =====
 % Proper spacing for lists following typographic hierarchy
@@ -115,13 +145,66 @@
 
 % ===== TABLE TYPOGRAPHY =====
 % Tables should be compact but readable
-\setlength{\LTpre}{0.5\baselineskip}
-\setlength{\LTpost}{0.5\baselineskip}
+\setlength{\LTpre}{1\baselineskip}
+\setlength{\LTpost}{1\baselineskip}
 
-% Treat common "badness" as errors (strict builds)
-% NOTE: Commented out during initial development to allow build with incomplete
-% glossaries and empty chapters. Uncomment once document is more complete.
-% \usepackage{etoolbox}
-% \makeatletter
+% Table typography variables
+% Body text size for table content
+\newcommand{\tabletextsize}{\small}
+% Row height multiplier (default 1.0)
+\newcommand{\tablerowheight}{1.0}
+% Column padding (left/right)
+\newcommand{\tablecolumnpadding}{0.5em}
+% Top/bottom rule thickness
+\newcommand{\tabletopruletrim}{0.08em}
+\newcommand{\tablebottomruletrim}{0.08em}
+% Mid-table rule thickness (lighter than top/bottom)
+\newcommand{\tablemidruletrim}{0.05em}
+% Spacing before table (relative to baseline)
+\newcommand{\tablebeforeskip}{0.75\baselineskip}
+% Spacing after table (relative to baseline)
+\newcommand{\tableafterskip}{0.75\baselineskip}
+% Caption to table spacing
+\newcommand{\tablecaptionspacing}{0.5\baselineskip}
+% Booktabs array column separator
+\setlength{\heavyrulewidth}{\tabletopruletrim}
+\setlength{\lightrulewidth}{\tablemidruletrim}
+\setlength{\cmidrulewidth}{\tablemidruletrim}
+
+% ===== PAGE HEADER AND FOOTER TYPOGRAPHY =====
+% Header text styling and spacing
+\newcommand{\headerfont}{\normalfont\itshape\fontsize{11}{13.2}\selectfont}
+\newcommand{\footerfont}{\normalfont\fontsize{10}{12}\selectfont}
+
+% Page number styling
+\newcommand{\pagenumberfont}{\normalfont\fontsize{11}{13.2}\selectfont}
+\newcommand{\pagenumberformat}{\pagenumberfont}
+
+% Header margins and spacing
+\newcommand{\headerindent}{0.25in}
+\newcommand{\headermargin}{0.1875in}
+
+% Footer margins and spacing
+\newcommand{\footerindent}{0.25in}
+\newcommand{\footermargin}{0.1875in}
+
+% Separator rules in headers/footers
+\newcommand{\headerrulethickness}{0.5pt}
+\newcommand{\footerrulethickness}{0.5pt}
+
+% Running head content sizing
+\newcommand{\runningheadskip}{0.5\baselineskip}
+
+% Define running header styling for left (verso) and right (recto) pages
+\newcommand{\versoheader}[1]{\headerfont #1}
+\newcommand{\rectoheader}[1]{\headerfont #1}
+\newcommand{\footerpagenumber}[1]{\pagenumberformat #1}
+
+% ===== MARGIN NOTE TYPOGRAPHY =====
+% For sidenotes and margin annotations
+\newcommand{\marginnotesize}{\fontsize{9}{11}\selectfont}
+\newcommand{\marginnotewidth}{1.25in}
+\newcommand{\marginnotesep}{0.25in}
+
 % \pretocmd{\@latex@warning}{\GenericError{}{LaTeX Warning promoted to error}{}{}}{}{}
 % \makeatother
