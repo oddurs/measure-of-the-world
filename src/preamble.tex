@@ -1,196 +1,379 @@
-% ===== TYPOGRAPHY (Elements of Typographic Style) =====
-% Paper: US Letter 8.5" x 11"
-% Font: 12pt serif, yields ~65 characters per line (optimal for readability)
-% Margins: Fibonacci-like ratio creates visual balance
+% =====================================================================
+% PREAMBLE: Complete typographic configuration and customization
+% =====================================================================
+% This document uses principles from "The Elements of Typographic Style"
+% by Robert Bringhurst. All spacing, sizing, and layout choices are
+% intentional and can be customized via the variables defined below.
+%
+% Paper: US Letter (8.5" × 11")
+% Font: 12pt serif body text
+% Line length: ~65 characters per line (optimal readability)
+% Margins: Harmonious proportions using baseline grid
+% =====================================================================
 
+% =====================================================================
+% SECTION 1: DOCUMENT CLASS AND BASIC FORMATTING
+% =====================================================================
+
+% Package: geometry - Page layout and margins
+% Provides \geometry{} command to set page dimensions, margins, and spacing
 \usepackage{geometry}
 \geometry{%
-  paper=letterpaper,
-  inner=1.5in,
-  outer=1.25in,
-  top=1.25in,
-  bottom=1.5in,
-  headsep=0.5in,
-  footskip=0.75in%
+  paper=letterpaper,        % US Letter: 8.5" × 11"
+  inner=1.75in,              % Inner margin (gutter): 1.75 inches
+  outer=1.5in,               % Outer margin: 1.5 inches
+  top=1.5in,                 % Top margin: 1.5 inches
+  bottom=1.75in,             % Bottom margin: 1.75 inches
+  headsep=0.5in,             % Distance from header to body text
+  footskip=0.75in%           % Distance from baseline to footer
 }
 
+% =====================================================================
+% SECTION 2: MICROTYPE AND CHARACTER-LEVEL TYPOGRAPHY
+% =====================================================================
+
+% Package: microtype - Font expansion, protrusion, tracking, kerning
+% Enables subtle adjustments to letter spacing and alignment
+% for improved typographic color and readability
 \usepackage{microtype}
 \microtypesetup{%
-  expansion=true,
-  protrusion=true,
-  tracking=true,
-  kerning=true,
-  spacing=true%
+  expansion=true,            % Font expansion (±2% of design size)
+  protrusion=true,           % Hanging punctuation and margin kerning
+  tracking=true,             % Adjust letterspacing by context
+  kerning=true,              % Kerning adjustments
+  spacing=true%              % Spacing adjustments
 }
+
+% Tracking context: applies tracking adjustment to proof-reading text
+% Value 70 = 0.07em per 1000pt, very subtle
 \SetTracking[context=proof]{encoding=*}{70}
+
+% Microtype context spacing: prevents excessive spacing after frenchspaced
+% punctuation. Use 'nonfrench' for standard English spacing
 \microtypecontext{spacing=nonfrench}
 
-% Line height: 1.5× font size (12pt × 1.5 = 18pt leading)
+% =====================================================================
+% SECTION 3: LINE SPACING AND PARAGRAPH GEOMETRY
+% =====================================================================
+
+% Line spread: controls vertical line spacing (leading)
+% 1.25 multiplier on 12pt font = 15pt line spread (1.25 × 12 = 15)
+% This is the primary control for document density and readability
 \linespread{1.25}\selectfont
 
-% Paragraph spacing
+% Paragraph indentation: first-line indent (16pt ≈ 1.3em at 12pt)
+% Controls visual paragraph breaks in continuous text
 \setlength{\parindent}{16pt}
+
+% Paragraph skip: spacing between paragraphs (set to 0 to use indents only)
+% If you want paragraph breaks instead of indents, set this to 0.5\baselineskip
 \setlength{\parskip}{0\baselineskip}
 
-% Math
+% =====================================================================
+% SECTION 4: MATHEMATICS AND SCIENTIFIC NOTATION
+% =====================================================================
+
+% Package: amsmath - AMS mathematical typesetting
+% Provides align*, equation*, gather* and other math environments
 \usepackage{amsmath,amssymb,mathtools}
+
+% Configure math spacing
+% Use these commands to control display math spacing:
+%   \displaystyle     - Full-size math (default in display mode)
+%   \textstyle        - Inline-size math (smaller, more compact)
+%   \scriptstyle      - Even smaller (for sub/superscripts)
+%   \scriptscriptstyle - Smallest (for nested scripts)
+
+% Spacing before and after display math environments
+% Adjust these lengths to control white space around formulas
+\setlength{\abovedisplayskip}{0.5\baselineskip}    % Space before display math
+\setlength{\belowdisplayskip}{0.5\baselineskip}    % Space after display math
+\setlength{\abovedisplayshortskip}{0.25\baselineskip}  % Space before short display
+\setlength{\belowdisplayshortskip}{0.25\baselineskip}  % Space after short display
+
+% Inline math spacing (control whitespace around $ ... $ math)
+% \thinmuskip = space around binary operators in inline math (default 3mu)
+% \medmuskip = space around relation operators (default 4mu)
+% \thickmuskip = space around opening/closing delimiters (default 5mu)
+\thinmuskip=3mu plus 1mu minus 1mu       % Fine control for inline spacing
+\medmuskip=4mu plus 2mu minus 2mu        % Medium spacing for relations
+\thickmuskip=5mu plus 5mu minus 5mu      % Thick spacing for delimiters
+
+% Package: gensymb - Generic symbols (degree, micro, ohm, etc.)
+% Provides \degree, \micro, \ohm, \celsius symbols
 \usepackage{gensymb}
+
+% Package: siunitx - SI units and quantities
+% Provides \qty{}{}, \si{}, \num{} commands for proper scientific notation
+% detect-all: auto-detects font settings and applies them to SI output
 \usepackage{siunitx}
 \sisetup{detect-all=true}
 
-% Figures / graphics
+% =====================================================================
+% SECTION 5: FIGURES, GRAPHICS, AND PLOTS
+% =====================================================================
+
+% Package: graphicx - Include and manipulate images
+% Provides \includegraphics{} command for inserting figures
 \usepackage{graphicx}
 \graphicspath{{figures/}{figures/jpg/}{figures/png/}{figures/pdf/}}
 
-% TikZ / plots
+% Package: tikz - Vector graphics drawing language
+% Package: pgfplots - Data plotting library built on tikz
+% Used for creating diagrams, plots, and mathematical visualizations
 \usepackage{tikz,pgfplots}
 \pgfplotsset{compat=1.18}
 
-% Bibliography
+% =====================================================================
+% SECTION 6: BIBLIOGRAPHY AND CITATIONS
+% =====================================================================
+
+% Package: biblatex - Modern bibliography management (requires biber backend)
+% style=authoryear: Uses (Author Year) citation style
+% Can change to 'numeric', 'alphabetic', 'authortitle', etc.
 \usepackage[backend=biber,style=authoryear]{biblatex}
 
-% Links / refs
+% =====================================================================
+% SECTION 7: HYPERLINKS, REFERENCES, AND CROSS-REFERENCES
+% =====================================================================
+
+% Package: hyperref - Hyperlinks and PDF metadata
+% colorlinks=true: Colored links instead of boxes
+% linkcolor=black: Cross-references and internal links in black
+% citecolor=black: Bibliography citations in black
+% urlcolor=black: URLs in black (change to blue for web visibility)
 \usepackage{hyperref}
-\usepackage{cleveref}
-\hypersetup{
+\hypersetup{%
   colorlinks=true,
   linkcolor=black,
   citecolor=black,
-  urlcolor=black
+  urlcolor=black,
+  pdftitle={Measure of the World},
+  pdfauthor={Oddur Snorrason}%
 }
 
-% Tables and lists
+% Package: cleveref - Intelligent cross-referencing
+% Provides \cref{} and \Cref{} for automatic reference labeling
+% \cref{ch:intro} → "chapter 1" | \Cref{sec:method} → "Section 2"
+\usepackage{cleveref}
+
+% =====================================================================
+% SECTION 8: TABLES AND LISTS
+% =====================================================================
+
+% Package: booktabs - Professional table typesetting
+% Provides \toprule, \midrule, \bottomrule for high-quality tables
+% Use instead of default table rules for much better appearance
+
+% Package: longtable - Tables that span multiple pages
+% Provides \begin{longtable} environment with headers/footers per page
+
+% Package: enumitem - Fine-grained list control
+% Provides [noitemsep], [nolistsep] and spacing customization
 \usepackage{booktabs,longtable,enumitem}
 
-% Glossary
+% =====================================================================
+% SECTION 9: GLOSSARIES AND ACRONYMS
+% =====================================================================
+
+% Package: glossaries - Create glossaries and lists of acronyms
+% Requires \makeglossaries call in document and glossary term definitions
 \usepackage{glossaries}
 
-% Epigraphs and decorative elements
-\usepackage{epigraph}
-\setlength{\epigraphwidth}{0.6\textwidth}
-\setlength{\epigraphrule}{0pt}
-\setlength{\beforeepigraphskip}{1.5\baselineskip}
-\setlength{\afterepigraphskip}{1.5\baselineskip}
+% =====================================================================
+% SECTION 10: EPIGRAPHS AND DECORATIVE ELEMENTS
+% =====================================================================
 
-% Memoir configuration
+% Package: epigraph - Format quotations and attributions
+% Used for chapter-opening quotes or thematic epigraphs
+\usepackage{epigraph}
+\setlength{\epigraphwidth}{0.6\textwidth}        % Width of epigraph block
+\setlength{\epigraphrule}{0pt}                   % Rule below epigraph (0pt = none)
+\setlength{\beforeepigraphskip}{1.5\baselineskip} % Space before epigraph
+\setlength{\afterepigraphskip}{1.5\baselineskip}  % Space after epigraph
+
+% =====================================================================
+% SECTION 11: MEMOIR CLASS CONFIGURATION
+% =====================================================================
+
+% Memoir-specific numbering depth and table of contents depth
+% setsecnumdepth: how deep to number sections (subsection = include \subsection{})
+% settocdepth: how deep to list in table of contents
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
 
-% Disable all paragraph break decorations
+% Disable memoir's built-in paragraph break decorations
+% By default, memoir adds a small ornamental rule between paragraphs
+% This command disables it for a cleaner appearance
 \renewcommand{\pfbreakdisplay}{}
 
-% ===== HEADING HIERARCHY (Typographic Scale 1.2×) =====
-% Chapter (18pt), Section (14.4pt), Subsection (13pt), Body (12pt)
+% =====================================================================
+% SECTION 12: HEADING HIERARCHY AND FONTS
+% =====================================================================
+% Typographic scale: 1.2× (12pt → 14.4pt → 17.28pt)
+% This creates visual hierarchy through size while maintaining harmony
+%
+% Hierarchy:
+%   Chapter:        18pt (small caps, dominant)
+%   Section:        14pt (small caps, primary)
+%   Subsection:     12pt (italic, secondary)
+%   Subsubsection:  12pt (italic, tertiary)
+%   Body text:      12pt (roman)
 
-% Chapter: 16-18pt small caps, strong visual presence
+% CHAPTER HEADING
+% \chapnamefont controls "Chapter X" label
+% \chapnumfont controls the chapter number
+% \chaptitlefont controls "Chapter Title" text
+% Small caps (\scshape) creates visual impact without being aggressive
 \renewcommand{\chapnamefont}{\normalfont\scshape\fontsize{16}{19}\selectfont}
 \renewcommand{\chapnumfont}{\normalfont\scshape\fontsize{16}{19}\selectfont}
 \renewcommand{\chaptitlefont}{\normalfont\scshape\fontsize{18}{21.6}\selectfont}
-\setlength{\beforechapskip}{4\baselineskip}
-\setlength{\afterchapskip}{1.5\baselineskip}
-\setlength{\midchapskip}{6pt}
 
-% Section: 14pt small caps, secondary hierarchy
+% Chapter spacing:
+% \beforechapskip = space before chapter heading (relative to text)
+% \afterchapskip = space after chapter heading (before body text)
+% \midchapskip = space between "Chapter X" and title (affects alignment)
+\setlength{\beforechapskip}{4\baselineskip}      % Plenty of space before
+\setlength{\afterchapskip}{1.5\baselineskip}     % Normal space after
+\setlength{\midchapskip}{6pt}                     % Tight spacing between label and title
+
+% SECTION HEADING
+% 14pt small caps - primary hierarchical level below chapter
+% \setsecheadstyle sets font and sizing for \section{}
 \setsecheadstyle{\normalfont\scshape\fontsize{14}{16.8}\selectfont}
+
+% Section spacing:
+% \setbeforesecskip = space before section heading (can be negative)
+% \setaftersecskip = space after section heading (before body text)
 \setbeforesecskip{1.25\baselineskip}
 \setaftersecskip{0.75\baselineskip}
 
-% Subsection: 12pt italic, tertiary hierarchy
+% SUBSECTION HEADING
+% 12pt italic - secondary hierarchical level (same size as body)
+% Italic creates visual distinction without increasing size
 \setsubsecheadstyle{\normalfont\itshape\fontsize{12}{14.4}\selectfont}
 \setbeforesubsecskip{1.1\baselineskip}
 \setaftersubsecskip{0.6\baselineskip}
 
-% Subsubsection: 12pt italic, minimal emphasis
+% SUBSUBSECTION HEADING
+% 12pt italic - tertiary level, minimal visual emphasis
 \setsubsubsecheadstyle{\normalfont\itshape\fontsize{12}{14.4}\selectfont}
 
-% ===== PAGE STYLES (Headers, Footers, Page Numbers) =====
-% Configure memoir page styles using typography variables
+% =====================================================================
+% SECTION 13: PAGE STYLES, HEADERS, AND FOOTERS
+% =====================================================================
+% Memoir's page style system provides fine-grained control over
+% headers, footers, and page numbers. Two styles are defined:
+% - mainmatter: Used for chapters (no headers, page numbers in outer corners)
+% - frontmatter: Used for title/dedication/TOC (centered page numbers)
 
-% Define page styles for main matter
+% MAIN MATTER PAGE STYLE (chapters)
+% Page numbers appear only in bottom outer corners:
+%   Recto (right, odd) pages: bottom right
+%   Verso (left, even) pages: bottom left
 \makepagestyle{mainmatter}
-% Header: no headers, no header rule
-\makeheadrule{mainmatter}{\textwidth}{0pt}
-\makeoddhead{mainmatter}{}{}{}
-\makeevenhead{mainmatter}{}{}{}
-% Footer setup: page numbers in outer corners (bottom right for recto, bottom left for verso)
-\makeoddfoot{mainmatter}{}{}{\footerpagenumber{\thepage}}
-\makeevenfoot{mainmatter}{\footerpagenumber{\thepage}}{}{}
 
-% Configure chapter marks for headers (not used, but kept for reference)
+% Header configuration: no header text, no rule line
+\makeheadrule{mainmatter}{\textwidth}{0pt}  % Rule thickness = 0pt (no rule)
+\makeoddhead{mainmatter}{}{}{}              % Right page: empty header
+\makeevenhead{mainmatter}{}{}{}             % Left page: empty header
+
+% Footer configuration: page numbers in outer corners
+% \makeoddfoot{style}{left}{center}{right}  → Recto (right) page
+% \makeevenfoot{style}{left}{center}{right} → Verso (left) page
+\makeoddfoot{mainmatter}{}{}{\footerpagenumber{\thepage}}   % Right corner for recto
+\makeevenfoot{mainmatter}{\footerpagenumber{\thepage}}{}{}  % Left corner for verso
+
+% Chapter mark configuration (kept for reference, not currently displayed)
+% \createmark{division}{position}{number format}{before}{after}
+% These define what content appears in running heads (if enabled)
 \createmark{chapter}{left}{shownumber}{}{. \ }
 \createmark{section}{right}{shownumber}{}{. \ }
 
-% Set default page style
+% Set mainmatter as the default page style for the entire document
 \pagestyle{mainmatter}
 
-% Title page and front matter style (no headers, centered page numbers)
+% FRONT MATTER PAGE STYLE (title page, dedication, TOC)
+% Centered page numbers at bottom of page
 \makepagestyle{frontmatter}
-\makeheadrule{frontmatter}{\textwidth}{0pt}
-\makeoddhead{frontmatter}{}{}{}
-\makeevenhead{frontmatter}{}{}{}
-\makeoddfoot{frontmatter}{}{\footerpagenumber{\thepage}}{}
-\makeevenfoot{frontmatter}{}{\footerpagenumber{\thepage}}{}
+\makeheadrule{frontmatter}{\textwidth}{0pt}  % No rule
+\makeoddhead{frontmatter}{}{}{}              % No header (right page)
+\makeevenhead{frontmatter}{}{}{}             % No header (left page)
+\makeoddfoot{frontmatter}{}{\footerpagenumber{\thepage}}{} % Centered (recto)
+\makeevenfoot{frontmatter}{}{\footerpagenumber{\thepage}}{}% Centered (verso)
 
-% ===== LISTS AND ENUMERATED ELEMENTS =====
-% Proper spacing for lists following typographic hierarchy
+% =====================================================================
+% SECTION 14: LIST FORMATTING
+% =====================================================================
+% Fine-grained control over itemize and enumerate environments
+% Spacing parameters:
+%   topsep:  space before list starts
+%   itemsep: space between list items
+%   parsep:  space between paragraphs within a list item
+%   leftmargin: indentation from left margin
+
 \setlist[itemize]{%
   topsep=0.75\baselineskip,
   itemsep=0.5\baselineskip,
-  parsep=0pt%
+  parsep=0pt,
+  leftmargin=2em%
 }
+
 \setlist[enumerate]{%
   topsep=0.75\baselineskip,
   itemsep=0.5\baselineskip,
-  parsep=0pt%
+  parsep=0pt,
+  leftmargin=2em%
 }
 
-% ===== TABLE TYPOGRAPHY =====
-% Tables should be compact but readable
+% =====================================================================
+% SECTION 15: TABLE TYPOGRAPHY AND STYLING
+% =====================================================================
+% Tables require careful spacing and alignment for readability.
+% All table dimensions are controlled by the variables defined below,
+% allowing global adjustment of table appearance without editing
+% individual tables.
 
-% Table typography variables
-% Row height multiplier: use with \arraystretch (1.0 = normal, 1.3 = 30% taller, etc)
-\newlength{\tablerowheightlength}
-\setlength{\tablerowheightlength}{1.25\baselineskip}
-
-% Body text size for table content
-\newcommand{\tabletextsize}{\small}
-
-% Column padding (left/right) - applied via @{}
-\newcommand{\tablecolumnpadding}{0.5em}
-
-% Top/bottom rule thickness (booktabs rules)
-\newcommand{\tabletopruletrim}{0.08em}
-\newcommand{\tablebottomruletrim}{0.08em}
-
-% Mid-table rule thickness (lighter than top/bottom)
-\newcommand{\tablemidruletrim}{0.05em}
-
-% Spacing before table (relative to baseline)
-\newcommand{\tablebeforeskip}{0\baselineskip}
-
-% Spacing after table (relative to baseline)
-\newcommand{\tableafterskip}{0\baselineskip}
-
-% Caption to table spacing
-\newcommand{\tablecaptionspacing}{0.5\baselineskip}
-
-% Apply table typography variables to booktabs
-% Heavy rule (top/bottom of table)
-\setlength{\heavyrulewidth}{\tabletopruletrim}
-
-% Light rule (midrule, cmidrule)
-\setlength{\lightrulewidth}{\tablemidruletrim}
-\setlength{\cmidrulewidth}{\tablemidruletrim}
-
-% Array stretch: controls row height in tabular/array environments
-% Set to 1.3 for 30% more row height
+% --------- TABLE ROW HEIGHT ---------
+% Controls vertical spacing within table cells
+% Use: \renewcommand{\arraystretch}{<factor>} in table
+% 1.0 = normal, 1.3 = 30% taller, 1.5 = 50% taller
 \renewcommand{\arraystretch}{1.3}
 
-% Longtable spacing (before and after table environment)
+% --------- TABLE RULE WIDTHS ---------
+% booktabs provides three rule types: \toprule, \midrule, \bottomrule
+% These are thinner and more elegant than standard \hline
+
+% Heavy rule thickness (top and bottom of table)
+\setlength{\heavyrulewidth}{0.08em}
+
+% Light rule thickness (horizontal rules within table, \midrule)
+\setlength{\lightrulewidth}{0.05em}
+
+% Cmidrule thickness (partial rules, \cmidrule)
+\setlength{\cmidrulewidth}{0.05em}
+
+% --------- TABLE TEXT SIZING ---------
+% Body text size for table content (smaller than body text for compactness)
+\newcommand{\tabletextsize}{\small}
+
+% --------- TABLE SPACING ---------
+% Before/after table spacing (relative to baseline)
+\newcommand{\tablebeforeskip}{0\baselineskip}
+\newcommand{\tableafterskip}{0\baselineskip}
+
+% Space between table caption and table itself
+\newcommand{\tablecaptionspacing}{0.5\baselineskip}
+
+% Longtable spacing (tables that span multiple pages)
 \setlength{\LTpre}{\tablebeforeskip}
 \setlength{\LTpost}{\tableafterskip}
 
-% Create a styled table environment macro
+% --------- TABLE ENVIRONMENT MACRO ---------
+% \begin{styledtable}[placement] ... \end{styledtable}
+% Automatically applies all table typography variables
+% Default placement: [htbp] (here, top, bottom, page)
+% Usage: \begin{styledtable}[h] \caption{...} \begin{tabular}...
 \newenvironment{styledtable}[1][htbp]{%
   \setlength{\parskip}{\tablecaptionspacing}%
   \begin{table}[#1]%
@@ -201,40 +384,77 @@
   \end{table}%
 }
 
-% ===== PAGE HEADER AND FOOTER TYPOGRAPHY =====
-% Header text styling and spacing
+% =====================================================================
+% SECTION 16: HEADER AND FOOTER TYPOGRAPHY
+% =====================================================================
+% Controls the appearance of headers, footers, and running heads
+
+% --------- HEADER TEXT STYLING ---------
+% 11pt italic for headers (slightly smaller than body text)
+% Used with \versoheader{} and \rectoheader{} commands
 \newcommand{\headerfont}{\normalfont\itshape\fontsize{11}{13.2}\selectfont}
+
+% --------- FOOTER TEXT STYLING ---------
+% 10pt for footer content (minimal information, needs small size)
 \newcommand{\footerfont}{\normalfont\fontsize{10}{12}\selectfont}
 
-% Page number styling
+% --------- PAGE NUMBER STYLING ---------
+% 11pt for page numbers (same size as headers for consistency)
 \newcommand{\pagenumberfont}{\normalfont\fontsize{11}{13.2}\selectfont}
 \newcommand{\pagenumberformat}{\pagenumberfont}
 
-% Header margins and spacing
-\newcommand{\headerindent}{0.25in}
-\newcommand{\headermargin}{0.1875in}
+% --------- MARGINS AND SPACING ---------
+% Control indentation and positioning of header/footer elements
+\newcommand{\headerindent}{0.25in}          % Indent for header content
+\newcommand{\headermargin}{0.1875in}        % Margin for header rules
+\newcommand{\footerindent}{0.25in}          % Indent for footer content
+\newcommand{\footermargin}{0.1875in}        % Margin for footer rules
 
-% Footer margins and spacing
-\newcommand{\footerindent}{0.25in}
-\newcommand{\footermargin}{0.1875in}
+% --------- SEPARATOR RULES ---------
+% Control thickness of rules above headers and below footers
+\newcommand{\headerrulethickness}{0.5pt}    % Rule above running head
+\newcommand{\footerrulethickness}{0.5pt}    % Rule below running head
 
-% Separator rules in headers/footers
-\newcommand{\headerrulethickness}{0.5pt}
-\newcommand{\footerrulethickness}{0.5pt}
-
-% Running head content sizing
+% --------- RUNNING HEAD SPACING ---------
+% Vertical skip between page margin and running head text
 \newcommand{\runningheadskip}{0.5\baselineskip}
 
-% Define running header styling for left (verso) and right (recto) pages
-\newcommand{\versoheader}[1]{\headerfont #1}
-\newcommand{\rectoheader}[1]{\headerfont #1}
+% --------- VERSO/RECTO HEADER MACROS ---------
+% Use these to apply consistent styling to left and right page headers
+\newcommand{\versoheader}[1]{\headerfont #1}    % Verso (even) pages
+\newcommand{\rectoheader}[1]{\headerfont #1}    % Recto (odd) pages
+
+% --------- PAGE NUMBER FORMATTING MACRO ---------
+% Centralized control over page number appearance
 \newcommand{\footerpagenumber}[1]{\pagenumberformat #1}
 
-% ===== MARGIN NOTE TYPOGRAPHY =====
-% For sidenotes and margin annotations
+% =====================================================================
+% SECTION 17: MARGIN NOTES AND SIDENOTES
+% =====================================================================
+% Configuration for margin annotations and sidenotes
+% Useful for supplementary information without disrupting flow
+
+% Smaller font size for margin notes (9pt)
 \newcommand{\marginnotesize}{\fontsize{9}{11}\selectfont}
+
+% Maximum width of margin note text (1.25 inches fits in outer margin)
 \newcommand{\marginnotewidth}{1.25in}
+
+% Horizontal gap between body text and margin note
 \newcommand{\marginnotesep}{0.25in}
 
-% \pretocmd{\@latex@warning}{\GenericError{}{LaTeX Warning promoted to error}{}{}}{}{}
-% \makeatother
+% =====================================================================
+% END OF PREAMBLE
+% =====================================================================
+% All document-wide settings are now complete. The document class,
+% typography, spacing, colors, and styling are now ready for use.
+% Modify the variables above to globally adjust appearance.
+%
+% Key customization points:
+% - Line spacing:         \linespread value (line 43)
+% - Margins:              \geometry settings (line 20-25)
+% - Heading sizes:        Font sizes in Section 12
+% - Table spacing:        Section 15 variables
+% - Math spacing:         Section 4 (abovedisplayskip, belowdisplayskip)
+% - Colors:               Section 7 (\hypersetup{})
+% =====================================================================
