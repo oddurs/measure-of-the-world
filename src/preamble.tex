@@ -105,17 +105,15 @@
 
 % Define page styles for main matter
 \makepagestyle{mainmatter}
-% Header setup for main matter pages
-\makeheadrule{mainmatter}{\textwidth}{\headerrulethickness}
-% Verso (left) page headers - chapter title
-\makeoddhead{mainmatter}{\rectoheader{\rightmark}}{}{\footerpagenumber{\thepage}}
-% Recto (right) page headers - chapter name
-\makeevenhead{mainmatter}{\footerpagenumber{\thepage}}{}{\versoheader{\leftmark}}
-% Footer setup - all blank
-\makeoddfoot{mainmatter}{}{}{}
-\makeevenfoot{mainmatter}{}{}{}
+% Header: no headers, no header rule
+\makeheadrule{mainmatter}{\textwidth}{0pt}
+\makeoddhead{mainmatter}{}{}{}
+\makeevenhead{mainmatter}{}{}{}
+% Footer setup: page numbers in outer corners (bottom right for recto, bottom left for verso)
+\makeoddfoot{mainmatter}{}{}{\footerpagenumber{\thepage}}
+\makeevenfoot{mainmatter}{\footerpagenumber{\thepage}}{}{}
 
-% Configure chapter marks for headers
+% Configure chapter marks for headers (not used, but kept for reference)
 \createmark{chapter}{left}{shownumber}{}{. \ }
 \createmark{section}{right}{shownumber}{}{. \ }
 
