@@ -76,7 +76,7 @@
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
 
-% Disable paragraph break decoration and spacing
+% Disable all paragraph break decorations
 \renewcommand{\pfbreakdisplay}{}
 
 % ===== HEADING HIERARCHY (Typographic Scale 1.2×) =====
@@ -86,7 +86,7 @@
 \renewcommand{\chapnamefont}{\normalfont\scshape\fontsize{16}{19}\selectfont}
 \renewcommand{\chapnumfont}{\normalfont\scshape\fontsize{16}{19}\selectfont}
 \renewcommand{\chaptitlefont}{\normalfont\scshape\fontsize{18}{21.6}\selectfont}
-\setlength{\beforechapskip}{10\baselineskip}
+\setlength{\beforechapskip}{4\baselineskip}
 \setlength{\afterchapskip}{1.5\baselineskip}
 \setlength{\midchapskip}{6pt}
 
@@ -146,31 +146,60 @@
 
 % ===== TABLE TYPOGRAPHY =====
 % Tables should be compact but readable
-\setlength{\LTpre}{1\baselineskip}
-\setlength{\LTpost}{1\baselineskip}
 
 % Table typography variables
+% Row height multiplier: use with \arraystretch (1.0 = normal, 1.3 = 30% taller, etc)
+\newlength{\tablerowheightlength}
+\setlength{\tablerowheightlength}{1.25\baselineskip}
+
 % Body text size for table content
 \newcommand{\tabletextsize}{\small}
-% Row height multiplier (default 1.0)
-\newcommand{\tablerowheight}{1.0}
-% Column padding (left/right)
+
+% Column padding (left/right) - applied via @{}
 \newcommand{\tablecolumnpadding}{0.5em}
-% Top/bottom rule thickness
+
+% Top/bottom rule thickness (booktabs rules)
 \newcommand{\tabletopruletrim}{0.08em}
 \newcommand{\tablebottomruletrim}{0.08em}
+
 % Mid-table rule thickness (lighter than top/bottom)
 \newcommand{\tablemidruletrim}{0.05em}
+
 % Spacing before table (relative to baseline)
 \newcommand{\tablebeforeskip}{0.75\baselineskip}
+
 % Spacing after table (relative to baseline)
-\newcommand{\tableafterskip}{0.75\baselineskip}
+\newcommand{\tableafterskip}{0\baselineskip}
+
 % Caption to table spacing
 \newcommand{\tablecaptionspacing}{0.5\baselineskip}
-% Booktabs array column separator
+
+% Apply table typography variables to booktabs
+% Heavy rule (top/bottom of table)
 \setlength{\heavyrulewidth}{\tabletopruletrim}
+
+% Light rule (midrule, cmidrule)
 \setlength{\lightrulewidth}{\tablemidruletrim}
 \setlength{\cmidrulewidth}{\tablemidruletrim}
+
+% Array stretch: controls row height in tabular/array environments
+% Set to 1.3 for 30% more row height
+\renewcommand{\arraystretch}{1.3}
+
+% Longtable spacing (before and after table environment)
+\setlength{\LTpre}{\tablebeforeskip}
+\setlength{\LTpost}{\tableafterskip}
+
+% Create a styled table environment macro
+\newenvironment{styledtable}[1][htbp]{%
+  \setlength{\parskip}{\tablecaptionspacing}%
+  \begin{table}[#1]%
+  \centering%
+  \tabletextsize%
+  \renewcommand{\arraystretch}{1.3}%
+}{%
+  \end{table}%
+}
 
 % ===== PAGE HEADER AND FOOTER TYPOGRAPHY =====
 % Header text styling and spacing
