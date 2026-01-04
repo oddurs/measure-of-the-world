@@ -486,13 +486,14 @@
 \newcommand{\footnoterulecolor}{333333}          % Rule color (hex, no # prefix)
 \newcommand{\footnoterulewidth}{2in}             % Width of divider rule
 \newcommand{\footnoterulethickness}{0.5pt}       % Thickness of divider line
-\newcommand{\footnoterulekernabove}{0.75\baselineskip}  % Space above divider
-\newcommand{\footnoterulekernbelow}{0.75\baselineskip}  % Space below divider
+\newcommand{\footnoterulekernabove}{6pt}         % Space above divider
+\newcommand{\footnoterulekernbelow}{6pt}         % Space below divider
 
 % Apply configurable footnote rule with spacing
+% Color is scoped to the rule only (doesn't affect following text)
 \renewcommand{\footnoterule}{%
-  \kern -\footnoterulekernabove%
-  \color[HTML]{\footnoterulecolor}\hrule width \footnoterulewidth height \footnoterulethickness%
+  \kern \footnoterulekernabove%
+  {\color[HTML]{\footnoterulecolor}\hrule width \footnoterulewidth height \footnoterulethickness}%
   \kern \footnoterulekernbelow}
 
 % --------- FOOTNOTE SPACING ---------
