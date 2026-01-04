@@ -417,22 +417,25 @@
 }
 
 % --------- TABLE CAPTION STYLING ---------
-% Captions are set in small font (like footnotes) for visual hierarchy
-% Font is slightly smaller than body text to visually subordinate the caption
-\captionsetup{font=small,labelfont=small,justification=centering}
+% Captions are set in small font (slightly smaller than body text)
+% with proportional line height matching body text's 1.25× multiplier
+% Body: 12pt with 15pt leading (1.25×) → Caption: 10pt with 12.5pt leading
+\newcommand{\captionformat}{\fontsize{10}{12.5}\selectfont}
+\captionsetup{font={small},labelfont=small,justification=centering}
+\DeclareCaptionFormat{default}{\captionformat #1#2#3}
 
 % --------- TABLE NOTES STYLING ---------
 % Table notes appear below the table in the same style as captions
 % Use \tablenote{} for single notes or \begin{tablenotes} for multiple
 \newcommand{\tablenote}[1]{%
   \par\vspace{6pt}%
-  {\small #1}%
+  {\captionformat #1}%
 }
 
 % Multiple table notes environment (like footnotes within tables)
 \newenvironment{tablenotes}{%
   \par\vspace{6pt}%
-  \small%
+  \captionformat%
   \begin{list}{}{%
     \setlength{\leftmargin}{0pt}%
     \setlength{\itemindent}{0pt}%
