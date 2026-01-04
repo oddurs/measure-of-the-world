@@ -1,7 +1,10 @@
 % Layout / typography
 \usepackage{geometry}
-\geometry{paper=letterpaper, margin=1.15in}
+\geometry{paper=letterpaper, inner=1.5in, outer=1.25in, top=1.25in, bottom=1.25in}
 \usepackage{microtype}
+\microtypesetup{expansion=true, protrusion=true, tracking=true}
+\usepackage{setspace}
+\onehalfspacing
 
 % Math
 \usepackage{amsmath,amssymb,mathtools}
@@ -42,6 +45,18 @@
 % Memoir niceties
 \setsecnumdepth{subsection}
 \settocdepth{subsection}
+
+% Chapter and heading styling (Elements of Typographic Style)
+\renewcommand{\chapnamefont}{\normalfont\scshape\large}
+\renewcommand{\chapnumfont}{\normalfont\scshape\large}
+\renewcommand{\chaptitlefont}{\normalfont\scshape\Large}
+\setlength{\beforechapskip}{-0.5cm}
+\setlength{\afterchapskip}{1.5cm}
+
+% Section and subsection styling
+\setsecheadstyle{\normalfont\scshape\large}
+\setsubsecheadstyle{\normalfont\itshape\normalsize}
+\setsubsubsecheadstyle{\normalfont\itshape\small}
 
 % Treat common "badness" as errors (strict builds)
 % NOTE: Commented out during initial development to allow build with incomplete
