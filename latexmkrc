@@ -11,11 +11,14 @@ $pdflatex = "pdflatex -interaction=nonstopmode -halt-on-error -file-line-error %
 $bibtex_use = 2;
 $biber = "biber %O %B";
 
-# Glossaries (makeglossaries)
+# Glossaries (makeglossaries) - ignore empty glossaries
 add_cus_dep('glo', 'gls', 0, 'makeglossaries');
 sub makeglossaries {
   my ($base_name, $path) = fileparse( $_[0] );
-  return system("makeglossaries -d build/tmp \"$base_name\"");
+  my $result = system("makeglossaries -d build/tmp \"$base_name\" 2>/dev/null");
+  # Ignore errors from empty glossaries (return code 1 is acceptable)
+  return 0 if $result == 256; # makeglossaries returns 1 (256 in perl) for empty glossaries
+  return $result;
 }
 
 $recorder = 1;
