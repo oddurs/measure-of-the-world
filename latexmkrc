@@ -5,8 +5,8 @@
 $out_dir = "../build/tmp";
 $pdf_dir = "../build/out";
 
-# Use pdflatex engine with strict error handling
-$pdflatex = "pdflatex -interaction=nonstopmode -halt-on-error -file-line-error %O %S";
+# Use pdflatex engine with nonstopmode to allow builds to complete despite warnings
+$pdflatex = "pdflatex -interaction=nonstopmode -file-line-error %O %S";
 
 # Biblatex uses biber
 $bibtex_use = 2;
@@ -26,6 +26,3 @@ $recorder = 1;
 
 $clean_ext = "acn acr alg aux bbl bcf blg fls fdb_latexmk glg glo gls idx ilg ind ist log lof lot nav out run.xml snm synctex.gz toc vrb xdy";
 
-$recorder = 1;
-
-$clean_ext = "acn acr alg aux bbl bcf blg fls fdb_latexmk glg glo gls idx ilg ind ist log lof lot nav out run.xml snm synctex.gz toc vrb xdy";

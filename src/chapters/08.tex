@@ -159,8 +159,8 @@ For simplicity, Maskelyne provided tables that approximated this correction. The
 
 Both the Moon and star are subject to refraction. The star's altitude, when measured, already includes refraction. The Moon's altitude likewise. When we correct for the Moon's parallax (which is in altitude), we implicitly affect the refraction correction. The procedure is:
 
-1. Compute the refraction for the Moon's measured altitude: $R_{\moon}(h_{\text{moon}})$
-2. Compute the refraction for the star's measured altitude: $R_{\star}(h_{\text{star}})$
+1. Compute the refraction for the Moon's measured altitude: $R_{\text{moon}}(h_{\text{moon}})$
+2. Compute the refraction for the star's measured altitude: $R_{\text{star}}(h_{\text{star}})$
 3. If the parallax correction was applied using altitude-based tables, the refraction has been partially accounted for. Maskelyne's published tables incorporated an empirical refraction correction.
 
 The precise accounting is subtle. In practice, the navigator used tables provided by Maskelyne that combined the parallax and refraction corrections into a single entry: given the Moon's altitude, the star's altitude, and the horizontal parallax, the tables gave a combined correction to apply to the sextant angle.
