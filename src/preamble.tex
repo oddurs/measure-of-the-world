@@ -1,0 +1,51 @@
+% Layout / typography
+\usepackage{geometry}
+\geometry{paper=letterpaper, margin=1.15in}
+\usepackage{microtype}
+
+% Math
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{siunitx}
+\sisetup{detect-all=true}
+
+% Figures / graphics
+\usepackage{graphicx}
+\graphicspath{{figures/}{figures/jpg/}{figures/png/}{figures/pdf/}}
+
+% TikZ / plots
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+
+% Bibliography
+\usepackage[backend=biber,style=authoryear]{biblatex}
+
+% Links / refs
+\usepackage{hyperref}
+\usepackage{cleveref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  citecolor=blue,
+  urlcolor=blue
+}
+
+% Tables
+\usepackage{booktabs,longtable}
+
+% Glossary
+\usepackage{glossaries}
+
+% Epigraphs
+\usepackage{epigraph}
+
+% Memoir niceties
+\setsecnumdepth{subsection}
+\settocdepth{subsection}
+
+% Treat common "badness" as errors (strict builds)
+% NOTE: Commented out during initial development to allow build with incomplete
+% glossaries and empty chapters. Uncomment once document is more complete.
+% \usepackage{etoolbox}
+% \makeatletter
+% \pretocmd{\@latex@warning}{\GenericError{}{LaTeX Warning promoted to error}{}{}}{}{}
+% \makeatother
