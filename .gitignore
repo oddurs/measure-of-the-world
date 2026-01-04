@@ -28,6 +28,11 @@ Thumbs.db
 *.lot
 *.idx
 *.ilg
+*.ist
+*.gls
+*.glg
+*-SAVE-ERROR
+*.pdf
 *.ind
 *.nav
 *.snm
