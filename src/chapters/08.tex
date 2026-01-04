@@ -14,7 +14,7 @@ The fundamental insight is simple: the Moon moves. Unlike the stars, which appea
 The Moon completes one circuit of the zodiac—$360^{\circ}$ of arc—in approximately \SI{27.3}{days}. This is the sidereal month, the time for the Moon to return to the same position relative to the stars. Dividing these together:
 
 \begin{equation}
-\omega_{\text{moon}} = \frac{360^{\circ}}{27.3\,\text{days}} = \frac{360^{\circ}}{27.3 \times 24\,\text{hours}} \approx \SI{0.5}{^{\circ}/\text{hour}}
+\omega_{\text{moon}} = \frac{360^{\circ}}{27.3\,\text{days}} = \frac{360^{\circ}}{27.3 \times 24\,\text{hours}} \approx 0.5^{\circ}/\text{hour}
 \end{equation}
 
 The Moon moves at approximately half a degree per hour. This is the key that makes the method work: the Moon's position against the stars encodes time. If we measure the angle between the Moon and a reference star, and if we have accurate tables of the Moon's position as a function of time at a known meridian (Greenwich, say), we can determine what time it was at Greenwich when we made the observation. From Greenwich time and local time, we derive longitude.
@@ -29,7 +29,7 @@ Let us be precise about what we measure. On the celestial sphere, the observer l
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\linewidth]{figures/lunar-distance-geometry.pdf}
+\includegraphics[width=0.7\linewidth]{figures/pdf/lunar-distance-geometry.pdf}
 \caption{Lunar distance on the celestial sphere. The observer measures the angular separation $\rho$ between the center of the Moon (M) and the star Regulus (R), as projected onto the celestial sphere. The longitude of Greenwich (G) is encoded in the rate at which $\rho$ changes: knowledge of $\rho$ at the moment of observation, compared with $\rho$ predicted for Greenwich time, yields the time difference and hence longitude.}
 \label{fig:lunar-distance-geometry}
 \end{figure}
@@ -68,7 +68,7 @@ For a more complete treatment, we must account for the observer's latitude. The 
 
 \subsection{Worked Example: Parallax Correction}
 
-Let us suppose an observer measures the altitude of the Moon as $h = \SI{30}{^{\circ}}$. The lunar tables give the horizontal parallax as $HP = \SI{57.0}{arcmin}$. What is the parallax in altitude?
+Let us suppose an observer measures the altitude of the Moon as $h = 30^{\circ}$. The lunar tables give the horizontal parallax as $HP = 57.0'$ (arcminutes). What is the parallax in altitude?
 
 \begin{align}
 p_{\text{alt}} &= HP \cos h \\
@@ -93,7 +93,7 @@ R(h) \approx 58.3'' \tan\left(\frac{90^{\circ} - h}{7.5}\right)
 
 where the result is in arcseconds. This is an empirical formula that works reasonably well; more refined formulas account for temperature, pressure, and humidity. But the form captures the essential behavior: as altitude decreases (the denominator grows), the tangent function grows, and refraction increases steeply.
 
-At the horizon ($h = 0^{\circ}$), refraction amounts to approximately $\SI{35}{arcmin}$—more than half a degree. At the zenith ($h = 90^{\circ}$), refraction is nil. At $h = \SI{30}{^{\circ}}$, refraction is a few arcminutes.
+At the horizon ($h = 0^{\circ}$), refraction amounts to approximately $35'$ (35 arcminutes)—more than half a degree. At the zenith ($h = 90^{\circ}$), refraction is nil. At $h = 30^{\circ}$, refraction is a few arcminutes.
 
 The observer's sextant reading already includes atmospheric refraction: light from the Moon and star has been bent by the same air, so the angle measured *includes* refraction implicitly. However, the parallax correction—which applies to the Moon but not to the star—must be paired with a refraction correction to put the Moon's position on the same footing as the star's.
 
@@ -173,7 +173,7 @@ After applying the correction, we have the true lunar distance:
 \rho_{\text{true}} = \rho_{\text{obs}} - \Delta\rho_{\text{cor}}
 \end{equation}
 
-where $\Delta\rho_{\text{cor}}$ is the combined parallax and refraction correction, typically ranging from \SI{0.5}{^{\circ}} to \SI{2}{^{\circ}} depending on altitudes and geometry.
+where $\Delta\rho_{\text{cor}}$ is the combined parallax and refraction correction, typically ranging from $0.5^{\circ}$ to $2^{\circ}$ depending on altitudes and geometry.
 
 ---
 
