@@ -61,13 +61,13 @@ The geometry cooperates because the celestial poles lie on the axis of the Earth
   \label{fig:latitude-geometry}
 \end{figure}
 
-In practice, three observational methods converge to the same result. First, the pole star method: observe the altitude of \emph{Polaris} and apply a small correction for its offset from the true pole. Second, the noon Sun method: measure the Sun's maximum altitude at solar noon, determine its declination from ephemeris tables, and apply spherical geometry. The declination $\delta$ is the Sun's angular distance north or south of the celestial equator; at the moment of meridian transit (true solar noon), the relationship is:
+In practice, three observational methods converge to the same result. First, the pole star method: observe the altitude of \emph{Polaris} and apply a small correction for its offset from the true pole. Second, the noon Sun method: measure the Sun's maximum altitude at solar noon, determine its declination from ephemeris tables (tabulated astronomical position predictions), and apply spherical geometry. The declination $\delta$ is the Sun's angular distance north ($+$) or south ($-$) of the celestial equator, measured in degrees; at the moment of meridian transit (the instant when the Sun crosses the observer's meridian, also called true solar noon), the relationship is:
 
 \begin{equation}
 \phi = \delta + (90^{\circ} - h_{\text{sun}})
 \end{equation}
 
-where $h_{\text{sun}}$ is the observed altitude. Third, circumpolar star observations: for any star near the pole, observe its altitude at upper culmination (highest point) and lower culmination (lowest point), then latitude follows from their average.\footnote{The precise formula involves spherical trigonometry; the simple form given here is approximate for stars at small polar distances.}
+where $h_{\text{sun}}$ is the observed altitude. Third, circumpolar star observations: circumpolar stars are those that never set below the horizon; they orbit the celestial pole without disappearing. For any such star, observe its altitude at upper culmination (the moment when it reaches its highest point in the sky) and at lower culmination (when it reaches its lowest point), then latitude follows from the average of these two altitudes.\footnote{The precise formula involves spherical trigonometry; the simple form given here is approximate for stars at small polar distances.}
 
 A careful observer with an adequate instrument---a quadrant or astrolabe with graduated arc and an ability to read to the nearest minute of arc---can achieve latitude accurate to within one degree, the apparent diameter of the full Moon. Better observers in better conditions achieve half that error.\footnote{Chapman, \emph{Dividing the Circle}, provides an authoritative technical account of instrument performance and observational precision in the late 17th century.}
 
@@ -81,7 +81,7 @@ And here lies the essential insight that unlocks the entire problem. The differe
 \lambda_{\text{observer}} - \lambda_{\text{reference}} = \Delta t \times \left(\frac{360^{\circ}}{24 \text{ hours}}\right) = \Delta t \times 15^{\circ}/\text{hour}
 \end{equation}
 
-The factor $15^{\circ}$ per hour follows from the Earth's rotation: $360^{\circ}$ in $24$ hours. If two observers are separated by one hour of local solar time, they stand on meridians separated by $15$ degrees of arc. If you know the time at a reference meridian (Greenwich, say) and you know your local time (determinable from the Sun's altitude), the difference between them gives your longitude.
+The conversion factor $15^{\circ}$ per hour follows directly from Earth's rotation: the planet rotates $360^{\circ}$ in $24$ hours, or equivalently $15^{\circ}$ per hour of rotation. If two observers experience a one-hour difference in local solar time (the time when the Sun reaches maximum altitude), they are separated by a longitude difference of $15^{\circ}$ of arc. If you know the time at a reference meridian (Greenwich, say) and you know your local time (determinable from the Sun's altitude), the difference between them gives your longitude.
 
 This is a statement of pure geometry. It is also a statement of impossibility: to determine your longitude at sea, you must simultaneously know two times separated by a vast distance. You can determine your local time by measuring the Sun's altitude at noon. But how do you know the time at Greenwich while standing in the middle of the Atlantic Ocean? There is no signal that travels faster than a ship. There is no mechanism that preserves time across a rolling deck for months. This is the core of the longitude problem, and it has no solution in astronomy alone.
 
@@ -89,14 +89,14 @@ This is a statement of pure geometry. It is also a statement of impossibility: t
 
 Without an absolute time reference, the navigator's only tool was \emph{dead reckoning}---the calculation of position by integrating estimates of velocity and direction over elapsed time. The method was ancient and crude. Each watch, the officer on deck would estimate the ship's speed by dropping a wooden chip attached to a knotted rope into the water ahead and counting how many knots passed through his hand in a measured time interval (\emph{chip log}). He would note the compass heading. These estimates---speed and direction---were recorded in the ship's logbook. When summed over hours and days, they became the calculated position.
 
-The mathematics is straightforward. If the ship travels at speed $v(\tau)$ on heading $\theta(\tau)$ over elapsed time $t$, the change in position is:
+The mathematics of dead reckoning is straightforward in principle. If the ship travels at speed $v(\tau)$ on heading $\theta(\tau)$ over elapsed time $t$, the change in position is the integral of velocity components along the longitude and latitude directions:
 
 \begin{align}
-\Delta \lambda &= \int_0^t v(\tau) \cos(\theta(\tau)) \, d\tau \\
-\Delta \phi &= \int_0^t v(\tau) \sin(\theta(\tau)) \, d\tau
+\Delta \lambda &= \int_0^t v(\tau) \cos(\theta(\tau)) \, d\tau \quad \text{(eastward component)} \\
+\Delta \phi &= \int_0^t v(\tau) \sin(\theta(\tau)) \, d\tau \quad \text{(northward component)}
 \end{align}
 
-where the integrals are approximated by summing discrete log entries. The execution is catastrophic. The chip log is crude; speed estimates are commonly off by twenty percent. The magnetic compass varies in declination (the angle between magnetic north and true north) in ways not fully predictable. Ocean currents are invisible and unknown. A ship sailing through fog for days accumulates errors that grow in all directions simultaneously, amplifying and interacting.
+In practice, the navigator approximates these integrals by summing the discrete speed and heading estimates recorded in the ship's logbook for each watch period. The execution is catastrophic. The chip log is crude; speed estimates are commonly off by twenty percent. The magnetic compass varies in declination (the angle between magnetic north and the direction to Earth's true geographic pole) in ways that were not fully predictable in the seventeenth century. Ocean currents are invisible and unknown. A ship sailing through fog for days accumulates errors that grow in all directions simultaneously, amplifying and interacting.
 
 \begin{table}[htbp]
   \centering
@@ -137,7 +137,7 @@ The Scilly disaster did not appear from nowhere. It was the culmination of a lon
   \item \textsc{1707: the Scilly Disaster.} \textsc{hms} Association, Eagle, Romney, and Firebrand, with Admiral Shovell commanding the fleet. Deaths estimated between fourteen hundred and two thousand. The court of inquiry concluded that no one was obviously at fault.
 \end{enumerate}
 
-Each loss was, by the standards of the time, inexplicable and blameless. The officers had followed procedures. The calculations had been correct. The instruments had been as good as the age could provide. And yet the ships had gone down anyway, leaving the maritime powers of Europe staring at a problem that appeared to be unsolvable with the tools at hand.\footnote{Sobel's \emph{Longitude} provides an accessible synthesis of these disasters and their political consequences. Howse's \emph{Greenwich Time} offers more technical detail on the navigational failures. Willmoth's \emph{Flamsteed's Stars} traces the Observatory's role in the institutional response.}
+Each loss was, by the standards of the time, inexplicable and blameless. The officers had followed established procedures, checked their calculations carefully, and used the finest instruments available. The instruments had been as good as the age could provide, and the methods were those taught in every maritime academy. Yet the ships had gone down anyway. The maritime powers of Europe found themselves staring at a problem that appeared to be fundamentally unsolvable with existing tools and knowledge.\footnote{Sobel's \emph{Longitude} provides an accessible synthesis of these disasters and their political consequences. Howse's \emph{Greenwich Time} offers more technical detail on the navigational failures. Willmoth's \emph{Flamsteed's Stars} traces the Observatory's role in the institutional response.}
 
 \section{The Political Response}
 \label{sec:longitude-act}
