@@ -40,7 +40,7 @@ Measuring the lunar distance with a sextant seems straightforward: point the ins
 
 Parallax is the geometric effect of observing from the Earth's surface rather than from its center. To a hypothetical observer at the Earth's center, the Moon would be at a specific position. To us, standing on the surface, the Moon appears displaced by the angle subtended by the radius of the Earth at the Moon's distance. This displacement is \emph{parallax}.
 
-The Moon's parallax is greatest when the Moon is on the horizon and zero when the Moon is at the zenith. We define \textbf{horizontal parallax} as the parallax angle when the Moon is on the horizon, as seen from the Earth's surface. For the Moon, the horizontal parallax is approximately \SI{57.3}{arcmin} (about one degree). This quantity varies slightly with the Moon's distance from Earth, and accurate lunar tables provide it.
+The Moon's parallax is greatest when the Moon is on the horizon and zero when the Moon is at the zenith. We define \textsc{horizontal parallax} as the parallax angle when the Moon is on the horizon, as seen from the Earth's surface. For the Moon, the horizontal parallax is approximately \SI{57.3}{arcmin} (about one degree). This quantity varies slightly with the Moon's distance from Earth, and accurate lunar tables provide it.
 
 Let us define the elements. Suppose the observer is at latitude $\phi$ and the Moon has altitude $h$ above the horizon. The Moon's horizontal parallax is $HP$. Then the parallax correction—the angle by which the Moon appears displaced due to the observer's position on the Earth's surface—has two components:
 \begin{enumerate}
@@ -107,7 +107,7 @@ The tables were large. They specified the Moon's position every 12 hours of Gree
 \label{tab:mayer-data}
 \begin{tabular}{ll}
 \toprule
-\textbf{Quantity} & \textbf{Symbol} \\
+\textsc{Quantity} & \textsc{Symbol} \\
 \midrule
 Moon's longitude & $\lambda_{\text{moon}}$ \\
 Moon's latitude & $\beta_{\text{moon}}$ \\
@@ -185,7 +185,7 @@ Now let us work through a full example, using data approximate to actual observa
 \label{tab:observation-data}
 \begin{tabular}{ll}
 \toprule
-\textbf{Quantity} & \textbf{Value} \\
+\textsc{Quantity} & \textsc{Value} \\
 \midrule
 Sextant angle (Moon--Regulus) & $87^{\circ} 22'$ \\
 Time of observation (ship's chronometer) & $18^{\mathrm{h}} 34^{\mathrm{m}} 27^{\mathrm{s}}$ \\
@@ -305,13 +305,13 @@ The calculation is complete. The navigator now knows his longitude.
 
 The accuracy of a lunar distance observation is limited by several factors:
 
-\textbf{Sextant precision:} A good marine sextant reads to the nearest minute of arc. Residual errors from graduation, parallax of the instrument optics, and reading error amount to a few arcminutes of total error per observation.
+\textsc{Sextant precision:} A good marine sextant reads to the nearest minute of arc. Residual errors from graduation, parallax of the instrument optics, and reading error amount to a few arcminutes of total error per observation.
 
-\textbf{Table accuracy:} Mayer's tables are accurate to about $1'$ in lunar position. This translates to a roughly $1'$ uncertainty in the predicted lunar distance. At the rate of Moon's motion ($\sim 0.5^{\circ}/\text{hour} = 30'/\text{hour}$), a $1'$ error in lunar distance corresponds to about $2$ minutes of time error, or $0.5^{\circ}$ of longitude, or roughly $30$ nautical miles at the equator.
+\textsc{Table accuracy:} Mayer's tables are accurate to about $1'$ in lunar position. This translates to a roughly $1'$ uncertainty in the predicted lunar distance. At the rate of Moon's motion ($\sim 0.5^{\circ}/\text{hour} = 30'/\text{hour}$), a $1'$ error in lunar distance corresponds to about $2$ minutes of time error, or $0.5^{\circ}$ of longitude, or roughly $30$ nautical miles at the equator.
 
-\textbf{Parallax and refraction corrections:} These introduce additional uncertainty. The parallax is known from the tables but depends on the observer's accurate latitude. The refraction depends on temperature, pressure, and humidity, none of which the navigator can measure precisely. A typical uncertainty is a few arcminutes.
+\textsc{Parallax and refraction corrections:} These introduce additional uncertainty. The parallax is known from the tables but depends on the observer's accurate latitude. The refraction depends on temperature, pressure, and humidity, none of which the navigator can measure precisely. A typical uncertainty is a few arcminutes.
 
-\textbf{Interpolation error:} The tables give lunar distance every 3 hours; the navigator must interpolate to find the exact Greenwich time. Linear interpolation assumes the Moon's motion is constant over a 3-hour interval, but the rate of change of lunar distance actually varies slightly. This introduces an error of order $0.1'$ to $1'$.
+\textsc{Interpolation error:} The tables give lunar distance every 3 hours; the navigator must interpolate to find the exact Greenwich time. Linear interpolation assumes the Moon's motion is constant over a 3-hour interval, but the rate of change of lunar distance actually varies slightly. This introduces an error of order $0.1'$ to $1'$.
 
 Combining these sources of error, a skilled observer under good conditions achieves a longitude accuracy of approximately $\pm 0.5^{\circ}$, or about $\pm 30$ nautical miles at the equator. This is far superior to dead reckoning (which accumulates errors of 100 nm or more over an Atlantic crossing) but inferior to a good chronometer, which can achieve accuracy of $\pm 5'$ of arc or better.
 
