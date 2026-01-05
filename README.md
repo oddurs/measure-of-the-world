@@ -15,7 +15,7 @@ The narrative integrates rigorous mathematics, detailed instrument analysis, bio
 
 ## 📥 Download
 
-**[Download the PDF (417 pages)](https://example.com/measure-of-the-world.pdf)** 
+**[Download the PDF (417 pages)](https://github.com/oddurs/measure-of-the-world/blob/707fbe7fae569cc5bdab2e5d9389a4448f752e7c/build/out/measure-of-the-world.pdf)** 
 *(Full edition with all appendices and bibliography)*
 
 ---
