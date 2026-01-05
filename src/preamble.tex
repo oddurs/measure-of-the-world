@@ -206,6 +206,11 @@
 
 % Package: caption - Enhanced caption formatting
 % Provides \captionsetup for customizing figure and table captions
+
+% Package: xcolor - Color management and definitions
+% Allows definition of custom colors and colored text
+\usepackage{xcolor}
+
 \usepackage{booktabs,longtable,tabularx,array,etoolbox,enumitem,caption}
 
 % Apply table text size globally to all table environments
@@ -366,11 +371,16 @@
 %   parsep:  space between paragraphs within a list item
 %   leftmargin: indentation from left margin
 
+% Define custom color for list decorations
+\definecolor{listdecoration}{HTML}{666666}
+
 \setlist[itemize]{%
   topsep=0.5\baselineskip,
   itemsep=0.25\baselineskip,
   parsep=0pt,
-  leftmargin=1em%
+  leftmargin=1em,
+  font=\fontsize{11}{13}\selectfont,
+  label=\color{listdecoration}\scalebox{0.75}{\textbullet}%
 }
 
 \setlist[enumerate]{%
