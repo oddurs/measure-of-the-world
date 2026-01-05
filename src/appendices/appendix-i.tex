@@ -7,13 +7,13 @@ This appendix provides tabulated reference data: unit conversions between histor
 
 \subsection{Linear Units}
 
-Astronomical observations from the 17th--19th centuries frequently used historical measurement units. Modern computations require conversion to metric (SI) units.
+Astronomical observations from the 17th--19th centuries frequently used historical measurement units. Modern computations require conversion to metric (SI) units. Table \ref{tab:length-units} presents conversions between historical systems and modern SI units, organized by measurement category.
 
-\begin{table}[!ht]
+\clearpage
+
+\begin{sidewaystable}[p]
   \centering
-  \caption{Historical and metric length unit conversions. 1 astronomical unit (AU) $= 149,597,870.7$ km.}
-  \label{tab:length-units}
-  \small
+  \resizebox{\textheight}{!}{
   \begin{tabular}{lllll}
     \toprule
     \textbf{Unit} & \textbf{Abbrev.} & \textbf{Metric Equivalent} & \textbf{Notes} & \textbf{Historical Use} \\
@@ -33,17 +33,20 @@ Astronomical observations from the 17th--19th centuries frequently used historic
     English inch & in & 0.02540 m & Foot / 12 & Instrument specs \\
     \bottomrule
   \end{tabular}
-\end{table}
+  }
+  \caption{Historical and metric length unit conversions. 1 astronomical unit (AU) $= 149,597,870.7$ km.}
+  \label{tab:length-units}
+\end{sidewaystable}
 
 \subsection{Angular Units}
 
-Astronomical measurements require angular precision. Conversion between degrees, arc-minutes, arc-seconds, and radians enables comparison across epochs.
+Astronomical measurements require angular precision. Conversion between degrees, arc-minutes, arc-seconds, and radians enables comparison across epochs. Table \ref{tab:angular-units} shows the fundamental angular units and the progression of measurement accuracy from the 1700s to modern satellites.
 
-\begin{table}[!ht]
+\clearpage
+
+\begin{sidewaystable}[p]
   \centering
-  \caption{Angular unit conversions and typical observational precisions.}
-  \label{tab:angular-units}
-  \small
+  \resizebox{\textheight}{!}{
   \begin{tabular}{lllll}
     \toprule
     \textbf{Unit} & \textbf{Abbrev.} & \textbf{Relation} & \textbf{Decimal Degrees} & \textbf{Typical Measurement} \\
@@ -65,17 +68,20 @@ Astronomical measurements require angular precision. Conversion between degrees,
     Gaia satellite (2014--present) & & $\pm 0.1$ mas (bright) & $\pm 2.8 \times 10^{-8}$° & Current standard \\
     \bottomrule
   \end{tabular}
-\end{table}
+  }
+  \caption{Angular unit conversions and typical observational precisions.}
+  \label{tab:angular-units}
+\end{sidewaystable}
 
 \section{I.2 Astronomical Constants}
 
-Historical values of fundamental constants improved dramatically over centuries as observational precision increased. Table \ref{tab:astronomical-constants} lists key constants with historical estimates and modern values.
+Historical values of fundamental constants improved dramatically over centuries as observational precision increased. Table \ref{tab:astronomical-constants} lists key constants with historical estimates and modern values, illustrating the refinement of fundamental knowledge through improved measurement techniques.
 
-\begin{table}[!ht]
+\clearpage
+
+\begin{sidewaystable}[p]
   \centering
-  \caption{Astronomical constants: historical estimates vs. modern values. All modern values are 2020 IAU/CODATA standards.}
-  \label{tab:astronomical-constants}
-  \small
+  \resizebox{\textheight}{!}{
   \begin{tabular}{lllll}
     \toprule
     \textbf{Constant} & \textbf{Historical Value (Era)} & \textbf{Historical Error} & \textbf{Modern Value} & \textbf{Unit} \\
@@ -100,17 +106,20 @@ Historical values of fundamental constants improved dramatically over centuries 
     Gravitational constant & $6.74 \times 10^{-11}$ m$^3$/kg-s$^2$ (1798, Cavendish) & $\pm 2\%$ & $6.67430 \times 10^{-11}$ & m$^3$/kg-s$^2$ \\
     \bottomrule
   \end{tabular}
-\end{table}
+  }
+  \caption{Astronomical constants: historical estimates vs. modern values. All modern values are 2020 IAU/CODATA standards.}
+  \label{tab:astronomical-constants}
+\end{sidewaystable}
 
 \section{I.3 Extended Instrument Comparison}
 
-Table \ref{tab:extended-instruments} provides a comprehensive list of major astronomical instruments with technical specifications, operational periods, and historical context.
+Table \ref{tab:extended-instruments} provides a comprehensive list of major astronomical instruments with technical specifications, operational periods, and historical context, demonstrating the evolution of observational capabilities from the 17th century to the present.
 
-\begin{sidewaystable}
+\clearpage
+
+\begin{sidewaystable}[p]
   \centering
-  \caption{Extended instrument specifications. Organized chronologically; includes aperture, focal length, accuracy, and location for 30+ instruments spanning 350 years.}
-  \label{tab:extended-instruments}
-  \normalsize
+  \resizebox{\textheight}{!}{
   \begin{tabular}{lllllll}
     \toprule
     \textbf{Instrument} & \textbf{Date} & \textbf{Type} & \textbf{Aperture} & \textbf{Focal Length} & \textbf{Accuracy} & \textbf{Location} \\
@@ -147,6 +156,9 @@ Table \ref{tab:extended-instruments} provides a comprehensive list of major astr
     Gaia satellite & 2013 & Space astrometry & (electronic) & — & $\pm 0.1$ mas (bright) & Orbit (L2) \\
     \bottomrule
   \end{tabular}
+  }
+  \caption{Extended instrument specifications. Organized chronologically; includes aperture, focal length, accuracy, and location for 30+ instruments spanning 350 years.}
+  \label{tab:extended-instruments}
 \end{sidewaystable}
 
 \section{I.4 Sample Observation: Bradley's Aberration Measurement}
