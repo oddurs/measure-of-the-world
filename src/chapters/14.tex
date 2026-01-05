@@ -1,3 +1,144 @@
-\chapter{Chapter Title}
+\chapter{The Great Equatorial and Spectroscopy}
+\label{ch:great-equatorial}
 
-% Content to be written.
+On a winter night in 1864, William Huggins turned his spectroscope toward the nebula in Canes Venatici for the first time.\footnote{\textcite{Huggins1864} describes the pivotal observation: ``This was the greatest surprise in my astronomical life. I was not unprepared for the observation that the nebula would show three bright lines instead of a continuous spectrum, but these results formed the strongest presumptive evidence of the correctness of the dynamical theory of nebulae.'' Huggins was observing from his private observatory in Tulse Hill, south London—the same city where Greenwich was beginning to see instruments made obsolete by urban growth.} The spectroscope splits light into its component wavelengths, revealing the chemical composition of distant celestial objects. As the light dispersed across the eyepiece, Huggins expected to see the continuous rainbow of a stellar continuum reflected from a distant star cluster. Instead, he observed isolated bright lines—emission, not reflection. The nebula was not unresolved stars; it was glowing gas. In that moment, nebular physics shifted from speculation to observation, and Greenwich Observatory faced an existential choice: continue refining the positions of stars, or embrace a new science that asked what those stars were made of.
+
+The Great Equatorial refractor embodied that choice. With its 28-inch aperture, it was the largest refractor in Britain and among the largest in the world when installed at Greenwich in 1893. It was designed not for the precise meridian observations that had defined Greenwich's tradition, but for spectroscopic work—for collecting enough light from faint sources to split it into its constituent elements. This chapter traces the transition from positional astronomy to astrophysics: the instruments that enabled it, the physics underlying spectroscopy, and the observation of stellar composition that transformed astronomy from a science of positions into a science of processes.
+
+\section{The Equatorial Refractor}
+
+The word ``refractor'' names its optical principle: light is bent (refracted) at the boundary between different media to form an image. A telescope built on this principle uses a lens—the objective—to focus light. The 28-inch Grubb refractor at Greenwich represented the apex of refractor design in the 1890s, balanced against an engineering fact that had haunted refractors since Galileo: large lenses are difficult to manufacture and sag under their own weight.
+
+The objective of the Great Equatorial consists of two pieces of glass, cemented together. The front lens is crown glass, a relatively common optical material with low dispersion. The back lens is flint glass, rarer and denser, with higher dispersion. This arrangement is the achromatic doublet, invented by Chester Moore Hall around 1730 and perfected by John Dollond in the 1750s. Its purpose is simple: to correct chromatic aberration, the curse of simple lenses.
+
+\subsection*{Chromatic Aberration and Its Correction}
+
+A simple lens focuses different colors at different distances. Blue light, refracted more sharply than red light, comes to focus nearer the lens. This dispersion, determined by the wavelength-dependent refractive index of glass, creates colored fringes around any sharp image. For a 28-inch lens with no correction, the effect would be catastrophic: a star would appear surrounded by a colored halo several arcseconds across, rendering fine spectroscopic measurements impossible.
+
+The solution uses the fact that crown glass and flint glass have different dispersions. If we combine them appropriately—crown glass providing most of the focusing power, flint glass providing a weaker defocusing correction—we can arrange for two different wavelengths to come to the same focus while maintaining the overall focusing power. We choose these two wavelengths (conventionally the red C-line of hydrogen and the blue F-line of hydrogen, at \SI{656}{\nano\meter} and \SI{486}{\nano\meter} respectively) and solve for the radius of curvature of each lens such that
+
+\[
+  \frac{n_{\text{crown}} - 1}{R_{\text{crown}}} + \frac{n_{\text{flint}} - 1}{R_{\text{flint}}} = \frac{1}{f}
+\]
+
+and
+
+\[
+  \frac{(n_{\text{crown}} - 1)/(n_{\text{crown}} - n_{\text{red}})}{R_{\text{crown}}} + \frac{(n_{\text{flint}} - 1)/(n_{\text{flint}} - n_{\text{red}})}{R_{\text{flint}}} = 0,
+\]
+
+where $f$ is the desired focal length and the subscript ``red'' indicates the wavelength-dependent refractive index. Solving these simultaneously yields the two radii. The result is ``achromatism at two colors''—perfect focus for C and F, and reasonably good focus across the visible spectrum. A residual secondary spectrum remains, most noticeable at the extreme blue and red, but acceptable for practical observations.
+
+The 28-inch objective, crafted by the Dublin optician Howard Grubb, had a focal length of 34 feet—more than 10 meters. A single lens of this diameter would sag under its own weight, distorting the figure and degrading the image. Grubb's solution was to support the lens at 18 carefully positioned points around its edge, allowing the glass to flex slightly while maintaining optical figure. The mounting is as much an engineering problem as the optics.
+
+\section{The Equatorial Mount}
+
+Unlike the transit circle (fixed to rotate only in the meridian) or the mural circle (fixed to the local meridian plane), the Great Equatorial is an equatorial mount. It is free to rotate about two perpendicular axes: one parallel to Earth's rotation axis (the polar axis), and one perpendicular to it (the declination axis). This freedom allows the telescope to track any celestial object as it moves across the sky.
+
+Tracking, however, is not passive. As the Earth rotates, celestial objects appear to move in small circles around the celestial poles. An equatorial mount compensates by rotating about its polar axis at exactly the rate that Earth rotates—once per sidereal day, not once per solar day. A clockwork drive, accurate to a few seconds per day, maintains this rotation. The clock is the heartbeat; without it, any exposure longer than a few seconds would show a trailed image instead of a sharp one.
+
+The equatorial mount's advantage over an altazimuth mount (which rotates in altitude and azimuth, as a telescope might rotate ``up-down'' and ``side-to-side'') is profound: once the polar axis points to the pole, the telescope maintains orientation relative to the sky with only a single-axis rotation. An altazimuth mount, by contrast, must rotate continuously about both axes to follow a star, and the field of view rotates as well—a problem for spectroscopy, where the orientation of the instrument is crucial.
+
+The practical disadvantage is that the polar axis must be accurately aligned. For the Great Equatorial, this required careful observation of the position of Polaris (or the south celestial pole, for observatories south of the equator) and precise mechanical adjustment. At Greenwich, the polar axis was aligned to within about \SI{2}{\arcsecond}, adequate for the spectroscopic work envisioned.
+
+\section{The Spectroscope: Optics and Principles}
+
+A spectroscope is, at its simplest, a prism—a piece of glass cut at carefully chosen angles. When light enters a prism, it is bent (refracted) at the first surface, dispersed according to wavelength as it travels through the glass, and bent again at the exit surface. Red light, refracted slightly less than blue light, emerges at a slightly different angle. By arranging a telescope behind the prism to magnify this dispersed light, we create an image where each wavelength occupies a distinct position—a spectrum.
+
+The 28-inch telescope, focused on a slit, produces an image of that slit in white light. Place a prism in the path of the light (before the eyepiece magnifies it), and the slit is dispersed into a spectrum: red on one end, violet on the other, the intermediate colors in between. Any detail in the original object—a star, a nebula, the edge of the Sun—appears as a similar dispersed image at each wavelength.
+
+For emission spectroscopy (observing the light *emitted* by a glowing source), the spectrum appears as a set of discrete bright lines—the ``emission spectrum.'' These lines are the fingerprint of the source. Hydrogen, for instance, emits particularly strong lines at \SI{656}{\nano\meter} (H-alpha, red), \SI{486}{\nano\meter} (H-beta, cyan), and \SI{434}{\nano\meter} (H-gamma, violet), among others. These wavelengths correspond to energy transitions in the hydrogen atom: an electron in an excited state emits a photon of specific energy as it drops to a lower state.
+
+For absorption spectroscopy (observing light from a hot source that passes through a cool gas), the spectrum is a continuous rainbow interrupted by dark lines at specific wavelengths—the ``absorption spectrum.'' The cool gas absorbs the same wavelengths it would emit if glowing on its own.
+
+This distinction is codified in Kirchhoff's laws of spectroscopy, formulated by Gustav Kirchhoff and Robert Bunsen in 1859.\footnote{\textcite{Kirchhoff1859} presents the three laws: (1) A hot opaque object or a hot dense gas emits a continuous spectrum. (2) A hot diffuse gas emits a spectrum of discrete bright lines. (3) A cool gas in front of a hot source produces an absorption spectrum—dark lines at the same wavelengths where the hot gas would emit.} These laws, both empirical and now understood through quantum mechanics, provided the key to reading the spectra of stars.
+
+\section{Fraunhofer Lines and Stellar Composition}
+
+The Sun's spectrum, first systematically mapped by Joseph von Fraunhofer in 1814, showed hundreds of dark lines. Fraunhofer labeled the most prominent: the H and K lines, the D lines, and others, advancing through the alphabet. For decades, these lines were mysterious—known to exist, but with no explanation for why they appeared at specific wavelengths.
+
+In 1859, Kirchhoff's laws provided the key. Fraunhofer's dark lines were absorption lines created by cool gases in the outer layers of the Sun (the chromosphere and reversing layer) absorbing photons from the hotter photosphere beneath. Most remarkably, Kirchhoff demonstrated that each line corresponded to a specific element. The D lines matched the pair of sodium lines in terrestrial emission spectra. The H and K lines matched calcium. By the 1870s, astronomers had identified iron, chromium, magnesium, and hydrogen in the solar spectrum.
+
+Extending this to stellar spectra proved transformative. Stars showed remarkably different patterns of lines—some dominated by hydrogen, others by metals, others with complex patterns of many elements. In 1901, Annie Jump Cannon and the Harvard Observatory team began to classify stellar spectra systematically. Stars were grouped by the strength of hydrogen lines (classes A, B, F, G, K, M) and subdivided by the prominence of metallic lines. The sequence, it turned out, was a temperature sequence: class A stars were hotter (hydrogen ionizes easily at high temperature, so hydrogen lines are relatively weak), class M stars cooler (hydrogen remains largely neutral, so hydrogen lines are strong; metallic lines are also strong because metals ionize less easily in cool atmospheres).
+
+This spectral classification was no mere cataloging exercise. It revealed that the zoo of stellar types—some blue and hot, others red and cool—represented stars at different evolutionary stages or with different masses and compositions. The classification was the first step toward understanding stellar physics.
+
+\section{Radial Velocity and the Doppler Shift}
+
+Stars do not simply sit motionless; many move toward or away from us along the line of sight. This motion, called radial velocity, can be detected through the Doppler effect: motion toward us compresses the wavelengths of light, shifting spectral lines toward shorter wavelengths (blue-shifted); motion away from us stretches the wavelengths, shifting lines toward longer wavelengths (red-shifted).
+
+The Doppler formula, derived from first principles in classical physics, gives the wavelength shift in terms of radial velocity. For a source moving with velocity $v_r$ toward the observer (positive for approach, negative for recession), the observed wavelength $\lambda_{\text{obs}}$ relates to the rest wavelength $\lambda_0$ by
+
+\[
+  \lambda_{\text{obs}} = \lambda_0 \frac{\sqrt{1 - \beta^2}}{1 - \beta \cos \theta},
+\]
+
+where $\beta = v_r/c$ and $\theta$ is the angle between the source's velocity and the line of sight. For motion directly along the line of sight ($\theta = 0$), this simplifies. For non-relativistic motion ($|\beta| \ll 1$), the approximation
+
+\[
+  \Delta \lambda = \lambda_0 \frac{v_r}{c}
+\]
+
+is accurate to first order in $v_r/c$. A star receding at $v_r = 100 \text{ km}/\text{s}$ shows a fractional wavelength shift of about $\Delta \lambda / \lambda_0 = 3 \times 10^{-4}$.
+
+Detecting this shift requires measuring the position of a spectral line to high precision. Huggins and his collaborators compared the position of a stellar line to a reference line (often from a terrestrial lamp, introduced into the spectroscope for calibration) and computed the shift. For example, if the hydrogen H-alpha line in a stellar spectrum appeared displaced by 0.2 nanometers from its rest position of 656 nm, the shift would indicate a radial velocity of
+
+\[
+  v_r = \frac{\Delta \lambda}{\lambda_0} c = \frac{0.2}{656} \times 3 \times 10^5 \text{ km/s} \approx 91 \text{ km/s}.
+\]
+
+The sign of the shift—whether the line is shifted toward red or blue—determines the direction: red-shifted indicates recession, blue-shifted indicates approach.
+
+\section{A Worked Example: Sirius and the Radial Velocity Measurement}
+
+Consider Sirius, the brightest star in the night sky, observed at Greenwich in the 1890s. Its spectrum shows strong hydrogen lines, indicating a hot, young star. The hydrogen H-alpha line, at rest \SI{656.3}{\nano\meter}, appears in Sirius's spectrum at \SI{656.1}{\nano\meter}. The observed displacement is
+
+\[
+  \Delta \lambda = 656.1 - 656.3 = -0.2 \text{ nm}.
+\]
+
+The negative sign indicates a blue shift—Sirius is approaching. The radial velocity is
+
+\[
+  v_r = \frac{-0.2 \text{ nm}}{656.3 \text{ nm}} \times c = -9.1 \text{ km/s}.
+\]
+
+Sirius is approaching Earth at approximately \SI{9}{\kilo\meter\per\second}. This motion is not due to Sirius falling toward the solar system; rather, it is the component of Sirius's motion through space projected onto the line of sight. Sirius also has a proper motion—motion across the sky—measured separately through positional astronomy. Combining these measurements gives the full three-dimensional velocity of Sirius through space, a crucial constraint on stellar dynamics and the history of the galaxy.
+
+\section{Building the Spectroscope: Prism or Grating?}
+
+The earliest spectroscopes, including those used by Huggins in the 1860s, employed prisms. A prism has the advantage of high transmission—most of the light passes through—and compact design. However, prisms have disadvantages: the dispersion is not uniform across the spectrum (red light is spread over a smaller range of angles than blue light), and the deviation angle depends on the prism angle and refractive index. For quantitative spectroscopy, these complications add computational overhead.
+
+An alternative is the diffraction grating—a surface with thousands of equally spaced grooves. When light encounters the grating, each groove acts as a source of secondary waves (by Huygens's principle). These secondary waves interfere constructively only at specific angles, determined by the condition
+
+\[
+  d \sin \theta = m \lambda,
+\]
+
+where $d$ is the groove spacing, $\theta$ is the diffraction angle, $m$ is an integer (the order), and $\lambda$ is the wavelength. Unlike a prism, a grating produces spectra of uniform dispersion: the angle between lines is proportional to wavelength difference, making quantitative analysis simpler.
+
+By the 1880s, Henry Rowland at Johns Hopkins had developed methods for ruling gratings with unprecedented precision—up to 40,000 grooves per inch. Greenwich and other observatories began to adopt grating spectroscopes for their superior quantitative properties. The Great Equatorial could be equipped with either a prism or a grating, depending on the observation.
+
+\section{The Observatory Adapts}
+
+The installation of the Great Equatorial marked a shift in Greenwich's mission. For two centuries, Greenwich had been defined by meridian observations—precise positions, catalogs, the foundation of navigation and astronomy. The new instrument represented a recognition that astronomy was changing. Airy, Astronomer Royal from 1835 to 1881, had perfected positional astronomy almost beyond improvement. His successor, William Henry Mahoney Christie (1881--1910), faced a choice: maintain Greenwich's traditional role as the world's preeminent position-measuring observatory, or embrace the new astrophysics.
+
+The decision to install the Great Equatorial was, in effect, the choice to embrace both. The instrument was not meant to replace the transit circle or the meridian observations; rather, it complemented them. The positions established by the transit circle could be checked and deepened by spectroscopic parallax—a technique using spectral classification to estimate distance, refining the astrometric parallax measurements. Spectroscopic observations could measure the composition and motion of stars whose positions Greenwich had precisely determined.
+
+Yet the decision carried long-term consequences. The equipment and expertise required for spectroscopy were different from those for positional work. New staff were hired—spectroscopists and astrophysicists, not astrometrists. The culture of the Observatory, so long defined by the precise measurement of positions, began to shift toward the measurement and interpretation of light itself.
+
+\section{Error Sources and Observational Limitations}
+
+Spectroscopic observations are subject to systematic errors of several kinds. First, instrumental effects: the prism or grating introduces its own wavelength dependence in dispersion and throughput. The telescope's focal plane is not perfectly flat; stars at the edge of the field show spectral distortion. The slit width must be chosen as a compromise—narrow slits give high spectral resolution but collect less light; wide slits collect more light but blur spectral details. For a stellar observation with a narrow slit (about 1 arcsecond), atmospheric seeing (the blurring caused by Earth's atmosphere) causes the star's light to dance across the slit. The spectrum appears to wiggle; the effect is most severe at high spectral resolution.
+
+Second, atmospheric effects: the Earth's atmosphere scatters light (particularly at blue wavelengths), and differential atmospheric refraction shifts the color balance between the start and end of an observation as the star moves across the sky. For emission nebulae, these effects are less severe (the source is extended, not a point); for stars, they limit the accuracy of radial velocity measurements to roughly \SI{1}{\kilo\meter\per\second} in the best circumstances.
+
+Third, calibration uncertainties: the comparison lamp (used to establish the wavelength scale) must be well-characterized, and the wavelength table itself must be reliable. Before the era of laboratory spectroscopy and atomic line tables, this was a substantial limitation.
+
+Despite these challenges, the spectroscopic revolution proceeded. Within a decade of Huggins's first nebular observation, dozens of observatories had spectroscopes. Within a generation, stellar classification had emerged as a fundamental tool. The Great Equatorial, though not the largest or most technically advanced instrument of its time, became symbolic of the Observatory's evolution from the era of precision astrometry into the age of astrophysics.
+
+\section{The Bridge to Cosmology}
+
+The implications of spectroscopy extended far beyond stellar physics. The light from nebulae revealed that the universe contained objects moving with radial velocities of thousands of kilometers per second—far larger than any motion within our galaxy. Were these nebulae nearby clouds within the Milky Way, or were they ``island universes,'' as some theorists speculated? Only distance could tell. And distance, in the early 20th century, was accessible through stellar spectroscopy: if spectroscopic classification could estimate luminosity, and if we knew apparent brightness, we could compute distance.
+
+The story of how these distances ultimately revealed that the Andromeda nebula is a separate galaxy, that the universe is larger than anyone had imagined, and that it is expanding—this is beyond the scope of the present chapter. But it emerges directly from the work begun with the Great Equatorial: from the recognition that light itself carries information, and that reading that information requires precision instruments, careful calibration, and the theoretical framework to interpret what we observe. Positional astronomy had answered the question ``where?'' Spectroscopy added ``what?'' and set the stage for cosmology to ask ``how did it all begin?''
