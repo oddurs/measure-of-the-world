@@ -567,3 +567,124 @@ A section on stellar aberration might proceed:
 9. *Sidenotes throughout:* Citations to Bradley's 1729 paper in *Philosophical Transactions*, cross-reference to the later discovery of nutation, biographical note on Molyneux.
 
 This integration—narrative, mathematics, data, citation, human consequence—is the signature of the book.
+
+---
+
+## XX. Build System and LaTeX Best Practices
+
+The document uses LaTeX with the `memoir` class and `biblatex` for bibliography management. To avoid build failures and crashes, observe the following conventions.
+
+### Bibliography Management
+
+**Citation Command:** Use `\textcite{}` exclusively for author-date citations, not `\citet{}`. The document uses `biblatex` with author-year style, not `natbib`. These commands are incompatible.
+
+```latex
+% CORRECT: Use \textcite for all citations
+\textcite{Howse1980} provides an account...
+Recent scholarship \textcite{Chapman1996} emphasizes...
+
+% INCORRECT: \citet is natbib-specific and will cause build failure
+\citet{Howse1980}  % DO NOT USE
+```
+
+**Bibliography Entry Keys:** Follow consistent naming:
+- Format: `AuthorYear` (no spaces, no hyphens)
+- Single author: `Surname` + `Year`, e.g., `Halley1705`
+- Multiple authors: Lead author surname + year, e.g., `Cook1998`
+- Corporate authors: Abbreviation + year, e.g., `NMGMT1999` for National Maritime Museum
+- Articles: Same as books, e.g., `Halley1693` for a journal article
+
+**Incorrect key formats cause undefined citation warnings:**
+```
+DON'T USE: Willmoth2002 if the .bib entry is named WilmothFlamsteeds2002
+Always verify that chapter references match exact .bib key names
+```
+
+**Add Bibliography Entries to `src/bibliography/references.bib`:** Use standard BibTeX format. Every citation must have a corresponding entry or the build will generate undefined citation warnings.
+
+### Special Characters and Math Mode
+
+**Degree Symbols in Math Mode:** Use `^{\circ}` for degree symbols within math expressions, not `\degree` or `\textdegree`.
+
+```latex
+% CORRECT: Use \circ in math mode
+$56^{\circ} 42' 10''$
+$\epsilon \approx 23^{\circ} 27'$
+
+% INCORRECT: \degree and \textdegree fail in math mode
+$56^{\textdegree}$  % Missing character error
+$\epsilon \approx 23^{\degree}$  % Undefined command in math mode
+```
+
+**Arcminutes and Arcseconds:** Use ASCII quotes or `siunitx`:
+
+```latex
+% CORRECT
+Declination: $\delta = 51^{\circ} 28' 40''$  % ASCII single/double quotes
+% or use siunitx
+\SI{8.76}{\arcsecond}
+\SI{51}{\degree} \SI{28}{\arcminute} \SI{40}{\arcsecond}
+
+% PROBLEMATIC: Smart quotes from Word cause encoding errors
+$\delta = 51° 28′ 40″$  % May fail
+```
+
+### LaTeX Environment Errors
+
+**No Line Breaks (`\\`) in Vertical Mode:** Avoid `\\` when not in a paragraph context. This causes "calc Error" and pdflatex failures.
+
+```latex
+% INCORRECT: Will cause calc errors
+\noindent
+Line 1 \\
+Line 2 \\
+Line 3
+
+% CORRECT: Use separate \noindent blocks
+\noindent
+Line 1
+
+\noindent
+Line 2
+
+% Or use list environment:
+\begin{itemize}
+  \item Line 1
+  \item Line 2
+\end{itemize}
+```
+
+**Closing Braces and Delimiters:** Ensure all math environments are properly closed. Unclosed math mode cascades into subsequent paragraphs and causes cryptic errors.
+
+```latex
+% CORRECT
+Parallax angle $\pi_{\odot}$ determines distance.
+
+% INCORRECT: Missing closing $
+Parallax angle $\pi_{\odot} determines distance.  % $ never closed
+```
+
+### Build Process Best Practices
+
+**Clean Builds for Testing:** When adding significant new content:
+
+```bash
+rm -rf build/tmp
+make build
+```
+
+This regenerates all LaTeX auxiliary files.
+
+**Check for Build Errors:**
+
+```bash
+grep -i "undefined" build/tmp/main.log  # Citation errors
+grep "Missing character" build/tmp/main.log  # Encoding/character errors
+tail -100 build/tmp/main.log  # Last lines (may show final success/failure)
+```
+
+**Terminal Crashes:** If build crashes the terminal:
+1. Run in background: `make build &`
+2. Redirect output: `make build > /tmp/build.log 2>&1`
+3. Check log: `tail -f /tmp/build.log`
+

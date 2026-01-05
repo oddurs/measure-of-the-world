@@ -1181,7 +1181,200 @@ All intermediate files go to `build/tmp/`. The final PDF is `build/out/measure-o
 
 ---
 
-## Part XX: File Organization and Workflow
+## Part XX: Common Build Errors and Prevention
+
+### Error 1: Citation Errors — `\citet` vs `\textcite`
+
+**Problem:** Build fails with "Undefined control sequence" for `\citet`.
+
+**Root Cause:** This project uses `biblatex` with author-year style, not `natbib`. The `\citet` command is natbib-specific and is not available.
+
+**Solution:** Use `\textcite{}` exclusively.
+
+```latex
+% WRONG: Causes immediate pdflatex failure
+The classic account by \citet{Howse1980} describes the Observatory's founding.
+% ! Undefined control sequence. <recently read> \citet
+
+% CORRECT: Works with biblatex
+\textcite{Howse1980} provides the classic account of the Observatory's founding.
+```
+
+**Best Practice:** Always use `\textcite{}` for author-year citations in this project.
+
+---
+
+### Error 2: Bibliography Key Mismatches
+
+**Problem:** Build produces "undefined citation" warning for `\textcite{Willmoth2002}`, even though an entry exists in `references.bib`.
+
+**Root Cause:** The chapter references `Willmoth2002`, but the `.bib` file contains an entry named `WilmothFlamsteeds2002`. Bibliography keys must match exactly between citation and entry.
+
+**Solution:** Standardize key naming and verify consistency.
+
+```bibtex
+% BAD: Inconsistent naming
+@book{Willmoth2002,      % Used in one chapter
+@book{WilmothFlamsteeds2002,  % Used elsewhere
+
+% GOOD: Consistent naming across project
+@book{WilmothFlamsteeds2002,
+  author = {Willmoth, Frances},
+  year = {2002},
+  title = {Flamsteed's Stars: The Catalogue of the Brightest Stars},
+  ...
+}
+```
+
+Then all chapters use: `\textcite{WilmothFlamsteeds2002}`
+
+**Best Practice:** Key format is `AuthorYear` (lead author for multi-author works, no spaces). After adding entries to `references.bib`, search chapters to ensure all `\textcite{}` references use the exact key name.
+
+---
+
+### Error 3: Special Characters in Math Mode — Degree Symbols
+
+**Problem:** Build produces "Missing character: There is no ° in font cmr12!" warning. Degree symbols don't render or appear as corrupted characters in the PDF.
+
+**Root Cause:** Using `\textdegree` (text-mode command) or `\degree` (gensymb command) inside math mode (`$...$`). These commands don't work in math mode; LaTeX tries to find the literal degree symbol in the math font, which doesn't exist.
+
+**Solution:** Use `^{\circ}` for all degree symbols in math mode.
+
+```latex
+% WRONG: Produces "Missing character" error
+$\epsilon \approx 23^{\textdegree} 27'$
+$h = 56^{\degree} 42' 10''$
+
+% CORRECT: Use \circ in math mode
+$\epsilon \approx 23^{\circ} 27'$
+$h = 56^{\circ} 42' 10''$
+
+% For text mode: OK to use \textdegree
+The temperature outside was 32\textdegree~F, but the dial read 35\textdegree~inside.
+```
+
+**Best Practice:** Always use `^{\circ}` for degree symbols within equations. Test with a minimal LaTeX document if unsure:
+
+```bash
+cat > test.tex << 'EOF'
+\documentclass{article}
+\usepackage{gensymb}
+\begin{document}
+Test: $23^{\circ} 27'$ (correct)
+\end{document}
+EOF
+pdflatex test.tex
+```
+
+---
+
+### Error 4: Line Breaks (`\\`) in Wrong Context
+
+**Problem:** Build fails with "Package calc Error: 'P' invalid at this point." Error occurs at a line containing `\\`, but message is cryptic.
+
+**Root Cause:** Using `\\` (line break) outside a proper paragraph environment or table. When LaTeX encounters `\\` in vertical mode (between paragraphs), the `calc` package attempts to parse it as a dimension, fails, and throws a calc error.
+
+**Solution:** Use paragraph breaks (`\noindent` blocks) or explicit list environments instead of `\\`.
+
+```latex
+% WRONG: Causes calc error
+\noindent
+Item 1 \\
+Item 2 \\
+Item 3
+
+% CORRECT: Separate blocks
+\noindent
+Item 1
+
+\noindent
+Item 2
+
+\noindent
+Item 3
+
+% Also CORRECT: Use list environment
+\begin{itemize}
+  \item Item 1
+  \item Item 2
+  \item Item 3
+\end{itemize}
+
+% CORRECT: Use \\ only in tables or minipages
+\begin{tabular}{ll}
+  Item 1 & Value \\
+  Item 2 & Value \\
+\end{tabular}
+```
+
+**Best Practice:** Reserve `\\` for tables and multiline math environments. For vertical spacing between paragraphs, use blank lines or explicit `\medskip`, `\bigskip` commands.
+
+---
+
+### Error 5: Unmatched Math Delimiters
+
+**Problem:** LaTeX produces cryptic errors in subsequent paragraphs. Code appears to be in the correct location but references fail to resolve.
+
+**Root Cause:** Missing closing `$` in inline math, or unclosed `\[` or math environment. The math mode extends past the intended boundary, capturing subsequent text.
+
+**Solution:** Carefully verify all math delimiters are matched.
+
+```latex
+% WRONG: Missing closing $
+Parallax angle $\pi_{\odot} determines distance.
+
+% Later paragraphs fail mysteriously because they're inside unclosed math mode
+
+% CORRECT: Both delimiters present
+Parallax angle $\pi_{\odot}$ determines distance.
+
+% CORRECT: Display math with matched delimiters
+\[
+  \pi_{\odot} = \frac{1 \text{ AU}}{d}
+\]
+```
+
+**Best Practice:** Use `\[` and `\]` for display math (never `$$..$$`). For inline math, search chapters with regex `\$([^\$]*)?$` to find unmatched delimiters:
+
+```bash
+grep -n '\$[^\$]*$' src/chapters/*.tex
+```
+
+---
+
+### Best Practices for Clean Builds
+
+**Full clean rebuild for major changes:**
+
+```bash
+rm -rf build/tmp
+make build
+```
+
+**Check for build errors:**
+
+```bash
+grep -i "undefined\|error" build/tmp/main.log | head -20
+tail -50 build/tmp/main.log
+```
+
+**If terminal crashes during build:**
+
+```bash
+make build > /tmp/build.log 2>&1 &
+sleep 5 && tail -f /tmp/build.log
+```
+
+**Verify bibliography processing:**
+
+```bash
+ls -lh build/tmp/main.bbl  # Should exist and be non-empty
+grep "citekey" build/tmp/main.blg | tail -5  # Check biber output
+```
+
+---
+
+## Part XXI: File Organization and Workflow
 
 - Each chapter in its own file: `src/chapters/01.tex`, `src/chapters/02.tex`, etc.
 - Figures organized by format: `src/figures/jpg/`, `src/figures/png/`, `src/figures/pdf/`
