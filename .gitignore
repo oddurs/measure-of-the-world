@@ -10,8 +10,8 @@ Thumbs.db
 
 # Build artifacts
 /build/tmp/
-/build/out/
 /src/build/  # Ensure no build artifacts in src/
+# Note: /build/out/measure-of-the-world.pdf is intentionally committed
 
 # LaTeX intermediates (belt & suspenders)
 *.aux
@@ -25,16 +25,6 @@ Thumbs.db
 *.run.xml
 *.synctex.gz
 *.toc
-*.lof
-*.lot
-*.idx
-*.ilg
-*.ist
-*.gls
-*.glg
-*-SAVE-ERROR
-*.pdf
-*.ind
 *.nav
 *.snm
 *.vrb
