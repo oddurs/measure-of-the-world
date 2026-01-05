@@ -1,3 +1,160 @@
-\chapter{Chapter Title}
+\chapter{Maskelyne's Nautical Almanac: Computing Longitude by Distributed Labor}
+\label{ch:maskelyne-nautical-almanac}
 
-% Content to be written.
+In the parlor of a country house at Ludlow, Shropshire, in the year 1767, a woman named Mary Edwards sat at a wooden table with pen, ink, and freshly printed ephemerides. She held no university degree; she was not a member of the Royal Society. Yet she held in her hands numbers that had cost Nevil Maskelyne, the Astronomer Royal, countless nights of observation and calculation. Her task: to verify lunar positions computed by another hand, in another town, working from the same theoretical tables. She would not learn whether her answer agreed with the other computer's result until Maskelyne compared all the submissions, sorted them, and rejected the outliers. This was how the greatest navigational tool of the 18th century was built—not by a single genius, but by a distributed network of human minds, each working in isolation, each checked against the others. When they agreed, Maskelyne kept them. When they diverged wildly, he discarded both and assigned the task to a third. The Nautical Almanac, published annually starting in 1767, was the first computational enterprise of its kind: a machine built of people.
+
+\section{The Lunar Distance Problem and Its Solution}
+
+Before Harrison's final vindication (which would come in the 1770s, and even then reluctantly), the Board of Longitude had placed substantial resources behind a different approach: determining longitude from the Moon's position in the sky. The method was theoretically sound, even elegant, but practically demanding.
+
+The Moon orbits the Earth with a period of approximately 27.3 days, and its apparent motion across the background stars is roughly 13.2 degrees per day (or 0.55 degrees per hour). A navigator equipped with precise tables of the Moon's position could, in principle, use the Moon as a clock. If the observer knew the exact time when the Moon should be at a particular position (as given by the tables, calibrated to Greenwich mean time), and observed the Moon's actual angular distance from a bright star or the Sun, the difference in observed versus tabulated positions would reveal the observer's longitude.\footnote{\citet{Howse1980}, Chapters 7--8, provides the clearest exposition of why the Board, in the 1760s, believed the lunar distance method would be the practical solution to the longitude problem. The method's advantage was that it required no mechanical precision—only optical measurement and mathematical skill.}
+
+There was a problem, however: the Moon's motion through the stars is not constant. Gravitational perturbations from the Sun cause the lunar orbit to oscillate. The angle between the Moon's observed position and its tabulated position depends not only on the observer's time error but also on numerous small corrections: parallax (because the observer is not at the Earth's center), refraction (atmospheric bending of light), and several perturbation terms in lunar theory.\footnote{The theory of lunar motion is one of the most complex problems in celestial mechanics. It had occupied Jean-Baptiste Joseph Fourier, Leonhard Euler, and other leading mathematicians for over a century. See \citet{Sobel1995}, Chapter 8, for a narrative account; \citet{Chapman1996}, Chapter 9, provides technical detail.}
+
+Maskelyne's innovation was not to discover or prove the lunar distance method; the method was known and had been advocated by earlier astronomers. Rather, Maskelyne's contribution was to solve the problem of \textit{computation at scale}. He recognized that if the necessary tables could be computed in advance, printed, and distributed to every ship at sea, then the navigator—who might have limited mathematical skill—could follow a simple procedure and obtain a longitude within acceptable limits.
+
+\section{Maskelyne's Vision: The Human Computer Network}
+
+In 1765, Maskelyne was appointed Astronomer Royal, succeeding John Flamsteed's successor James Bradley. Bradley had accumulated decades of observations, but they lay largely unused for practical navigation. Maskelyne saw the opportunity to transform these observational records into a navigational tool.
+
+The challenge was computational. Computing a lunar position to the accuracy required—roughly one arcminute, or one sixtieth of a degree—required evaluating dozens of trigonometric terms, each of which might involve tens of multiplications and divisions. A skilled computer might complete one lunar position calculation in several hours of concentrated work. To compute positions for every 3 hours throughout a year would require thousands of person-hours of labor.
+
+Maskelyne's solution was audacious: he would create a permanent corps of computers. These would be educated individuals—clergymen, schoolmasters, surveyors, gentlemen with mathematical skill but limited employment prospects—recruited from around the country. Each would receive a stipend and assignments of calculations. The calculations would be parceled out so that multiple computers worked on the same problem independently. When their results were compared, agreement indicated likely correctness; significant disagreement triggered further investigation or reassignment.\footnote{\citet{Croarken2007}, Chapters 3--4, documents the emergence of Maskelyne's computer network. The network included Mary Edwards at Ludlow (mentioned in our opening vignette), Rupert Cotes near Bristol, several clergy in Yorkshire and Lincolnshire, and others. Most were never famous; some were hired by Maskelyne for only a few years.}
+
+This principle—\textsc{redundant computation}—was a century and a half ahead of its time. In the modern era, we would recognize it as a form of quality control and error detection. In Maskelyne's era, it was novel. The costs were not trivial: each computer's stipend was modest (typically £20--30 per annum, a working-class income), but the aggregate expense was substantial. Yet Maskelyne judged it worth the investment because the alternative—publishing inaccurate tables—would have rendered the entire enterprise useless.
+
+\section{The Network of Minds}
+
+Who were the computers? They were not professional mathematicians, nor were they amateurs in the sense of lacking skill. Rather, they occupied an intermediate position that would become increasingly important in the 18th and 19th centuries: educated professionals without university positions, making a living through intellectual labor.
+
+Many were clergymen. An Anglican vicar or curate might have a few hours each week free from parish duties. For a modest income, he could contribute to the Nautical Almanac. Some computers kept other posts: \citet{Croarken2007} identifies computers who were schoolmasters, surveyors, even physicians. Mary Edwards, one of Maskelyne's most valued computers, was a woman of independent means, suggesting that some computers were motivated partly by intellectual interest rather than financial need.\footnote{\citet{Croarken2007}, pp. 145--150, documents Mary Edwards's role and argues that she was likely literate in several languages and trained in mathematics—unusual for women of the era, but not unique among women of the educated gentry.}
+
+The computers were distributed geographically, communicating with Maskelyne primarily through written correspondence. Maskelyne would send them printed sheets with instructions, partial calculations, and the values they needed to verify or complete. The computations returned would be checked against other results, and the best versions incorporated into the Almanac. This distributed architecture had advantages: if one computer made an error, others would catch it; if one fell ill or became unavailable, the work could be parceled out elsewhere.
+
+Yet it also had fragility. The correspondence took weeks. An error in Maskelyne's original instructions might propagate through all the computers before it was detected. A computer's illness or death could leave unfinished calculations. The system required Maskelyne's constant attention and judgment.
+
+\section{Structure of the Nautical Almanac}
+
+The Nautical Almanac, first published in 1767 for the year 1768, contained several types of tables:
+
+\begin{enumerate}
+
+\item \textsc{Lunar positions}, computed for every 12 hours throughout the year. Each entry included the Moon's right ascension and declination in degrees, minutes, and seconds of arc.
+
+\item \textsc{Solar positions}, similarly computed for every 12 hours.
+
+\item \textsc{Lunar distances to selected reference stars}, computed for every 3 hours. This was the core data for the lunar distance method: the angular separation between the Moon and a bright star (such as Regulus, Pollux, or Spica) at each moment.
+
+\item \textsc{Lunar distances to the Sun}, computed for every 3 hours.
+
+\item \textsc{Stellar positions} for the reference stars, with corrections for precession and proper motion (though the latter was not well understood in the 18th century).
+
+\item \textsc{Jupiter's moons}, with predictions of eclipse times—these served as an alternative method for determining longitude, useful to observatories but less practical for shipboard use.
+
+\item \textsc{Auxiliary tables}: coefficients for interpolation, refraction corrections, parallax values as functions of altitude and latitude, and other tabulated functions needed to ``clear'' the observed lunar distance.
+
+\end{enumerate}
+
+Each table in the early Almanacs ran to hundreds or thousands of lines, all computed by hand and printed by letterpress. A single computational error, if not caught, would propagate to every ship using that value.
+
+\section{The Navigator's Procedure}
+
+How did a navigator actually use the Nautical Almanac? The procedure was demanding but systematic, consisting of roughly six steps:\footnote{\citet{Maskelyne1763}, the \emph{British Mariner's Guide}, provides the authoritative contemporary description. \citet{Howse1980}, Chapter 8, summarizes the method with modern notation.}
+
+\textsc{Step 1: Observe the distance.} Using a sextant, the navigator measured the angle between the Moon and a reference star (or the Sun). This angle was the ``observed distance.'' The measurement typically took several minutes, as the navigator repeated the observation to reduce errors. A typical accuracy was ±2--3 arcminutes.
+
+\textsc{Step 2: Note the time.} The navigator recorded the ship's chronometer reading (or, if no chronometer was available, the best estimate of time based on the rate of a marine clock or the Sun's altitude). Time was critical: an error of 1 minute in the assumed time would produce an error of about 15 minutes of arc in the Moon's position—far larger than the observational uncertainty.
+
+\textsc{Step 3: Clear the distance.} This was the most computationally intensive step. The navigator used the Nautical Almanac tables to find the Moon's and star's positions as they would appear from the Earth's center, correcting for the observer's geographic location (parallax), atmospheric refraction, and the Moon's and star's motions. The result was the ``cleared distance''—the angle between Moon and star as measured from the Earth's center at the assumed time.
+
+Computing the clearing required:
+\begin{itemize}
+\item Looking up the Moon's right ascension and declination at the assumed time (with interpolation if the time fell between tabulated values)
+\item Looking up the star's position
+\item Computing the parallax correction using the observer's latitude and the Moon's altitude
+\item Applying a refraction correction from the auxiliary tables
+\item Performing spherical trigonometry to compute the angular distance between the two points on the celestial sphere (the Moon and the star)
+\end{itemize}
+
+For an educated navigator with training in mathematics, this might take 30 minutes to an hour. For a less-skilled navigator, it might take considerably longer. A common practice was for the navigator to perform the calculation multiple times to check for arithmetic errors.
+
+\textsc{Step 4: Compare with the Nautical Almanac.} The Nautical Almanac, in addition to the raw lunar distances, also provided a table of ``pre-cleared'' distances—distances that had already been cleared for a standard observer at Greenwich. By comparing the observed cleared distance with the Greenwich distance, the navigator determined the \textit{discrepancy} between the two.
+
+\textsc{Step 5: Convert discrepancy to longitude.} A small angle discrepancy in the Moon's position corresponds to a time discrepancy, which in turn corresponds to a longitude error. Specifically, the Moon moves at roughly 0.55 degrees per hour, so a 0.55-degree error in the Moon's position corresponds to a 1-hour error in time, which corresponds to 15 degrees of longitude (or about 900 nautical miles at the equator). The conversion was:
+\[
+  \Delta t = \frac{\Delta\text{distance}}{0.55°/\text{hour}} \quad \Rightarrow \quad \Delta\lambda = \Delta t \times 15°/\text{hour}.
+\]
+
+\textsc{Step 6: Determine the navigator's position.} Combining the longitude from the lunar distance with an independently determined latitude (obtained from the Sun's altitude at noon, a much simpler procedure), the navigator could determine his position and check it against the dead reckoning.
+
+The entire procedure, from observation to final result, might occupy 2--3 hours of the navigator's time, assuming competence and access to the necessary tables. Compare this to consulting a marine chronometer: assuming the chronometer had been set to Greenwich time and had not gained or lost appreciably, the navigator could simply note the chronometer time and combine it with his latitude to determine position in minutes.\footnote{\citet{Maskelyne1763}, pp. 112--125, provides worked examples; modern expositions appear in \citet{Howse1980}, pp. 180--195.}
+
+\section{Computational Methods and Error Control}
+
+The Nautical Almanac's computations employed the mathematical tools of the era: logarithms, trigonometric tables, and difference tables for interpolation.
+
+Logarithms (recently popularized by John Napier's 1617 work and improved by subsequent mathematicians) allowed multiplication and division to be replaced by table lookups and addition/subtraction. To compute $\sin(45.3°) \times \cos(22.1°)$, a computer would:
+\begin{enumerate}
+\item Look up $\log \sin(45.3°)$ in a table
+\item Look up $\log \cos(22.1°)$ in a table
+\item Add the two logarithms
+\item Look up the antilogarithm in a table to obtain the result
+\end{enumerate}
+
+This procedure was far less error-prone than direct multiplication would have been. However, errors could still occur: misreading a table entry, arithmetic mistakes in addition, or errors in the table itself.
+
+Maskelyne employed several error-control strategies. First, he required that the most critical calculations—particularly the lunar positions themselves—be performed independently by multiple computers. If two or three computers, working from the same theoretical instructions and published tables, arrived at the same result, Maskelyne considered it reliable.
+
+Second, he used difference tables for interpolation. If the Nautical Almanac provided lunar positions at 12-hour intervals, and a navigator needed the position at, say, 13 hours, the navigator could interpolate. However, linear interpolation was not always accurate enough for the precision required. Maskelyne provided not only the function values but also first and second differences, allowing more accurate polynomial interpolation. The structure of difference tables made certain types of errors apparent: if the first differences were not approximately linear, it suggested an error in the underlying data or in the difference calculation.
+
+Third, Maskelyne compared the Nautical Almanac results against observations performed by himself and other astronomers at Greenwich and elsewhere. If the predicted lunar position diverged significantly from what was observed in the sky, it indicated a systematic error requiring investigation.
+
+\section{The Cost of Precision: Why the Nautical Almanac Endured}
+
+By the 1780s, marine chronometers were becoming reliable enough that navigators could use them in place of lunar distance calculations. A well-maintained Harrison chronometer or one of its successors could provide longitude to within a few kilometers over months-long voyages. Why, then, did the Nautical Almanac continue to be published, and indeed continues to be published to the present day?
+
+The answer lies in versatility and institutional resilience. While a chronometer is a precise clock, it is still a clock—it drifts, it requires calibration, and it must be maintained. A ship might carry a chronometer, but if it failed mid-voyage, the navigator lost his most reliable tool. The Nautical Almanac, by contrast, provided a method that required only observation and calculation. As long as the Moon and stars moved in their predicted paths—which they did with remarkable regularity—the Nautical Almanac would work.
+
+Moreover, the Nautical Almanac was not limited to lunar distances. It provided solar positions, lunar positions, stellar positions, and Jupiter's satellite phenomena. Astronomers used the Almanac to plan observations, predict phenomena, and determine latitude and longitude simultaneously. Military observatories used it. Civilian astronomers used it. The investment in computing and printing the Nautical Almanac served multiple constituencies.\footnote{\citet{Croarken2007}, Chapter 5, discusses the Nautical Almanac's expansion of scope in the 19th century, including additions for scientific navigation, astronomical prediction, and eventually the distribution of time signals.}
+
+Furthermore, computing the Nautical Almanac had become an institution. Maskelyne had trained several generations of computers; the network of competent calculators, once established, persisted. When new astronomical discoveries required the Almanac to be updated—for instance, the discovery of planetary perturbations on the lunar motion—the institutional infrastructure already existed to perform the necessary recalculations.
+
+The economic argument for chronometers versus the Nautical Almanac was not one-sided. A marine chronometer in the late 18th century cost £100--200, a substantial sum (equivalent to several years' wages for a skilled tradesman). A copy of the Nautical Almanac cost a few shillings. Every ship at sea could afford an Almanac; only the wealthiest naval vessels and merchant ships could afford a chronometer. The Almanac thus democratized access to precision navigation in a way that no single mechanical device could have.
+
+\section{Historiography: Infrastructure, Not Genius}
+
+The traditional narrative of the longitude problem emphasizes individual genius: Bradley, Flamsteed, Harrison, Maskelyne—great men whose intellect solved intractable problems. There is truth in this narrative. Yet it obscures the work of thousands of people whose names we do not know: the computers who sat at tables day after day, performing calculations; the printers who set type and worked the presses; the instrument makers who built sextants and telescopes; the ship captains who tested the methods; the apprentices who swept the floors of observatories and printing shops.
+
+The Nautical Almanac represents a different kind of innovation: the creation of infrastructure. It was not a breakthrough in theory (the lunar distance method was known before Maskelyne), nor a breakthrough in mechanics (the printing press was centuries old). Rather, it was a breakthrough in organization—the recognition that precision could be achieved not by genius alone but by systems of verification, redundancy, and institutional persistence.\footnote{\citet{Croarken2007}, Introduction, makes this argument explicitly: ``The Nautical Almanac was not the work of Nevil Maskelyne, but of Maskelyne and his network. To speak of Maskelyne's Nautical Almanac is to invite a misunderstanding; it would be more accurate to speak of the Nautical Almanac as an institution that Maskelyne founded and led.''}
+
+This perspective matters for understanding the history of science and technology. Major advances are often portrayed as flashes of inspiration—Newton's apple, Archimedes in the bath. But much of the work of turning ideas into reality is unglamorous: organizing people, managing workflows, checking results, iterating on designs. The Nautical Almanac was not the result of an inspiration; it was the result of persistent institutional work.
+
+\section{The Broader Context: Maskelyne's Program for Precision}
+
+Maskelyne's vision extended beyond the Nautical Almanac. He viewed precision in timekeeping and navigation as essential to the prosperity of the British nation. A navy that knew its position with certainty was a navy that would dominate the seas. Commerce that could navigate safely would flourish.
+
+To this end, Maskelyne initiated several projects that would occupy the Royal Observatory for the next century and beyond:
+
+\begin{itemize}
+
+\item \textsc{Extension of the star catalog.} Flamsteed's catalog, though magnificent, was incomplete by Maskelyne's standards. He initiated a program to observe stars and other celestial objects throughout the sky, using improved instruments.
+
+\item \textsc{Determination of astronomical constants.} Key quantities like the precession of the equinoxes, the aberration of starlight, and the nutational wobble of the Earth's axis required repeated observations over many years. Maskelyne organized this effort.
+
+\item \textsc{Comparison of observatories.} Maskelyne corresponded with astronomers at observatories in Paris, Berlin, Greenwich, and elsewhere, comparing observations to ensure that all were using the same reference frame and identifying systematic differences.
+
+\item \textsc{Distribution of time.} In the 19th century, as railroads and telegraph wires spread across Britain, the need for synchronized time became acute. Maskelyne envisioned the Royal Observatory as the source of standard time, from which other institutions could be synchronized. This vision would be realized in the form of Greenwich Mean Time and, eventually, Coordinated Universal Time.
+
+\end{itemize}
+
+These projects, collectively, transformed the Royal Observatory from a single astronomer's workspace (as it had been under Flamsteed) into an institution of national importance. Maskelyne was not himself a revolutionary theorist or instrument builder; rather, he was an institutional innovator who recognized that precision required organization, redundancy, and long-term commitment.
+
+\section{Legacy and Conclusion}
+
+The Nautical Almanac, first published in 1767, continues to be published today. Though it now includes satellite information, GPS correction tables, and other modern additions that Maskelyne could not have imagined, its core function remains the same: to provide precise astronomical and navigational data to users worldwide.
+
+The lunar distance method faded from use by the early 19th century, displaced by the now-ubiquitous marine chronometer. Yet the Nautical Almanac persisted and evolved. Modern navigation uses the Almanac not to determine longitude by lunar distance, but to correct GPS signals, predict occultations, and support astronomical observations. The institutional continuity—the network of computers (now computers in the sense of electronic machines), the peer review process, the commitment to accuracy—these have outlasted the specific method that initially motivated Maskelyne's vision.
+
+Maskelyne died in 1811, having led the Royal Observatory for 46 years. His successor continued his programs. The Observatory became, in effect, the timekeeping authority for the British Empire. When the electric telegraph made possible the nearly instantaneous distribution of time signals, it was Greenwich Observatory that supplied the time. When the railway companies needed to synchronize their timetables, they used Greenwich time. When the world adopted a standard time system at the 1884 International Meridian Conference, Greenwich was the reference. Maskelyne's vision of precision as an institutional asset, requiring organization and long-term commitment, had been vindicated.
+
+The next chapter turns from the institutional approach to precision—the Nautical Almanac and the human computers—to a figure who embodied a different kind of genius: Edmond Halley, the polymath, whose contributions spanned cometary orbits, magnetic variation, transit geometry, and the very concept of the astronomical unit. Where Maskelyne built institutions, Halley illuminated principles.
