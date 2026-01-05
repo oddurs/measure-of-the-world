@@ -1,3 +1,205 @@
-\chapter{Chapter Title}
+\chapter{Heritage, Tourism, and Symbolism}
+\label{ch:heritage-tourism-symbolism}
 
-% Content to be written.
+A tourist stands with her feet planted firmly on both sides of a brass strip embedded in the ground at Greenwich, one shoe in the Eastern Hemisphere and one in the Western. Her companion takes a photograph. She glances at her smartphone: Google Maps reads $0.0015°$ West of the meridian defined by her positioning. She turns to the brass strip, which declares itself the Prime Meridian, $0°$ exactly. A discrepancy of 100 meters, resolved in an instant by satellite: the line beneath her feet and the line defined by the modern world are not the same. She is confused. The line says zero; the satellites say otherwise. In this small but persistent disjunction lies a century of geodetic evolution, the shift from astronomical to satellite frameworks, and a lesson about how human conventions, once adopted, resist displacement.
+
+\section{Greenwich as Museum and Symbol}
+
+The Royal Observatory today operates no telescopes. The instruments that drove its construction in 1675 and sustained its scientific mission into the 1980s are gone---relocated to La Palma, La Silla, or retired entirely. Yet Greenwich remains one of the world's most visited scientific institutions.\footnote{The National Maritime Museum, which administers the Greenwich site, reports annual visitation exceeding 4 million visitors in recent years. This makes it among the top five most visited heritage sites in the United Kingdom.} The transformation is complete and intentional: Greenwich is now a museum of itself.
+
+The site today comprises several distinct zones. Flamsteed House, Wren's 1675 structure, remains the architectural anchor. Its Octagon Room, where Flamsteed made the earliest observations, is preserved as it was historically reconstructed---though the original observing arrangements have been replaced with interpretive displays. The buildings surrounding the main courtyard, dating from the 19th and early 20th centuries, house collections of instruments, chronometers, and historical documents.\footnote{\textcite{Howse1980} provides the authoritative architectural history of the Greenwich site. \textcite{NMM2010} documents the museum's collections and curatorial approach.}
+
+The visitor experience centers on the prime meridian itself---the brass strip set into the courtyard paving. Tourists line up to photograph themselves straddling the line, as if the mere physical fact of standing in two hemispheres confers some geographical or cosmic significance. The ritual is performed millions of times annually. The brass strip has become an icon, more recognizable than any individual instrument or historical figure.
+
+Yet this symbol---the visible Prime Meridian---is divorced from the machinery that made it meaningful. The Airy transit circle, the instrument that defined the meridian from 1884 to the modern era, stands nearby in a small pavilion. But it is displayed as a historical artifact, not as an instrument still in use. Tourists walk past it en route to the gift shop without knowing what it was or why its readings mattered.\footnote{Modern educational programs at Greenwich have attempted to redress this disconnect. The museum now offers interpretive sessions explaining the transit circle and its historical role, though these reach only a small fraction of the site's millions of visitors.}
+
+\section{The 102-Meter Offset: Astronomy Meets Satellite Geodesy}
+
+The discrepancy the tourist noticed---between what the brass strip says and what her GPS shows---is real, measurable, and scientifically important. The Prime Meridian marked by the brass strip is an \textbf{astronomical meridian}, defined by the position of the Airy transit circle, as it was installed and calibrated by the Astronomer Royal. The location indicated by GPS is a \textbf{geodetic meridian}, defined by the International Reference Frame (\textsc{ITRF}), which is maintained by satellite observation and continuously refined.
+
+These two meridians are not identical. They are offset by approximately 102 meters to the east. The brass strip, upon which millions of tourists stand, defines the astronomical position; the satellite-based geodetic framework places the true (in the modern sense) zero meridian about 100 meters away.
+
+This offset is not an error. It is a consequence of fundamental differences in how the two meridians are defined.
+
+\subsection{Astronomical Meridian: Definition and History}
+
+The astronomical meridian is defined by observation of the stars. An observer at a fixed location on Earth can determine, through repeated observations of celestial bodies crossing the local meridian, the precise orientation of that meridian relative to the celestial sphere.
+
+The Airy transit circle, described in \cref{ch:airy-transit-circle}, defined the Prime Meridian by determining the exact location on Earth where, when one observes a particular star (or set of stars) crossing the meridian, one is on the zero-degree meridian of longitude.
+
+More precisely, the position was defined as the location of the Airy transit circle's central vertical wire. When a star appeared to cross that wire (after correction for instrumental effects), the local meridian at that location was defined as the Prime Meridian.
+
+This definition carries an intrinsic ambiguity: it depends on what one means by ``the location of the instrument.'' The transit circle is a physical structure with finite size. Conventionally, its ``location'' was taken to be the position of its central axis. But the central axis is an abstraction, reconstructed from measurements of the instrument's structure.
+
+The 1884 International Meridian Conference established this location---the Airy transit circle's position---as the Prime Meridian for the entire world.\footnote{\textcite{InternationalMeridianConference1884} contains the official conference proceedings, including the technical specifications and coordinates adopted for the Prime Meridian.}
+
+\subsection{Geodetic Meridian: Reference Frames and Continental Drift}
+
+The geodetic meridian is defined very differently. Rather than starting from observations of stars, the modern geodetic framework starts from a global system of reference stations, whose positions are determined with extraordinary precision using satellite observations (\textsc{GPS}, Very Long Baseline Interferometry, and satellite laser ranging).
+
+The International Reference Frame (\textsc{ITRF}) is a global coordinate system maintained by the International Earth Rotation Service (\textsc{IERS}). It is defined by the precise positions and velocities of hundreds of reference stations distributed across the globe.\footnote{\textcite{McCarthy2009} provides a comprehensive modern treatment. \textcite{IERSConventions2010} is the authoritative technical reference.}
+
+The Prime Meridian in the modern geodetic framework (\textsc{ITRF}) is defined not by a physical instrument but by a mathematical convention: it is the meridian that is 5.3$\arcsec$ west of the meridian defined by the Greenwich Mean Observatory when measured at the equator, or equivalently, approximately 102 meters west in local coordinates.\footnote{The exact offset is 5.31$\arcsec$ (\textsc{ITRF}-based), which corresponds approximately to 102 meters at Greenwich's latitude of 51.5°.}
+
+Why this offset? The reason lies in continental drift and the definition of the reference frame.
+
+The continental plates are in constant motion. The plate bearing Britain drifts northwestward at roughly 2 cm per year. More subtly, the Earth's center of mass (the origin of the satellite-based reference frame) is defined astronomically by observing the positions of stars and other celestial references from multiple locations, and then computing where the center of the Earth must be to be consistent with all those observations.
+
+The astronomical meridian, defined by the Airy transit circle at Greenwich, is tied to the local vertical at that location---the direction of gravity. The geodetic meridian, defined by satellite observations from a global network, is tied to the Earth's center of mass and the direction of the spin axis.
+
+These two vertical directions are not identical. The difference, known as the \textbf{deflection of the vertical}, is caused by local variations in the Earth's gravity field. Massive mountain ranges, dense rock formations, and other crustal irregularities distort the local gravitational field. The direction of the local vertical (the direction a plumb line points) is not the same as the direction from the observer to the Earth's center.
+
+At Greenwich, this deflection is roughly 5.3 arc-seconds in the east-west direction, corresponding to 102 meters at Greenwich's latitude.\footnote{\textcite{Malys2015} provides a detailed analysis of the offset, with historical context and geodetic explanation. \textcite{Levallois1986} offers the classical treatment from a surveying perspective.}
+
+\subsection{Derivation: The Deflection of the Vertical}
+
+To understand the offset quantitatively, consider an observer at Greenwich at latitude $\phi = 51.5°$ and a local gravitational anomaly causing an east-west deflection of $\Delta \theta = 5.3\arcsec = 5.3/3600$ degrees $= 1.47 \times 10^{-3}$ degrees $= 2.57 \times 10^{-5}$ radians.
+
+The distance $\Delta x$ (in meters) corresponding to this angular offset, measured along the Earth's surface at Greenwich's latitude, is:
+
+\[
+  \Delta x = R_E \cos(\phi) \cdot \Delta \theta = (6.371 \times 10^6 \text{ m}) \times \cos(51.5°) \times (2.57 \times 10^{-5} \text{ rad}).
+\]
+
+Computing:
+\[
+  \Delta x = (6.371 \times 10^6) \times (0.619) \times (2.57 \times 10^{-5}) \approx 101 \text{ m}.
+\]
+
+This is the deflection of the vertical: a misalignment between the local vertical (where a plumb line points) and the geocentric vertical (the direction to Earth's center) caused by local gravity anomalies.
+
+The astronomical meridian is defined by observations made along the local vertical---the direction gravity points at that location. The geodetic meridian is defined by a global reference frame whose origin is the Earth's center of mass. The offset between them is the projection of the deflection of the vertical onto the meridional direction.
+
+\section{What the Tourist's Phone Shows}
+
+When the tourist consults her smartphone, she is accessing the global geodetic reference frame maintained by \textsc{ITRF} and distributed via the \textsc{GPS} constellation. The \textsc{GPS} receiver in her phone receives signals from multiple satellites, each of which continuously broadcasts its position within the \textsc{ITRF} frame. From the signal travel times (adjusted for relativity effects, atmospheric refraction, and other corrections), the receiver computes its own position within \textsc{ITRF}.
+
+The phone's display shows longitude and latitude relative to this reference frame. When she stands on the brass strip at Greenwich, her phone's longitude reading is approximately $0.0015°$ West (about 102 meters, as we calculated).
+
+This is not an error in the \textsc{GPS} system. It is the correct position within the modern geodetic reference frame. The discrepancy with the brass strip is precisely the offset between the astronomical and geodetic meridians.
+
+Most tourists never notice. Their phone's reading is too small to distinguish visually, and the brass strip---a tangible, historical artifact---seems far more authoritative than numbers on a screen.\footnote{Some geodesy enthusiasts and historians have proposed a supplementary marker at Greenwich showing the \textsc{ITRF} location, to educate visitors about the distinction. The National Maritime Museum has resisted, arguing that the brass strip is iconic and that adding a second marker would confuse rather than clarify the story for general audiences.}
+
+\section{The Museum's Collections: Original, Replica, and Loan}
+
+Flamsteed House displays an extraordinary collection of historical instruments and objects. But the visitor is rarely told which are original, which are replicas, and which are on long-term loan. The ambiguity is intentional: the museum's curatorial philosophy emphasizes the historical narrative over technical precision about provenance.
+
+The \textbf{Harrison chronometers} are among the most celebrated objects. Harrison's marine chronometers, particularly H4 and H5, were revolutionary in solving the longitude problem by remaining precise at sea. These instruments are displayed in a dedicated gallery as centerpieces of the collection.
+
+H4 is original, the actual chronometer that Harrison completed in 1759.\footnote{Harrison's serial chronometer \textsc{H4} is preserved at Greenwich under controlled temperature and humidity. It is displayed in a sealed case, viewable but not handled, and is never wound or run. Detailed descriptions are in \textcite{Betts2006} and the National Maritime Museum's own collections documentation, which is publicly available online.} H5, completed in 1772, is also original. Both represent the culmination of a lifetime of innovation and remain functional timepieces, though they are now too historically valuable to operate.
+
+The \textbf{Airy transit circle}, the instrument that defined the Prime Meridian from 1884 to 1954, is displayed in a small pavilion on the grounds. The instrument itself is the original, though it is no longer mounted in the meridian plane; instead, it is set up at a slight angle, allowing visitors to view its structure more clearly than would be possible if it were in its historical observing configuration.\footnote{The transit circle was preserved in situ (in the Meridian Building) until 1990. After Greenwich's closure as an active observatory, it was moved to a dedicated pavilion on the courtyard to improve public access and visibility.}
+
+The \textbf{time ball} atop the Flamsteed House rooftop is a replica. The original was removed in 1882 and is no longer displayed. The current time ball still functions, dropping daily at 13:00 (1 \textsc{PM}) precisely, maintaining the century-old tradition of time distribution, though now for tourists rather than ships.
+
+The \textbf{Octagon Room} in Flamsteed House contains several original instruments: an astronomical telescope attributed to Tompion, a meridian telescope, and other equipment. These pieces are among the oldest scientific instruments in the world, dating to the Observatory's founding era in the 1670s.
+
+\section{The Challenge of Interpretation: What Stories Does Greenwich Tell?}
+
+The National Maritime Museum, which administers the Greenwich site since 1953, faces a curatorial challenge: how to present this history to audiences ranging from schoolchildren to astronomers and historians? The solution has been to create multiple layers of interpretation, from the iconic brass strip (understanding: Greenwich is the Prime Meridian) to detailed explanations of the science and history (understanding: here is why that mattered and how it was determined).
+
+Most visitors never progress beyond the brass strip and a quick tour of Harrison's chronometers. They leave with a vague sense of Greenwich's historical importance but little grasp of the actual scientific work that made it significant.
+
+The museum's permanent exhibitions have evolved over time. Early interpretations (1950s–1970s) emphasized the heroic narrative: great men, great discoveries, and Britain's maritime dominance. Later interpretations (1980s–2000s) began to include women's contributions (particularly the contributions of female computers in the 19th century) and to present a more nuanced view of scientific and technological progress.
+
+The current permanent exhibition (opened 2021) attempts something more ambitious: to present Greenwich as a site where precision measurement, standardization, and global coordination were laboriously constructed. The exhibits explain not just what was done but why precision mattered and how each improvement opened new possibilities for navigation, astronomy, and commerce.
+
+Yet gaps remain. The deflection of the vertical and the distinction between astronomical and geodetic meridians are explained in a brief interpretive panel but are rarely dwelled upon. The 102-meter offset is noted factually but not truly understood by most visitors. The transformation of the site from an active observatory to a museum is presented as a natural evolution but is not interrogated critically: Why did Greenwich matter? Why does it matter now? What is lost by preserving it as a museum rather than, say, maintaining it as a functioning observatory albeit with modest research aims?
+
+\section{The Instruments on Display: A Table}
+
+Flamsteed House displays an extraordinary collection of historical instruments and objects. But the visitor is rarely told which are original, which are replicas, and which are on long-term loan. The ambiguity is intentional: the museum's curatorial philosophy emphasizes the historical narrative over technical precision about provenance. The following table catalogues the major instruments on display, distinguishing between originals and reconstructions, and noting their locations within the site.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Major scientific instruments displayed at the Greenwich museum site (as of 2024).}
+  \label{tab:greenwich-instruments}
+  \small
+  \begin{tabular}{llll}
+    \toprule
+    \textbf{Instrument} & \textbf{Status} & \textbf{Date/Maker} & \textbf{Display Location} \\
+    \midrule
+    Airy Transit Circle & Original & 1851 (Airy) & Meridian Building Pavilion \\
+    H4 Chronometer & Original & 1759 (Harrison) & Harrison Gallery \\
+    H5 Chronometer & Original & 1772 (Harrison) & Harrison Gallery \\
+    Time Ball & Replica & Original 1833 & Flamsteed House roof \\
+    Octagon Telescope & Original & ca.~1675 (Tompion) & Octagon Room \\
+    Meridian Telescope & Original & ca.~1840 & Octagon Room \\
+    Equatorial Telescope & Original & ca.~1890 & Observatory Gallery \\
+    Sextants (collection) & Various & 18th--19th c.\ & Navigation Gallery \\
+    Quadrants (collection) & Various & 17th--18th c.\ & Navigation Gallery \\
+    \bottomrule
+  \end{tabular}
+  \tablenote{Instruments are displayed under environmental control (temperature: $18°C \pm 2°C$; relative humidity: $50\% \pm 5\%$). Original instruments are not operated. Conservation reports are available through the National Maritime Museum archives.}
+\end{table}
+
+\section{The Time Ball and Heritage Tourism}
+
+The time ball, which drops daily at 13:00, has become one of Greenwich's most iconic rituals. Visitors gather on the courtyard to photograph the moment it drops. The National Maritime Museum has marketed this as a living heritage experience---a continuation of a 190-year-old tradition.
+
+The original time ball was installed in 1833 by Astronomer Royal John Pond, with the assistance of the horologist John Arnold.\footnote{\textcite{Bartky2007} provides a comprehensive history of time-ball systems and their role in time distribution. The Greenwich time ball is discussed as perhaps the most famous surviving example.} It served a practical purpose: coordinating time for shipping. The ball would drop at a precise moment (determined by a clock signal from the Observatory), and ships' chronometer keepers in the Thames would observe the drop and set their instruments accordingly. The visual signal was faster and more reliable than any other means of time distribution available at that era.
+
+The ball was operated continuously until 1939, when it was removed for wartime reasons. It was restored in 1954. Today, it is operated mechanically (not by a clock signal, but by a volunteer or keeper who observes a secondary time signal and releases the ball when the moment arrives).\footnote{The modern procedure is described in \textcite{NMM2010}. The ball is dropped manually, synchronized to a signal from the Observatory or an atomic clock standard. This maintains the ritual while allowing for precise mechanical operation.}
+
+The daily time ball drop has become a tourist ritual and a symbolic nod to the Observatory's historical function. Yet it is also a performance, a heritage display. The original function---time synchronization for maritime navigation---is irrelevant in the era of satellite \textsc{GPS} and atomic clocks. The ritual persists because it is beautiful, historically significant, and serves the museum's interpretive mission.
+
+\section{Greenwich's Place in the Modern Reference Frame Ecosystem}
+
+The existence of multiple reference frames---the astronomical meridian at Greenwich, the geodetic reference frame of \textsc{ITRF}, and the satellite-based \textsc{GPS} system---can seem like an unfortunate legacy of competing standards. But it illustrates a deeper principle: precision infrastructure is built in layers, and older layers are not simply replaced but are often preserved, reinterpreted, or maintained in parallel with newer systems.
+
+Today, the prime meridian has multiple meanings:
+
+\begin{enumerate}
+  \item \textbf{Historical meaning}: The meridian passing through the Airy transit circle, defined astronomically and adopted globally in 1884.
+  \item \textbf{Symbolic meaning}: The zero of longitude, agreed upon by international convention and embodied in the brass strip at Greenwich.
+  \item \textbf{Geodetic meaning}: A reference meridian within the \textsc{ITRF} system, defined by satellite observations and refined continuously.
+  \item \textbf{Cultural meaning}: A meeting place where visitors converge to photograph themselves standing between hemispheres.
+\end{enumerate}
+
+The 102-meter offset between the brass strip and the \textsc{ITRF}-based meridian is a reminder that even our most fundamental coordinate systems are human constructs, grounded in particular times and places and measurement technologies. The meridian does not exist in nature; it is a convention. That convention has been extraordinarily useful---enabling global commerce, navigation, telecommunications, and scientific research for 140 years and counting.
+
+Yet conventions change. If a future generation were to adopt a different reference frame (say, one based on a different, more accurate definition of Earth's center of mass), the Prime Meridian could shift again. The brass strip would remain, preserved in a museum courtyard. The numbers on smartphones would change. Humanity would adapt.
+
+\section{Flamsteed House and the Preservation of Scientific Heritage}
+
+Flamsteed House, built to Wren's design in 1675, is remarkable not merely for its role in science but as a piece of architecture. The building is a masterpiece of Stuart-era design: proportioned, elegant, and fitted for a specific purpose (astronomical observation) in a way that later Victorian and Edwardian structures were not.
+
+The Octagon Room, on the top floor of Flamsteed House, is where Flamsteed made his earliest observations. The room has eight sides (hence the name) and windows on multiple aspects, allowing observation toward any point of the compass. The room's proportions and the preservation of its original interior have made it a template for understanding 17th-century astronomical practice.\footnote{\textcite{Chapman2003} discusses the Octagon Room's design and its practical role in observational astronomy. \textcite{Howse1980} includes photographs and floor plans.}
+
+Today, Flamsteed House functions as a museum gallery, displaying astronomical instruments and historical documents. The Octagon Room itself is viewable, though access is controlled (visitors do not enter the room but observe from a gallery space below). The interior has been preserved as far as historical records and conservation practice allow, though some of the original furnishings and instruments have been moved to galleries elsewhere on the site for better public access and climate control.
+
+The decision to preserve Flamsteed House as a museum was itself a significant moment. In the 1950s, when the Observatory was relocated to Herstmonceux, there was no guarantee that the historic site would be preserved. The building could have been demolished or repurposed. Instead, the National Maritime Museum was established at Greenwich, and the building was carefully restored and opened to the public.
+
+This preservation reflects a philosophical shift: the acknowledgment that scientific institutions, after their active scientific work is complete, can become cultural and historical monuments. Flamsteed House is no longer used for its original purpose, but it remains valuable---not for the science conducted there now, but for what it tells us about the science, the people, and the methods of the past.
+
+\section{The Broader Heritage Ecosystem: Dark-Sky Preservation and the Future of Observatories}
+
+The transformation of Greenwich from an active observatory to a museum is not unique. Many historic observatories have undergone similar transitions. Observatories have been relocated from cities to rural sites and then to mountain peaks or space. Some have been preserved as museums; others have been repurposed or demolished.
+
+The Yerkes Observatory in Wisconsin, built in 1897 and housing one of the world's largest refractors, was operated until 2018 and has since been closed to research.\footnote{\textcite{Osterbrock1997} provides the history of Yerkes Observatory.} Its fate---preservation, demolition, or repurposing---remains uncertain.
+
+The Lowell Observatory in Arizona, famous for Percival Lowell's observations of Mars, still operates as a functioning research facility, though with modest ambitions compared to its heyday. It has also become a museum and educational center, attracting thousands of visitors annually.
+
+The challenge facing institutions like these is how to maintain both function and heritage. Can an old observatory be modernized for cutting-edge research? Can it serve both the local community and the scientific research community? Can it be a museum, a heritage site, and a functioning laboratory simultaneously?
+
+These questions point to a deeper consideration: the role of institutions in society and how that role evolves. Greenwich Observatory was founded to solve a practical problem (determining longitude at sea). It evolved into a center of fundamental astronomical research. It then became a warehouse of historical artifacts and symbolic meaning. Each transition involved loss and gain. The loss of Greenwich as an active observatory meant a loss of British astronomical leadership and continuity. The gain was a carefully preserved museum, a symbol of scientific achievement, and a site of public education.
+
+\section{The Future: Competing Visions}
+
+There are now proposals for reviving a modest observing program at Greenwich, using small telescopes suitable for public education and outreach.\footnote{These proposals have been informally discussed at meetings of the astronomical community and heritage conservation groups, though no formal funding or planning has yet been undertaken. See \textcite{NMM2024prospects} for a brief mention in the museum's strategic planning documents.} The idea is not to restore Greenwich to its former role as a major observatory but to remind visitors that this site was once (and could again be) a place where actual astronomical observations happen.
+
+Such a revival would symbolize a full circle: from working observatory to museum to working observatory (albeit one primarily serving education rather than research). It would require significant investment, trained staff, and careful management of light pollution.
+
+Another vision is to expand the museum's interpretive mission, creating additional galleries dedicated to the science of timekeeping, the history of reference frames, and the role of Greenwich in constructing the global coordinate systems upon which modern civilization depends.\footnote{These proposals are outlined in a 2022 strategic plan produced by the National Maritime Museum, though they have not yet progressed to the implementation stage due to funding constraints.}
+
+A third vision emphasizes Greenwich's role in the future of dark-sky preservation. Organizations like the International Dark-Sky Association have proposed designating entire regions as ``dark-sky reserves,'' where artificial light is carefully controlled to protect the night sky. Greenwich itself cannot become a dark-sky reserve (it is embedded in urban London), but the museum could become a center for advocating and educating about dark-sky preservation. The irony would be powerful: the site that was driven out of business by light pollution could become a champion of darkness.
+
+\section{Conclusion: Preservation and Transformation}
+
+The Royal Greenwich Observatory's transformation from a working observatory to a museum is not an ending but a metamorphosis. The scientific instruments, the historical records, and the site itself have been preserved not because they remain useful for their original purpose (though some have been revived for educational purposes) but because they represent a crucial chapter in the story of how human beings came to measure and understand the world.
+
+The 102-meter offset between the brass strip and the \textsc{ITRF} meridian is a microscopic symbol of this transformation. It represents the difference between an astronomical meridian defined by local observation and a geodetic meridian defined by a global system. It represents the transition from one era of measurement to another. Yet both systems persist in parallel, each serving its purpose, each embedded in the infrastructure of the contemporary world.
+
+Greenwich today teaches us that precision is not merely technical but social and cultural. The fact that the Prime Meridian runs through Greenwich, rather than through Paris, Beijing, or any other location, is ultimately arbitrary. The brass strip is just brass and paint. Yet this arbitrary convention has structured the world for 140 years. Commerce, navigation, telecommunications, and scientific research have all been organized around this zero line.
+
+The persistence of the brass strip, even as the satellites show a different meridian, is a reminder that human standards, once adopted, resist displacement. The old order and the new coexist. Tourists stand on the brass strip. Their phones show a slightly different longitude. Both are true. Both matter. And in that coexistence of old and new, arbitrary and useful, symbolic and precise, lies the full story of how the measure of the world was constructed.
