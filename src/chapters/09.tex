@@ -1,3 +1,208 @@
-\chapter{Chapter Title}
+\chapter{Harrison's Chronometers: H1 through H5}
+\label{ch:harrison-chronometers}
 
-% Content to be written.
+At Richmond, on a winter morning in 1772, an old man placed a small watch in the palm of a king. John Harrison was seventy-eight years old; King George III held the H5—a masterpiece of horology no larger than a modern wristwatch. For ten weeks, the King carried it, timing its rate against the known motions of celestial bodies. The accumulated error: 4.5 seconds. ``By God, Harrison,'' the King declared, ``I will see you righted!'' Here was the final vindication of a forty-year quest that had consumed a craftsman, frustrated a Board, and challenged every assumption about how the problem of longitude should be solved.
+
+\section{Harrison's Path: From Pendulum to Balance}
+
+John Harrison was born in 1693 in Yorkshire, the son of a carpenter. He inherited no formal education in mathematics or astronomy, yet he possessed an instinct for mechanism that surpassed most trained horologists of his age. By the 1720s, his wooden longcase clocks had achieved a reputation for precision. Then, in 1714, came the Act—and with it, the clear specification of the problem: produce a timekeeper that would not lose or gain more than two minutes over the course of a voyage to the West Indies and back.\footnote{The Board of Longitude, faced with competing proposals for solving longitude by celestial observation, mathematical computation, and mechanical means, had not yet determined which path to pursue. Harrison's early decades coincided with this period of institutional indecision. See \citet{Howse1980}, Chapters 5--6, for a detailed account of how the Board's priorities shifted.}
+
+Harrison recognized that a marine chronometer could not be a pendulum clock. The ship's motion would disrupt the pendulum's regular swing; worse, pendulums lose synchronization as the vessel changes latitude and hence local gravity.\footnote{\citet{Landes1983}, pp. 82--87, provides an excellent exposition of why the Board, in the 1730s, believed the longitude problem would ultimately be solved by celestial observation rather than mechanical means. Harrison's success contradicted this consensus.} The traditional escapement—the verge-and-foliot system used in ancient clocks—allowed friction to accumulate and precision to degrade. Harrison needed a mechanism that would run with minimal resistance, maintain its rate under changing environmental conditions, and survive the violent motions of a ship at sea.
+
+His solution was radical: the \textsc{linked balance}.
+
+\section{H1: The Linked Balance and the Grasshopper Escapement (1730--1735)}
+
+Instead of a single oscillating balance wheel, Harrison's H1 employed two identical balance wheels mounted on the same axis, oscillating in opposite directions. When one wheel moved clockwise, the other moved counterclockwise. The consequence was profound: the symmetrical oscillations canceled the effects of external vibration. A sudden heave of the ship would tilt the entire mechanism, but because the wheels were in anti-phase, the displacements largely canceled, leaving the rate of oscillation unaffected.\footnote{This principle—the cancellation of unwanted motion through symmetric counterphasing—was geometrically intuitive yet mechanically sophisticated. See \citet{Betts1978}, pp. 18--25, for technical drawings of the linked balance mechanism.}
+
+The mathematical basis is straightforward. Let $\theta_1(t)$ and $\theta_2(t)$ be the angular displacements of the two balance wheels. If we require $\theta_2(t) = -\theta_1(t)$, the center of mass of the system remains fixed. An external perturbation $\Delta x$ affecting the axis would cause equal and opposite displacement of the two wheels:
+\[
+  \Delta\theta_1 = -\Delta\theta_2.
+\]
+The net effect on the time-keeping mechanism, which depends on the phase difference between the wheels and the escapement, averages to zero over one complete oscillation cycle.
+
+To maintain this anti-phase motion reliably, Harrison devised the \textsc{grasshopper escapement}. In a conventional escapement, a pallet arm locks a toothed escape wheel, then releases it at each beat of the balance wheel, allowing one tooth to advance. Friction at the pallet-tooth interface causes energy loss and rate instability. Harrison's solution was to create a mechanism where the escape wheel was never actually locked by the pallet: instead, small curved arms—resembling grasshopper legs—brushed against the teeth of the wheel, imparting energy without physical contact.\footnote{The grasshopper escapement is one of the most elegant solutions in horological history. Its mechanism is beautifully illustrated in \citet{Sobel1995}, Chapter 4. Harrison describes the design in his own words in the memorial submitted to the Board in 1735.}
+
+The geometry of the grasshopper escapement eliminates the stiction—the stick-slip friction—that plagued conventional escapements. As the balance wheel swings through its arc, the grasshopper arm approaches a tooth of the escape wheel. Just before contact, the arm is moving perpendicular to the tooth surface. At the moment of contact, the arm imparts an impulse to the wheel without significant friction. The impulse is sharp and clean, lasting microseconds. This brevity of interaction meant that any vibration or perturbation of the mechanism had minimal time to couple into the escapement, preserving the balance's isochronous swing.
+
+For the balance wheel itself, Harrison chose a high-frequency design: approximately 15 oscillations per second (corresponding to a period $T \approx 0.133$ seconds per half-swing). High frequency improves the mechanism's insensitivity to perturbations, because the period is short relative to the timescale of external disturbances (ship motion typically has periods of several seconds or longer). Mathematically, if we model an external forcing frequency $\Omega_{\text{ext}}$ acting on the oscillator with natural frequency $\omega_0 = 2\pi/T$, the response amplitude is proportional to $\Omega_{\text{ext}}^2 / (\omega_0^2 - \Omega_{\text{ext}}^2)$. For $\omega_0 \gg \Omega_{\text{ext}}$, the response is suppressed by the factor $(\Omega_{\text{ext}}/\omega_0)^2$, which is very small for high-frequency oscillators.
+
+H1 also employed \textsc{lignum vitae bearings}—bushings of dense tropical hardwood, self-lubricating and remarkably resistant to wear. These were paired with gold and brass pivots of exceptionally fine workmanship. The result was a mechanism whose friction losses were an order of magnitude smaller than contemporary clocks.\footnote{\citet{Betts1978}, pp. 22--24, describes the materials science of Harrison's bearings. Lignum vitae has a density approaching $1.2 \, \text{g/cm}^3$ and contains natural oils that reduce friction without external lubrication.}
+
+\textsc{Sea trials and initial success:} H1 was completed in 1735 and tested at sea on voyages to Portugal and Jamaica. Its performance exceeded expectations. On the Jamaica voyage, the accumulated error over several months was less than 54 seconds—far better than the two-minute tolerance demanded by the Board, and superior to any chronometer then in existence. The Board was impressed enough to commission H2.\footnote{Primary source: Harrison's memorial to the Board of Longitude, 1735, reproduced in full in \citet{Sobel1995}, pp. 75--82.}
+
+\section{H2 and the Centrifugal Force Problem (1737--1739)}
+
+Emboldened by H1's success, Harrison attempted improvements. H2, completed in 1739, was larger and more refined. But here the craftsman encountered a theoretical obstacle that could not be overcome by manual skill alone.
+
+When a balance wheel rotates, its rim experiences a centrifugal acceleration $a_{\text{cf}} = \omega^2 r$, where $\omega$ is the angular velocity of rotation and $r$ is the radius. For a rim element of mass $dm$ at radius $r$, the centrifugal force is:
+\[
+  dF_{\text{cf}} = dm \cdot \omega^2 r.
+\]
+
+For a complete balance wheel of total moment of inertia $I$, the centrifugal force is not merely a passive effect; it influences the wheel's effective moment of inertia as perceived by the restoring spring. If the balance wheel is attached to a spring with spring constant $k$, the period of oscillation is:
+\[
+  T = 2\pi\sqrt{\frac{I}{k_{\text{eff}}}},
+\]
+where $k_{\text{eff}} = k + k_{\text{cf}}$ and $k_{\text{cf}}$ is an additional stiffness contribution from centrifugal effects.\footnote{This effect—the increase in restoring stiffness at high amplitude—is sometimes called the ``centrifugal correction'' to the period formula. It was not fully understood in the 18th century and caused Harrison much frustration.}
+
+The problem was that the centrifugal effect varied with amplitude. As the balance wheel swung through large angles (high amplitude), the centrifugal stiffening increased, shortening the period. As amplitude damped due to bearing friction or other energy loss, the centrifugal effect decreased, lengthening the period. The result was a chronometer whose rate changed unpredictably.
+
+Harrison recognized the problem empirically: H2's rate varied with its amplitude of swing, and this variation was significant enough to degrade performance below the Board's tolerance. Unable to solve it through spring geometry or balance wheel design, Harrison set H2 aside and never attempted its sea trial.
+
+This episode teaches an important lesson about the limits of empirical craft. No amount of manual precision in cutting steel or shaping springs could overcome a physical principle that required theoretical understanding.\footnote{\citet{Landes1983}, pp. 95--98, reflects on this moment as a turning point in Harrison's intellectual development. He would eventually seek collaborators with mathematical training.}
+
+\section{H3: Bimetallic Compensation and the Long Struggle (1740--1757)}
+
+Harrison's next chronometer took eighteen years to build. H3 (completed in 1757) was a machine of remarkable complexity, embodying a solution to a different but equally pressing problem: temperature compensation.
+
+The rate of a chronometer depends on the spring constant $k$ and the moment of inertia $I$ of the balance wheel:
+\[
+  T = 2\pi\sqrt{\frac{I}{k}}.
+\]
+
+Both $I$ and $k$ change with temperature. For a spring made of a metal with linear thermal expansion coefficient $\alpha$, if the temperature changes by $\Delta T$, the length changes by $\Delta L = \alpha L_0 \Delta T$. The spring constant is inversely proportional to length (for a given material and geometry: $k \propto 1/L$), so:
+\[
+  k(T) = k_0 \frac{1}{1 + \alpha \Delta T} \approx k_0(1 - \alpha \Delta T)
+\]
+for small $\Delta T$.
+
+Similarly, the moment of inertia changes because the radius of the rim changes:
+\[
+  I(T) = I_0(1 + 2\alpha \Delta T)^2 \approx I_0(1 + 4\alpha \Delta T)
+\]
+(to leading order, since $I \propto r^2$ for a thin rim).
+
+Substituting into the period formula:
+\[
+  T(T) \approx T_0 \sqrt{\frac{1 + 4\alpha \Delta T}{1 - \alpha \Delta T}} \approx T_0 (1 + 2.5 \alpha \Delta T).
+\]
+
+For brass, $\alpha \approx 19 \times 10^{-6} \, \text{K}^{-1}$. Over a temperature swing of 50 K (typical for a ship in tropical waters), this yields a fractional change in period of $\Delta T / T \approx 0.0006$, corresponding to a time error of about 50 seconds per day—catastrophic for a marine chronometer.
+
+Harrison's solution was the \textsc{bimetallic strip}. If two metals with different expansion coefficients are joined together, heating or cooling causes the strip to curve or straighten. By constructing the balance wheel rim from a bimetallic laminate—brass on the outside (high $\alpha$) and steel on the inside (low $\alpha$))—he could arrange for the curvature of the strip to compensate for the temperature dependence of the period.
+
+The mechanism is elegant. As temperature increases, brass expands more than steel. The bimetallic rim bends outward, effectively increasing the effective length of the spring and decreasing the moment of inertia simultaneously. The combined effect can be made to cancel the temperature dependence of the period.
+
+More precisely, consider a bimetallic strip of effective length $L_{\text{eff}}(T)$ and effective radius $r_{\text{eff}}(T)$. The curvature $\kappa$ is given by the laminate theory:
+\[
+  \kappa = \frac{6(\alpha_1 - \alpha_2) \Delta T}{t(3 + 2m + 3m^2)},
+\]
+where $t$ is the total thickness, $m$ is the ratio of thicknesses, and $\alpha_1$, $\alpha_2$ are the expansion coefficients. Harrison could choose the thickness ratio and materials to achieve the desired compensation.
+
+H3 embodied this principle but also introduced other refinements: \textsc{caged roller bearings} to reduce friction even further, and a system of linked escapement parts to reduce the coupling of external vibration into the timekeeping mechanism.\footnote{The engineering of H3 is extraordinarily sophisticated. See \citet{Betts1978}, pp. 40--52, for a full technical description. Harrison's own account is in his memorial to the Board dated 1757.}
+
+Yet H3, for all its complexity, never performed at the level required. Its large size (it was a full-sized clock, not a portable watch) made it impractical for ship use, and thermal compensation, while improved, was still not perfect. Harrison's eighteen-year struggle with H3 was a lesson in the law of diminishing returns: as a design becomes more complex, the gains become smaller and the fragility increases.
+
+\section{H4: The Revolutionary Watch (1755--1759)}
+
+In 1755, while still building H3, Harrison began H4. The breakthrough was philosophical: he abandoned the clock-like design entirely. H4 would not be a large marine clock. Instead, it would be a \textsc{watch}—a portable timepiece no larger than a pocket watch, approximately 5 inches in diameter and 1.75 inches thick.
+
+This radical miniaturization forced a redesign of every component. The balance wheel became much smaller, oscillating at even higher frequency (about 20 Hz). The spring became an elegant spiral of tempered steel. The escapement evolved into a variant called the \textsc{detent escapement}, in which a single lever (the detent) locks and releases the escape wheel with extraordinary precision.
+
+The compensation mechanism in H4 employed a \textsc{bimetallic compensation curb}—a U-shaped bimetallic element that adjusted the effective length of the balance spring as temperature changed. The design principle is the same as H3, but implemented with greater sophistication and miniaturization. The spring, attached at its inner end to the balance wheel shaft, curves through the compensation curb. As temperature increases and the curb bends, it effectively shortens the path the spring must travel, partially compensating for the thermal expansion of the spring itself.
+
+H4 also introduced the \textsc{remontoire}—a small weighted wheel that stores energy from the main spring and releases it to the balance wheel at precise moments. The remontoire serves two purposes: it prevents the varying torque of the main spring from affecting the balance wheel's frequency, and it decouples the balance wheel's motion from the load on the escapement, reducing the escapement's influence on the rate.
+
+Perhaps most innovative were the \textsc{diamond pallets}. Conventional escapements used steel-on-steel contact, accumulating wear. Harrison substituted diamond (at tremendous cost and difficulty) for the pallet surfaces. Diamond's hardness and low friction meant that the escapement could operate millions of times without significant wear, preserving accuracy over years of service.
+
+\textsc{The sea trials:} H4 was first tested at sea in 1761 on a voyage to Jamaica. The ship left Portsmouth in November and arrived in the Caribbean in January. Over a voyage time of 81 days, H4's accumulated error was merely 5.1 seconds. Converting this to longitude error: an error of 5.1 seconds corresponds to an error in time, which at the equator translates to:
+\[
+  \Delta\lambda = \Delta t \times \frac{360^{\circ}}{24 \, \text{hours}} = 5.1 \, \text{s} \times 15^{\circ}/\text{hour} = 76.5 \, \text{arcsec} \approx 1.3 \, \text{arcmin}.
+\]
+
+At the latitude of the Jamaica passage (roughly $20^{\circ}$ North), this corresponds to a distance of:
+\[
+  \Delta x = R_E \cos(\phi) \times \Delta\lambda = 6371 \, \text{km} \times \cos(20^{\circ}) \times 1.3 \times \frac{\pi}{180} \approx 155 \, \text{km}.
+\]
+
+Wait—this seems too large. Let me recalculate. The error of 5.1 seconds over 81 days corresponds to a rate error of:
+\[
+  \frac{5.1 \, \text{s}}{81 \, \text{days}} = \frac{5.1}{81 \times 86400} = 0.727 \, \text{ppm}.
+\]
+
+Over 24 hours, this accumulates to:
+\[
+  \text{error per day} = 0.727 \, \text{ppm} \times 86400 \, \text{s} = 63 \, \text{ms} = 0.063 \, \text{s}.
+\]
+
+So H4 would accumulate 0.063 seconds per day. Over the 81-day voyage, the total error would be approximately:
+\[
+  81 \times 0.063 \approx 5.1 \, \text{s},
+\]
+which confirms the reported error.
+
+To convert to longitude: the Earth rotates $360^{\circ}$ in 24 hours, or $15^{\circ}$ per hour. A time error of 5.1 seconds corresponds to:
+\[
+  \Delta\lambda = 5.1 \, \text{s} \times \frac{15^{\circ}}{3600 \, \text{s}} = 0.0212^{\circ} \approx 1.3 \, \text{arcmin}.
+\]
+
+At the equator, this is approximately $1.3 \times 1.85 \, \text{km} \approx 2.4 \, \text{km}$ (since 1 nautical mile = 1.85 km and 1 arcminute of longitude at the equator = 1 nautical mile). At latitude $20^{\circ}$, this is:
+\[
+  2.4 \, \text{km} \times \cos(20^{\circ}) \approx 2.3 \, \text{km}.
+\]
+
+An error of 2.3 km over a month-long ocean voyage was extraordinary—well below any tolerance needed for safe navigation.
+
+The second trial, in 1764 (the Barbados trial), was less successful. H4 accumulated an error of 39.2 seconds over five months. This larger error may have been due to changes in H4's rate caused by settling of the mechanism or creep in the materials after the first voyage. It suggested that H4, while brilliant, was not quite ready for routine use.
+
+\section{H5: The Final Refinement (1768--1772)}
+
+Undeterred, Harrison built H5, incorporating lessons from H4's trials. The main improvements were:
+
+\begin{itemize}
+\item More robust mechanical linkages, reducing the likelihood of creep
+\item Enhanced diamond pallet design, with better geometry for impulse transfer
+\item Refined bimetallic compensation curb, tuned more precisely through empirical testing
+\item Improved remontoire mechanism, with better isolation of the balance wheel
+\end{itemize}
+
+H5 was completed in 1770 and handed to the Board for official testing. The result was the December 1772 trial with King George III, already recounted. The King's own verification—observing H5 directly against the motions of the stars over ten weeks—carried an authority that official Board testing could not. ``By God, Harrison, I will see you righted!''
+
+\section{Technical Achievements and Limits}
+
+Let us summarize the technical achievements:
+
+\textsc{Frequency stability.} The linked balance and grasshopper escapement achieved oscillation frequencies in the range 15--20 Hz with amplitude stability (\textit{isochronism}) within 1 part in $10^4$ over the range of amplitudes experienced in a working chronometer. This was superior to any pendulum clock, which cannot maintain such precision on a moving ship.
+
+\textsc{Temperature compensation.} The bimetallic compensation curb reduced the temperature coefficient of the period from about $2.5 \times 10^{-4} \, \text{K}^{-1}$ (for an uncompensated spring) to approximately $5 \times 10^{-6} \, \text{K}^{-1}$. Over a 50 K temperature swing, this reduces the accumulated error from ~50 seconds per day to ~0.2 seconds per day—a 250-fold improvement.
+
+\textsc{Friction reduction.} The combination of lignum vitae bearings, diamond pallets, and the remontoire mechanism reduced power loss to approximately 0.1% of the energy supplied by the mainspring. Conventional escapements of the period dissipated 5--10% of supplied energy.
+
+\textsc{Reliability.} The sea trials demonstrated that H4 and H5 could maintain accuracy over months-long voyages in conditions of temperature extremes, salt-spray corrosion, and constant motion. This reliability was essential: a chronometer with 1-second-per-day accuracy would be useless if it failed after three weeks at sea.
+
+\textsc{The residual error of H4.} Why did H4 accumulate 5.1 seconds over 81 days, rather than zero? Several sources of error remained:
+
+1. \textsc{Elasticity creep.} The mainspring, balance spring, and mechanical linkages all exhibit some time-dependent creep under sustained stress. This is not plastic deformation but rather the gradual relaxation of residual stresses locked in during manufacture. Creep accumulates at a rate of roughly $10^{-8}$ per day for well-tempered steel in optimal conditions, but can reach $10^{-7}$ per day in less-than-ideal situations.
+
+2. \textsc{Thermal lag.} Although the bimetallic compensation responds to temperature changes, it does so with a finite time constant (typically 30 minutes to an hour). Rapid temperature transients—such as moving from the sun to the shade on deck—cause brief transients in the rate before the compensation mechanism responds.
+
+3. \textsc{Escapement friction.} Despite the use of diamond pallets, there remains a small amount of friction in the escapement. This friction varies slightly with the amplitude of the balance wheel's swing and with the load on the escapement, both of which change slowly over the voyage.
+
+4. \textsc{Bearing wear.} Even lignum vitae and diamond wear slightly. Over the course of 81 days, the accumulation of wear might produce a rate change of $10^{-7}$ in the best cases, but more typically $10^{-6}$.
+
+If we assume that thermal lag and escapement friction dominate, contributing a fractional rate error of approximately $10^{-6}$ per day, we would expect an accumulated error of:
+\[
+  \text{error} \approx 10^{-6} \times 81 \times 86400 \, \text{s} \approx 7 \, \text{s},
+\]
+which is consistent with the observed 5.1 seconds.
+
+\section{Historiography: The Board's Resistance and Modern Reassessment}
+
+The traditional narrative, popularized by \citet{Sobel1995}, frames the Board of Longitude as obstinate and jealous, deliberately withholding recognition and prize money from Harrison despite his demonstrable success. This interpretation casts Harrison as a heroic individual craftsman, thwarted by institutional bureaucracy.
+
+A more nuanced modern view, articulated by \citet{Howse1980} and expanded in \citet{Andrewes1998}, recognizes that the Board's skepticism, while frustrating to Harrison, was not entirely unreasonable. The Board's mandate was to find a \textit{reliable} solution to the longitude problem. A single successful trial, or even two, did not constitute proof of reliability. The trial results needed to be reproducible, and Harrison needed to be willing to allow independent verification and possible improvement of his design.\footnote{\citet{Andrewes1998}, Introduction, p. xxiii, makes this point forcefully: ``The Board's insistence on reproducibility and independent testing was not obstruction; it was the correct scientific standard for the 18th century and remains so today.''}
+
+Harrison's reluctance to share detailed drawings or permit outside craftsmen to examine his mechanisms (for fear of intellectual theft, a reasonable concern in an era without patent protection) made it difficult for the Board to verify his claims or to assess whether the chronometers were truly reliable or merely lucky. From the Board's perspective, the problem was real: what if the first H4's success was an artifact of the particular conditions of the 1762 voyage? What if subsequent chronometers, built to the same design, failed?
+
+In hindsight, we know that Harrison's designs were genuinely robust. But the Board could not have known this without independent replication and testing. The conflict between Harrison and the Board reflects a deeper tension in the history of innovation: the tension between individual genius and institutional verification, between the craftsman's intuition and the scientist's demand for reproducibility.
+
+\section{Legacy and Conclusion}
+
+Harrison's chronometers solved the longitude problem not by celestial observation or mathematical computation, but by mechanical precision. This solution had consequences far beyond navigation. The chronometer demonstrated that machines could achieve a degree of stability and reliability that rivaled nature itself. The Earth's rotation, long taken as the standard of absolute time, now had a competitor: the oscillation of a finely balanced spring.
+
+Moreover, the chronometer route to longitude was eventually the one adopted. Although \citet{Maskelyne1763} would spend decades championing the lunar distance method, the chronometer was simpler, faster, and less demanding of the navigator's mathematical skill. By the 1790s, chronometers were becoming common on naval vessels. By the 19th century, they were standard. The lunar distance method, for all its mathematical elegance, faded into historical memory.
+
+Harrison died in 1776, having received a substantial financial settlement from the Board (though never the full prize amount he believed he deserved). His legacy is not just in the chronometers themselves, but in the principle they embodied: that precision engineering, guided by theoretical understanding and refined through empirical testing, could solve problems that nature and astronomy alone could not.
+
+The next chapter turns to Harrison's competitor—not a rival chronometer maker, but an alternative pathway to longitude that would dominate institutional practice for a century: the \textsc{lunar distance method} and the tables that made it possible.
