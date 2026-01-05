@@ -1,106 +1,107 @@
 \chapter{The Longitude Act and Its Incentives}
 \label{ch:longitude-act}
 
-It was summer 1714 when the House of Commons took up the matter with sudden urgency. A parade of witnesses appeared: sea captains with tales of narrow escapes, merchants describing the insurance premiums paid for the risk of getting lost, mathematicians proposing solutions both practical and fantastic. William Whiston and Humphry Ditton had submitted their scheme for locating ships by firing synchronized bomb-rockets into the air at night (a proposal so impractical that it served chiefly to catalyze action against all the vagueness that had gone before). The political will, which had been gathering since the Scilly disaster seven years earlier, suddenly crystallized. By August, Parliament had passed \emph{An Act for Providing a Public Reward for such Person or Persons as shall Discover the Longitude at Sea}, creating the Board of Longitude and setting aside a sum that shocked contemporaries by its magnitude: up to twenty thousand pounds for a practical solution.
+In the spring of 1714, the House of Commons was seized by an unusual urgency. Day after day, witnesses appeared to testify about maritime disasters caused by navigational uncertainty. Sea captains described near-misses and disasters: ships landing miles from their reckoned positions, convoys scattered in fog, valuable cargoes lost. William Whiston and Humphry Ditton had submitted a proposal: use signal fires and rockets visible from heights of forty miles to communicate time across the ocean. It was impractical and absurd, yet even this proposal gained serious consideration. The political pressure was intense. In the summer, with remarkable speed and unusually broad support, Parliament passed An Act for providing a Public Reward for such Person or Persons as shall discover the Longitude at Sea (12 Anne, c. 15). The Act offered the enormous sum of £20,000—equivalent to roughly twenty years' wages for a skilled tradesman—to anyone who could devise a method to determine longitude at sea to within 30 nautical miles. Smaller prizes of £10,000 and £15,000 were offered for less stringent requirements. This was the Longitude Act of 1714, and it inaugurated a new era in which the British state explicitly offered incentives for technological innovation.
 
-To understand this Act---and the century of technical struggle it would inspire---one must first understand its structure. It was not a single prize but a graduated series of incentives. The precision required determined the payment received.
+\section{The Precision Thresholds and Their Physical Meaning}
 
-\section{The Precision Thresholds}
-\label{sec:precision-thresholds}
-
-The Act defined precision in terms that a navigator could measure and verify. The criterion was not longitude error in degrees, but rather the ability to determine position at sea after several weeks of sailing. Three tiers of reward were established:
+The Act established three levels of achievement, each with corresponding rewards:
 
 \begin{itemize}
-  \item \textsc{£10,000}: A method determining longitude to within \textsc{60 nautical miles} after sailing from Britain to the West Indies
-  \item \textsc{£15,000}: A method determining longitude to within \textsc{40 nautical miles}
-  \item \textsc{£20,000}: A method determining longitude to within \textsc{30 nautical miles}
+  \item \textsc{£10,000} for accuracy to 60 nautical miles at the end of a 6-week voyage
+  \item \textsc{£15,000} for accuracy to 40 nautical miles at the end of a 6-week voyage
+  \item \textsc{£20,000} for accuracy to 30 nautical miles at the end of a 6-week voyage
 \end{itemize}
 
-These are substantial distances by modern standards. But they are achievable distances. A ship that knows it is within 30 miles of its intended position can navigate to port; a ship that knows it is within 60 miles can avoid reefs and shoals. The Act was not demanding the impossible, but rather the difficult.
+These distance thresholds correspond to angular and temporal precisions. A nautical mile is defined as 1/60th of a degree of latitude, or equivalently 1/21,600 of the circumference of the Earth. Converting to longitude:
 
-To translate these thresholds into terms that engineers and astronomers could work with, one must convert distance to time. The Earth rotates at a steady rate: one complete rotation every 24 hours, or 15 degrees of longitude per hour. At the equator, this corresponds to a linear velocity of approximately 1,040 nautical miles per hour (the circumference of 40,075 km divided by 24 hours). Away from the equator, the linear velocity decreases with latitude:
-
+At the equator, where a degree of longitude spans exactly 60 nautical miles:
 \[
-v(\phi) = 1040 \cos(\phi) \text{ nautical miles per hour}
+60 \text{ nm} = 1^{\circ} = 4 \text{ minutes of time (at equator)}
 \]
 
-where $\phi$ is the observer's latitude. At typical shipping latitudes (say, 50°N for the Atlantic), the velocity is roughly 1,040 $\cos(50°) \approx 670$ nautical miles per hour. This means:
-
+At higher latitudes $\phi$, the conversion is:
 \[
-\Delta t = \frac{\Delta \text{distance}}{670 \text{ nm/h}}
+\text{distance (nm)} = 60 \cos(\phi) \text{ nm per degree}
 \]
 
-For the most stringent requirement---30 nautical miles at 50°N---this translates to:
-
+Thus at 30 nautical miles:
 \[
-\Delta t = \frac{30}{670} \approx 0.045 \text{ hours} \approx 2.7 \text{ minutes} \approx 160 \text{ seconds}
+30 \text{ nm} = 0.5^{\circ} = 2 \text{ minutes of time (at equator)}
 \]
 
-So a method solving for longitude at the highest level of the Act needed to determine the time at Greenwich (or any fixed reference meridian) to within roughly \textsc{2.5 to 3 minutes}. The 60-nautical-mile threshold required only $\Delta t \approx 5$ minutes. These are the numbers that would drive technological innovation for the next seventy years.
+For the lunar distance method (the astronomical approach), 30 nautical miles corresponds to requiring the Moon's position to be known to approximately 1 arcsecond precision. For the chronometer approach, 30 nautical miles at the equator corresponds to a clock error of 2 minutes of time accumulated over a 6-week voyage—an error rate of roughly 0.5 seconds per day.
+
+These thresholds were not chosen arbitrarily. Parliamentary testimony had established that navigational errors beyond 60 nautical miles posed unacceptable risks to merchant vessels and naval squadrons. The 30-nautical-mile threshold (most worth pursuing, as it offered the £20,000 prize) represented the limits of what contemporary navigation techniques could reliably achieve. The Act thus crystallized into measurable objectives what had been vague aspirations.
 
 \section{The Four Competing Approaches}
-\label{sec:four-methods}
 
-By 1714, four distinct approaches had emerged from the mathematical and observational traditions. None was yet mature. All had powerful advocates. Each was rooted in a different understanding of how the problem could be solved.
+From the outset, multiple methods were proposed to the Board of Longitude. Four major approaches emerged, each grounded in different physics and each with adherents among scientists and practitioners.
 
-\subsection{The Lunar Distance Method}
+\textsc{The Lunar Distance Method:} The astronomer's preferred solution. The Moon moves approximately 0.5 degrees per hour through the celestial sphere. At any given moment, the Moon's angular distance from reference stars (or from the Sun) is a function of time at Greenwich. If an accurate lunar position table were available, a navigator could observe the Moon-star distance with a sextant, consult the table to find what Greenwich time corresponds to that distance, and thus determine his longitude. The method is elegant, requiring only a sextant and a table—no moving parts vulnerable to wear or temperature change. Its drawback is computational burden: a complete calculation from raw sextant reading to longitude determination required 30 minutes of mental arithmetic using logarithms. Advocates included the astronomers of the Board, particularly Edmond Halley.
 
-The astronomers' favorite approach: use the Moon as a celestial clock. The Moon moves across the star field at a rate of roughly half a degree per hour. If one knew the Moon's position as a function of Greenwich time---that is, if one had accurate lunar tables---then by measuring the angular distance between the Moon and a known fixed star, one could look up the corresponding Greenwich time. Compare that to the local time (determined from the altitude of the Sun or a star), and the difference is the longitude.
+\textsc{Jupiter's Moons:} When Galileo discovered the four large moons of Jupiter orbiting the planet, he recognized them as a celestial clock: the moons undergo regular eclipses, and the times of these eclipses depend only on Jupiter's true position, not on the observer's location. An observer who could accurately predict when Jupiter's moons would be eclipsed could compare the predicted time (in Greenwich time) with the observed time (at his current location) to determine his longitude. The method requires a telescope and detailed tables of Jupiter's motion. Its advantage is that it avoids the computational burden of lunar distances. Its disadvantages are severe: Jupiter is faint and difficult to observe from a pitching ship; the telescopes needed were large and fragile; and the method works only in dark twilight, when Jupiter is visible but the sky is dark enough for precise timing. Few serious investigators pursued this method, though it remained on the board's agenda.
 
-The elegance was appealing. It required no mechanical precision, only mathematical tables and a good sextant. It demanded no synchronized clocks. It relied on phenomena---lunar motion---that had been studied for millennia.
+\textsc{Magnetic Variation:} The compass needle does not point exactly north; it deviates by an angle called magnetic variation or declination. Magnetic variation changes with location—in London it might be 12 degrees west of true north, while in Jamaica it might be 3 degrees east. If the variation at every location on Earth were known, a navigator could measure the local variation and look it up to determine his longitude. Henry Gellibrand and others had attempted to map magnetic variation, but the magnetic field proved to be non-uniform and changing with time, making the method unreliable. Despite its limitations, magnetic variation attracted attention because it required no equipment beyond a compass. Some proposals suggested a "magnetic clock" to exploit variation patterns.
 
-But it had a severe practical drawback: the calculation was laborious. Correcting the observed angle for atmospheric refraction, parallax, and aberration; looking up values in tables; performing logarithmic computation---the whole procedure took the better part of an hour. At night, by candlelight, on a pitching deck, a navigator had to execute arithmetic to a precision of one part in a thousand. Errors were frequent. Fatigue introduced mistakes. And even a small computational slip could undo the benefit of accurate observation.
+\textsc{The Chronometer (Mechanical Clock):} A sufficiently accurate clock, compared against a reference clock set to Greenwich time before departure, could directly yield longitude: the time difference multiplied by 15 degrees per hour gives the longitude difference. The method is conceptually simple and requires no astronomy. Its disadvantages are severe: pendulum clocks fail at sea (as we have seen), temperature changes affect all mechanical systems, and building a clock accurate to seconds per day seemed nearly impossible. Yet some clockmakers, particularly John Harrison, believed the problem could be solved through mechanical ingenuity.
 
-\subsection{Jupiter's Moons Method}
+\section{Why Astronomers Dominated the Board}
 
-In 1610, Galileo discovered the four bright moons of Jupiter. Within a few decades, astronomers realized that these moons passed regularly behind Jupiter (in eclipse) according to a predictable timetable. By the 1660s, Ole Romer's observations of these eclipses had revealed that light took time to travel---providing the first measurement of its speed. But more importantly for navigation, if one knew the moment of an eclipse to sufficient precision, one could treat it as a clock that kept perfect time everywhere in the solar system.
+The Board of Longitude, established by the 1714 Act, consisted of astronomers, naval officers, mathematicians, and royal officials. The Astronomer Royal (designated as a permanent member) held significant influence. The composition of the Board during its active decades skewed toward learned men—academics rather than practical craftsmen, astronomers rather than clockmakers.
 
-The idea was seductive: if a navigator could observe the time of a Jupiter eclipse, he could look it up in tables to determine what time it was at Greenwich, and thus his longitude.
+This institutional bias had consequences. The lunar distance method, championed by astronomers, received the most sustained attention and resources. Maskelyne, who became Astronomer Royal in 1765, was a passionate advocate for the method and invested enormous effort in refining lunar tables and computing the Nautical Almanac. When John Harrison claimed success with his chronometers, the Board subjected his devices to skeptical scrutiny, imposing stringent tests and demanding repeated trials before awarding the prize.
 
-The problem was that Jupiter's moons are faint. They require a telescope. On a ship at sea, with the deck pitching and the wind rising, tracking Jupiter and timing the moment of eclipse was extraordinarily difficult. The necessary observations required a telescope so large and stable that it was barely practical even in a fixed observatory. At sea, it was nearly impossible.
+\section{The Historiographical Debate}
 
-\subsection{The Magnetic Variation Method}
+For two centuries, historians portrayed this episode according to a clear narrative: the Board was dominated by astronomers who had vested interests in the lunar distance method and who obstructed Harrison's chronometer out of academic conservatism and professional jealousy. In this traditional view, Harrison was a lone genius, a self-taught craftsman whose mechanical intuition transcended academic obstacles. The Board was the villain—bureaucratic, narrow-minded, defensive of the astronomical establishment.
 
-The Earth's magnetic field is not uniform. The needle's declination---its deviation from true north---varies with position on the globe. If one could map this variation with sufficient detail, then measuring local magnetic declination would pinpoint position east or west.
+This interpretation, championed by popular histories and Dava Sobel's influential \emph{Longitude} (1995), contains truth but oversimplifies. \citet{Sobel1995} emphasizes Harrison's forty-year struggle and the Board's repeated demands for additional trials. The chronometer is portrayed as obviously superior—faster, simpler, more reliable—yet the Board delayed awarding full recognition until political pressure (including an appeal to King George III) forced their hand.
 
-The approach required two things: a dense map of magnetic variation as a function of longitude, and a method to measure local declination with high precision. Both were difficult. The magnetic field varied not just with location but also with time. Solar activity, seasonal changes, and longer-term magnetic drift all affected the needle. The method was attractive to sailors because it required no calculations, only measurements. But the underlying physics was poorly understood, and the precision was elusive.
+But a revisionist interpretation, articulated by scholars such as \citet{Howse1980} and \citet{Andrewes1998}, offers greater nuance. The Board's skepticism had legitimate grounds. Harrison's devices were unique: no independent replication existed until the late 18th century. Chronometers were expensive to build and even Harrison could not guarantee that a copy built by another craftsman would maintain his level of accuracy. The lunar distance method, by contrast, was mathematically grounded and reproducible—any astronomer with proper tables could employ it. Furthermore, the method did not require every ship to carry an expensive precision instrument; the tables could be produced at the Royal Observatory and distributed to mariners.
 
-\subsection{The Chronometer Method}
+The Board faced a genuine choice under uncertainty. Should they champion a method that was theoretically sound and proven to work on multiple instruments (the lunar distance method), or should they gamble on a technology that had worked brilliantly in one craftsman's hands but lacked independent verification? From the perspective of risk management and reproducibility, the Board's caution was not unreasonable.
 
-The most mechanically demanding approach: build a clock that keeps time accurately at sea. If such a clock could be wound and set to Greenwich time before departure, then at any moment thereafter, comparing local time (from the Sun's altitude) to the chronometer's time would give longitude directly.
+\section{Resolution and Legacy}
 
-The problem was staggering: build a device that could withstand the motion of a ship, the temperature swings of a month-long voyage, the corrosion of salt air, and still maintain accuracy to within seconds. Pendulum clocks failed at sea because the ship's motion confused their mechanism. Mechanical friction, material expansion, and the unpredictable stresses of shipboard life all conspired against mechanical precision.
+Ultimately, both methods succeeded—and both ultimately proved limited. The lunar distance method was operationalized in Maskelyne's Nautical Almanac (first published in 1767) and taught to mariners for decades. At sea, skilled navigators using the method achieved accuracies on the order of 1–2 degrees—worse than the 30-nautical-mile standard, but sufficient for many purposes. The computational burden remained a barrier to widespread adoption.
 
-Yet the principle was simple, and many craftsmen believed---or hoped---that precision was merely a matter of sufficient ingenuity and care. The first true mechanical chronometer would not emerge for decades, but the dream was already taking shape.
+Harrison's chronometers, once demonstrated to be reproducible (later builders including Pierre Le Roy and John Arnold produced comparable instruments), became the standard solution. By the early 19th century, chronometers—now produced by multiple makers and steadily improving—had become the primary navigation instrument for any ship that could afford them.
 
-\section{The Board of Longitude and Its Composition}
-\label{sec:board-composition}
+Reflecting on the episode, \citet{Howse1980} argues that the Board's institutional structure actually served a valuable function: by demanding reproducibility, independent verification, and multiple trials, the Board ensured that the final solution was robust. A method adopted based on a single brilliant success might later prove to have been a fluke or dependent on unreproducible craftsmanship. By insisting on evidence, the Board (perhaps inadvertently) imposed standards that the modern scientific community would recognize as sound.
 
-The Act created a body to evaluate submissions, grant the reward, and oversee trials: the Board of Longitude. Its composition was telling. The President was the Lord High Admiral. The permanent scientific members included the Astronomer Royal, the Savilian Professor of Astronomy at Oxford, and the Lucasian Professor of Mathematics at Cambridge. Seats were also held by the Master of Trinity College Cambridge and representatives of the Royal Society.
+The Longitude Act itself had broader consequences. It established precedent for government investment in technological innovation. It showed that substantial prizes could mobilize talent and resources. It demonstrated that the path from scientific problem to practical solution was rarely straight—both the astronomical and mechanical approaches had merit, and wisdom lay in supporting multiple efforts rather than betting exclusively on one. In this sense, the Board's pluralism, which might have appeared as confusion or indecision, was actually a more sophisticated strategy than any single-method approach could have been.
 
-This was a body of learned men, weighted heavily toward mathematics and astronomy. There were no chronometer makers on the Board. No ship captains from the merchant service sat permanently. The scientific bias was unmistakable: the Board's confidence lay in mathematical tables and observational astronomy, not in mechanical craft.
+\section{Timeline of Key Board Decisions}
 
-This composition would have profound consequences for the next half-century. Submissions involving lunar distances were examined with rigor but also with sympathy. The method was mathematically elegant and required no technological innovation---only better tables and easier calculation methods. Mechanical solutions were scrutinized with skepticism. A chronometer had to not merely keep time; it had to convince astronomers that it was keeping time, which meant submitting to trials so rigorous that success became almost impossible.
+The following timeline summarizes major decisions by the Board of Longitude from its creation through the resolution of Harrison's claims:
 
-This was not conspiracy. It was the inevitable result of asking mathematicians and astronomers to judge which approach was most promising, then giving them the power to allocate resources accordingly. The bias was institutional, not personal.
+\begin{itemize}
+  \item \textsc{1714 (June):} Longitude Act passes with overwhelming parliamentary support.
+  \item \textsc{1714--1720:} Initial proposals flood in; Board establishes criteria and begins evaluation.
+  \item \textsc{1730:} Harrison completes H1 (first sea clock); Board provides modest funding.
+  \item \textsc{1736:} H1 tested at sea; performance promising but not meeting full Act requirements.
+  \item \textsc{1765:} Maskelyne becomes Astronomer Royal; lunar distance method gains official backing.
+  \item \textsc{1767:} \emph{Nautical Almanac} first published; lunar distance method now accessible to mariners.
+  \item \textsc{1761--1762:} H4 (Harrison's watch) tested in Jamaica; extraordinary accuracy (5.1 seconds error).
+  \item \textsc{1772:} H5 tested before King George III; error of 4.5 seconds over ten weeks.
+  \item \textsc{1773:} Board finally awards Harrison £4,400 as a "gift" in recognition of long service; Parliament subsequently awards additional £8,750, bringing total remuneration near the prize level.
+  \item \textsc{1828:} Board of Longitude formally dissolved; prizes system discontinued.
+\end{itemize}
 
-\section{The Historiographical Question}
-\label{sec:historiography}
+The timeline reveals a process of negotiation, partial recognition, and eventual acceptance. The delays were neither simple obstruction nor oversight; they reflected genuine institutional uncertainty about which method would prove most practical for widespread use.
 
-For two centuries, the story of the longitude problem has been told as a clash between heroes and bureaucrats. In the popular narrative, John Harrison---a self-taught craftsman from Yorkshire---pursued his vision of the mechanical chronometer against the opposition of a conservative scientific establishment that preferred the astronomers' methods. The Board, in this telling, was obstructionist. Harrison's triumph was not merely technical but also a vindication of practical ingenuity against theoretical prejudice.
+\section{Thematic Lessons}
 
-This narrative contains truth, but it simplifies. A more careful reading of the Board's records and correspondence reveals a more complex picture. The Board's skepticism toward mechanical solutions was not groundless. The early chronometers---Harrison's H1, H2, H3---were indeed extraordinary achievements, but they were so complex, so difficult to replicate, so dependent on his personal skill and the craftsmanship of his assistants, that it was genuinely unclear whether they represented a practical solution that could be mass-produced and maintained by the marine service. A clock that works once, maintained by its inventor, is not the same as a method suitable for deployment across the navy.
+The story of the Longitude Act illuminates several principles about how societies mobilize solutions to difficult problems:
 
-The Board's support for lunar distance methods was not irrational obstruction. By mid-century, Tobias Mayer's lunar tables had achieved unprecedented accuracy. The method was difficult, but it was teachable. It could be deployed immediately, without waiting for mechanical innovation. From an institutional perspective---from the perspective of someone tasked with the welfare of the navy and merchant service---supporting the lunar distance method while remaining skeptical of chronometers was a reasonable stance.
+\textsc{Incentive structures matter.} The Act offered large rewards, but only for demonstrated success. This attracted talent and resources but also ensured that claims had to be substantiated. The structure of the prize—tiered by precision level—allowed partial credit and encouraged incremental progress.
 
-The truth is that both approaches eventually proved viable. The lunar distance method dominated navigation for about eighty years, roughly 1760 to 1840. The chronometer eventually superseded it, not because the Board was wrong to doubt its feasibility, but because mechanical technology continued to improve. Eventually, precision mechanical clocks became cheap and reliable enough to outfit an entire fleet.
+\textsc{Multiple approaches have value.} The Board's willingness to support both the astronomical method (lunar distances) and mechanical approaches (chronometers) meant that if one method stalled, another could advance. In retrospect, this pluralism appears wise; at the time, it looked like indecision.
 
-\section{The Prize and Its Conditions}
-\label{sec:conditions}
+\textsc{Verification is difficult under uncertainty.} The Board faced a genuine problem: how to verify that a claimed solution actually works? For the lunar distance method, grounded in celestial mechanics and astronomical theory, verification could rely on mathematical reasoning. For Harrison's chronometers, verification required repeated trials and independent replication—a much more demanding standard. The Board's insistence on verification, though costly in time, ensured that the final solution was robust.
 
-The Board did not simply award money. It imposed conditions. A method had to be tested at sea. It had to be reproducible. It had to succeed not once but repeatedly, on multiple voyages, in the hands of trained but ordinary navigators. The tests were expensive and time-consuming. A sea trial could take months. Multiple trials could stretch over years.
+\section{Looking Forward}
 
-The Board also retained the power to withhold the full prize if a method met the requirement but did not exceed it. This was rare, but the possibility concentrated minds. Submitters were not merely solving a problem; they were competing for credit and full compensation.
-
-By the 1720s, the first generation of serious submissions was arriving. The drama of the next seventy years---the struggle to improve lunar tables, the attempts to build seaworthy chronometers, the gradual evolution of navigational practice---was now set in motion. The Act had created not a solution but a framework within which solutions could emerge. \cref{ch:lunar-distance} takes up the story of the method that astronomers believed held the greatest promise: the elegant geometry of lunar distances, and the extraordinarily difficult labor of making it practical.
+With the Longitude Act established and multiple methods under active development, the stage was set for the detailed investigation of individual approaches. The lunar distance method, despite its computational burden, would be refined by successive astronomers and would serve navigators for decades. Harrison's pursuit of the mechanical solution would consume forty years and produce devices of extraordinary sophistication. And yet both approaches, though they succeeded in their own terms, would eventually give way to technologies that their 18th-century inventors could not have foreseen. This is the arc we now trace: the triumph and limitation of each method, and the ultimate resolution through entirely different means. We turn first, in \cref{ch:lunar-distance-method}, to the astronomical approach in its full technical glory.
 
