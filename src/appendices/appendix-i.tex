@@ -1,0 +1,233 @@
+\chapter{Reference Tables and Extended Data}
+\label{app:reference-tables}
+
+This appendix provides tabulated reference data: unit conversions between historical and metric systems, extended instrument specifications, and sample observational data illustrating reduction techniques.
+
+\section{I.1 Unit Conversions: Historical and Modern Astronomical Units}
+
+\subsection{Linear Units}
+
+Astronomical observations from the 17th--19th centuries frequently used historical measurement units. Modern computations require conversion to metric (SI) units.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Historical and metric length unit conversions. 1 astronomical unit (AU) $= 149,597,870.7$ km.}
+  \label{tab:length-units}
+  \small
+  \begin{tabular}{lllll}
+    \toprule
+    \textbf{Unit} & \textbf{Abbrev.} & \textbf{Metric Equivalent} & \textbf{Notes} & \textbf{Historical Use} \\
+    \midrule
+    Meter & m & 1 m (SI) & SI base unit & Modern standard \\
+    Kilometer & km & 1000 m & Large distances & Terrestrial, planetary \\
+    Parsec & pc & $3.086 \times 10^{16}$ m & 1/parallax(arcsec) & Stellar distances \\
+    Light-year & ly & $9.461 \times 10^{15}$ m & Distance light travels 1 year & Extragalactic \\
+    AU (Astronomical Unit) & AU & $1.496 \times 10^{11}$ m & Mean Earth-Sun distance & Planetary orbits \\
+    Micron & $\mu$m & $10^{-6}$ m & Micrometer & Optical wavelengths \\
+    Angstrom & $\AA$ & $10^{-10}$ m & Spectroscopic lines & Stellar spectra \\
+    \midrule
+    Paris foot & pf & 0.32484 m & Old French royal measure & Pre-metric observations \\
+    Paris inch & pi & 0.02707 m (= pf/12) & Paris foot / 12 & Instrument dimensions \\
+    Paris line & pl & 0.00226 m (= pi/12) & Paris inch / 12 & Fine measurements \\
+    English foot & ft & 0.30480 m & UK/US standard & British observations \\
+    English inch & in & 0.02540 m & Foot / 12 & Instrument specs \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Angular Units}
+
+Astronomical measurements require angular precision. Conversion between degrees, arc-minutes, arc-seconds, and radians enables comparison across epochs.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Angular unit conversions and typical observational precisions.}
+  \label{tab:angular-units}
+  \small
+  \begin{tabular}{lllll}
+    \toprule
+    \textbf{Unit} & \textbf{Abbrev.} & \textbf{Relation} & \textbf{Decimal Degrees} & \textbf{Typical Measurement} \\
+    \midrule
+    Degree & ° & 360° = full circle & 1° & Naked-eye star positions \\
+    Arc-minute & $'$ & 1° = 60$'$ & 1/60° $= 0.01\overline{6}$° & Telescope field of view \\
+    Arc-second & $''$ & 1$'$ = 60$''$ & 1/3600° $= 0.0002\overline{7}$° & Meridian instrument accuracy \\
+    Milliarcsecond & mas & 1$''$ = 1000 mas & $2.78 \times 10^{-7}$° & Modern satellite astrometry \\
+    Radian & rad & 1 rad $= 180°/\pi$ & $57.2958°$ & Mathematical calculations \\
+    \midrule
+    & & & &  \\
+    \multicolumn{5}{c}{\textbf{Historical Accuracy Progression}} \\
+    \midrule
+    Flamsteed (1700s) & & $\pm 10''$ to $\pm 20''$ & $\pm 2.8 \times 10^{-3}$° & Early catalog \\
+    Bradley (1740s) & & $\pm 1''$ & $\pm 2.8 \times 10^{-4}$° & Zenith sector \\
+    Airy transit circle (1850--1954) & & $\pm 0.5''$ & $\pm 1.4 \times 10^{-4}$° & Gold standard \\
+    Photographic zenith tube (1900--2000) & & $\pm 0.3''$ & $\pm 8.3 \times 10^{-5}$° & Automated recording \\
+    Hipparcos satellite (1990s) & & $\pm 1$ mas & $\pm 2.8 \times 10^{-7}$° & Space-based \\
+    Gaia satellite (2014--present) & & $\pm 0.1$ mas (bright) & $\pm 2.8 \times 10^{-8}$° & Current standard \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{I.2 Astronomical Constants}
+
+Historical values of fundamental constants improved dramatically over centuries as observational precision increased. Table \ref{tab:astronomical-constants} lists key constants with historical estimates and modern values.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Astronomical constants: historical estimates vs. modern values. All modern values are 2020 IAU/CODATA standards.}
+  \label{tab:astronomical-constants}
+  \small
+  \begin{tabular}{lllll}
+    \toprule
+    \textbf{Constant} & \textbf{Historical Value (Era)} & \textbf{Historical Error} & \textbf{Modern Value} & \textbf{Unit} \\
+    \midrule
+    \multicolumn{5}{c}{\textbf{Solar System}} \\
+    \midrule
+    Astronomical Unit & 149,500,000 km (1900) & 1,100 km & $1.495978707 \times 10^{8}$ & km \\
+    Solar mass & $2.0 \times 10^{30}$ kg (1900) & $\pm 3\%$ & $1.98892 \times 10^{30}$ & kg \\
+    Earth mass & $6.0 \times 10^{24}$ kg (1850) & $\pm 5\%$ & $5.9722 \times 10^{24}$ & kg \\
+    Moon mass & $7.3 \times 10^{22}$ kg (1880) & $\pm 8\%$ & $7.3458 \times 10^{22}$ & kg \\
+    \midrule
+    \multicolumn{5}{c}{\textbf{Orbital Parameters}} \\
+    \midrule
+    Earth orbital eccentricity & 0.0167 (1700s, Bradley) & $\pm 0.0001$ & $0.0167086$ & (dimensionless) \\
+    Obliquity of ecliptic & $23° 28' 20''$ (1700s) & $\pm 10''$ & $23° 26' 21.45''$ (J2000.0) & deg-min-sec \\
+    Precession constant & $50.3$ arcsec/yr (1700s) & $\pm 0.2$ arcsec/yr & $50.2881$ arcsec/yr & arcsec/year \\
+    Nutation amplitude & $9.2''$ (Bradley, 1748) & $\pm 0.1''$ & $9.2025''$ (IAU 2000A model) & arcseconds \\
+    \midrule
+    \multicolumn{5}{c}{\textbf{Fundamental Physics}} \\
+    \midrule
+    Speed of light & $2.99 \times 10^{8}$ m/s (1850, Foucault) & $\pm 2 \times 10^{6}$ m/s & $299,792,458$ m/s (defined) & m/s \\
+    Gravitational constant & $6.74 \times 10^{-11}$ m$^3$/kg-s$^2$ (1798, Cavendish) & $\pm 2\%$ & $6.67430 \times 10^{-11}$ & m$^3$/kg-s$^2$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{I.3 Extended Instrument Comparison}
+
+Table \ref{tab:extended-instruments} provides a comprehensive list of major astronomical instruments with technical specifications, operational periods, and historical context.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Extended instrument specifications. Organized chronologically; includes aperture, focal length, accuracy, and location for 30+ instruments spanning 350 years.}
+  \label{tab:extended-instruments}
+  \small
+  \begin{tabular}{lllllll}
+    \toprule
+    \textbf{Instrument} & \textbf{Date} & \textbf{Type} & \textbf{Aperture} & \textbf{Focal Length} & \textbf{Accuracy} & \textbf{Location} \\
+    \midrule
+    \multicolumn{7}{c}{\textbf{17th--18th Century Meridian Instruments}} \\
+    \midrule
+    Flamsteed mural arc & 1689 & Quadrant & 130 mm & — & $\pm 10''$ & Greenwich \\
+    Halley transit instr. & 1710 & Transit telescope & 100 mm & 1.5 m & $\pm 15''$ & Greenwich \\
+    Bradley zenith sector & 1727 & Zenith sector & 80 mm & 2.1 m & $\pm 1''$ & Greenwich \\
+    Bradley transit circle & 1750 & Transit circle & 120 mm & 2.0 m & $\pm 5''$ & Greenwich \\
+    Bird 8-ft quadrant & 1750 & Quadrant & 240 mm & 2.4 m & $\pm 8''$ & Oxford \\
+    \midrule
+    \multicolumn{7}{c}{\textbf{19th Century Telescopes and Instruments}} \\
+    \midrule
+    Herschel 20-ft reflector & 1783 & Reflector & 190 mm & 6.1 m & — & Slough \\
+    Herschel 40-ft reflector & 1789 & Reflector & 490 mm & 12.2 m & — & Slough \\
+    Grubb 28-in refractor & 1893 & Refractor & 710 mm & 10.4 m & $\pm 0.5''$ & Greenwich \\
+    Airy transit circle & 1851 & Transit circle & 170 mm & — & $\pm 0.5''$ & Greenwich \\
+    \midrule
+    \multicolumn{7}{c}{\textbf{Photographic Era Instruments (1900--1970)}} \\
+    \midrule
+    Photographic zenith tube & 1900 & Zenith photog. & 150 mm & — & $\pm 0.3''$ & Greenwich \\
+    Astrographic refractor & 1905 & Refractor & 330 mm & 3.4 m & $\pm 0.3''$ & Multiple sites \\
+    Yerkes refractor & 1897 & Refractor & 1020 mm & 19.4 m & $\pm 0.2''$ & Williams Bay, WI \\
+    Mount Wilson 100-inch & 1917 & Reflector & 2540 mm & 16.8 m & — & Mount Wilson, CA \\
+    Palomar 200-inch & 1948 & Reflector & 5080 mm & 16.8 m & — & Palomar Mountain, CA \\
+    \midrule
+    \multicolumn{7}{c}{\textbf{Modern Era Instruments (1970--Present)}} \\
+    \midrule
+    Isaac Newton Telescope & 1967 & Reflector & 980 mm & 13.7 m & $\pm 0.01''$ & Herstmonceux, La Palma \\
+    Hipparcos satellite & 1989 & Space astrometry & (electronic) & — & $\pm 1$ mas & Orbit \\
+    Keck I (W.M.\ Keck Observatory) & 1993 & Reflector & 10000 mm & 15 m & $\pm 0.01''$ & Mauna Kea, HI \\
+    Very Large Telescope (VLT) & 1998 & Reflector & 8200 mm & — & $\pm 0.005''$ & Paranal, Chile \\
+    Gaia satellite & 2013 & Space astrometry & (electronic) & — & $\pm 0.1$ mas (bright) & Orbit (L2) \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\section{I.4 Sample Observation: Bradley's Aberration Measurement}
+
+This section illustrates the reduction of a historical observation using modern techniques, demonstrating how Bradley's 1725 zenith sector measurements of $\gamma$ Draconis revealed stellar aberration.
+
+\subsection{Observational Setup}
+
+\begin{itemize}
+\item \textbf{Star}: $\gamma$ Draconis ($\alpha = 17^{\mathrm{h}}56^{\mathrm{m}}36^{\mathrm{s}}$, $\delta = +51°29'20''$ modern J2000.0)
+\item \textbf{Observer}: James Bradley, Greenwich Observatory
+\item \textbf{Instrument}: Zenith sector (80 mm aperture, $\pm 1$ arcsecond accuracy)
+\item \textbf{Observation Dates}: September 1725 (star rising toward zenith), December 1725 (star receding from zenith)
+\end{itemize}
+
+\subsection{Observed Zenith Distances}
+
+Bradley's observed zenith distance (angle from zenith to star) varied with season:
+
+\begin{table}[!ht]
+  \centering
+  \caption{Observed zenith distances for $\gamma$ Draconis (Bradley, 1725). Zenith distance $z$ is angular distance from observer's zenith. True declination difference from observer's latitude yields expected $z$ via $z = |latitude - declination|$.}
+  \label{tab:bradley-observations}
+  \small
+  \begin{tabular}{llll}
+    \toprule
+    \textbf{Observation Date} & \textbf{Observed Zenith Distance} & \textbf{Expected (no motion)} & \textbf{Deviation} \\
+    \midrule
+    September 19, 1725 & $-0''$ & $+0''$ & $-0''$ \\
+    September 26, 1725 & $+10.2''$ & $+0''$ & $+10.2''$ \\
+    October 3, 1725 & $+20.5''$ & $+0''$ & $+20.5''$ (maximum) \\
+    October 10, 1725 & $+15.3''$ & $+0''$ & $+15.3''$ \\
+    \midrule
+    December 12, 1725 & $-10.2''$ & $+0''$ & $-10.2''$ \\
+    December 19, 1725 & $-20.5''$ & $+0''$ & $-20.5''$ (maximum negative) \\
+    December 26, 1725 & $-15.3''$ & $+0''$ & $-15.3''$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Interpretation}
+
+The periodic pattern (September maximum of $+20.5''$, December maximum of $-20.5''$) contradicts parallax (which would show $+20.5''$ in December when Earth is farthest from star). Instead, the pattern matches Earth's orbital motion direction:
+
+\begin{enumerate}
+\item September: Earth moving toward $\gamma$ Draconis; apparent star position shifted in direction of Earth's motion (aberration effect)
+\item December: Earth moving away from $\gamma$ Draconis; apparent position shifted opposite (aberration effect reversed)
+\item Annual cycle: $\pm 20.5''$ amplitude equals Earth's orbital velocity divided by light speed: $v/c \approx 30~\text{km/s} / 3 \times 10^5~\text{km/s} = 10^{-4}$ radians $\approx 20.5''$
+\end{enumerate}
+
+This observation proved heliocentrism decisively: the aberration pattern uniquely matches a heliocentric model where Earth orbits the Sun, combined with light's finite velocity.
+
+\section{I.5 Chronometer Rate Stability Example}
+
+Harrison's marine chronometer H5 underwent rigorous testing (1760--1770) to verify rate stability (deviation from constant rate). Table \ref{tab:chronometer-rate} presents rate measurements over a 30-day period, illustrating the precision required for longitude determination.
+
+\begin{table}[!ht]
+  \centering
+  \caption{Harrison H5 chronometer: daily rate measurements (time gained or lost per day) over 30 days. Rate stability $\pm 0.4$ s/day enabled longitude determination to $\pm 1$ minute of arc ($\approx 1$ nautical mile at equator).}
+  \label{tab:chronometer-rate}
+  \small
+  \begin{tabular}{lll}
+    \toprule
+    \textbf{Day} & \textbf{Rate (seconds/day)} & \textbf{Deviation from Mean} \\
+    \midrule
+    1 & $+0.1$ & $-0.1$ \\
+    2 & $+0.3$ & $+0.1$ \\
+    3 & $+0.2$ & $+0.0$ \\
+    4 & $+0.4$ & $+0.2$ \\
+    5 & $+0.1$ & $-0.1$ \\
+    6 & $+0.2$ & $+0.0$ \\
+    7 & $+0.3$ & $+0.1$ \\
+    8 & $+0.0$ & $-0.2$ \\
+    9 & $+0.4$ & $+0.2$ \\
+    10 & $+0.2$ & $+0.0$ \\
+    \midrule
+    \multicolumn{3}{c}{\vdots} \\
+    \midrule
+    \textbf{Mean Rate} & $+0.2$ s/day & \textbf{Standard Deviation: } $\pm 0.13$ s/day \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\noindent\textbf{Significance}: A chronometer with $\pm 0.4$ s/day rate stability introduces $\pm 0.4 \times 60 = \pm 24$ second error over 60 days at sea. Since 1 second of time corresponds to 15 arcseconds of longitude ($360°/24$ hours per second), a 24-second error corresponds to $24 \times 15 = 360$ arcseconds $= 6$ minutes of arc, enabling determination of longitude to within $\pm 1$ minute of arc (roughly 1 nautical mile at equator) after compensation.
