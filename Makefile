@@ -21,7 +21,9 @@ watch:
 
 clean:
 	latexmk -c -cd src/main.tex
+	rm -f src/main.{aux,bcf,fdb_latexmk,fls,glo,ist,log,toc,bbl,blg,run.xml}
 
 distclean:
 	latexmk -C -cd src/main.tex
 	rm -rf build/tmp build/out
+	rm -f src/main.{aux,bcf,fdb_latexmk,fls,glo,ist,log,toc,bbl,blg,run.xml}

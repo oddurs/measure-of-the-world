@@ -4,9 +4,11 @@
 
 $out_dir = "../build/tmp";
 $pdf_dir = "../build/out";
+$aux_dir = "../build/tmp";
 
 # Use pdflatex engine with nonstopmode to allow builds to complete despite warnings
-$pdflatex = "pdflatex -interaction=nonstopmode -file-line-error %O %S";
+# -output-directory puts all auxiliary files in the output directory
+$pdflatex = "pdflatex -interaction=nonstopmode -file-line-error -output-directory=../build/tmp %O %S";
 
 # Biblatex uses biber
 $bibtex_use = 2;
