@@ -1,3 +1,181 @@
-\chapter{Appendix Title}
+\chapter{Appendix C: Spectroscopy—Technical Derivations}
+\label{app:spectroscopy}
 
-% Content to be written.
+\section*{Prism Dispersion and the Achromatic Condition}
+
+A prism of material with refractive index $n(\lambda)$ and apex angle $A$ deviates light by an angle that depends on wavelength. For a ray entering the prism at angle $i_1$ to the surface normal, refracted to angle $r_1$ inside the prism, traveling to the second surface, emerging at angle $r_2$ inside, and exiting at angle $i_2$, the geometry gives
+
+\[
+  i_1 + i_2 = A + \delta,
+\]
+
+where $\delta$ is the deviation—the total angle by which the ray is bent. At minimum deviation (where the ray passes symmetrically through the prism), this simplifies. The deviation depends on $n(\lambda)$, which varies with wavelength.
+
+For a simple prism made of a single glass, blue light (shorter wavelength, higher refractive index) is deviated more than red light, creating chromatic aberration. An achromatic doublet uses two materials to cancel this effect. Consider a crown glass element (refractive index $n_c$, low dispersion) and a flint glass element (refractive index $n_f$, high dispersion) placed in contact. If the crown glass element has focal length $f_c$ (positive, converging) and the flint glass has focal length $f_f$ (negative, diverging), the combined focal length is
+
+\[
+  \frac{1}{f} = \frac{1}{f_c} + \frac{1}{f_f}.
+\]
+
+The condition for the achromatism—zero chromatic aberration at two wavelengths—is
+
+\[
+  \frac{n_c(\lambda_1) - 1}{f_c} + \frac{n_f(\lambda_1) - 1}{f_f} = \frac{n_c(\lambda_2) - 1}{f_c} + \frac{n_f(\lambda_2) - 1}{f_f}.
+\]
+
+Rearranging, we get
+
+\[
+  \frac{(n_c(\lambda_1) - n_c(\lambda_2))/f_c}{(n_f(\lambda_2) - n_f(\lambda_1))/f_f} = -1.
+\]
+
+Defining the dispersive power as $V = (n_d - 1)/(n_F - n_C)$ (the reciprocal dispersion, where the subscripts denote specific spectral lines), we can rewrite this as
+
+\[
+  \frac{f_c}{f_f} = -\frac{V_f}{V_c}.
+\]
+
+Since $V_f < V_c$ (flint glass has higher dispersion), this ratio is negative and large in magnitude. The crown glass provides most of the focusing power (small $|f_c|$), while the flint glass provides a weak correction. The combined lens has positive power (converging), with chromatic aberration nearly eliminated across the visible spectrum.
+
+\section*{Doppler Shift: Relativistic Derivation}
+
+The relativistic Doppler formula relates the observed frequency $f_{\text{obs}}$ to the emitted frequency $f_0$ for a source with radial velocity $v_r$:
+
+\[
+  f_{\text{obs}} = f_0 \sqrt{\frac{1 - \beta}{1 + \beta}},
+\]
+
+where $\beta = v_r/c$. For a receding source (positive $v_r$), the denominator increases, reducing the observed frequency (red shift). For an approaching source (negative $v_r$), the denominator decreases, increasing the observed frequency (blue shift).
+
+Since wavelength $\lambda = c/f$, the observed wavelength is
+
+\[
+  \lambda_{\text{obs}} = \lambda_0 \sqrt{\frac{1 + \beta}{1 - \beta}}.
+\]
+
+Expanding to first order in $\beta$ (valid for non-relativistic velocities), we get
+
+\[
+  \lambda_{\text{obs}} \approx \lambda_0 \left(1 + \beta + \cdots \right) = \lambda_0 \left(1 + \frac{v_r}{c} \right),
+\]
+
+so
+
+\[
+  \Delta \lambda = \lambda_{\text{obs}} - \lambda_0 = \lambda_0 \frac{v_r}{c}.
+\]
+
+For bright nebulae observed in the early 20th century, some showed radial velocities of several hundred kilometers per second—large enough to observe the relativistic effects directly, though most stellar velocities were small enough that the classical approximation sufficed.
+
+\section*{Fraunhofer Lines: Wavelengths and Element Identification}
+
+The most prominent absorption features in the solar spectrum and many stellar spectra are Fraunhofer lines. The traditional notation (dating to Fraunhofer's labeling) identifies the strongest lines:
+
+\begin{center}
+\begin{tabular}{lccl}
+\hline
+\textbf{Label} & \textbf{Wavelength (nm)} & \textbf{Element} & \textbf{Transition} \\
+\hline
+H-alpha & 656.3 & H I & $n=3 \to 2$ (Balmer) \\
+H-beta & 486.1 & H I & $n=4 \to 2$ (Balmer) \\
+H-gamma & 434.0 & H I & $n=5 \to 2$ (Balmer) \\
+Ca H & 396.8 & Ca II & Doublet \\
+Ca K & 393.4 & Ca II & Doublet \\
+D-alpha & 589.0 & Na I & Doublet \\
+D-beta & 589.6 & Na I & Doublet \\
+\hline
+\end{tabular}
+\end{center}
+
+The hydrogen Balmer series (transitions to the $n=2$ state) dominates the visible spectrum. For hot, young stars (class O and B), hydrogen lines are extremely prominent—ionized hydrogen (a proton) can recombine, emitting the Balmer series. For cooler stars (class K and M), hydrogen lines weaken (hydrogen is not ionized, so recombination is less frequent), and metallic lines strengthen. This dependence on temperature made spectral classification a window into stellar physics.
+
+\section*{Diffraction Grating Equation and Spectral Orders}
+
+A diffraction grating consists of a surface with regularly spaced grooves. For a grating with groove spacing $d$, the condition for constructive interference is
+
+\[
+  d(\sin \theta_m - \sin \theta_i) = m\lambda,
+\]
+
+where $\theta_i$ is the incident angle, $\theta_m$ is the angle of the $m$-th order diffraction, and $m$ is an integer (the order: $m = 0, \pm 1, \pm 2, \ldots$). For normal incidence ($\theta_i = 0$), this simplifies to
+
+\[
+  d \sin \theta_m = m\lambda.
+\]
+
+In the spectrograph, the first-order spectrum ($m=1$) is typically used. The angular dispersion is
+
+\[
+  \frac{d\theta_m}{d\lambda} = \frac{m}{d \cos \theta_m},
+\]
+
+which is approximately constant (for small angles). This uniform dispersion is a key advantage over a prism. For a grating with 1200 grooves per millimeter (common for visible spectroscopy), $d = 833.3$ nm. For the first order, the diffraction angle for visible light (400--700 nm) ranges from about 28° to 56°, spreading visible light over a substantial range of angles.
+
+\section*{Worked Example: Determining Spectral Class from Line Strengths}
+
+Suppose an astronomer observes a star's spectrum showing:
+\begin{itemize}
+\item Hydrogen H-alpha line: moderate strength
+\item Hydrogen H-beta line: moderate strength
+\item Calcium H and K lines: very strong
+\item Iron lines: weak
+\end{itemize}
+
+According to the spectral classification system, such a star would be classified as class G or early K. The moderate hydrogen strength (not as weak as in M stars, not as strong as in A stars) suggests a mid-range temperature. The strong calcium lines indicate some ionization (calcium ionizes at moderate temperature) but not complete ionization. The weak iron lines suggest sufficient temperature that iron is partially ionized. By comparison to standard reference spectra, the star might be classified as G5 or K0.
+
+If the hydrogen lines showed a blue shift of about 1 nm, the radial velocity would be
+
+\[
+  v_r = \frac{\Delta \lambda}{\lambda_0} c = \frac{1}{656} \times 3 \times 10^5 \text{ km/s} \approx 457 \text{ km/s}.
+\]
+
+This would indicate the star is approaching at about 457 km/s. If combined with proper motion data from astrometry, this would constrain the star's position in space.
+
+\section*{Error Budget for Spectroscopic Measurements}
+
+For a typical radial velocity measurement with the Great Equatorial, the error budget breaks down as follows:
+
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+\textbf{Error Source} & \textbf{Magnitude} & \textbf{Notes} \\
+\hline
+Wavelength calibration & $\pm 0.1$ km/s & Depends on lamp stability and line table \\
+Atmospheric refraction & $\pm 0.3$ km/s & Differential color shift \\
+Slit width & $\pm 0.2$ km/s & Seeing wander across slit \\
+Spectral line centering & $\pm 0.4$ km/s & Subjective alignment with reference \\
+\hline
+\textbf{Total (quadrature)} & $\pm 0.6$ km/s & Root-sum-square of components \\
+\hline
+\end{tabular}
+\end{center}
+
+The limiting factor was often human judgment—the position of a spectral line had to be estimated by eye, comparing its location to a reference line from a terrestrial lamp. Modern spectroscopy, with electronic detectors and computer analysis, has reduced these errors by an order of magnitude.
+
+\section*{The Great Equatorial: Physical Specifications}
+
+The 28-inch Grubb refractor installed at Greenwich in 1893 had the following specifications:
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+\textbf{Parameter} & \textbf{Value} \\
+\hline
+Objective diameter & 28 inches (71 cm) \\
+Objective focal length & 34 feet (10.4 m) \\
+Objective type & Achromatic doublet (crown + flint) \\
+Objective maker & Howard Grubb (Dublin) \\
+Mounting & German equatorial \\
+Polar axis tilt & Adjustable to latitude \\
+Declination range & -90° to +90° \\
+Tracking accuracy & Better than 5 arcseconds/minute \\
+Drive mechanism & Spring-driven clock escapement \\
+Spectroscope & Both prism and grating adaptable \\
+Eyepieces & Multiple interchangeable Kellner designs \\
+Total tube length & 36 feet (11 m) \\
+Dome diameter & 70 feet (21 m) \\
+\hline
+\end{tabular}
+\end{center}
+
+The Great Equatorial was one of the last great refractors built. After 1900, most large new instruments were reflectors, which avoided the glass fabrication problems that plagued refractors and offered superior collecting area for given cost. But the Great Equatorial remained in use for spectroscopy well into the 20th century, a testament to the durability of precision instruments and the value of combining high light-gathering power with optical quality.

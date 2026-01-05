@@ -1,3 +1,214 @@
-\chapter{Appendix Title}
+\chapter{Appendix D: The Equation of Time—Detailed Derivations}
+\label{app:equation-time}
 
-% Content to be written.
+\section*{Orbital Mechanics and the Vis-Viva Equation}
+
+The orbital speed of Earth at any point in its elliptical orbit is determined by conservation of energy and angular momentum. The vis-viva equation gives the speed $v$ at distance $r$ from the Sun:
+
+\[
+  v^2 = GM \left( \frac{2}{r} - \frac{1}{a} \right),
+\]
+
+where $G$ is the gravitational constant, $M$ is the Sun's mass, and $a$ is the semi-major axis of Earth's orbit. For Earth, $a = 1$ AU (by definition). At perihelion, $r = a(1 - e) = 1 - 0.0167 \approx 0.9833$ AU. At aphelion, $r = a(1 + e) = 1 + 0.0167 \approx 1.0167$ AU.
+
+The ratio of orbital speeds is:
+
+\[
+  \frac{v_{\text{perihelion}}}{v_{\text{aphelion}}} = \sqrt{\frac{2 - (1 + e)}{2 - (1 - e)}} = \sqrt{\frac{1 - e}{1 + e}} \approx \sqrt{\frac{0.9833}{1.0167}} \approx 0.983.
+\]
+
+Wait, this seems backward. Let me recalculate. At perihelion, the term $(2/r - 1/a)$ is larger, so $v_{\text{perihelion}} > v_{\text{aphelion}}$. Specifically,
+
+\[
+  v_{\text{perihelion}}^2 = GM \left( \frac{2}{a(1-e)} - \frac{1}{a} \right) = \frac{GM}{a} \left( \frac{2}{1-e} - 1 \right) = \frac{GM}{a} \left( \frac{2 - (1-e)}{1-e} \right) = \frac{GM}{a} \left( \frac{1 + e}{1-e} \right).
+\]
+
+And
+
+\[
+  v_{\text{aphelion}}^2 = \frac{GM}{a} \left( \frac{1 - e}{1+e} \right).
+\]
+
+Thus
+
+\[
+  \frac{v_{\text{perihelion}}}{v_{\text{aphelion}}} = \sqrt{\frac{(1+e)^2}{(1-e)^2}} = \frac{1+e}{1-e} \approx \frac{1.0167}{0.9833} \approx 1.034.
+\]
+
+Earth moves 3.4\% faster at perihelion than at aphelion. This variation in speed, sustained over weeks, causes the Sun to advance faster along the ecliptic at certain times of year.
+
+\section*{Mean Anomaly and Kepler's Equation}
+
+The mean anomaly $M$ is defined as the angle from perihelion, measured uniformly in time. If $t$ is the time since perihelion and $T$ is the orbital period, then
+
+\[
+  M = 2\pi \frac{t}{T}.
+\]
+
+The true anomaly $\nu$ (the actual angle from perihelion to the planet, as seen from the Sun) is related to mean anomaly by Kepler's equation:
+
+\[
+  M = \nu - e \sin \nu.
+\]
+
+This is a transcendental equation; there is no closed-form solution for $\nu$ in terms of $M$ for nonzero $e$. However, for small eccentricity, we can expand $\nu$ in powers of $e$:
+
+\[
+  \nu = M + e \sin M + \frac{e^2}{2} \sin 2M + \cdots
+\]
+
+For Earth's orbit with $e = 0.0167$, the second-order term contributes about $\sin 2M \times (0.0167)^2 / 2 \approx 0.00014 \sin 2M$, which is negligible compared to the first-order term $e \sin M \approx 0.0167 \sin M$.
+
+\section*{Ecliptic Longitude from True Anomaly}
+
+The true anomaly $\nu$ is measured from perihelion. Since perihelion occurs in early January, approximately 282.9° from the vernal equinox, the ecliptic longitude $\lambda$ is related to true anomaly by
+
+\[
+  \lambda = \nu + 282.9° = M + e \sin M + 282.9°.
+\]
+
+More precisely, if we measure ecliptic longitude from the vernal equinox (as is standard), then the mean ecliptic longitude $L$ (the ecliptic longitude of the mean Sun) is:
+
+\[
+  L = M + 282.9° = L_0 + M,
+\]
+
+where $L_0$ is the ecliptic longitude at epoch (January 1, 2000 noon, approximately 280.46°). On a given day of the year, measured from January 1, the mean anomaly is
+
+\[
+  M = 360° \frac{d - 1}{365.25},
+\]
+
+where $d$ is the day of the year (day 1 = January 1, day 32 = February 1, etc.).
+
+\section*{Spherical Trigonometry: The Obliquity Effect}
+
+The Sun moves along the ecliptic, which is inclined at angle $\epsilon \approx 23.44°$ to the celestial equator. As the Sun moves from ecliptic longitude $\lambda$ to $\lambda + d\lambda$, its equatorial (right ascension) longitude $\alpha$ changes by an amount that depends on $\lambda$.
+
+At the vernal equinox ($\lambda = 0°$), the Sun is on the equator with declination $\delta = 0°$. At this point, $d\alpha / d\lambda$ is maximum (approximately 1). At the summer solstice ($\lambda = 90°$), the Sun is farthest north with declination $\delta = +\epsilon$. At this point, $d\alpha / d\lambda < 1$ (the Sun moves slower in right ascension).
+
+The relationship, from spherical trigonometry, is:
+
+\[
+  \cos \delta = \cos \epsilon \sin \lambda \quad \text{(Sun on ecliptic)}.
+\]
+
+Wait, let me reconsider. If the ecliptic is tilted $\epsilon$ from the equator, and the Sun is at ecliptic longitude $\lambda$, then the declination is:
+
+\[
+  \sin \delta = \sin \epsilon \sin \lambda.
+\]
+
+And the right ascension is found from:
+
+\[
+  \sin \alpha = \frac{\sin \lambda \sin \epsilon}{\cos \delta}.
+\]
+
+No, that's not quite right either. Let me use the standard transformation. If the Sun's ecliptic coordinates are $(\lambda, \beta)$ with $\beta = 0$ (Sun on the ecliptic), its equatorial coordinates $(\alpha, \delta)$ are related by:
+
+\[
+  \sin \delta = \sin \epsilon \sin \lambda.
+\]
+
+And
+
+\[
+  \tan \alpha = \frac{\sin \lambda}{\cos \epsilon \cos \lambda}.
+\]
+
+The rate of change of right ascension with respect to ecliptic longitude is:
+
+\[
+  \frac{d\alpha}{d\lambda} = \frac{\cos \epsilon}{1 - \sin^2 \epsilon \sin^2 \lambda}.
+\]
+
+Wait, let me derive this more carefully. From $\tan \alpha = \frac{\sin \lambda}{\cos \epsilon \cos \lambda}$, we have
+
+\[
+  \sec^2 \alpha \, d\alpha = \frac{\cos \lambda \cos \epsilon \cos \lambda - \sin \lambda \cos \epsilon (-\sin \lambda)}{\cos^2 \epsilon \cos^2 \lambda} d\lambda = \frac{\cos \epsilon}{\cos^2 \epsilon \cos^2 \lambda} d\lambda = \frac{1}{\cos \epsilon \cos^2 \lambda} d\lambda.
+\]
+
+Since $\sec^2 \alpha = 1 + \tan^2 \alpha = 1 + \frac{\sin^2 \lambda}{\cos^2 \epsilon \cos^2 \lambda}$, we get
+
+\[
+  d\alpha = \frac{\cos \epsilon \cos^2 \lambda}{\cos^2 \epsilon \cos^2 \lambda + \sin^2 \lambda} d\lambda = \frac{\cos \epsilon}{1 + \tan^2 \epsilon \sin^2 \lambda} d\lambda.
+\]
+
+For small $\lambda$ (near the vernal equinox), $\sin \lambda \approx \lambda$, so
+
+\[
+  \frac{d\alpha}{d\lambda} \approx \cos \epsilon \approx 0.9175.
+\]
+
+At $\lambda = 90°$ (summer solstice), $\sin \lambda = 1$, so
+
+\[
+  \frac{d\alpha}{d\lambda} = \frac{\cos \epsilon}{1 + \tan^2 \epsilon} = \cos^3 \epsilon \approx 0.774.
+\]
+
+The rate is about 15\% slower. Integrating this over a quarter of the year shows that the Sun lags the mean Sun by about 9.9 minutes by the time of the summer solstice.
+
+\section*{The Equation of Time: Corrected Formula}
+
+For precise calculations, the equation of time is typically given as:
+
+\[
+  E = -7.66 \sin(B) + 9.87 \sin(2B),
+\]
+
+in minutes, where $B = (d - 1) \times 360° / 365.25$ is the day angle in degrees, with $d$ being the day of the year. This empirical formula captures both the eccentricity and obliquity effects to good precision across the year.
+
+Alternatively, using the components we derived:
+
+\[
+  E = E_{\text{ecc}} + E_{\text{obliq}} = -2e \sin M (360°/(2\pi)) \times 1440 \text{ min} + E_{\text{obliq}}.
+\]
+
+More precisely:
+
+\[
+  E_{\text{ecc}} = 7.66 \sin(B + 3.06°) \text{ minutes},
+\]
+
+and
+
+\[
+  E_{\text{obliq}} = 9.87 \sin(2B + 1.95°) \text{ minutes}.
+\]
+
+Their sum gives the full equation of time.
+
+\section*{Extreme Values Throughout the Year}
+
+The equation of time reaches four extrema in the course of a year:
+
+\begin{center}
+\begin{tabular}{llc}
+\hline
+\textbf{Date} & \textbf{Event} & \textbf{Equation of Time} \\
+\hline
+November 3 & Maximum positive & $+16.3$ min \\
+February 12 & Minimum negative & $-14.3$ min \\
+May 15 & Local maximum & $+3.8$ min \\
+July 27 & Local minimum & $-5.8$ min \\
+\hline
+\end{tabular}
+\end{center}
+
+The large positive value in November occurs when aphelion (July) combines with the obliquity effect to produce a maximum. The large negative value in February occurs when perihelion (January) combines with the obliquity effect. The smaller extrema in May and July are local maxima and minima of less significance.
+
+\section*{Analemma Coordinates}
+
+If we plot the Sun's position in equatorial coordinates at the same clock time each day for a year, we obtain the analemma. In terms of declination $\delta$ (vertical coordinate) and equation of time $E$ (horizontal coordinate), the analemma is parameterized by:
+
+\begin{align*}
+  \delta &= \arcsin(\sin \epsilon \sin \lambda), \\
+  \text{hour angle} &= -E/15° \text{ (in hours)}.
+\end{align*}
+
+The vertical extent is $2 \epsilon \approx 46.9°$, from $-23.44°$ to $+23.44°$. The horizontal extent is approximately 30 minutes (half an hour), from $-14.3$ to $+16.3$ minutes of time.
+
+The figure-eight shape arises because the sign of the equation of time changes over the year, while the declination traces a smooth north-south path. The crossover points (where $E = 0$) occur near the equinoxes and solstices, with four dates per year when the Sun's clock time matches the mean time exactly: roughly April 15, June 15, September 1, and December 24.
+
+

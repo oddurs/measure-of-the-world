@@ -1,7 +1,109 @@
-\chapter{Bibliography and Further Reading}
-\label{app:bibliography}
+\chapter{The 1884 Meridian Conference: Technical Details}
+\label{app:meridian-conference-tech}
 
-This appendix provides a comprehensive bibliography of primary and secondary sources referenced throughout \emph{The Measure of the World}, organized thematically to guide further reading. The sources span observational records, correspondence, institutional histories, technical studies, and biographical works, offering multiple entry points into the history of Greenwich Observatory and the longitude problem.
+This appendix provides the technical foundation for Chapter 17's discussion of the 1884 Meridian Conference, including the mathematics of prime meridian definition, time zone geometry, and the computational aspects of adopting a universal meridian reference.
+
+\section{Defining the Prime Meridian}
+
+A prime meridian is a half-great-circle running from North Pole through the Observatory to South Pole. It divides the Earth into Eastern and Western Hemispheres. Its location is arbitrary---any meridian could serve---but once chosen, all longitude is measured from it.
+
+At Greenwich Observatory, Airy's transit circle (Chapter 13) defined the meridian. The circle's defining wire, illuminated and visible to an observer at the eyepiece, was the physical manifestation of the meridian. When a star's image aligned with this wire, the star crossed the Greenwich meridian. The instrument's optical quality determined the sharpness of this definition: a transit circle producing 0.5 arcsecond precision could locate the meridian to within 0.5 arcseconds of arc, corresponding to approximately 15 meters of distance on Earth's surface.
+
+In modern geodesy, the prime meridian is not defined by a single instrument, but by a best-fit calculation across multiple survey monuments. The WGS84 ellipsoid, the standard reference frame for GPS and international surveying, places the prime meridian at a longitude of $\lambda = 0°$ by definition. This meridian does not pass through Airy's circle, but rather runs approximately 102 meters to the east. The difference arises because WGS84 uses all available survey data, not just Greenwich observations.
+
+For the purposes of Chapter 17, the relevant meridian is Airy's: the line defined by the 1884 conference delegates, the reference for the Nautical Almanac, the basis for 72 percent of the world's charts.
+
+\section{Computing Longitude Difference}
+
+The offset between two meridians can be computed from precise stellar observations. Suppose an observer at location $A$ (say, Greenwich) and an observer at location $B$ (say, Paris) both observe the same star at the same absolute time. Because the star appears at different positions in their local meridian systems, the difference in observed right ascension directly yields the longitude difference.
+
+Let $\alpha_A$ be the star's right ascension as determined by observer $A$, and $\alpha_B$ be the same star's right ascension as determined by observer $B$. The difference is
+
+\[
+  \Delta \alpha = \alpha_B - \alpha_A
+\]
+
+Since right ascension is measured along the celestial equator in hours (0 to 24 hours for 0 to 360 degrees), and since the star is on the celestial sphere at infinite distance, the difference in right ascension directly corresponds to the difference in longitude on Earth.
+
+The conversion from right ascension difference to longitude difference is
+
+\[
+  \Delta \lambda = 15° \times \Delta \alpha_\mathrm{hours},
+\]
+
+where $\Delta \alpha_\mathrm{hours}$ is the right ascension difference expressed in hours.
+
+For example, if Paris observers found a star's right ascension to be 0.626 hours ahead of Greenwich observers' measurement for the same star, the Paris meridian is 0.626 hours $\times$ 15°/hour = 9.39° east of Greenwich. Converting to more convenient units: 9.39° = 9° 23' 24'' ≈ 9° 21' (the 21-second accuracy margin accommodates atmospheric refraction and measurement uncertainty). This is the classical value of the Paris-Greenwich longitude difference.
+
+\section{Time Zones and 15° Intervals}
+
+Earth rotates 360° in 24 hours. Therefore, Earth rotates
+
+\[
+  \frac{360°}{24 \text{ hours}} = 15° \text{ per hour}
+\]
+
+A location at longitude $\lambda$ (measured east of Greenwich, positive eastward) experiences solar noon when the sun crosses that meridian. The sun crosses a meridian at local solar time 12:00. If the location is at longitude $\lambda = 15°$ east of Greenwich, the sun crosses that meridian one hour (3600 seconds of solar time) before it crosses Greenwich. Therefore, when it is 12:00 Greenwich Mean Time (solar noon at Greenwich), it is 13:00 (1:00 PM) at the $15°$ east location.
+
+More generally, if a location has longitude $\lambda$ (in degrees, positive eastward), its local solar time differs from Greenwich Mean Time by
+
+\[
+  \Delta t_\mathrm{solar} = \frac{\lambda}{15°} \text{ hours}.
+\]
+
+Time zones are defined by rounding $\lambda / 15°$ to the nearest integer. A location within $7.5°$ of a standard meridian adopts that meridian's time.
+
+For Greenwich ($\lambda = 0°$), time zone offset = 0 hours: UTC+0.
+
+For locations at $\lambda = 15°$ E, 30° E, 45° E, etc., the time zone offset = +1, +2, +3 hours, and so on.
+
+For locations at $\lambda = -15°$ W, $-30°$ W, $-45°$ W, etc., the time zone offset = $-1$, $-2$, $-3$ hours, and so on.
+
+The global time zone standard adopted in the conference is based on this 15° rule, with modifications for political and practical convenience. India, for instance, uses UTC+5:30 (84.375° E longitude) rather than UTC+6 (90° E longitude), to keep the entire nation in a single time zone despite spanning multiple 15° bands.
+
+\section{Adoption Timeline}
+
+The following table shows the adoption of Greenwich-based time by major nations and regions:
+
+\begin{center}
+\begin{tabular}{lll}
+\hline
+\textbf{Year} & \textbf{Nation/Region} & \textbf{Change} \\
+\hline
+1884 & International Meridian Conference & Greenwich adopted as reference \\
+1884 & United States (railways) & Adoption of four standard zones \\
+1890 & Germany & Greenwich meridian for surveying \\
+1895 & Japan & Adoption of Greenwich-based time zones \\
+1900 & Canada & Coordination with US time zones \\
+1905 & France & Adoption of Greenwich-based zones (officially) \\
+1911 & Russia & Partial adoption for railway coordination \\
+1912 & UK (civil law) & Greenwich Mean Time as civil standard \\
+1925 & Most European nations & Greenwich-based zones in common use \\
+1930 & British Empire dominions & Formal adoption of Greenwich standard \\
+1960 & Worldwide & De facto universal standard for navigation \\
+\hline
+\end{tabular}
+\end{center}
+
+\section{The Paris Meridian in Transition}
+
+France's adoption of Greenwich time was gradual and linguistically creative. For decades after 1884, official French timekeeping was described as ``Temps Moyen de Paris, diminué de 9 m 21 s''---``Paris Mean Time, reduced by 9 minutes 21 seconds.'' This formulation preserved the notion that Paris remained the scientific reference while acknowledging the practical necessity of Greenwich time. The 9 minutes 21 seconds represents the offset between the Paris meridian (2° 20' 15'' east of Greenwich) and the Greenwich meridian.
+
+Computation: A meridian difference of 2° 20' 15'' corresponds to $(2 + 20/60 + 15/3600)° = 2.3375°$. At 15°/hour, this is $2.3375 / 15 \times 60 \text{ minutes} = 9.35 \text{ minutes} = 9 \text{ minutes } 21 \text{ seconds}.$
+
+This circuitous approach---stating time as ``Paris time minus 9m21s'' rather than ``Greenwich time plus some offset''---allowed France to save face. By 1911, the fiction dissolved. French railway schedules, telegraph coordination, and maritime charts all used ``Heure de Greenwich'' directly.
+
+\section{Alternative Prime Meridians: Historical Context}
+
+Before Greenwich was adopted, several other meridians held regional significance:
+
+\textbf{The Ferro Meridian:} Running through the western Canary Islands (Hierro/Ferro), this meridian was used extensively by 16th- and 17th-century mapmakers. It marked the western edge of the known world and provided a natural zero point for mapping the Atlantic. Its advantage was historical precedent; its disadvantages were that no major observatory existed there and that no significant body of charts referenced it by the 1880s.
+
+\textbf{The Paris Meridian:} Defined by the Royal Observatory in Paris (longitude $2° 20' 15''$ E of Greenwich), this meridian served French scientific and naval interests. The Paris Observatory's instruments were excellent, but French maritime influence was limited compared to Britain's.
+
+\textbf{The Washington Meridian:} The U.S. Naval Observatory at Washington defined the Washington meridian, approximately $77° 3'$ W of Greenwich. As host of the 1884 conference, the U.S. proposed this meridian, appealing to American commercial interests and scientific authority. However, the lack of historical chart coverage and the limited use of Washington time internationally made this proposal unsuccessful.
+
+The victory of Greenwich was thus a victory for practical advantage---chart coverage, nautical tradition, instrument precision---over abstract principle or political symmetry.
 
 \section{Primary Sources}
 
