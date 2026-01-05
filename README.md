@@ -62,23 +62,7 @@ The book progresses through five thematic movements:
 - **Appendix H**: Chronologies (master timeline, instruments, Astronomers Royal tenures)
 - **Appendix I**: Reference Tables (unit conversions, astronomical constants, extended data)
 
----
 
-## 🎯 Key Themes
-
-### Precision as Practice
-The book emphasizes precision not as an abstract ideal, but as something achieved through instrument design, mathematical technique, and institutional commitment. Bradley's discovery of aberration, Airy's systematic error analysis, and modern satellite astrometry all illustrate how precision emerges from practical work.
-
-### International Cooperation
-From the Astrographic Catalogue (21 observatories) to the International Meridian Conference to modern satellite coordination, the book shows how astronomy required—and enabled—global cooperation centuries before the internet.
-
-### Technology & Theory
-Mathematical innovation, optical design, mechanical engineering, photography, spectroscopy, and atomic physics all play roles. The book integrates technical exposition with narrative, making complex material accessible.
-
-### The Human Element
-Vivid portraits of astronomers—Flamsteed's systematic dedication, Bradley's brilliant reasoning, Airy's meticulous attention to error, Dyson's eclipse expeditions confirming relativity—show that precision is ultimately a human achievement.
-
----
 
 ## 🛠️ Building the Document
 
@@ -131,26 +115,6 @@ make distclean       # Remove all generated files including PDF
 ```
 
 ---
-
-## 📖 Reading Guide
-
-### For General Readers
-Start with **Chapters 1–3** for historical context, then jump to chapters matching your interests (navigation → Chapters 7–9; stellar astronomy → Chapters 12–15; timekeeping → Chapters 16–23). **Appendix D** provides cultural/visitor context for Greenwich.
-
-### For Historians of Science
-Read sequentially for narrative arc. Pay special attention to **Chapters 12–13** (Bradley's discoveries), **Chapter 6** (Airy's systematic methods), and **Chapter 22** (1919 eclipse expedition) as pivotal moments in scientific history.
-
-### For Mathematicians and Astronomers
-**Appendix A** provides rigorous mathematical treatment. **Chapters 5, 8–9, 13** develop spherical trigonometry, orbital mechanics, and coordinate transformations. **Appendix I** includes worked examples.
-
-### For Instrument Enthusiasts
-**Chapters 3–4** and **Chapter 6** detail meridian instruments and the Airy transit circle. **Appendix B** catalogs 30+ historical instruments with specifications.
-
-### For Educators
-**Appendix D** includes discussion of museum exhibits and educational resources. **Appendix G** provides primary source excerpts suitable for classroom use.
-
----
-
 ## 📁 Project Structure
 
 ```
@@ -163,8 +127,7 @@ measure-of-the-world/
 │   ├── metadata.tex            # Author, title, publication info
 │   ├── preamble.tex            # Package imports and configuration
 │   ├── chapters/               # 25 main chapters
-│   │   ├── 01.tex through 25.tex
-│   │   └── 09-old.tex, 10-old.tex  # Previous drafts (archived)
+│   │   └── 01.tex through 25.tex
 │   ├── appendices/             # 9 appendices (A–I)
 │   │   ├── appendix-a.tex      # Mathematical derivations
 │   │   ├── appendix-b.tex      # Instrument specifications
@@ -184,7 +147,8 @@ measure-of-the-world/
 │   ├── out/                    # Final PDF
 │   │   └── measure-of-the-world.pdf
 │   └── tmp/                    # Intermediate LaTeX files
-└── LICENSE                     # License information
+├── LICENSE.md                  # License information
+└── Makefile                    # Build automation
 ```
 
 ---
@@ -205,110 +169,19 @@ measure-of-the-world/
   - 6 primary source document excerpts
 
 ---
+## � License
 
-## 🔬 Mathematical & Technical Content
-
-The book integrates mathematical exposition throughout, with detailed treatment of:
-
-- **Spherical trigonometry**: Great circles, azimuth/altitude, coordinate transformations
-- **Orbital mechanics**: Kepler's laws, elliptical geometry, perturbation theory
-- **Positional astronomy**: Precession, nutation, aberration, parallax
-- **Time systems**: Sidereal/solar time, mean solar time, atomic time, UTC
-- **Error analysis**: Standard deviation, systematic vs. random errors, personal equation
-- **Spectroscopy**: Dispersion, Doppler shift, spectral classification
-- **General relativity**: Time dilation, light deflection, gravitational redshift
-
-**Appendix A** collects key derivations for reference; **Appendix I** provides worked examples.
-
----
-
-## 🌍 Historical Scope
-
-The book covers 350 years of astronomical history through the lens of Greenwich Observatory:
-
-- **1675**: Founding by King Charles II
-- **1720s–1740s**: Bradley's fundamental discoveries (aberration, nutation)
-- **1767**: Maskelyne's Nautical Almanac transforms maritime navigation
-- **1851**: Airy's transit circle becomes world standard for precision
-- **1880s**: International standardization (Prime Meridian, time zones)
-- **1919**: Einstein's relativity confirmed by eclipse observations
-- **1955**: Atomic time replaces rotational time standards
-- **1984**: Observatory relocation to Herstmonceux
-- **2013**: Gaia satellite provides microarcsecond precision astrometry
-
----
-
-## 👥 Key Historical Figures
-
-The narrative features 16 Astronomers Royal:
-
-- John Flamsteed (founder, 1675–1719)
-- James Bradley (aberration & nutation discoverer, 1742–1762)
-- Nevil Maskelyne (Nautical Almanac creator, 1765–1811)
-- George Airy (transit circle designer, error analysis pioneer, 1835–1881)
-- Frank Watson Dyson (1919 eclipse expedition, 1910–1933)
-- Harold Spencer Jones (Earth rotation variations, 1933–1955)
-- Margaret Jane Burbidge (first female, nucleosynthesis researcher, 1972–1973)
-- Antony Hewish (Nobel laureate, pulsar discoverer, 1982–1990)
-
-Plus 8 others spanning institutional history from monarchy to modern governance.
-
----
-
-## 📖 Citation
-
-If you use this book in academic work, cite as:
-
-```bibtex
-@book{measure-of-the-world,
-  title={The Measure of the World: A Technical History of the Royal Observatory, Greenwich},
-  author={Oddur Sigurdsson},
-  year={2026},
-  publisher={[Publisher Name]}
-}
-```
-
----
-
-## 📝 License
-
-[See LICENSE file for details]
+[See LICENSE.md](LICENSE.md) for details.
 
 ---
 
 ## 🙏 Acknowledgments
 
-This book draws on 350 years of astronomical observation and innovation at the Royal Observatory, Greenwich. It synthesizes primary historical documents, technical treatises, biographical scholarship, and contemporary research to tell a comprehensive story of precision measurement and scientific progress.
-
-Special thanks to:
-- The National Maritime Museum for archival access and heritage preservation
-- The International Astronomical Union for standardized conventions and documentation
-- Scholars and historians of astronomy whose work informed this narrative
+This book draws on 350 years of astronomical observation and innovation at the Royal Observatory, Greenwich.
 
 ---
 
-## 💬 Contact & Questions
-
-For inquiries, corrections, or suggestions regarding this book, please refer to the project repository or contact the author.
-
----
-
-## 🔗 Related Resources
-
-### Online Collections
-- **National Maritime Museum Archives**: https://www.rmg.co.uk/
-- **International Astronomical Union**: https://www.iau.org/
-- **SOFA Library**: http://www.iausofa.org/
-- **NASA Horizons System**: https://ssd.jpl.nasa.gov/horizons/
-
-### Recommended Reading
-- Smart, W.M. (1977). *Textbook of Spherical Astronomy* — Mathematical foundation
-- Sobel, D. (2005). *Longitude* — Popular history of chronometer development
-- Urban, S.E. & Seidelmann, P.K. (Eds.). (2013). *Explanatory Supplement to the Astronomical Almanac* — Reference standard
-- Chapman, A. (1998). *Dividing the Circle* — Comprehensive instrument history
-
----
-
+**Authors**: Oddur Sigurdsson, et. al  
 **Last Updated**: January 5, 2026  
 **Version**: 1.0 (Complete with 25 chapters and 9 appendices)
 brew install texlive
