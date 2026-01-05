@@ -102,17 +102,19 @@ where the integrals are approximated by summing discrete log entries. The execut
   \centering
   \caption{Cumulative error in dead reckoning over a typical transatlantic crossing, 1650--1750.}
   \label{tab:dead-reckoning-error}
-  \begin{tabular}{lll}
-    \toprule
-    \textsc{Days at Sea} & \textsc{Typical Error (nm)} & \textsc{Characteristics} \\
-    \midrule
-    5 & 10--20 & Random direction \\
-    10 & 30--50 & Emerging systematic bias \\
-    20 & 60--100 & Strongly westward \\
-    30 & 100--150 & Westward systematic error \\
-    40 (typical Atlantic) & 150--250 & Westward, rapidly growing \\
-    \bottomrule
-  \end{tabular}
+  \resizebox{\textwidth}{!}{%
+    \begin{tabular}{lll}
+      \toprule
+      \textsc{Days at Sea} & \textsc{Typical Error (nm)} & \textsc{Characteristics} \\
+      \midrule
+      5 & 10--20 & Random direction \\
+      10 & 30--50 & Emerging systematic bias \\
+      20 & 60--100 & Strongly westward \\
+      30 & 100--150 & Westward systematic error \\
+      40 (typical Atlantic) & 150--250 & Westward, rapidly growing \\
+      \bottomrule
+    \end{tabular}%
+  }
   \tablenote{Values are approximate estimates from analysis of 17th--18th century navigation records. Actual errors varied widely depending on weather, crew skill, and instrument calibration. See Howse, \emph{Greenwich Time}, for compiled analysis.}
 \end{table}
 
@@ -136,8 +138,6 @@ The Scilly disaster did not appear from nowhere. It was the culmination of a lon
 \end{enumerate}
 
 Each loss was, by the standards of the time, inexplicable and blameless. The officers had followed procedures. The calculations had been correct. The instruments had been as good as the age could provide. And yet the ships had gone down anyway, leaving the maritime powers of Europe staring at a problem that appeared to be unsolvable with the tools at hand.\footnote{Sobel's \emph{Longitude} provides an accessible synthesis of these disasters and their political consequences. Howse's \emph{Greenwich Time} offers more technical detail on the navigational failures. Willmoth's \emph{Flamsteed's Stars} traces the Observatory's role in the institutional response.}
-
----
 
 \section{The Political Response}
 \label{sec:longitude-act}
