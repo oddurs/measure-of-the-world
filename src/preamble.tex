@@ -192,12 +192,26 @@
 % Package: longtable - Tables that span multiple pages
 % Provides \begin{longtable} environment with headers/footers per page
 
+% Package: tabularx - Tables with automatic column width adjustment
+% Provides \begin{tabularx} environment with X column type for flexible widths
+
+% Package: array - Enhanced column formatting for tables
+% Provides >{\cmd} and <{\cmd} syntax for column pre/post processing
+
+% Package: etoolbox - Hooks for environments and commands
+% Provides \AtBeginEnvironment and \AtEndEnvironment for global setup
+
 % Package: enumitem - Fine-grained list control
 % Provides [noitemsep], [nolistsep] and spacing customization
 
 % Package: caption - Enhanced caption formatting
 % Provides \captionsetup for customizing figure and table captions
-\usepackage{booktabs,longtable,enumitem,caption}
+\usepackage{booktabs,longtable,tabularx,array,etoolbox,enumitem,caption}
+
+% Apply table text size globally to all table environments
+\AtBeginEnvironment{table}{\tabletextsize}
+\AtBeginEnvironment{tabular}{\tabletextsize}
+\AtBeginEnvironment{tabularx}{\tabletextsize}
 
 % =====================================================================
 % SECTION 9: GLOSSARIES AND ACRONYMS
@@ -552,6 +566,12 @@
 % --------- FOOTNOTE FONT SIZING ---------
 % Font size for footnote text (smaller than body, but readable)
 \renewcommand{\footnotesize}{\fontsize{10}{12.5}\selectfont}
+
+% --------- FOOTNOTE MARKER SPACING ---------
+% Space after superscript footnote number before content
+% Note: Memoir's footnote spacing is controlled by the memoir class internals
+% To adjust, would need post-document processing or custom document hooks
+
 
 % =====================================================================
 % SECTION 19: FOOTER SPACING
