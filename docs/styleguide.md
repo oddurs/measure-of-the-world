@@ -393,20 +393,37 @@ The document uses `memoir` class with sections numbered down to subsection level
 
 ### Emphasis and Typography
 
-**Italics** (emphasis):
+**Italics** (emphasis and key concepts):
 ```latex
 \emph{key concept}  % or \textit{...}
 ```
+Use italics to emphasize words within a sentence or to denote technical terms at first introduction.
 
-**Bold** (strong):
-```latex
-\textbf{important result}
-```
-
-**Small caps** (names, acronyms, historical titles):
+**Small caps** (names, acronyms, historical titles, and structured emphasis):
 ```latex
 \textsc{Royal Society}
 \textsc{RGO}  % Royal Greenwich Observatory
+\textsc{1591: the São Thomé}  % Historical events and names
+```
+Small caps are the preferred method for emphasis in structured contexts (table headers, list item titles, dates in catalogs). Small caps are visually lighter than bold but more authoritative than italics, making them ideal for:
+- Named entities (people, institutions, ships)
+- Acronyms and abbreviations
+- Historical event dates and titles in enumerated lists
+- Table column headers
+- Emphasis that should not draw excessive visual weight
+
+**Bold** (reserved use only):
+```latex
+\textbf{important result}
+```
+Bold is reserved for rare cases requiring maximum visual emphasis. In most contexts, small caps or italics are preferred for a lighter typographic touch. Avoid bold in tables; use small caps for headers instead.
+
+**Combination example:**
+
+```latex
+The mural arc, described in \textsc{Flamsteed}'s correspondence with \textsc{Tompion}, required
+extraordinary precision. The results represented a qualitative leap forward.\footnote{\textsc{RGO}
+archives, MS/1 (Flamsteed correspondence).}
 ```
 
 ### Quotes and Punctuation

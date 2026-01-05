@@ -353,15 +353,15 @@
 %   leftmargin: indentation from left margin
 
 \setlist[itemize]{%
-  topsep=0.75\baselineskip,
-  itemsep=0.5\baselineskip,
+  topsep=0.5\baselineskip,
+  itemsep=0.25\baselineskip,
   parsep=0pt,
   leftmargin=2em%
 }
 
 \setlist[enumerate]{%
-  topsep=0.75\baselineskip,
-  itemsep=0.5\baselineskip,
+  topsep=0.5\baselineskip,
+  itemsep=0.25\baselineskip,
   parsep=0pt,
   leftmargin=2em%
 }
@@ -394,8 +394,8 @@
 \setlength{\cmidrulewidth}{0.05em}
 
 % --------- TABLE TEXT SIZING ---------
-% Body text size for table content (smaller than body text for compactness)
-\newcommand{\tabletextsize}{\small}
+% Body text size for table content (11pt for better readability in tables)
+\newcommand{\tabletextsize}{\fontsize{11}{13.2}\selectfont}
 
 % --------- TABLE SPACING ---------
 % Before/after table spacing (relative to baseline)
