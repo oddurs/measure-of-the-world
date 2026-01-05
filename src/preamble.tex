@@ -67,11 +67,11 @@
 % Line spread: controls vertical line spacing (leading)
 % 1.25 multiplier on 12pt font = 15pt line spread (1.25 × 12 = 15)
 % This is the primary control for document density and readability
-\linespread{1.25}\selectfont
+\linespread{1.2}\selectfont
 
 % Paragraph indentation: first-line indent (16pt ≈ 1.3em at 12pt)
 % Controls visual paragraph breaks in continuous text
-\setlength{\parindent}{16pt}
+\setlength{\parindent}{18pt}
 
 % Paragraph skip: spacing between paragraphs (set to 0 to use indents only)
 % If you want paragraph breaks instead of indents, set this to 0.5\baselineskip
@@ -173,7 +173,7 @@
   citecolor=black,
   urlcolor=black,
   pdftitle={Measure of the World},
-  pdfauthor={Oddur Snorrason}%
+  pdfauthor={Oddur Sigurdsson}%
 }
 
 % Package: cleveref - Intelligent cross-referencing
@@ -356,14 +356,14 @@
   topsep=0.5\baselineskip,
   itemsep=0.25\baselineskip,
   parsep=0pt,
-  leftmargin=2em%
+  leftmargin=1em%
 }
 
 \setlist[enumerate]{%
   topsep=0.5\baselineskip,
   itemsep=0.25\baselineskip,
   parsep=0pt,
-  leftmargin=2em%
+  leftmargin=1em%
 }
 
 % =====================================================================
@@ -458,7 +458,7 @@
 % Redefine \textsc to use slightly smaller size and neutral letter spacing
 % Small caps are 0.9× base size with no extra tracking (letter spacing)
 % Prevents excessive size and ensures consistent spacing within small caps
-\renewcommand{\textsc}[1]{{\fontsize{10.8}{13}\selectfont\scshape\textls*[0]{#1}}}
+\renewcommand{\textsc}[1]{{\fontsize{10}{12.5}\selectfont\scshape\textls*[0]{#1}}}
 
 % =====================================================================
 % SECTION 16: HEADER AND FOOTER TYPOGRAPHY
@@ -481,9 +481,9 @@
 
 % --------- MARGINS AND SPACING ---------
 % Control indentation and positioning of header/footer elements
-\newcommand{\headerindent}{0.25in}          % Indent for header content
+\newcommand{\headerindent}{0.1875in}          % Indent for header content
 \newcommand{\headermargin}{0.1875in}        % Margin for header rules
-\newcommand{\footerindent}{0.25in}          % Indent for footer content
+\newcommand{\footerindent}{0.1875in}          % Indent for footer content
 \newcommand{\footermargin}{0.1875in}        % Margin for footer rules
 
 % --------- SEPARATOR RULES ---------
@@ -493,7 +493,7 @@
 
 % --------- RUNNING HEAD SPACING ---------
 % Vertical skip between page margin and running head text
-\newcommand{\runningheadskip}{0.5\baselineskip}
+\newcommand{\runningheadskip}{0\baselineskip}
 
 % --------- VERSO/RECTO HEADER MACROS ---------
 % Use these to apply consistent styling to left and right page headers
@@ -542,7 +542,7 @@
 
 % --------- FOOTNOTE SPACING ---------
 % Space between footnote area and body text
-\newcommand{\skippagefootins}{1\baselineskip}   % Gap before first footnote
+\newcommand{\skippagefootins}{0.5\baselineskip}   % Gap before first footnote
 \setlength{\skip\footins}{\skippagefootins}
 
 % Space between individual footnote items
@@ -551,7 +551,7 @@
 
 % --------- FOOTNOTE FONT SIZING ---------
 % Font size for footnote text (smaller than body, but readable)
-\renewcommand{\footnotesize}{\fontsize{10}{12}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{10}{12.5}\selectfont}
 
 % =====================================================================
 % SECTION 19: FOOTER SPACING
