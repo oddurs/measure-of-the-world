@@ -454,6 +454,12 @@
   \end{list}%
 }
 
+% --------- SMALL CAPS CUSTOMIZATION ---------
+% Redefine \textsc to use slightly smaller size and neutral letter spacing
+% Small caps are 0.9× base size with no extra tracking (letter spacing)
+% Prevents excessive size and ensures consistent spacing within small caps
+\renewcommand{\textsc}[1]{{\fontsize{10.8}{13}\selectfont\scshape\textls*[0]{#1}}}
+
 % =====================================================================
 % SECTION 16: HEADER AND FOOTER TYPOGRAPHY
 % =====================================================================
