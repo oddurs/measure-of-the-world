@@ -9,9 +9,18 @@ end_of_line = lf
 insert_final_newline = true
 charset = utf-8
 trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+max_line_length = 120
 
 # LaTeX files
 [*.tex]
+indent_style = space
+indent_size = 2
+max_line_length = off
+
+# BibTeX files
+[*.bib]
 indent_style = space
 indent_size = 2
 
@@ -19,10 +28,17 @@ indent_size = 2
 [*.md]
 indent_style = space
 indent_size = 2
+trim_trailing_whitespace = false
 
-# Makefiles
+# Makefiles require tabs
 [Makefile]
 indent_style = tab
+indent_size = 4
+
+# Shell scripts
+[*.sh]
+indent_style = space
+indent_size = 2
 
 # Config files
 [*.rc]
@@ -34,5 +50,22 @@ indent_style = space
 indent_size = 2
 
 [*.yaml]
+indent_style = space
+indent_size = 2
+
+[*.json]
+indent_style = space
+indent_size = 2
+
+[*.toml]
+indent_style = space
+indent_size = 2
+
+# Git config files
+[.gitattributes]
+indent_style = space
+indent_size = 2
+
+[.gitignore]
 indent_style = space
 indent_size = 2
