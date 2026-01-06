@@ -7,11 +7,12 @@ Thumbs.db
 .idea/
 *.swp
 *.swo
+*.code-workspace
 
 # Build artifacts
 /build/tmp/
+/build/out/
 /src/build/  # Ensure no build artifacts in src/
-# Note: /build/out/measure-of-the-world.pdf is intentionally committed
 
 # LaTeX intermediates (belt & suspenders)
 *.aux
