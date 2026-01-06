@@ -15,20 +15,13 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v3
-        with:
-          working_directory: src
-          root_file: main.tex
-          latexmk_use_lualatex: false
-          latexmk_shell_escape: false
-          args: -pdf -interaction=nonstopmode -output-directory=../build/tmp
-          extra_system_packages: biber
-
-      - name: Copy PDF to output directory
+      - name: Install TeX Live
         run: |
-          mkdir -p build/out
-          cp build/tmp/main.pdf build/out/measure-of-the-world.pdf
+          sudo apt-get update
+          sudo apt-get install -y texlive-full
+
+      - name: Build PDF
+        run: make build
 
       - name: Upload PDF as release asset
         uses: softprops/action-gh-release@v2
