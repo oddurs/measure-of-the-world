@@ -88,6 +88,7 @@
 
 % --- Part I: Foundations (Chapters 1-6) ---
 % Establishing Greenwich Observatory, early instruments, the longitude problem
+\input{parts/part1}
 \input{chapters/01}  % The Deadly Ignorance of Position
 \input{chapters/02}  % The King's Observatory
 \input{chapters/03}  % Flamsteed's Foundation
@@ -97,6 +98,7 @@
 
 % --- Part II: Discovery (Chapters 7-13) ---
 % Longitude solutions, Bradley's discoveries, first parallax measurements
+\input{parts/part2}
 \input{chapters/07}  % The Longitude Act
 \input{chapters/08}  % Bradley and the Aberration of Light
 \input{chapters/09}  % Nutation and the Wobbling Earth
@@ -107,6 +109,7 @@
 
 % --- Part III: Precision (Chapters 14-19) ---
 % Spectroscopy, systematic error analysis, time standardization
+\input{parts/part3}
 \input{chapters/14}  % Airy's Transit Circle
 \input{chapters/15}  % Spectroscopy and Stellar Classification
 \input{chapters/16}  % The Greenwich Time Service
@@ -116,6 +119,7 @@
 
 % --- Part IV: Transformation (Chapters 20-23) ---
 % Photography, relativity, atomic timekeeping
+\input{parts/part4}
 \input{chapters/20}  % Photography and Automation
 \input{chapters/21}  % Einstein and the Eclipse
 \input{chapters/22}  % Atomic Clocks
@@ -123,6 +127,7 @@
 
 % --- Part V: Legacy (Chapters 24-25) ---
 % Modern astrometry, reflections on 350 years
+\input{parts/part5}
 \input{chapters/24}  % Space-Based Astrometry
 \input{chapters/25}  % The Measure of the World
 
@@ -132,6 +137,7 @@
 % Technical reference material, historical documents, and data tables
 
 \appendix
+\input{parts/appendices}
 \input{appendices/appendix-a}  % A: Mathematical Derivations
 \input{appendices/appendix-b}  % B: Instrument Specifications
 \input{appendices/appendix-c}  % C: The Astronomers Royal
@@ -146,8 +152,12 @@
 % BACKMATTER
 % ---------------------------------------------------------------------
 % Glossary content is rendered in Appendix E (appendices/appendix-e.tex)
+% Index is auto-generated from \index{} entries throughout the document
 
 \backmatter
+
+% Print the two-column index
+\printindex
 
 % =====================================================================
 % END DOCUMENT
