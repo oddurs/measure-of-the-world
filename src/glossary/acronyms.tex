@@ -1,5 +1,31 @@
-% Acronyms
-% Add entries using \newacronym{label}{abbreviation}{full form}
+% =====================================================================
+% ACRONYMS
+% =====================================================================
+%
+% Defines acronyms and abbreviations used throughout the book.
+% Acronyms are rendered in the Acronyms section (backmatter) and can be
+% referenced inline using \gls{label} or \acrlong{label}.
+%
+% On first use, \gls{label} expands to "Full Form (ABBR)".
+% On subsequent uses, it renders only "ABBR".
+%
+% Syntax:
+%   \newacronym{label}{ABBR}{Full Form}
+%
+% Example usage in text:
+%   The \gls{gmt} was established in the 19th century.
+%   → First use:  "Greenwich Mean Time (GMT)"
+%   → Later uses: "GMT"
+%
+% Common acronyms in this book:
+%   - GMT  (Greenwich Mean Time)
+%   - UTC  (Coordinated Universal Time)
+%   - TAI  (International Atomic Time)
+%   - IAU  (International Astronomical Union)
+%   - VLBI (Very Long Baseline Interferometry)
+%
+% =====================================================================
 
 % Placeholder entry to prevent empty acronyms warnings
+% TODO: Replace with actual acronyms
 \newacronym{placeholder-acronym}{PH}{Placeholder Acronym}

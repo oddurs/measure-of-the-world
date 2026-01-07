@@ -1,5 +1,33 @@
-% Glossary terms
-% Add entries using \newglossaryentry{label}{name=..., description=...}
+% =====================================================================
+% GLOSSARY TERMS
+% =====================================================================
+%
+% Defines technical terms used throughout the book.
+% Terms are rendered in the Glossary section (backmatter) and can be
+% referenced inline using \gls{label}, \glspl{label} (plural),
+% or \Gls{label} (capitalized).
+%
+% Syntax:
+%   \newglossaryentry{label}{
+%     name={term},
+%     description={Definition text}
+%   }
+%
+% Example usage in text:
+%   The \gls{aberration} of starlight was discovered by Bradley.
+%   Multiple \glspl{transit} were recorded that night.
+%
+% Categories of terms in this book:
+%   - Astronomical concepts (aberration, parallax, declination, etc.)
+%   - Timekeeping terms (mean time, sidereal time, equation of time)
+%   - Instruments (transit circle, mural arc, chronometer)
+%   - Units and measurements (arc-second, nautical mile)
+%
+% =====================================================================
 
 % Placeholder entry to prevent empty glossary warnings
-\newglossaryentry{placeholder-term}{name=placeholder term, description={This is a placeholder glossary entry. Replace with actual terms.}}
+% TODO: Replace with actual glossary terms
+\newglossaryentry{placeholder-term}{
+  name=placeholder term,
+  description={This is a placeholder glossary entry. Replace with actual terms.}
+}
