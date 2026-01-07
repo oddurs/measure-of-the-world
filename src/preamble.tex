@@ -255,6 +255,17 @@
 \renewcommand{\glossarysection}[2][]{}
 
 % =====================================================================
+% SECTION 9A: INDEX
+% =====================================================================
+
+% Package: imakeidx - Enhanced index generation with two-column layout
+\usepackage[intoc]{imakeidx}
+\makeindex[columns=2, title=Index]
+
+% Index formatting: use chapter-level heading, no clear page before
+\indexsetup{level=\chapter*, toclevel=chapter, noclearpage}
+
+% =====================================================================
 % SECTION 10: EPIGRAPHS AND DECORATIVE ELEMENTS
 % =====================================================================
 
