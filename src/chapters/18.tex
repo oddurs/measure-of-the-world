@@ -1,11 +1,11 @@
 \chapter{GMT, UT, UTC, and the Modern Timekeeping Stack}
 \label{ch:utc-atomic-time}
 
-The instant arrived on December 31, 2016, at 23:59:59 UTC. Around the world, atomic clocks ticked in synchrony. Then, for the first time in four years, the world inserted a leap second: 23:59:60. A single extra second, declared by international timekeeping authorities, inserted to keep atomic clocks aligned with a planet that spins too slowly.\footnote{\textcite{IERS2017} documented this leap second insertion and its causes—the gradual slowing of Earth's rotation due to tidal friction.} For 61 clock seconds, the official time paused. Some software crashed. Financial systems stumbled. Most people noticed nothing. In that interval, two competing definitions of time—astronomical time, measured by Earth's rotation, and atomic time, measured by the quantum vibrations of cesium atoms—briefly converged before diverging again. This chapter traces how we arrived at this peculiar moment, and what it reveals about the layers of abstraction required to make time meaningful in a technological world.
+The instant arrived on December 31, 2016, at 23:59:59 UTC.\index{UTC (Coordinated Universal Time)} Around the world, atomic clocks\index{atomic clocks} ticked in synchrony. Then, for the first time in four years, the world inserted a leap second:\index{leap second} 23:59:60. A single extra second, declared by international timekeeping authorities, inserted to keep atomic clocks aligned with a planet that spins too slowly.\footnote{\textcite{IERS2017} documented this leap second insertion and its causes—the gradual slowing of Earth's rotation due to tidal friction.} For 61 clock seconds, the official time paused. Some software crashed. Financial systems stumbled. Most people noticed nothing. In that interval, two competing definitions of time—astronomical time, measured by Earth's rotation, and atomic time, measured by the quantum vibrations of cesium atoms—briefly converged before diverging again. This chapter traces how we arrived at this peculiar moment, and what it reveals about the layers of abstraction required to make time meaningful in a technological world.
 
 \section{Greenwich Mean Time}
 
-By the 1880s, Greenwich Mean Time had become the world's reference. The meridian was fixed. The time distribution infrastructure existed. But what, exactly, was Greenwich Mean Time?
+By the 1880s, Greenwich Mean Time\index{Greenwich Mean Time}\index{GMT|see{Greenwich Mean Time}} had become the world's reference. The meridian was fixed. The time distribution infrastructure existed. But what, exactly, was Greenwich Mean Time?
 
 Greenwich Mean Time was the mean solar time at Greenwich—the average of the actual solar time over a year, smoothed by the equation of time. An observer at the Greenwich transit circle watching the Sun cross the meridian would record the moment of transit as Greenwich noon. But due to the equation of time, this moment varied by up to 16 minutes throughout the year. A mechanical clock, keeping uniform time, could not follow the actual Sun. Instead, it kept the time of a fictitious ``mean Sun,'' which moved uniformly along the ecliptic, advancing $360°$ in 365.25 days.
 
@@ -13,7 +13,7 @@ This mean Sun defined Greenwich Mean Time. It was time as abstraction—the time
 
 \section{Sidereal vs. Solar Time}
 
-Astronomers also needed time, but they defined it differently. Instead of measuring from the Sun, they measured from the stars. Sidereal time is defined by the Earth's rotation relative to the distant stars—the reference frame of the celestial sphere.
+Astronomers also needed time, but they defined it differently.\index{sidereal time}\index{time!sidereal} Instead of measuring from the Sun, they measured from the stars. Sidereal time is defined by the Earth's rotation relative to the distant stars—the reference frame of the celestial sphere.
 
 One sidereal day is $23^{\mathrm{h}} 56^{\mathrm{m}} 04^{\mathrm{s}}$ of solar time. One solar day is $24^{\mathrm{h}} 00^{\mathrm{m}} 00^{\mathrm{s}}$. The difference is approximately 3 minutes and 56 seconds—the amount of time it takes Earth to complete the extra rotation required to bring the Sun back to the meridian after accounting for Earth's orbital motion.
 
