@@ -53,6 +53,9 @@
 
 \begin{document}
 
+% Include all glossary entries in output (even if not referenced with \gls{})
+\glsaddall
+
 % ---------------------------------------------------------------------
 % FRONTMATTER
 % ---------------------------------------------------------------------
@@ -142,11 +145,9 @@
 % ---------------------------------------------------------------------
 % BACKMATTER
 % ---------------------------------------------------------------------
-% Acronym list and glossary (auto-generated from glossary/*.tex)
+% Glossary content is rendered in Appendix E (appendices/appendix-e.tex)
 
 \backmatter
-\printglossary[type=\acronymtype,title=Acronyms]
-\printglossary[title=Glossary]
 
 % =====================================================================
 % END DOCUMENT
