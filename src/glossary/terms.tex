@@ -3,7 +3,7 @@
 % =====================================================================
 %
 % Defines technical terms used throughout the book.
-% Terms are rendered in the Glossary section (backmatter) and can be
+% Terms are rendered in the Glossary appendix and backmatter, and can be
 % referenced inline using \gls{label}, \glspl{label} (plural),
 % or \Gls{label} (capitalized).
 %
@@ -17,17 +17,811 @@
 %   The \gls{aberration} of starlight was discovered by Bradley.
 %   Multiple \glspl{transit} were recorded that night.
 %
-% Categories of terms in this book:
-%   - Astronomical concepts (aberration, parallax, declination, etc.)
-%   - Timekeeping terms (mean time, sidereal time, equation of time)
-%   - Instruments (transit circle, mural arc, chronometer)
-%   - Units and measurements (arc-second, nautical mile)
+% All terms include chapter cross-references where concepts are
+% introduced or discussed in depth.
 %
 % =====================================================================
 
-% Placeholder entry to prevent empty glossary warnings
-% TODO: Replace with actual glossary terms
-\newglossaryentry{placeholder-term}{
-  name=placeholder term,
-  description={This is a placeholder glossary entry. Replace with actual terms.}
+% ---------------------------------------------------------------------
+% A
+% ---------------------------------------------------------------------
+
+\newglossaryentry{aberration}{
+  name={aberration of light},
+  description={The apparent shift in a star's position due to Earth's orbital motion around the Sun and the finite speed of light. Discovered by James Bradley (1725), proving heliocentrism and measuring the speed of light via parallactic displacement ($\approx 20.5''$ for $\gamma$ Draconis). See Chapter 12}
 }
+
+\newglossaryentry{almanac}{
+  name={almanac},
+  description={A tabulated reference providing astronomical positions (ephemerides), lunar phases, tides, and calendar data for future dates. The \emph{Nautical Almanac} (established 1767, Greenwich) provided lunar distances for celestial navigation. See Chapter 7}
+}
+
+\newglossaryentry{altitude}{
+  name={altitude},
+  description={The angular elevation of a celestial object above the observer's horizon, measured from 0° (horizon) to 90° (zenith). Distinct from declination, which measures north-south position relative to celestial equator}
+}
+
+\newglossaryentry{analemma}{
+  name={analemma},
+  description={The figure-eight curve traced by the Sun's position at a fixed clock time over one calendar year, resulting from the combined effects of Earth's orbital eccentricity and axial tilt. See Chapter 9}
+}
+
+\newglossaryentry{aphelion}{
+  name={aphelion},
+  description={The point in an object's elliptical orbit farthest from the Sun. Earth reaches aphelion around July 4 each year. Contrast with perihelion}
+}
+
+\newglossaryentry{apogee}{
+  name={apogee},
+  description={The point in an object's elliptical orbit around Earth (e.g., the Moon) where it is farthest from Earth. Contrast with perigee}
+}
+
+\newglossaryentry{apparent-solar-time}{
+  name={apparent solar time},
+  description={Time measured by the Sun's actual position in the sky (dial angle on a sundial). Varies with Earth's orbital eccentricity and axial tilt; differs from mean solar time by the equation of time. See Chapters 8--9}
+}
+
+\newglossaryentry{arc-minute}{
+  name={arc-minute},
+  description={1/60th of a degree; a unit of angular measurement denoted by $'$ or arcmin. Often used for telescope accuracy (e.g., Flamsteed's $\pm 10''$ accuracy). See Chapter 2}
+}
+
+\newglossaryentry{arc-second}{
+  name={arc-second},
+  description={1/60th of an arc-minute, or 1/3600th of a degree, denoted by $''$ or arcsec. Modern instruments achieve $\pm 0.001''$ (milliarcsecond) precision. See Chapter 21}
+}
+
+\newglossaryentry{astrometry}{
+  name={astrometry},
+  description={The branch of astronomy concerned with precisely measuring and mapping the positions of celestial objects. Greenwich Observatory's core function. See Chapters 1--7, 20}
+}
+
+\newglossaryentry{astronomical-unit}{
+  name={astronomical unit},
+  description={The mean Earth-Sun distance ($\approx 150$ million kilometers), abbreviated AU, used as a distance scale within the solar system. Improved precision of the AU refined planetary masses and orbital parameters. See Chapter 13}
+}
+
+\newglossaryentry{atomic-clock}{
+  name={atomic clock},
+  description={A timekeeping device that uses the quantum mechanical frequency of atomic transitions, typically in cesium-133, to define the second with extraordinary precision}
+}
+
+\newglossaryentry{azimuth}{
+  name={azimuth},
+  description={The compass direction of a celestial object, measured east from north (0°--360°). Azimuth and altitude together specify an object's position on the celestial sphere relative to the observer. See Chapter 3}
+}
+
+% ---------------------------------------------------------------------
+% B
+% ---------------------------------------------------------------------
+
+\newglossaryentry{balance-wheel}{
+  name={balance wheel},
+  description={The oscillating wheel in a watch or chronometer that, together with its hairspring, regulates timekeeping; analogous to a pendulum but independent of gravity}
+}
+
+\newglossaryentry{besselian-epoch}{
+  name={Besselian epoch},
+  description={A reference date used in astronomical calculations, with Besselian year B1900.0 or B1950.0 denoting tropical years measured from a reference epoch. Largely replaced by Julian epoch. See Chapter 15}
+}
+
+\newglossaryentry{bimetallic-strip}{
+  name={bimetallic strip},
+  description={A mechanical element consisting of two metals with different thermal expansion coefficients bonded together. Bends with temperature change, used in chronometer and clock compensation to maintain constant rate despite thermal variations. See Chapter 17}
+}
+
+\newglossaryentry{board-of-longitude}{
+  name={Board of Longitude},
+  description={The British government body established by the Longitude Act of 1714 to evaluate and reward solutions to the problem of determining longitude at sea; dissolved in 1828}
+}
+
+% ---------------------------------------------------------------------
+% C
+% ---------------------------------------------------------------------
+
+\newglossaryentry{celestial-equator}{
+  name={celestial equator},
+  description={The great circle on the celestial sphere that lies in the plane of the Earth's equator, dividing the sky into northern and southern hemispheres}
+}
+
+\newglossaryentry{celestial-pole}{
+  name={celestial pole},
+  description={Either of two points on the celestial sphere where the Earth's axis of rotation, extended indefinitely, intersects the sky; the North Celestial Pole lies near Polaris}
+}
+
+\newglossaryentry{chip-log}{
+  name={chip log},
+  description={A navigation device consisting of a wooden board attached to a knotted rope, thrown overboard to measure ship speed by counting knots passing through the hand}
+}
+
+\newglossaryentry{chromatic-aberration}{
+  name={chromatic aberration},
+  description={An optical defect in which different wavelengths of light are focused at different distances by a lens, causing colored fringes around images}
+}
+
+\newglossaryentry{chronometer}{
+  name={chronometer},
+  description={A high-precision portable clock designed for maritime navigation, determining longitude by comparing local time (from solar observation) with standard Greenwich time. Harrison's H5 (1770s) achieved $\pm 0.4$ seconds/day accuracy. See Chapter 17}
+}
+
+\newglossaryentry{circumpolar}{
+  name={circumpolar stars},
+  description={Stars that never set below the horizon as seen from a given latitude, perpetually circling the celestial pole}
+}
+
+\newglossaryentry{collimation}{
+  name={collimation},
+  description={Optical alignment of a telescope or instrument's optical axis. Airy transit circle required routine collimation adjustment; deviation of a few millimeters caused $\pm 0.1''$ errors. See Chapter 6}
+}
+
+\newglossaryentry{culmination}{
+  name={culmination},
+  description={The moment when a celestial object crosses the observer's meridian (north-south line through zenith), reaching maximum altitude. Upper culmination (through zenith) and lower culmination (through nadir, opposite side) occur for circumpolar stars}
+}
+
+% ---------------------------------------------------------------------
+% D
+% ---------------------------------------------------------------------
+
+\newglossaryentry{dead-reckoning}{
+  name={dead reckoning},
+  description={A navigation method estimating position by applying course and speed measurements to a known starting point; accuracy degrades over time as errors accumulate}
+}
+
+\newglossaryentry{declination}{
+  name={declination},
+  description={The angular distance of a celestial object north or south of the celestial equator, analogous to latitude on Earth. Measured from $-90°$ (south pole) to $+90°$ (north pole). Combined with right ascension, specifies a celestial position. See Chapter 3}
+}
+
+\newglossaryentry{detent-escapement}{
+  name={detent escapement},
+  description={A precision escapement used in marine chronometers where a single lever (detent) locks and releases the escape wheel, providing minimal interference with oscillation}
+}
+
+\newglossaryentry{diffraction-grating}{
+  name={diffraction grating},
+  description={An optical element with thousands of equally spaced grooves that disperses light into a spectrum by interference}
+}
+
+\newglossaryentry{diurnal-aberration}{
+  name={diurnal aberration},
+  description={Apparent shift in stellar position due to Earth's daily rotation (not orbital motion). Much smaller than annual aberration ($\sim 0.3''$); detected as the Earth's velocity changes during the day. See Chapter 12}
+}
+
+\newglossaryentry{doppler-shift}{
+  name={Doppler shift},
+  description={Change in observed wavelength/frequency of light from a moving object. An object moving toward observer shows blueshifted (shorter wavelength) light; moving away shows redshifted (longer wavelength) light. Quantified by $\Delta \lambda / \lambda = v/c$ for non-relativistic motion. See Chapter 11}
+}
+
+% ---------------------------------------------------------------------
+% E
+% ---------------------------------------------------------------------
+
+\newglossaryentry{ecliptic}{
+  name={ecliptic},
+  description={The apparent path of the Sun across the celestial sphere, corresponding to Earth's orbital plane. The ecliptic is tilted 23.44° relative to the celestial equator, causing seasonal variations. See Chapter 5}
+}
+
+\newglossaryentry{emission-lines}{
+  name={emission lines},
+  description={Bright lines in a spectrum produced when hot, diffuse gas emits light at specific wavelengths corresponding to atomic energy transitions}
+}
+
+\newglossaryentry{ephemeris}{
+  name={ephemeris},
+  description={A tabulated sequence of astronomical object positions at specified times (plural: ephemerides). Nautical Almanac ephemerides predicted lunar positions, enabling celestial navigation. See Chapter 7}
+}
+
+\newglossaryentry{epoch}{
+  name={epoch},
+  description={A specific reference date used in astronomical calculations. Astronomical Almanac epochs include J2000.0 (January 1, 2000, 12:00 UT); earlier observations referenced to Besselian epochs B1900.0, B1950.0}
+}
+
+\newglossaryentry{equation-of-time}{
+  name={equation of time},
+  description={The difference between apparent solar time (actual Sun position) and mean solar time (uniform clock time). Varies from $-14'$ to $+16'$ depending on orbital eccentricity and obliquity; reaches extremes in early November and mid-May. See Chapters 8--9}
+}
+
+\newglossaryentry{equatorial-coordinates}{
+  name={equatorial coordinate system},
+  description={A celestial coordinate system using right ascension (east-west) and declination (north-south), centered on the celestial poles. Standard reference frame for stellar catalogs and ephemerides. See Chapter 3}
+}
+
+\newglossaryentry{equinox}{
+  name={equinox},
+  description={Moments when day and night are equal length (12 hours each), occurring near March 20 (spring/vernal equinox) and September 22 (autumn equinox). At equinoxes, the ecliptic intersects the celestial equator; the Sun's declination crosses zero. See Chapter 5}
+}
+
+\newglossaryentry{escapement}{
+  name={escapement},
+  description={The mechanical element in a clock or watch that controls energy release from the power source, ensuring regular time intervals. Common escapements include verge, anchor (deadbeat), and grasshopper designs. Harrison's grasshopper escapement reduced friction losses dramatically. See Chapter 17}
+}
+
+% ---------------------------------------------------------------------
+% F
+% ---------------------------------------------------------------------
+
+\newglossaryentry{filar-micrometer}{
+  name={filar micrometer},
+  description={An optical instrument with movable cross-hairs in the eyepiece, used to measure small angular separations or to subdivide scale divisions on graduated instruments}
+}
+
+\newglossaryentry{flexure}{
+  name={flexure},
+  description={The bending or deformation of an instrument's structural elements under gravity or temperature changes, causing positional errors that vary with orientation}
+}
+
+\newglossaryentry{focus}{
+  name={focus (optical)},
+  description={The point where light rays converge after passing through a lens or reflecting off a mirror. Telescopes' focal length (distance from objective lens to focus) determines magnification and field of view. See Chapter 4}
+}
+
+\newglossaryentry{fraunhofer-lines}{
+  name={Fraunhofer lines},
+  description={Dark absorption lines in the Sun's spectrum, caused by absorption of specific wavelengths by cool elements (hydrogen, helium, iron, etc.) in the Sun's chromosphere. Mapped by Joseph von Fraunhofer; used for spectral classification and identifying stellar composition. See Chapter 11}
+}
+
+% ---------------------------------------------------------------------
+% G
+% ---------------------------------------------------------------------
+
+\newglossaryentry{geocentric}{
+  name={geocentric},
+  description={Centered on Earth. Geocentric models place Earth at the center of the universe; heliocentric models place the Sun at the center. Observations from Greenwich provided evidence for heliocentrism (Bradley's aberration discovery). See Chapter 12}
+}
+
+\newglossaryentry{gnomon}{
+  name={gnomon},
+  description={A vertical stick or shadow-casting object in a sundial, whose shadow indicates time. Sundials rely on gnomon shadow length and angle to determine time of day}
+}
+
+\newglossaryentry{gravitational-redshift}{
+  name={gravitational redshift},
+  description={The lengthening (redshift) of light wavelengths as light escapes a strong gravitational field. Predicted by Einstein's general relativity; observed as light from massive stars shows redshift proportional to their surface gravity. See Chapter 22}
+}
+
+\newglossaryentry{great-circle}{
+  name={great circle},
+  description={A circle on a sphere whose center coincides with the sphere's center. The shortest path between two points on a sphere lies along a great circle (e.g., Earth's meridians are great circles; the equator is a great circle). See Chapter 3}
+}
+
+\newglossaryentry{greenwich-civil-time}{
+  name={Greenwich Civil Time},
+  description={Time standard established by Greenwich Observatory during the 20th century, abbreviated GCT, based on the transit of the Sun across the Prime Meridian at Greenwich (0° longitude). Replaced by Coordinated Universal Time (UTC) in 1972. See Chapter 23}
+}
+
+\newglossaryentry{greenwich-mean-time}{
+  name={Greenwich Mean Time},
+  description={Mean solar time at the Prime Meridian (0° longitude, Greenwich), abbreviated GMT. GMT is Earth's rotational time scale, distinct from atomic time. Initially established by Maskelyne (1767); now called Universal Time (UT1) in astronomy. See Chapters 7, 22--23}
+}
+
+\newglossaryentry{gridiron-pendulum}{
+  name={gridiron pendulum},
+  description={A temperature-compensating pendulum constructed of alternating rods of brass and steel, designed so that differential thermal expansion maintains constant effective length}
+}
+
+% ---------------------------------------------------------------------
+% H
+% ---------------------------------------------------------------------
+
+\newglossaryentry{hairspring}{
+  name={hairspring},
+  description={The spiral spring attached to a balance wheel that provides the restoring force for oscillation in portable timepieces; its properties determine the timekeeping rate}
+}
+
+\newglossaryentry{heliocentric}{
+  name={heliocentric},
+  description={Centered on the Sun. Heliocentric model of the solar system places the Sun at the center, with planets (including Earth) orbiting around it. Copernican model; supported by Bradley's aberration discovery. See Chapter 12}
+}
+
+\newglossaryentry{historia-coelestis}{
+  name={Historia Coelestis Britannica},
+  description={John Flamsteed's star catalog published posthumously in 1725, containing positions of nearly 3,000 stars with unprecedented accuracy; the foundation of positional astronomy}
+}
+
+\newglossaryentry{horologium}{
+  name={horologium},
+  description={A mechanical timekeeper used in astronomical observations, distinct from clock or watch. Astronomical horologium emphasizes long-term rate stability and minimal temperature drift. See Chapter 17}
+}
+
+\newglossaryentry{hour-angle}{
+  name={hour angle},
+  description={The angle between the meridian and a celestial object's position, measured westward. Hour angle of 0° means the object is on the meridian (culminating); $\pm 6$ hours means the object is near the horizon (rising or setting). Related to right ascension by the sidereal time. See Chapter 3}
+}
+
+% ---------------------------------------------------------------------
+% I
+% ---------------------------------------------------------------------
+
+\newglossaryentry{inclination}{
+  name={inclination},
+  description={The angle between an orbital plane and a reference plane (e.g., Earth's orbital plane relative to the ecliptic). Moon's orbit is inclined $\approx 5.1°$ to the ecliptic; affects lunar eclipse occurrence and lunar distance calculations. See Chapter 8}
+}
+
+\newglossaryentry{inertial-reference-frame}{
+  name={inertial reference frame},
+  description={A coordinate system in which Newton's laws of motion apply without fictitious forces. Earth's rotating frame is non-inertial; observations must account for centrifugal and Coriolis effects. See Chapter 5}
+}
+
+\newglossaryentry{interstellar-extinction}{
+  name={interstellar extinction},
+  description={Dimming and reddening of light from distant stars due to dust particles in the interstellar medium. Shorter wavelengths (blue light) are scattered more than longer wavelengths (red light), causing observed color shift. See Chapter 14}
+}
+
+\newglossaryentry{isochronism}{
+  name={isochronism},
+  description={The property of an oscillator (such as an ideal pendulum or balance wheel) whereby its period remains constant regardless of amplitude; essential for accurate timekeeping}
+}
+
+% ---------------------------------------------------------------------
+% L
+% ---------------------------------------------------------------------
+
+\newglossaryentry{latitude}{
+  name={latitude},
+  description={Angular distance north or south of Earth's equator, measured from $-90°$ (south pole) to $+90°$ (north pole). Determined at Greenwich Observatory via zenith stars and transit instruments. See Chapter 3}
+}
+
+\newglossaryentry{leap-second}{
+  name={leap second},
+  description={An extra second inserted into UTC to keep it synchronized with Earth's rotation (UT1). Inserted when UT1 drifts $\approx 0.6$ seconds from UTC; irregular frequency (roughly every 18 months) due to variable Earth rotation rate. See Chapter 23}
+}
+
+\newglossaryentry{libration}{
+  name={libration},
+  description={The oscillatory motion of the Moon's visible hemisphere relative to Earth, allowing observation of slightly more than 50\% of the lunar surface over time. Caused by the Moon's orbital eccentricity and orbital inclination relative to Earth's equator}
+}
+
+\newglossaryentry{light-year}{
+  name={light-year},
+  description={Distance that light travels in one year in vacuum ($\approx 9.46 \times 10^{12}$ km). Used for measuring distances to nearby stars; nearest star (Proxima Centauri) is 4.24 light-years away. See Chapter 13}
+}
+
+\newglossaryentry{longitude}{
+  name={longitude},
+  description={Angular distance east or west of the Prime Meridian (0° at Greenwich), measured from $-180°$ (west) to $+180°$ (east), or equivalently 0°--360° eastward. Marine chronometers determine longitude by comparing local time with Greenwich Mean Time. See Chapter 6}
+}
+
+\newglossaryentry{longitude-act}{
+  name={Longitude Act},
+  description={An act of the British Parliament (1714) offering prizes of up to £20,000 for a practical method of determining longitude at sea; established the Board of Longitude}
+}
+
+\newglossaryentry{lunar-distance}{
+  name={lunar distance},
+  description={The angle between the Moon and a reference star (typically a bright zodiacal star), measured from Earth. Lunar distances predicted in the Nautical Almanac enabled celestial navigation by determining Greenwich time without a chronometer. See Chapter 7}
+}
+
+% ---------------------------------------------------------------------
+% M
+% ---------------------------------------------------------------------
+
+\newglossaryentry{magnetic-declination}{
+  name={magnetic declination},
+  description={The angle between magnetic north (indicated by a compass) and true geographic north, varying by location and changing slowly over time}
+}
+
+\newglossaryentry{magnitude-apparent}{
+  name={magnitude (apparent)},
+  description={A logarithmic measure of a celestial object's brightness as perceived from Earth. Brighter objects have lower magnitudes; magnitude scale is reversed (magnitude 0 is bright, magnitude 5 is faint to naked eye). Magnitude difference of 5 corresponds to brightness ratio of 100:1. See Chapter 14}
+}
+
+\newglossaryentry{magnitude-absolute}{
+  name={magnitude (absolute)},
+  description={Intrinsic brightness of a celestial object, defined as the apparent magnitude it would have if placed at a standard distance (10 parsecs for stars). Allows comparison of true luminosities independent of distance. See Chapter 14}
+}
+
+\newglossaryentry{mean-anomaly}{
+  name={mean anomaly},
+  description={The angle parameter in Kepler's equation describing an object's position in its elliptical orbit, measured from perihelion. Unlike true anomaly (actual angular distance from perihelion), mean anomaly increases uniformly with time, enabling orbital predictions. See Chapter 8}
+}
+
+\newglossaryentry{mean-solar-time}{
+  name={mean solar time},
+  description={Time based on a fictitious ``mean Sun'' that moves uniformly along the celestial equator at constant rate, matching the average speed of the real Sun. Mean solar time equals apparent solar time plus the equation of time; basis for civil clocks. See Chapter 8}
+}
+
+\newglossaryentry{meridian}{
+  name={meridian},
+  description={A great circle passing through the observer's zenith and the celestial poles, running north-south. Celestial bodies reach maximum altitude when crossing the meridian (meridian transit or culmination). See Chapter 3}
+}
+
+\newglossaryentry{meridian-conference}{
+  name={International Meridian Conference},
+  description={The 1884 diplomatic conference in Washington, D.C., that established Greenwich as the world's Prime Meridian and standardized global timekeeping}
+}
+
+\newglossaryentry{micrometer}{
+  name={micrometer},
+  description={An optical device that measures small angles or distances by translating rotational motion to linear displacement. Airy transit circle's micrometer screw achieved 0.1-arcsecond resolution by converting telescope pointing (rotational) to screw reading (linear). See Chapter 6}
+}
+
+\newglossaryentry{mural-arc}{
+  name={mural arc},
+  description={A large graduated arc permanently mounted in the plane of the meridian, used to measure the altitudes of celestial bodies as they transit; Flamsteed's had a radius of nearly 7 feet}
+}
+
+% ---------------------------------------------------------------------
+% N
+% ---------------------------------------------------------------------
+
+\newglossaryentry{nautical-almanac}{
+  name={Nautical Almanac},
+  description={An annual publication first issued in 1767 containing tables of celestial positions, lunar distances, and other data needed for navigation; still published today}
+}
+
+\newglossaryentry{nautical-mile}{
+  name={nautical mile},
+  description={A unit of distance equal to one minute of arc of latitude, approximately 1,852 meters; convenient for navigation because of its direct relationship to angular measurements}
+}
+
+\newglossaryentry{nutation}{
+  name={nutation},
+  description={A small oscillation superimposed on Earth's precession, with an 18.6-year period and amplitude $\approx 9.2$ arcseconds. Discovered by James Bradley; caused by the Moon's gravitational pull on Earth's equatorial bulge. See Chapters 13, 18}
+}
+
+% ---------------------------------------------------------------------
+% O
+% ---------------------------------------------------------------------
+
+\newglossaryentry{obliquity}{
+  name={obliquity of the ecliptic},
+  description={The angle between Earth's rotational axis and the orbital plane (ecliptic), currently $\approx 23.44°$. Obliquity varies slowly ($\pm 1.3°$ over 41,000 years) due to gravitational perturbations; determines seasonal climate variations. See Chapter 5}
+}
+
+\newglossaryentry{occultation}{
+  name={occultation},
+  description={The obscuring of one celestial object by another; typically, a Moon-planet or Moon-star occultation. Observed timings provide precise positions of occulting bodies, historically used to refine lunar ephemerides. See Chapter 8}
+}
+
+\newglossaryentry{orbital-eccentricity}{
+  name={orbital eccentricity},
+  description={The deviation of an orbit from a perfect circle, defined as $e = \sqrt{1 - b^2/a^2}$ where $a$ is semi-major axis and $b$ is semi-minor axis. Earth's orbital eccentricity is $e \approx 0.0167$; affects the equation of time. See Chapter 8}
+}
+
+% ---------------------------------------------------------------------
+% P
+% ---------------------------------------------------------------------
+
+\newglossaryentry{parallax}{
+  name={parallax},
+  description={Apparent shift in an object's position due to observer motion. For stars, annual parallax ($\approx 1$ arcsecond for nearby stars) results from Earth's orbital motion; expressed in parsecs (parallax arc-second; 1 parsec $\approx 3.26$ light-years). See Chapters 12--13}
+}
+
+\newglossaryentry{parsec}{
+  name={parsec},
+  description={A unit of distance defined as 1/parallax-in-arcseconds; equivalent to $\approx 3.26$ light-years or $3.09 \times 10^{16}$ meters. Used in stellar distances and galactic astronomy. See Chapter 13}
+}
+
+\newglossaryentry{pendulum-clock}{
+  name={pendulum clock},
+  description={A clock regulated by a swinging pendulum whose period depends on its length and local gravity; revolutionized land timekeeping but proved impractical at sea}
+}
+
+\newglossaryentry{perigee}{
+  name={perigee},
+  description={The point in an object's elliptical orbit around Earth where it is closest to Earth (e.g., Moon at perigee is $\approx 356,500$ km away vs. $\approx 406,700$ km at apogee). Contrast with apogee. See Chapter 8}
+}
+
+\newglossaryentry{perihelion}{
+  name={perihelion},
+  description={The point in an object's elliptical orbit around the Sun where it is closest to the Sun. Earth reaches perihelion around January 3 each year (currently). Contrast with aphelion. See Chapter 8}
+}
+
+\newglossaryentry{personal-equation}{
+  name={personal equation},
+  description={The systematic time lag or shift in an observer's perception of a stellar transit, causing systematic error in observations. Airy recognized personal equation as a major error source; developed statistical methods to measure and correct it. See Chapter 6}
+}
+
+\newglossaryentry{perturbation}{
+  name={perturbation},
+  description={A small deviation in an object's orbit from a simple Keplerian ellipse, caused by gravitational influence of other bodies. Lunar perturbations in Earth's orbit and planetary perturbations in Moon's orbit require iterative calculations. See Chapter 8}
+}
+
+\newglossaryentry{phase-lunar}{
+  name={phase (lunar)},
+  description={The illuminated fraction of the Moon's disk as seen from Earth, varying from new (0\% illuminated) through first quarter (50\%), full (100\%), and last quarter (50\%) back to new over $\approx 29.5$ days (synodic month). Used for navigation and calendar calculations. See Chapter 7}
+}
+
+\newglossaryentry{photographic-plate}{
+  name={photographic plate},
+  description={A glass or celluloid substrate coated with light-sensitive emulsion, used to record astronomical images and stellar positions. Photographic techniques (introduced late 1800s) reduced personal observation errors compared to visual transit telescopes. See Chapter 20}
+}
+
+\newglossaryentry{photographic-zenith-tube}{
+  name={photographic zenith tube},
+  description={An automated telescope pointing vertically (at zenith) to record star images on photographic plates, allowing precise zenith distance measurements and latitude determination without manual observation bias. Improved Earth orientation parameter determination. See Chapter 20}
+}
+
+\newglossaryentry{plate-scale}{
+  name={plate scale},
+  description={The angular size per unit distance on a photographic plate or detector, expressed as arcseconds per millimeter. Precisely measured plate scales enable conversion of physical plate measurements (mm) to angular positions (arcseconds). See Chapter 20}
+}
+
+\newglossaryentry{polar-motion}{
+  name={polar motion},
+  description={Oscillation of Earth's rotational axis relative to the geographic crust (also called Chandler Wobble), with $\approx 14$-month period and $\approx 0.7$ arcsecond amplitude. Discovered by Seth Chandler (1891); affects latitude and longitude determinations. See Chapter 18}
+}
+
+\newglossaryentry{precession}{
+  name={precession},
+  description={The slow wobble of Earth's rotational axis, with a period of $\approx 26,000$ years. Causes the celestial pole to trace a circle around the ecliptic pole, shifting vernal equinox date by $\approx 50.3$ arcseconds per year. Discovered by Hipparchus; refined by Bradley. See Chapter 13}
+}
+
+\newglossaryentry{prime-meridian}{
+  name={Prime Meridian},
+  description={The meridian (0° longitude) designated as the reference for geographic coordinates. Greenwich Meridian was officially adopted as the Prime Meridian by international agreement (1884 International Meridian Conference), established by the Airy transit circle. See Chapter 19}
+}
+
+\newglossaryentry{prism}{
+  name={prism},
+  description={A transparent optical element with flat, angled faces used to refract light, dispersing white light into its component colors (spectrum). Prism dispersion properties depend on material refractive index and wavelength. See Chapter 11}
+}
+
+\newglossaryentry{proper-motion}{
+  name={proper motion},
+  description={The apparent change in a star's position on the celestial sphere over time, caused by the star's real motion through space relative to the solar system. Measured in arcseconds per year; nearby stars have larger proper motions. See Chapter 12}
+}
+
+% ---------------------------------------------------------------------
+% Q
+% ---------------------------------------------------------------------
+
+\newglossaryentry{quadrant}{
+  name={quadrant},
+  description={A quarter-circle measuring instrument with a graduated arc (90°) used for measuring altitudes and zenith distances of celestial objects. Early quadrants (Bird 8-foot quadrant, 1750) achieved $\pm 8$ arcsecond accuracy. See Chapter 3}
+}
+
+\newglossaryentry{quantum-electrodynamics}{
+  name={quantum electrodynamics},
+  description={The quantum field theory describing electromagnetic interactions, abbreviated QED. Predicts subtle atomic-level effects (Lamb shift, anomalous magnetic moment) that affect atomic clock frequencies at the level of parts in $10^{15}$. See Chapter 24}
+}
+
+\newglossaryentry{quasar}{
+  name={quasar},
+  description={A quasi-stellar astronomical object, likely a supermassive black hole at a distant galaxy's center, producing tremendous luminosity and radio emissions. Redshift measurements suggest extragalactic origins; studied via spectroscopy and positional astronomy. See Chapter 22}
+}
+
+% ---------------------------------------------------------------------
+% R
+% ---------------------------------------------------------------------
+
+\newglossaryentry{radial-velocity}{
+  name={radial velocity},
+  description={The component of a stellar or galaxy's motion directed toward or away from Earth, measured via Doppler shift of spectral lines. Positive radial velocity indicates motion away; negative indicates motion toward observer. See Chapter 11}
+}
+
+\newglossaryentry{radio-interferometry}{
+  name={radio interferometry},
+  description={Technique combining signals from multiple separated radio telescopes to achieve angular resolution equivalent to a single telescope with diameter equal to the baseline separation. Enables very high precision astrometry and source localization. See Chapter 21}
+}
+
+\newglossaryentry{random-error}{
+  name={random error},
+  description={Unpredictable variations in measurements that scatter around the true value without consistent direction; can be reduced by averaging multiple observations}
+}
+
+\newglossaryentry{redshift}{
+  name={redshift},
+  description={The lengthening of light wavelengths due to either Doppler effect (receding motion) or gravitational effect (escape from strong gravity). Cosmological redshift indicates recession velocity and distance to distant galaxies. See Chapter 22}
+}
+
+\newglossaryentry{refraction}{
+  name={atmospheric refraction},
+  description={The bending of light rays as they pass through layers of air with varying density and temperature. Atmospheric refraction causes stars to appear higher in sky than their true positions; greatest near horizon. Altitude refraction correction reaches $\approx 34'$ at horizon, decreasing to 0 at zenith. See Chapter 5}
+}
+
+\newglossaryentry{right-ascension}{
+  name={right ascension},
+  description={Angular distance eastward along the celestial equator from the vernal equinox, abbreviated RA, measured in hours (0--24 hours), minutes, and seconds. Combined with declination, specifies a celestial position analogous to geographic longitude and latitude. See Chapter 3}
+}
+
+% ---------------------------------------------------------------------
+% S
+% ---------------------------------------------------------------------
+
+\newglossaryentry{sextant}{
+  name={sextant},
+  description={A handheld navigational instrument using mirrors to measure the angular distance between two objects, typically accurate to within 1--2 arc-minutes}
+}
+
+\newglossaryentry{sidereal-day}{
+  name={sidereal day},
+  description={Earth's rotation period relative to the stars ($\approx 23$ hours, 56 minutes, 4 seconds), slightly shorter than solar day because Earth orbits the Sun. Sidereal time measures Earth's rotation; astronomers use sidereal time for observation planning. See Chapter 8}
+}
+
+\newglossaryentry{sidereal-time}{
+  name={sidereal time},
+  description={Time measured by Earth's rotation relative to distant stars (fixed, inertial reference), advancing by 24 sidereal hours per sidereal day ($\approx 23.93$ solar hours). Sidereal time indicates which stars are currently on the meridian; used for observation scheduling. See Chapter 8}
+}
+
+\newglossaryentry{sidereal-year}{
+  name={sidereal year},
+  description={Time for Earth to complete one orbit around the Sun relative to the stars ($\approx 365.25636$ solar days). Distinct from tropical year (Earth's return to same season, $\approx 365.24219$ solar days) due to precession. See Chapter 13}
+}
+
+\newglossaryentry{solar-noon}{
+  name={solar noon},
+  description={The moment when the Sun crosses the local meridian and reaches its highest altitude for the day; true solar noon varies from clock noon by the equation of time}
+}
+
+\newglossaryentry{spectral-classification}{
+  name={spectral classification},
+  description={A system categorizing stars by their spectral characteristics (absorption line patterns, continuum shape). Modern spectral types (O, B, A, F, G, K, M) correlate with stellar temperature and composition; our Sun is type G2. See Chapter 11}
+}
+
+\newglossaryentry{spectral-lines}{
+  name={spectral lines},
+  description={Discrete wavelength signatures in a spectrum caused by the emission or absorption of light by atoms, serving as fingerprints for identifying chemical elements}
+}
+
+\newglossaryentry{spectroscope}{
+  name={spectroscope},
+  description={An optical instrument dispersing light into a spectrum (wavelength decomposition) for analysis. Spectroscopes reveal absorption/emission lines, allowing determination of stellar composition, temperature, and radial velocity. See Chapter 11}
+}
+
+\newglossaryentry{spectrum-stellar}{
+  name={spectrum (stellar)},
+  description={The intensity distribution of light from a star as a function of wavelength. Absorption lines (Fraunhofer lines) reveal stellar composition; continuum shape reveals temperature. Spectral analysis improved understanding of stellar physics. See Chapter 11}
+}
+
+\newglossaryentry{spring-mechanical}{
+  name={spring (mechanical)},
+  description={An elastic element storing mechanical energy (like a wound clock mainspring) that slowly releases energy, powering a timepiece. Temperature-dependent spring behavior requires compensation (bimetallic strip, temperature-sensitive balance wheel) for precision timekeeping. See Chapter 17}
+}
+
+\newglossaryentry{standard-deviation}{
+  name={standard deviation},
+  description={Statistical measure of data spread around a mean value, defined as $\sigma = \sqrt{\sum(x_i - \bar{x})^2 / N}$ for $N$ measurements. Airy used standard deviations to quantify observational uncertainties and systematic errors. See Chapter 6}
+}
+
+\newglossaryentry{stellar-aberration}{
+  name={stellar aberration},
+  description={See aberration of light. See Chapter 12}
+}
+
+\newglossaryentry{stellar-parallax}{
+  name={stellar parallax},
+  description={Annual shift in nearby star positions due to Earth's orbital motion, enabling direct distance measurements. Parallax angle $p$ (in arcseconds) relates to distance $d$ (in parsecs) by $d = 1/p$. First measured by Bessel (1838) for 61 Cygni. See Chapter 13}
+}
+
+\newglossaryentry{stereoscopic-parallax}{
+  name={stereoscopic parallax},
+  description={Use of multiple observer positions or multiple times to measure distance via triangulation. Astronomers used stellar parallax as nature's stereoscopic baseline, with 6-month baseline (Earth's orbit diameter) enabling parallax measurements. See Chapter 13}
+}
+
+\newglossaryentry{straight-ascension}{
+  name={straight ascension},
+  description={Alternative historical term for right ascension (RA). Uses ``ascension'' to indicate eastward progression. See Chapter 3}
+}
+
+\newglossaryentry{sunspot}{
+  name={sunspot},
+  description={A temporary dark region on the Sun's surface caused by intense magnetic fields suppressing convection. Sunspot cycles (11-year average period) modulate solar activity and affect Earth's climate. See Chapter 5}
+}
+
+\newglossaryentry{synodic-month}{
+  name={synodic month},
+  description={The lunar phase cycle period ($\approx 29.531$ solar days), time between successive new moons. Distinct from sidereal month (Earth-Moon orbital period, $\approx 27.322$ solar days) due to Earth's concurrent orbital motion. See Chapter 8}
+}
+
+\newglossaryentry{systematic-error}{
+  name={systematic error},
+  description={A consistent, reproducible bias in measurements that affects all observations in the same direction; can be identified and corrected through calibration}
+}
+
+% ---------------------------------------------------------------------
+% T
+% ---------------------------------------------------------------------
+
+\newglossaryentry{tai}{
+  name={International Atomic Time},
+  description={A continuous, uniform time scale abbreviated TAI, based on the weighted average of approximately 400 atomic clocks worldwide, advancing without correction for Earth's rotation. Introduced 1958; became international standard 1971. See Chapter 23}
+}
+
+\newglossaryentry{telescopic-mount}{
+  name={telescopic mount},
+  description={Mechanical support structure for a telescope, enabling precision pointing. Equatorial mounts (axis aligned with celestial pole) simplify solar tracking; alt-azimuth mounts require two-axis corrections. See Chapter 4}
+}
+
+\newglossaryentry{terrestrial-time}{
+  name={Terrestrial Time},
+  description={An inertial time scale abbreviated TT, used in fundamental astronomy, independent of Earth's rotation. Related to atomic time (TAI) by constant offset; differs from Universal Time (UT1) due to Earth rotation variations. See Chapter 23}
+}
+
+\newglossaryentry{thermal-expansion}{
+  name={thermal expansion},
+  description={The change in physical dimensions of materials with temperature; a critical source of error in precision instruments and clocks that must be compensated}
+}
+
+\newglossaryentry{three-body-problem}{
+  name={three-body problem},
+  description={The gravitational dynamics of three mutually-interacting masses (e.g., Sun, Earth, Moon). Generally unsolvable in closed form; perturbation theory enables accurate lunar orbit predictions for astronomical almanacs. See Chapter 8}
+}
+
+\newglossaryentry{time-dilation}{
+  name={time dilation},
+  description={The slowing of time for objects in motion or in strong gravitational fields, predicted by Einstein's relativity. Satellites orbiting Earth experience both gravitational and kinematic time dilation (totaling $\approx 38$ microseconds/day difference from Earth surface). See Chapter 24}
+}
+
+\newglossaryentry{time-zone}{
+  name={time zone},
+  description={A geographic region using uniform standard time, advancing by integer hours from adjacent zones. Established by 15° longitude intervals (360° / 24 hours) following the 1884 International Meridian Conference, based on Greenwich Mean Time. See Chapter 19}
+}
+
+\newglossaryentry{transit}{
+  name={transit (observation)},
+  description={The moment when a celestial object crosses the observer's meridian, reaching maximum altitude (upper transit) or minimum altitude (lower transit). Transit timings provide precise celestial positions when combined with altitude measurements. See Chapter 3}
+}
+
+\newglossaryentry{transit-circle}{
+  name={transit circle},
+  description={A telescope mounted on an east-west axis (perpendicular to meridian) that rotates only in altitude, allowing observation of stars as they cross the meridian. The transit circle measures star declination (north-south position) via altitude reading. See Chapter 3}
+}
+
+\newglossaryentry{transit-planetary}{
+  name={transit (planetary)},
+  description={The passage of a planet or moon in front of a larger body (e.g., Venus transit in front of the Sun). Transit timings, observed from geographically separated locations, enable parallax measurements and distance scale calibration. See Chapter 13}
+}
+
+\newglossaryentry{tropical-year}{
+  name={tropical year},
+  description={The time for Earth to return to the same season (same solar declination), $\approx 365.24219$ solar days. Differs from sidereal year ($\approx 365.25636$ days) due to precession shortening the tropical year by $\approx 20$ minutes. See Chapter 13}
+}
+
+% ---------------------------------------------------------------------
+% U
+% ---------------------------------------------------------------------
+
+\newglossaryentry{uncertainty-principle}{
+  name={uncertainty principle},
+  description={Heisenberg's quantum mechanical principle stating that certain pairs of physical quantities (position-momentum, energy-time) cannot be simultaneously measured to arbitrary precision. Fundamental limit on atomic-level measurements, affecting atomic clock design. See Chapter 24}
+}
+
+\newglossaryentry{universal-time}{
+  name={Universal Time},
+  description={Time scale abbreviated UT or UT1, based on Earth's rotation relative to the stars. UT1 is determined by actual Earth rotation angle (measured by VLBI and lunar laser ranging); astronomical observations are scheduled using UT1 or related time scales. See Chapter 23}
+}
+
+\newglossaryentry{utc}{
+  name={Coordinated Universal Time},
+  description={The global civil time standard abbreviated UTC that runs on atomic time (TAI) but is periodically adjusted with leap seconds to remain within 0.9 seconds of UT1}
+}
+
+% ---------------------------------------------------------------------
+% V
+% ---------------------------------------------------------------------
+
+\newglossaryentry{vernal-equinox}{
+  name={vernal equinox},
+  description={The moment (around March 20) when day and night are equal length and the Sun's declination crosses zero from south to north. Vernal equinox direction defines the zero point of right ascension. See Chapter 5}
+}
+
+% ---------------------------------------------------------------------
+% W
+% ---------------------------------------------------------------------
+
+\newglossaryentry{wavelength}{
+  name={wavelength},
+  description={The distance between successive wave crests in an electromagnetic wave; inversely proportional to frequency. Visible light ranges from $\approx 400$ nm (violet) to $\approx 700$ nm (red). Spectral analysis uses wavelength measurements to identify elements and measure motion. See Chapter 11}
+}
+
+% ---------------------------------------------------------------------
+% Z
+% ---------------------------------------------------------------------
+
+\newglossaryentry{zenith}{
+  name={zenith},
+  description={The point on the celestial sphere directly above the observer, 90° altitude above horizon. Zenith distance of a star (angular distance from zenith) equals 90° minus altitude. See Chapter 3}
+}
+
+\newglossaryentry{zenith-sector}{
+  name={zenith sector},
+  description={A telescope mounted to observe stars within $\pm 5°$ of zenith, eliminating most atmospheric refraction corrections. Bradley used the zenith sector to measure aberration and nutation with unprecedented precision ($\pm 1$ arcsecond). See Chapter 12}
+}
+
+\newglossaryentry{zodiac}{
+  name={zodiac},
+  description={A 12-constellation band around the celestial sphere approximately 18° wide, centered on the ecliptic. The Sun's annual path passes through the zodiac constellations; zodiacal stars serve as reference points for lunar distance measurements. See Chapter 7}
+}
+
