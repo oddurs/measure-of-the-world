@@ -6,9 +6,9 @@ On the afternoon of 22 June 1675, with the royal warrant signed and the site sel
 \section{The State of Observational Astronomy in 1675}
 \label{sec:state-of-art}
 
-When Flamsteed arrived at Greenwich, the most recent comprehensive catalog of star positions was that compiled by Tycho Brahe nearly a century earlier. Tycho, observing from his private observatory Uraniborg on the Danish island of Hven from 1576 until his death in 1601, had measured the positions of approximately one thousand bright stars using a large mural quadrant mounted in the north-south meridian plane.\footnote{\textcite{Tycho1602}; \textcite{Dreyer1890}.} His achieving precision of perhaps one arc-minute was revolutionary for the time. The catalog, published posthumously, became the foundation upon which later astronomers built.
+When Flamsteed arrived at Greenwich, the most recent comprehensive catalog of star positions was that compiled by Tycho Brahe nearly a century earlier. Tycho, observing from his private observatory Uraniborg on the Danish island of Hven from 1576 until his death in 1601, had measured the positions of approximately one thousand bright stars using a large mural quadrant mounted in the north-south meridian plane (the vertical plane running due north and south through the zenith, the point directly overhead).\footnote{\textcite{Tycho1602}; \textcite{Dreyer1890}.} His achieving precision of perhaps one arc-minute was revolutionary for the time. The catalog, published posthumously, became the foundation upon which later astronomers built.
 
-But by 1675, Tycho's positions were known to be imperfect. Systematic errors existed in his measurements; some positions, particularly of fainter stars, were uncertain by several arc-minutes. More fundamentally, Tycho's catalog was incomplete. The southern hemisphere was essentially unmapped. And the accumulation of observations over decades had revealed systematic changes in stellar positions—effects like precession and aberration (though aberration would not be understood until Bradley's work in the 1720s) that Tycho's measurements did not account for.
+But by 1675, Tycho's positions were known to be imperfect. Systematic errors existed in his measurements; some positions, particularly of fainter stars, were uncertain by several arc-minutes. More fundamentally, Tycho's catalog was incomplete. The southern hemisphere was essentially unmapped. And the accumulation of observations over decades had revealed systematic changes in stellar positions—effects like precession (the slow drift of the reference zero point of right ascension, the celestial coordinate system's starting position, at roughly 50 arc-seconds per year) and aberration (the apparent shift of star positions due to Earth's orbital motion, a phenomenon not fully understood until Bradley's work in the 1720s) that Tycho's measurements did not account for.
 
 For the navigator attempting to determine longitude by lunar distance, Tycho's catalog was inadequate. The lunar distance method required knowing the positions of reference stars to better than perhaps ten to twenty arc-seconds; errors larger than this introduced unacceptable uncertainty in the calculated longitude. Tycho's typical errors of one to two arc-minutes were an order of magnitude too large.\footnote{The lunar distance method and its precision requirements are developed in detail in Chapter 8. For now, note that a star position error of one arc-minute translates to roughly one minute of time error in the calculated longitude.}
 
@@ -32,22 +32,43 @@ Between 1689 and 1691, working with his principal assistant Abraham Sharp (one o
 
 The arc was graduated by Sharp with extraordinary care, each division checked against others, the work consuming weeks of painstaking effort. The principal innovation was not in the arc itself but in the method by which Flamsteed used it.
 
-As a star approached the meridian—the imaginary north-south line passing through the zenith directly overhead—Flamsteed would sight the star through a telescope fixed to the arc. The moment the star crossed the meridian wire in the telescope's eyepiece (a thin thread stretched across the field of view), his assistant would note the precise time from the pendulum clock. From the clock time, Flamsteed could calculate the star's right ascension (its position east-west on the celestial sphere) with a precision limited primarily by the clock's accuracy and the observer's reaction time, not by the resolution of an engraved scale.\footnote{\textcite{Flamsteed1725}, Prolegomena; detailed explanation of the method appears in Chapter 4.}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{placeholder}
+  \caption{Schematic representation of the mural arc installation at Greenwich Observatory, showing the quarter-circle graduated instrument mounted in the meridian plane, with telescope attached for sighting stars at meridian crossing. The arc radius was nearly seven feet, allowing for fine division of the scale and precision measurement of stellar declinations.}
+  \label{fig:mural-arc}
+\end{figure}
 
-The altitude of the star at the moment of meridian crossing was then read from the graduated arc, allowing Flamsteed to calculate the declination (the star's position north-south). Thus, two coordinates could be obtained from a single observation: one limited by the clock's precision, the other by the arc's graduations and the eye's ability to read them.
+As a star approached the meridian—the imaginary north-south line passing through the zenith directly overhead—Flamsteed would sight the star through a telescope fixed to the arc. The moment the star crossed the meridian wire in the telescope's eyepiece (a thin thread stretched across the field of view), his assistant would note the precise time from the pendulum clock. From the clock time, Flamsteed could calculate the star's right ascension (the celestial coordinate measuring the star's position east-west along the celestial equator, analogous to longitude on Earth) with a precision limited primarily by the clock's accuracy and the observer's reaction time, not by the resolution of an engraved scale.\footnote{\textcite{Flamsteed1725}, Prolegomena; detailed explanation of the method appears in Chapter 4.}
+
+The altitude of the star at the moment of meridian crossing was then read from the graduated arc, allowing Flamsteed to calculate the declination (the celestial coordinate measuring the star's position north-south, analogous to latitude on Earth). Thus, two coordinates could be obtained from a single observation: one limited by the clock's precision, the other by the arc's graduations and the eye's ability to read them.
 
 This was a revolutionary methodology. Rather than attempting to measure an angle directly from an engraved scale, Flamsteed converted one angle measurement into a time measurement and back again, leveraging the extraordinary precision of pendulum clocks to achieve what hand-divided scales could not.\footnote{The conceptual breakthrough—using time measurement to improve angle precision—would become the dominant method in positional astronomy for two centuries. \textcite{Chapman1996}, pp. 112--125, discusses this innovation in historical context.}
 
-\section{Tompion's Clocks}
-\label{sec-tompion-clocks}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{placeholder}
+  \caption{Celestial coordinate system: right ascension (RA) measured eastward from the vernal equinox along the celestial equator (analogous to longitude on Earth), and declination (Dec) measured north (+) or south (-) from the celestial equator (analogous to latitude). Flamsteed's method determined RA from clock time at meridian crossing and declination from arc altitude readings, achieving unprecedented precision in stellar positions.}
+  \label{fig:celestial-coordinates}
+\end{figure}
 
-At the heart of Flamsteed's method lay two clocks made by Thomas Tompion, the most accomplished horologist of the age. Each was a large long-case clock with a thirteen-foot pendulum, regulated by Huygens's principle of isochronous oscillation.\footnote{\textcite{Betts1978}, pp. 45--60; also \textcite{NMGMT}, the National Maritime Museum's conservation report on Tompion's clocks at Greenwich.}
+\section{Tompion's Clocks}
+\label{sec:tompion-clocks}
+
+At the heart of Flamsteed's method lay two clocks made by Thomas Tompion, the most accomplished horologist of the age. Each was a large long-case clock with a thirteen-foot pendulum, regulated by Huygens's principle of isochronous oscillation (the property that the pendulum's period remains constant regardless of oscillation amplitude, enabling consistent timekeeping).\footnote{\textcite{Betts1978}, pp. 45--60; also \textcite{NMGMT}, the National Maritime Museum's conservation report on Tompion's clocks at Greenwich.}
 
 A pendulum's period of oscillation—the time required for one complete swing—depends, to first approximation, on the pendulum's length and the gravitational acceleration: $T = 2\pi\sqrt{L/g}$. For small-amplitude oscillations, the period is independent of the amplitude; thus, a pendulum clock running at constant gravity (such as at a fixed location on Earth) maintains essentially constant rate regardless of the amount of energy left in the pendulum's swing.\footnote{This property, called isochronism, is not exact but is a very good approximation for the small amplitudes of pendulum clocks. See Chapter 6 for a detailed treatment of pendulum physics.}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{placeholder}
+  \caption{Schematic of the Tompion pendulum clock mechanism at Greenwich: 13-foot pendulum with adjustable bob for period regulation, sophisticated pivot point minimizing friction and wear, and escapement mechanism ensuring regular beat transmission to clock face. The isochronous design ensured that the period remained constant even as the initial swing amplitude decreased due to air resistance and friction, enabling accurate timekeeping over periods of hours to days.}
+  \label{fig:tompion-clock}
+\end{figure}
+
 Tompion's clocks achieved an accuracy of roughly ten to fifteen seconds per day—more than a hundred times better than the foliot and verge escapement clocks that had preceded them. For astronomical observation, where precise timing of celestial events was critical, this was transformative.
 
-Each clock at Greenwich had been adjusted and set to sidereal time—time measured by the stars' apparent rotation, not by the Sun's (which varies seasonally due to the Earth's elliptical orbit). Since right ascension is defined as angular position measured eastward from the vernal equinox, and since this angle increases at a constant rate as the Earth rotates, sidereal time was the natural timekeeping standard for positional astronomy.\footnote{The distinction between sidereal time and mean solar time is explained in Chapter 4. Flamsteed's adoption of sidereal timekeeping at Greenwich set a precedent that eventually led to the definition of Greenwich Sidereal Time as a world standard.}
+Each clock at Greenwich had been adjusted and set to sidereal time (time measured by the stars' apparent rotation around the celestial pole, which runs at a constant rate, unlike the varying length of solar days due to Earth's elliptical orbit and axial tilt). Since right ascension is defined as angular position measured eastward from the vernal equinox (the point where the Sun crosses the celestial equator at the spring equinox), and since this angle increases at a constant rate as the Earth rotates, sidereal time was the natural timekeeping standard for positional astronomy.\footnote{The distinction between sidereal time and mean solar time is explained in Chapter 4. Flamsteed's adoption of sidereal timekeeping at Greenwich set a precedent that eventually led to the definition of Greenwich Sidereal Time as a world standard.}
 
 \section{Initial Observational Results}
 \label{sec:initial-results}
@@ -55,6 +76,13 @@ Each clock at Greenwich had been adjusted and set to sidereal time—time measur
 By the early 1690s, Flamsteed had begun systematic observation. He established a routine: on clear nights, he would observe stars as they crossed the meridian, recording clock times and arc readings. On cloudy nights, he maintained the clocks, verified their rate, and began the tedious work of reducing raw observations into positions.
 
 The first years of observations revealed the power of his method. Early observations of bright stars—Polaris, Sirius, Altair—were checked against Tycho's positions. Most showed improvements of a factor of five to ten in precision compared to Tycho; Flamsteed's typical errors were in the range of ten to twenty arc-seconds, compared to Tycho's one to three arc-minutes.\footnote{\textcite{Baily1835}, pp. 95--105, reproduces Flamsteed's own comparison of his early observations with Tycho's. The improvement is not uniform; fainter stars showed less improvement initially, until Flamsteed developed better techniques for identifying faint stellar images in the telescope.}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{placeholder}
+  \caption{Comparison of observational precision: Tycho Brahe's catalog (1600) typical errors of 1-3 arc-minutes versus Flamsteed's early observations (1690s) with errors of 10-20 arc-seconds. The improvement of 5-10 times in precision was achieved through Flamsteed's use of accurate pendulum clocks to measure right ascension from meridian crossing times, rather than relying on graduated scale divisions alone.}
+  \label{fig:precision-improvement}
+\end{figure}
 
 This precision came at a cost. Each observation required clear skies, accurate timekeeping, careful coordination between observer and assistant, and steady hands. And each observation yielded only a single pair of coordinates; a complete star catalog would require thousands. Flamsteed's systematic program, ultimately consuming observation from 1676 to his death in 1719, would eventually produce positions for nearly 3,000 stars, many observed multiple times to check for systematic errors or to detect any changes in position (such as proper motion, though Flamsteed did not detect this effect).
 
