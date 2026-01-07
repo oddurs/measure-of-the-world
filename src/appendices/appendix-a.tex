@@ -3,7 +3,7 @@
 
 This appendix provides detailed mathematical derivations referenced throughout the book. Each section is self-contained, providing the complete reasoning behind key results. Readers unfamiliar with the mathematics are encouraged to consult these sections during or after reading the relevant chapters.
 
-\section{A.1 Spherical Trigonometry Essentials}
+\section{Spherical Trigonometry Essentials}
 
 \subsection*{The Spherical Triangle}
 
@@ -67,7 +67,7 @@ This is the fundamental formula for computing angular separation on the celestia
   d &\approx \arccos(0.6845) \approx 46.9°
 \end{align*}
 
-\section{A.2 The Lunar Distance Calculation}
+\section{The Lunar Distance Calculation}
 
 \subsection*{Overview of the Method}
 
@@ -167,25 +167,9 @@ Our observation is approximately $97° 51' 14'' - 97° 50' 43'' = 31''$ below th
 
 Thus, GMT $\approx 14°29$ on April 15, 1770. If local apparent solar time was 15:00, the longitude can be estimated from the time difference and the equation of time.
 
-\section{A.3 Stellar Aberration}
+\section{Stellar Aberration}
 
-The content from the current appendix-a section on ``Rigorous Derivation of the Aberration Formula'' through ``Secondary Effects: Proper Motion and Parallax'' remains as Section A.3 with the heading changed.
-
-\section{A.4 The Equation of Time}
-
-The detailed derivations from current appendix-d.tex are incorporated here as Section A.4, including orbital mechanics, mean anomaly and Kepler's equation, ecliptic longitude, obliquity effects, and the complete formula.
-
-\section{A.5 Precession and Nutation}
-
-The content on precession and nutation from current appendix-a.tex (``Nutation: Physical Mechanism and Amplitude'') is retained and expanded with Earth orientation effects from appendix-g.tex on polar motion and seasonal rotation variation.
-
-\section{A.6 Atmospheric Refraction}
-
-The refraction section from current appendix-b.tex is incorporated as the final section, covering atmospheric refraction model, the refraction integral, empirical tables, and the horizon case.
-
----
-
-\textit{Editors' note: Due to token constraints during reorganization, Sections A.3 through A.6 retain their original detailed content from files appendix-a.tex (aberration/nutation), appendix-d.tex (equation of time), appendix-b.tex (refraction), and appendix-g.tex (Earth orientation). The structural reorganization and cross-referencing have been completed; the mathematical content remains as originally written.}
+\subsection*{Classical Derivation of the Aberration Formula}
 
 The classical derivation of stellar aberration requires careful treatment of velocity addition in the non-relativistic limit. Consider a photon traveling from a distant star toward an observer on Earth. In the star's rest frame, the photon travels radially inward toward Earth with velocity $\vec{c}$. In Earth's rest frame (moving with velocity $\vec{v}_{\text{E}}$ perpendicular to the line of sight), the photon's direction of approach appears shifted.
 
@@ -208,7 +192,7 @@ This is the aberration angle. Over the course of Earth's orbit, the velocity dir
   \theta_{\text{max}} = \frac{29.78 \text{ km/s}}{2.998 \times 10^5 \text{ km/s}} = 9.94 \times 10^{-5} \text{ rad} = 20.49 \text{ arcsec}
 \]
 
-\section{The Aberration Circle: Parametric Representation}
+\subsection*{The Aberration Circle: Parametric Representation}
 
 As Earth orbits the sun, its velocity vector $\vec{v}_{\text{E}}(t)$ rotates with angular frequency $\omega = 2\pi / \text{year}$. If we parameterize the angle of Earth's orbital position as $\varphi(t) = \omega t$, then the apparent displacement of a star is:
 \[
@@ -224,7 +208,9 @@ where $\varphi_0$ is a phase that depends on the star's coordinates and the refe
 
 This is a sinusoidal oscillation with amplitude $\kappa = v_{\text{E}}/c$ and period one year. The star traces a circle of radius $\kappa$ on the celestial sphere.
 
-\section{Nutation: Physical Mechanism and Amplitude}
+\section{Nutation}
+
+\subsection*{Physical Mechanism and Amplitude}
 
 Nutation arises from the gravitational torque exerted by the Moon (and, more subtly, the Sun) on Earth's equatorial bulge. Earth is an oblate spheroid—wider at the equator than at the poles—due to its rotation. This oblate shape creates a quadrupole moment in Earth's gravitational field.
 
@@ -246,7 +232,7 @@ The nutation can be decomposed into components:
 
 The amplitude of the longitude nutation is approximately $\Delta \psi_0 = 17.2''$, and the obliquity amplitude is $\Delta \epsilon_0 = 9.2''$.
 
-\section{Distinguishing Aberration from Nutation}
+\subsection*{Distinguishing Aberration from Nutation}
 
 Both aberration and nutation cause stellar positions to oscillate. However, they differ fundamentally in their time dependence:
 
@@ -258,7 +244,7 @@ Both aberration and nutation cause stellar positions to oscillate. However, they
 
 Observational separation of the two effects requires data spanning multiple years. Bradley's observations, conducted primarily over a span of months to a few years, could not have definitively resolved the 18.6-year nutation period. It was only after data from decades of observation had been accumulated that the longer-period nutation became apparent.
 
-\section{A Detailed Worked Example: Determining $\kappa$ from Bradley's Observations}
+\section{Worked Example: Determining $\kappa$ from Bradley's Observations}
 
 Bradley's systematic observations of $\gamma$ Draconis from December 1725 through December 1726 provide a concrete example of how the constant of aberration can be extracted from zenith distance measurements.
 
@@ -312,7 +298,7 @@ The fitted amplitude $A = 20.5$ arcsec is very close to the known value of the c
 
 \textsc{Residuals:} The residuals (differences between observed and fitted values) are typically 1–2 arcseconds, reflecting the measurement precision of the zenith sector.
 
-\section{Implications for the Speed of Light}
+\subsection*{Implications for the Speed of Light}
 
 From the fitted amplitude $A = 20.5$ arcsec and the known value of Earth's orbital velocity, we can estimate the speed of light:
 \[
@@ -325,8 +311,12 @@ This value is consistent with measurements from other methods (such as Roemer's 
 
 In a longer-term observational program spanning years or decades, additional effects become apparent:
 
-\textsc{Proper motion:} If the star has intrinsic motion through space, this will cause a slow drift in the mean position over years. For $\gamma$ Draconis, the proper motion is small (less than 1 arcsecond per year), but over a decade it accumulates to a measurable displacement. The proper motion can be distinguished from aberration and nutation by its linear (rather than sinusoidal) time dependence.
+\subsection*{Proper Motion}
 
-\textsc{Parallax:} If the star is relatively nearby, its position will shift slightly as Earth orbits, with a period of exactly one year and an amplitude proportional to the inverse of its distance. For $\gamma$ Draconis, the parallax is estimated to be roughly 0.01 arcseconds (the star is distant, roughly 100 parsecs away). This is comparable to the measurement uncertainty of Bradley's zenith sector and hence would be masked by observational noise if observed over only a year. A confident parallax measurement would require either (a) a more precise instrument, or (b) data spanning decades to allow the parallax signal to emerge from the noise.
+If the star has intrinsic motion through space, this will cause a slow drift in the mean position over years. For $\gamma$ Draconis, the proper motion is small (less than 1 arcsecond per year), but over a decade it accumulates to a measurable displacement. The proper motion can be distinguished from aberration and nutation by its linear (rather than sinusoidal) time dependence.
+
+\subsection*{Stellar Parallax}
+
+If the star is relatively nearby, its position will shift slightly as Earth orbits, with a period of exactly one year and an amplitude proportional to the inverse of its distance. For $\gamma$ Draconis, the parallax is estimated to be roughly 0.01 arcseconds (the star is distant, roughly 100 parsecs away). This is comparable to the measurement uncertainty of Bradley's zenith sector and hence would be masked by observational noise if observed over only a year. A confident parallax measurement would require either (a) a more precise instrument, or (b) data spanning decades to allow the parallax signal to emerge from the noise.
 
 Bradley's data do not show a clear parallax signal, which is consistent with $\gamma$ Draconis being distant. Not until Bessel's work in the 1830s, with more precise instruments and more extensive data, was stellar parallax finally measured reliably.
