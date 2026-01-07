@@ -237,8 +237,22 @@
 % =====================================================================
 
 % Package: glossaries - Create glossaries and lists of acronyms
+% - acronym: Creates separate acronym glossary type
+% - nonumberlist: Don't show page numbers in glossary
+% - nogroupskip: No extra space between letter groups
+% - nopostdot: No period after descriptions
+% - section: Use section level (not chapter) for glossary headings
 % Requires \makeglossaries call in document and glossary term definitions
-\usepackage{glossaries}
+\usepackage[acronym,nonumberlist,nogroupskip,nopostdot,section=section]{glossaries}
+
+% Use list style (inline, no page breaks)
+\setglossarystyle{list}
+
+% Disable automatic page breaks before glossaries
+\renewcommand{\glsclearpage}{}
+
+% Remove the default glossary section header (we provide our own)
+\renewcommand{\glossarysection}[2][]{}
 
 % =====================================================================
 % SECTION 10: EPIGRAPHS AND DECORATIVE ELEMENTS
