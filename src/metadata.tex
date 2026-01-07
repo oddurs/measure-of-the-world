@@ -1,8 +1,32 @@
+% =====================================================================
+% METADATA: Book title, author, and publication information
+% =====================================================================
+%
+% This file defines the core metadata used throughout the document:
+%   - \title{}       : Full book title (used on title page, PDF metadata)
+%   - \author{}      : Author name
+%   - \date{}        : Publication date
+%   - \bookdescription : Tagline/subtitle for title page and marketing
+%
+% These values are referenced by:
+%   - frontmatter/titlepage.tex (title page layout)
+%   - preamble.tex (PDF metadata via hyperref)
+%   - README.md (documentation)
+%
+% =====================================================================
+
+% Book title (with line break for title page formatting)
 \title{The Measure of the World:\\A Technical History of the Royal Observatory}
+
+% Author
 \author{Oddur Sigurdsson}
+
+% Publication date (First Edition)
 \date{January 2026}
 
-% Optional: short description stored as a macro for reuse
+% Book description / tagline
+% Used on title page below the subtitle
+% Keep concise: one sentence capturing the book's essence
 \newcommand{\bookdescription}{%
-How astronomers, clockmakers, and mathematicians built the infrastructure of precision—one arc-second at a time.%
+How astronomers, clockmakers, and mathematicians built the infrastructure of precision---one arc-second at a time.%
 }
