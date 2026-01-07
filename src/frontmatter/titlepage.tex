@@ -1,3 +1,19 @@
+% =====================================================================
+% TITLE PAGE
+% =====================================================================
+%
+% Layout: Left-aligned, vertically centered
+% Content: Author, title, subtitle, description, edition
+%
+% Typography:
+%   - Author:      14pt italic
+%   - Title:       24pt small caps (dominant)
+%   - Subtitle:    14pt small caps
+%   - Description: 12pt roman (from \bookdescription macro)
+%   - Edition:     11pt roman, bottom-left corner
+%
+% =====================================================================
+
 \cleardoublepage
 \thispagestyle{mainmatter}
 
@@ -6,17 +22,25 @@
 
 \vspace*{\fill}
 
+% Author name (italic, slightly larger than body text)
 {\normalfont\itshape\fontsize{14}{16.8}\selectfont Oddur Sigurdsson\par}
 \vspace{1.5em}
+
+% Main title (small caps, dominant size)
 {\normalfont\scshape\fontsize{24}{28.8}\selectfont The Measure of the World\par}
-\vspace{1.5em}
+\vspace{0.5em}
+
+% Subtitle (small caps, same size as author)
 {\normalfont\scshape\fontsize{14}{16.8}\selectfont A Technical History of the Royal Observatory\par}
-\vspace{3em}
+\vspace{2em}
+
+% Book description / tagline (defined in metadata.tex)
 {\normalfont\fontsize{12}{14.4}\selectfont \bookdescription\par}
-\vspace{4em}
-{\normalfont\fontsize{11}{13.2}\selectfont \today\par}
 
 \vspace*{\fill}
+
+% Edition and date (bottom-left corner)
+{\normalfont\fontsize{11}{13.2}\selectfont First Edition\enspace$\cdot$\enspace January 2026\par}
 
 \end{flushleft}
 
