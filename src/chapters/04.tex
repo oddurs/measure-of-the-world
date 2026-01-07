@@ -1,25 +1,39 @@
 \chapter{The Mural Arc and the Method of Transits}
 \label{ch:mural-arc-transits}
 
-On a clear night in the winter of 1690, with the temperature dropping below freezing and frost forming on the brass arc, John Flamsteed stood at the eyepiece of the mural arc and waited for Polaris to cross the meridian wire. His assistant sat nearby with one of Tompion's clocks, his finger poised over the second hand. When the star's image bisected the vertical wire, the assistant called the time to the nearest second. Flamsteed noted the altitude reading from the arc's graduated scale, read off with a filar micrometer to perhaps one-tenth of a degree. In that moment—star, clock, and scale aligned—a single observation transformed starlight into a measured celestial coordinate. This was the method of transits: converting two physical measurements, the moment in time and the altitude in degrees, into two celestial coordinates, right ascension and declination. Upon this method depended everything that would follow.
+On a clear night in the winter of 1690, with the temperature dropping below freezing and frost forming on the brass arc, John Flamsteed stood at the eyepiece of the mural arc and waited for Polaris to cross the meridian wire. His assistant sat nearby with one of Tompion's clocks, his finger poised over the second hand. When the star's image bisected the vertical wire, the assistant called the time to the nearest second. Flamsteed noted the altitude reading from the arc's graduated scale, read off with a filar micrometer (a precise optical instrument with movable cross-hairs for measuring fractions of degrees) to perhaps one-tenth of a degree. In that moment—star, clock, and scale aligned—a single observation transformed starlight into a measured celestial coordinate. This was the method of transits: converting two physical measurements, the moment in time and the altitude in degrees, into two celestial coordinates, right ascension and declination. Upon this method depended everything that would follow.
 
 \section{The Mural Arc Described}
 
-The mural arc that Flamsteed designed with Abraham Sharp between 1689 and 1691 was the principal instrument of the Greenwich Observatory. It consisted of a curved wall of iron, 140 degrees of arc, with a radius of approximately 6.75 feet. The arc was graduated—marked with degree divisions and smaller subdivisions—by hand, Sharp cutting the lines into brass with a burin. At one end of the arc, a telescope (initially a simple refractor, later refined with better optics and a micrometer) was mounted so that it could rotate about the center of curvature. At the other end, a plumb-bob hung to define the vertical. The arc itself was attached to the meridian wall of Flamsteed House, oriented precisely in the plane of the local meridian—the great circle passing through the celestial poles and the observer's zenith.
+The mural arc that Flamsteed designed with Abraham Sharp between 1689 and 1691 was the principal instrument of the Greenwich Observatory. It consisted of a curved wall of iron, 140 degrees of arc, with a radius of approximately 6.75 feet. The arc was graduated—marked with degree divisions and smaller subdivisions—by hand, Sharp cutting the lines into brass with a burin. At one end of the arc, a telescope (initially a simple refractor, later refined with better optics and a micrometer) was mounted so that it could rotate about the center of curvature. At the other end, a plumb-bob hung to define the vertical. The arc itself was attached to the meridian wall of Flamsteed House, oriented precisely in the plane of the local meridian—the great circle passing through the celestial poles and the observer's zenith (the point directly overhead in the sky).
 
-The graduation of the arc represented the frontier of precision measurement. Sharp's hand could divide intervals no finer than perhaps ten to fifteen arcseconds; finer divisions would have been invisible to the eye. The eye itself—the human eye of an astronomer skilled in reading fractional divisions between the marked lines—could resolve perhaps one or two arcseconds on a favorable night, though systematic error and individual variation could easily introduce biases of several arcseconds. Thus the mural arc embodied a deliberate design: a large radius to make small angles measurable, a hand-divided scale to map those small angles into space, and optics to bring distant stars into sharp focus.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{placeholder}
+  \caption{Schematic cross-section of the mural arc installation: the graduated brass arc with 6.75-foot radius mounted in the meridian plane, telescope rotating about the arc's center of curvature, plumb-bob hanging to define vertical, and filar micrometer for precise altitude readings. The arc's 140-degree span allowed measurement of star altitudes from horizon to zenith, with hand-divided degree and arcminute markings providing precision limited by eye resolution (~1-2 arcseconds on favorable nights).}
+  \label{fig:mural-arc-schematic}
+\end{figure}
+
+The graduation of the arc represented the frontier of precision measurement. Sharp's hand could divide intervals no finer than perhaps ten to fifteen arcseconds; finer divisions would have been invisible to the eye. The eye itself—the human eye of an astronomer skilled in reading fractional divisions between the marked lines—could resolve perhaps one or two arcseconds on a favorable night, though systematic error (biases in one direction that persist across multiple measurements) and individual variation could easily introduce biases of several arcseconds. Thus the mural arc embodied a deliberate design: a large radius to make small angles measurable, a hand-divided scale to map those small angles into space, and optics to bring distant stars into sharp focus.
 
 \section{Right Ascension from Transit Timing}
 
 The principle of the transit method is elegant: as Earth rotates, every celestial object appears to move across the sky from east to west. At the moment when an object crosses the observer's meridian—when it reaches its highest point in the sky—its right ascension (its celestial longitude) equals the local sidereal time at that instant.
 
-Let us develop this formally. Define the local sidereal time $\alpha_{\text{LST}}$ as the right ascension of the point on the celestial equator currently crossing the meridian. As the Earth rotates, $\alpha_{\text{LST}}$ increases uniformly. A star with right ascension $\alpha$ crosses the meridian when $\alpha_{\text{LST}} = \alpha$, and the clock reading at that moment (converted to sidereal time via the equation of time and the UT-to-sidereal conversion) gives $\alpha$ directly.
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{placeholder}
+  \caption{Geometric diagram of the transit method: observer's meridian plane (north-south vertical plane through zenith), Earth's axis and celestial pole, path of a star across the sky showing meridian crossing at highest altitude, relationship between right ascension (RA) measured along celestial equator and local sidereal time (LST), and declination (Dec) as north-south position. The star's RA equals the LST at the moment of meridian crossing, and the star's altitude at transit gives its declination via geometric relationships with observer's latitude.}
+  \label{fig:transit-geometry}
+\end{figure}
+
+Let us develop this formally. Define the local sidereal time $\alpha_{\text{LST}}$ (time measured by the stars' apparent rotation around the celestial pole, running at a constant rate, unlike solar time which varies seasonally) as the right ascension of the point on the celestial equator currently crossing the meridian. As the Earth rotates, $\alpha_{\text{LST}}$ increases uniformly. A star with right ascension $\alpha$ crosses the meridian when $\alpha_{\text{LST}} = \alpha$, and the clock reading at that moment (converted to sidereal time via the equation of time and the UT-to-sidereal conversion) gives $\alpha$ directly.
 
 More precisely, if a clock reads time $t_c$ (in mean solar time, i.e., clock time) at the moment a star crosses the meridian, the local sidereal time at that moment is:
 \[
 \alpha_{\text{LST}} = \alpha_0 + 1.0027379 \times t_c + \text{(longitude correction)}
 \]
-where $\alpha_0$ is the sidereal time at midnight UT (found in astronomical tables), 1.0027379 is the ratio of the sidereal day to the mean solar day, and the longitude correction accounts for the observer being at Greenwich rather than the Prime Meridian. Thus $\alpha = \alpha_{\text{LST}}$.
+where $\alpha_0$ is the sidereal time at midnight UT (UT = Universal Time, found in astronomical tables), 1.0027379 is the ratio of the sidereal day to the mean solar day, and the longitude correction accounts for the observer being at Greenwich rather than the Prime Meridian. Thus $\alpha = \alpha_{\text{LST}}$.
 
 The accuracy of this measurement depends critically on the clock. If the clock loses or gains one second over the course of an observation, the right ascension will be in error by $1^{\text{s}} \times 15~\text{arcsec/s} = 15$ arcseconds—a severe error. Tompion's clocks were accurate to within a few seconds per day, a feat of horological engineering that made the transit method possible. Without such precision, the method would fail.
 
@@ -32,7 +46,16 @@ Rearranging:
 \delta = \phi - z = \phi - (90^\circ - h) = \phi + h - 90^\circ
 \]
 
-But this formula must be corrected for atmospheric refraction. Light from a star traveling through Earth's atmosphere is bent slightly downward, so the observed altitude is slightly higher than the true geometric altitude. The refraction correction $R$ depends on the true altitude $h_{\text{true}}$ and varies from a few arcseconds near the zenith to several arcminutes at the horizon. Bessel's formula approximates it as:
+But this formula must be corrected for atmospheric refraction (the bending of starlight as it passes through Earth's atmosphere, causing stars to appear higher in the sky than their true geometric position). Light from a star traveling through Earth's atmosphere is bent slightly downward, so the observed altitude is slightly higher than the true geometric altitude. The refraction correction $R$ depends on the true altitude $h_{\text{true}}$ and varies from a few arcseconds near the zenith to several arcminutes at the horizon.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{placeholder}
+  \caption{Diagram illustrating atmospheric refraction: starlight path bent downward by Earth's atmosphere, causing the star to appear at a higher altitude than its true geometric position. At the zenith (straight overhead) refraction is minimal (~0 arcseconds). At the horizon, refraction can exceed 30 arcminutes. Flamsteed's refraction correction tables, derived empirically from solar observations, accounted for these effects using formulas relating observed altitude to refraction correction—critical for accurate declination measurements, especially at low altitudes where refraction uncertainty dominated the error budget.}
+  \label{fig:refraction-diagram}
+\end{figure}
+
+Bessel's formula approximates it as:
 \[
 R(\text{arcsec}) \approx 58.3 \tan(90^\circ - h_{\text{obs}}) \approx 58.3 \cot(h_{\text{obs}})
 \]
@@ -54,7 +77,7 @@ The mural arc's performance was limited by several systematic errors that Flamst
 
 \textsc{Flexure:} The iron arc supporting the telescope was not rigid. As the telescope was moved and as temperature changed, the arc bent slightly, changing the effective center of curvature. The micrometer readings would then be in error. This was a subtle effect—perhaps a few arcseconds—but persistent.
 
-\textsc{Collimation error:} The telescope's optical axis and the radius of the arc must coincide precisely. If the telescope is slightly misaligned, every observation will carry a systematic bias. Flamsteed checked this periodically by observing the Sun at different times and comparing; residuals revealed collimation errors, which could then be corrected in subsequent data reduction or by adjustment of the instrument.
+\textsc{Collimation error:} The telescope's optical axis and the radius of the arc must coincide precisely. If the telescope is slightly misaligned, every observation will carry a systematic bias. Flamsteed checked this periodically by observing the Sun at different times and comparing; residuals revealed collimation errors, which could then be corrected in subsequent data reduction (the computational process of converting raw measurements into final celestial coordinates) or by adjustment of the instrument.
 
 \textsc{Refraction uncertainty:} As noted above, the refraction correction was the largest source of declination error, particularly at low altitudes. Flamsteed's refraction tables, derived from accumulated observations rather than from a well-developed theory, were accurate to perhaps 5–10 arcseconds. As atmospheric conditions varied unpredictably, the true refraction could differ from the tabulated value, introducing random errors.
 
@@ -62,9 +85,9 @@ The mural arc's performance was limited by several systematic errors that Flamst
 
 \section{The Clock: Tompion's Achievement}
 
-At the heart of the transit method lay the clock. Thomas Tompion's two regulators, commissioned by Jonas Moore in 1676 and delivered to Flamsteed in 1677, were among the finest timekeepers in the world. Each clock embodied innovations that Tompion had developed and refined over a lifetime of work: the anchor escapement (allowing pendulum regulation at moderate amplitudes), a thirteen-foot pendulum (providing a period of approximately two seconds per swing), and brass and steel construction (minimizing thermal effects by employing differential expansion).
+At the heart of the transit method lay the clock. Thomas Tompion's two regulators, commissioned by Jonas Moore in 1676 and delivered to Flamsteed in 1677, were among the finest timekeepers in the world. Each clock embodied innovations that Tompion had developed and refined over a lifetime of work: the anchor escapement (a mechanism allowing the pendulum to regulate the escape of energy from the clock's falling weights, enabling precise control at moderate swing amplitudes), a thirteen-foot pendulum (providing a period of approximately two seconds per swing), and brass and steel construction (minimizing thermal effects—the clock's sensitivity to temperature changes—by employing differential expansion, where the metals' different rates of thermal expansion partially cancel out timing errors).
 
-Tompion's clocks achieved an accuracy of a few seconds per day—a performance that would not be surpassed until the 19th century. Yet even this level of accuracy required constant vigilance. Temperature variations of 10–15 degrees Celsius could introduce errors of a second or more per day. Maintaining the clocks in a stable environment and comparing them regularly against the Sun's noon transit (using a gnomon and a marked scale on the floor of Flamsteed House) was essential. Flamsteed recorded these comparisons meticulously, creating a record that allowed later reduction of the data to account for clock drift.
+Tompion's clocks achieved an accuracy of a few seconds per day—a performance that would not be surpassed until the 19th century. Yet even this level of accuracy required constant vigilance. Temperature variations of 10–15 degrees Celsius could introduce errors of a second or more per day. Maintaining the clocks in a stable environment and comparing them regularly against the Sun's noon transit (using a gnomon—a simple vertical stick casting a shadow—and a marked scale on the floor of Flamsteed House) was essential. Flamsteed recorded these comparisons meticulously, creating a record that allowed later reduction of the data to account for clock drift.
 
 \section{A Worked Example: The Observation of Aldebaran, 1680}
 
@@ -118,14 +141,21 @@ Aldebaran's position in modern catalogs is $\alpha = 4^{\text{h}} 35^{\text{m}} 
 
 \section{Error Budget}
 
-Over a sequence of observations, the dominant sources of error and their typical magnitudes were:
+Over a sequence of observations, the dominant sources of error and their typical magnitudes were. These fall into two categories: systematic error (persistent biases that skew all measurements in one direction) and random error (unpredictable fluctuations that average toward zero over many observations):
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{placeholder}
+  \caption{Error budget summary for transit observations: Right ascension errors dominated by Tompion clock accuracy (few seconds/day = 5-15 arcseconds in RA) and human reaction time at meridian crossing (5-10 arcseconds). Declination errors dominated by refraction uncertainty at low altitudes (5-20 arcseconds), graduation error of hand-divided scale (5-10 arcseconds), and flexure/collimation effects (3-5 arcseconds). Combined typical error ~15-20 arcseconds per observation; improved to ~10 arcseconds through multiple observations, averaging, and systematic corrections—a 3-10 times improvement over Tycho Brahe's 1-3 arcminute errors and validation of Flamsteed's method.}
+  \label{fig:error-budget}
+\end{figure}
 
 \begin{itemize}
   \item \textsc{Right ascension:} Tompion clock error (a few seconds per day), $\approx 5$–$15$ arcseconds; human reaction time at transit, $\approx 5$–$10$ arcseconds.
   \item \textsc{Declination:} Refraction uncertainty, $\approx 5$–$20$ arcseconds depending on altitude; graduation error, $\approx 5$–$10$ arcseconds; flexure and collimation, $\approx 3$–$5$ arcseconds.
 \end{itemize}
 
-The combined typical error for a single high-altitude transit observation was thus on the order of 15–20 arcseconds. By observing each star many times over years, averaging the results, and applying careful systematic corrections, Flamsteed achieved typical errors of 10 arcseconds in his final catalog—an improvement by a factor of 3 or more over the best prior work (Tycho Brahe's catalog, with its 1–3 arcminute errors).
+The combined typical error for a single high-altitude transit observation was thus on the order of 15–20 arcseconds. By observing each star many times over years, averaging the results to cancel random errors, and applying careful systematic corrections, Flamsteed achieved typical errors of 10 arcseconds in his final catalog—an improvement by a factor of 3 or more over the best prior work (Tycho Brahe's catalog, with its 1–3 arcminute errors).
 
 \section{Legacy and Descendants}
 
