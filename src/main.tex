@@ -1,73 +1,155 @@
+% =====================================================================
+% MAIN DOCUMENT: The Measure of the World
+% =====================================================================
+%
+% A Technical History of the Royal Observatory, Greenwich
+% Author: Oddur Sigurdsson
+% First Edition: January 2026
+%
+% License: Creative Commons Attribution 4.0 International (CC BY 4.0)
+% Source:  https://github.com/oddurs/measure-of-the-world
+%
+% Build:   Run `make build` from the project root
+%          Requires: LaTeX (texlive), biber, latexmk
+%
+% Structure:
+%   - Frontmatter: Title, copyright, dedication, acknowledgements, foreword, TOC
+%   - Mainmatter:  25 chapters tracing 350 years of precision astronomy
+%   - Appendices:  9 appendices (A-I) with technical reference material
+%   - Backmatter:  Glossary and acronyms
+%
+% =====================================================================
+
+% Document class: memoir (12pt body text, two-sided for print)
+% Memoir provides extensive control over book typography and layout
 \documentclass[12pt,twoside]{memoir}
 
-\input{preamble}
-\input{metadata}
+% ---------------------------------------------------------------------
+% CONFIGURATION FILES
+% ---------------------------------------------------------------------
+
+\input{preamble}   % Typography, packages, page layout, and styling
+\input{metadata}   % Title, author, date, and book description
+
+% ---------------------------------------------------------------------
+% BIBLIOGRAPHY
+% ---------------------------------------------------------------------
 
 \addbibresource{bibliography/references.bib}
 
-% Load glossary terms and acronyms before makeglossaries
+% ---------------------------------------------------------------------
+% GLOSSARY AND ACRONYMS
+% ---------------------------------------------------------------------
+% Terms and acronyms must be loaded before \makeglossaries
+% Definitions in glossary/terms.tex and glossary/acronyms.tex
+
 \input{glossary/terms}
 \input{glossary/acronyms}
-
 \makeglossaries
+
+% =====================================================================
+% BEGIN DOCUMENT
+% =====================================================================
 
 \begin{document}
 
+% ---------------------------------------------------------------------
+% FRONTMATTER
+% ---------------------------------------------------------------------
+% Roman numeral page numbers (i, ii, iii...)
+% Includes all preliminary material before Chapter 1
+
 \frontmatter
-\input{frontmatter/titlepage}
-\input{frontmatter/copyright}
+\input{frontmatter/titlepage}     % Half-title and full title pages
+\input{frontmatter/copyright}     % Copyright, license, ISBN, publisher info
 
-\input{frontmatter/dedication}
+\input{frontmatter/dedication}        % Dedication page
 \cleardoublepage
 
-\input{frontmatter/acknowledgements}
+\input{frontmatter/acknowledgements}  % Acknowledgements
 \cleardoublepage
 
-\tableofcontents
+\input{frontmatter/foreword}          % Author's foreword
 \cleardoublepage
+
+\tableofcontents                       % Table of contents (auto-generated)
+\cleardoublepage
+
+% ---------------------------------------------------------------------
+% MAINMATTER
+% ---------------------------------------------------------------------
+% Arabic numeral page numbers (1, 2, 3...)
+% Contains the 25 main chapters of the book
 
 \mainmatter
 
-% --- Chapters (25) ---
-\input{chapters/01}
-\input{chapters/02}
-\input{chapters/03}
-\input{chapters/04}
-\input{chapters/05}
-\input{chapters/06}
-\input{chapters/07}
-\input{chapters/08}
-\input{chapters/09}
-\input{chapters/10}
-\input{chapters/11}
-\input{chapters/12}
-\input{chapters/13}
-\input{chapters/14}
-\input{chapters/15}
-\input{chapters/16}
-\input{chapters/17}
-\input{chapters/18}
-\input{chapters/19}
-\input{chapters/20}
-\input{chapters/21}
-\input{chapters/22}
-\input{chapters/23}
-\input{chapters/24}
-\input{chapters/25}
+% --- Part I: Foundations (Chapters 1-6) ---
+% Establishing Greenwich Observatory, early instruments, the longitude problem
+\input{chapters/01}  % The Deadly Ignorance of Position
+\input{chapters/02}  % The King's Observatory
+\input{chapters/03}  % Flamsteed's Foundation
+\input{chapters/04}  % Measuring the Meridian
+\input{chapters/05}  % The Geometry of the Heavens
+\input{chapters/06}  % Instruments of Precision
+
+% --- Part II: Discovery (Chapters 7-13) ---
+% Longitude solutions, Bradley's discoveries, first parallax measurements
+\input{chapters/07}  % The Longitude Act
+\input{chapters/08}  % Bradley and the Aberration of Light
+\input{chapters/09}  % Nutation and the Wobbling Earth
+\input{chapters/10}  % The Nautical Almanac
+\input{chapters/11}  % Harrison's Timekeepers
+\input{chapters/12}  % Testing the Chronometer
+\input{chapters/13}  % The First Stellar Parallax
+
+% --- Part III: Precision (Chapters 14-19) ---
+% Spectroscopy, systematic error analysis, time standardization
+\input{chapters/14}  % Airy's Transit Circle
+\input{chapters/15}  % Spectroscopy and Stellar Classification
+\input{chapters/16}  % The Greenwich Time Service
+\input{chapters/17}  % Error Analysis and Reduction
+\input{chapters/18}  % The 1884 Meridian Conference
+\input{chapters/19}  % Greenwich Mean Time
+
+% --- Part IV: Transformation (Chapters 20-23) ---
+% Photography, relativity, atomic timekeeping
+\input{chapters/20}  % Photography and Automation
+\input{chapters/21}  % Einstein and the Eclipse
+\input{chapters/22}  % Atomic Clocks
+\input{chapters/23}  % The Move to Herstmonceux
+
+% --- Part V: Legacy (Chapters 24-25) ---
+% Modern astrometry, reflections on 350 years
+\input{chapters/24}  % Space-Based Astrometry
+\input{chapters/25}  % The Measure of the World
+
+% ---------------------------------------------------------------------
+% APPENDICES
+% ---------------------------------------------------------------------
+% Technical reference material, historical documents, and data tables
 
 \appendix
-\input{appendices/appendix-a}
-\input{appendices/appendix-b}
-\input{appendices/appendix-c}
-\input{appendices/appendix-d}
-\input{appendices/appendix-e}
-\input{appendices/appendix-f}
-\input{appendices/appendix-g}
-\input{appendices/appendix-h}
-\input{appendices/appendix-i}
+\input{appendices/appendix-a}  % A: Mathematical Derivations
+\input{appendices/appendix-b}  % B: Instrument Specifications
+\input{appendices/appendix-c}  % C: The Astronomers Royal
+\input{appendices/appendix-d}  % D: Visiting Greenwich
+\input{appendices/appendix-e}  % E: Glossary (extended definitions)
+\input{appendices/appendix-f}  % F: Bibliography and Further Reading
+\input{appendices/appendix-g}  % G: Primary Source Documents
+\input{appendices/appendix-h}  % H: Chronologies
+\input{appendices/appendix-i}  % I: Reference Tables
+
+% ---------------------------------------------------------------------
+% BACKMATTER
+% ---------------------------------------------------------------------
+% Acronym list and glossary (auto-generated from glossary/*.tex)
 
 \backmatter
 \printglossary[type=\acronymtype,title=Acronyms]
 \printglossary[title=Glossary]
+
+% =====================================================================
+% END DOCUMENT
+% =====================================================================
 
 \end{document}
