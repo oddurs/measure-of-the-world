@@ -7,12 +7,13 @@ On a clear night in the winter of 1690, with the temperature dropping below free
 
 The mural arc that Flamsteed designed with Abraham Sharp between 1689 and 1691 was the principal instrument of the Greenwich Observatory. It consisted of a curved wall of iron, 140 degrees of arc, with a radius of approximately 6.75 feet. The arc was graduated—marked with degree divisions and smaller subdivisions—by hand, Sharp cutting the lines into brass with a burin. At one end of the arc, a telescope (initially a simple refractor, later refined with better optics and a micrometer) was mounted so that it could rotate about the center of curvature. At the other end, a plumb-bob hung to define the vertical. The arc itself was attached to the meridian wall of Flamsteed House, oriented precisely in the plane of the local meridian—the great circle passing through the celestial poles and the observer's zenith (the point directly overhead in the sky).
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.75\textwidth]{placeholder}
-  \caption{Schematic cross-section of the mural arc installation: the graduated brass arc with 6.75-foot radius mounted in the meridian plane, telescope rotating about the arc's center of curvature, plumb-bob hanging to define vertical, and filar micrometer for precise altitude readings. The arc's 140-degree span allowed measurement of star altitudes from horizon to zenith, with hand-divided degree and arcminute markings providing precision limited by eye resolution (~1-2 arcseconds on favorable nights).}
-  \label{fig:mural-arc-schematic}
-\end{figure}
+% TODO: Add actual figure
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.75\textwidth]{placeholder}
+%   \caption{Schematic cross-section of the mural arc installation: the graduated brass arc with 6.75-foot radius mounted in the meridian plane, telescope rotating about the arc's center of curvature, plumb-bob hanging to define vertical, and filar micrometer for precise altitude readings. The arc's 140-degree span allowed measurement of star altitudes from horizon to zenith, with hand-divided degree and arcminute markings providing precision limited by eye resolution (~1-2 arcseconds on favorable nights).}
+%   \label{fig:mural-arc-schematic}
+% \end{figure}
 
 The graduation of the arc represented the frontier of precision measurement. Sharp's hand could divide intervals no finer than perhaps ten to fifteen arcseconds; finer divisions would have been invisible to the eye. The eye itself—the human eye of an astronomer skilled in reading fractional divisions between the marked lines—could resolve perhaps one or two arcseconds on a favorable night, though systematic error (biases in one direction that persist across multiple measurements) and individual variation could easily introduce biases of several arcseconds. Thus the mural arc embodied a deliberate design: a large radius to make small angles measurable, a hand-divided scale to map those small angles into space, and optics to bring distant stars into sharp focus.
 
@@ -20,12 +21,13 @@ The graduation of the arc represented the frontier of precision measurement. Sha
 
 The principle of the transit method is elegant: as Earth rotates, every celestial object appears to move across the sky from east to west. At the moment when an object crosses the observer's meridian—when it reaches its highest point in the sky—its right ascension (its celestial longitude) equals the local sidereal time at that instant.
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.75\textwidth]{placeholder}
-  \caption{Geometric diagram of the transit method: observer's meridian plane (north-south vertical plane through zenith), Earth's axis and celestial pole, path of a star across the sky showing meridian crossing at highest altitude, relationship between right ascension (RA) measured along celestial equator and local sidereal time (LST), and declination (Dec) as north-south position. The star's RA equals the LST at the moment of meridian crossing, and the star's altitude at transit gives its declination via geometric relationships with observer's latitude.}
-  \label{fig:transit-geometry}
-\end{figure}
+% TODO: Add actual figure
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.75\textwidth]{placeholder}
+%   \caption{Geometric diagram of the transit method: observer's meridian plane (north-south vertical plane through zenith), Earth's axis and celestial pole, path of a star across the sky showing meridian crossing at highest altitude, relationship between right ascension (RA) measured along celestial equator and local sidereal time (LST), and declination (Dec) as north-south position. The star's RA equals the LST at the moment of meridian crossing, and the star's altitude at transit gives its declination via geometric relationships with observer's latitude.}
+%   \label{fig:transit-geometry}
+% \end{figure}
 
 Let us develop this formally. Define the local sidereal time $\alpha_{\text{LST}}$ (time measured by the stars' apparent rotation around the celestial pole, running at a constant rate, unlike solar time which varies seasonally) as the right ascension of the point on the celestial equator currently crossing the meridian. As the Earth rotates, $\alpha_{\text{LST}}$ increases uniformly. A star with right ascension $\alpha$ crosses the meridian when $\alpha_{\text{LST}} = \alpha$, and the clock reading at that moment (converted to sidereal time via the equation of time and the UT-to-sidereal conversion) gives $\alpha$ directly.
 
@@ -48,12 +50,13 @@ Rearranging:
 
 But this formula must be corrected for atmospheric refraction (the bending of starlight as it passes through Earth's atmosphere, causing stars to appear higher in the sky than their true geometric position). Light from a star traveling through Earth's atmosphere is bent slightly downward, so the observed altitude is slightly higher than the true geometric altitude. The refraction correction $R$ depends on the true altitude $h_{\text{true}}$ and varies from a few arcseconds near the zenith to several arcminutes at the horizon.
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.75\textwidth]{placeholder}
-  \caption{Diagram illustrating atmospheric refraction: starlight path bent downward by Earth's atmosphere, causing the star to appear at a higher altitude than its true geometric position. At the zenith (straight overhead) refraction is minimal (~0 arcseconds). At the horizon, refraction can exceed 30 arcminutes. Flamsteed's refraction correction tables, derived empirically from solar observations, accounted for these effects using formulas relating observed altitude to refraction correction—critical for accurate declination measurements, especially at low altitudes where refraction uncertainty dominated the error budget.}
-  \label{fig:refraction-diagram}
-\end{figure}
+% TODO: Add actual figure
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.75\textwidth]{placeholder}
+%   \caption{Diagram illustrating atmospheric refraction: starlight path bent downward by Earth's atmosphere, causing the star to appear at a higher altitude than its true geometric position. At the zenith (straight overhead) refraction is minimal (~0 arcseconds). At the horizon, refraction can exceed 30 arcminutes. Flamsteed's refraction correction tables, derived empirically from solar observations, accounted for these effects using formulas relating observed altitude to refraction correction—critical for accurate declination measurements, especially at low altitudes where refraction uncertainty dominated the error budget.}
+%   \label{fig:refraction-diagram}
+% \end{figure}
 
 Bessel's formula approximates it as:
 \[
@@ -143,12 +146,13 @@ Aldebaran's position in modern catalogs is $\alpha = 4^{\text{h}} 35^{\text{m}} 
 
 Over a sequence of observations, the dominant sources of error and their typical magnitudes were. These fall into two categories: systematic error (persistent biases that skew all measurements in one direction) and random error (unpredictable fluctuations that average toward zero over many observations):
 
-\begin{figure}[htbp]
-  \centering
-  \includegraphics[width=0.8\textwidth]{placeholder}
-  \caption{Error budget summary for transit observations: Right ascension errors dominated by Tompion clock accuracy (few seconds/day = 5-15 arcseconds in RA) and human reaction time at meridian crossing (5-10 arcseconds). Declination errors dominated by refraction uncertainty at low altitudes (5-20 arcseconds), graduation error of hand-divided scale (5-10 arcseconds), and flexure/collimation effects (3-5 arcseconds). Combined typical error ~15-20 arcseconds per observation; improved to ~10 arcseconds through multiple observations, averaging, and systematic corrections—a 3-10 times improvement over Tycho Brahe's 1-3 arcminute errors and validation of Flamsteed's method.}
-  \label{fig:error-budget}
-\end{figure}
+% TODO: Add actual figure
+% \begin{figure}[htbp]
+%   \centering
+%   \includegraphics[width=0.8\textwidth]{placeholder}
+%   \caption{Error budget summary for transit observations: Right ascension errors dominated by Tompion clock accuracy (few seconds/day = 5-15 arcseconds in RA) and human reaction time at meridian crossing (5-10 arcseconds). Declination errors dominated by refraction uncertainty at low altitudes (5-20 arcseconds), graduation error of hand-divided scale (5-10 arcseconds), and flexure/collimation effects (3-5 arcseconds). Combined typical error ~15-20 arcseconds per observation; improved to ~10 arcseconds through multiple observations, averaging, and systematic corrections—a 3-10 times improvement over Tycho Brahe's 1-3 arcminute errors and validation of Flamsteed's method.}
+%   \label{fig:error-budget}
+% \end{figure}
 
 \begin{itemize}
   \item \textsc{Right ascension:} Tompion clock error (a few seconds per day), $\approx 5$–$15$ arcseconds; human reaction time at transit, $\approx 5$–$10$ arcseconds.
