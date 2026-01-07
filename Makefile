@@ -1,7 +1,7 @@
 .PHONY: build watch clean distclean
 
 build:
-	mkdir -p build/out
+	mkdir -p build/out build/tmp
 	latexmk -f -pdf -cd src/main.tex || true
 	@if [ -f build/tmp/main.pdf ]; then \
 		cp build/tmp/main.pdf build/out/measure-of-the-world.pdf && echo "✓ PDF built successfully: build/out/measure-of-the-world.pdf"; \
