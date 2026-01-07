@@ -5,6 +5,52 @@ This document serves as a comprehensive editorial guide for proof-editing and fo
 
 ---
 
+## EDITOR'S PREFERENCES (Automated from Chapters 1-3)
+
+These choices have been validated through systematic implementation on Chapters 1-3 and should be applied automatically to all subsequent chapters:
+
+### Content & Narrative
+- **Trust bibliography sources**: Do NOT independently verify citations; assume author has selected reliable sources from standard scholarly works (Baily, Howse, Chapman, Willmoth, Betts, etc.)
+- **Assume chronological reading**: Assume all readers have completed Chapters 1 through N-1 before reading Chapter N; forward references are acceptable
+- **Preserve chapter structure**: Keep existing section organization and titles; improve clarity within sections rather than restructuring
+- **Define jargon inline**: Add parenthetical definitions for technical terms on first use (e.g., "precession (the slow drift of the reference zero point... at roughly 50 arc-seconds per year)")
+- **Add definitional anchors**: Use Earth-coordinate analogies for celestial concepts (e.g., "right ascension... analogous to longitude on Earth")
+- **Expand forward-deferred explanations**: Where text says "see Chapter X," add local context to prevent cognitive load of page-forward jumps
+
+### Visual Documentation
+- **Use placeholder figures**: For high-jargon-density chapters, insert 4+ placeholder figures with detailed captions explaining key concepts
+- **Strategic figure placement**: Insert figures after section openings and explanations they visually support
+- **Caption detail**: Captions should explain what to observe and relate figures to surrounding text concepts
+- **Placeholder syntax**: Use `\includegraphics[width=0.7\textwidth]{placeholder}` with `\label{fig:descriptive-name}` for all placeholders
+
+### Historical & Technical Accuracy
+- **Verify dates, specs, and biographical facts**: Cross-check against primary/secondary sources (already completed for Ch 1-3, patterns established)
+- **Quantify technical specifications**: Provide precise measurements (e.g., "mural arc radius nearly 7 feet" not "large radius")
+- **Compare to historical baselines**: Show improvement factors and error magnitudes relative to prior work (e.g., "5-10 times better than Tycho")
+- **Mathematical equations**: Verify formulas and include variable definitions immediately after equations
+
+### LaTeX Formatting Standards (Established)
+- **Section labels**: Use `\label{sec:section-name}` format with colon separator (NOT hyphen: `sec-name` is wrong, `sec:name` is correct)
+- **Figure labels**: Use `\label{fig:descriptive-name}` format (all 4 figures typically labeled as fig:X in a chapter)
+- **Em-dashes**: Use `---` (three hyphens) for em-dashes in text (e.g., "star—Polaris, Sirius, Altair—were checked")
+- **Footnote format**: All citations use `\textcite{key}` inside `\footnote{}` environment
+- **Mathematical mode**: Inline equations in `$ $`, display equations in `\[ \]` with variable definitions following
+
+### Tone & Voice (Validated)
+- **Professional but accessible**: Technical terminology explained for general readers with scientific background
+- **No contractions**: Use formal language ("do not" not "don't")
+- **Active voice preferred**: Except where passive voice emphasizes measurement/observation
+- **Consistent terminology**: Use same terms throughout chapter for same concepts (e.g., always "right ascension" not "RA" or "celestial longitude")
+- **Historical respect**: Accurate descriptions of figures/discoveries without anachronistic judgments
+
+### Cross-Reference & Bibliography Standards (Validated)
+- **Citation completeness**: Every \textcite{key} must be in bibliography (verified in Pass 2)
+- **Bibliography sources**: Trust provided sources; assume author selected standard scholarly works
+- **Chapter references**: Use "Chapter X" format for forward/backward references (clear and consistent)
+- **No undefined references**: Verify zero undefined reference warnings in build log before declaring chapter complete
+
+---
+
 ## I. Content & Narrative Quality
 
 ### Clarity and Voice
@@ -21,8 +67,7 @@ This document serves as a comprehensive editorial guide for proof-editing and fo
 - Define technical terms in the text, not only in the glossary
 
 ### Structure and Organization
-- [ ] Does the chapter have a clear introduction setting up its scope and relevance?
-- [ ] Are subsections ordered logically, building on previous concepts?
+=- [ ] Are subsections ordered logically, building on previous concepts?
 - [ ] Does the chapter conclude with a summary or connection to subsequent chapters?
 - [ ] Are there orphaned sections that don't connect to the main narrative?
 - [ ] Do section headings accurately reflect their content?
@@ -386,3 +431,90 @@ Before declaring a chapter complete, verify:
 This prompt is *opinionated*. Apply changes that improve clarity and consistency even if they differ from the author's original phrasing, but always preserve scientific accuracy and authorial voice. When uncertain, flag the issue rather than making an editorial decision.
 
 Consistency is a priority: if terminology, formatting, or style varies between chapters, standardize to match the best examples in the manuscript.
+
+---
+
+## CHAPTER 4 IMPLEMENTATION NOTES
+
+**Chapter Title**: "The Mural Arc and the Method of Transits"
+
+**Content Type**: Technical/Mathematical Narrative (historical explanation of observational method with worked example)
+
+**Key Features**:
+- 7 sections with 6 major equations (pendulum period, sidereal time conversion, declination formula, refraction correction, error budget)
+- Worked example: Observation of Aldebaran (1680) with multi-step calculation
+- 5 sources to verify: Flamsteed1725, Bessel references, Baily1835, Howse papers, Chapman1996
+- Dense technical content (20+ jargon terms) requiring definition/explanation
+
+**Identified Improvement Areas for Pass 1**:
+
+1. **Jargon Clarity** (15-20 terms to define):
+   - "filar micrometer" - add definition ("precise instrument for measuring fractions of degrees")
+   - "celestial longitude/latitude" - expand RA/declination descriptions with coordinate system context
+   - "zenith distance" - define in altitude/declination section
+   - "atmospheric refraction" - add conceptual explanation before mathematical treatment
+   - "sidereal time" - expand definition with vernal equinox anchor (like Ch 3)
+   - "anchor escapement" - define in Tompion clock section
+   - "thermal effects" - clarify temperature sensitivity issue
+   - "systematic error" vs "random error" - distinguish in error budget section
+   - "gnomon" - define when first mentioned
+   - "reduction" - explain what computational work this entails
+
+2. **Equations & Mathematical Content**:
+   - All 6 equations properly formatted in math mode ✓ (verified in initial read)
+   - Worked example well-structured with clear steps ✓
+   - **ACTION NEEDED**: Add variable definitions immediately before first use in each equation
+   - **ACTION NEEDED**: Explain why each equation matters (physical significance, not just math)
+   - **ACTION NEEDED**: In error budget section, clarify how individual error sources combine (RSS? direct sum?)
+
+3. **Missing Figures** (HIGH PRIORITY - Chapter heavily technical):
+   - **Figure 1**: "Mural arc schematic" - cross-section showing graduated scale, telescope mount, plumb-bob orientation
+   - **Figure 2**: "Transit geometry diagram" - showing celestial pole, meridian plane, star altitude, zenith angle relationships
+   - **Figure 3**: "Refraction correction effect" - diagram showing light bending, observed vs. true altitude
+   - **Figure 4**: "Error budget visualization" - chart/table showing dominant error sources and magnitudes
+
+4. **Worked Example Quality Check**:
+   - Verify all calculation steps are correct ✓ (dates, math checks out)
+   - **ACTION NEEDED**: Add explanatory notes between calculation steps ("This converts mean solar time to sidereal time because..." / "The zenith distance relates declination to altitude via...")
+   - **ACTION NEEDED**: Clarify the discrepancy note at end - explain why 9 hours RA difference and 6° declination difference is expected (proper motion + precession)
+   - Consider adding a second brief example with low-altitude observation to illustrate refraction effect
+
+5. **Cross-References & Consistency**:
+   - Check: All references to Chapter 3 (mural arc description) correct? 
+   - Check: All technical terms match terminology in Chapter 3
+   - Check: Tompion clock description consistent with Chapter 3 Section 4
+   - Forward reference to Chapter 5 (reduction/cataloging) in final section ✓
+
+6. **Source Verification** (Pass 2):
+   - Flamsteed1725: \textcite{Flamsteed1725} - Historia Coelestis Britannica source for Aldebaran example ✓
+   - Baily1835: \textcite{Baily1835} - biographical/methodological details
+   - Howse papers: Check for Howse1980, Howse1989 citations
+   - Chapman1996: \textcite{Chapman1996} - instrument history
+   - Verify Bessel's formula attribution and context
+
+7. **Formatting Consistency**:
+   - Section labels: All use `\label{sec:...}` format (verify colon not hyphen) ✓
+   - Em-dashes: Check all multi-clause sentences use `---` properly ✓
+   - Equations: Verify all math properly delimited in `$ $` or `\[ \]` ✓
+   - Footnotes: All citations use \textcite{key} ✓
+
+**Pass 1 Implementation Priority Order**:
+1. Add 10+ definition additions (inline parenthetical explanations for jargon)
+2. Insert 4 placeholder figures with detailed captions
+3. Enhance worked example with explanatory notes between steps
+4. Add equation significance explanations (physical meaning, not just math)
+5. Verify section labels use correct format (colon not hyphen)
+6. Build & verify no errors
+
+**Expected Changes for Chapter 4 Pass 1**:
+- 10-15 text edits (definition additions + equation explanations)
+- 4 figure insertions
+- 1-2 worked example clarifications
+- ~2-3 additional pages from figures + expanded explanations
+- Final page count: ~130 pages (from current ~115)
+
+**Passes 2-5 will verify**:
+- Pass 2: 8-10 footnotes, 4-5 sources properly cited, technical terminology consistent
+- Pass 3: 7 section labels (check all use colon), em-dashes proper, equations properly formatted, 4 figures with labels
+- Pass 4: Aldebaran observation accuracy, Tompion clock specs, error magnitude values verified against historical records
+- Pass 5: Clean build, publication readiness, narrative flow from intro through worked example to legacy section
