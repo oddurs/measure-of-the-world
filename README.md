@@ -15,7 +15,7 @@ The narrative integrates rigorous mathematics, detailed instrument analysis, bio
 
 ## 📥 Download
 
-**[Download the PDF (417 pages)](https://github.com/oddurs/measure-of-the-world/releases/latest/download/measure-of-the-world.pdf)** 
+**[Download the PDF](https://github.com/oddurs/measure-of-the-world/releases/latest/download/measure-of-the-world.pdf)** 
 *(Full edition with all appendices and bibliography)*
 
 ---
@@ -170,10 +170,14 @@ measure-of-the-world/
   - 6 primary source document excerpts
 
 ---
-## � License
+## 📜 License
 
-[See LICENSE.md](LICENSE.md) for details.
+This work is licensed under the [Creative Commons Attribution 4.0 International License (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/).
 
-## License
+You are free to:
+- **Share** — copy and redistribute the material in any medium or format
+- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially
 
-See [LICENSE](LICENSE) for details.
+As long as you give appropriate credit.
+
+See [LICENSE](LICENSE) for full details.
