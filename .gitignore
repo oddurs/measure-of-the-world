@@ -46,3 +46,10 @@ _minted*
 
 # latexmk misc
 *.latexmk
+
+# Generated figures (reproducible from scripts)
+src/figures/generated/*.png
+src/figures/generated/.ch*-built
+
+# Python virtual environment
+.venv/

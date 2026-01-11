@@ -1,6 +1,22 @@
-.PHONY: build watch clean distclean
+# Python configuration
+PYTHON := .venv/bin/python3
 
-build:
+# Python figure scripts
+FIGURE_SCRIPTS := $(wildcard scripts/figures/ch*.py)
+FIGURE_OUTPUTS := $(patsubst scripts/figures/ch%.py,src/figures/generated/.ch%-built,$(FIGURE_SCRIPTS))
+
+.PHONY: build watch clean distclean figures
+
+# Generate all figures
+figures: $(FIGURE_OUTPUTS)
+
+# Per-chapter figure generation (only runs if script changed)
+src/figures/generated/.ch%-built: scripts/figures/ch%.py scripts/figures/common.py
+	@mkdir -p src/figures/generated
+	cd scripts/figures && ../../$(PYTHON) ch$*.py
+	@touch $@
+
+build: figures
 	mkdir -p build/out build/tmp
 	latexmk -f -pdf -cd src/main.tex || true
 	@if [ -f build/tmp/main.pdf ]; then \
@@ -22,6 +38,7 @@ watch:
 clean:
 	latexmk -c -cd src/main.tex
 	rm -f src/main.{aux,bcf,fdb_latexmk,fls,glo,ist,log,toc,bbl,blg,run.xml}
+	rm -f src/figures/generated/.ch*-built
 
 distclean:
 	latexmk -C -cd src/main.tex
