@@ -11,6 +11,13 @@ Harrison recognized that a marine chronometer could not be a pendulum clock. The
 
 His solution was radical: the \textsc{linked balance}.\index{linked balance}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{generated/ch09-chronometer-evolution}
+  \caption{The evolution of Harrison's chronometers from H1 (1735) to H5 (1770). The 18-year development of H3 reflects the difficulty of solving the temperature compensation problem.}
+  \label{fig:chronometer-evolution}
+\end{figure}
+
 \section{H1: The Linked Balance and the Grasshopper Escapement (1730--1735)}
 
 Instead of a single oscillating balance wheel, Harrison's H1\index{H1 chronometer} employed two identical balance wheels mounted on the same axis, oscillating in opposite directions. When one wheel moved clockwise, the other moved counterclockwise. The consequence was profound: the symmetrical oscillations canceled the effects of external vibration. A sudden heave of the ship would tilt the entire mechanism, but because the wheels were in anti-phase, the displacements largely canceled, leaving the rate of oscillation unaffected.\footnote{This principle—the cancellation of unwanted motion through symmetric counterphasing—was geometrically intuitive yet mechanically sophisticated. See \textcite{Betts1978}, pp. 18--25, for technical drawings of the linked balance mechanism.}
@@ -20,6 +27,13 @@ The mathematical basis is straightforward. Let $\theta_1(t)$ and $\theta_2(t)$ b
   \Delta\theta_1 = -\Delta\theta_2.
 \]
 The net effect on the time-keeping mechanism, which depends on the phase difference between the wheels and the escapement, averages to zero over one complete oscillation cycle.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch09-linked-balance}
+  \caption{The linked balance principle. Two balance wheels oscillate in anti-phase on a shared axis, canceling the effects of external vibrations on the timekeeping mechanism.}
+  \label{fig:linked-balance}
+\end{figure}
 
 To maintain this anti-phase motion reliably, Harrison devised the \textsc{grasshopper escapement}.\index{grasshopper escapement}\index{escapement!grasshopper} In a conventional escapement, a pallet arm locks a toothed escape wheel, then releases it at each beat of the balance wheel, allowing one tooth to advance. Friction at the pallet-tooth interface causes energy loss and rate instability. Harrison's solution was to create a mechanism where the escape wheel was never actually locked by the pallet: instead, small curved arms—resembling grasshopper legs—brushed against the teeth of the wheel, imparting energy without physical contact.\footnote{The grasshopper escapement is one of the most elegant solutions in horological history. Its mechanism is beautifully illustrated in \textcite{Sobel1995}, Chapter 4. Harrison describes the design in his own words in the memorial submitted to the Board in 1735.}
 
@@ -84,6 +98,13 @@ Harrison's solution was the \textsc{bimetallic strip}. If two metals with differ
 
 The mechanism is elegant. As temperature increases, brass expands more than steel. The bimetallic rim bends outward, effectively increasing the effective length of the spring and decreasing the moment of inertia simultaneously. The combined effect can be made to cancel the temperature dependence of the period.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch09-temperature-compensation}
+  \caption{Bimetallic temperature compensation. Left: a brass-steel bimetallic strip bends as temperature changes because the metals have different expansion coefficients. Right: this principle reduces the temperature sensitivity of the chronometer's rate by a factor of 25.}
+  \label{fig:temperature-compensation}
+\end{figure}
+
 More precisely, consider a bimetallic strip of effective length $L_{\text{eff}}(T)$ and effective radius $r_{\text{eff}}(T)$. The curvature $\kappa$ is given by the laminate theory:
 \[
   \kappa = \frac{6(\alpha_1 - \alpha_2) \Delta T}{t(3 + 2m + 3m^2)},
@@ -144,6 +165,13 @@ At the equator, this is approximately $1.3 \times 1.85 \, \text{km} \approx 2.4 
 
 An error of 2.3 km over a month-long ocean voyage was extraordinary—well below any tolerance needed for safe navigation.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch09-trial-performance}
+  \caption{Sea trial results for Harrison's chronometers. H4's Jamaica trial (1762) achieved an error of only 5.1 seconds over 81 days---far exceeding the Longitude Act's requirements.}
+  \label{fig:trial-performance}
+\end{figure}
+
 The second trial, in 1764 (the Barbados trial), was less successful. H4 accumulated an error of 39.2 seconds over five months. This larger error may have been due to changes in H4's rate caused by settling of the mechanism or creep in the materials after the first voyage. It suggested that H4, while brilliant, was not quite ready for routine use.
 
 \section{H5: The Final Refinement (1768--1772)}
@@ -186,6 +214,13 @@ If we assume that thermal lag and escapement friction dominate, contributing a f
   \text{error} \approx 10^{-6} \times 81 \times 86400 \, \text{s} \approx 7 \, \text{s},
 \]
 which is consistent with the observed 5.1 seconds.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.55\textwidth]{generated/ch09-error-sources}
+  \caption{Approximate contributions to H4's residual error of 5.1 seconds. Thermal lag and escapement friction were the dominant sources, with bearing wear and material creep contributing smaller amounts.}
+  \label{fig:error-sources}
+\end{figure}
 
 \section{Historiography: The Board's Resistance and Modern Reassessment}
 

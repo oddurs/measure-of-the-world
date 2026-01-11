@@ -31,6 +31,13 @@ T = \frac{2\pi}{\omega} = 2\pi\sqrt{\frac{L}{g}}
 
 This is the fundamental formula governing all pendulum clocks. The period depends on two quantities alone: the length $L$ and the local value of gravitational acceleration $g$. It is independent of the bob's mass, independent of the amplitude (in the small-angle approximation), and independent of any air resistance or friction (which would damp oscillations but not change the period of undamped motion).
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch06-pendulum-physics}
+  \caption{Pendulum mechanics. The restoring force $-mg\sin\theta$ drives oscillation. For small angles, this yields simple harmonic motion with period dependent only on length and gravity.}
+  \label{fig:pendulum-physics}
+\end{figure}
+
 \section{The Failure of the Small-Angle Approximation}
 
 Huygens recognized a subtle flaw in the simple harmonic approximation. The period $T = 2\pi\sqrt{L/g}$ is exact only for infinitesimal oscillations. For finite amplitudes, the true period is slightly longer. The cause is that the large-angle pendulum is not purely sinusoidal; when the bob swings high, the restoring torque $-mgL \sin \theta$ is weaker (because $\sin \theta < \theta$), so the bob accelerates more slowly at large angles, increasing the period.
@@ -69,6 +76,13 @@ For a one-second pendulum (period $T = 2$ seconds), this corresponds to a change
 \]
 
 A $10^{\circ}$C temperature swing thus causes an error of roughly one second per day—completely unacceptable for a clock supposed to maintain seconds accuracy.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch06-temperature-error}
+  \caption{Temperature sensitivity of pendulum clocks. Left: accumulated daily error increases linearly with temperature change for an uncompensated brass pendulum. Right: comparison of compensation methods showing the dramatic improvement achieved by gridiron and mercury pendulums.}
+  \label{fig:temperature-error}
+\end{figure}
 
 \section{The Gridiron Pendulum: Compensation by Differential Expansion}
 
@@ -118,6 +132,13 @@ For a one-second pendulum ($T = 2$ seconds), this means $\Delta T \approx 3 \tim
 
 A clock that keeps time perfectly in London will lose approximately two minutes per day in Jamaica—useless for navigation. The only remedy is to physically adjust the pendulum length (by moving the bob or the pivot) after arrival at a new latitude, or to employ an automatic compensator. Neither solution is practical for a ship at sea.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch06-gravity-latitude}
+  \caption{Gravity variation with latitude. Left: gravitational acceleration increases from equator to pole due to Earth's oblateness and rotation. Right: a clock calibrated in London loses time in the tropics (where gravity is weaker) and gains time near the pole.}
+  \label{fig:gravity-latitude}
+\end{figure}
+
 \section{Motion: Why Pendulums Fail at Sea}
 
 The fundamental obstacle to using pendulum clocks at sea is that a ship is not an inertial reference frame. A ship pitches, rolls, and heaves; it accelerates and decelerates. Newton's laws in their basic form apply only in inertial frames. In an accelerating frame, fictitious forces appear.
@@ -137,6 +158,13 @@ The fractional change is tiny: $\Delta g / g \approx 0.001$. But more importantl
 For a ship in a seaway with multiple accelerations—pitching, rolling, heaving—the situation is even worse. The effective gravity vector rotates continuously. A pendulum swinging in a direction that was vertical an instant ago may find itself swinging at an angle an instant later. The oscillation becomes chaotic, and the clock becomes useless.
 
 This is why, despite the elegance of the pendulum clock and the extraordinary precision Huygens achieved on land, no pendulum clock ever proved practical for marine navigation. The most sophisticated pendulum chronometers built for ships were consistently outperformed by simpler mechanical designs (like Harrison's chronometers) that did not rely on a pendulum.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch06-ship-motion}
+  \caption{The pendulum problem at sea. Left: ship acceleration creates a fictitious force that tilts the effective gravity vector. Right: in rough conditions, this constant tilting renders the pendulum useless as a timekeeping element.}
+  \label{fig:ship-motion}
+\end{figure}
 
 \section{Table: Precision of Pendulum Clocks, 1660–1750}
 

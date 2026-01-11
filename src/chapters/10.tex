@@ -23,6 +23,13 @@ Maskelyne's solution was audacious: he would create a permanent corps of compute
 
 This principle—\textsc{redundant computation}—was a century and a half ahead of its time. In the modern era, we would recognize it as a form of quality control and error detection. In Maskelyne's era, it was novel. The costs were not trivial: each computer's stipend was modest (typically £20--30 per annum, a working-class income), but the aggregate expense was substantial. Yet Maskelyne judged it worth the investment because the alternative—publishing inaccurate tables—would have rendered the entire enterprise useless.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.65\textwidth]{generated/ch10-computer-network}
+  \caption{Maskelyne's distributed computer network. Human computers across Britain performed calculations independently, with results compared at Greenwich to detect errors.}
+  \label{fig:computer-network}
+\end{figure}
+
 \section{The Network of Minds}
 
 Who were the computers? They were not professional mathematicians, nor were they amateurs in the sense of lacking skill. Rather, they occupied an intermediate position that would become increasingly important in the 18th and 19th centuries: educated professionals without university positions, making a living through intellectual labor.
@@ -57,6 +64,13 @@ The Nautical Almanac, first published in 1767 for the year 1768, contained sever
 
 Each table in the early Almanacs ran to hundreds or thousands of lines, all computed by hand and printed by letterpress. A single computational error, if not caught, would propagate to every ship using that value.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{generated/ch10-almanac-structure}
+  \caption{Contents of the Nautical Almanac. The publication provided comprehensive astronomical data computed for every few hours throughout the year.}
+  \label{fig:almanac-structure}
+\end{figure}
+
 \section{The Navigator's Procedure}
 
 How did a navigator actually use the Nautical Almanac? The procedure was demanding but systematic, consisting of roughly six steps:\footnote{\textcite{Maskelyne1763}, the \emph{British Mariner's Guide}, provides the authoritative contemporary description. \textcite{Howse1980}, Chapter 8, summarizes the method with modern notation.}
@@ -89,6 +103,13 @@ For an educated navigator with training in mathematics, this might take 30 minut
 
 The entire procedure, from observation to final result, might occupy 2--3 hours of the navigator's time, assuming competence and access to the necessary tables. Compare this to consulting a marine chronometer: assuming the chronometer had been set to Greenwich time and had not gained or lost appreciably, the navigator could simply note the chronometer time and combine it with his latitude to determine position in minutes.\footnote{\textcite{Maskelyne1763}, pp. 112--125, provides worked examples; modern expositions appear in \textcite{Howse1980}, pp. 180--195.}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch10-navigator-procedure}
+  \caption{The navigator's six-step procedure for determining longitude by lunar distance. The clearing step, requiring 30--60 minutes of calculation, was the major bottleneck.}
+  \label{fig:navigator-procedure}
+\end{figure}
+
 \section{Computational Methods and Error Control}
 
 The Nautical Almanac's computations employed the mathematical tools of the era: logarithms, trigonometric tables, and difference tables for interpolation.
@@ -120,6 +141,13 @@ Moreover, the Nautical Almanac was not limited to lunar distances. It provided s
 Furthermore, computing the Nautical Almanac had become an institution. Maskelyne had trained several generations of computers; the network of competent calculators, once established, persisted. When new astronomical discoveries required the Almanac to be updated—for instance, the discovery of planetary perturbations on the lunar motion—the institutional infrastructure already existed to perform the necessary recalculations.
 
 The economic argument for chronometers versus the Nautical Almanac was not one-sided. A marine chronometer in the late 18th century cost £100--200, a substantial sum (equivalent to several years' wages for a skilled tradesman). A copy of the Nautical Almanac cost a few shillings. Every ship at sea could afford an Almanac; only the wealthiest naval vessels and merchant ships could afford a chronometer. The Almanac thus democratized access to precision navigation in a way that no single mechanical device could have.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch10-chronometer-vs-almanac}
+  \caption{Comparison of the chronometer and Nautical Almanac methods. Each had distinct advantages: the chronometer was faster and more accurate, but the Almanac was accessible to every ship regardless of budget.}
+  \label{fig:chronometer-vs-almanac}
+\end{figure}
 
 \section{Historiography: Infrastructure, Not Genius}
 

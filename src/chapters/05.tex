@@ -9,6 +9,13 @@ From 1676 until his death in 1719, Flamsteed conducted continuous telescopic obs
 
 This vast accumulation of data posed an unprecedented problem: how to reduce raw measurements to meaningful astronomical information. Every observation was a two-dimensional measurement—a time recorded by Tompion's clock and an altitude recorded from the mural arc's graduated scale. Neither of these, alone or in combination, was a celestial coordinate. Converting the raw measurements into right ascension and declination required not just arithmetic but the application of spherical trigonometry, precession corrections, refraction tables, and systematic error analysis. The labor was immense, and the methodology had to be invented as the work progressed.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch05-reduction-pipeline}
+  \caption{The data reduction pipeline. Each raw observation underwent systematic corrections before yielding final catalog coordinates. Time measurements produced right ascension; altitude measurements produced declination. All positions were then corrected for precession to a common epoch.}
+  \label{fig:reduction-pipeline}
+\end{figure}
+
 \section{Reducing Observations: From Raw Readings to Coordinates}
 
 Consider a single observation from Flamsteed's logs. The astronomer records:
@@ -63,6 +70,13 @@ where $\phi = 51^{\circ} 28' 40''$ is the latitude of Greenwich.
 A fundamental challenge emerged as Flamsteed compiled his catalog: stars observed at different epochs showed slightly different positions, even when measurement errors were accounted for. The cause was precession—the slow wobble of Earth's axis caused by the gravitational torque of the Sun and Moon on Earth's equatorial bulge.
 
 The precession rate was known, roughly, to ancient and medieval astronomers. By Flamsteed's time, it was established at approximately 50 arcseconds per year. This means that a star's right ascension and declination shift continuously. A star at $\alpha = 0^{\text{h}} 0^{\text{m}} 0^{\text{s}}$ and $\delta = 0^{\circ}$ in 1680 will be at $\alpha \approx 0^{\text{h}} 0^{\text{m}} 3.3^{\text{s}}$ and $\delta \approx 0^{\circ} 0' 15''$ in 1700, a shift of $3.3^{\text{s}}$ (50 arcseconds) in right ascension and 15 arcseconds in declination.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch05-precession-drift}
+  \caption{Precession drift over Flamsteed's observing campaign. Observations taken years apart showed different apparent positions for the same star. All observations had to be corrected to the catalog epoch of 1690 before averaging.}
+  \label{fig:precession-drift}
+\end{figure}
 
 Flamsteed needed a systematic method to apply precession corrections. The formula he used (derived from spherical trigonometry) relates coordinates at epoch $t_1$ to coordinates at epoch $t_2$:
 \[
@@ -145,6 +159,13 @@ For each star, Flamsteed computed:
 \bar{\alpha} = \frac{1}{n} \sum_{i=1}^{n} \alpha_i, \quad \bar{\delta} = \frac{1}{n} \sum_{i=1}^{n} \delta_i
 \]
 the mean right ascension and declination. He then computed residuals, $\alpha_i - \bar{\alpha}$ and $\delta_i - \bar{\delta}$, and examined their distribution to detect systematic errors (such as a flexure in the mural arc that worsened over time) and to quantify random errors.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch05-error-averaging}
+  \caption{Error reduction through repeated observation. Left: individual observations scatter around the true position with approximately 15 arcsecond uncertainty. Right: as observations accumulate, the mean converges toward the true value and the uncertainty decreases proportionally to $1/\sqrt{n}$.}
+  \label{fig:error-averaging}
+\end{figure}
 
 The typical precision achieved in the final \emph{Historia} was $\pm 10$--$20$ arcseconds in both coordinates—a threefold improvement over Tycho Brahe's 1 to 3 arcminute errors, despite Tycho's innovations. The improvement stemmed not from a fundamentally different instrument but from Flamsteed's larger radius arc, better clocks, and meticulous reduction and averaging procedures.
 

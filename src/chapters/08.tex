@@ -19,6 +19,13 @@ The Moon moves at approximately half a degree per hour. This is the key that mak
 
 This is why Flamsteed and his successors invested such effort into the lunar problem. A star-catalogue (Chapter 3) allows us to know where the stars are. But that knowledge is static; the stars repeat the same pattern every night. The Moon, in contrast, moves visibly, *visibly*, from night to night. It is the only celestial body that advances noticeably on a navigator's timescale.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch08-moon-motion-rate}
+  \caption{The Moon's motion through the zodiac. Completing 360 degrees in 27.3 days, the Moon moves at approximately half a degree per hour---fast enough that its position encodes Greenwich time.}
+  \label{fig:moon-motion-rate}
+\end{figure}
+
 \section{Geometry of Lunar Distance}
 \label{sec:lunar-distance-geometry}
 
@@ -60,6 +67,13 @@ p_{\text{alt}} = HP \cos h
 where $h$ is the Moon's altitude. As the Moon approaches the horizon, $\cos h$ approaches 1, and the parallax reaches its maximum value $HP$. At the zenith, $\cos h = 0$, and parallax vanishes.
 
 For a more complete treatment, we must account for the observer's latitude. The gravitational flattening of the Earth means that the radius varies with latitude. Maskelyne and the lunar distance practitioners used an auxiliary quantity called the \emph{apparent altitude} to account for this. But the principle remains: parallax is largest at the horizon and vanishes at the zenith.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch08-lunar-parallax}
+  \caption{Lunar parallax. An observer on Earth's surface sees the Moon displaced from its true geocentric position. The parallax angle depends on the observer's position and the Moon's altitude.}
+  \label{fig:lunar-parallax}
+\end{figure}
 
 \subsection{Worked Example: Parallax Correction}
 
@@ -123,6 +137,13 @@ With these quantities and the positions of several reference stars, a navigator 
 \section{The Clearing Procedure: Full Treatment}
 
 To convert an observed sextant angle into a true lunar distance requires a sequence of corrections. The procedure was standardized and published in Maskelyne's *British Mariner's Guide* and in the introductory pages of the *Nautical Almanac*. Here we outline the full sequence.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{generated/ch08-clearing-procedure}
+  \caption{The clearing procedure for lunar distances. Each step applies a correction to transform the raw sextant angle into a true geocentric lunar distance, which can then be compared with tabulated values to determine Greenwich time.}
+  \label{fig:clearing-procedure}
+\end{figure}
 
 \subsection{Step 1: Record the Observation}
 
@@ -311,6 +332,13 @@ The accuracy of a lunar distance observation is limited by several factors:
 \textsc{Parallax and refraction corrections:} These introduce additional uncertainty. The parallax is known from the tables but depends on the observer's accurate latitude. The refraction depends on temperature, pressure, and humidity, none of which the navigator can measure precisely. A typical uncertainty is a few arcminutes.
 
 \textsc{Interpolation error:} The tables give lunar distance every 3 hours; the navigator must interpolate to find the exact Greenwich time. Linear interpolation assumes the Moon's motion is constant over a 3-hour interval, but the rate of change of lunar distance actually varies slightly. This introduces an error of order $0.1'$ to $1'$.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch08-lunar-distance-errors}
+  \caption{Error budget for lunar distance observations. Combined root-sum-square error of approximately 4 arcminutes translates to roughly 30 nautical miles of longitude uncertainty.}
+  \label{fig:lunar-distance-errors}
+\end{figure}
 
 Combining these sources of error, a skilled observer under good conditions achieves a longitude accuracy of approximately $\pm 0.5^{\circ}$, or about $\pm 30$ nautical miles at the equator. This is far superior to dead reckoning (which accumulates errors of 100 nm or more over an Atlantic crossing) but inferior to a good chronometer, which can achieve accuracy of $\pm 5'$ of arc or better.
 
