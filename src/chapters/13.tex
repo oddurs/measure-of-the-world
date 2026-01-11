@@ -13,6 +13,13 @@ The telescope rotated about a horizontal axis oriented due east-west. This axis 
 
 Perpendicular to the main rotation axis was a secondary axis, parallel to the telescope's optical axis, about which the entire telescope could be rotated slightly to adjust the orientation of the reticule. This adjustment capability was essential for ensuring that the wires remained precisely aligned with the meridian plane and the vertical direction—that is, for maintaining collimation and ensuring that the horizontal wire was truly horizontal.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{generated/ch13-transit-circle-schematic}
+  \caption{Schematic of the Airy transit circle. The telescope rotates about a horizontal east-west axis resting on precision V-bearings. A graduated circle allows altitude readings, while the reticule (inset) provides the reference for timing star transits across the meridian.}
+  \label{fig:transit-circle-schematic}
+\end{figure}
+
 \section{Optical System and Measurement Technique}
 
 The optical path of the transit circle embodied the accumulated knowledge of a century of telescopic observations. Light from a star entered the objective lens, a two-element compound designed to minimize chromatic aberration across the visible spectrum. For a star of magnitude zero (the brightness standard), sufficient light reached the focal plane to be clearly visible when magnified by the eyepiece. The observer looked through a magnifying lens (the eyepiece) at the reticule, seeing the star's image superimposed on the five vertical wires and the horizontal wire.
@@ -64,6 +71,13 @@ Alternatively, the observer might watch the chronometer directly, noting when a 
 Airy's own bias was that he reacted slightly faster than expected. His assistant's bias was slower. When the two observed the same series of stars, Airy's times were consistently earlier by about 0.3 to 0.4 seconds. This was not sloppiness or inattention; it was a physiological constant. Different observers had different reaction times, and these differences would propagate into systematic errors in derived star positions unless they were measured and corrected.
 
 Airy's response was methodical. He devised a system for measuring the personal equation by having multiple observers watch the transit circle simultaneously and record transit times for the same stars. He then compared their times and found the systematic differences. An observer's personal equation could then be determined—typically a constant offset of 0.1 to 0.5 seconds, depending on the individual. All of that observer's future times could be corrected by applying the personal equation constant.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch13-personal-equation}
+  \caption{The personal equation: systematic timing differences between observers. Airy found that he recorded transit times approximately 0.3 seconds earlier than his assistant. Both readings must be corrected to obtain the true transit time.}
+  \label{fig:personal-equation}
+\end{figure}
 
 \section{A Worked Example: Reducing an Airy Observation}
 
@@ -161,6 +175,13 @@ The transit circle represented the apex of positional astronomy prior to photogr
 
 For a single high-quality observation of a bright star observed near the zenith on a stable night, the typical error was on the order of 0.5 arcseconds in right ascension and 0.3 arcseconds in declination. However, by observing each star many times across its meridian passage and over many nights, with careful correction for all systematic effects, Airy achieved mean errors of roughly 0.2 arcseconds—a fourfold improvement over Bradley's instruments and a twentyfold improvement over Flamsteed's mural arc.\footnote{\textcite{Chapman2005}, Chapter 7, provides detailed analysis of the Airy transit circle's performance, including statistical analysis of residual errors in Airy's catalogs and discussion of the systematic differences between Airy's positions and those from other observatories.}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch13-error-budget}
+  \caption{Error budget for Airy transit circle observations. Atmospheric turbulence and refraction uncertainty dominated the error budget, with observer-related errors largely eliminated through the personal equation correction.}
+  \label{fig:airy-error-budget}
+\end{figure}
+
 \begin{table}[htbp]
   \centering
   \caption{Evolution of positional astronomy precision.}
@@ -181,6 +202,13 @@ For a single high-quality observation of a bright star observed near the zenith 
   \end{tabular}
 \end{table}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{generated/ch13-precision-evolution}
+  \caption{The evolution of positional astronomy precision from Tycho Brahe to the Gaia satellite. Airy's transit circle achieved sub-arcsecond precision, representing more than two orders of magnitude improvement over Tycho's instruments.}
+  \label{fig:precision-evolution}
+\end{figure}
+
 \section{Defining the Prime Meridian}
 
 The transit circle became famous not for its technical excellence alone but for the role it played in the 1884 International Meridian Conference. In 1883, the nations of the world assembled in Washington to establish a single prime meridian—the reference line from which all longitude would be measured. Multiple candidates existed: Greenwich, Paris, Washington, Ferro, and others. The conference ultimately voted to adopt Greenwich, in large part because of Britain's dominance in maritime commerce and because Greenwich Observatory, under Airy's direction, possessed the finest meridian instrument in the world.
@@ -190,6 +218,13 @@ But which meridian at Greenwich? Airy's transit circle possessed multiple compon
 This definition was recorded officially: the Prime Meridian at Greenwich was the vertical plane of the transit circle's reticule. In 1884, it was physically located at specific east-west coordinates on the Observatory grounds, and a brass line was laid into the floor to mark it. Tourists visiting the Observatory today walk across this line, standing in both the eastern and western hemispheres simultaneously.
 
 Yet the choice contained an irony. The transit circle's wire was useful for positional astronomy, but it was not the optimal choice for a modern geodetic reference. By the mid-20th century, as satellites and radio techniques allowed more precise positioning, a new Prime Meridian reference was established: not the wire of Airy's instrument but a mathematical surface defined by the World Geodetic System (WGS84). This modern prime meridian lies approximately 102 meters east of the brass line tourists straddle.\footnote{\textcite{Howse1997}, Chapter 8, provides detailed discussion of the 1884 conference, the choice of Greenwich, and the later offset to WGS84. \textcite{Malys2015} gives technical details on the offset's calculation and its implications for GPS.}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch13-prime-meridian-offset}
+  \caption{The 102-meter offset between the historic Airy Meridian (the brass line at Greenwich) and the modern WGS84 Prime Meridian used by GPS. The discrepancy arises from improved measurements of Earth's gravitational field and the choice of reference ellipsoid.}
+  \label{fig:prime-meridian-offset}
+\end{figure}
 
 \section{The Personal Equation and the History of Science}
 

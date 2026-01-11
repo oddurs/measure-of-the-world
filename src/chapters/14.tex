@@ -15,6 +15,13 @@ The objective of the Great Equatorial consists of two pieces of glass, cemented 
 
 A simple lens focuses different colors at different distances.\index{chromatic aberration} Blue light, refracted more sharply than red light, comes to focus nearer the lens. This dispersion, determined by the wavelength-dependent refractive index of glass, creates colored fringes around any sharp image. For a 28-inch lens with no correction, the effect would be catastrophic: a star would appear surrounded by a colored halo several arcseconds across, rendering fine spectroscopic measurements impossible.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch14-chromatic-aberration}
+  \caption{Chromatic aberration in a simple lens. Different wavelengths of light focus at different distances from the lens, with blue light focusing closest and red light focusing furthest.}
+  \label{fig:chromatic-aberration}
+\end{figure}
+
 The solution uses the fact that crown glass and flint glass have different dispersions. If we combine them appropriately—crown glass providing most of the focusing power, flint glass providing a weaker defocusing correction—we can arrange for two different wavelengths to come to the same focus while maintaining the overall focusing power. We choose these two wavelengths (conventionally the red C-line of hydrogen and the blue F-line of hydrogen, at \SI{656}{\nano\meter} and \SI{486}{\nano\meter} respectively) and solve for the radius of curvature of each lens such that
 
 \[
@@ -29,6 +36,13 @@ and
 
 where $f$ is the desired focal length and the subscript ``red'' indicates the wavelength-dependent refractive index. Solving these simultaneously yields the two radii. The result is ``achromatism at two colors''—perfect focus for C and F, and reasonably good focus across the visible spectrum. A residual secondary spectrum remains, most noticeable at the extreme blue and red, but acceptable for practical observations.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch14-achromatic-doublet}
+  \caption{The achromatic doublet combines crown glass (low dispersion) and flint glass (high dispersion) to bring different wavelengths to a common focus, correcting chromatic aberration.}
+  \label{fig:achromatic-doublet}
+\end{figure}
+
 The 28-inch objective, crafted by the Dublin optician Howard Grubb, had a focal length of 34 feet—more than 10 meters. A single lens of this diameter would sag under its own weight, distorting the figure and degrading the image. Grubb's solution was to support the lens at 18 carefully positioned points around its edge, allowing the glass to flex slightly while maintaining optical figure. The mounting is as much an engineering problem as the optics.
 
 \section{The Equatorial Mount}
@@ -41,6 +55,13 @@ The equatorial mount's advantage over an altazimuth mount (which rotates in alti
 
 The practical disadvantage is that the polar axis must be accurately aligned. For the Great Equatorial, this required careful observation of the position of Polaris (or the south celestial pole, for observatories south of the equator) and precise mechanical adjustment. At Greenwich, the polar axis was aligned to within about \SI{2}{\arcsecond}, adequate for the spectroscopic work envisioned.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch14-equatorial-mount}
+  \caption{The equatorial mount. The polar axis points toward the celestial pole, allowing the telescope to track stars with single-axis rotation. The declination axis allows pointing to different parts of the sky.}
+  \label{fig:equatorial-mount}
+\end{figure}
+
 \section{The Spectroscope: Optics and Principles}
 
 A spectroscope is, at its simplest, a prism—a piece of glass cut at carefully chosen angles. When light enters a prism, it is bent (refracted) at the first surface, dispersed according to wavelength as it travels through the glass, and bent again at the exit surface. Red light, refracted slightly less than blue light, emerges at a slightly different angle. By arranging a telescope behind the prism to magnify this dispersed light, we create an image where each wavelength occupies a distinct position—a spectrum.
@@ -52,6 +73,20 @@ For emission spectroscopy (observing the light *emitted* by a glowing source), t
 For absorption spectroscopy (observing light from a hot source that passes through a cool gas), the spectrum is a continuous rainbow interrupted by dark lines at specific wavelengths—the ``absorption spectrum.'' The cool gas absorbs the same wavelengths it would emit if glowing on its own.
 
 This distinction is codified in Kirchhoff's laws of spectroscopy, formulated by Gustav Kirchhoff and Robert Bunsen in 1859.\footnote{\textcite{Kirchhoff1859} presents the three laws: (1) A hot opaque object or a hot dense gas emits a continuous spectrum. (2) A hot diffuse gas emits a spectrum of discrete bright lines. (3) A cool gas in front of a hot source produces an absorption spectrum—dark lines at the same wavelengths where the hot gas would emit.} These laws, both empirical and now understood through quantum mechanics, provided the key to reading the spectra of stars.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch14-spectroscope-prism}
+  \caption{A prism spectroscope disperses white light from a slit into its component wavelengths, with violet light refracted more than red light.}
+  \label{fig:spectroscope-prism}
+\end{figure}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch14-emission-absorption}
+  \caption{Comparison of continuous, emission, and absorption spectra. A hot solid produces a continuous spectrum; a hot gas produces emission lines; a cool gas in front of a hot source produces absorption lines at the same wavelengths.}
+  \label{fig:emission-absorption}
+\end{figure}
 
 \section{Fraunhofer Lines and Stellar Composition}
 
@@ -80,6 +115,13 @@ where $\beta = v_r/c$ and $\theta$ is the angle between the source's velocity an
 \]
 
 is accurate to first order in $v_r/c$. A star receding at $v_r = 100 \text{ km}/\text{s}$ shows a fractional wavelength shift of about $\Delta \lambda / \lambda_0 = 3 \times 10^{-4}$.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch14-doppler-shift}
+  \caption{The Doppler shift of spectral lines. An approaching source shows lines shifted toward blue (shorter wavelengths); a receding source shows lines shifted toward red (longer wavelengths).}
+  \label{fig:doppler-shift}
+\end{figure}
 
 Detecting this shift requires measuring the position of a spectral line to high precision. Huggins and his collaborators compared the position of a stellar line to a reference line (often from a terrestrial lamp, introduced into the spectroscope for calibration) and computed the shift. For example, if the hydrogen H-alpha line in a stellar spectrum appeared displaced by 0.2 nanometers from its rest position of 656 nm, the shift would indicate a radial velocity of
 
@@ -116,6 +158,13 @@ An alternative is the diffraction grating—a surface with thousands of equally 
 \]
 
 where $d$ is the groove spacing, $\theta$ is the diffraction angle, $m$ is an integer (the order), and $\lambda$ is the wavelength. Unlike a prism, a grating produces spectra of uniform dispersion: the angle between lines is proportional to wavelength difference, making quantitative analysis simpler.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{generated/ch14-diffraction-grating}
+  \caption{A diffraction grating disperses light through interference. The grating equation $d \sin\theta = m\lambda$ determines the angles at which different wavelengths constructively interfere.}
+  \label{fig:diffraction-grating}
+\end{figure}
 
 By the 1880s, Henry Rowland at Johns Hopkins had developed methods for ruling gratings with unprecedented precision—up to 40,000 grooves per inch. Greenwich and other observatories began to adopt grating spectroscopes for their superior quantitative properties. The Great Equatorial could be equipped with either a prism or a grating, depending on the observation.
 

@@ -24,6 +24,13 @@ Molyneux's zenith sector, built by John Hadley (also famous for developing the o
 
 The key advantage of the zenith sector over the mural arc was its simplicity and stability. By restricting observation to stars passing near the zenith, Molyneux and Bradley avoided large refraction corrections (which are negligible at the zenith), reduced flexure errors (the instrument was rigid over its narrow range of motion), and could use more sensitive methods to detect small angular shifts.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.5\textwidth]{generated/ch12-zenith-sector}
+  \caption{The zenith sector: a specialized telescope mounted to observe stars passing nearly overhead. By limiting observations to the zenith, atmospheric refraction effects were minimized and small angular displacements could be measured to arcsecond precision.}
+  \label{fig:zenith-sector}
+\end{figure}
+
 The experimental design was elegant. If a star possessed parallax, its position at a given sidereal time should shift over six months by an angle of $2p$ (the angle corresponding to Earth's motion from one side of its orbit to the opposite side). Bradley selected $\gamma$ Draconis, a third-magnitude star that passed very close to the zenith at Kew's latitude of $51.5°$ N. When $\gamma$ Draconis crossed the meridian at its highest altitude, Bradley measured its angular distance from the zenith using the sector. He repeated the measurement on many nights, recording the star's position against the arc. Over a six-month interval, the parallax would cause the star to shift south; over the next six months, it would shift north again, returning to its starting position.
 
 The expected parallax for $\gamma$ Draconis was estimated at roughly 0.3 arcsecond, assuming the star was within a few parsecs. This was small but detectable: the zenith sector, with its radius of about 12 feet and carefully graduated scale, could resolve motions of a few arcseconds.
@@ -35,6 +42,13 @@ Bradley's observations began in December 1725. Over the following months, he not
 For months, Bradley remained puzzled. He re-examined his observations, checked his calculations, and questioned whether systematic error might explain the anomaly. Yet the observations were too consistent to be error; they followed a pattern, just not the pattern he expected.
 
 Then came the insight—possibly apocryphal but philosophically apt—during a Thames boat trip. The pennant at the bow of the boat appeared to shift direction as the boat altered course, even though the wind (coming from a fixed compass direction) remained constant. The pennant was moving not because the wind changed but because the boat's motion combined with the wind's direction to produce a new apparent direction. Bradley realized that light must work the same way: Earth's motion combines with the direction from which starlight arrives to produce an apparent shift in the star's position.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch12-aberration-geometry}
+  \caption{The geometry of stellar aberration. Earth's orbital velocity $v_E$ combines with the incoming starlight velocity $c$ to produce an apparent shift in the star's direction, analogous to rain appearing to fall at an angle when walking.}
+  \label{fig:aberration-geometry}
+\end{figure}
 
 The geometry is that of velocity addition. Let $\vec{v}_{\text{E}}$ be Earth's orbital velocity (perpendicular to the radial direction to the sun, approximately), and let $\vec{c}$ be the velocity of light. If light travels at angle $\theta_0$ to Earth's velocity in the reference frame of the star, then in Earth's reference frame the light appears to come from a different angle $\theta$. For velocities small compared to $c$, the shift is:
 \[
@@ -61,6 +75,13 @@ for small $v_{\text{E}}/c$. Earth's orbital velocity is $v_{\text{E}} \approx 30
 This quantity is the \textsc{constant of aberration}, denoted $\kappa$, and equals approximately $20.47$ arcseconds.\footnote{Modern measurements place the constant of aberration at $\kappa = 20.49552$ arcseconds, based on well-determined values of the speed of light and Earth's orbital velocity. Bradley's measurements confirmed the value to roughly this precision, making his discovery one of the earliest precision verifications of celestial physics. See \textcite{Feingold1984}, Chapter 5.}
 
 As Earth orbits the sun, its velocity direction changes. At one point in the orbit, Earth moves in one direction; six months later, it moves in the opposite direction. The direction of the aberration shift rotates to match Earth's velocity direction. Over the course of a year, a star traces an aberration circle with radius $\kappa$, the center of the circle being the star's true position.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch12-aberration-ellipse}
+  \caption{The aberration ellipse traced by a star over one year. A star at the ecliptic pole traces a circle of radius $\kappa \approx 20.5$ arcseconds; stars at other ecliptic latitudes trace ellipses.}
+  \label{fig:aberration-ellipse}
+\end{figure}
 
 \section{A Worked Example: Bradley's Observations of $\gamma$ Draconis}
 
@@ -101,6 +122,13 @@ which is satisfied by $\phi \approx -1.06$ radians (or approximately $-60°$). W
 
 These predictions match the observations almost exactly, confirming the aberration model.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{generated/ch12-bradley-observations}
+  \caption{Bradley's observations of $\gamma$ Draconis showing the annual sinusoidal variation due to aberration. The amplitude of approximately $20.5$ arcseconds matches the predicted constant of aberration.}
+  \label{fig:bradley-observations}
+\end{figure}
+
 \section{Nutation: The Second Discovery}
 
 But Bradley's quest did not end with aberration. His systematic observations of $\gamma$ Draconis, pursued even after recognizing the aberration, revealed a second anomaly. Superimposed on the annual aberration circle was a smaller oscillation with a period of 18.6 years. The star's position did not trace a perfect circle but rather a rosette pattern, with the circle itself slowly rotating.
@@ -126,6 +154,13 @@ The torque causes Earth's axis to precess (over the 26,000-year precessional per
 \]
 where $\Omega = 2\pi / (18.6 \text{ years})$ is the angular frequency of lunar nodal regression, and the amplitude of 9.2 arcseconds results from the relative magnitudes of Earth's moment of inertia, the equatorial bulge, and the lunar mass.\footnote{A rigorous derivation of the nutation amplitude requires application of perturbation theory to the coupled Earth-Moon system. See \textcite{Vallado2013}, Chapter 4, for a modern treatment. Bradley's qualitative observation of an 18.6-year periodic effect was remarkable given that most of his observations spanned only a few years; later astronomers confirmed the period and amplitude after accumulating data over multiple decades.}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch12-nutation-diagram}
+  \caption{Earth's nutation: the Moon's gravitational torque on Earth's equatorial bulge causes a periodic wobble of the rotation axis with a period of 18.6 years and amplitude of approximately 9 arcseconds.}
+  \label{fig:nutation-diagram}
+\end{figure}
+
 \section{Error Analysis: Why Aberration Was Detectable but Parallax Was Not}
 
 The contrast between Bradley's successful detection of aberration and his failure to detect parallax reveals deep truths about observational precision and systematic error.
@@ -135,6 +170,13 @@ The zenith sector achieved a precision of roughly 2–3 arcseconds for individua
 But parallax—the expected shift for $\gamma$ Draconis—was predicted to be roughly 0.3 arcseconds, based on rough distance estimates. This is at the limit of the instrument's sensitivity. More fundamentally, parallax requires distinguishing the annual shift due to Earth's orbital motion from proper motion (the star's actual motion through space) and systematic instrument errors. A star might have proper motion of a few arcseconds per year, far larger than its parallax. Without an extensive baseline of observations (decades or centuries) and without careful modeling of proper motion, detecting parallax for a single star is nearly impossible.
 
 Bradley's experience illustrates a profound principle: precision measurement often reveals the unexpected. He designed an experiment to detect parallax (amplitude 0.3 arcsec) and instead detected aberration (amplitude 20 arcsec)—a phenomenon entirely unsuspected before his observations. The precision of his instrument was sufficient to detect the large but subtle effect of Earth's motion on starlight, whereas the small parallax effect remained hidden.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch12-stellar-effects-comparison}
+  \caption{Comparison of apparent stellar displacement amplitudes. Bradley's zenith sector could detect effects above roughly 2 arcseconds, making aberration and nutation measurable while parallax remained undetectable.}
+  \label{fig:stellar-effects-comparison}
+\end{figure}
 
 \begin{table}[htbp]
   \centering
@@ -173,6 +215,13 @@ Thus:
 \]
 
 This value agrees closely with the speed of light measured by other methods (such as Roemer's determination from the eclipses of Jupiter's moons, which gave $c \approx 2.75 \times 10^5$ km/s). Bradley's measurement thus provided a consistency check on optical physics.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{generated/ch12-speed-of-light}
+  \caption{Deriving the speed of light from aberration measurements. By measuring the aberration angle and knowing Earth's orbital velocity, Bradley could calculate $c$ from first principles.}
+  \label{fig:speed-of-light}
+\end{figure}
 
 Third, the discovery of nutation demonstrated the power of precise astronomical observation to reveal the gravitational interaction between celestial bodies. The 18.6-year nutation period matched exactly the known period of the Moon's nodal regression; the amplitude of nutation matched theoretical predictions from lunar perturbation theory. This was confirmation of Newton's gravitational law at a level of precision that would have been impossible without Bradley's instruments and persistence.
 
