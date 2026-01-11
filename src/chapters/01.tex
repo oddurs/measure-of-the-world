@@ -6,6 +6,13 @@
 
 The fog rolled across the Atlantic in October 1707, thick as wool.\index{Scilly disaster (1707)} \textsc{hms} Association, the flagship of Admiral Sir Cloudesley Shovell,\index{Shovell, Cloudesley} cut through black water with the English fleet returning from Gibraltar---weeks at sea, the navigators' calculations checked and rechecked, the officers confident they had a safe margin west of the Scilly Isles. At eight o'clock in the evening, the Western Rocks rose out of the darkness without warning. The Association struck first, breaking apart instantly; within minutes, Eagle, Romney, and Firebrand followed her onto the reefs. The sea boiled white around the wrecks as the ships shattered on stone and the men struggled in water too cold for survival. Between fourteen hundred and two thousand men died that night---officers and ordinary sailors indistinguishable in the violence of water and rock. By morning, bodies washed onto black sand beaches. Shovell himself, waterlogged and unrecognizable until local women found his ring, lay among them. The court of inquiry that followed found nobody obviously at fault: the officers had computed their position with care, the calculations were correct by the standards of the time, yet the fleet had been more than forty nautical miles off course in precisely the direction that put them on the rocks.\footnote{The most detailed account of the disaster is from the \emph{Weekly Journal} of 3 November 1707 and the court of inquiry transcript, preserved in Admiralty Records. Sobel's \emph{Longitude} provides a modern narrative synthesis.}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.45\textwidth]{photos/ch01-admiral-shovell}
+  \caption{Admiral Sir Cloudesley Shovell (1650--1707), portrait by Michael Dahl, c.~1702. Five years after this portrait was painted, Shovell would perish with his fleet on the Western Rocks.}
+  \label{fig:admiral-shovell}
+\end{figure}
+
 \section{What Is Longitude?}
 \label{sec:definition}
 
@@ -25,39 +32,8 @@ The geometry cooperates because the celestial poles lie on the axis of the Earth
 
 \begin{figure}[htbp]
   \centering
-  \begin{tikzpicture}[scale=0.9]
-    % Observer's meridian plane
-    \draw[very thin, gray] (-4,-1) -- (-4,4);
-    \draw[very thin, gray] (4,-1) -- (4,4);
-    
-    % Horizon
-    \draw[thick, black] (-3.5,0) -- (3.5,0);
-    \node[below] at (0,-0.3) {Horizon};
-    
-    % Celestial pole
-    \draw[red, thick, ->] (0,0) -- (0,3.5);
-    \node[red, above] at (0,3.8) {Celestial Pole};
-    
-    % Observer at origin
-    \filldraw[black] (0,0) circle (2pt);
-    \node[below left] at (0,0) {Observer};
-    
-    % Altitude angle arc
-    \draw[blue, dashed] (0,0) -- (2.5,2.5);
-    \draw[blue] (0.7,0) arc (0:45:0.7);
-    \node[blue, right] at (0.8,0.4) {$h$};
-    
-    % Equator direction
-    \draw[thin, gray, ->] (0,0) -- (0,-1);
-    \node[gray, below] at (0.2,-1.2) {Toward equator};
-    
-    % Angle phi label
-    \draw[green, dashed] (0,0) -- (-3,0);
-    \draw[green] (-0.7,0) arc (180:135:0.7);
-    \node[green, left] at (-0.8,0.4) {$\phi$};
-    
-  \end{tikzpicture}
-  \caption{The celestial pole altitude equals the observer's latitude. At the equator the pole is at the horizon ($h = 0^{\circ}$); at either terrestrial pole it is directly overhead ($h = 90^{\circ}$).}
+  \includegraphics[width=0.6\textwidth]{generated/ch01-latitude-geometry}
+  \caption{The celestial pole altitude equals the observer's latitude. An observer at latitude $\phi$ sees the pole at altitude $h = \phi$ above the horizon. At the equator the pole is at the horizon ($h = 0^{\circ}$); at either terrestrial pole it is directly overhead ($h = 90^{\circ}$).}
   \label{fig:latitude-geometry}
 \end{figure}
 
@@ -102,23 +78,28 @@ In practice, the navigator approximates these integrals by summing the discrete 
   \centering
   \caption{Cumulative error in dead reckoning over a typical transatlantic crossing, 1650--1750.}
   \label{tab:dead-reckoning-error}
-  \resizebox{\textwidth}{!}{%
-    \begin{tabular}{lll}
-      \toprule
-      \textsc{Days at Sea} & \textsc{Typical Error (nm)} & \textsc{Characteristics} \\
-      \midrule
-      5 & 10--20 & Random direction \\
-      10 & 30--50 & Emerging systematic bias \\
-      20 & 60--100 & Strongly westward \\
-      30 & 100--150 & Westward systematic error \\
-      40 (typical Atlantic) & 150--250 & Westward, rapidly growing \\
-      \bottomrule
-    \end{tabular}%
-  }
+  \begin{tabular}{lll}
+    \toprule
+    \textsc{Days at Sea} & \textsc{Typical Error (nm)} & \textsc{Characteristics} \\
+    \midrule
+    5 & 10--20 & Random direction \\
+    10 & 30--50 & Emerging systematic bias \\
+    20 & 60--100 & Strongly westward \\
+    30 & 100--150 & Westward systematic error \\
+    40 (typical Atlantic) & 150--250 & Westward, rapidly growing \\
+    \bottomrule
+  \end{tabular}
   \tablenote{Values are approximate estimates from analysis of 17th--18th century navigation records. Actual errors varied widely depending on weather, crew skill, and instrument calibration. See Howse, \emph{Greenwich Time}, for compiled analysis.}
 \end{table}
 
 A longitude error of one degree at the latitude of the English Channel corresponds to about forty nautical miles---the distance between safe harbor and a reef. A crew could accumulate that error invisibly and discover it only when land appeared where no land was expected, or when the ship struck rock that the chart showed wasn't there.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch01-dead-reckoning-error}
+  \caption{Cumulative position error in dead reckoning over a transatlantic voyage. The shaded region shows the typical range of error; the dashed line marks the critical threshold of approximately forty nautical miles---the margin between safe passage and disaster at English Channel latitudes.}
+  \label{fig:dead-reckoning-error}
+\end{figure}
 
 \section{A Catalog of Maritime Disasters}
 \label{sec:maritime-losses}
