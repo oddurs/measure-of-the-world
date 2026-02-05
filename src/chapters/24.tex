@@ -11,6 +11,13 @@ The site today comprises several distinct zones. Flamsteed House, Wren's 1675 st
 
 The visitor experience centers on the prime meridian itself---the brass strip set into the courtyard paving. Tourists line up to photograph themselves straddling the line, as if the mere physical fact of standing in two hemispheres confers some geographical or cosmic significance. The ritual is performed millions of times annually. The brass strip has become an icon, more recognizable than any individual instrument or historical figure.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch24-visitor-experience}
+  \caption{The tourist experience at Greenwich: visitors straddle the brass meridian line with ``one foot in each hemisphere,'' photographed by companions. The green laser (visible at night) projects the meridian into the sky. Over one million visitors experience this ritual annually.}
+  \label{fig:visitor-experience}
+\end{figure}
+
 Yet this symbol---the visible Prime Meridian---is divorced from the machinery that made it meaningful. The Airy transit circle, the instrument that defined the meridian from 1884 to the modern era, stands nearby in a small pavilion. But it is displayed as a historical artifact, not as an instrument still in use. Tourists walk past it en route to the gift shop without knowing what it was or why its readings mattered.\footnote{Modern educational programs at Greenwich have attempted to redress this disconnect. The museum now offers interpretive sessions explaining the transit circle and its historical role, though these reach only a small fraction of the site's millions of visitors.}
 
 \section{The 102-Meter Offset: Astronomy Meets Satellite Geodesy}
@@ -18,6 +25,13 @@ Yet this symbol---the visible Prime Meridian---is divorced from the machinery th
 The discrepancy the tourist noticed---between what the brass strip says and what her GPS shows---is real, measurable, and scientifically important. The Prime Meridian marked by the brass strip is an \textbf{astronomical meridian}, defined by the position of the Airy transit circle, as it was installed and calibrated by the Astronomer Royal. The location indicated by GPS is a \textbf{geodetic meridian}, defined by the International Reference Frame (\textsc{ITRF}), which is maintained by satellite observation and continuously refined.
 
 These two meridians are not identical. They are offset by approximately 102 meters to the east. The brass strip, upon which millions of tourists stand, defines the astronomical position; the satellite-based geodetic framework places the true (in the modern sense) zero meridian about 100 meters away.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{generated/ch24-meridian-offset-detail}
+  \caption{The 102-meter offset between the astronomical meridian (brass line, defined by the Airy Transit Circle) and the geodetic meridian (WGS84, used by GPS). A tourist standing on the brass strip will see their GPS showing approximately 5.3 arcseconds west of true geodetic zero.}
+  \label{fig:meridian-offset-detail}
+\end{figure}
 
 This offset is not an error. It is a consequence of fundamental differences in how the two meridians are defined.
 
@@ -69,6 +83,13 @@ Computing:
 This is the deflection of the vertical: a misalignment between the local vertical (where a plumb line points) and the geocentric vertical (the direction to Earth's center) caused by local gravity anomalies.
 
 The astronomical meridian is defined by observations made along the local vertical---the direction gravity points at that location. The geodetic meridian is defined by a global reference frame whose origin is the Earth's center of mass. The offset between them is the projection of the deflection of the vertical onto the meridional direction.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch24-deflection-of-vertical}
+  \caption{The deflection of the vertical: a dense rock mass deflects the local plumb line away from the true radial direction toward Earth's center. At Greenwich, such mass anomalies cause a deflection of approximately 5.3 arcseconds, producing the 102-meter offset between astronomical and geodetic meridians.}
+  \label{fig:deflection-of-vertical}
+\end{figure}
 
 \section{What the Tourist's Phone Shows}
 
@@ -143,6 +164,13 @@ The ball was operated continuously until 1939, when it was removed for wartime r
 
 The daily time ball drop has become a tourist ritual and a symbolic nod to the Observatory's historical function. Yet it is also a performance, a heritage display. The original function---time synchronization for maritime navigation---is irrelevant in the era of satellite \textsc{GPS} and atomic clocks. The ritual persists because it is beautiful, historically significant, and serves the museum's interpretive mission.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{generated/ch24-time-ball}
+  \caption{Left: The time ball signal sequence---raised halfway at 12:55, fully raised at 12:58, then dropped precisely at 13:00 as the time signal. Right: Ships in the Thames would observe the ball drop to set their chronometers before departing for sea.}
+  \label{fig:time-ball}
+\end{figure}
+
 \section{Greenwich's Place in the Modern Reference Frame Ecosystem}
 
 The existence of multiple reference frames---the astronomical meridian at Greenwich, the geodetic reference frame of \textsc{ITRF}, and the satellite-based \textsc{GPS} system---can seem like an unfortunate legacy of competing standards. But it illustrates a deeper principle: precision infrastructure is built in layers, and older layers are not simply replaced but are often preserved, reinterpreted, or maintained in parallel with newer systems.
@@ -157,6 +185,13 @@ Today, the prime meridian has multiple meanings:
 \end{enumerate}
 
 The 102-meter offset between the brass strip and the \textsc{ITRF}-based meridian is a reminder that even our most fundamental coordinate systems are human constructs, grounded in particular times and places and measurement technologies. The meridian does not exist in nature; it is a convention. That convention has been extraordinarily useful---enabling global commerce, navigation, telecommunications, and scientific research for 140 years and counting.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{generated/ch24-greenwich-symbolism}
+  \caption{Greenwich as the symbolic center of global coordination. The Prime Meridian connects time zones, GPS navigation, maritime law, aviation routes, and scientific standards---all anchored to the historical zero line established in 1884.}
+  \label{fig:greenwich-symbolism}
+\end{figure}
 
 Yet conventions change. If a future generation were to adopt a different reference frame (say, one based on a different, more accurate definition of Earth's center of mass), the Prime Meridian could shift again. The brass strip would remain, preserved in a museum courtyard. The numbers on smartphones would change. Humanity would adapt.
 

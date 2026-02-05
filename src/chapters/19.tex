@@ -37,6 +37,13 @@ The change in the output angle is
 
 So rotating the mirror by $\beta$ changes the outgoing ray angle by $2\beta$. For the navigator, this means that a $1°$ rotation of the index mirror produces a $2°$ change in the angle between horizon and star as viewed through the telescope. An observer reading an arc directly graduated can measure angles up to twice the arc's full span. A $60°$ arc measures angles up to $120°$—sufficient to encompass the angular separation between Sun and Moon at favorable lunar distances.\footnote{\textcite{Maskelyne1763} explains the advantage of the sextant's 120° range for the lunar distance method. See also Section~\ref{sec:lunar-distance-geometry} of Chapter~\ref{ch:lunar-distance}.}
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch19-double-reflection}
+  \caption{The double-reflection principle. Light from a celestial body reflects off the index mirror to the horizon mirror, where it is combined with the direct view of the horizon. Rotating the mirror by angle $\theta$ rotates the reflected ray by $2\theta$.}
+  \label{fig:double-reflection}
+\end{figure}
+
 \section{The Octant and the Sextant}
 
 Hadley's original instrument was an \textbf{octant}\index{octant}\index{instruments!octant}---an instrument whose arc spans $90°$ (hence the name, from the eight wedges of a circle). An octant can measure angles up to $90°$, sufficient for latitude determination (since latitude at Earth's surface ranges from $0°$ to $90°$). The octant dominated navigation from the 1730s through the 1750s.
@@ -65,6 +72,13 @@ A typical sextant of the 18th and 19th centuries consists of:
 
 \textbf{The drum or vernier:} A reading device for determining the angle to a fraction of a degree. Early sextants used vernier scales; later instruments used a rotating drum (sometimes called a micrometer screw) with a worm gear that allows fine adjustment.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch19-sextant-components}
+  \caption{Components of a marine sextant. The index arm rotates about the pivot, carrying the index mirror. Light from a celestial body reflects to the horizon mirror, where it is combined with the direct view of the horizon through the telescope.}
+  \label{fig:sextant-components}
+\end{figure}
+
 \section{Reading the Angle: Vernier and Drum}
 
 The sextant arc, graduated in $1°$ or $30'$ increments, provides a coarse reading. But navigators need precision to the nearest minute of arc ($1'$) or better. Two reading methods evolved:
@@ -87,6 +101,13 @@ To read the drum, the observer notes the degree mark at the main scale, then rea
 
 The drum is faster and more reliable than the vernier, particularly in challenging conditions. By the mid-19th century, drum-equipped sextants dominated professional navigation.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch19-vernier-scale}
+  \caption{Reading a vernier scale. The main scale shows whole degrees; the vernier scale allows reading to fractions of a degree by finding where a vernier mark aligns with a main scale mark.}
+  \label{fig:vernier-scale}
+\end{figure}
+
 \section{The Altitude Observation at Sea}
 
 Using a sextant to measure the altitude of the Sun or a star requires a specific procedure, refined through generations of practice.
@@ -96,6 +117,13 @@ The navigator stands on deck (or in the sextant dome of a modern vessel), holdin
 If measuring the Sun's altitude, the observer selects appropriate shades to reduce glare and looks through the eyepiece. In the field of view, the observer should see the Sun's image (reflected from the index mirror) and, through the horizon mirror's unsilvered half, the horizon. The observer rotates the index arm to bring the Sun's image down to the horizon—``bringing the Sun down'' is the traditional phrase. When the lower limb of the Sun is tangent to the horizon, the angle read on the arc (and drum, if present) is the altitude of the Sun's lower limb above the horizon. 
 
 Corrections must follow: the dip of the horizon (which appears depressed for an observer above sea level), the semi-diameter of the Sun (accounting for the difference between the limb and the center), and parallax and refraction (systematic corrections to the apparent altitude). After these corrections, the true altitude of the Sun's center is obtained, ready for the spherical trigonometry of position-finding.\footnote{\textcite{Maskelyne1763} provides detailed correction procedures. \textcite{Bowditch1802} remains a comprehensive reference for practical navigation.}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch19-altitude-observation}
+  \caption{Altitude observation at sea. The observer views the horizon directly through the unsilvered portion of the horizon mirror while the reflected image of the Sun is brought down to touch the horizon line.}
+  \label{fig:altitude-observation}
+\end{figure}
 
 \section{Error Sources and Adjustment}
 \label{sec:sextant-errors}
@@ -156,6 +184,13 @@ A well-maintained sextant in the hands of a practiced observer can determine an 
 
 The practical result is that a single altitude observation yields a latitude accurate to $\pm 1'$ of arc, or approximately $\pm 1$ nautical mile. This is remarkable precision for an instrument with no electronics, no moving parts except pivots, and no power source beyond the observer's hand.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.65\textwidth]{generated/ch19-sextant-errors}
+  \caption{Error sources in sextant observation. Observer reaction time and horizon definition dominate; instrumental errors contribute smaller amounts. The total error (RSS) is approximately 100 arcseconds.}
+  \label{fig:sextant-errors}
+\end{figure}
+
 \section{Precision Evolution: Sextants 1731–1900}
 
 The sextant changed little in principle after Hadley's 1731 demonstration, but construction improved dramatically. A brief chronology:
@@ -189,6 +224,13 @@ Table~\ref{tab:sextant-evolution} summarizes representative instruments and thei
 \end{table}
 
 The improvement is steady but not dramatic—a factor of $8$ over 170 years. The limiting factor is not design principle but manufacturing precision and the inevitable limits of the observing procedure itself (horizon definition, index mark alignment, reading the scale).
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch19-sextant-evolution}
+  \caption{Evolution of sextant precision from 1731 to 1900. Improvements in telescope optics, scale graduation, and frame rigidity reduced typical error from $\pm 2'$ to $\pm 15''$.}
+  \label{fig:sextant-evolution}
+\end{figure}
 
 \section{The Sextant at Sea: Integration with Navigation}
 

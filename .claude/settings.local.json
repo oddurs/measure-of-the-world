@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(source .venv/bin/activate)",
+      "Bash(python scripts/figures/ch12.py:*)",
+      "Bash(make build:*)",
+      "Bash(python scripts/figures/ch13.py:*)",
+      "Bash(python scripts/figures/ch14.py:*)",
+      "Bash(python scripts/figures/ch17.py:*)"
+    ]
+  }
+}

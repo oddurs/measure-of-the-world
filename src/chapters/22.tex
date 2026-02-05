@@ -29,6 +29,13 @@ The transit instrument requires several key features:
 
 The transit instrument's great virtue is simplicity: it has only one degree of freedom (rotation about the east-west axis), and thus only one opportunity to be out of alignment. Its weakness is that it cannot measure altitude directly. To determine declination, one needs to know the altitude at transit, which requires either a second instrument or an auxiliary level.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{generated/ch22-transit-instrument}
+  \caption{A transit instrument showing the key components: horizontal east-west axis supported by precision pivots on stone piers, the telescope rotating only in the meridian plane, graduated circles for reading altitude, and crosshairs in the field of view for timing star transits.}
+  \label{fig:transit-instrument}
+\end{figure}
+
 \section{The Mural Quadrant and Mural Circle}
 
 The mural quadrant is fixed to a wall, constrained to measure altitude in the meridian plane. The instrument consists of a large graduated arc—literally a quadrant of a circle, hence 90 degrees—fixed vertically with one edge aligned north-south and the other pointing upward (zenith).
@@ -38,6 +45,13 @@ A telescope, mounted on an arm pivoting at the center of this arc, can rotate fr
 The mural quadrant evolved into the mural circle—a full circle (360°) rather than a quadrant (90°). A full circle has several advantages: it provides redundancy (the altitude can be read at multiple positions on the circle), and the instrument can measure altitudes below the horizon, which is useful for correcting refraction.
 
 Both instruments measure altitude and thus are capable of determining declination, but they do not directly provide right ascension. They must be paired with a clock or combined with a transit telescope to give time information.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch22-mural-circle}
+  \caption{A mural circle mounted on a meridian wall, showing the full graduated circle (360°), a telescope pivoting at the center, and a reading microscope for precise angle measurement. The index marks the altitude of the star being observed.}
+  \label{fig:mural-circle}
+\end{figure}
 
 \section{Airy's Transit Circle: The Defining Instrument}
 
@@ -54,6 +68,13 @@ The Airy transit circle consists of:
 \textbf{The level}: A sensitive spirit level, placed on the east-west axis, allows the observer to verify that the axis is horizontal to within a fraction of an arcsecond.
 
 \textbf{The collimator}: An external light source positioned to project parallel rays through the transit circle's objective. By observing this artificial star, the observer confirms that the instrument is properly aligned.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch22-airy-transit-circle}
+  \caption{The Airy Transit Circle (1851) in its observing configuration. The 8-inch refractor rotates on an east-west axis between stone piers, with 6-foot graduated circles on each end. The telescope points through a roof slit aligned precisely north-south, observing stars as they cross the meridian.}
+  \label{fig:airy-transit-circle}
+\end{figure}
 
 \section{Optical Requirements and Collimation}
 
@@ -79,6 +100,13 @@ To address this problem, early meridian instruments used special bearing designs
 
 Flexure is a related problem: when the telescope, circles, and eyepiece are loaded with the weight of the optical train, the supporting structure may sag slightly. The east-west axis may flex, tilting slightly. The circles may distort. These changes are small—a few arcseconds at most—but they are systematic and must be corrected for.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{generated/ch22-pivot-bearing}
+  \caption{Cross-section of a precision pivot and bearing. The cylindrical pivot, ground to tolerances of less than 0.001 inch, rests in a V-shaped bearing at two contact points. A thin oil film reduces friction while maintaining precise positioning. Any irregularity in the pivot shape introduces systematic pointing errors.}
+  \label{fig:pivot-bearing}
+\end{figure}
+
 \section{The Level: Detecting Departure from Horizontal}
 
 The level is a simple but crucial instrument. A sealed glass tube contains a liquid (mercury or alcohol) and an air bubble. When the tube is horizontal, the bubble settles to the center. When tilted, the bubble moves off-center. The tube is divided into equal divisions, so the observer can determine the degree of tilt.
@@ -98,6 +126,13 @@ The collimator is positioned at a fixed distance from the transit circle—typic
 By recording the collimator's apparent position as seen through the transit circle, the observer can detect any change in the instrument's collimation. If the collimator's position drifts over time, it indicates the instrument is shifting.
 
 The collimator's effectiveness depends on its stability. If the collimator itself moves—due to thermal expansion, wind, or seismic activity—it will introduce errors into the collimation check. For this reason, carefully designed observatories position the collimator in a dedicated enclosure far from sources of vibration.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{generated/ch22-level-and-collimator}
+  \caption{Left: A striding level, which straddles the telescope axis to measure any departure from horizontal. The spirit bubble moves proportionally to the axis tilt. Right: A collimating telescope produces parallel light rays that simulate an infinitely distant star, used to verify optical alignment.}
+  \label{fig:level-and-collimator}
+\end{figure}
 
 \section{Azimuth Determination: Orienting the Instrument}
 
@@ -142,6 +177,13 @@ Transit time (corrected) $= 18^{\mathrm{h}}36^{\mathrm{m}}42^{\mathrm{s}} - 0.3^
 Converting to sidereal time: $18^{\mathrm{h}}36^{\mathrm{m}}40.5^{\mathrm{s}} \times 1.00273791 = 18^{\mathrm{h}}37^{\mathrm{m}}04.3^{\mathrm{s}}$ (sidereal)
 
 This is the local sidereal time at transit. The right ascension thus determined is $18^{\mathrm{h}}37^{\mathrm{m}}04.3^{\mathrm{s}}$.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{generated/ch22-meridian-observation}
+  \caption{Sequence showing a transit observation: as a star drifts across the field of view, the observer records the time at which it crosses each vertical wire. The transit time is taken as the mean of all wire-crossing times, eliminating personal reaction time errors.}
+  \label{fig:meridian-observation}
+\end{figure}
 
 Comparing to the cataloged value: $18^{\mathrm{h}}36^{\mathrm{m}}56^{\mathrm{s}}$ (Greenwich Star Catalog 1850), the difference is $+8.3^{\mathrm{s}}$, or approximately $2.1'$ of arc. This residual must be investigated: Is it an error in the catalog, an error in the observation, or an indication of stellar proper motion?
 

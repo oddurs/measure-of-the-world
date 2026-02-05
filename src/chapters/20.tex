@@ -23,6 +23,13 @@ For visible light, the spread between red and blue focal points is roughly $\Del
 
 To compensate, early telescope makers built enormously long instruments—refractors 40 feet or more in focal length, where the separation, while absolute, was small enough relative to the eyepiece's field of view to be tolerable. These unwieldy tubes, supported by rickety scaffolding, were the curse of 17th-century astronomy.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch20-chromatic-aberration}
+  \caption{Chromatic aberration in a simple lens. Different wavelengths focus at different distances because the refractive index varies with wavelength. Blue light bends more than red, causing color fringing in the image.}
+  \label{fig:refractor-chromatic-aberration}
+\end{figure}
+
 \section{The Achromatic Doublet}
 
 The solution was the achromatic lens, a combination of two glass elements of different types that cancel each other's chromatic aberration at two wavelengths. The idea appeared first in patents by Chester Moore Hall in 1730, and was independently developed and commercialized by John Dollond in the 1750s.\footnote{\textcite{Dollond1758} describes his achromatic designs. \textcite{Bennett1999} examines the history of the achromat's development and its impact on telescope construction.}
@@ -57,6 +64,13 @@ Since crown glass has lower dispersion than flint glass, the magnitudes of the d
 
 With an achromatic doublet, telescopes could be shortened dramatically. A 1-meter focal length refractor became practical where previously a 40-foot tube was required. By the 19th century, the achromatic refractor dominated observatory work, and giant refractors—the Great Refractor at Greenwich (28 inches), the Yerkes refractor (40 inches)—became prestige instruments.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch20-achromatic-doublet}
+  \caption{The achromatic doublet. A converging crown glass lens and a diverging flint glass lens are combined. The flint's higher dispersion cancels the crown's chromatic aberration, bringing all colors to a common focus.}
+  \label{fig:refractor-achromatic-doublet}
+\end{figure}
+
 \section{Reflectors: Newton and Beyond}
 
 Newton's reflecting design avoided chromatic aberration entirely: mirrors reflect all wavelengths identically. A parabolic mirror, unlike a lens, needs no color correction. The challenge was not optics but metallurgy and mechanics.
@@ -66,6 +80,13 @@ Newton's reflector used speculum metal, a brittle bronze alloy. Its reflectivity
 For more than a century, reflectors remained curiosities, easier to make in theory than in practice. But in the late 18th century, William Herschel began constructing large reflectors, using improved speculum metal alloys and innovative mounting designs. Herschel's 20-foot reflector (40-inch aperture) and later his 40-foot (48-inch aperture) became the largest telescopes in the world, far exceeding any refractor.
 
 The breakthrough for reflectors came in 1857, when Léon Foucault developed the silver-on-glass mirror: a thin layer of silver deposited on the back of a glass substrate.\footnote{\textcite{Foucault1857} describes the silver-on-glass mirror technique and its advantages. \textcite{Wilson1996} provides comprehensive modern treatment of reflector optics.} Glass is easy to shape and polish; the silver layer is replaced occasionally; and the reflectivity exceeds 90% initially and remains above 80% even after tarnishing. Within decades, silver-on-glass reflectors dominated astronomy, from small amateur instruments to the great observatories.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch20-reflector-design}
+  \caption{Newton's reflecting telescope design. Parallel light enters the tube, reflects off the parabolic primary mirror to a flat secondary mirror, and exits through an eyepiece mounted on the side of the tube. All wavelengths focus at the same point.}
+  \label{fig:reflector-design}
+\end{figure}
 
 \section{Aberrations Beyond Chromatic}
 
@@ -83,6 +104,13 @@ Even a perfectly achromatic lens or a perfect parabolic mirror introduces distor
 
 These aberrations limit the useful field of view and resolution. Modern telescope designs employ complex combinations of elements—three, four, or more lenses or mirror groups—to minimize these errors across a wide field. But there is always a trade-off: wide field of view versus aperture size, cost, and mechanical complexity.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{generated/ch20-optical-aberrations}
+  \caption{Common optical aberrations. Spherical aberration causes edge rays to focus closer than center rays. Coma produces comet-shaped blur for off-axis points. Astigmatism creates two perpendicular focal lines instead of a point.}
+  \label{fig:optical-aberrations}
+\end{figure}
+
 \section{Mountings: Altazimuth and Equatorial}
 
 A telescope points at an object in the sky. As Earth rotates, the object's position changes continuously. The observer must track, adjusting the telescope's pointing to follow the star across the sky. Two mounting systems evolved: the \textbf{altazimuth} mount and the \textbf{equatorial} mount.
@@ -94,6 +122,13 @@ The equatorial mount is oriented so that one axis is parallel to Earth's rotatio
 The advantage of the equatorial mount is profound: a single constant rotation rate produces perfect tracking. For this reason, equatorial mounts dominated observatory design for centuries. The largest refracting telescopes—those requiring precision tracking for extended observations—were mounted equatorially.
 
 An altazimuth mount, by contrast, must continuously adjust both axes in a complex, non-uniform pattern to track. However, altazimuth mounts have two compensating advantages: they can be shorter and more compact than equatorial mounts of comparable aperture, and they place heavy instruments (primary mirrors or objectives) lower and closer to vertical, reducing the mechanical stress on the structure.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.9\textwidth]{generated/ch20-mount-comparison}
+  \caption{Comparison of altazimuth and equatorial mounts. The altazimuth mount rotates about vertical and horizontal axes; both must move to track a star. The equatorial mount's polar axis is aligned with Earth's rotation axis, requiring only a single uniform rotation to track.}
+  \label{fig:mount-comparison}
+\end{figure}
 
 \section{Field Rotation and the Equatorial Advantage}
 
@@ -154,6 +189,13 @@ Mount Wilson reflector & 1908 & Reflector, 60 inches & Modern silver-on-glass mi
 \end{table}
 
 The race to build larger telescopes drove innovation in precision manufacturing, optical theory, and mechanical engineering. Yet the success of larger apertures revealed fundamental limits: atmospheric turbulence (seeing), which scrambles light as it passes through Earth's atmosphere, ultimately limits resolution for ground-based telescopes to roughly an arcsecond—independent of aperture for telescopes larger than about a meter. This realization, emerging in the early 20th century, shifted focus from aperture alone to complementary technologies: adaptive optics, interferometry, and eventually space-based observation.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{generated/ch20-telescope-evolution}
+  \caption{Evolution of telescope aperture from 1668 to 1908. Reflectors (red) could be built larger than refractors (blue), but both types grew steadily as optical and mechanical engineering improved.}
+  \label{fig:telescope-evolution}
+\end{figure}
 
 \section{The Limits of Optical Design}
 

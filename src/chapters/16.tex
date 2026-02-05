@@ -11,6 +11,13 @@ The Greenwich time ball is a sphere roughly one meter in diameter, painted red a
 
 The critical component is the master clock connection. At exactly 1:00 PM (13:00 in 24-hour time), an electrical pulse flows from the Observatory master clock to the electromagnets holding the ball aloft. The magnets release their grip. The ball plummets downward under gravity, falling approximately 3 meters in about 0.3 seconds, visible from a considerable distance.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch16-time-ball-mechanism}
+  \caption{The Greenwich time ball mechanism. At 1:00 PM daily, an electrical signal releases the ball, which drops visibly to ships on the Thames, enabling chronometer synchronization.}
+  \label{fig:time-ball-mechanism}
+\end{figure}
+
 The visual signal travels at the speed of light—approximately $3 \times 10^8 \text{ m/s}$—but arrives at different times to different observers depending on their distance and angle. An observer 100 meters away sees the drop in approximately $100 / (3 \times 10^8) \approx 3 \times 10^{-7}$ seconds—a third of a microsecond, imperceptible to the unaided human reaction time. But observers at larger distances face a different problem. A sailor aboard a ship 500 meters from the Observatory sees the drop with a light-travel delay of about 2 microseconds, still negligible. However, parallax and atmospheric refraction create errors that compound over distance. An observer at a 45-degree angle from directly below the ball, at a distance $r$, sees the ball drop at an apparent time different from the Greenwich signal by approximately
 
 \[
@@ -45,6 +52,13 @@ Observer reaction time & $\pm 0.10$ s & Dominant error source \\
 
 Despite its limitations, the time ball was revolutionary. Before it, a ship at sea had no means of setting a chronometer with any precision better than what could be obtained by astronomical observation. With the time ball, a vessel anchored in Greenwich Reach could synchronize its chronometer to better than a tenth of a second—sufficient for most practical purposes.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{generated/ch16-error-budget-timeball}
+  \caption{Error budget for time ball observation. The observer's reaction time dominates all other error sources, limiting practical accuracy to approximately 0.1 seconds.}
+  \label{fig:error-budget-timeball}
+\end{figure}
+
 \section{Shepherd's Master Clock and Galvanic Distribution}
 
 While the time ball satisfied surface needs, the Observatory itself required a more precise method to distribute time to instruments throughout the grounds. In the 1840s, the astronomer John Pond and later George Airy developed an internal time distribution network centered on the Observatory's master clock—a highly precise pendulum clock maintained under constant temperature and carefully adjusted.
@@ -54,6 +68,13 @@ This master clock drove a galvanic circuit—essentially a series of electromagn
 This system, called the ``galvanic network'' or ``telegraph network,'' had profound implications. Multiple instruments scattered across the Observatory grounds could receive the time signal simultaneously, limited only by the propagation speed of electricity (approximately $2 \times 10^8 \text{ m/s}$ in copper wire, or about 200 kilometers per millisecond). For distances of a few hundred meters across the Observatory, the signal propagated in microseconds—negligible compared to other sources of error.
 
 Moreover, the galvanic network could be extended beyond the Observatory. Wires could be run to the Post Office, to railway stations, to distant observatories. The Greenwich master clock could now distribute time to any location connected by telegraph wire. It was a brief transmutation of an astronomical instrument into a public utility.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch16-galvanic-network}
+  \caption{The Observatory's galvanic network distributed simultaneous time signals from the master clock to instruments across the grounds and beyond to external locations.}
+  \label{fig:galvanic-network}
+\end{figure}
 
 \section{Telegraph Time Distribution}
 
@@ -88,6 +109,13 @@ Latency & $<1$ ms for short distances & $\sim 1$ ms for signal speed \\
 
 However, radio signals suffer from propagation delays and atmospheric effects not present in wired systems. The signal travels at the speed of light, but reflections from the ionosphere can cause multipath propagation—the signal arrives via multiple paths with different delays. At the receiver, several copies of the signal might be present, slightly delayed relative to each other, causing the time mark to be ambiguous.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{generated/ch16-telegraph-vs-radio}
+  \caption{Telegraph versus radio time distribution. Telegraph required physical wire connections; radio broadcasts reach all receivers within range without infrastructure.}
+  \label{fig:telegraph-vs-radio}
+\end{figure}
+
 \section{Modern Time Distribution: GPS and Internet}
 
 The Global Positioning System (GPS), established in the 1980s and fully operational by 1995, represents a complete transformation of time distribution. Each GPS satellite carries atomic clocks synchronized to within nanoseconds. A GPS receiver can determine not only position but also time—accurate to approximately 100 nanoseconds. Thousands of GPS receivers worldwide provide a redundant, distributed, and nearly immune-to-jamming source of time.
@@ -103,6 +131,13 @@ Modern precision timekeeping relies on a hierarchy:
 \end{itemize}
 
 This hierarchical distribution system ensures that even if satellite access is denied (intentionally or through technical failure), backup systems can maintain time synchronization.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch16-time-distribution-hierarchy}
+  \caption{The modern hierarchy of time distribution, from atomic standards at national metrology institutes through satellite and terrestrial networks to end users.}
+  \label{fig:time-distribution-hierarchy}
+\end{figure}
 
 \section{Worked Example: Time Ball Observation Calculation}
 

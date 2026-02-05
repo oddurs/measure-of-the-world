@@ -35,6 +35,13 @@ This is the defining equation for simple harmonic motion, with angular frequency
 
 The power of this formula is its independence from mass and amplitude: all pendula of the same length oscillate with the same period, provided the amplitude is small. This is isochronism—the mechanism that makes clocks possible.\footnote{\textcite{Huygens1673} presents the first rigorous treatment of pendulum motion, including initial attempts to account for large-amplitude corrections.} For small amplitudes, the period is constant. The clock rate does not drift with the driving force.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch21-pendulum-physics}
+  \caption{Pendulum physics. The restoring torque is proportional to displacement for small angles, producing simple harmonic motion with period $T = 2\pi\sqrt{L/g}$, independent of mass and amplitude.}
+  \label{fig:chronometer-pendulum-physics}
+\end{figure}
+
 \section{Circular Error and Large-Amplitude Corrections}
 
 But what if the amplitude is not small? As the pendulum's amplitude increases, the small-angle approximation fails. The true period, to first order in amplitude, is:
@@ -61,6 +68,13 @@ For a pendulum of length $L = 1$ meter, a temperature increase of $\Delta T = 10
 
 The gridiron pendulum, invented by John Harrison and perfected by his successors, uses alternating rods of brass and steel. Steel has a smaller thermal expansion coefficient ($\alpha_{\text{steel}} \approx 12 \times 10^{-6}$) than brass ($\alpha_{\text{brass}} \approx 19 \times 10^{-6}$). When properly proportioned, the brass rods expand downward while the steel rods expand upward, and their net effect on the center of mass cancels to first order in $\Delta T$. The result is a pendulum whose effective length is nearly independent of temperature, preserving isochronism over the operating range.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.55\textwidth]{generated/ch21-gridiron-pendulum}
+  \caption{The gridiron pendulum. Alternating brass and steel rods expand in opposite directions with temperature. When properly proportioned, the bob's position remains constant despite thermal expansion.}
+  \label{fig:gridiron-pendulum}
+\end{figure}
+
 \section{The Balance Wheel and Hairspring}
 
 A pendulum is useless at sea: a ship's motion introduces pendulum misalignment, and the effective gravity varies with the ship's acceleration. The balance wheel—a flywheel equipped with a hairspring—was the solution for marine chronometers. A balance wheel is a circular mass, typically brass or steel, mounted on a shaft with a torsional spring (the hairspring).
@@ -86,6 +100,13 @@ yielding the period:
 The balance wheel's great advantage is isotropy: it oscillates about a vertical axis, independent of the ship's tilt or acceleration. The period depends only on the moment of inertia and the spring constant—both intrinsic properties of the assembly, not affected by orientation. This made the balance wheel the standard for marine chronometers.
 
 Like the pendulum, the balance wheel suffers from amplitude-dependent period changes. Large initial displacements produce longer periods than small displacements. An escapement must supply consistent impulse to maintain constant amplitude and thus isochronism.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{generated/ch21-balance-wheel}
+  \caption{The balance wheel and hairspring. The wheel oscillates against the torsional restoring force of the spiral hairspring. Period $T = 2\pi\sqrt{I/\kappa}$ depends on moment of inertia and spring constant, not orientation.}
+  \label{fig:balance-wheel}
+\end{figure}
 
 \section{Escapement Mechanisms}
 
@@ -125,6 +146,13 @@ The detent escapement uses two key components: a \textbf{balance wheel}, which o
 
 Earnshaw's design simplified Harrison's grasshopper escapement by using a straight-line detent lever with optimized geometry. The manufacturing tolerances were looser than Harrison's design, but when properly constructed, the precision was nearly equivalent. The detent escapement became the standard for all marine chronometers from the early nineteenth century onward. Thousands were manufactured, distributed to ships worldwide, and the global maritime network suddenly had access to the precision timekeeping that only Harrison had possessed decades earlier.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.95\textwidth]{generated/ch21-escapement-types}
+  \caption{Three escapement mechanisms. The verge escapement produces recoil, causing timing variations. The deadbeat escapement eliminates recoil. The detent escapement is nearly frictionless, ideal for marine chronometers.}
+  \label{fig:escapement-types}
+\end{figure}
+
 \section{Maintaining Constant Driving Force: Fusée and Going Barrel}
 
 The energy source for mechanical clocks is typically a mainspring—a coiled ribbon of steel. As the spring unwinds, the torque it exerts decreases. Early in the unwinding, when the spring is tightly coiled, the torque is high; late in the unwinding, when it is nearly extended, the torque is low. This torque variation would produce variable impulse to the escapement, disrupting isochronism.
@@ -132,6 +160,13 @@ The energy source for mechanical clocks is typically a mainspring—a coiled rib
 The solution is the \textbf{fusée}—a cone-shaped pulley attached to the escape wheel mechanism. The mainspring is connected via a cable or chain to the fusée's edge. As the spring unwinds and its torque decreases, the effective lever arm on the fusée increases (the cable wraps around progressively smaller-diameter portions of the cone). This mechanical advantage exactly compensates for the spring's decreasing torque, maintaining nearly constant output torque throughout the spring's discharge.
 
 The fusée is an elegant mechanical solution to the problem of maintaining constant driving force. It requires precision manufacturing and careful assembly, but the principle is straightforward. Combined with a good escapement, the fusée ensures that the impulse given to the oscillator is nearly invariant over time, preserving the oscillator's amplitude and thus its isochronism.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.75\textwidth]{generated/ch21-fusee-mechanism}
+  \caption{The fusée mechanism. A chain connects the mainspring barrel to a cone-shaped pulley. As the spring unwinds and torque decreases, the chain moves to a larger radius on the cone, maintaining constant output torque.}
+  \label{fig:fusee-mechanism}
+\end{figure}
 
 \section{Rating a Marine Chronometer}
 
@@ -196,6 +231,13 @@ Cesium atomic clock & 1965–present & $\pm 0.001$ sec/year & Quantum frequency 
 \end{tabularx}
 \caption{Evolution of timekeeping precision from the Middle Ages to the present. Each technology represents both a quantum leap in physical understanding and a triumph of engineering implementation.}
 \end{table}
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{generated/ch21-clock-precision-evolution}
+  \caption{Evolution of timekeeping precision. From medieval verge escapements losing minutes per day to atomic clocks losing microseconds per year, precision improved by a factor of $10^{10}$ over seven centuries.}
+  \label{fig:clock-precision-evolution}
+\end{figure}
 
 \section{Connecting Pendulum to Navigation}
 

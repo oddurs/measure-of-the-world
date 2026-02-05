@@ -27,6 +27,13 @@ Astronomers prefer sidereal time because it allows them to track the same star a
 
 Greenwich Mean Time was designed for civil use. Sidereal time was designed for astronomy. Both were defined by Earth's rotation, and both were essential to the Observatory's work.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch18-sidereal-vs-solar}
+  \caption{Sidereal versus solar day. A sidereal day (23h 56m 04s) is the time for Earth to rotate once relative to the distant stars. A solar day (24h) requires additional rotation to account for Earth's orbital motion around the Sun.}
+  \label{fig:sidereal-vs-solar}
+\end{figure}
+
 \section{The Variants: UT0, UT1, UT2}
 
 As precision timekeeping improved, astronomers discovered that Earth's rotation was not perfectly uniform. Three sources of variation emerged:
@@ -47,6 +54,13 @@ To account for these effects, different definitions of ``Universal Time'' were c
 
 Modern practice uses UT1 as the reference for Earth rotation. Precise UT1 values are determined by Very Long Baseline Interferometry (VLBI)—observations of distant quasars using radio telescopes separated by thousands of kilometers—and published by the International Earth Rotation Service (IERS) in Paris.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch18-ut-variants}
+  \caption{The hierarchy of Universal Time variants. UT0 is raw observational time; UT1 corrects for polar motion; UT2 adds seasonal smoothing. TAI (atomic time) and UTC are derived from atomic clocks rather than Earth's rotation.}
+  \label{fig:ut-variants}
+\end{figure}
+
 \section{The Atomic Second}
 
 The limitation of any Earth-rotation-based time is fundamental: Earth's rotation is irregular. Tidal friction slows it; polar motion disrupts it; seasonal effects modulate it. By the mid-20th century, scientists wanted a time standard independent of Earth's rotation—one based not on celestial mechanics but on atomic physics.
@@ -59,6 +73,13 @@ The cesium transition is extraordinarily stable. A cesium fountain clock—in wh
 
 The definition is also universal. Any physicist with a cesium atom and an appropriate frequency counter can, in principle, realize the second independently. Time is no longer defined by the rotation of a specific planet observed at a specific location; it is defined by nature itself.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.7\textwidth]{generated/ch18-atomic-second}
+  \caption{The SI second is defined by the hyperfine transition of cesium-133. The frequency of 9,192,631,770 Hz corresponds to the energy difference between the F=3 and F=4 hyperfine states.}
+  \label{fig:atomic-second}
+\end{figure}
+
 \section{Atomic Time: TAI and UTC}
 
 Once the atomic second was defined, a new form of timekeeping became possible: International Atomic Time, or TAI (from the French *Temps Atomique International*). TAI is the weighted average of the output from about 400 cesium and rubidium clocks maintained at national timekeeping laboratories around the world—at observatories, national institutes of metrology, and military facilities.
@@ -68,6 +89,13 @@ TAI advances uniformly, without fluctuation, one second per second. It does not 
 But civil society did not want to abandon the connection between clock time and solar time. Sunrise and sunset, noon and midnight, should remain tied to the actual position of the Sun in the sky. If society adopted pure atomic time, within a few centuries, local solar noon would occur at a markedly different clock time. This would be culturally disorienting and practically problematic for agriculture, transportation, and daily life.
 
 The solution was Coordinated Universal Time (UTC)—atomic time with corrections. UTC runs on TAI seconds, but when the difference between UTC and UT1 accumulates to 0.9 seconds, an extra second is inserted: the leap second. At the designated moment (currently June 30 or December 31), UTC ``pauses''—the clock goes from 23:59:59 to 23:59:60 to 00:00:00 (of the next day)—rather than jumping from 23:59:59 to 00:00:00 in an instantaneous step.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.85\textwidth]{generated/ch18-leap-second}
+  \caption{The leap second mechanism. When the difference between UT1 (Earth rotation) and UTC (atomic time) approaches 0.9 seconds, a leap second is inserted, adding 23:59:60 to the clock sequence.}
+  \label{fig:leap-second}
+\end{figure}
 
 \section{The Leap Second Controversy}
 
@@ -128,3 +156,10 @@ Fifth, Atomic Time—time defined by quantum physics, independent of Earth's rot
 Sixth, Coordinated Universal Time—atomic time corrected with leap seconds to maintain connection to solar time.
 
 Each layer adds a degree of abstraction, moving further from human perception and closer to mathematical and physical principle. The Sun rises and sets. The clock ticks. The cesium atom oscillates. But none of these directly gives us ``time''—that human invention requires all the layers together.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.6\textwidth]{generated/ch18-timekeeping-stack}
+  \caption{The layers of time abstraction, from apparent solar time (human perception) to UTC (atomic time with leap second corrections). Each layer adds precision and removes dependence on local observation.}
+  \label{fig:timekeeping-stack}
+\end{figure}
