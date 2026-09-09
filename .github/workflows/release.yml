@@ -2,8 +2,12 @@ name: Build and Release PDF
 
 on:
   push:
+    branches:
+      - main
     tags:
       - 'v*'
+  pull_request:
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -20,10 +24,28 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y texlive-full
 
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Create figure-generation environment
+        run: |
+          python3 -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+
       - name: Build PDF
         run: make build
 
+      - name: Upload PDF as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: measure-of-the-world-pdf
+          path: build/out/measure-of-the-world.pdf
+
       - name: Upload PDF as release asset
+        if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
           files: build/out/measure-of-the-world.pdf

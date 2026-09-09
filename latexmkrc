@@ -26,5 +26,10 @@ sub makeglossaries {
 
 $recorder = 1;
 
+# Keep log lines unwrapped so warnings can be traced back to source files
+$ENV{'max_print_line'} = 10000;
+$ENV{'error_line'} = 254;
+$ENV{'half_error_line'} = 238;
+
 $clean_ext = "acn acr alg aux bbl bcf blg fls fdb_latexmk glg glo gls idx ilg ind ist log lof lot nav out run.xml snm synctex.gz toc vrb xdy";
 

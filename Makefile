@@ -24,6 +24,11 @@ build: figures
 	else \
 		echo "✗ PDF generation failed"; exit 1; \
 	fi
+	@# Fail on any LaTeX error, even though latexmk -f produced a PDF.
+	@# (nonstopmode lets pdflatex limp past errors; the PDF is not trustworthy.)
+	@if grep -qE "^! |^\./.*:[0-9]+: " build/tmp/main.log 2>/dev/null; then \
+		echo "✗ LaTeX errors found:"; grep -E "^! |^\./.*:[0-9]+: " build/tmp/main.log | head -20; exit 1; \
+	fi
 	@# Report undefined references, excluding intentional forward references to future chapters
 	@if grep -q "LaTeX Warning: Reference .* undefined" build/tmp/main.log 2>/dev/null; then \
 		unresolved=$$(grep "Reference.*undefined" build/tmp/main.log | grep -v "ch:harrison\|ch:escapement\|ch:chronomet" | wc -l); \

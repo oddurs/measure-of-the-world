@@ -18,10 +18,25 @@ sudo apt-get install texlive-full latexmk
 ### Windows
 Download and install [MiKTeX](https://miktex.org/) or [TeX Live](https://www.tug.org/texlive/).
 
+### Python (figure generation)
+
+The 116 figures in `src/figures/generated/` are produced by the scripts in
+`scripts/figures/` and are not committed. The Makefile expects a virtual
+environment at `.venv/`:
+
+```bash
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+```
+
+The figure scripts render text with LaTeX (via SciencePlots), so TeX Live
+must be on `PATH` before `make figures` or `make build` will work.
+
 ## Build System Overview
 
 The project uses:
 
+- **matplotlib + SciencePlots**: Figure generation (`make figures`, run automatically by `make build`)
 - **latexmk**: Automated build tool that handles multiple compilation passes
 - **pdflatex**: PDF generation engine (supports JPG images natively)
 - **biber**: Bibliography processor (part of biblatex ecosystem)
