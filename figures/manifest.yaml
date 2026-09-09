@@ -21,14 +21,14 @@
 ch01-admiral-shovell:
   file: src/figures/photos/ch01-admiral-shovell.jpg
   status: present
-  risk: NEEDS-SOURCING
+  risk: SAFE
   subject: "Admiral Sir Cloudesley Shovell (1650-1707), full-length in armour"
-  creator: "Studio of Michael Dahl"
-  date: "c. 1702"
-  source_url: "https://commons.wikimedia.org/wiki/File:Sir_Clowdisley_Shovell_by_Michael_Dahl.jpg"
+  creator: "Michael Dahl"
+  date: "1702"
+  source_url: "https://commons.wikimedia.org/wiki/File:Admiral_Sir_Cloudesley_Shovell,_1650-1707_RMG_BHC3026.tiff"
   license: "public domain (PD-Art / PD-old-100-expired)"
-  credit_line: "Sir Cloudesley Shovell, studio of Michael Dahl, c. 1702. National Portrait Gallery, London (NPG 797). Public domain."
-  pixels: "2400x3773"
+  credit_line: "Admiral Sir Cloudesley Shovell by Michael Dahl, 1702. National Maritime Museum, Greenwich (BHC3026). Public domain."
+  pixels: "1500x2424"
   recommended_replacement: ch01-shovell-dahl-rmg
   notes: >-
     Identified by exact SHA-1 match. Sourced from the 2009 Dcoetzee bulk upload of
