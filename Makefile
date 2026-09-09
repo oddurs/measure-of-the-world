@@ -5,7 +5,7 @@ PYTHON := .venv/bin/python3
 FIGURE_SCRIPTS := $(wildcard scripts/figures/ch*.py)
 FIGURE_OUTPUTS := $(patsubst scripts/figures/ch%.py,src/figures/generated/.ch%-built,$(FIGURE_SCRIPTS))
 
-.PHONY: build watch clean distclean figures claims refs figure-qa status verify
+.PHONY: build watch clean distclean figures claims refs figure-qa status verify lint derivations
 
 # Generate all figures
 figures: $(FIGURE_OUTPUTS)
@@ -56,8 +56,16 @@ refs:
 figure-qa: figures
 	$(PYTHON) scripts/figures/qa.py
 
+# Mechanical style checks against docs/styleguide.md.
+lint:
+	$(PYTHON) scripts/lint/prose.py
+
+# Recompute the book's worked examples and compare against the printed results.
+derivations:
+	$(PYTHON) scripts/verify/derivations.py
+
 # Everything that can be checked without a human, in the order that fails fastest.
-verify: claims figure-qa
+verify: claims lint derivations figure-qa
 
 # Rebuild docs/status.md from the ledgers.
 status:
