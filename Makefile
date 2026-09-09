@@ -5,7 +5,7 @@ PYTHON := .venv/bin/python3
 FIGURE_SCRIPTS := $(wildcard scripts/figures/ch*.py)
 FIGURE_OUTPUTS := $(patsubst scripts/figures/ch%.py,src/figures/generated/.ch%-built,$(FIGURE_SCRIPTS))
 
-.PHONY: build watch clean distclean figures
+.PHONY: build watch clean distclean figures claims refs figure-qa status verify
 
 # Generate all figures
 figures: $(FIGURE_OUTPUTS)
@@ -36,6 +36,32 @@ build: figures
 	fi
 	@# Fail only on undefined citations
 	@if grep -q "LaTeX Warning: Citation .* undefined" build/tmp/main.log 2>/dev/null; then echo "✗ Undefined citations found."; exit 1; fi
+
+# --- Production engine ------------------------------------------------
+# See docs/plan/production-engine.md. These maintain the ledgers under
+# review/ that track how far each chapter has moved through the gates.
+
+# Re-extract claim ledgers from the manuscript. Safe to re-run: verification
+# status is preserved for any claim whose sentence has not changed.
+claims:
+	$(PYTHON) scripts/claims/extract_claims.py
+
+# Resolve every bibliography entry against Crossref, OpenLibrary and Google
+# Books. Slow (a few minutes) because it rate-limits itself against free
+# endpoints. Pass keys as arguments to check a subset.
+refs:
+	$(PYTHON) scripts/refs/verify_bib.py
+
+# Overlapping labels, effective printed font size, and image sanity.
+figure-qa: figures
+	$(PYTHON) scripts/figures/qa.py
+
+# Everything that can be checked without a human, in the order that fails fastest.
+verify: claims figure-qa
+
+# Rebuild docs/status.md from the ledgers.
+status:
+	$(PYTHON) scripts/status.py
 
 watch:
 	latexmk -pdf -pvc -cd src/main.tex
