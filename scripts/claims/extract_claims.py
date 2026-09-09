@@ -76,6 +76,7 @@ def clean_cell(text: str) -> str:
     text = re.sub(r"\$\\pm\s*([^$]*)\$", r"±\1", text)
     text = re.sub(r"\$([^$]*)\$", r"\1", text)
     text = re.sub(r"\\times", "x", text)
+    text = text.replace(r"\&", "&").replace(r"\%", "%").replace(r"\$", "$")
     text = re.sub(r"\\[a-zA-Z]+\*?(?:\[[^\]]*\])*", " ", text)
     text = re.sub(r"[{}~]", " ", text)
     return re.sub(r"\s+", " ", text).strip()
@@ -100,9 +101,12 @@ def table_claims(raw: str) -> list[tuple[str, str]]:
         rows = []
         for line in re.split(r"\\\\", body):
             line = re.sub(r"\\(?:top|mid|bottom)rule|\\hline|\\cmidrule(?:\([^)]*\))?\{[^}]*\}", " ", line)
-            if "&" not in line:
+            # Split on column separators only. An escaped \& is a literal
+            # ampersand inside a cell ("Troughton \& Simms") and splitting on
+            # it shifts every column to its right.
+            if not re.search(r"(?<!\\)&", line):
                 continue
-            cells = [clean_cell(c) for c in line.split("&")]
+            cells = [clean_cell(c) for c in re.split(r"(?<!\\)&", line)]
             if any(cells):
                 rows.append(cells)
         if len(rows) < 2:
