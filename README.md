@@ -27,35 +27,37 @@ The narrative integrates rigorous mathematics, detailed instrument analysis, bio
 The book progresses through five thematic movements:
 
 **Part I: Foundations (Chapters 1–6)**
-- Establishing Greenwich Observatory (1675)
-- Early meridian instruments and positional astronomy
-- The quest for longitude at sea
+- The 1707 Scilly disaster and the cost of not knowing longitude
+- Founding the Royal Observatory (1675); Flamsteed's instruments and methods
+- The mural arc, the transit method, and the *Historia Coelestis Britannica*
+- Why pendulum clocks could not solve longitude at sea
 
 **Part II: Discovery (Chapters 7–13)**
-- Celestial navigation and the Nautical Almanac
-- Bradley's fundamental discoveries (aberration, nutation)
-- First stellar parallax measurements and the cosmic distance scale
+- The Longitude Act and its incentives
+- The lunar distance method; Harrison's chronometers H1–H5
+- Maskelyne's *Nautical Almanac* and computing by distributed labor
+- Halley, Bradley and the aberration of starlight, and the Airy transit circle
 
 **Part III: Precision (Chapters 14–19)**
-- Spectroscopy and stellar classification
-- The Airy transit circle and systematic error analysis
-- Time standardization and the 1884 Meridian Conference
-- Establishing Greenwich as the world's timekeeping center
+- The Great Equatorial and spectroscopy
+- Mean time and the equation of time; the distribution of time by ball, telegraph, and radio
+- The 1884 Meridian Conference; GMT, UT, and UTC
+- The quadrant and sextant: angle measurement at sea
 
 **Part IV: Transformation (Chapters 20–23)**
-- Photography and automation in astronomy
-- Einstein's relativity verified by Greenwich observations
-- Atomic clocks and the modernization of timekeeping
+- Telescope optics and mountings
+- Clocks and chronometers; the meridian instruments
+- Light pollution and the move to Herstmonceux
 
 **Part V: Legacy (Chapters 24–25)**
-- Contemporary astrometry and space-based observations
-- Reflections on 350 years of precision measurement
+- Heritage, tourism, and symbolism at Greenwich
+- Lessons for science and society from 350 years of precision measurement
 
 ### Appendices A–I: Technical Reference
 
 - **Appendix A**: Mathematical Derivations (spherical trigonometry, aberration formulas, Earth orientation)
 - **Appendix B**: Instrument Specifications (30+ historical instruments with technical details)
-- **Appendix C**: The Astronomers Royal (16 biographical entries, 1675–present)
+- **Appendix C**: The Astronomers Royal (15 biographical entries, 1675–present)
 - **Appendix D**: Visiting Greenwich (practical guide to sites, museums, and resources)
 - **Appendix E**: Glossary (100+ astronomical and timekeeping terms)
 - **Appendix F**: Bibliography & Further Reading (thematic organization; 160+ sources)
@@ -79,17 +81,22 @@ The book progresses through five thematic movements:
 
 - **Perl** (for `latexmk`)
 - **Make** (for build automation)
+- **Python 3.10+** with `matplotlib`, `numpy`, and `SciencePlots` (figure generation; see `requirements.txt`)
 
 ### Installation (macOS)
 
 ```bash
 # Install TeX Live (if needed)
-brew install mactex
+brew install --cask mactex-no-gui
 
 # Navigate to project directory
 cd measure-of-the-world
 
-# Build the PDF
+# Create the Python environment used to generate figures
+python3 -m venv .venv
+.venv/bin/pip install -r requirements.txt
+
+# Build the PDF (generates figures first)
 make build
 
 # View the output
@@ -100,10 +107,11 @@ open build/out/measure-of-the-world.pdf
 
 ```bash
 # Install TeX Live packages
-sudo apt install texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+sudo apt install texlive-full
 
 # Build the document
 cd measure-of-the-world
+python3 -m venv .venv && .venv/bin/pip install -r requirements.txt
 make build
 ```
 
