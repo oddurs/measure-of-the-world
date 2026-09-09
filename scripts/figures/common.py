@@ -108,11 +108,11 @@ def save_figure(fig, name: str, chapter: int):
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
     filename = f"ch{chapter:02d}-{name}.png"
     _drop_duplicate_title(fig, filename)
-    # 400 rather than 300: a figure drawn near its printed size and then
-    # placed at 0.9 of the measure can land a shade under 300 dpi on the
-    # page, which is the printer's floor. The extra resolution is cheap
-    # and removes the need to re-check after every placement change.
-    fig.savefig(OUTPUT_DIR / filename, bbox_inches='tight', dpi=400)
+    # 350 rather than 300: a figure drawn near its printed size and then
+    # placed at 0.9 of the measure can land a shade under 300 dpi on the page,
+    # which is the printer's floor. 350 gives enough headroom to survive a
+    # placement change without pushing the PDF past 30 MB.
+    fig.savefig(OUTPUT_DIR / filename, bbox_inches='tight', dpi=350)
     plt.close(fig)
     print(f"Generated: {filename}")
 
