@@ -21,8 +21,23 @@
 % Author
 \author{Oddur Sigurdsson}
 
-% Publication date (First Edition)
-\date{January 2026}
+% Edition and publication date.
+% \editiondate is the single source of truth: the title page, copyright
+% page, and PDF metadata all read from it. Update it before tagging a release.
+\newcommand{\editionname}{First Edition}
+\newcommand{\editiondate}{2026}
+\date{\editiondate}
+
+% ISBNs. These are assigned per format by the publisher/distributor
+% (Bowker for a purchased ISBN, or the print service's free ISBN).
+% Leave as "not yet assigned" until real numbers are in hand; the
+% copyright page prints these values verbatim.
+\newcommand{\isbnprint}{not yet assigned}
+\newcommand{\isbnebook}{not yet assigned}
+
+% Body font size, as printed on the copyright page. Must match the
+% \documentclass option in main.tex.
+\newcommand{\bodyfontsize}{11pt}
 
 % Book description / tagline
 % Used on title page below the subtitle

@@ -5,10 +5,12 @@
 % by Robert Bringhurst. All spacing, sizing, and layout choices are
 % intentional and can be customized via the variables defined below.
 %
-% Paper: US Letter (8.5" × 11")
-% Font: 12pt serif body text
-% Line length: ~65 characters per line (optimal readability)
-% Margins: Harmonious proportions using baseline grid
+% Trim size: US Trade 6" × 9" (perfect-bound paperback, printed by Mixam)
+% Stock:     6.25" × 9.25" (0.125" bleed on every edge, per Mixam spec)
+% Font:      11pt Latin Modern body text on ~14.3pt leading
+% Text block: 4.5" wide (~68 characters per line), 7.375" tall
+% Margins:   inner 0.875" (gutter), outer 0.625", top 0.75", bottom 0.875"
+%            All content sits well inside Mixam's 0.25" quiet area.
 % =====================================================================
 
 % =====================================================================
@@ -27,18 +29,36 @@
 % Provides better Unicode and accent support compared to Computer Modern
 \usepackage{lmodern}
 
-% Package: geometry - Page layout and margins
-% Provides \geometry{} command to set page dimensions, margins, and spacing
-\usepackage{geometry}
-\geometry{%
-  paper=letterpaper,        % US Letter: 8.5" × 11"
-  inner=1.625in,              % Inner margin (gutter): 1.75 inches
-  outer=1.375in,               % Outer margin: 1.5 inches
-  top=1.375in,                 % Top margin: 1.5 inches
-  bottom=1.625in,             % Bottom margin: 1.75 inches
-  headsep=0.5in,             % Distance from header to body text
-  footskip=0.5in%            % Distance from baseline to footer (reduced for less space above)
-}
+% Page layout: memoir's native stock/trim/margin system.
+% (The geometry package is deliberately NOT used: it fights memoir's
+% layout engine and cannot express a bleed area.)
+%
+% Stock is the physical PDF page; trimmed size is the finished book page.
+% The 0.125" difference on each edge is the bleed Mixam trims away.
+\setstocksize{9.25in}{6.25in}          % PDF page: height, width (with bleed)
+\settrimmedsize{9in}{6in}{*}           % Finished page: height, width
+\settrims{0.125in}{0.125in}            % Trim from top and fore-edge; centers the page
+
+% Horizontal margins: {spine}{fore-edge}{ratio}. Spine margin is larger
+% because perfect binding swallows ~0.25" of the inner margin.
+\setlrmarginsandblock{0.875in}{0.625in}{*}
+
+% Vertical margins: {upper}{lower}{ratio}
+\setulmarginsandblock{0.75in}{0.875in}{*}
+
+% Header/footer: headheight, footskip (baseline of text to baseline of folio)
+% Headers are empty in this design; footskip keeps the page number 0.5"
+% above the trim edge, i.e. outside the 0.25" quiet area.
+\setheadfoot{\onelineskip}{0.375in}
+\setheaderspaces{*}{\onelineskip}{*}
+
+% Apply the layout. Must run after every \set...{} call above.
+\checkandfixthelayout
+
+% PDF page boxes for the printer. Units are PostScript points (1in = 72bp).
+% Stock page = 450 x 666bp. TrimBox = the 6x9 finished page, inset 9bp.
+% Mixam reads the TrimBox to locate the finished page inside the bleed.
+\pdfpageattr{/TrimBox [9 9 441 657] /BleedBox [0 0 450 666]}
 
 % Package: pdflscape - Landscape page orientation for large tables
 % Allows individual pages to be rotated to landscape without rotating entire document
@@ -78,13 +98,14 @@
 % =====================================================================
 
 % Line spread: controls vertical line spacing (leading)
-% 1.25 multiplier on 12pt font = 15pt line spread (1.25 × 12 = 15)
+% memoir's 11pt baseline is 13.6pt; 1.05 x 13.6 = ~14.3pt leading (11/14.3),
+% a conventional book setting for a 4.5" measure.
 % This is the primary control for document density and readability
-\linespread{1.2}\selectfont
+\linespread{1.05}\selectfont
 
-% Paragraph indentation: first-line indent (16pt ≈ 1.3em at 12pt)
+% Paragraph indentation: first-line indent (~1.4em at 11pt)
 % Controls visual paragraph breaks in continuous text
-\setlength{\parindent}{18pt}
+\setlength{\parindent}{15pt}
 
 % Paragraph skip: spacing between paragraphs (set to 0 to use indents only)
 % If you want paragraph breaks instead of indents, set this to 0.5\baselineskip
@@ -135,6 +156,10 @@
 \thinmuskip=3mu plus 1mu minus 1mu       % Fine control for inline spacing
 \medmuskip=4mu plus 2mu minus 2mu        % Medium spacing for relations
 \thickmuskip=5mu plus 5mu minus 5mu      % Thick spacing for delimiters
+
+% Angular-measure marks used inline in math: 5.3\arcsec, 2\arcmin
+\providecommand{\arcsec}{^{\prime\prime}}
+\providecommand{\arcmin}{^{\prime}}
 
 % Package: gensymb - Generic symbols (degree, micro, ohm, etc.)
 % Provides \degree, \micro, \ohm, \celsius symbols
@@ -259,8 +284,8 @@
 % =====================================================================
 
 % Package: imakeidx - Enhanced index generation with two-column layout
-\usepackage[intoc]{imakeidx}
-\makeindex[columns=2, title=Index]
+\usepackage{imakeidx}
+\makeindex[intoc, columns=2, title=Index]
 
 % Index formatting: use chapter-level heading, no clear page before
 \indexsetup{level=\chapter*, toclevel=chapter, noclearpage}
@@ -299,23 +324,23 @@
 % =====================================================================
 % SECTION 12: HEADING HIERARCHY AND FONTS
 % =====================================================================
-% Typographic scale: 1.2× (12pt → 14.4pt → 17.28pt)
+% Typographic scale: roughly 1.2x steps from the 11pt body
 % This creates visual hierarchy through size while maintaining harmony
 %
 % Hierarchy:
-%   Chapter:        18pt (small caps, dominant)
-%   Section:        14pt (small caps, primary)
-%   Subsection:     12pt (italic, secondary)
-%   Subsubsection:  12pt (italic, tertiary)
-%   Body text:      12pt (roman)
+%   Chapter:        17pt (small caps, dominant)
+%   Section:        13pt (small caps, primary)
+%   Subsection:     11pt (italic, secondary)
+%   Subsubsection:  11pt (italic, tertiary)
+%   Body text:      11pt (roman)
 
 % CHAPTER HEADING
-% \chapnamefont controls "Chapter X" label (14pt italic dark gray, like H2)
-% \chapnumfont controls the chapter number (14pt italic dark gray)
+% \chapnamefont controls "Chapter X" label (13pt italic dark gray, like H2)
+% \chapnumfont controls the chapter number (13pt italic dark gray)
 % \chaptitlefont controls "Chapter Title" text (small caps, dominant size, black)
-\renewcommand{\chapnamefont}{\normalfont\itshape\fontsize{14}{16.8}\selectfont\color[HTML]{333333}}
-\renewcommand{\chapnumfont}{\normalfont\itshape\fontsize{14}{16.8}\selectfont\color[HTML]{333333}}
-\renewcommand{\chaptitlefont}{\normalfont\scshape\fontsize{18}{21.6}\selectfont\color{black}}
+\renewcommand{\chapnamefont}{\normalfont\itshape\fontsize{13}{15.6}\selectfont\color[HTML]{333333}}
+\renewcommand{\chapnumfont}{\normalfont\itshape\fontsize{13}{15.6}\selectfont\color[HTML]{333333}}
+\renewcommand{\chaptitlefont}{\normalfont\scshape\fontsize{17}{20.4}\selectfont\color{black}}
 
 % Chapter spacing:
 % \beforechapskip = space before chapter heading (relative to text)
@@ -326,9 +351,9 @@
 \setlength{\midchapskip}{6pt}                     % Tight spacing between label and title
 
 % SECTION HEADING
-% 14pt small caps - primary hierarchical level below chapter
+% 13pt small caps - primary hierarchical level below chapter
 % \setsecheadstyle sets font and sizing for \section{}
-\setsecheadstyle{\normalfont\scshape\fontsize{14}{16.8}\selectfont}
+\setsecheadstyle{\normalfont\scshape\fontsize{13}{15.6}\selectfont}
 
 % Section spacing:
 % \setbeforesecskip = space before section heading (can be negative)
@@ -337,15 +362,15 @@
 \setaftersecskip{0.75\baselineskip}
 
 % SUBSECTION HEADING
-% 12pt italic - secondary hierarchical level (same size as body)
+% 11pt italic - secondary hierarchical level (same size as body)
 % Italic creates visual distinction without increasing size
-\setsubsecheadstyle{\normalfont\itshape\fontsize{12}{14.4}\selectfont}
+\setsubsecheadstyle{\normalfont\itshape\fontsize{11}{13.2}\selectfont}
 \setbeforesubsecskip{1.1\baselineskip}
 \setaftersubsecskip{0.6\baselineskip}
 
 % SUBSUBSECTION HEADING
-% 12pt italic - tertiary level, minimal visual emphasis
-\setsubsubsecheadstyle{\normalfont\itshape\fontsize{12}{14.4}\selectfont}
+% 11pt italic - tertiary level, minimal visual emphasis
+\setsubsubsecheadstyle{\normalfont\itshape\fontsize{11}{13.2}\selectfont}
 
 % =====================================================================
 % SECTION 13: PAGE STYLES, HEADERS, AND FOOTERS
@@ -418,7 +443,6 @@
   itemsep=0.25\baselineskip,
   parsep=0pt,
   leftmargin=1em,
-  font=\fontsize{11}{13}\selectfont,
   label=\color{listdecoration}\scalebox{0.75}{\textbullet}%
 }
 
@@ -457,8 +481,8 @@
 \setlength{\cmidrulewidth}{0.05em}
 
 % --------- TABLE TEXT SIZING ---------
-% Body text size for table content (10pt for compact tables)
-\newcommand{\tabletextsize}{\fontsize{10}{12}\selectfont}
+% Body text size for table content (9pt for compact tables)
+\newcommand{\tabletextsize}{\fontsize{9}{11}\selectfont}
 
 % --------- TABLE SPACING ---------
 % Before/after table spacing (relative to baseline)
@@ -490,8 +514,8 @@
 % --------- TABLE CAPTION STYLING ---------
 % Captions are set in small font (slightly smaller than body text)
 % with proportional line height matching body text's 1.25× multiplier
-% Body: 12pt with 15pt leading (1.25×) → Caption: 10pt with 12.5pt leading
-\newcommand{\captionformat}{\fontsize{10}{12.5}\selectfont}
+% Body: 11pt with ~14.3pt leading → Caption: 9pt with 11.5pt leading
+\newcommand{\captionformat}{\fontsize{9}{11.5}\selectfont}
 \captionsetup{font={small},labelfont=small,justification=centering}
 \DeclareCaptionFormat{default}{\captionformat #1#2#3}
 
@@ -529,17 +553,17 @@
 % Controls the appearance of headers, footers, and running heads
 
 % --------- HEADER TEXT STYLING ---------
-% 11pt italic for headers (slightly smaller than body text)
+% 10pt italic for headers (slightly smaller than body text)
 % Used with \versoheader{} and \rectoheader{} commands
-\newcommand{\headerfont}{\normalfont\itshape\fontsize{11}{13.2}\selectfont}
+\newcommand{\headerfont}{\normalfont\itshape\fontsize{10}{12}\selectfont}
 
 % --------- FOOTER TEXT STYLING ---------
-% 10pt for footer content (minimal information, needs small size)
-\newcommand{\footerfont}{\normalfont\fontsize{10}{12}\selectfont}
+% 9pt for footer content (minimal information, needs small size)
+\newcommand{\footerfont}{\normalfont\fontsize{9}{11}\selectfont}
 
 % --------- PAGE NUMBER STYLING ---------
-% 11pt for page numbers (same size as headers for consistency)
-\newcommand{\pagenumberfont}{\normalfont\fontsize{11}{13.2}\selectfont}
+% 10pt for page numbers (same size as headers for consistency)
+\newcommand{\pagenumberfont}{\normalfont\fontsize{10}{12}\selectfont}
 \newcommand{\pagenumberformat}{\pagenumberfont}
 
 % --------- MARGINS AND SPACING ---------
@@ -576,11 +600,12 @@
 % Smaller font size for margin notes (9pt)
 \newcommand{\marginnotesize}{\fontsize{9}{11}\selectfont}
 
-% Maximum width of margin note text (1.25 inches fits in outer margin)
-\newcommand{\marginnotewidth}{1.25in}
+% Maximum width of margin note text. The 6x9 outer margin is only 0.625",
+% so margin notes are effectively unavailable in the print layout.
+\newcommand{\marginnotewidth}{0.4in}
 
 % Horizontal gap between body text and margin note
-\newcommand{\marginnotesep}{0.25in}
+\newcommand{\marginnotesep}{0.125in}
 
 % =====================================================================
 % SECTION 18: FOOTNOTE STYLING
@@ -614,7 +639,7 @@
 
 % --------- FOOTNOTE FONT SIZING ---------
 % Font size for footnote text (smaller than body, but readable)
-\renewcommand{\footnotesize}{\fontsize{10}{12.5}\selectfont}
+\renewcommand{\footnotesize}{\fontsize{9}{11.5}\selectfont}
 
 % --------- FOOTNOTE MARKER SPACING ---------
 % Space after superscript footnote number before content
@@ -628,21 +653,16 @@
 % Control space above footer to create breathing room
 
 % --------- FOOTER GAP CONFIGURATION ---------
-% Distance from body text baseline to footer line (higher = more space)
-% Currently set in \geometry{} command (Section 1)
-% Default: 0.5in (increased from 0.75in for compact spacing)
-\newcommand{\customfootskip}{0.5in}
-
-% Note: To adjust, modify the geometry footskip parameter in Section 1
-% OR change \customfootskip above and apply in geometry settings
+% Distance from body text baseline to the page-number baseline is set by
+% \setheadfoot{}{} in Section 1 (currently 0.375in). Adjust it there.
 % =====================================================================
 % All document-wide settings are now complete. The document class,
 % typography, spacing, colors, and styling are now ready for use.
 % Modify the variables above to globally adjust appearance.
 %
 % Key customization points:
-% - Line spacing:         \linespread value (line 43)
-% - Margins:              \geometry settings (line 20-25)
+% - Line spacing:         \linespread value (Section 3)
+% - Trim size / margins:  memoir layout commands (Section 1)
 % - Heading sizes:        Font sizes in Section 12
 % - Table spacing:        Section 15 variables
 % - Math spacing:         Section 4 (abovedisplayskip, belowdisplayskip)

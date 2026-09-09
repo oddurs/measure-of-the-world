@@ -20,9 +20,10 @@
 %
 % =====================================================================
 
-% Document class: memoir (12pt body text, two-sided for print)
-% Memoir provides extensive control over book typography and layout
-\documentclass[12pt,twoside]{memoir}
+% Document class: memoir (11pt body text, two-sided, 6x9 trim set in preamble)
+% Memoir provides extensive control over book typography and layout.
+% If you change the point size here, update \bodyfontsize in metadata.tex.
+\documentclass[11pt,twoside,openright]{memoir}
 
 % ---------------------------------------------------------------------
 % CONFIGURATION FILES
@@ -57,18 +58,18 @@
 \glsaddall
 
 % ---------------------------------------------------------------------
-% TITLE PAGE (before frontmatter to avoid blank pages)
-% ---------------------------------------------------------------------
-\input{frontmatter/titlepage}
-
-% ---------------------------------------------------------------------
 % FRONTMATTER
 % ---------------------------------------------------------------------
 % Roman numeral page numbers (i, ii, iii...)
 % Includes all preliminary material before Chapter 1
+%
+% Print convention: title page on a recto (page i), copyright on its
+% verso (page ii), dedication on the next recto (page iii).
 
 \frontmatter
-\input{frontmatter/copyright}     % Copyright, license, ISBN, publisher info
+\input{frontmatter/titlepage}         % Title page (recto); ends with \clearpage
+\input{frontmatter/copyright}         % Copyright, license, ISBN, publisher info (verso)
+\cleardoublepage
 
 \input{frontmatter/dedication}        % Dedication page
 \cleardoublepage
@@ -91,49 +92,49 @@
 \mainmatter
 
 % --- Part I: Foundations (Chapters 1-6) ---
-% Establishing Greenwich Observatory, early instruments, the longitude problem
+% Founding the Observatory, Flamsteed's instruments and catalogue, the clock problem
 \input{parts/part1}
 \input{chapters/01}  % The Deadly Ignorance of Position
-\input{chapters/02}  % The King's Observatory
-\input{chapters/03}  % Flamsteed's Foundation
-\input{chapters/04}  % Measuring the Meridian
-\input{chapters/05}  % The Geometry of the Heavens
-\input{chapters/06}  % Instruments of Precision
+\input{chapters/02}  % The Founding of the Royal Observatory
+\input{chapters/03}  % Instruments and Methods of the Observatory
+\input{chapters/04}  % The Mural Arc and the Method of Transits
+\input{chapters/05}  % Building the Historia Coelestis Britannica
+\input{chapters/06}  % The Clock Problem, Part One: Pendulum Limitations
 
 % --- Part II: Discovery (Chapters 7-13) ---
-% Longitude solutions, Bradley's discoveries, first parallax measurements
+% The Longitude Act, lunar distances, Harrison, the Nautical Almanac, Halley, Bradley, Airy
 \input{parts/part2}
-\input{chapters/07}  % The Longitude Act
-\input{chapters/08}  % Bradley and the Aberration of Light
-\input{chapters/09}  % Nutation and the Wobbling Earth
-\input{chapters/10}  % The Nautical Almanac
-\input{chapters/11}  % Harrison's Timekeepers
-\input{chapters/12}  % Testing the Chronometer
-\input{chapters/13}  % The First Stellar Parallax
+\input{chapters/07}  % The Longitude Act and Its Incentives
+\input{chapters/08}  % The Lunar Distance Method
+\input{chapters/09}  % Harrison's Chronometers: H1 through H5
+\input{chapters/10}  % Maskelyne's Nautical Almanac: Computing Longitude by Distributed Labor
+\input{chapters/11}  % Edmond Halley's Broader Canvas
+\input{chapters/12}  % Bradley and the Aberration of Starlight
+\input{chapters/13}  % The Airy Transit Circle
 
 % --- Part III: Precision (Chapters 14-19) ---
-% Spectroscopy, systematic error analysis, time standardization
+% Spectroscopy, mean time, time distribution, the 1884 conference, the timekeeping stack, sextants
 \input{parts/part3}
-\input{chapters/14}  % Airy's Transit Circle
-\input{chapters/15}  % Spectroscopy and Stellar Classification
-\input{chapters/16}  % The Greenwich Time Service
-\input{chapters/17}  % Error Analysis and Reduction
-\input{chapters/18}  % The 1884 Meridian Conference
-\input{chapters/19}  % Greenwich Mean Time
+\input{chapters/14}  % The Great Equatorial and Spectroscopy
+\input{chapters/15}  % Mean Time and the Equation of Time
+\input{chapters/16}  % The Distribution of Time
+\input{chapters/17}  % The 1884 Meridian Conference
+\input{chapters/18}  % GMT, UT, UTC, and the Modern Timekeeping Stack
+\input{chapters/19}  % The Quadrant and Sextant: Angle Measurement at Sea
 
 % --- Part IV: Transformation (Chapters 20-23) ---
-% Photography, relativity, atomic timekeeping
+% Telescope optics, clocks and chronometers, meridian instruments, the move to Herstmonceux
 \input{parts/part4}
-\input{chapters/20}  % Photography and Automation
-\input{chapters/21}  % Einstein and the Eclipse
-\input{chapters/22}  % Atomic Clocks
-\input{chapters/23}  % The Move to Herstmonceux
+\input{chapters/20}  % Telescope Optics and Mountings
+\input{chapters/21}  % Clocks and Chronometers
+\input{chapters/22}  % The Meridian Instruments
+\input{chapters/23}  % Light Pollution and the Move to Herstmonceux
 
 % --- Part V: Legacy (Chapters 24-25) ---
-% Modern astrometry, reflections on 350 years
+% Heritage and symbolism, lessons for science and society
 \input{parts/part5}
-\input{chapters/24}  % Space-Based Astrometry
-\input{chapters/25}  % The Measure of the World
+\input{chapters/24}  % Heritage, Tourism, and Symbolism
+\input{chapters/25}  % Lessons for Science and Society
 
 % ---------------------------------------------------------------------
 % APPENDICES

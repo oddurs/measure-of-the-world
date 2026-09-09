@@ -39,8 +39,10 @@
 \vspace*{\fill}
 
 % Edition and date (bottom-left corner)
-{\normalfont\fontsize{11}{13.2}\selectfont First Edition\enspace$\cdot$\enspace January 2026\par}
+{\normalfont\fontsize{11}{13.2}\selectfont \editionname\enspace$\cdot$\enspace\editiondate\par}
 
 \end{flushleft}
 
-\cleardoublepage
+% Single \clearpage (not \cleardoublepage): the copyright page must fall on
+% this page's verso, as in every printed book.
+\clearpage
