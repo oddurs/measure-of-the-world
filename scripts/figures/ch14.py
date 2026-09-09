@@ -308,7 +308,7 @@ def emission_absorption():
     ax.set_xlim(400, 700)
     ax.set_ylabel('Continuous', fontsize=9)
     ax.text(350, 0.5, '(hot solid)', fontsize=8, ha='right', va='center',
-            transform=ax.get_yaxis_transform())
+            transform=ax.get_xaxis_transform())
     ax.set_yticks([])
 
     # Emission spectrum (hot gas)
@@ -321,7 +321,7 @@ def emission_absorption():
     ax.set_xlim(400, 700)
     ax.set_ylabel('Emission', fontsize=9)
     ax.text(350, 0.5, '(hot gas)', fontsize=8, ha='right', va='center',
-            transform=ax.get_yaxis_transform())
+            transform=ax.get_xaxis_transform())
     ax.set_yticks([])
 
     # Absorption spectrum (cool gas in front of hot source)
@@ -335,7 +335,7 @@ def emission_absorption():
     ax.set_xlim(400, 700)
     ax.set_ylabel('Absorption', fontsize=9)
     ax.text(350, 0.5, '(cool gas)', fontsize=8, ha='right', va='center',
-            transform=ax.get_yaxis_transform())
+            transform=ax.get_xaxis_transform())
     ax.set_yticks([])
     ax.set_xlabel('Wavelength (nm)', fontsize=9)
 

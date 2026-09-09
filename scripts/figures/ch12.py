@@ -261,8 +261,9 @@ def stellar_effects_comparison():
     ax.grid(True, axis='y', alpha=0.3)
 
     # Annotation
-    ax.text(0.5, -4, 'Bradley detected aberration and nutation,\nbut parallax remained below threshold',
-            fontsize=9, ha='center', transform=ax.transAxes,
+    # y is in axes fraction: just below the category labels
+    ax.text(0.5, -0.30, 'Bradley detected aberration and nutation,\nbut parallax remained below threshold',
+            fontsize=9, ha='center', va='top', transform=ax.transAxes,
             bbox=dict(boxstyle='round,pad=0.3', facecolor='white',
                       edgecolor='#cccccc'))
 
