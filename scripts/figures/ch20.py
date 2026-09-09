@@ -79,14 +79,20 @@ def achromatic_doublet():
     ax.fill([crown_x - 0.15, crown_x + 0.1, crown_x + 0.1, crown_x - 0.15],
             [-lens_height/2, -lens_height/2 * 0.9, lens_height/2 * 0.9, lens_height/2],
             color='#87CEEB', alpha=0.7, edgecolor='black', linewidth=1)
-    ax.text(crown_x, -1.2, 'Crown\n(converging)', fontsize=7, ha='center', color='#4682B4')
+    # The two elements are 0.4 units apart; their captions are three times
+    # that wide, so each is set off to its own side with a leader.
+    ax.annotate('Crown\n(converging)', xy=(crown_x, -0.85), xytext=(0.9, -1.25),
+                fontsize=7, ha='center', va='top', color='#4682B4',
+                arrowprops=dict(arrowstyle='-', color='#4682B4', lw=0.5))
 
     # Flint lens (diverging)
     flint_x = 2.2
     ax.fill([flint_x - 0.1, flint_x + 0.15, flint_x + 0.15, flint_x - 0.1],
             [-lens_height/2 * 0.9, -lens_height/2, lens_height/2, lens_height/2 * 0.9],
             color='#DDA0DD', alpha=0.7, edgecolor='black', linewidth=1)
-    ax.text(flint_x, -1.2, 'Flint\n(diverging)', fontsize=7, ha='center', color='#8B008B')
+    ax.annotate('Flint\n(diverging)', xy=(flint_x, -0.85), xytext=(3.1, -1.25),
+                fontsize=7, ha='center', va='top', color='#8B008B',
+                arrowprops=dict(arrowstyle='-', color='#8B008B', lw=0.5))
 
     # Incoming parallel rays
     for y in [-0.5, 0, 0.5]:
@@ -107,9 +113,9 @@ def achromatic_doublet():
     ax.text(focus_x, 0.4, 'Common\nfocus', fontsize=8, ha='center', fontweight='bold')
 
     # Explanation
-    ax.text(3.5, -1.5, 'Crown dispersion + Flint dispersion = 0\n'
+    ax.text(3.0, 1.72, 'Crown dispersion + Flint dispersion = 0\n'
             'Net power = converging (positive)',
-            fontsize=8, ha='center',
+            fontsize=8, ha='center', va='top',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='white',
                       edgecolor='#cccccc'))
 
@@ -124,7 +130,7 @@ def achromatic_doublet():
 def reflector_design():
     """Newton's reflecting telescope design."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(7.8, 4.9))
 
     # Tube
     tube_length = 5
@@ -200,7 +206,7 @@ def reflector_design():
 def optical_aberrations():
     """Common optical aberrations: spherical, coma, astigmatism."""
     setup_style()
-    fig, axes = plt.subplots(1, 3, figsize=(9, 3))
+    fig, axes = plt.subplots(1, 3, figsize=(7.1, 2.4))
 
     # Spherical aberration
     ax = axes[0]
@@ -253,7 +259,8 @@ def optical_aberrations():
 
     # Sagittal focus
     ax.plot([1.8, 1.8], [0.3, 0.7], 'r-', linewidth=3)
-    ax.text(1.8, 0.2, 'Sagittal\nfocus', fontsize=6, ha='center', color='red')
+    ax.text(1.95, 0.5, 'Sagittal\nfocus', fontsize=6, ha='left', va='center',
+            color='red')
 
     # Best focus (circle of least confusion)
     circle = Circle((1.5, 0.5), 0.15, fill=False, edgecolor='green', linewidth=2)
@@ -271,7 +278,7 @@ def optical_aberrations():
 def mount_comparison():
     """Comparison of altazimuth and equatorial mounts."""
     setup_style()
-    fig, axes = plt.subplots(1, 2, figsize=(8, 5))
+    fig, axes = plt.subplots(1, 2, figsize=(7.1, 4.4))
 
     # Altazimuth mount
     ax = axes[0]
@@ -378,7 +385,7 @@ def mount_comparison():
 def telescope_evolution():
     """Evolution of telescope aperture 1668-1900."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(6.1, 3.8))
 
     data = [
         (1668, 1, 'Newton', 'Reflector'),
@@ -401,15 +408,18 @@ def telescope_evolution():
 
     ax.scatter(years, apertures, c=colors, s=100, zorder=5)
 
+    # Lick and Yerkes are nine years and four inches apart, so Lick's label
+    # goes under its marker.
+    below = {'Lick'}
     for year, ap, name, typ in data:
-        offset = 3 if ap < 50 else -5
+        offset = -5 if (ap >= 50 or name in below) else 3
         ax.annotate(f'{name}\n({ap}")',
                     xy=(year, ap), xytext=(year, ap + offset),
                     fontsize=7, ha='center', va='bottom' if offset > 0 else 'top')
 
     ax.set_xlabel('Year', fontsize=10)
     ax.set_ylabel('Aperture (inches)', fontsize=10)
-    ax.set_xlim(1650, 1920)
+    ax.set_xlim(1640, 1925)
     ax.set_ylim(0, 80)
     ax.grid(True, alpha=0.3)
 

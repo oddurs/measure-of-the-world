@@ -11,7 +11,7 @@ import numpy as np
 def precision_evolution():
     """Evolution of positional precision from ancient to modern times."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(9, 5))
+    fig, ax = plt.subplots(figsize=(6.8, 3.8))
 
     # Data: (year, precision in arcseconds, method, color)
     data = [
@@ -60,7 +60,7 @@ def precision_evolution():
 def patronage_models():
     """Different models of scientific patronage through history."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(7.2, 4.5))
 
     # Timeline base
     ax.axhline(2, color='black', linewidth=2, xmin=0.05, xmax=0.95)
@@ -115,7 +115,7 @@ def patronage_models():
 def standards_infrastructure():
     """The invisible infrastructure of global standards."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 6))
+    fig, ax = plt.subplots(figsize=(7.5, 5.6))
 
     # Layers of standards (pyramid)
     layers = [
@@ -171,7 +171,7 @@ def standards_infrastructure():
 def international_cooperation():
     """Timeline of international scientific cooperation."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(9, 4))
+    fig, ax = plt.subplots(figsize=(6.4, 2.8))
 
     # Timeline
     ax.axhline(1.5, color='black', linewidth=2, xmin=0.03, xmax=0.97)

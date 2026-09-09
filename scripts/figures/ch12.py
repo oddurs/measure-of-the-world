@@ -22,7 +22,8 @@ def aberration_geometry():
     earth = Circle((earth_x, earth_y), 0.3, facecolor='#1f77b4',
                    edgecolor='black', linewidth=1.5)
     ax.add_patch(earth)
-    ax.text(earth_x, earth_y - 0.5, 'Earth', fontsize=9, ha='center')
+    ax.text(earth_x - 0.35, earth_y - 0.45, 'Earth', fontsize=9, ha='right',
+            va='top')
 
     # Earth's velocity vector (horizontal)
     ax.annotate('', xy=(1.5, 0), xytext=(0.4, 0),
@@ -34,7 +35,7 @@ def aberration_geometry():
     star_x, star_y = 0, 4
     ax.plot(star_x, star_y, '*', color='gold', markersize=15,
             markeredgecolor='black', markeredgewidth=0.5)
-    ax.text(star_x + 0.3, star_y, 'True star\nposition', fontsize=8, ha='left')
+    ax.text(star_x - 0.3, star_y, 'True star\nposition', fontsize=8, ha='right')
 
     # True light ray (vertical)
     ax.annotate('', xy=(0, 0.4), xytext=(0, 3.5),
@@ -185,7 +186,7 @@ def bradley_observations():
     Plots the sinusoidal variation due to aberration with the fitted model.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 4))
+    fig, ax = plt.subplots(figsize=(6.9, 4))
 
     # Time axis (months from Jan 1726)
     months = np.array([0, 2, 5, 8, 11, 14, 17])  # Selected observation epochs
@@ -237,7 +238,7 @@ def stellar_effects_comparison():
     Bar chart showing the relative sizes of these effects.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(5.8, 3.9))
 
     effects = ['Parallax\n(nearby star)', 'Aberration', 'Nutation']
     amplitudes = [0.3, 20.5, 9.2]  # arcseconds
@@ -289,7 +290,8 @@ def nutation_diagram():
                               facecolor='none', edgecolor='#1f77b4',
                               linewidth=1, linestyle='--', alpha=0.5)
     ax.add_patch(bulge)
-    ax.text(1.3, 0.6, 'Equatorial\nbulge', fontsize=7, ha='center', alpha=0.7)
+    ax.text(1.35, -0.62, 'Equatorial\nbulge', fontsize=7, ha='center', va='top',
+            alpha=0.7)
 
     # Mean rotation axis
     ax.annotate('', xy=(0, 2.5), xytext=(0, -1.5),
@@ -354,7 +356,7 @@ def zenith_sector():
     pivot = Circle((-0.5, 3), 0.15, facecolor='gray', edgecolor='black',
                    linewidth=2)
     ax.add_patch(pivot)
-    ax.text(-0.3, 3.3, 'Pivot', fontsize=8, ha='left')
+    ax.text(-0.75, 2.95, 'Pivot', fontsize=8, ha='right', va='center')
 
     # Telescope tube (can pivot slightly)
     angle = 5  # degrees from vertical
@@ -371,7 +373,7 @@ def zenith_sector():
     ax.plot([-0.5, -0.5 - 0.3*np.sin(np.radians(angle))],
             [3, 3 + 0.3*np.cos(np.radians(angle))],
             color='#8B4513', linewidth=8, solid_capstyle='round')
-    ax.text(-0.3, 3.4, 'Objective', fontsize=8, ha='left')
+    ax.text(-0.3, 3.45, 'Objective', fontsize=8, ha='left')
 
     # Graduated arc
     arc_radius = 3.5
@@ -419,7 +421,7 @@ def speed_of_light():
     Shows the relationship between aberration angle, Earth velocity, and c.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(5.5, 3.7))
 
     # Flow diagram
     boxes = [

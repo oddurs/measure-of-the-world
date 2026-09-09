@@ -14,7 +14,7 @@ def precision_comparison():
     an order of magnitude in precision.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(5.6, 3.7))
 
     # Historical catalog precision data (arc-seconds)
     catalogs = [
@@ -73,7 +73,7 @@ def mural_arc_principle():
     (from transit time) and declination (from altitude reading).
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(5, 5))
+    fig, ax = plt.subplots(figsize=(4.9, 5.8))
 
     # Draw the mural arc (quarter circle)
     arc_radius = 1.0
@@ -138,19 +138,20 @@ def mural_arc_principle():
                 arrowprops=dict(arrowstyle='<->', color='#555555', lw=1))
     ax.text(0.5, -0.32, 'N — S', fontsize=8, ha='center', color='#555555')
 
-    # Clock annotation
-    ax.text(0.7, 0.95, 'Transit time from\npendulum clock\n→ Right Ascension',
+    # Read-out annotations, placed below the diagram: the quadrant itself is
+    # fully occupied by the arc, the sighting arm and the degree labels.
+    ax.text(-0.28, -0.48, 'Transit time from\npendulum clock\n→ Right Ascension',
             fontsize=8, ha='left', va='top',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='#f0f0f0',
                       edgecolor='#cccccc'))
 
-    ax.text(0.7, 0.55, 'Altitude from\ngraduated scale\n→ Declination',
+    ax.text(0.52, -0.48, 'Altitude from\ngraduated scale\n→ Declination',
             fontsize=8, ha='left', va='top',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='#f0f0f0',
                       edgecolor='#cccccc'))
 
     ax.set_xlim(-0.3, 1.5)
-    ax.set_ylim(-0.45, 1.25)
+    ax.set_ylim(-0.88, 1.25)
     ax.set_aspect('equal')
     ax.axis('off')
 

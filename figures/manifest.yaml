@@ -1,0 +1,1054 @@
+# Image licensing manifest — "The Measure of the World"
+#
+# The book is licensed CC BY 4.0, which permits commercial redistribution and
+# adaptation. Every image included must therefore be compatible with COMMERCIAL
+# reuse. CC BY-NC, CC BY-ND, CC BY-NC-SA and "non-commercial research only"
+# sources are NOT usable without a separate paid licence.
+#
+# See IMAGES.md for the schema, the licence rule, and the safe/unsafe archives.
+#
+# status: present | wanted | rejected
+# risk:   SAFE | NEEDS-SOURCING | REPLACE   (omitted for wanted/rejected)
+#
+# Optional field `recommended_replacement` names a better free file where one
+# exists. Every source_url below was fetched and its licence read; the six
+# present files were identified by SHA-1 hash match against Wikimedia Commons.
+
+# =============================================================================
+# PART 1 — THE SIX EXISTING PHOTOS
+# =============================================================================
+
+ch01-admiral-shovell:
+  file: src/figures/photos/ch01-admiral-shovell.jpg
+  status: present
+  risk: NEEDS-SOURCING
+  subject: "Admiral Sir Cloudesley Shovell (1650-1707), full-length in armour"
+  creator: "Studio of Michael Dahl"
+  date: "c. 1702"
+  source_url: "https://commons.wikimedia.org/wiki/File:Sir_Clowdisley_Shovell_by_Michael_Dahl.jpg"
+  license: "public domain (PD-Art / PD-old-100-expired)"
+  credit_line: "Sir Cloudesley Shovell, studio of Michael Dahl, c. 1702. National Portrait Gallery, London (NPG 797). Public domain."
+  pixels: "2400x3773"
+  recommended_replacement: ch01-shovell-dahl-rmg
+  notes: >-
+    Identified by exact SHA-1 match. Sourced from the 2009 Dcoetzee bulk upload of
+    National Portrait Gallery images; the Commons page sits in
+    "Category:Items with copyright claims" and carries the standard notice that a
+    third party asserts sweat-of-brow copyright over the reproduction. Sound in
+    the US under Bridgeman v Corel, contested in the UK. TWO CAPTION ERRORS in
+    src/chapters/01.tex:11 — NPG 797 is catalogued as STUDIO OF Michael Dahl, not
+    Dahl himself; and the caption asserts an autograph Dahl. Recommend swapping to
+    the RMG BHC3026 file, which is the autograph 1702 Dahl, carries no third-party
+    claim, and is 4454x7200.
+
+ch02-john-flamsteed:
+  file: src/figures/photos/ch02-john-flamsteed.jpg
+  status: present
+  risk: SAFE
+  subject: "John Flamsteed, first Astronomer Royal"
+  creator: "Thomas Gibson"
+  date: "1712"
+  source_url: "https://commons.wikimedia.org/wiki/File:John_Flamsteed_(Gem%C3%A4lde).jpg"
+  license: "public domain (PD-Art, artist died 1751)"
+  credit_line: "John Flamsteed by Thomas Gibson, 1712. The Royal Society, London (RS.9346). Public domain."
+  pixels: "816x1024"
+  recommended_replacement: ch02-flamsteed-baker-engraving
+  notes: >-
+    Provenance pinned by exact SHA-1 match. The embedded IPTC credit "The Royal
+    Society" and the royalsociety.org URL come from the Royal Society picture
+    library original at pictures.royalsociety.org/image-rs-9346, which the Commons
+    page cites as its source. Copyright is clean: a flat reproduction of a 1712
+    painting. CAPTION ERROR in src/chapters/02.tex:9 — the caption reads "after
+    Thomas Gibson", but this is the Gibson original (RS.9346), so it should read
+    "by Thomas Gibson, 1712". ("After" would denote a later copy by another hand.)
+    The Royal Society's own separate portrait RS.9345, c. 1680, is the one with a
+    disputed attribution history (Gibson? / School of Lely / now Thomas Murray).
+    PRODUCTION PROBLEM — 816x1024 is only 2.7 x 3.4 inches at 300 dpi, too small
+    for the 0.4-textwidth plate it is placed in. Replace with the Wellcome
+    engraving at 2125x3396 or re-request a high-res file from the Royal Society.
+
+ch02-flamsteed-house:
+  file: src/figures/photos/ch02-flamsteed-house.jpg
+  status: present
+  risk: NEEDS-SOURCING
+  subject: "Flamsteed House, Royal Observatory Greenwich, from the National Maritime Museum colonnade"
+  creator: "Acabashi"
+  date: "2025-11-30"
+  source_url: "https://commons.wikimedia.org/wiki/File:Flamsteed_House_Royal_Observatory_from_National_Maritime_Museum_colonnade_Greenwich_London_England_01.jpg"
+  license: "CC BY-SA 4.0"
+  credit_line: "Photo: Acabashi, CC BY-SA 4.0, via Wikimedia Commons."
+  pixels: "4483x3362"
+  notes: >-
+    Identified by exact SHA-1 match; the XMP dc:creator "Acabashi" and the Canon
+    PowerShot SX60 HS / 2025-11-30 capture date match the Commons record exactly.
+    Commercially reusable, but ShareAlike with MANDATORY attribution, and no credit
+    currently appears anywhere in the repo. Print the credit line above or the
+    licence terminates. Do not crop or recolour it into a new derivative work
+    unless you are willing to license that derivative under CC BY-SA 4.0;
+    reproducing it unmodified inside a collection is unencumbered. UK freedom of
+    panorama covers the Wren building itself.
+
+ch02-tompion-clock:
+  file: src/figures/photos/ch02-tompion-clock.jpg
+  status: present
+  risk: NEEDS-SOURCING
+  subject: "Longcase clock in the Octagon Room, Royal Observatory Greenwich"
+  creator: "Bin im Garten"
+  date: "2010-07-28"
+  source_url: "https://commons.wikimedia.org/wiki/File:Royal_Observatory,_Greenwich_2010_PD_09.JPG"
+  license: "CC BY-SA 3.0"
+  credit_line: "Photo: Bin im Garten, CC BY-SA 3.0, via Wikimedia Commons."
+  pixels: "1839x2496"
+  notes: >-
+    Identified by exact SHA-1 match; the Canon PowerShot SX210 IS and the
+    2010-07-28 17:02:39 capture timestamp match the Commons record to the second.
+    It is a personal photograph, but the photographer released it under CC BY-SA
+    3.0, so it IS commercially usable with attribution. Attribution is mandatory
+    and currently absent. SUBJECT IDENTIFICATION IS UNVERIFIED and probably wrong.
+    The Commons description says only "The Octagon room" and does not identify the
+    clock; the uploader filed it under both "Longcase clocks from the United
+    Kingdom" and "Tompion clocks at the Royal Observatory, Greenwich". The image
+    shows a floor-standing longcase clock in a panelled corner, but Tompion's two
+    1676 year-going clocks were WALL-MOUNTED, their dials set high above the
+    wainscot with the 13-foot pendulums hanging behind the panelling. So this is
+    very unlikely to be one of them; the same Commons category contains a
+    "Purpose-Built Case for One of the Original Tompion Movements, about 1737" and
+    a "Tompion Clock - Engraved Replica Dial (unknown maker, about 1972)". Verify
+    the object with the Observatory before printing the caption at
+    src/chapters/02.tex:48, which asserts it is a 1676 Tompion year-going clock
+    with a 13-foot pendulum. Consider ch06-tompion-longcase instead, which is a
+    documented Tompion under CC0 at 3335x5472.
+
+ch03-tycho-quadrant:
+  file: src/figures/photos/ch03-tycho-quadrant.jpg
+  status: present
+  risk: SAFE
+  subject: "Tycho Brahe at his mural quadrant, Uraniborg"
+  creator: "Tycho Brahe (engraving); mural painted by Hans Knieper, Hans van Steenwinckel the Elder and Tobias Gemperle"
+  date: "1598"
+  source_url: "https://commons.wikimedia.org/wiki/File:Mauerquadrant.jpg"
+  license: "public domain (Public Domain Mark 1.0)"
+  credit_line: "Quadrans muralis sive Tichonicus, from Tycho Brahe, Astronomiae Instauratae Mechanica (Wandsbek, 1598), hand-coloured. Public domain."
+  pixels: "3134x4600"
+  notes: >-
+    Identified by exact SHA-1 match. Caption at src/chapters/03.tex:12 is accurate
+    as to work and date. One refinement worth making: this is a HAND-COLOURED
+    impression, not the plain 1598 printing, and the caption does not say so. The
+    Photoshop 7.0 / 2005 metadata is from whoever scanned it. Copyright is clean.
+    A flat reproduction of a 1598 engraving attracts no new copyright. Best
+    resolution available for this plate anywhere.
+
+ch03-uraniborg:
+  file: src/figures/photos/ch03-uraniborg.jpg
+  status: present
+  risk: SAFE
+  subject: "Plan of Uraniborg and its walled gardens, Hven"
+  creator: "Willem Blaeu, after Tycho Brahe"
+  date: "c. 1662-1665"
+  source_url: "https://commons.wikimedia.org/wiki/File:Uraniborgskiss_45.jpg"
+  license: "public domain (Public Domain Mark 1.0)"
+  credit_line: "Arcis Uraniburgi ... a Tychone Brahe, hand-coloured engraving from Joan Blaeu, Atlas Maior, vol. 1 (Amsterdam, 1662-65), after Tycho Brahe's woodcut of 1598. Public domain."
+  pixels: "1000x821"
+  recommended_replacement: ch03-uraniborg-1598
+  notes: >-
+    Identified by exact SHA-1 match. Copyright is clean. CAPTION ERROR in
+    src/chapters/03.tex:21 on two counts. First, the plate is NOT from
+    Astronomiae Instauratae Mechanica (1598); it is Willem Blaeu's hand-coloured
+    copper engraving in Joan Blaeu's Atlas Maior of c. 1662-65, derived from
+    Tycho's 1598 woodcut. Second, the caption describes "the elaborate Renaissance
+    structure ... equipped with large instruments", but this image is a bird's-eye
+    PLAN of the diamond-shaped rampart and the formal gardens, with the house only
+    a small element at the centre; it does not show the observation platforms or
+    the instruments. Either rewrite the caption to describe the grounds and credit
+    Blaeu, or swap in ch03-uraniborg-1598, which is the actual 1598 plate at
+    2643x3609. PRODUCTION PROBLEM — 1000x821 is thin for the 0.6-textwidth plate.
+
+# =============================================================================
+# PART 2 — WANTED IMAGES
+# =============================================================================
+
+# --- Chapter 1: The Deadly Ignorance of Position ---------------------------
+
+ch01-shovell-dahl-rmg:
+  file: src/figures/photos/ch01-shovell-dahl-rmg.tiff
+  status: wanted
+  subject: "Admiral Sir Cloudesley Shovell, autograph portrait by Michael Dahl"
+  creator: "Michael Dahl"
+  date: "1702"
+  source_url: "https://commons.wikimedia.org/wiki/File:Admiral_Sir_Cloudesley_Shovell,_1650-1707_RMG_BHC3026.tiff"
+  license: "public domain (PD-Art / PD-old-100-expired)"
+  credit_line: "Admiral Sir Cloudesley Shovell by Michael Dahl, 1702. National Maritime Museum, Greenwich (BHC3026). Public domain."
+  pixels: "4454x7200"
+  notes: >-
+    Preferred replacement for ch01-admiral-shovell. The autograph Dahl rather than
+    a studio version, three times the resolution, and no third-party copyright
+    claim on the Commons page. Held by RMG, but the FILE is PD-Art, so RMG's
+    CC BY-NC-ND website terms do not attach. Large TIFF, roughly 96 MB.
+
+ch01-scilly-wreck:
+  file: src/figures/photos/ch01-scilly-wreck.tiff
+  status: wanted
+  subject: "The loss of the Association, Eagle, Romney and Firebrand on the Scilly rocks, October 1707"
+  creator: "Unknown artist"
+  date: "c. 1710"
+  source_url: "https://commons.wikimedia.org/wiki/File:'Sir_Cloudesly_Shovel_in_the_Association_with_the_Eagle,_Rumney_and_the_Firebrand,_Lost_on_the_Rocks_of_Scilly,_October_22,_1707'_RMG_1034.tiff"
+  license: "public domain (Public Domain Mark 1.0 / PD-US-expired)"
+  credit_line: "'Sir Cloudesly Shovel in the Association with the Eagle, Rumney and the Firebrand, Lost on the Rocks of Scilly, October 22, 1707', c. 1710. National Maritime Museum, Greenwich (PAH0710). Public domain."
+  pixels: "6400x4437"
+  notes: >-
+    The only known contemporary illustration of the disaster, and the natural
+    opening plate for the chapter. RMG-held object, PD-tagged Commons file.
+
+# --- Chapter 2: The Founding of the Royal Observatory ----------------------
+
+ch02-flamsteed-baker-engraving:
+  file: src/figures/photos/ch02-flamsteed-baker-engraving.jpg
+  status: wanted
+  subject: "John Flamsteed, first Astronomer Royal"
+  creator: "J. Baker, after Thomas Gibson"
+  date: "1712"
+  source_url: "https://commons.wikimedia.org/wiki/File:John_Flamsteed._Line_engraving_by_J._Baker_after_T._Gibson,_Wellcome_V0001937.jpg"
+  license: "CC BY 4.0"
+  credit_line: "John Flamsteed. Line engraving by J. Baker after T. Gibson, 1712. Wellcome Collection. CC BY 4.0."
+  pixels: "2125x3396"
+  notes: >-
+    The contemporary engraved version of the Gibson painting, at four times the
+    pixel count of the present file and under a plain CC BY 4.0 that matches the
+    book's own licence. Here "after Thomas Gibson" IS the correct wording.
+
+ch02-christopher-wren:
+  file: src/figures/photos/ch02-christopher-wren.jpg
+  status: wanted
+  subject: "Sir Christopher Wren, architect of Flamsteed House"
+  creator: "Unidentified painter"
+  date: ""
+  source_url: "https://commons.wikimedia.org/wiki/File:Anonymous_-_Sir_Christopher_Wren_-_B2001.2.1395_-_Yale_Center_for_British_Art.jpg"
+  license: "CC0"
+  credit_line: "Yale Center for British Art, B2001.2.1395. CC0."
+  pixels: "1372x1920"
+  notes: >-
+    Chosen over the famous Kneller of 1711 deliberately. The Kneller file on
+    Commons is the NPG 113 image and carries the sweat-of-brow claim notice,
+    whereas Yale dedicates this one CC0 outright, so no claim, no attribution
+    obligation. If the Kneller likeness is wanted specifically, the Wellcome line
+    engraving after Kneller is CC BY 4.0 at 1093x1840
+    (File:Sir_Christopher_Wren._Line_engraving_after_Sir_G._Kneller,_1_Wellcome_V0006657EL.jpg).
+
+ch02-jonas-moore:
+  file: src/figures/photos/ch02-jonas-moore.jpg
+  status: wanted
+  subject: "Sir Jonas Moore, patron of the Observatory"
+  creator: "Unattributed engraver"
+  date: "1660"
+  source_url: "https://commons.wikimedia.org/wiki/File:Sir_Jonas_Moore._Line_engraving,_1660._Wellcome_V0004106.jpg"
+  license: "CC BY 4.0"
+  credit_line: "Sir Jonas Moore. Line engraving, 1660. Wellcome Collection. CC BY 4.0."
+  pixels: "2160x3369"
+  notes: >-
+    Moore paid for the Tompion clocks and much of the first instrument suite, and
+    the chapter turns on his patronage. Avoid File:SirJonasMoore.jpg, which is
+    318x500 and carries the NPG sweat-of-brow notice.
+
+ch02-octagon-room:
+  file: src/figures/photos/ch02-octagon-room.jpg
+  status: wanted
+  subject: "The Octagon Room, Flamsteed House"
+  creator: "Elliott Brown"
+  date: "2012-10-14"
+  source_url: "https://commons.wikimedia.org/wiki/File:Flamsteed_House_-_Royal_Observatory_Greenwich_-_Octagon_Room_(8131348515).jpg"
+  license: "CC BY 2.0"
+  credit_line: "Photo: Elliott Brown, CC BY 2.0, via Wikimedia Commons."
+  pixels: "4288x3216"
+  notes: >-
+    Plain CC BY, no ShareAlike. The chapter describes the Octagon Room at
+    src/chapters/02.tex:29 but currently shows only the exterior.
+
+ch02-greenwich-1676-east-view:
+  file: src/figures/photos/ch02-greenwich-1676-east-view.jpg
+  status: wanted
+  subject: "View from the new Royal Observatory looking east, 1676"
+  creator: "Robert Thacker"
+  date: "c. 1676"
+  source_url: "https://commons.wikimedia.org/wiki/File:View_from_Greenwich_Observatory_looking_to_the_east._1676.jpg"
+  license: "public domain (Public Domain Mark 1.0 / PD-old-100-expired)"
+  credit_line: "Robert Thacker, view from the Royal Observatory looking east, c. 1676. British Museum (P_1865-0610-950). Public domain."
+  pixels: "1000x691"
+  notes: >-
+    A plate from the same 1676 Ichnographia speculae Regiae Grenovici series
+    commissioned by Jonas Moore. Substitute for the Francis Place interior of the
+    Octagon Room, which could NOT be sourced freely: that print (British Museum
+    1865,0610.952) is not on Commons, the Royal Society copy is marked
+    "(c) The Royal Society", the RMG copy is CC BY-NC-ND and the British Museum's
+    own terms are CC BY-NC-SA. All unusable. 1000x691 limits this to about a
+    third of a page; request a fresh scan from the British Museum if a larger
+    reproduction is needed.
+
+# --- Chapter 3: Instruments and Methods ------------------------------------
+
+ch03-uraniborg-1598:
+  file: src/figures/photos/ch03-uraniborg-1598.jpg
+  status: wanted
+  subject: "Uraniborg, Tycho Brahe's observatory on Hven"
+  creator: "Tycho Brahe"
+  date: "1598"
+  source_url: "https://commons.wikimedia.org/wiki/File:Brahe_Uraniborg_1598.jpg"
+  license: "public domain (Public Domain Mark 1.0 / PD-old-70-expired)"
+  credit_line: "Tycho Brahe, Astronomiae Instauratae Mechanica (Wandsbek, 1598). Royal Danish Library. Public domain."
+  pixels: "2643x3609"
+  notes: >-
+    The genuine 1598 plate, matching what the caption at src/chapters/03.tex:21
+    already claims, and 2.6 times the linear resolution of the Blaeu image
+    currently in place. Companion orthographic elevation at the same size and
+    licence: File:Brahe_Uraniborg_Orthographia_1598.jpg.
+
+# --- Chapter 4: The Mural Arc and the Method of Transits -------------------
+
+ch04-flamsteed-mural-arc:
+  file: src/figures/photos/ch04-flamsteed-mural-arc.jpg
+  status: wanted
+  subject: "Flamsteed's mural arc at Greenwich"
+  creator: "John Flamsteed"
+  date: "1725"
+  source_url: "https://commons.wikimedia.org/wiki/File:Flamsteed_mural_arc_bub_gb_8q9FAAAAcAAJ_0062.jpg"
+  license: "public domain"
+  credit_line: "John Flamsteed, Historia Coelestis Britannica (London, 1725). Public domain."
+  pixels: "2131x1663"
+  notes: >-
+    The arcus meridionalis plate from Flamsteed's own book, scanned from the
+    Google Books copy via archive.org/details/bub_gb_8q9FAAAAcAAJ. The single most
+    important missing figure in the book: chapters 3 and 4 both turn on this
+    instrument and neither shows it.
+
+# --- Chapter 5: Historia Coelestis Britannica ------------------------------
+
+ch05-historia-titlepage:
+  file: src/figures/photos/ch05-historia-titlepage.jpg
+  status: wanted
+  subject: "Title page of Historia Coelestis Britannica"
+  creator: "John Flamsteed"
+  date: "1725"
+  source_url: "https://archive.org/details/bub_gb_8q9FAAAAcAAJ/page/n8/mode/1up"
+  license: "public domain (Public Domain Mark 1.0)"
+  credit_line: "John Flamsteed, Historia Coelestis Britannica (London: Typis H. Meere, 1725). Public domain, via Internet Archive / Google Books."
+  pixels: ""
+  notes: >-
+    Leaf n8 of the scan is the engraved title page; leaf n7 is George Vertue's
+    engraved portrait of Flamsteed, a usable alternative to the Gibson painting.
+    Item rights confirmed as Public Domain Mark 1.0 via the archive.org metadata
+    API. The other IA copy, historia-coelestis-britannica-vol.-1, carries no
+    rights statement, so prefer this one.
+
+ch05-atlas-coelestis-plate:
+  file: src/figures/photos/ch05-atlas-coelestis-plate.jpg
+  status: wanted
+  subject: "Star chart from Flamsteed's Atlas Coelestis"
+  creator: "John Flamsteed"
+  date: "1729"
+  source_url: "https://commons.wikimedia.org/wiki/File:Atlas_Coelestis_by_John_Flamsteed_(1729)_019.jpg"
+  license: "public domain"
+  credit_line: "John Flamsteed, Atlas Coelestis (1729), plate 19 (Cetus). Public domain."
+  pixels: "10780x7273"
+  notes: >-
+    The posthumous atlas that the catalogue produced. Enormous file, ideal for a
+    full-bleed plate. Sibling plates 000-031 in Category:Atlas Coelestis by John
+    Flamsteed (1729).
+
+# --- Chapter 6: Pendulum Limitations ---------------------------------------
+
+ch06-tompion-longcase:
+  file: src/figures/photos/ch06-tompion-longcase.jpg
+  status: wanted
+  subject: "Longcase clock by Thomas Tompion, London, c. 1670-1685"
+  creator: "Daderot (photograph); Thomas Tompion (clock)"
+  date: "clock c. 1670-1685"
+  source_url: "https://commons.wikimedia.org/wiki/File:Longcase_clock_by_Thomas_Tompion,_London,_c._1670-1685_-_Clockmakers%27_Museum_-_London,_UK_-_DSC05373.jpg"
+  license: "CC0"
+  credit_line: "Clockmakers' Museum, London. Photo: Daderot, CC0."
+  pixels: "3335x5472"
+  notes: >-
+    A documented Tompion of exactly the right period, CC0 so no attribution is
+    legally required, and 3335x5472. Strong candidate to replace
+    ch02-tompion-clock, whose object identification is doubtful.
+
+# --- Chapter 7: The Longitude Act ------------------------------------------
+
+ch07-longitude-act:
+  file: src/figures/photos/ch07-longitude-act.jpg
+  status: wanted
+  subject: "The Longitude Act 1714 (12 Anne, St. 2, c. 15)"
+  creator: "Parliament of Great Britain"
+  date: "1714 (this printing 1755)"
+  source_url: "https://archive.org/details/1714-longitude-act-1755-a-collection-of-all-such-statutes-and-pa"
+  license: "public domain (Public Domain Mark 1.0)"
+  credit_line: "'An Act for providing a Publick Reward for such Person or Persons as shall Discover the Longitude at Sea' (1714), from A Collection of all such Statutes and Parts of Statutes (1755). Public domain, via Internet Archive / Google Books."
+  pixels: ""
+  notes: >-
+    Rights confirmed as Public Domain Mark 1.0 via the archive.org metadata API.
+    The Act text begins at leaf n0. A photograph of the original engrossment at
+    the NMM also exists at File:Longitude_Act_1714.jpg, 2448x3264, but it is
+    CC BY-SA 3.0 and so carries a ShareAlike obligation; the printed statute is
+    cleaner.
+
+ch07-harrison-remarks:
+  file: src/figures/photos/ch07-harrison-remarks.jpg
+  status: wanted
+  subject: "Harrison's published attack on the Board of Longitude"
+  creator: "John Harrison"
+  date: "1767"
+  source_url: "https://archive.org/details/b30361497"
+  license: "public domain (Public Domain Mark 1.0)"
+  credit_line: "John Harrison, Remarks on a pamphlet lately published by the Rev. Mr. Maskelyne, under the authority of the Board of Longitude (London, 1767). Wellcome Library. Public domain."
+  pixels: ""
+  notes: >-
+    A usable primary Board of Longitude document. IMPORTANT: the Board of
+    Longitude manuscript papers themselves (RGO 14) are held by Cambridge Digital
+    Library under CC BY-NC 3.0 and CUDL's terms forbid commercial use without a
+    licence, so they are UNUSABLE for this book. This printed pamphlet is the
+    commercially clean substitute. Supports the historiographical debate at
+    src/chapters/07.tex:69 and src/chapters/09.tex:225.
+
+# --- Chapter 8: The Lunar Distance Method ----------------------------------
+
+ch08-nautical-almanac-lunar-distance:
+  file: src/figures/photos/ch08-nautical-almanac-lunar-distance.jpg
+  status: wanted
+  subject: "Lunar distance table, Nautical Almanac for 1767"
+  creator: "Commissioners of Longitude (Nevil Maskelyne)"
+  date: "1766, for the year 1767"
+  source_url: "https://archive.org/details/the-nautical-almanac-and-astronomical-ep/page/n82/mode/1up"
+  license: "public domain (Public Domain Mark 1.0)"
+  credit_line: "The Nautical Almanac and Astronomical Ephemeris, for the Year 1767 (London, 1766), p. 70. Public domain, via Internet Archive / Google Books."
+  pixels: ""
+  notes: >-
+    Leaf n82 is printed page 70, JUNE 1767, "Distances of the Moon's Center from
+    Stars, and from the Sun east of her". The genuine first edition, and the exact
+    table the worked example in this chapter reduces. Rights confirmed via the
+    archive.org metadata API.
+
+ch08-mayer-tables:
+  file: src/figures/photos/ch08-mayer-tables.jpg
+  status: wanted
+  subject: "Title page of Tobias Mayer's lunar tables"
+  creator: "Tobias Mayer, edited by Nevil Maskelyne"
+  date: "1770"
+  source_url: "https://archive.org/details/bim_eighteenth-century_tabulae-motuum-solis-et-_mayer-tobias_1770/page/n0/mode/1up"
+  license: "public domain by age (published 1770); NO rights statement on the host"
+  credit_line: "Tobias Mayer, Tabulae Motuum Solis et Lunae (London, 1770), title page. Public domain."
+  pixels: ""
+  notes: >-
+    CAVEAT. The archive.org item carries no rights, licenseurl or copyright-status
+    field at all; it sits in the "Eighteenth Century, Books in Microfilm"
+    collection. The work is from 1770 so it is public domain by age and a flat
+    scan attracts no new copyright under Bridgeman, but unlike the other archive.org
+    items here there is no institutional statement to quote. e-rara.ch holds a copy
+    (DOI 10.3931/e-rara-467) but blocks automated fetching, so its terms are
+    unread. Mayer's tables underpin the whole chapter, per src/chapters/08.tex:109.
+
+# --- Chapter 9: Harrison's Chronometers ------------------------------------
+
+ch09-harrison-portrait:
+  file: src/figures/photos/ch09-harrison-portrait.jpg
+  status: wanted
+  subject: "John Harrison, clockmaker"
+  creator: "Thomas King"
+  date: "1767"
+  source_url: "https://commons.wikimedia.org/wiki/File:John_Harrison_(Gem%C3%A4lde).jpg"
+  license: "public domain (Public Domain Mark 1.0)"
+  credit_line: "John Harrison by Thomas King, 1767. Science Museum, London. Public domain."
+  pixels: "1600x1955"
+  notes: >-
+    The canonical Harrison portrait. The original hangs in the Science Museum,
+    whose website terms are CC BY-NC-SA, but this Commons file is independently
+    PD-tagged as a flat reproduction of a 1767 painting, so those terms do not
+    bind. Commons dates it 1767, not the commonly cited 1766.
+
+ch09-h1:
+  file: src/figures/photos/ch09-h1.jpg
+  status: wanted
+  subject: "Harrison's H1 sea clock"
+  creator: "Jonathan Cardy (photograph)"
+  date: "2015-04-15"
+  source_url: "https://commons.wikimedia.org/wiki/File:NMM_Longitude_editathon_06.JPG"
+  license: "CC BY-SA 3.0"
+  credit_line: "Photo: Jonathan Cardy, CC BY-SA 3.0, via Wikimedia Commons."
+  pixels: "3672x4896"
+  notes: >-
+    Best resolution available. The file description is generic ("From the
+    Longitude tour") though it is categorised under H1, so confirm visually before
+    print. A definitively captioned but smaller alternative at 1440x1080:
+    File:Clock_that_changed_the_world_(H1,_1730-35)_-_Flickr_-_Tatters_%E2%9D%80.jpg,
+    CC BY-SA 2.0.
+
+ch09-h2:
+  file: src/figures/photos/ch09-h2.jpg
+  status: wanted
+  subject: "Harrison's H2"
+  creator: "Jonathan Cardy (photograph)"
+  date: "2015-04-15"
+  source_url: "https://commons.wikimedia.org/wiki/File:NMM_Longitude_editathon_08.JPG"
+  license: "CC BY-SA 3.0"
+  credit_line: "Photo: Jonathan Cardy, CC BY-SA 3.0, via Wikimedia Commons."
+  pixels: "3672x4896"
+  notes: "Same caveat as ch09-h1: categorised H2 but generically described, so verify visually."
+
+ch09-h3:
+  file: src/figures/photos/ch09-h3.jpg
+  status: wanted
+  subject: "Harrison's H3"
+  creator: "Bin im Garten (photograph)"
+  date: "2010-07-28"
+  source_url: "https://commons.wikimedia.org/wiki/File:Royal_Observatory,_Greenwich_2010_PD_14.JPG"
+  license: "CC BY-SA 3.0"
+  credit_line: "Photo: Bin im Garten, CC BY-SA 3.0, via Wikimedia Commons."
+  pixels: "1944x2592"
+  notes: "The description explicitly identifies H3, so identification is safe here. Same photographer as ch02-tompion-clock."
+
+ch09-h4:
+  file: src/figures/photos/ch09-h4.jpg
+  status: wanted
+  subject: "Harrison's H4 watch"
+  creator: "Jordiferrer (photograph)"
+  date: "2017-07-29"
+  source_url: "https://commons.wikimedia.org/wiki/File:H4_timekeeper.jpg"
+  license: "CC BY-SA 4.0"
+  credit_line: "Photo: Jordiferrer, CC BY-SA 4.0, via Wikimedia Commons."
+  pixels: "2592x1944"
+  notes: >-
+    Explicitly described as "H4 timekeeper, Museum at the Royal Observatory,
+    Greenwich". A period 2D alternative with no photo-copyright question at all is
+    Berthoud's 1767 engraving,
+    File:Harrison_H4_clock_in_The_principles_of_Mr_Harrison%27s_time-keeper_1767.jpg,
+    public domain but only 595x881.
+
+ch09-k1:
+  file: src/figures/photos/ch09-k1.jpg
+  status: wanted
+  subject: "The Kendall K1, Larcum Kendall's copy of H4"
+  creator: "Richard Ash (photograph)"
+  date: "2017-10-25"
+  source_url: "https://commons.wikimedia.org/wiki/File:K1_Chronometer_at_the_Greenwich_Observatory.jpg"
+  license: "CC BY-SA 2.0"
+  credit_line: "Photo: Richard Ash, CC BY-SA 2.0, via Wikimedia Commons."
+  pixels: "2096x2016"
+  notes: >-
+    Preferred over File:Larcum_Kendall_chronometer_K1.jpg (1181x1581), which is
+    tagged PD on the contestable argument that it is a pre-1975 UK government
+    staff photograph. A freely licensed modern photo is the safer basis.
+
+# --- Chapter 10: Maskelyne's Nautical Almanac ------------------------------
+
+ch10-maskelyne-portrait:
+  file: src/figures/photos/ch10-maskelyne-portrait.jpg
+  status: wanted
+  subject: "Nevil Maskelyne, fifth Astronomer Royal"
+  creator: "Edward Scriven, after van der Burgh"
+  date: ""
+  source_url: "https://commons.wikimedia.org/wiki/File:Nevil_Maskelyne._Stipple_engraving_by_E._Scriven_after_van_d_Wellcome_V0003892.jpg"
+  license: "CC BY 4.0"
+  credit_line: "Nevil Maskelyne. Stipple engraving by E. Scriven after van der Burgh. Wellcome Collection. CC BY 4.0."
+  pixels: "2314x3373"
+  notes: >-
+    DO NOT use RMG BHC2854, "Portrait of an unknown gentleman, previously
+    identified as Nevil Maskelyne" (John Downman, 1779). The Commons page carries
+    RMG's own note that Derek Howse, Maskelyne's biographer, rejected the
+    identification. The canonical van der Puyl painting of 1785 (Royal Society
+    RS.9716) is PD but only 656x800.
+
+# --- Chapter 11: Halley's Broader Canvas -----------------------------------
+
+ch11-halley-portrait:
+  file: src/figures/photos/ch11-halley-portrait.jpg
+  status: wanted
+  subject: "Edmond Halley, second Astronomer Royal"
+  creator: "John Faber the Younger, after Thomas Murray"
+  date: "1722"
+  source_url: "https://commons.wikimedia.org/wiki/File:Edmund_Halley._Mezzotint_by_J._Faber,_1722,_after_T._Murray,_Wellcome_V0002531.jpg"
+  license: "CC BY 4.0"
+  credit_line: "Edmund Halley. Mezzotint by J. Faber, 1722, after T. Murray. Wellcome Collection. CC BY 4.0."
+  pixels: "2358x3299"
+  notes: >-
+    Cleanest licence and good resolution. If a painting is preferred, the Kneller
+    at RMG BHC2734 is PD-Art at 4816x5870
+    (File:Edmond_Halley,_1656-1742,_Astronomer_Royal_RMG_BHC2734.tiff). Avoid
+    File:Edmond_Halley_072.jpg, an NPG-sourced file at only 660x800.
+
+ch11-halley-isogonic-chart:
+  file: src/figures/photos/ch11-halley-isogonic-chart.jpg
+  status: wanted
+  subject: "Halley's chart of magnetic variation in the Atlantic"
+  creator: "Edmond Halley"
+  date: "1701"
+  source_url: "https://commons.wikimedia.org/wiki/File:Halley_isogonic_1701.jpg"
+  license: "public domain"
+  credit_line: "Edmond Halley, 'A New and Correct Chart Shewing the Variations of the Compass in the Western & Southern Oceans', 1701. Public domain."
+  pixels: "6640x7776"
+  notes: >-
+    The first published isoline map, and a highlight of the chapter. Excellent
+    resolution. Minor caveat: the Commons page is flagged as lacking source
+    information, so no holding institution is named, though the PD tag and the
+    1701 date are not in doubt.
+
+# --- Chapter 12: Bradley and the Aberration of Starlight -------------------
+
+ch12-bradley-portrait:
+  file: src/figures/photos/ch12-bradley-portrait.jpg
+  status: wanted
+  subject: "James Bradley, third Astronomer Royal"
+  creator: "John Faber Junior, after Thomas Hudson"
+  date: "18th century"
+  source_url: "https://commons.wikimedia.org/wiki/File:James_Bradley._Mezzotint_by_J._Faber_after_Thomas_Hudson._Wellcome_V0000735.jpg"
+  license: "CC BY 4.0"
+  credit_line: "James Bradley. Mezzotint by J. Faber after Thomas Hudson. Wellcome Collection. CC BY 4.0."
+  pixels: "2243x3192"
+  notes: "The Hudson painting itself (Royal Society RS.9656) is PD but only 624x800."
+
+ch12-bradley-zenith-sector:
+  file: ""
+  status: wanted
+  subject: "Bradley's zenith sector, the instrument that revealed aberration"
+  creator: ""
+  date: ""
+  source_url: ""
+  license: ""
+  credit_line: ""
+  pixels: ""
+  notes: >-
+    NOT SOURCED. No free image of Bradley's zenith sector exists. The only good
+    photographs are Royal Museums Greenwich (rmgc-object-11154 and
+    rmgc-object-127075), which is CC BY-NC-ND and therefore UNUSABLE here. Commons
+    Category:James Bradley is empty of instruments. Options: use
+    ch12-bradley-mural-quadrant instead; or Ramsden's zenith telescope, public
+    domain but only 443x720 (File:Ramsden%27s_zenith_telescope.png); or commission
+    a line drawing from the description in the 1832 Miscellaneous Works and
+    Correspondence of the Rev. James Bradley. AVOID the David Rumsey file
+    "Interior of Zenith Sector Observatory" — it is tagged PD on Commons at
+    5367x6477 but its Permission field carries Rumsey's CC BY-NC-SA 3.0 terms and
+    asks you to contact them for commercial use, and it shows Ramsden's sector,
+    not Bradley's.
+
+ch12-bradley-mural-quadrant:
+  file: src/figures/photos/ch12-bradley-mural-quadrant.jpg
+  status: wanted
+  subject: "Bradley's 8-foot brass mural quadrant, Meridian Building, Greenwich"
+  creator: "Elliott Brown (photograph)"
+  date: "2012-10-14"
+  source_url: "https://commons.wikimedia.org/wiki/File:Royal_Observatory_Greenwich_-_Telescope_Gallery_-_Bradley%27s_8-foot_brass_mural_quadrant_(8130912013).jpg"
+  license: "CC BY 2.0"
+  credit_line: "Photo: Elliott Brown, CC BY 2.0, via Wikimedia Commons."
+  pixels: "3216x4288"
+  notes: "The workable substitute for the unobtainable zenith sector. Plain CC BY, no ShareAlike."
+
+ch12-1919-eclipse-plate:
+  file: src/figures/photos/ch12-1919-eclipse-plate.tif
+  status: wanted
+  subject: "Eddington's 1919 eclipse plate, Sobral"
+  creator: "F. W. Dyson, A. S. Eddington and C. Davidson"
+  date: "1919-05-29"
+  source_url: "https://commons.wikimedia.org/wiki/File:1919_eclipse_(iau1907c).tif"
+  license: "CC BY 4.0"
+  credit_line: "F. W. Dyson, A. S. Eddington and C. Davidson / IAU. CC BY 4.0."
+  pixels: "700x899"
+  notes: >-
+    RESOLUTION CEILING. 700x899 is about 2.3 x 3 inches at 300 dpi and that is the
+    largest openly licensed version in existence. Philosophical Transactions A vol.
+    220, where the plate was published, is absent from both archive.org and BHL,
+    so no better scan could be found. A plain-PD version of the same size is
+    File:1919_eclipse_negative.jpg. Dyson was Astronomer Royal at the time, which
+    is why this belongs in the book.
+
+# --- Chapter 13: The Airy Transit Circle -----------------------------------
+
+ch13-airy-portrait:
+  file: src/figures/photos/ch13-airy-portrait.jpg
+  status: wanted
+  subject: "Sir George Biddell Airy, seventh Astronomer Royal"
+  creator: "Morgan & Kidd"
+  date: "1891"
+  source_url: "https://commons.wikimedia.org/wiki/File:Sir_George_Biddell_Airy._Photograph_by_Morgan_%26_Kidd,_1891._Wellcome_V0025960.jpg"
+  license: "CC BY 4.0"
+  credit_line: "Sir George Biddell Airy. Photograph by Morgan & Kidd, 1891. Wellcome Collection. CC BY 4.0."
+  pixels: "2208x3170"
+  notes: >-
+    If a painting is wanted instead, John Collier's 1883 portrait is PD-Art at
+    6246x8000: File:Sir_George_Biddell_Airy,_1801-1892_RMG_BHC2507.tiff.
+
+ch13-airy-transit-circle-engraving:
+  file: src/figures/photos/ch13-airy-transit-circle-engraving.jpg
+  status: wanted
+  subject: "Transverse section of the Airy Transit Circle"
+  creator: "Benjamin Sly"
+  date: "1852 (reprinted 1867)"
+  source_url: "https://commons.wikimedia.org/wiki/File:Airy_1867_582_Transit_Circle.jpg"
+  license: "public domain"
+  credit_line: "Benjamin Sly, Greenwich Observations 1852, Plate V. Public domain."
+  pixels: "4926x6979"
+  notes: >-
+    Outstanding: a flat 2D public-domain engineering drawing at 4926x6979, so no
+    Bridgeman question at all and enough resolution for a full-page plate. Pairs
+    with the schematic at src/figures/generated/ch13-transit-circle-schematic.png.
+
+ch13-meridian-building:
+  file: src/figures/photos/ch13-meridian-building.jpg
+  status: wanted
+  subject: "The Meridian Building and the 28-inch telescope dome"
+  creator: "Elliott Brown"
+  date: "2012-10-14"
+  source_url: "https://commons.wikimedia.org/wiki/File:Royal_Observatory_Greenwich_-_28-Inch_Telescope_Dome_and_Meridian_Building_(8128815256).jpg"
+  license: "CC BY 2.0"
+  credit_line: "Photo: Elliott Brown, CC BY 2.0, via Wikimedia Commons."
+  pixels: "4288x3216"
+  notes: "Shows both Grade I listed buildings, with the Prime Meridian running through the east end of the Meridian Building."
+
+# --- Chapter 14: The Great Equatorial and Spectroscopy ---------------------
+
+ch14-great-equatorial:
+  file: src/figures/photos/ch14-great-equatorial.jpg
+  status: wanted
+  subject: "The Great Equatorial Telescope, the 28-inch refractor at Greenwich"
+  creator: "Wikimedia user Geni"
+  date: "2016-02"
+  source_url: "https://commons.wikimedia.org/wiki/File:Great_Equatorial_Telescope_full_length.JPG"
+  license: "CC BY-SA 4.0"
+  credit_line: "Photo: user:geni, CC BY-SA 4.0, via Wikimedia Commons."
+  pixels: "3840x5760"
+  notes: >-
+    Full-length view, best resolution available. A period alternative is the
+    Wellcome engraving of the telescope in its dome, CC BY 4.0 at 3260x3230:
+    File:The_great_equatorial_telescope_in_the_Dome_at_Greenwich._Wellcome_M0009426.jpg.
+
+ch14-christie-portrait:
+  file: src/figures/photos/ch14-christie-portrait.jpg
+  status: wanted
+  subject: "William H. M. Christie, eighth Astronomer Royal"
+  creator: "Elliott & Fry, reproduced by E. W. Maunder"
+  date: "1900"
+  source_url: "https://commons.wikimedia.org/wiki/File:William_H_M_Christie.jpg"
+  license: "public domain (PD-old-70)"
+  credit_line: "William H. M. Christie, from E. W. Maunder, The Royal Observatory, Greenwich: A Glance at its History and Work (London, 1900). Public domain."
+  pixels: "357x515"
+  notes: >-
+    RESOLUTION PROBLEM. 357x515 is about 1.2 x 1.7 inches at 300 dpi. Re-scan the
+    plate from the Internet Archive copy of the same book instead:
+    archive.org/details/royalobservatory00maunuoft, whose rights field reads
+    NOT_IN_COPYRIGHT. Christie commissioned the Great Equatorial, which is why he
+    belongs in this chapter. Wellcome holds no Christie portrait and Commons has
+    no other.
+
+# --- Chapter 15: Mean Time and the Equation of Time ------------------------
+
+ch15-equation-of-time-table:
+  file: src/figures/photos/ch15-equation-of-time-table.jpg
+  status: wanted
+  subject: "Equation of time table, Nautical Almanac for 1767"
+  creator: "Commissioners of Longitude (Nevil Maskelyne)"
+  date: "1766, for the year 1767"
+  source_url: "https://archive.org/details/the-nautical-almanac-and-astronomical-ep/page/n74/mode/1up"
+  license: "public domain (Public Domain Mark 1.0)"
+  credit_line: "The Nautical Almanac and Astronomical Ephemeris, for the Year 1767 (London, 1766), p. 62. Public domain, via Internet Archive / Google Books."
+  pixels: ""
+  notes: >-
+    Leaf n74 is printed page 62, JUNE 1767, with the column "Equat. of Time Sub."
+    From the same volume as ch08-nautical-almanac-lunar-distance, so the two plates
+    will look like a pair. NOT SOURCED separately: no pre-1900 figure-eight
+    analemma diagram could be verified under a clear commercial licence. The
+    Commons "Analemme (antique)" category is about the ancient Vitruvius
+    projection, not the figure eight, and the Flammarion figure is 348x1043.
+
+# --- Chapter 16: The Distribution of Time ----------------------------------
+
+ch16-chronopher:
+  file: src/figures/photos/ch16-chronopher.jpg
+  status: wanted
+  subject: "The chronopher, which distributed the Greenwich time signal by telegraph"
+  creator: "Unknown engraver"
+  date: "1882-83"
+  source_url: "https://commons.wikimedia.org/wiki/File:PSM_V22_D343_Perspective_of_the_chronopher.jpg"
+  license: "public domain (PD-old-70)"
+  credit_line: "'Perspective of the chronopher', Popular Science Monthly 22 (1882-83), p. 343. Public domain."
+  pixels: "2258x1837"
+  notes: >-
+    Three companions under the same licence: PSM V22 D344 (elevation), D345
+    (schematic) and D347 (electric connections between clock and chronopher).
+    NOT SOURCED: no commercially reusable 19th-century engraving of the Greenwich
+    time ball itself, the noon gun, or the Standard Time Company could be verified.
+    The 1844 Illustrated London Almanack "Time Ball" engraving appears only on
+    royalobservatorygreenwich.org, whose rights are unconfirmed.
+
+ch16-time-ball:
+  file: src/figures/photos/ch16-time-ball.jpg
+  status: wanted
+  subject: "The time ball on Flamsteed House"
+  creator: "Dietmar Rabich"
+  date: "2016-10-09"
+  source_url: "https://commons.wikimedia.org/wiki/File:London,_Greenwich,_Royal_Greenwich_Observatory_--_2016_--_4695.jpg"
+  license: "CC BY-SA 4.0"
+  credit_line: "Dietmar Rabich / Wikimedia Commons / 'London, Greenwich, Royal Greenwich Observatory -- 2016 -- 4695' / CC BY-SA 4.0"
+  pixels: "3572x5358"
+  notes: >-
+    The photographer specifies the exact attribution format shown above; print it
+    verbatim. An Acabashi alternative at 3000x3000 exists, CC BY-SA 4.0, and would
+    pair stylistically with ch02-flamsteed-house.
+
+ch16-shepherd-gate-clock:
+  file: src/figures/photos/ch16-shepherd-gate-clock.jpg
+  status: wanted
+  subject: "The Shepherd Gate Clock, Royal Observatory Greenwich"
+  creator: "Daderot"
+  date: "2024-05-20"
+  source_url: "https://commons.wikimedia.org/wiki/File:Shepherd_Gate_clock_-_Greenwich_Observatory_-_London,_England_-_DSC00991.jpg"
+  license: "CC0"
+  credit_line: "Photo: Daderot, CC0."
+  pixels: "5472x3648"
+  notes: >-
+    The first clock to show GMT to the public. CC0 and 5472x3648, so no
+    obligations and plenty of resolution.
+
+# --- Chapter 17: The 1884 Meridian Conference ------------------------------
+
+ch17-meridian-conference-delegates:
+  file: src/figures/photos/ch17-meridian-conference-delegates.jpg
+  status: wanted
+  subject: "Delegates to the International Meridian Conference, Washington DC"
+  creator: "Unknown photographer"
+  date: "1884-10"
+  source_url: "https://commons.wikimedia.org/wiki/File:Delegates_of_the_International_Meridian_Conference_(cropped).jpg"
+  license: "public domain"
+  credit_line: "Delegates to the International Meridian Conference, Washington DC, October 1884. Unknown photographer. Public domain."
+  pixels: "1878x1430"
+  notes: "The obvious opening plate for the chapter."
+
+# --- Chapter 18: GMT, UT, UTC ----------------------------------------------
+
+ch18-caesium-clock:
+  file: src/figures/photos/ch18-caesium-clock.jpg
+  status: wanted
+  subject: "NBS-1, the first US caesium atomic clock"
+  creator: "National Institute of Standards and Technology"
+  date: "c. 1952-58"
+  source_url: "https://commons.wikimedia.org/wiki/File:Atomic_Clock017.jpg"
+  license: "public domain (work of the US Federal Government, 17 U.S.C. 105)"
+  credit_line: "National Institute of Standards and Technology. Public domain."
+  pixels: "6027x4822"
+  notes: >-
+    Unambiguous PD, no attribution obligation, and 6027x4822. Note this is the US
+    machine, not Essen's at NPL. The NPL/Essen image
+    (File:Atomic_Clock-Louis_Essen.jpg) is PD but only 620x360, too small for
+    print, so use NBS-1 and word the caption accordingly.
+
+# --- Chapter 19: The Quadrant and Sextant ----------------------------------
+
+ch19-hadley-quadrant-diagram:
+  file: src/figures/photos/ch19-hadley-quadrant-diagram.png
+  status: wanted
+  subject: "Hadley's own diagram of his reflecting quadrant"
+  creator: "John Hadley"
+  date: "1731"
+  source_url: "https://commons.wikimedia.org/wiki/File:Hadley%27s_reflecting_quadrant.png"
+  license: "public domain"
+  credit_line: "John Hadley, Philosophical Transactions 37 (1731), p. 147. Public domain."
+  pixels: "1800x1397"
+  notes: "The original description, a 2D PD plate with no photographic copyright question."
+
+ch19-hadley-octant:
+  file: src/figures/photos/ch19-hadley-octant.jpg
+  status: wanted
+  subject: "An octant by George Adams, London, c. 1760"
+  creator: "Daderot (photograph)"
+  date: "2019-11-04 (object c. 1760)"
+  source_url: "https://commons.wikimedia.org/wiki/File:Octant,_George_Adams,_London,_c._1760_-_Museu_da_Ci%C3%AAncia_da_Universidade_de_Coimbra_-_University_of_Coimbra_-_Coimbra,_Portugal_-_DSC09126.jpg"
+  license: "CC0"
+  credit_line: "Museu da Ciencia da Universidade de Coimbra. Photo: Daderot, CC0."
+  pixels: "3428x4652"
+  notes: "CC0, so no attribution legally required, though crediting is still good practice."
+
+ch19-sextant:
+  file: src/figures/photos/ch19-sextant.jpg
+  status: wanted
+  subject: "A marine sextant by Henry Hughes & Son"
+  creator: "Antti Leppanen (photograph)"
+  date: "2023-06-12 (instrument 1890s)"
+  source_url: "https://commons.wikimedia.org/wiki/File:Henry_Hughes_sextant_1890s_Huolintatalo.jpg"
+  license: "CC BY 4.0"
+  credit_line: "Photo: Antti Leppanen, CC BY 4.0, via Wikimedia Commons."
+  pixels: "3072x4608"
+  notes: >-
+    Plain CC BY 4.0, matching the book's own licence exactly, with no ShareAlike
+    entanglement. Carries an 1898 certificate of examination in the case.
+
+# --- Chapter 20: Telescope Optics and Mountings ----------------------------
+
+# --- Chapter 23: Light Pollution and the Move to Herstmonceux --------------
+
+ch23-herstmonceux-castle:
+  file: src/figures/photos/ch23-herstmonceux-castle.jpg
+  status: wanted
+  subject: "Herstmonceux Castle, East Sussex"
+  creator: "Michael Coppins"
+  date: "2016-04-17"
+  source_url: "https://commons.wikimedia.org/wiki/File:Herstmonceux_Castle_with_moat.jpg"
+  license: "CC BY-SA 4.0"
+  credit_line: "Photo: Michael Coppins, CC BY-SA 4.0, via Wikimedia Commons."
+  pixels: "3000x2250"
+  notes: "South-east angle with the moat."
+
+ch23-equatorial-group-domes:
+  file: src/figures/photos/ch23-equatorial-group-domes.jpg
+  status: wanted
+  subject: "The Equatorial Group domes, Royal Greenwich Observatory at Herstmonceux"
+  creator: "Barry Shimmon"
+  date: "1984-10-06"
+  source_url: "https://commons.wikimedia.org/wiki/File:The_Equatorial_Group_-_geograph.org.uk_-_992623.jpg"
+  license: "CC BY-SA 2.0"
+  credit_line: "Photo: Barry Shimmon / Geograph Britain and Ireland, CC BY-SA 2.0."
+  pixels: "7198x4494"
+  notes: >-
+    The highest-resolution file in the whole manifest, and historically the right
+    one: 1984, with the domes still in RGO service rather than as a visitor centre.
+    An aerial of the whole site is at File:Herstmonceux_Observatory_aerial_view.jpg,
+    CC BY-SA 3.0, 3636x2028.
+
+ch23-light-pollution:
+  file: src/figures/photos/ch23-light-pollution.jpg
+  status: wanted
+  subject: "London and southern Britain at night, seen from orbit"
+  creator: "NASA Earth Observatory, Jesse Allen and Robert Simmon"
+  date: "2012-03-27"
+  source_url: "https://commons.wikimedia.org/wiki/File:Northwestern_Europe_at_night_by_VIIRS.jpg"
+  license: "public domain (PD-USGov-NASA), also tagged CC BY 2.0"
+  credit_line: "NASA Earth Observatory image by Jesse Allen and Robert Simmon, using VIIRS Day/Night Band and MODIS Blue Marble data. Public domain."
+  pixels: "2000x2000"
+  notes: >-
+    Makes the case for abandoning Greenwich visually. A larger JPEG is offered at
+    science.nasa.gov/earth/earth-observatory/the-lights-of-london-78674, whose page
+    confirms NASA Earth Observatory content is public domain and free to use.
+
+# --- Chapter 24: Heritage, Tourism, and Symbolism --------------------------
+
+ch24-prime-meridian-line:
+  file: src/figures/photos/ch24-prime-meridian-line.jpg
+  status: wanted
+  subject: "The Prime Meridian line at Greenwich"
+  creator: "Mike Peel"
+  date: "2009-07-11"
+  source_url: "https://commons.wikimedia.org/wiki/File:Prime_Meridian,_Greenwich.jpg"
+  license: "CC BY-SA 4.0"
+  credit_line: "Photograph by Mike Peel (www.mikepeel.net), CC BY-SA 4.0, via Wikimedia Commons."
+  pixels: "2592x3888"
+  notes: "The file page explicitly asks to be attributed in the form given above."
+
+ch24-observatory-from-park:
+  file: src/figures/photos/ch24-observatory-from-park.jpg
+  status: wanted
+  subject: "The Royal Observatory from One Tree Hill, Greenwich Park"
+  creator: "Jakub Halun"
+  date: "2026-07-19"
+  source_url: "https://commons.wikimedia.org/wiki/File:View_of_the_Royal_Observatory_Greenwich_from_One_Tree_Hill_in_Greenwich_Park,_London,_20260719_0940_4508.jpg"
+  license: "CC BY 4.0"
+  credit_line: "Photo: Jakub Halun, CC BY 4.0, via Wikimedia Commons."
+  pixels: "4628x3084"
+  notes: >-
+    A Commons Quality Image, and its CC BY 4.0 matches the book's own licence
+    exactly. Good candidate for a closing plate or the cover.
+
+ch24-astronomers-royal-wall:
+  file: src/figures/photos/ch24-astronomers-royal-wall.jpg
+  status: wanted
+  subject: "The hung sequence of Astronomer Royal portraits in Flamsteed House"
+  creator: "Jordiferrer"
+  date: "2017-07-29"
+  source_url: "https://commons.wikimedia.org/wiki/File:Portraits_of_the_ten_Royal_Astronomers_who_lived_in_Flamsteed_House_-_1_of_2.jpg"
+  license: "CC BY-SA 4.0"
+  credit_line: "Photo: Jordiferrer, CC BY-SA 4.0, via Wikimedia Commons."
+  pixels: "2592x1944"
+  notes: >-
+    Useful as a display shot and as a partial workaround for the two Astronomers
+    Royal whose individual portraits could not be freely sourced. A companion
+    "2 of 2" file exists at 1944x2592.
+
+# --- Appendix C: The Astronomers Royal -------------------------------------
+
+appc-nathaniel-bliss:
+  file: src/figures/photos/appc-nathaniel-bliss.jpg
+  status: wanted
+  subject: "The Reverend Nathaniel Bliss, fourth Astronomer Royal"
+  creator: "Unknown artist, British School"
+  date: "18th century"
+  source_url: "https://commons.wikimedia.org/wiki/File:The_Reverend_Nathaniel_Bliss.jpg"
+  license: "public domain (Public Domain Mark 1.0 / PD-old-100)"
+  credit_line: "The Reverend Nathaniel Bliss, British School, 18th century. National Maritime Museum, Greenwich (BHC4144). Public domain."
+  pixels: "1061x1280"
+  notes: >-
+    A portrait of Bliss does exist, contrary to what is often assumed. This is
+    effectively the only likeness, besides an engraving on a pewter flagon
+    reproduced in Maunder 1900 (File:Nathaniel_Bliss.jpg, 323x352).
+
+appc-john-pond:
+  file: ""
+  status: rejected
+  subject: "John Pond, sixth Astronomer Royal"
+  creator: ""
+  date: ""
+  source_url: "https://commons.wikimedia.org/wiki/File:John_Pond.jpg"
+  license: "public domain"
+  credit_line: ""
+  pixels: "325x384"
+  notes: >-
+    REJECTED ON FACTUAL GROUNDS, not licensing. No authentic portrait of the
+    astronomer John Pond is known to exist. The engraving that circulates as him
+    (Benjamin Smith after Thomas Parkinson, 1787) is a documented misidentification
+    and the Commons file page says so: the sitter is John Pond of Newmarket, a
+    livery-stable keeper who compiled the Racing Calendar. Corroborated by a letter
+    from Thomas Bradley, Pond's brother-in-law, stating that "no likeness whatever
+    exists of my late brother in law Mr Pond except perhaps a small silhouette in
+    black paper." Print no portrait and say so in the appendix; the absence is
+    itself worth a sentence.
+
+appc-frank-dyson:
+  file: src/figures/photos/appc-frank-dyson.jpg
+  status: wanted
+  subject: "Sir Frank Watson Dyson, ninth Astronomer Royal"
+  creator: "Bain News Service"
+  date: "c. 1910s"
+  source_url: "https://commons.wikimedia.org/wiki/File:Frank_Watson_Dyson.jpg"
+  license: "public domain (PD-Bain, no known copyright restrictions)"
+  credit_line: "Sir Frank Watson Dyson. Bain News Service. Library of Congress Prints and Photographs Division (ggbain.30244). No known copyright restrictions."
+  pixels: "398x546"
+  notes: >-
+    The Commons copy is a small derivative. Download the full-resolution master
+    direct from the Library of Congress at https://hdl.loc.gov/loc.pnp/ggbain.30244;
+    LoC glass negatives typically run to 4000 px or more.
+
+appc-spencer-jones:
+  file: ""
+  status: wanted
+  subject: "Sir Harold Spencer Jones, tenth Astronomer Royal"
+  creator: ""
+  date: ""
+  source_url: ""
+  license: ""
+  credit_line: ""
+  pixels: ""
+  notes: >-
+    NOT SOURCED. No commercially reusable image found anywhere. Nothing on
+    Commons, no portrait on the English Wikipedia article, and the Wellcome
+    catalogue holds only books with his foreword. The known Elliott & Fry
+    photographs are held by RMG (object 244899) under CC BY-NC-ND, or by Getty and
+    Science Photo Library. All unusable. He died in 1960, so UK photographic
+    copyright is probably still live unless a pre-1930 image surfaces. Either omit,
+    fall back to ch24-astronomers-royal-wall, or budget for a paid licence.
+
+appc-woolley-plaque:
+  file: src/figures/photos/appc-woolley-plaque.jpg
+  status: wanted
+  subject: "Blue plaque commemorating Sir Richard van der Riet Woolley, eleventh Astronomer Royal"
+  creator: "Simon Harriyott"
+  date: "2011-04-15"
+  source_url: "https://commons.wikimedia.org/wiki/File:Sir_Richard_van_der_Riet_Woolley_(5646569519).jpg"
+  license: "CC BY 2.0"
+  credit_line: "Photo: Simon Harriyott, CC BY 2.0, via Wikimedia Commons."
+  pixels: "1920x2560"
+  notes: >-
+    A SUBSTITUTE, not a portrait. No photograph or painting of Woolley exists on
+    Commons, Wellcome or the Library of Congress, and he died in 1986, so UK
+    copyright on most photographs of him runs to 2056. ANU Archives holds a
+    c. 1950s portrait (ANUA16-397) but no free licence could be verified.

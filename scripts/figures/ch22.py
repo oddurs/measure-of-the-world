@@ -101,7 +101,9 @@ def mural_circle():
 
     # Wall
     ax.fill([-3, 3, 3, -3], [0, 0, 5, 5], color='#d4c4a8', alpha=0.5)
-    ax.text(0, 4.7, 'Meridian Wall (N-S)', fontsize=9, ha='center')
+    # Off to the left: the 90 degree graduation label sits at the top centre.
+    ax.text(-2.9, 4.7, 'Meridian Wall (N-S)', fontsize=9, ha='left',
+            va='center')
 
     # Large graduated circle
     circle_r = 2
@@ -224,7 +226,7 @@ def pivot_bearing():
 def level_and_collimator():
     """Diagram showing striding level and collimator for alignment."""
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.1, 2.8))
 
     # Left: Striding level
     ax1.set_title('Striding Level', fontsize=11, fontweight='bold')
@@ -308,7 +310,8 @@ def airy_transit_circle():
     ax.fill([-0.8, 0.8, 0.8, -0.8], [5, 5, 5.5, 5.5], color='#87CEEB')
     ax.plot([-0.8, -0.8], [5, 5.5], 'k-', linewidth=2)
     ax.plot([0.8, 0.8], [5, 5.5], 'k-', linewidth=2)
-    ax.text(0, 5.7, 'Roof Slit\n(N-S aligned)', fontsize=7, ha='center')
+    ax.text(-1.0, 5.7, 'Roof Slit\n(N-S aligned)', fontsize=7, ha='right',
+            va='center')
 
     # Piers
     for x in [-2, 2]:
@@ -362,7 +365,7 @@ def airy_transit_circle():
 def meridian_observation():
     """Sequence showing how a transit observation is made."""
     setup_style()
-    fig, axes = plt.subplots(1, 4, figsize=(10, 3))
+    fig, axes = plt.subplots(1, 4, figsize=(7.2, 2.1))
 
     titles = ['1. Star Approaching', '2. First Wire', '3. Central Wire', '4. Last Wire']
 

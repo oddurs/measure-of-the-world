@@ -51,12 +51,15 @@ def chronometer_evolution():
     # H1-H2 development
     ax.annotate('', xy=(1739, 0.1), xytext=(1735, 0.1),
                 arrowprops=dict(arrowstyle='<->', color='gray', lw=0.8))
-    ax.text(1737, 0.15, '4 years', fontsize=7, ha='center', color='gray')
+    ax.text(1737, 0.13, '4 years', fontsize=7, ha='center', va='bottom',
+            color='gray')
 
     # H3 long development
-    ax.annotate('', xy=(1757, -0.1), xytext=(1740, -0.1),
+    # Above the line: below it the decade labels already occupy this span.
+    ax.annotate('', xy=(1757, 0.1), xytext=(1740, 0.1),
                 arrowprops=dict(arrowstyle='<->', color='gray', lw=0.8))
-    ax.text(1748.5, -0.18, '18 years', fontsize=7, ha='center', color='gray')
+    ax.text(1748.5, 0.13, '18 years', fontsize=7, ha='center', va='bottom',
+            color='gray')
 
     ax.set_xlim(1725, 1780)
     ax.set_ylim(-0.7, 0.7)
@@ -69,7 +72,7 @@ def temperature_compensation():
     """Diagram showing how bimetallic compensation works.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 4))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.5, 3.7))
 
     # Left: Bimetallic strip behavior
     ax1.set_xlim(-0.5, 2.5)
@@ -134,12 +137,13 @@ def trial_performance():
     """Bar chart comparing performance of Harrison's chronometers in trials.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(5.8, 3.9))
 
     # Trial data
     trials = ['H1\nJamaica\n1735', 'H4\nJamaica\n1762', 'H4\nBarbados\n1764',
               'H5\nKing\n1772']
-    errors = [54, 5.1, 39.2, 4.5]  # seconds accumulated
+    errors = [54, 5.1, 39.2, 23.3]  # seconds accumulated
+    # H5: ten weeks at the Kew trial's third of a second per day
     durations = ['months', '81 days', '5 months', '10 weeks']
     colors = ['#1f77b4', '#d62728', '#d62728', '#9467bd']
 
@@ -162,8 +166,9 @@ def trial_performance():
     ax.grid(True, axis='y', alpha=0.3)
 
     # Annotation
-    ax.text(0.5, -0.12, 'H4 Jamaica trial: 5.1s over 81 days = 0.06s/day',
-            fontsize=8, style='italic', ha='center', transform=ax.transAxes)
+    ax.text(0.5, -0.27, 'H4 Jamaica trial: 5.1s over 81 days = 0.06s/day',
+            fontsize=8, style='italic', ha='center', va='top',
+            transform=ax.transAxes)
 
     plt.tight_layout()
     save_figure(fig, 'trial-performance', chapter=9)
@@ -222,7 +227,7 @@ def error_sources():
     """Pie chart showing sources of residual error in H4.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(5, 5))
+    fig, ax = plt.subplots(figsize=(4.2, 4.2))
 
     sources = ['Thermal lag', 'Escapement\nfriction', 'Bearing\nwear', 'Elasticity\ncreep']
     contributions = [35, 30, 20, 15]  # Approximate percentages

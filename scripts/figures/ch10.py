@@ -12,7 +12,7 @@ def navigator_procedure():
     """Flowchart of the 6-step lunar distance procedure.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 6))
+    fig, ax = plt.subplots(figsize=(6.4, 5.5))
 
     # Steps
     steps = [
@@ -103,11 +103,11 @@ def almanac_structure():
             ha='center', fontweight='bold')
 
     # Volume note
-    ax.text(0.75, 0.3, 'Thousands of lines per year, all computed by hand',
-            fontsize=8, ha='center', style='italic', color='#666666')
+    ax.text(0.75, 0.14, 'Thousands of lines per year, all computed by hand',
+            fontsize=8, ha='center', va='top', style='italic', color='#666666')
 
     ax.set_xlim(-1, 2.5)
-    ax.set_ylim(-0.2, 5.2)
+    ax.set_ylim(-0.35, 5.2)
     ax.axis('off')
 
     save_figure(fig, 'almanac-structure', chapter=10)
@@ -117,7 +117,7 @@ def chronometer_vs_almanac():
     """Comparison of chronometer vs lunar distance methods.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(5.4, 3.6))
 
     categories = ['Cost', 'Calculation\nTime', 'Accuracy', 'Reliability']
 

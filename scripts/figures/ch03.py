@@ -15,7 +15,7 @@ def celestial_coordinates():
     and declination (Dec) measured north/south from it.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 6))
+    fig, ax = plt.subplots(figsize=(5.5, 5.5))
 
     # Draw celestial sphere as a circle
     theta = np.linspace(0, 2 * np.pi, 100)
@@ -54,7 +54,8 @@ def celestial_coordinates():
     star_x = np.cos(star_dec_rad) * np.cos(star_ra_rad)
     star_y = np.sin(star_dec_rad)
     ax.plot(star_x, star_y, '*', color='#1f77b4', markersize=15)
-    ax.text(star_x + 0.08, star_y + 0.05, 'Star', fontsize=9, color='#1f77b4')
+    ax.text(star_x - 0.05, star_y + 0.08, 'Star', fontsize=9, color='#1f77b4',
+            ha='right', va='bottom')
 
     # Right ascension arc (along equator from vernal equinox)
     ra_arc_theta = np.linspace(0, star_ra_rad, 30)
@@ -203,7 +204,7 @@ def instrument_precision():
     Larger instruments allow finer scale divisions while remaining readable.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(5.6, 3.8))
 
     # Instrument radii (feet)
     radii = np.array([1, 2, 3, 4, 5, 6, 7, 8])

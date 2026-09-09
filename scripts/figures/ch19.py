@@ -14,7 +14,7 @@ def double_reflection():
     Rotating mirror by theta rotates reflected ray by 2*theta.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 5))
+    fig, ax = plt.subplots(figsize=(6.8, 4.8))
 
     # Index mirror
     mirror1_x, mirror1_y = 0, 0
@@ -98,8 +98,11 @@ def sextant_components():
         ax.text(3.2 * np.cos(angle), 3.2 * np.sin(angle),
                 f'{deg*2}', fontsize=7, ha='center', va='center')
 
-    ax.text(3.5 * np.cos(np.radians(30)), 3.5 * np.sin(np.radians(30)),
-            'Arc\n(graduated)', fontsize=8, ha='center', color='gray')
+    # Outside the arc near its top: the 30 degree radius is where the drum,
+    # horizon mirror and telescope callouts all converge.
+    ax.text(4.0 * np.cos(np.radians(45)), 4.0 * np.sin(np.radians(45)),
+            'Arc\n(graduated)', fontsize=8, ha='center', va='bottom',
+            color='gray')
 
     # Index arm
     index_angle = np.radians(25)
@@ -124,8 +127,8 @@ def sextant_components():
     ax.add_patch(Rectangle((hz_x - 0.1, hz_y - 0.25), 0.2, 0.5,
                             facecolor='#87CEEB', edgecolor='black', linewidth=1))
     ax.annotate('Horizon mirror\n(half-silvered)', xy=(hz_x, hz_y),
-                xytext=(hz_x + 0.7, hz_y + 0.8),
-                fontsize=8, ha='left',
+                xytext=(3.3, 0.95),
+                fontsize=8, ha='left', va='bottom',
                 arrowprops=dict(arrowstyle='->', color='gray', lw=0.5))
 
     # Telescope
@@ -147,8 +150,8 @@ def sextant_components():
     ax.add_patch(Circle((drum_x, drum_y), 0.15, facecolor='#ffd700',
                          edgecolor='black', linewidth=1))
     ax.annotate('Micrometer\ndrum', xy=(drum_x, drum_y),
-                xytext=(drum_x + 0.5, drum_y + 0.6),
-                fontsize=8, ha='left',
+                xytext=(3.55, 1.95),
+                fontsize=8, ha='left', va='bottom',
                 arrowprops=dict(arrowstyle='->', color='gray', lw=0.5))
 
     # Pivot point
@@ -170,7 +173,7 @@ def sextant_components():
 def vernier_scale():
     """How the vernier scale allows precise angle reading."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 3))
+    fig, ax = plt.subplots(figsize=(6.8, 2.9))
 
     # Main scale
     main_start = 0
@@ -203,8 +206,8 @@ def vernier_scale():
     ax.add_patch(Rectangle((align_x - 0.08, 0.75), 0.16, 1.3,
                             facecolor='green', alpha=0.3))
     ax.annotate('Alignment here\n= 4 minutes', xy=(align_x, 0.5),
-                xytext=(align_x + 1, 0.2),
-                fontsize=8, ha='left', color='green',
+                xytext=(align_x + 1, 0.05),
+                fontsize=8, ha='left', va='top', color='green',
                 arrowprops=dict(arrowstyle='->', color='green', lw=1))
 
     # Index mark
@@ -215,7 +218,7 @@ def vernier_scale():
                 arrowprops=dict(arrowstyle='->', color='red', lw=1))
 
     # Result
-    ax.text(3, -0.3, "Reading: 47\u00b0 04'", fontsize=10, ha='center',
+    ax.text(0.6, -0.45, "Reading: 47\u00b0 04'", fontsize=10, ha='center',
             fontweight='bold',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='#f0f0f0',
                       edgecolor='black'))
@@ -230,7 +233,7 @@ def vernier_scale():
 def sextant_errors():
     """Error sources in sextant observation."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots(figsize=(5.4, 4.5))
 
     errors = [
         ('Reading error', 30, 'Random, reduces with averaging'),
@@ -271,7 +274,7 @@ def sextant_errors():
 def sextant_evolution():
     """Evolution of sextant precision 1731-1900."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 4))
+    fig, ax = plt.subplots(figsize=(5.8, 3.3))
 
     years = [1731, 1760, 1780, 1810, 1850, 1900]
     precision = [120, 60, 60, 30, 30, 15]  # arcseconds

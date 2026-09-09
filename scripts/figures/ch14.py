@@ -235,7 +235,7 @@ def spectroscope_prism():
     Shows dispersion of white light into spectrum.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 4))
+    fig, ax = plt.subplots(figsize=(6.9, 3.9))
 
     # Prism (triangle)
     prism_x = [0, 1.5, 0.75]
@@ -296,7 +296,7 @@ def emission_absorption():
     Shows the relationship between the two types.
     """
     setup_style()
-    fig, axes = plt.subplots(3, 1, figsize=(7, 4), height_ratios=[1, 1, 1])
+    fig, axes = plt.subplots(3, 1, figsize=(6.6, 3.8), height_ratios=[1, 1, 1])
 
     wavelengths = np.linspace(400, 700, 300)
 

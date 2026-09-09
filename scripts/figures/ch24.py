@@ -22,47 +22,58 @@ def meridian_offset_detail():
     ax.text(5, 27, 'Royal Observatory', fontsize=10, ha='center', fontweight='bold')
 
     # Airy Transit Circle location (brass line)
-    ax.axvline(0, color='#B8860B', linewidth=6, ymin=0, ymax=0.85)
+    # Explicit segment, not axvline: the y limits carry the caption block below.
+    ax.plot([0, 0], [-6, 26], color='#B8860B', linewidth=6, zorder=1)
     ax.add_patch(Rectangle((-3, 0), 6, 0.5, facecolor='#B8860B', edgecolor='black'))
-    ax.text(0, -3, "Airy Transit Circle\n(Brass Line)\n0° 0' 0\" (Astronomical)",
-            fontsize=8, ha='center', color='#B8860B', fontweight='bold')
+    ax.text(0, -2, "Airy Transit Circle\n(Brass Line)\n0° 0' 0\" (Astronomical)",
+            fontsize=8, ha='center', va='top', color='#B8860B',
+            fontweight='bold')
 
     # WGS84 meridian
-    ax.axvline(102, color='#1f77b4', linewidth=4, linestyle='--', ymin=0, ymax=0.85)
-    ax.text(102, -3, "WGS84 Meridian\n(GPS Zero)\n0° 0' 0\" (Geodetic)",
-            fontsize=8, ha='center', color='#1f77b4', fontweight='bold')
+    ax.plot([102, 102], [-6, 26], color='#1f77b4', linewidth=4,
+            linestyle='--', zorder=1)
+    ax.text(102, -2, "WGS84 Meridian\n(GPS Zero)\n0° 0' 0\" (Geodetic)",
+            fontsize=8, ha='center', va='top', color='#1f77b4',
+            fontweight='bold')
 
     # Distance annotation
-    ax.annotate('', xy=(102, 15), xytext=(0, 15),
+    # High in the building elevation, clear of the tourist caption and the
+    # GPS readout box.
+    ax.annotate('', xy=(102, 22), xytext=(0, 22),
                 arrowprops=dict(arrowstyle='<->', color='red', lw=2))
-    ax.text(51, 17, '102.478 meters', fontsize=10, ha='center', color='red',
-            fontweight='bold')
+    ax.text(51, 21.2, '102.478 meters', fontsize=10, ha='center', va='top',
+            color='red', fontweight='bold')
 
     # Tourists at brass line
     for x in [-8, 0, 8]:
         ax.plot(x, 5, 'o', color='#ff7f0e', markersize=8)
         ax.plot([x, x], [2, 5], 'k-', linewidth=1)  # body
     ax.text(0, 8, 'Tourists straddle\n"wrong" line', fontsize=7, ha='center',
-            color='#ff7f0e')
+            color='#ff7f0e', zorder=4,
+            bbox=dict(boxstyle='square,pad=0.15', facecolor='#f5f5dc',
+                      edgecolor='none', alpha=0.9))
 
     # GPS reading indication
-    ax.add_patch(Rectangle((85, 5), 30, 12, facecolor='white',
+    # Three stacked lines need about twenty data units of height here.
+    ax.add_patch(Rectangle((82, 1), 38, 20, facecolor='white',
                             edgecolor='black', linewidth=1))
-    ax.text(100, 14, 'GPS Reading:', fontsize=7, ha='center')
-    ax.text(100, 10, "0° 0' 5.31\" W", fontsize=9, ha='center',
+    ax.text(101, 19, 'GPS Reading:', fontsize=7, ha='center', va='top')
+    ax.text(101, 10.7, "0° 0' 5.31\" W", fontsize=9, ha='center', va='center',
             fontweight='bold', color='red')
-    ax.text(100, 6.5, '(at brass line)', fontsize=6, ha='center', color='gray')
+    ax.text(101, 3, '(at brass line)', fontsize=6, ha='center', va='bottom',
+            color='gray')
 
     # Explanation
     explanation = ('The offset arises from:\n'
                    '1. Local gravity anomalies (deflection of vertical)\n'
                    '2. Different reference frames (geoid vs ellipsoid)')
-    ax.text(130, 22, explanation, fontsize=7, ha='left', va='top',
+    # Below the plan: to the right of it the box ran past the axes limit.
+    ax.text(-55, -23, explanation, fontsize=7, ha='left', va='top',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='#f0f0f0',
                       edgecolor='gray'))
 
     ax.set_xlim(-60, 170)
-    ax.set_ylim(-8, 32)
+    ax.set_ylim(-42, 34)
     ax.set_aspect('equal')
     ax.axis('off')
 
@@ -98,8 +109,8 @@ def deflection_of_vertical():
     # True vertical (toward Earth center)
     ax.annotate('', xy=(0, 0), xytext=(obs_x, obs_y),
                 arrowprops=dict(arrowstyle='->', color='blue', lw=2))
-    ax.text(-0.3, 0.5, 'True vertical\n(to Earth center)', fontsize=7,
-            ha='right', color='blue')
+    ax.text(-0.35, 1.35, 'True vertical\n(to Earth center)', fontsize=7,
+            ha='right', va='center', color='blue')
 
     # Plumb line (deflected toward mass)
     # Calculate deflection toward the anomaly
@@ -111,8 +122,8 @@ def deflection_of_vertical():
 
     ax.annotate('', xy=(plumb_end_x, plumb_end_y), xytext=(obs_x, obs_y),
                 arrowprops=dict(arrowstyle='->', color='red', lw=2))
-    ax.text(plumb_end_x - 0.3, plumb_end_y, 'Plumb line\n(local vertical)',
-            fontsize=7, ha='right', color='red')
+    ax.text(plumb_end_x - 0.3, plumb_end_y - 0.05, 'Plumb line\n(local vertical)',
+            fontsize=7, ha='right', va='center', color='red')
 
     # Deflection angle arc
     arc = Arc((obs_x, obs_y), 0.8, 0.8, angle=180+obs_angle,
@@ -150,7 +161,7 @@ def deflection_of_vertical():
 def time_ball():
     """The Greenwich Time Ball mechanism and purpose."""
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 5))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.1, 3.6))
 
     # Left: Time ball sequence
     ax1.set_title('Time Ball Signal Sequence', fontsize=11, fontweight='bold')
@@ -276,7 +287,8 @@ def visitor_experience():
     # Laser beam (at night)
     ax.annotate('', xy=(0, 3), xytext=(0, 2),
                 arrowprops=dict(arrowstyle='-', color='green', lw=3, alpha=0.7))
-    ax.text(0.5, 2.5, 'Green laser\n(night)', fontsize=7, ha='left', color='green')
+    ax.text(0.5, 2.9, 'Green laser\n(night)', fontsize=7, ha='left',
+            va='bottom', color='green')
 
     # Annual visitors stat
     ax.text(0, -3.2, 'Over 1 million visitors annually', fontsize=10, ha='center',

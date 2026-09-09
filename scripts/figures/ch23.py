@@ -75,7 +75,7 @@ def skyglow_physics():
 def limiting_magnitude():
     """Chart showing limiting magnitude vs sky brightness."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 5))
+    fig, ax = plt.subplots(figsize=(6.5, 4.6))
 
     # Sky brightness (mag/arcsec^2)
     sky_brightness = np.array([22, 21, 20, 19, 18, 17, 16])
@@ -115,7 +115,9 @@ def limiting_magnitude():
 
     ax.set_xlabel('Sky Brightness (mag/arcsec²)', fontsize=10)
     ax.set_ylabel('Limiting Magnitude (naked eye)', fontsize=10)
-    ax.set_title('Light Pollution Effect on Star Visibility', fontsize=11)
+    ax.set_title('Light Pollution Effect on Star Visibility', fontsize=11,
+                 pad=12)
+    ax.set_ylim(top=7.0)
 
     ax.invert_xaxis()  # Brighter sky = smaller number
     ax.grid(True, alpha=0.3)
@@ -127,24 +129,27 @@ def limiting_magnitude():
 def observatory_migration():
     """Timeline showing observatory moves to escape light pollution."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(9, 4))
+    fig, ax = plt.subplots(figsize=(7.2, 3.2))
 
     # Timeline
     ax.axhline(1.5, color='black', linewidth=2, xmin=0.05, xmax=0.95)
 
+    # The last four events fall inside forty years, so each side of the line
+    # gets two lanes; lane 1 steps further from the axis.
     events = [
-        (1675, 'Greenwich\nfounded', '#1f77b4', 'above'),
-        (1884, 'Prime Meridian\nestablished', '#2ca02c', 'below'),
-        (1948, 'Light pollution\nproblematic', '#ff7f0e', 'above'),
-        (1957, 'Move to\nHerstmonceux', '#d62728', 'below'),
-        (1979, 'Isaac Newton Tel.\nto La Palma', '#9467bd', 'above'),
-        (1990, 'All telescopes\nto Canaries', '#8c564b', 'below'),
+        (1675, 'Greenwich\nfounded', '#1f77b4', 'above', 0),
+        (1884, 'Prime Meridian\nestablished', '#2ca02c', 'below', 0),
+        (1948, 'Light pollution\nproblematic', '#ff7f0e', 'above', 0),
+        (1957, 'Move to\nHerstmonceux', '#d62728', 'below', 0),
+        (1979, 'Isaac Newton Tel.\nto La Palma', '#9467bd', 'above', 1),
+        (1990, 'All telescopes\nto Canaries', '#8c564b', 'below', 1),
     ]
 
-    for year, label, color, pos in events:
+    for year, label, color, pos, lane in events:
         y_marker = 1.5
-        y_text = 2.2 if pos == 'above' else 0.8
-        y_line = 1.9 if pos == 'above' else 1.1
+        side = 1 if pos == 'above' else -1
+        y_text = y_marker + side * (0.7 + 0.55 * lane)
+        y_line = y_text - side * 0.3
 
         ax.plot(year, y_marker, 'o', color=color, markersize=12, zorder=5)
         ax.plot([year, year], [y_marker, y_line], '-', color=color, linewidth=1)
@@ -154,14 +159,17 @@ def observatory_migration():
                 str(year), fontsize=7, ha='center', color='gray')
 
     # Light pollution growth indication
+    # Its own strip below the event lanes, which now reach down to y = -0.1.
+    band_base = -1.05
     x_pollution = np.linspace(1900, 1990, 50)
-    y_pollution = 0.5 + 0.5 * (1 - np.exp(-(x_pollution - 1900) / 30))
-    ax.fill_between(x_pollution, 0, y_pollution, color='orange', alpha=0.3)
-    ax.text(1945, 0.25, 'Growing light\npollution', fontsize=7, ha='center',
-            color='orange', alpha=0.8)
+    y_pollution = band_base + 0.55 * (1 - np.exp(-(x_pollution - 1900) / 30))
+    ax.fill_between(x_pollution, band_base, y_pollution, color='orange',
+                    alpha=0.3)
+    ax.text(1945, -0.9, 'Growing light\npollution', fontsize=7, ha='center',
+            va='center', color='orange', alpha=0.8)
 
     ax.set_xlim(1650, 2010)
-    ax.set_ylim(0, 3)
+    ax.set_ylim(-1.15, 3.3)
     ax.set_xlabel('Year', fontsize=10)
     ax.set_yticks([])
 
@@ -174,7 +182,7 @@ def observatory_migration():
 def herstmonceux_site():
     """Comparison of Greenwich and Herstmonceux sites."""
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(10, 4))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.1, 2.8))
 
     # Greenwich (polluted)
     ax1.set_title('Greenwich (1950s)', fontsize=11, fontweight='bold')
@@ -238,7 +246,7 @@ def herstmonceux_site():
         my = np.random.uniform(1.5, 3)
         ax2.plot(mx, my, '.', color='white', markersize=0.5, alpha=0.3)
 
-    ax2.text(0, 3.5, 'Dark skies\nMilky Way visible', fontsize=8, ha='center',
+    ax2.text(0, 3.3, 'Dark skies\nMilky Way visible', fontsize=8, ha='center',
              color='#add8e6')
 
     ax2.set_xlim(-4, 4)
@@ -252,21 +260,22 @@ def herstmonceux_site():
 def canary_islands_sites():
     """Map showing modern observatory sites in the Canary Islands."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 5))
+    fig, ax = plt.subplots(figsize=(6.4, 4.6))
 
     # Simplified map of Canary Islands
     # La Palma
     la_palma = np.array([[-17.9, 28.9], [-17.7, 28.85], [-17.75, 28.7],
                          [-17.95, 28.65], [-18.0, 28.75], [-17.9, 28.9]])
     ax.fill(la_palma[:, 0], la_palma[:, 1], color='#8B4513', edgecolor='black')
-    ax.text(-17.85, 28.78, 'La Palma', fontsize=8, ha='center', color='white',
-            fontweight='bold')
+    ax.text(-17.87, 28.68, 'La Palma', fontsize=8, ha='center', va='top',
+            color='white', fontweight='bold')
 
     # Tenerife
     tenerife = np.array([[-16.9, 28.55], [-16.1, 28.45], [-16.2, 28.0],
                          [-16.95, 28.1], [-16.9, 28.55]])
     ax.fill(tenerife[:, 0], tenerife[:, 1], color='#8B4513', edgecolor='black')
-    ax.text(-16.5, 28.25, 'Tenerife', fontsize=8, ha='center', color='white')
+    ax.text(-16.6, 28.12, 'Tenerife', fontsize=8, ha='center', va='bottom',
+            color='white')
 
     # Observatory locations
     obs_sites = [

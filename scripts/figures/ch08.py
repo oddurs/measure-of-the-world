@@ -39,7 +39,8 @@ def lunar_parallax():
     moon_y = moon_dist * np.cos(np.radians(moon_angle)) - 2
 
     ax.plot(moon_x, moon_y, 'o', color='#FFD700', markersize=15)
-    ax.text(moon_x + 0.2, moon_y + 0.2, 'Moon\n(true position)', fontsize=8, ha='left')
+    ax.text(moon_x + 0.25, moon_y - 0.15, 'Moon\n(true position)', fontsize=8,
+            ha='left', va='top')
 
     # Line from Earth center to Moon (true direction)
     ax.plot([0, moon_x], [-2, moon_y], 'b--', linewidth=1, alpha=0.7, label='From Earth center')
@@ -70,7 +71,8 @@ def lunar_parallax():
             bbox=dict(boxstyle='round,pad=0.3', facecolor='white',
                       edgecolor='#cccccc'))
 
-    ax.legend(loc='upper right', fontsize=8)
+    # Lower left: the formula box spans the full width of the top of the axes.
+    ax.legend(loc='lower left', fontsize=8)
     ax.set_xlim(-3, 4)
     ax.set_ylim(-4, 3)
     ax.set_aspect('equal')
@@ -83,7 +85,7 @@ def clearing_procedure():
     """Flowchart showing the clearing procedure for lunar distances.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 6))
+    fig, ax = plt.subplots(figsize=(5.3, 5.3))
 
     # Box dimensions
     box_width = 2.2
@@ -141,7 +143,7 @@ def lunar_distance_errors():
     """Bar chart showing error sources in lunar distance method.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(5.8, 3.9))
 
     sources = ['Sextant\nprecision', 'Table\naccuracy', 'Parallax/\nRefraction',
                'Interpolation', 'Combined\n(RSS)']
@@ -165,8 +167,9 @@ def lunar_distance_errors():
     ax.grid(True, axis='y', alpha=0.3)
 
     # Annotation
-    ax.text(0.5, -0.15, r'Combined error of $\sim$4 arcmin $\rightarrow$ $\sim$30 nautical miles',
-            fontsize=8, style='italic', ha='center', transform=ax.transAxes)
+    ax.text(0.5, -0.24, r'Combined error of $\sim$4 arcmin $\rightarrow$ $\sim$30 nautical miles',
+            fontsize=8, style='italic', ha='center', va='top',
+            transform=ax.transAxes)
 
     plt.tight_layout()
 
@@ -177,7 +180,7 @@ def moon_motion_rate():
     """Show the Moon's motion rate among the stars.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(5.7, 3.8))
 
     # Time over one sidereal month
     days = np.linspace(0, 27.3, 100)

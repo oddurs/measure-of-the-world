@@ -14,7 +14,7 @@ def transit_geometry():
     moment a star crosses the meridian.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots(figsize=(5.5, 4.5))
 
     # Draw celestial sphere outline
     theta = np.linspace(0, 2 * np.pi, 100)
@@ -27,7 +27,10 @@ def transit_geometry():
 
     # Meridian plane (vertical line through center)
     ax.plot([0, 0], [-1, 1], 'b-', linewidth=2, label='Meridian')
-    ax.text(0.08, 0.85, 'Meridian', fontsize=8, color='blue', ha='left')
+    # Labelled low on the line, where the upper half of the sphere is crowded
+    # by the pole, zenith and star annotations.
+    ax.text(0.06, -0.70, 'Meridian', fontsize=8, color='blue', ha='left',
+            va='center')
 
     # Celestial pole (top)
     ax.plot(0, 1, 'ko', markersize=5)
@@ -35,7 +38,7 @@ def transit_geometry():
 
     # Zenith
     ax.plot(0, 0.7, 'k^', markersize=6)
-    ax.text(0.08, 0.7, 'Zenith', fontsize=8, ha='left')
+    ax.text(0.10, 0.64, 'Zenith', fontsize=8, ha='left', va='center')
 
     # Observer at center
     ax.plot(0, 0, 'ko', markersize=4)
@@ -50,17 +53,18 @@ def transit_geometry():
     path_y_vals = path_y + 0.15 * np.cos(path_theta)
     ax.plot(path_x, path_y_vals, 'gray', linewidth=1.5, linestyle='--')
 
-    # Arrow showing direction of motion (east to west)
-    ax.annotate('', xy=(-0.3, path_y + 0.1), xytext=(0.3, path_y + 0.1),
+    # Arrow showing direction of motion (east to west); kept on the west half
+    # so it does not run through the labels stacked on the meridian.
+    ax.annotate('', xy=(-0.42, path_y + 0.1), xytext=(-0.05, path_y + 0.1),
                 arrowprops=dict(arrowstyle='->', color='gray', lw=1))
-    ax.text(0, path_y + 0.22, 'Star path (E to W)', fontsize=7, ha='center',
-            color='gray')
+    ax.text(-0.44, path_y - 0.02, 'Star path (E to W)', fontsize=7,
+            ha='center', va='top', color='gray')
 
     # Star at transit (on meridian)
     star_x, star_y = 0, path_y + 0.15
     ax.plot(star_x, star_y, '*', color='#1f77b4', markersize=14)
-    ax.text(0.1, star_y, 'Star at\ntransit', fontsize=8, ha='left',
-            color='#1f77b4')
+    ax.text(0.10, star_y + 0.06, 'Star at\ntransit', fontsize=8, ha='left',
+            va='center', color='#1f77b4')
 
     # Vernal equinox point on celestial equator
     ve_angle = -60  # degrees from meridian
@@ -68,8 +72,8 @@ def transit_geometry():
     ve_x = eq_a * np.cos(ve_rad)
     ve_y = eq_b * np.sin(ve_rad)
     ax.plot(ve_x, ve_y, 'g*', markersize=10)
-    ax.text(ve_x - 0.1, ve_y - 0.12, 'Vernal\nequinox', fontsize=7,
-            ha='center', color='green')
+    ax.text(ve_x + 0.10, ve_y - 0.03, 'Vernal\nequinox', fontsize=7,
+            ha='left', va='center', color='green')
 
     # Arc showing right ascension (from vernal equinox to star's meridian)
     ra_arc = np.linspace(ve_rad, 0, 30)
@@ -103,7 +107,7 @@ def error_budget():
     Shows both right ascension and declination error sources.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 4))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.5, 3.7))
 
     # Right ascension errors
     ra_sources = ['Clock drift', 'Reaction time']
@@ -142,12 +146,12 @@ def error_budget():
     ax2.grid(True, axis='x', alpha=0.3)
 
     # Combined error note
-    fig.text(0.5, 0.02, 'Combined typical error: 15-20 arcsec per observation; '
+    fig.text(0.5, 0.03, 'Combined typical error: 15-20 arcsec per observation; '
              '10 arcsec after averaging',
-             ha='center', fontsize=8, style='italic')
+             ha='center', va='bottom', fontsize=8, style='italic')
 
     plt.tight_layout()
-    plt.subplots_adjust(bottom=0.15)
+    plt.subplots_adjust(bottom=0.24)
 
     save_figure(fig, 'error-budget', chapter=4)
 
@@ -158,7 +162,7 @@ def refraction_curve():
     Shows how refraction increases dramatically near the horizon.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(5.7, 3.8))
 
     # Altitude range (degrees)
     altitude = np.linspace(5, 90, 100)
@@ -203,7 +207,7 @@ def refraction_curve():
     ax.grid(True, alpha=0.3)
 
     # Formula annotation
-    ax.text(50, 300, r"Bessel's formula: $R \approx 58.3 \cot(h)$",
+    ax.text(62, 305, r"Bessel's formula: $R \approx 58.3 \cot(h)$",
             fontsize=9, ha='center',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='white',
                       edgecolor='#cccccc'))

@@ -159,7 +159,7 @@ def personal_equation():
                 arrowprops=dict(arrowstyle='->', color='#ff7f0e', lw=1.5))
 
     ax.text(2.85, 1.4, '+0.32s', fontsize=7, ha='center', color='#1f77b4')
-    ax.text(3.2, 1.9, '-0.18s', fontsize=7, ha='center', color='#ff7f0e')
+    ax.text(3.32, 1.9, '-0.18s', fontsize=7, ha='center', color='#ff7f0e')
 
     # Scale
     ax.text(1, 0.5, 'Time', fontsize=9, ha='right', va='center')
@@ -186,7 +186,7 @@ def precision_evolution():
     Log-scale showing improvement from Tycho to Gaia.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 4.5))
+    fig, ax = plt.subplots(figsize=(6.9, 4.5))
 
     # Data from table in chapter
     instruments = [
@@ -209,6 +209,10 @@ def precision_evolution():
     offsets = [(10, 1.3), (10, 1.3), (10, 1.3), (10, 1.3),
                (-80, 1.3), (10, 0.7), (10, 1.3)]
     for year, error, name, (xoff, yoff) in zip(years, errors, names, offsets):
+        if name == "Airy's transit circle":
+            # Already carries the highlighted red callout below; a second,
+            # near-identical label printed on top of it.
+            continue
         ax.annotate(name, xy=(year, error), xytext=(year + xoff, error * yoff),
                     fontsize=7, ha='left' if xoff > 0 else 'right',
                     arrowprops=dict(arrowstyle='-', color='gray', lw=0.5) if xoff > 50 else None)
@@ -217,7 +221,7 @@ def precision_evolution():
     airy_idx = 3
     ax.plot(years[airy_idx], errors[airy_idx], 'ro', markersize=12, zorder=5)
     ax.annotate('Airy Transit Circle', xy=(years[airy_idx], errors[airy_idx]),
-                xytext=(1870, 2), fontsize=9, fontweight='bold', color='red',
+                xytext=(1898, 0.75), fontsize=9, fontweight='bold', color='red',
                 arrowprops=dict(arrowstyle='->', color='red', lw=1.5))
 
     ax.set_xlabel('Year', fontsize=10)
@@ -263,7 +267,7 @@ def prime_meridian_offset():
     # Distance annotation
     ax.annotate('', xy=(offset, -50), xytext=(0, -50),
                 arrowprops=dict(arrowstyle='<->', color='green', lw=2))
-    ax.text(offset/2, -55, '102 meters', fontsize=10, ha='center',
+    ax.text(offset/2, -55, '102 meters', fontsize=10, ha='center', va='top',
             color='green', fontweight='bold')
 
     # Compass rose
@@ -279,19 +283,21 @@ def prime_meridian_offset():
     for y in [-20, -10, 0, 10]:
         ax.plot(0, y, 'o', color='#ff7f0e', markersize=4)
 
-    ax.text(15, -20, 'Tourists on\nbrass line', fontsize=7,
-            ha='left', color='#ff7f0e')
+    ax.text(15, -14, 'Tourists on\nbrass line', fontsize=7,
+            ha='left', va='top', color='#ff7f0e')
 
     ax.set_xlim(-100, 100)
-    ax.set_ylim(-70, 80)
+    # Extra room below the plan for the key and the explanatory note, which
+    # otherwise land on top of each other and on the 102 metre callout.
+    ax.set_ylim(-135, 80)
     ax.set_aspect('equal')
     ax.axis('off')
-    ax.legend(loc='lower right', fontsize=8)
+    ax.legend(loc='lower center', ncol=2, fontsize=8)
 
     # Note
-    ax.text(0, -68, 'The historic Prime Meridian and modern GPS reference differ\n' +
+    ax.text(0, -80, 'The historic Prime Meridian and modern GPS reference differ\n' +
             'due to improved measurement of Earth\'s gravitational field',
-            fontsize=8, ha='center',
+            fontsize=8, ha='center', va='top',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='white',
                       edgecolor='#cccccc'))
 
@@ -301,7 +307,7 @@ def prime_meridian_offset():
 def error_budget():
     """Pie chart showing error sources in transit circle observations."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots(figsize=(5.6, 4.6))
 
     # Error sources (typical magnitudes in arcsec, squared for variance)
     sources = [

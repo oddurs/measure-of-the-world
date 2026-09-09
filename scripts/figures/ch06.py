@@ -12,7 +12,7 @@ def pendulum_physics():
     """Diagram showing pendulum geometry, forces, and the restoring torque.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 4))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.7, 3.8))
 
     # Left panel: Pendulum geometry and forces
     L = 1.0  # pendulum length (normalized)
@@ -102,7 +102,7 @@ def temperature_error():
     """Show how thermal expansion accumulates into clock error over a day.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 3.5))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.6, 3.3))
 
     # Left: Temperature change vs daily error for brass pendulum
     delta_T = np.linspace(0, 20, 100)  # Temperature change in Celsius
@@ -134,18 +134,21 @@ def temperature_error():
     errors = [8, 0.5, 0.1]  # seconds per day for 10C swing
     colors = ['#d62728', '#ff7f0e', '#2ca02c']
 
-    bars = ax2.bar(metals, errors, color=colors, edgecolor='black', linewidth=0.5)
+    # Horizontal bars: the compensation names are far too wide to sit side by
+    # side as vertical tick labels in half of a 7 inch figure.
+    bars = ax2.barh(metals, errors, color=colors, edgecolor='black',
+                    linewidth=0.5, height=0.6)
+    ax2.invert_yaxis()
 
     # Add value labels
     for bar, err in zip(bars, errors):
-        height = bar.get_height()
-        ax2.text(bar.get_x() + bar.get_width()/2, height + 0.3,
-                 f'{err}s', ha='center', fontsize=9)
+        ax2.text(bar.get_width() + 0.25, bar.get_y() + bar.get_height() / 2,
+                 f'{err}s', va='center', ha='left', fontsize=9)
 
-    ax2.set_ylabel('Daily error (seconds)')
+    ax2.set_xlabel('Daily error (seconds)')
     ax2.set_title('Compensation Methods\n(10C temperature swing)', fontsize=10)
-    ax2.set_ylim(0, 10)
-    ax2.grid(True, axis='y', alpha=0.3)
+    ax2.set_xlim(0, 10)
+    ax2.grid(True, axis='x', alpha=0.3)
 
     plt.tight_layout()
     save_figure(fig, 'temperature-error', chapter=6)
@@ -155,7 +158,7 @@ def gravity_latitude():
     """Show how gravitational acceleration varies with latitude.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 3.5))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.3, 3.1))
 
     # Left: g vs latitude
     latitude = np.linspace(0, 90, 100)
@@ -227,7 +230,7 @@ def ship_motion():
     """Show how ship acceleration affects effective gravity and pendulum behavior.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 4))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.4, 3.7))
 
     # Left: Vector diagram of effective gravity
     ax1.set_xlim(-1.5, 1.5)
@@ -248,7 +251,7 @@ def ship_motion():
     # True gravity vector (down)
     ax1.annotate('', xy=(0, -g), xytext=(0, 0),
                  arrowprops=dict(arrowstyle='->', color='blue', lw=2.5))
-    ax1.text(0.1, -0.5, r'$\vec{g}$', fontsize=12, color='blue')
+    ax1.text(0.14, -0.64, r'$\vec{g}$', fontsize=12, color='blue')
 
     # Ship acceleration (forward, but fictitious force is backward)
     a_scale = 0.4
@@ -270,7 +273,7 @@ def ship_motion():
               angle=-90, theta1=0, theta2=tilt_angle,
               color='gray', linewidth=1)
     ax1.add_patch(arc)
-    ax1.text(0.05, -0.4, r'$\alpha$', fontsize=10, color='gray')
+    ax1.text(0.13, -0.30, r'$\alpha$', fontsize=10, color='gray')
 
     ax1.set_aspect('equal')
     ax1.axis('off')

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate figures for Chapter 7: The Longitude Act and Its Incentives."""
 
-from common import setup_style, save_figure
+from common import setup_style, save_figure, place_timeline_labels
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.patches import FancyBboxPatch
@@ -12,7 +12,7 @@ def prize_thresholds():
     """Visualize the relationship between accuracy requirements and prize amounts.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 4))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.5, 3.7))
 
     # Left: Bar chart of prize amounts
     accuracies = [60, 40, 30]  # nautical miles
@@ -58,10 +58,10 @@ def prize_thresholds():
 
     # Add annotation
     fig.text(0.5, 0.02, '30 nm accuracy requires clock error < 0.5 seconds/day over 6 weeks',
-             ha='center', fontsize=8, style='italic')
+             ha='center', va='bottom', fontsize=8, style='italic')
 
     plt.tight_layout()
-    plt.subplots_adjust(bottom=0.15)
+    plt.subplots_adjust(bottom=0.24)
 
     save_figure(fig, 'prize-thresholds', chapter=7)
 
@@ -92,25 +92,27 @@ def board_timeline():
     years = [e[0] for e in events]
     ax.plot([min(years)-5, max(years)+5], [0, 0], 'k-', linewidth=2)
 
-    # Alternate above/below for readability
-    for i, (year, label, category) in enumerate(events):
-        y_offset = 0.5 if i % 2 == 0 else -0.5
-        color = colors[category]
+    # Limits first: the label packer measures text against the data transform.
+    ax.set_xlim(1705, 1835)
+    ax.set_ylim(-1, 1)
 
-        # Vertical line to event
-        ax.plot([year, year], [0, y_offset * 0.8], color=color, linewidth=1.5)
-
-        # Event marker
-        ax.plot(year, 0, 'o', color=color, markersize=8)
-
-        # Text label
-        va = 'bottom' if y_offset > 0 else 'top'
-        ax.text(year, y_offset, label, fontsize=8, ha='center', va=va,
-                color=color, fontweight='bold')
+    # Nine events, five of them inside a twelve-year window, so the labels are
+    # packed into lanes stepping away from the timeline instead of a plain
+    # above/below alternation.
+    _, y_min, y_max = place_timeline_labels(
+        ax,
+        [{'x': year, 'text': label, 'color': colors[category],
+          'fontsize': 8, 'fontweight': 'bold'}
+         for year, label, category in events],
+        base_offset=0.34,
+    )
 
     # Add year markers on timeline
     for year in range(1720, 1830, 20):
-        ax.text(year, -0.12, str(year), fontsize=8, ha='center', va='top', color='gray')
+        ax.text(year, -0.10, str(year), fontsize=8, ha='center', va='top',
+                color='gray', zorder=5,
+                bbox=dict(boxstyle='square,pad=0.15', facecolor='white',
+                          edgecolor='none'))
 
     # Legend
     legend_elements = [
@@ -120,8 +122,7 @@ def board_timeline():
     ]
     ax.legend(handles=legend_elements, loc='lower right', fontsize=8)
 
-    ax.set_xlim(1705, 1835)
-    ax.set_ylim(-1, 1)
+    ax.set_ylim(min(y_min - 0.50, -1.0), max(y_max + 0.10, 1.0))
     ax.axis('off')
 
     save_figure(fig, 'board-timeline', chapter=7)
@@ -131,7 +132,7 @@ def competing_methods():
     """Comparison of the four proposed longitude methods.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 5))
+    fig, ax = plt.subplots(figsize=(6.5, 4.6))
 
     methods = ['Lunar Distance', 'Jupiter Moons', 'Magnetic\nVariation', 'Chronometer']
 

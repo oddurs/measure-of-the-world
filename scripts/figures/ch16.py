@@ -31,7 +31,8 @@ def time_ball_mechanism():
     ball_raised = Circle((0, 3.8), 0.4, facecolor='red', edgecolor='black',
                           linewidth=2, alpha=0.5)
     ax.add_patch(ball_raised)
-    ax.text(0.6, 3.8, 'Ball (raised)', fontsize=8, ha='left', alpha=0.7)
+    ax.text(0.6, 3.8, 'Ball (raised)', fontsize=8, ha='left', va='center',
+            alpha=0.7)
 
     # Time ball (dropped position)
     ball_dropped = Circle((0, 1.5), 0.4, facecolor='red', edgecolor='black',
@@ -48,11 +49,13 @@ def time_ball_mechanism():
     release = Rectangle((-0.3, 3.9), 0.6, 0.3, facecolor='#888888',
                         edgecolor='black', linewidth=1)
     ax.add_patch(release)
-    ax.text(0.5, 4.05, 'Electromagnet\nrelease', fontsize=7, ha='left')
+    ax.text(0.5, 4.35, 'Electromagnet\nrelease', fontsize=7, ha='left',
+            va='bottom')
 
     # Wire to master clock
     ax.plot([0.3, 2, 2], [4.05, 4.05, -0.5], 'g-', linewidth=1.5)
-    ax.text(2.2, 1.5, 'Wire to\nmaster clock', fontsize=7, ha='left', color='green')
+    ax.text(2.2, 2.6, 'Wire to\nmaster clock', fontsize=7, ha='left',
+            va='center', color='green')
 
     # Observer with telescope
     obs_x, obs_y = -3, -1
@@ -79,7 +82,7 @@ def time_ball_mechanism():
                       edgecolor='#cccccc'))
 
     ax.set_xlim(-4.5, 4.5)
-    ax.set_ylim(-2.8, 5)
+    ax.set_ylim(-2.8, 5.3)
     ax.set_aspect('equal')
     ax.axis('off')
 
@@ -97,13 +100,15 @@ def time_distribution_hierarchy():
     levels = [
         ('Atomic Time Standards\n(Cesium/H-maser clocks)', 0, 5, '#1f77b4'),
         ('National Metrology\nInstitutes (NIST, PTB)', 0, 4, '#ff7f0e'),
-        ('Satellite Systems\n(GPS, Galileo, GLONASS)', -1.5, 3, '#2ca02c'),
-        ('Terrestrial Networks\n(Radio, Internet NTP)', 1.5, 3, '#d62728'),
+        ('Satellite Systems\n(GPS, Galileo, GLONASS)', -2.0, 3, '#2ca02c'),
+        ('Terrestrial Networks\n(Radio, Internet NTP)', 2.0, 3, '#d62728'),
         ('Local Receivers\n(Clocks, computers)', 0, 2, '#9467bd'),
         ('End Users', 0, 1, '#8c564b'),
     ]
 
-    box_width = 2.5
+    # The longest caption is about 23 characters; at this figure width that
+    # needs roughly three data units, so the boxes are sized to hold it.
+    box_width = 3.6
     box_height = 0.6
 
     for label, x, y, color in levels:
@@ -119,10 +124,10 @@ def time_distribution_hierarchy():
     # Arrows connecting levels
     connections = [
         ((0, 4.7), (0, 4.3)),        # Atomic to National
-        ((0, 3.7), (-1.5, 3.3)),     # National to Satellite
-        ((0, 3.7), (1.5, 3.3)),      # National to Terrestrial
-        ((-1.5, 2.7), (0, 2.3)),     # Satellite to Local
-        ((1.5, 2.7), (0, 2.3)),      # Terrestrial to Local
+        ((0, 3.7), (-2.0, 3.3)),    # National to Satellite
+        ((0, 3.7), (2.0, 3.3)),     # National to Terrestrial
+        ((-2.0, 2.7), (0, 2.3)),    # Satellite to Local
+        ((2.0, 2.7), (0, 2.3)),     # Terrestrial to Local
         ((0, 1.7), (0, 1.3)),        # Local to End Users
     ]
 
@@ -132,18 +137,18 @@ def time_distribution_hierarchy():
 
     # Accuracy labels
     accuracies = [
-        (2.5, 5, '~10 ns'),
-        (2.5, 4, '~100 ns'),
-        (-3.5, 3, '~100 ns'),
-        (3.5, 3, '~1 ms'),
-        (2.5, 2, '~10 ms'),
+        (2.4, 5, '~10 ns'),
+        (2.4, 4, '~100 ns'),
+        (-4.55, 3, '~100 ns'),
+        (4.55, 3, '~1 ms'),
+        (2.4, 2, '~10 ms'),
     ]
 
     for x, y, acc in accuracies:
         ax.text(x, y, acc, fontsize=7, ha='center', va='center',
                 style='italic', color='gray')
 
-    ax.set_xlim(-5, 5)
+    ax.set_xlim(-5.3, 5.3)
     ax.set_ylim(0, 6)
     ax.axis('off')
 
@@ -198,7 +203,7 @@ def error_budget_timeball():
 def telegraph_vs_radio():
     """Comparison diagram of telegraph and radio time distribution."""
     setup_style()
-    fig, axes = plt.subplots(1, 2, figsize=(8, 4))
+    fig, axes = plt.subplots(1, 2, figsize=(7.2, 3.6))
 
     # Telegraph (left)
     ax = axes[0]

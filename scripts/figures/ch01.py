@@ -37,7 +37,8 @@ def latitude_geometry():
     # Earth's axis (vertical line through center)
     ax.annotate('', xy=(0, 1.6), xytext=(0, -1.2),
                 arrowprops=dict(arrowstyle='->', color='#555555', lw=1.2))
-    ax.text(0.08, 1.5, "Earth's axis", fontsize=8, color='#555555', ha='left')
+    ax.text(-0.06, 1.45, "Earth's axis", fontsize=8, color='#555555',
+            ha='right', va='center')
 
     # Celestial pole direction from observer (parallel to Earth's axis)
     pole_length = 0.9

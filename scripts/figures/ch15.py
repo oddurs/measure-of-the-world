@@ -14,7 +14,7 @@ def equation_of_time_graph():
     Shows both components (eccentricity and obliquity) and total.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(7.2, 4.5))
 
     # Calculate equation of time for each day
     days = np.arange(1, 366)
@@ -69,7 +69,8 @@ def equation_of_time_graph():
 
     ax.set_xlabel('Day of Year', fontsize=10)
     ax.set_ylabel('Equation of Time (minutes)', fontsize=10)
-    ax.set_xlim(0, 366)
+    # A little slack on the left so the January tick label clears the y axis.
+    ax.set_xlim(-10, 370)
     ax.set_ylim(-20, 20)
     ax.legend(loc='lower right', fontsize=9)
     ax.grid(True, alpha=0.3)
@@ -84,7 +85,7 @@ def analemma():
     Shows position of Sun at same clock time throughout the year.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(5, 7))
+    fig, ax = plt.subplots(figsize=(4.4, 6.1))
 
     # Calculate analemma points
     days = np.arange(1, 366)
@@ -131,8 +132,10 @@ def analemma():
     ax.set_ylabel('Solar Declination (degrees)', fontsize=10)
 
     # Add cardinal directions
-    ax.text(0, 26, 'N', fontsize=10, ha='center', fontweight='bold')
-    ax.text(0, -26, 'S', fontsize=10, ha='center', fontweight='bold')
+    # Headroom so the cardinal marks clear the solstice callouts and the axis.
+    ax.set_ylim(-30, 30)
+    ax.text(0, 27.5, 'N', fontsize=10, ha='center', fontweight='bold')
+    ax.text(0, -27.5, 'S', fontsize=10, ha='center', fontweight='bold')
     ax.text(20, 0, 'Sun early', fontsize=8, ha='right', color='gray')
     ax.text(-20, 0, 'Sun late', fontsize=8, ha='left', color='gray')
 
@@ -170,13 +173,14 @@ def eccentricity_effect():
     # Sun at focus
     sun = Circle((0, 0), 0.2, facecolor='#FFD700', edgecolor='black', linewidth=1.5)
     ax.add_patch(sun)
-    ax.text(0, -0.45, 'Sun', fontsize=9, ha='center')
+    ax.text(-0.28, -0.05, 'Sun', fontsize=9, ha='right', va='center')
 
     # Earth at perihelion (closest)
     perihelion_x = a * (1 - e) - a * e
     earth_p = Circle((perihelion_x, 0), 0.12, facecolor='#1f77b4', edgecolor='black')
     ax.add_patch(earth_p)
-    ax.text(perihelion_x, 0.3, 'Perihelion\n(Jan 3)', fontsize=8, ha='center')
+    ax.text(perihelion_x, -0.30, 'Perihelion\n(Jan 3)', fontsize=8, ha='center',
+            va='top')
 
     # Velocity arrow at perihelion (large)
     ax.annotate('', xy=(perihelion_x, 0.7), xytext=(perihelion_x, 0.15),
@@ -187,7 +191,8 @@ def eccentricity_effect():
     aphelion_x = -a * (1 + e) - a * e
     earth_a = Circle((aphelion_x, 0), 0.12, facecolor='#1f77b4', edgecolor='black')
     ax.add_patch(earth_a)
-    ax.text(aphelion_x, 0.3, 'Aphelion\n(Jul 4)', fontsize=8, ha='center')
+    ax.text(aphelion_x, -0.30, 'Aphelion\n(Jul 4)', fontsize=8, ha='center',
+            va='top')
 
     # Velocity arrow at aphelion (small)
     ax.annotate('', xy=(aphelion_x, 0.4), xytext=(aphelion_x, 0.15),
@@ -278,8 +283,8 @@ def obliquity_effect():
     ax.text(0.7, -0.35, 'Faster', fontsize=7, ha='center', color='blue')
     ax.text(0.65, 0.5, 'Same\nmotion', fontsize=7, ha='center', color='red')
 
-    # Legend
-    ax.legend(loc='lower left', fontsize=8)
+    # Legend: the explanatory note occupies the full width at the bottom.
+    ax.legend(loc='upper left', fontsize=8)
 
     # Note
     ax.text(0, -2.5, 'Near equinoxes: small ecliptic motion\n'
@@ -299,7 +304,7 @@ def obliquity_effect():
 def mean_vs_apparent():
     """Diagram comparing mean solar time to apparent solar time."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 4))
+    fig, ax = plt.subplots(figsize=(6.7, 3.8))
 
     # Timeline
     hours = np.arange(0, 25)
@@ -324,7 +329,8 @@ def mean_vs_apparent():
     # Highlight noon
     ax.axvline(12, color='gray', linestyle='--', linewidth=1, alpha=0.5)
     ax.text(12, 2.5, 'Noon (clock)', fontsize=8, ha='center', color='blue')
-    ax.text(12 + 10/60, 0.5, 'Noon (Sun)', fontsize=8, ha='center', color='red')
+    ax.text(12 + 20/60, 1.28, 'Noon (Sun)', fontsize=8, ha='left', va='bottom',
+            color='red')
 
     # Difference arrow
     ax.annotate('', xy=(12 + 10/60, 0.7), xytext=(12, 0.7),

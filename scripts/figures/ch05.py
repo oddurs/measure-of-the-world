@@ -66,8 +66,10 @@ def reduction_pipeline():
             style='italic', color='#666666')
 
     # Add output labels
-    ax.text(-1.5, 1.6, r'$\alpha$ (RA)', fontsize=10, ha='center', color='#2ca02c')
-    ax.text(1.5, 1.6, r'$\delta$ (Dec)', fontsize=10, ha='center', color='#2ca02c')
+    ax.text(-1.5, 1.52, r'$\alpha$ (RA)', fontsize=10, ha='center', va='top',
+            color='#2ca02c')
+    ax.text(1.5, 1.52, r'$\delta$ (Dec)', fontsize=10, ha='center', va='top',
+            color='#2ca02c')
 
     ax.set_xlim(-3.5, 3.5)
     ax.set_ylim(-0.8, 4.8)
@@ -83,7 +85,7 @@ def precession_drift():
     Shows the systematic drift in right ascension and declination.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 3.5))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.5, 3.2))
 
     # Precession rate: ~50 arcsec/year in RA, ~20 arcsec/year in Dec
     years = np.arange(1676, 1720, 1)
@@ -120,10 +122,10 @@ def precession_drift():
 
     # Common annotation
     fig.text(0.5, 0.02, 'Precession rate: approximately 50 arcsec/year',
-             ha='center', fontsize=8, style='italic')
+             ha='center', va='bottom', fontsize=8, style='italic')
 
     plt.tight_layout()
-    plt.subplots_adjust(bottom=0.18)
+    plt.subplots_adjust(bottom=0.26)
 
     save_figure(fig, 'precession-drift', chapter=5)
 
@@ -134,7 +136,7 @@ def error_averaging():
     Demonstrates the 1/sqrt(n) improvement in precision.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7, 3.5))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.4, 3.2))
 
     np.random.seed(42)
 
@@ -160,7 +162,7 @@ def error_averaging():
 
     ax1.set_xlabel('Observation number')
     ax1.set_ylabel('Position error (arcseconds)')
-    ax1.set_title('Individual Observations')
+    ax1.set_title('Individual Observations', pad=10)
     ax1.legend(loc='upper right', fontsize=8)
     ax1.set_xlim(0, n_obs + 5)
     ax1.set_ylim(-45, 45)
@@ -183,7 +185,7 @@ def error_averaging():
 
     ax2.set_xlabel('Number of observations')
     ax2.set_ylabel('Position error (arcseconds)')
-    ax2.set_title('Averaging Improvement')
+    ax2.set_title('Averaging Improvement', pad=10)
     ax2.legend(loc='upper right', fontsize=8)
     ax2.set_xlim(0, n_obs + 2)
     ax2.set_ylim(-20, 20)

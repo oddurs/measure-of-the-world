@@ -88,7 +88,7 @@ def halley_comet_orbit():
     """Visualization of Halley's comet elliptical orbit.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 5))
+    fig, ax = plt.subplots(figsize=(6.8, 4.8))
 
     # Comet orbit (highly elliptical)
     a = 17.8  # semi-major axis in AU
@@ -108,7 +108,7 @@ def halley_comet_orbit():
     # Sun at focus
     sun = Circle((0, 0), 0.1, facecolor='#FFD700', edgecolor='black', linewidth=1)
     ax.add_patch(sun)
-    ax.text(0.15, 0.1, 'Sun', fontsize=8)
+    ax.text(0, -0.30, 'Sun', fontsize=8, ha='center', va='top')
 
     # Planet orbits for scale
     for radius in [0.39, 0.72, 1.0, 1.52, 5.2, 9.5]:
@@ -223,7 +223,7 @@ def halley_life_table():
     """Visualization of Halley's life table concept.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 4))
+    fig, ax = plt.subplots(figsize=(5.4, 3.6))
 
     # Simplified survival curve based on Halley's Breslau data
     ages = np.arange(0, 85, 1)

@@ -14,7 +14,7 @@ def sidereal_vs_solar():
     Shows why a sidereal day is ~4 minutes shorter than a solar day.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(7.8, 4.9))
 
     # Sun at center
     sun = Circle((0, 0), 0.4, facecolor='#FFD700', edgecolor='black', linewidth=1.5)
@@ -31,7 +31,10 @@ def sidereal_vs_solar():
     e1_x, e1_y = 3, 0
     earth1 = Circle((e1_x, e1_y), 0.25, facecolor='#1f77b4', edgecolor='black')
     ax.add_patch(earth1)
-    ax.text(e1_x, e1_y - 0.5, 'Day 1\nNoon', fontsize=7, ha='center')
+    # The two Earth positions are one degree apart on the orbit, so their
+    # captions go on opposite sides rather than both below.
+    ax.text(e1_x + 0.45, e1_y + 0.55, 'Day 1\nNoon', fontsize=7, ha='left',
+            va='bottom')
 
     # Star direction (far away, fixed)
     ax.annotate('', xy=(5, 0), xytext=(e1_x + 0.3, e1_y),
@@ -48,7 +51,8 @@ def sidereal_vs_solar():
     # After sidereal day, star is on meridian but sun is not
     ax.annotate('', xy=(5, e2_y), xytext=(e2_x + 0.3, e2_y),
                 arrowprops=dict(arrowstyle='->', color='purple', lw=1, alpha=0.5))
-    ax.text(e2_x, e2_y - 0.5, 'Sidereal\nday later', fontsize=7, ha='center', alpha=0.7)
+    ax.text(e2_x, e2_y - 0.6, 'Sidereal\nday later', fontsize=7, ha='center',
+            va='top', alpha=0.7)
 
     # Arrow showing extra rotation needed for solar day
     arc = Arc((e2_x, e2_y), 0.8, 0.8, angle=0, theta1=270, theta2=270+np.degrees(angle),
@@ -74,7 +78,7 @@ def sidereal_vs_solar():
 def ut_variants():
     """Diagram showing UT0, UT1, UT2 relationships."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 5))
+    fig, ax = plt.subplots(figsize=(6.4, 4.6))
 
     levels = [
         ('UT0', 'Raw observation\n(affected by polar motion)', 4, '#d62728'),
@@ -126,7 +130,7 @@ def ut_variants():
 def atomic_second():
     """Diagram of cesium atom hyperfine transition defining the SI second."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 4))
+    fig, ax = plt.subplots(figsize=(6.3, 3.6))
 
     # Energy levels
     ax.plot([0.5, 2.5], [0, 0], 'b-', linewidth=3)
@@ -165,7 +169,7 @@ def atomic_second():
 def leap_second():
     """Diagram showing how leap seconds work."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 4))
+    fig, ax = plt.subplots(figsize=(7.9, 3.9))
 
     # Timeline
     ax.axhline(2, color='black', linewidth=2, xmin=0.05, xmax=0.95)
@@ -221,7 +225,7 @@ def leap_second():
 def timekeeping_stack():
     """The layers of time abstraction from Sun to atomic."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 7))
+    fig, ax = plt.subplots(figsize=(5.5, 6.5))
 
     layers = [
         ('Apparent Solar Time', 'Sun position in sky', '#ffcc00', 6),

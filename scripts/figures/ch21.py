@@ -11,7 +11,7 @@ import numpy as np
 def pendulum_physics():
     """Simple harmonic motion of a pendulum."""
     setup_style()
-    fig, axes = plt.subplots(1, 2, figsize=(8, 4))
+    fig, axes = plt.subplots(1, 2, figsize=(7.1, 3.5))
 
     # Left: pendulum diagram
     ax = axes[0]
@@ -86,7 +86,7 @@ def pendulum_physics():
 def gridiron_pendulum():
     """Temperature compensation using alternating brass and steel rods."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6, 5))
+    fig, ax = plt.subplots(figsize=(5.3, 4.4))
 
     # Pivot
     pivot_x, pivot_y = 0, 4
@@ -123,8 +123,14 @@ def gridiron_pendulum():
     ax.text(0, pivot_y - 3, 'Bob', fontsize=8, ha='center', va='center', color='white')
 
     # Labels
-    ax.text(-0.5, pivot_y - 0.2, 'Brass', fontsize=7, ha='center', color='#B8860B')
-    ax.text(-0.25, pivot_y - 0.2, 'Steel', fontsize=7, ha='center', color='#708090')
+    # The rods are a quarter unit apart and the names are wider than that, so
+    # each is called out to one side.
+    ax.annotate('Brass', xy=(-0.5, pivot_y - 0.4), xytext=(-0.85, pivot_y - 0.4),
+                fontsize=7, ha='right', va='center', color='#B8860B',
+                arrowprops=dict(arrowstyle='-', color='#B8860B', lw=0.5))
+    ax.annotate('Steel', xy=(0.25, pivot_y - 0.4), xytext=(0.9, pivot_y - 0.4),
+                fontsize=7, ha='left', va='center', color='#708090',
+                arrowprops=dict(arrowstyle='-', color='#708090', lw=0.5))
 
     # Expansion arrows for hot
     ax.annotate('', xy=(-0.5, pivot_y - 2.7), xytext=(-0.5, pivot_y - 2.3),
@@ -154,7 +160,7 @@ def gridiron_pendulum():
 def escapement_types():
     """Comparison of escapement mechanisms."""
     setup_style()
-    fig, axes = plt.subplots(1, 3, figsize=(9, 3.5))
+    fig, axes = plt.subplots(1, 3, figsize=(7.2, 2.8))
 
     # Verge escapement
     ax = axes[0]
@@ -347,7 +353,7 @@ def fusee_mechanism():
 def clock_precision_evolution():
     """Evolution of timekeeping precision from medieval to atomic."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(6.1, 3.8))
 
     data = [
         (1400, 15*60, 'Verge'),  # 15 min/day
@@ -363,15 +369,27 @@ def clock_precision_evolution():
 
     ax.semilogy(years, errors, 'b-o', linewidth=2, markersize=10)
 
+    # The pendulum and the chronometer are seventy years and a factor of two
+    # apart, so the chronometer is called out to the right.
+    placements = {
+        'Marine\nchronometer': dict(
+            xytext=(1830, 2.0), ha='left',
+            arrowprops=dict(arrowstyle='-', color='gray', lw=0.5)),
+    }
     for year, err, label in data:
-        y_offset = 2 if err > 0.01 else 0.3
-        ax.annotate(label, xy=(year, err),
-                    xytext=(year, err * y_offset),
-                    fontsize=8, ha='center', va='bottom')
+        options = placements.get(label)
+        if options:
+            ax.annotate(label, xy=(year, err), fontsize=8, va='bottom',
+                        **options)
+        else:
+            y_offset = 2 if err > 0.01 else 0.3
+            ax.annotate(label, xy=(year, err),
+                        xytext=(year, err * y_offset),
+                        fontsize=8, ha='center', va='bottom')
 
     ax.set_xlabel('Year', fontsize=10)
     ax.set_ylabel('Daily error (seconds)', fontsize=10)
-    ax.set_xlim(1300, 2000)
+    ax.set_xlim(1280, 2010)
     ax.set_ylim(1e-7, 2000)
     ax.grid(True, alpha=0.3, which='both')
 
@@ -417,7 +435,8 @@ def balance_wheel():
 
     # Labels
     ax.text(0, wheel_r + 0.3, 'Balance wheel', fontsize=9, ha='center')
-    ax.text(0.8, 0.3, 'Hairspring', fontsize=8, color='red')
+    ax.text(0.15, -0.6, 'Hairspring', fontsize=8, ha='left', va='top',
+            color='red')
 
     # Oscillation arrows
     arc = Arc((0, 0), 3.5, 3.5, angle=0, theta1=20, theta2=70,
