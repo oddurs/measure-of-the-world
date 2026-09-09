@@ -270,7 +270,33 @@ across agents by chapter; phase 3 depends on both.
 5. Whether Appendix D (visitor guide) and Appendix G (primary sources)
    survive; both are expensive to verify and Appendix D dates quickly.
 
-## 12. Immediate next steps (this week)
+## 12. Progress as of 9 September 2026
+
+The engine described above is built and running. `make claims`, `refs`, `lint`,
+`derivations`, `figure-qa`, `proof` and `status` all work, and every result is
+tracked under `review/`.
+
+What the first pass found, beyond the Appendix C fabrications that started it:
+
+- **All six primary-source quotations in Appendix G were fabricated.** None
+  appears in the work it was attributed to; one cited a paper by Airy that was
+  never written. The appendix is rebuilt from scanned originals.
+- **Appendix B: 32 of 34 instrument entries wrong**, corrected against sources.
+- **Appendix H: 32 of 79 chronology entries wrong**, worst fixed.
+- **The bibliography**: 21 of 167 entries resolve cleanly; 25 duplicate keys
+  removed.
+- **Figures**: 96 text collisions and 18 label overflows fixed, undersized type
+  cut from 144 failures to a handful.
+- **Images**: all six identified by hash, one replaced, two credited, four
+  captions corrected, 53 more specified with verified licences.
+- **Typesetting**: overfull lines cut from 122 to 43; every printer check passes.
+
+Two things surfaced that are not defects but gaps. The 1919 eclipse, organised
+from Greenwich and the Observatory's most famous single result, appears in no
+chapter. And there is a sixteenth Astronomer Royal: Michele Dougherty, appointed
+July 2025.
+
+## 13. Immediate next steps
 
 1. Send the clean 6x9 PDF; read it end to end for a first impression.
 2. Fix the 25 figures with visible label collisions found in review.

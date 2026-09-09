@@ -1,0 +1,774 @@
+<title>Measure to Press</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+:root {
+  /* Ink and paper: cool white stock, blue-black ink, cyanotype accent.
+     Neutrals carry a slight blue bias so they sit with the accent. */
+  --paper:      #fbfbfc;
+  --paper-sunk: #f2f3f6;
+  --paper-rise: #ffffff;
+  --rule:       #dcdfe6;
+  --rule-soft:  #e8eaf0;
+  --ink:        #14181f;
+  --ink-mid:    #4a5261;
+  --ink-soft:   #737d8e;
+  --accent:     #17456b;   /* prussian / cyanotype */
+  --accent-lit: #2c6ea3;
+  --accent-wash:#e6edf4;
+  --brass:      #8a6516;   /* open decision */
+  --brass-wash: #f6efdf;
+  --oxide:      #9b3526;   /* defect, unverified */
+  --oxide-wash: #f8eae7;
+  --verdi:      #2f6b52;   /* done */
+  --verdi-wash: #e6f0ea;
+
+  --display: "Newsreader", Georgia, "Times New Roman", serif;
+  --body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  --measure: 68ch;
+  --shadow: 0 1px 2px rgba(20, 24, 31, .05), 0 8px 24px -16px rgba(20, 24, 31, .28);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper:      #0e1116;
+    --paper-sunk: #141922;
+    --paper-rise: #171d27;
+    --rule:       #2a323f;
+    --rule-soft:  #212936;
+    --ink:        #e8ecf3;
+    --ink-mid:    #a3adbe;
+    --ink-soft:   #7b8598;
+    --accent:     #7fb2dc;
+    --accent-lit: #a8cdea;
+    --accent-wash:#182635;
+    --brass:      #d3a74a;
+    --brass-wash: #2a2313;
+    --oxide:      #e08a78;
+    --oxide-wash: #2e1a16;
+    --verdi:      #77c2a0;
+    --verdi-wash: #142720;
+    --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+  }
+}
+
+:root[data-theme="dark"] {
+  --paper:      #0e1116;
+  --paper-sunk: #141922;
+  --paper-rise: #171d27;
+  --rule:       #2a323f;
+  --rule-soft:  #212936;
+  --ink:        #e8ecf3;
+  --ink-mid:    #a3adbe;
+  --ink-soft:   #7b8598;
+  --accent:     #7fb2dc;
+  --accent-lit: #a8cdea;
+  --accent-wash:#182635;
+  --brass:      #d3a74a;
+  --brass-wash: #2a2313;
+  --oxide:      #e08a78;
+  --oxide-wash: #2e1a16;
+  --verdi:      #77c2a0;
+  --verdi-wash: #142720;
+  --shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px -16px rgba(0,0,0,.7);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15.5px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+@media (min-width: 1000px) {
+  .wrap { grid-template-columns: 210px minmax(0, 1fr); gap: 0 56px; padding-right: 40px; }
+}
+
+/* ---------- navigation rail ---------- */
+
+nav.rail { display: none; }
+
+@media (min-width: 1000px) {
+  nav.rail {
+    display: block;
+    position: sticky;
+    top: 0;
+    align-self: start;
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 40px 0 40px;
+    grid-row: 1 / span 2;
+  }
+  nav.rail ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  nav.rail a {
+    display: flex;
+    gap: 10px;
+    padding: 5px 10px 5px 0;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.35;
+    border-left: 2px solid transparent;
+    padding-left: 12px;
+  }
+  nav.rail a:hover { color: var(--accent); border-left-color: var(--accent); }
+  nav.rail a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  nav.rail .num { font-family: var(--mono); font-size: 11px; padding-top: 1px; opacity: .7; font-variant-numeric: tabular-nums; }
+  nav.rail .rail-title {
+    font-family: var(--mono); font-size: 10.5px; letter-spacing: .11em;
+    text-transform: uppercase; color: var(--ink-soft);
+    padding-left: 14px; margin-bottom: 12px;
+  }
+}
+
+main { min-width: 0; padding-top: 40px; }
+
+/* ---------- masthead ---------- */
+
+header.masthead { border-bottom: 1px solid var(--ink); padding-bottom: 22px; margin-bottom: 0; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 11px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  align-items: baseline;
+}
+.eyebrow .sep { color: var(--rule); }
+.eyebrow .dim { color: var(--ink-soft); }
+
+h1 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(2.4rem, 6vw, 3.7rem);
+  line-height: 1.02;
+  letter-spacing: -.018em;
+  margin: 0 0 14px;
+  text-wrap: balance;
+}
+
+.standfirst {
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 2.2vw, 1.24rem);
+  line-height: 1.5;
+  color: var(--ink-mid);
+  max-width: 58ch;
+  margin: 0;
+}
+
+/* ---------- ledger strip ---------- */
+
+.ledger {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(128px, 1fr));
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 56px;
+}
+.ledger div {
+  padding: 16px 18px 18px 0;
+  border-right: 1px solid var(--rule-soft);
+}
+.ledger div:last-child { border-right: 0; }
+.ledger dt {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin-bottom: 5px;
+}
+.ledger dd {
+  margin: 0;
+  font-family: var(--display);
+  font-size: 1.7rem;
+  font-weight: 500;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.01em;
+}
+.ledger dd span { font-size: .82rem; font-family: var(--body); color: var(--ink-soft); font-weight: 400; letter-spacing: 0; }
+
+/* ---------- sections ---------- */
+
+section { margin-bottom: 60px; scroll-margin-top: 24px; }
+
+h2 {
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: clamp(1.5rem, 3.4vw, 1.95rem);
+  line-height: 1.15;
+  letter-spacing: -.012em;
+  margin: 0 0 6px;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  text-wrap: balance;
+}
+h2 .h2num {
+  font-family: var(--mono);
+  font-size: .62em;
+  color: var(--accent);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+.section-note {
+  color: var(--ink-mid);
+  max-width: var(--measure);
+  margin: 0 0 26px;
+}
+
+h3 {
+  font-family: var(--body);
+  font-weight: 600;
+  font-size: .96rem;
+  letter-spacing: .005em;
+  margin: 30px 0 8px;
+}
+
+p { max-width: var(--measure); margin: 0 0 14px; }
+
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+code, .m { font-family: var(--mono); font-size: .87em; }
+code {
+  background: var(--paper-sunk);
+  padding: .1em .34em;
+  border-radius: 3px;
+  color: var(--ink-mid);
+}
+
+ul.plain { list-style: none; margin: 0 0 14px; padding: 0; max-width: var(--measure); display: flex; flex-direction: column; gap: 9px; }
+ul.plain > li { padding-left: 18px; position: relative; }
+ul.plain > li::before {
+  content: ""; position: absolute; left: 0; top: .62em;
+  width: 6px; height: 1px; background: var(--accent);
+}
+
+/* ---------- error budget ---------- */
+
+.budget { display: flex; flex-direction: column; gap: 0; border-top: 1px solid var(--rule); }
+
+.brow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+@media (min-width: 720px) {
+  .brow { grid-template-columns: 168px minmax(0, 1fr) 230px; align-items: center; gap: 0 24px; }
+}
+
+.brow .bname { font-weight: 600; font-size: .93rem; }
+.brow .bnote { color: var(--ink-soft); font-size: .84rem; line-height: 1.45; }
+
+.bar {
+  height: 9px;
+  background: var(--paper-sunk);
+  border: 1px solid var(--rule-soft);
+  position: relative;
+  overflow: hidden;
+  margin: 5px 0;
+}
+.bar i {
+  position: absolute; inset: 0 auto 0 0;
+  background: var(--verdi);
+  display: block;
+}
+.bar.none i { background: var(--oxide); width: 2px !important; }
+
+.bfig {
+  font-family: var(--mono);
+  font-size: .8rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-mid);
+  white-space: nowrap;
+}
+.bfig b { color: var(--ink); font-weight: 500; }
+
+/* ---------- tables ---------- */
+
+.tscroll { overflow-x: auto; margin: 0 0 16px; border-bottom: 1px solid var(--rule); }
+table { border-collapse: collapse; width: 100%; font-size: .89rem; min-width: 520px; }
+th, td { text-align: left; padding: 11px 18px 11px 0; vertical-align: top; border-bottom: 1px solid var(--rule-soft); }
+tr:last-child td { border-bottom: 0; }
+thead th {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  font-weight: 500;
+  border-bottom: 1px solid var(--rule);
+  padding-top: 0;
+}
+td.num, th.num { font-family: var(--mono); font-variant-numeric: tabular-nums; white-space: nowrap; }
+td.gnum { font-family: var(--mono); color: var(--accent); width: 2ch; }
+
+/* ---------- engine cards ---------- */
+
+.engines { display: flex; flex-direction: column; gap: 1px; background: var(--rule-soft); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+.engine { background: var(--paper); padding: 22px 0 24px; }
+.engine .ehead { display: flex; align-items: baseline; gap: 12px; margin-bottom: 3px; flex-wrap: wrap; }
+.engine h3 { margin: 0; font-size: 1.02rem; }
+.engine .goal { color: var(--ink-mid); font-size: .88rem; }
+.engine .etag {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--accent); background: var(--accent-wash); padding: 3px 7px; border-radius: 2px;
+}
+.engine ul.plain { margin-top: 12px; }
+
+/* ---------- decisions ---------- */
+
+.decisions { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 780px) { .decisions { grid-template-columns: 1fr 1fr; } }
+.dec {
+  border-left: 2px solid var(--brass);
+  background: var(--brass-wash);
+  padding: 14px 18px 15px;
+}
+.dec h3 { margin: 0 0 5px; font-size: .93rem; }
+.dec p { margin: 0; font-size: .87rem; color: var(--ink-mid); max-width: none; }
+.dec .rec { display: block; margin-top: 7px; color: var(--ink); font-size: .85rem; }
+.dec .rec b { font-family: var(--mono); font-size: .82rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--brass); margin-right: 6px; }
+
+/* ---------- phases ---------- */
+
+.phases { border-top: 1px solid var(--rule); }
+.phase {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2px 24px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--rule-soft);
+}
+@media (min-width: 700px) { .phase { grid-template-columns: 40px minmax(0,1fr) 108px; align-items: baseline; } }
+.phase .pnum { font-family: var(--mono); color: var(--accent); font-size: .84rem; }
+.phase .pname { font-weight: 600; font-size: .93rem; margin-bottom: 2px; }
+.phase .pbody { color: var(--ink-mid); font-size: .87rem; }
+.phase .pdur { font-family: var(--mono); font-size: .8rem; color: var(--ink-soft); white-space: nowrap; }
+.phase.done .pnum, .phase.done .pdur { color: var(--verdi); }
+
+/* ---------- week list ---------- */
+
+ol.week { list-style: none; counter-reset: w; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 11px; max-width: var(--measure); }
+ol.week li { counter-increment: w; position: relative; padding-left: 30px; }
+ol.week li::before {
+  content: counter(w);
+  position: absolute; left: 0; top: 1px;
+  font-family: var(--mono); font-size: .76rem;
+  color: var(--accent);
+  border: 1px solid var(--rule);
+  width: 20px; height: 20px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+}
+
+/* ---------- callout ---------- */
+
+.callout {
+  border-left: 2px solid var(--oxide);
+  background: var(--oxide-wash);
+  padding: 15px 20px 16px;
+  margin: 0 0 26px;
+  max-width: var(--measure);
+}
+.callout p { margin: 0; }
+.callout p + p { margin-top: 9px; }
+.callout .clabel {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--oxide); display: block; margin-bottom: 6px;
+}
+
+footer {
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+  color: var(--ink-soft);
+  font-size: .82rem;
+  font-family: var(--mono);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+</style>
+
+<div class="wrap">
+
+<nav class="rail" aria-label="Sections">
+  <div class="rail-title">Contents</div>
+  <ol>
+    <li><a href="#state"><span class="num">01</span><span>State of the manuscript</span></a></li>
+    <li><a href="#principles"><span class="num">02</span><span>Operating principles</span></a></li>
+    <li><a href="#engines"><span class="num">03</span><span>The five engines</span></a></li>
+    <li><a href="#visual"><span class="num">04</span><span>Redoing the visuals</span></a></li>
+    <li><a href="#gates"><span class="num">05</span><span>Gates</span></a></li>
+    <li><a href="#phases"><span class="num">06</span><span>Phases</span></a></li>
+    <li><a href="#decisions"><span class="num">07</span><span>Open decisions</span></a></li>
+    <li><a href="#week"><span class="num">08</span><span>This week</span></a></li>
+  </ol>
+</nav>
+
+<main>
+
+<header class="masthead">
+  <p class="eyebrow">
+    <span>The Measure of the World</span>
+    <span class="sep">/</span>
+    <span class="dim">Production plan and progress</span>
+    <span class="sep">/</span>
+    <span class="dim">Updated 9 September 2026</span>
+  </p>
+  <h1>Measure to Press</h1>
+  <p class="standfirst">A complete draft sat untouched since January. This is the apparatus for turning it into a printed first edition, and the record of what that apparatus has found so far. The short version: the manuscript is well made and substantially unverified, and what verification has reached is worse than the draft's condition suggested.</p>
+</header>
+
+<dl class="ledger">
+  <div><dt>Built pages</dt><dd>466</dd></div>
+  <div><dt>Trim</dt><dd>6&times;9 <span>in</span></dd></div>
+  <div><dt>Chapters</dt><dd>25 <span>+ 9 app.</span></dd></div>
+  <div><dt>Figures</dt><dd>116</dd></div>
+  <div><dt>References</dt><dd>142</dd></div>
+  <div><dt>Images wanted</dt><dd>60</dd></div>
+</dl>
+
+<section id="state">
+  <h2><span class="h2num">01</span>State of the manuscript</h2>
+  <p class="section-note">Read the following the way the book itself reads an instrument: as an error budget, where every unverified line is a source of error that has to be driven to zero before publication. The bars show where verification has actually reached, not where it is planned to reach.</p>
+
+  <div class="callout">
+    <span class="clabel">What verification found</span>
+    <p><b>All six primary-source quotations in Appendix G were fabricated.</b> Each was checked against scanned originals rather than descriptions of them, and not one of the six passages appears in the work it was attributed to. One cited a paper by Airy that was never written, confirmed against the Royal Society's exhaustive catalogue of his output; its invented text used a statistical term coined 52 years after the supposed publication date. The appendix has been rebuilt from verified text.</p>
+    <p>Appendix C had listed five people as Astronomer Royal who never held the office, including one who appears not to exist. Appendix B had 32 of 34 instrument entries wrong. Appendix H had 32 of 79 chronology entries wrong, including a satellite launched in 1989 credited with a method in 1821.</p>
+    <p>The pattern is consistent and it sets the rule for everything that follows. The draft's standing editorial instruction was not to independently verify citations. That instruction is what let all of this through. Nothing in this book can be printed on the strength of its already being written down.</p>
+  </div>
+
+  <div class="budget">
+    <div class="brow">
+      <div class="bname">Factual claims</div>
+      <div>
+        <div class="bar"><i style="width:13%"></i></div>
+        <div class="bnote">Every checkable sentence extracted into per-file ledgers: dates, measurements, names, superlatives, quotations, and every row of every reference table. 49 verified, 81 corrected. The appendices came first because that is where the fabrications were.</div>
+      </div>
+      <div class="bfig"><b>130</b> settled / <b>1,007</b></div>
+    </div>
+
+    <div class="brow">
+      <div class="bname">References</div>
+      <div>
+        <div class="bar"><i style="width:13%"></i></div>
+        <div class="bnote">Resolved against Crossref, OpenLibrary and Google Books. 79 ambiguous, 67 found by no catalogue at all, of which 36 are cited in the text. A further 25 duplicate key definitions were removed; BibTeX had been silently discarding them.</div>
+      </div>
+      <div class="bfig"><b>21</b> resolved / <b>167</b></div>
+    </div>
+
+    <div class="brow">
+      <div class="bname">Figures</div>
+      <div>
+        <div class="bar"><i style="width:94%"></i></div>
+        <div class="bnote">96 text collisions fixed, 18 labels overflowing their containers fixed, and undersized type cut from 144 failures to a handful. Every figure now has a written specification. What remains is quality, not legibility.</div>
+      </div>
+      <div class="bfig"><b>8</b> defects / <b>116</b> figures</div>
+    </div>
+
+    <div class="brow">
+      <div class="bname">Images</div>
+      <div>
+        <div class="bar"><i style="width:100%"></i></div>
+        <div class="bnote">All six existing photographs identified by hash against their originals, so provenance is certain. One replaced to escape a copyright claim, two given the credit their licence requires, four captions corrected. 53 more specified with verified licences.</div>
+      </div>
+      <div class="bfig"><b>60</b> in manifest</div>
+    </div>
+
+    <div class="brow">
+      <div class="bname">Index</div>
+      <div>
+        <div class="bar"><i style="width:9%"></i></div>
+        <div class="bnote">68 entries covering 11 of 25 chapters. Chapters 4 to 7, 10, 12, 13, 15 to 17, 20 and 23 to 25 have none at all. Untouched so far; it comes after the text settles.</div>
+      </div>
+      <div class="bfig"><b>68</b> / <b>~750</b> target</div>
+    </div>
+
+    <div class="brow">
+      <div class="bname">Typesetting</div>
+      <div>
+        <div class="bar"><i style="width:88%"></i></div>
+        <div class="bnote">Reflowed to 6&times;9 with printer bleed and trim box. Overfull lines cut from 122 to 43 by giving thirteen tables columns that wrap and giving paragraphs room to break at the narrower measure.</div>
+      </div>
+      <div class="bfig"><b>43</b> boxes, <b>14</b> serious</div>
+    </div>
+
+    <div class="brow">
+      <div class="bname">Printer checks</div>
+      <div>
+        <div class="bar"><i style="width:100%"></i></div>
+        <div class="bnote">Page and trim boxes exactly as the printer specifies, all 34 fonts embedded, all 234 placed images at or above 300 dots per inch, page count even.</div>
+      </div>
+      <div class="bfig"><b>all pass</b></div>
+    </div>
+
+    <div class="brow">
+      <div class="bname">Build pipeline</div>
+      <div>
+        <div class="bar"><i style="width:100%"></i></div>
+        <div class="bnote">Local toolchain working, continuous integration fixed and green. The build fails on LaTeX errors instead of shipping a broken file, which immediately surfaced four that had been shipping silently since January.</div>
+      </div>
+      <div class="bfig"><b>green</b></div>
+    </div>
+  </div>
+</section>
+
+<section id="principles">
+  <h2><span class="h2num">02</span>Operating principles</h2>
+  <p class="section-note">Four rules that decide how every stage below is built.</p>
+  <ul class="plain">
+    <li><b>Everything is a file in git.</b> Claims, verification status, figure specifications, image licences, review findings. No state lives only in a chat window or a spreadsheet. One pull request per chapter per stage keeps every change reviewable.</li>
+    <li><b>Tools find, people decide.</b> Scripts and agents extract claims, look up sources, lint prose, render proofs and flag defects. The author signs off on every factual correction and every figure.</li>
+    <li><b>Gates, not impressions.</b> A chapter is finished when it passes a fixed list of checks. A single command reports where every chapter stands.</li>
+    <li><b>Sources over memory.</b> No agent may correct a fact from its own knowledge. It records the claim, the source it found, and the proposed change. The source must be a citable document, and it enters the bibliography.</li>
+  </ul>
+</section>
+
+<section id="engines">
+  <h2><span class="h2num">03</span>The five engines</h2>
+  <p class="section-note">Each is a directory of tracked files plus the scripts that maintain them, wired into <code>make verify</code>, <code>make lint</code>, <code>make figure-qa</code>, <code>make proof</code> and <code>make status</code>. Continuous integration runs all of them on every pull request.</p>
+
+  <div class="engines">
+
+    <div class="engine">
+      <div class="ehead"><h3>Reference engine</h3><span class="etag">review/refs</span></div>
+      <p class="goal">Every entry resolves to a real, locatable work, and every citation supports the sentence it is attached to.</p>
+      <ul class="plain">
+        <li><b>Resolve.</b> Query Crossref for DOIs, NASA ADS for the historical astronomy journals the book leans on (<i>Philosophical Transactions</i>, <i>Monthly Notices</i>, <i>Astronomische Nachrichten</i>), and Open Library plus Google Books for monographs. Each key lands as resolved, ambiguous, or not found.</li>
+        <li><b>Enrich.</b> Attach a DOI, ADS bibcode, ISBN and stable URL so a reader can actually reach the source.</li>
+        <li><b>Lint.</b> Required fields per entry type, consistent name forms, no duplicate works under two keys, and page numbers on every citation that supports a specific figure or quotation.</li>
+        <li><b>Link.</b> Each verified claim names the key and page that supports it. A citation supporting nothing gets removed.</li>
+        <li><b>Fill gaps.</b> Standard works the book should be drawing on where it currently cites nothing: Howse on Greenwich time, the three-volume <i>Greenwich Observatory</i>, Chapman on circular division, Baily on Flamsteed, Betts on chronometers.</li>
+      </ul>
+    </div>
+
+    <div class="engine">
+      <div class="ehead"><h3>Fact-check engine</h3><span class="etag">review/claims</span></div>
+      <p class="goal">A ledger of every checkable statement, each marked verified, corrected, or removed, with its source recorded.</p>
+      <ul class="plain">
+        <li><b>Extract.</b> Split each chapter into sentences and keep those carrying a date, a number with a unit, a proper name, a quotation, or a superlative. Expect 150 to 250 per chapter, written to a YAML ledger with an identifier, the text, a type, a status and a source field.</li>
+        <li><b>Check in risk order.</b> Appendix G first, because its primary-source excerpts must match the originals word for word and carry the highest fabrication risk. Then appendices C, H and B for people, tenures and instrument specifications. Then the numbers inside derivations. Then the narrative chapters.</li>
+        <li><b>Recompute the mathematics.</b> Every derivation and worked example gets a short script that reproduces its result numerically: the aberration constant, the refraction table, the lunar-distance clearing example, the equation of time, pendulum temperature error, the chronometer trial rates. A mismatch between script and text is a defect.</li>
+        <li><b>Gate.</b> No chapter leaves this stage with an unverified claim. Anything that cannot be sourced is rewritten or cut. Encyclopaedias are a lead, never a source.</li>
+      </ul>
+    </div>
+
+    <div class="engine">
+      <div class="ehead"><h3>Editorial engine</h3><span class="etag">review/critique</span></div>
+      <p class="goal">Prose that holds a consistent voice across 87,000 words written in bursts.</p>
+      <ul class="plain">
+        <li><b>Mechanical lint.</b> Rules drawn from the existing style guide: no contractions, no abbreviating right ascension, sentences over 35 words, passive density, forward references without local context, jargon undefined on first use, repeated sentence openers.</li>
+        <li><b>Structural critique.</b> One agent pass per chapter against a fixed rubric. Does the opening scene earn its place, does every section advance the argument, where does the mathematics arrive unmotivated, where does the text assert precision it does not demonstrate, what is missing, what should be cut. Findings numbered so each can be accepted or rejected.</li>
+        <li><b>Consistency sweep.</b> One term per concept, one spelling per name, one format for units and dates, one way of naming each instrument, across all 34 files.</li>
+        <li><b>Human copyedit.</b> Budget for a professional. No tool substitutes for one on a 456-page book.</li>
+      </ul>
+    </div>
+
+    <div class="engine">
+      <div class="ehead"><h3>Visual engine</h3><span class="etag">figures/</span></div>
+      <p class="goal">Every figure earns its place, reads at printed size, and carries a clear licence. Detailed in section 04.</p>
+      <ul class="plain">
+        <li>A written specification per figure, a shared design system, automated quality checks, and a manifest that makes an unlicensed image a build failure.</li>
+      </ul>
+    </div>
+
+    <div class="engine">
+      <div class="ehead"><h3>Proof engine</h3><span class="etag">review/layout</span></div>
+      <p class="goal">A file the printer accepts and a book that reads correctly on paper.</p>
+      <ul class="plain">
+        <li><b>Render and report.</b> Every page to an image; overfull lines mapped back to source file and line; floats stranded far from their reference; widows, orphans and stray blank pages; figures scaled below half or above their natural size.</li>
+        <li><b>Printer checks.</b> Fonts embedded, page boxes correct, image resolution at printed size, and a PDF/X conversion for the Mixam upload.</li>
+        <li><b>Spreads.</b> Facing pages reviewed as pairs, since that is how the book is actually read.</li>
+        <li><b>Index.</b> Candidate entries proposed per chapter from names, instruments and concepts, then approved by hand. Target 600 to 900 with cross references.</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<section id="visual">
+  <h2><span class="h2num">04</span>Redoing the visuals</h2>
+  <p class="section-note">All 116 figures were drafted in one session and none had a stated purpose. Legibility is now fixed and every figure has a written specification. What follows is the redraw itself, which is the part that needs the colour decision settled first.</p>
+
+  <h3>Specify before drawing</h3>
+  <p>Every figure gets a short written specification: the question it answers, the data or geometry it shows, where that came from, its form, and the sentence in the text it supports. A figure that answers no question is cut. The count should fall.</p>
+
+  <h3>Then split by kind</h3>
+  <div class="tscroll">
+    <table>
+      <thead><tr><th>Kind</th><th class="num">Count</th><th>Tool</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Data plots</td><td class="num">~40</td><td>matplotlib, restyled</td><td>Real numbers, reproducible from code, already close to right</td></tr>
+        <tr><td>Instrument schematics</td><td class="num">~45</td><td>TikZ</td><td>Currently drawn with plotting primitives; vector art in the book's own typeface will read far better</td></tr>
+        <tr><td>Timelines and flowcharts</td><td class="num">~20</td><td>TikZ templates</td><td>Highly repetitive, so one good template fixes twenty figures at once</td></tr>
+        <tr><td>Maps</td><td class="num">~5</td><td>TikZ over open data</td><td>Scilly wreck site, Greenwich park, Herstmonceux, La Palma</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>A design system, written down</h3>
+  <p>One page defining the palette, line weights, minimum label size at printed width, arrow style, axis conventions and caption rules, implemented in shared code so every new figure is on-system by default. Minimum readable label size is 7 points at final printed width, which most current figures fail once reduced to the 4.5 inch text block.</p>
+
+  <h3>Checks that run automatically</h3>
+  <ul class="plain">
+    <li>Text bounding boxes tested against each other, which found 96 collisions across 54 figures, and against the shapes that contain them, which found a further 18 labels spilling outside their own circles.</li>
+    <li>Effective font size computed at the width each figure is actually placed at in its chapter, not the width it was drawn at.</li>
+    <li>Bounding box sanity, catching the runaway figure that rendered 5,000 inches wide.</li>
+    <li>300 dots per inch at printed size, and a greyscale contrast check regardless of which interior is chosen.</li>
+  </ul>
+
+  <h3>Photographs and historical images</h3>
+  <p>The book wants 40 to 60 images and has six. The gap list runs to portraits of every Astronomer Royal through Woolley, Flamsteed House and the Octagon Room, the mural arc, Bradley's zenith sector, Harrison's five timekeepers, the Airy transit circle, the Great Equatorial, the time ball, the 1884 conference, the Herstmonceux domes, sextants and octants, and title pages from the <i>Nautical Almanac</i> and the <i>Historia Coelestis</i>.</p>
+  <p>Licensing decides where they come from. The book is published under a licence permitting commercial reuse, so Wikimedia Commons public-domain scans, Wellcome Collection, the Library of Congress, and Internet Archive scans of pre-1900 books all work. Royal Museums Greenwich, the Science Museum Group and the Royal Society picture library do not, without a paid licence.</p>
+  <p>No image enters the book without a manifest entry recording file, source, creator, date, licence, credit line and pixel size. The credits page is generated from that manifest, and an image without one fails the build.</p>
+</section>
+
+<section id="gates">
+  <h2><span class="h2num">05</span>Gates</h2>
+  <p class="section-note">A chapter advances only when the previous gate reports green. These are a real sequence: each stage assumes the one before it is settled, because re-typesetting a chapter whose facts later change wastes the typesetting.</p>
+  <div class="tscroll">
+    <table>
+      <thead><tr><th class="num">&nbsp;</th><th>Stage</th><th>Passes when</th></tr></thead>
+      <tbody>
+        <tr><td class="gnum">1</td><td>Fact-checked</td><td>No unverified claims remain, every quotation is sourced, and the mathematics scripts reproduce the printed results</td></tr>
+        <tr><td class="gnum">2</td><td>Referenced</td><td>Every citation resolves and links to a claim; no unresolved keys survive</td></tr>
+        <tr><td class="gnum">3</td><td>Figured</td><td>Every figure has a specification, passes the automated checks, and has been reviewed at printed size; every image is in the manifest</td></tr>
+        <tr><td class="gnum">4</td><td>Edited</td><td>Critique findings each accepted or rejected with a reason; prose lint clean</td></tr>
+        <tr><td class="gnum">5</td><td>Typeset</td><td>No overfull line beyond 5 points, no open layout finding, index entries present</td></tr>
+        <tr><td class="gnum">6</td><td>Proofed</td><td>Read on the physical proof copy and corrections merged</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="phases">
+  <h2><span class="h2num">06</span>Phases</h2>
+  <p class="section-note">Roughly three months of steady work. Phases 1 and 2 run in parallel and split cleanly across agents by chapter. Phase 3 depends on both.</p>
+  <div class="phases">
+    <div class="phase done">
+      <div class="pnum">00</div>
+      <div>
+        <div class="pname">Pipeline and layout</div>
+        <div class="pbody">TeX toolchain, Python environment, continuous integration, 6&times;9 reflow with printer bleed, a build that fails on errors. Complete, and all printer checks pass.</div>
+      </div>
+      <div class="pdur">done</div>
+    </div>
+    <div class="phase">
+      <div class="pnum">01</div>
+      <div>
+        <div class="pname">Verification</div>
+        <div class="pbody">Engine built and running. Appendices B, G and H checked and corrected; Appendix G rebuilt from originals. 130 of 1,007 claims settled, the bibliography resolved and de-duplicated. The 25 chapters are the remaining bulk.</div>
+      </div>
+      <div class="pdur">2 weeks left</div>
+    </div>
+    <div class="phase">
+      <div class="pnum">02</div>
+      <div>
+        <div class="pname">Visuals</div>
+        <div class="pbody">Legibility done: collisions, overflows and undersized type all cleared, specifications written, image manifest built with 53 sourced additions. What remains is acquiring the images and redrawing the schematics as vector art.</div>
+      </div>
+      <div class="pdur">3 weeks left</div>
+    </div>
+    <div class="phase">
+      <div class="pnum">03</div>
+      <div>
+        <div class="pname">Editorial</div>
+        <div class="pbody">Critique passes, author revision, consistency sweep, professional copyedit.</div>
+      </div>
+      <div class="pdur">4 weeks</div>
+    </div>
+    <div class="phase">
+      <div class="pnum">04</div>
+      <div>
+        <div class="pname">Press</div>
+        <div class="pbody">Index, front and back matter, credits, cover with spine width from the final page count, PDF/X, printer proof, then tag the release.</div>
+      </div>
+      <div class="pdur">2 weeks</div>
+    </div>
+  </div>
+</section>
+
+<section id="decisions">
+  <h2><span class="h2num">07</span>Open decisions</h2>
+  <p class="section-note">Five calls only you can make. The first two block the visual engine, so they are worth settling this week.</p>
+  <div class="decisions">
+    <div class="dec">
+      <h3>Colour or greyscale interior</h3>
+      <p>At 456 pages, colour printing costs several times what black and white does. Most of these figures are line diagrams that lose nothing in grey.</p>
+      <span class="rec"><b>Suggest</b>Design for greyscale with a single accent, then ship colour in the free download and greyscale in the printed interior.</span>
+    </div>
+    <div class="dec">
+      <h3>Image licensing budget</h3>
+      <p>The richest Greenwich collections sit behind non-commercial licences that conflict with the book's own licence.</p>
+      <span class="rec"><b>Suggest</b>Set a figure now. If it is zero, the wish list is built only from freely reusable sources, and two of the six existing photographs get replaced.</span>
+    </div>
+    <div class="dec">
+      <h3>Who redraws the schematics</h3>
+      <p>Forty-five instrument diagrams is real illustration work. Code keeps them reviewable and in the book's typeface; an illustrator would be better and slower.</p>
+      <span class="rec"><b>Suggest</b>Code, working to written specifications, for a single-author project.</span>
+    </div>
+    <div class="dec">
+      <h3>Copyeditor</h3>
+      <p>Eighty-seven thousand words of technical prose written across many sessions will not hold a consistent voice without one.</p>
+      <span class="rec"><b>Suggest</b>Hire for phase 3, after the facts are settled and before typesetting locks.</span>
+    </div>
+    <div class="dec">
+      <h3>Fate of appendices D and G</h3>
+      <p>The visitor guide dates quickly and the primary-source excerpts are the most expensive material in the book to verify, since each quotation must be matched against an original.</p>
+      <span class="rec"><b>Suggest</b>Keep G and verify it first. Reconsider D, or reduce it to a page of pointers.</span>
+    </div>
+  </div>
+</section>
+
+<section id="week">
+  <h2><span class="h2num">08</span>Next</h2>
+  <p class="section-note">The engine is built and the appendices are through their first pass. What follows is the bulk of the work, and two decisions that gate a third of it.</p>
+  <ol class="week">
+    <li>Read the 466-page build end to end at the real trim size. Everything below is easier to judge afterwards.</li>
+    <li>Get a printer quote for 466 pages at 6&times;9, colour against black and white. It settles the colour decision, which gates the figure redraw.</li>
+    <li>Work the claim ledgers through the 25 chapters. 877 claims remain unverified and this is the long pole.</li>
+    <li>Decide what to do about the 67 references no catalogue can find, starting with the four cited works whose entries do not survive inspection.</li>
+    <li>Acquire the 51 images that have verified sources waiting in the manifest.</li>
+    <li>Fix Appendix A's Bradley worked example, which states a fit that does not match the data printed above it.</li>
+    <li>Decide whether the 1919 eclipse gets a chapter. It is the Observatory's most famous result and appears in none of the twenty-five.</li>
+  </ol>
+</section>
+
+<footer>
+  <span>The Measure of the World</span>
+  <span>Production plan, 9 September 2026</span>
+  <span>Audit of commit 9cf456c</span>
+</footer>
+
+</main>
+</div>
