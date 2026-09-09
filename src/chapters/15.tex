@@ -35,7 +35,7 @@ where $e$ is the orbital eccentricity. Perihelion occurs in early January, so $M
 
 \section{The Obliquity Effect}
 
-The second source of non-uniformity is the tilt of Earth's rotation axis relative to the ecliptic plane. The ecliptic (the plane of Earth's orbit) makes an angle of approximately $23.44°$ to the celestial equator (the plane perpendicular to Earth's rotation axis). This obliquity causes the Sun to move north and south of the celestial equator as it traverses the year.
+The second source of non-uniformity is the tilt of Earth's rotation axis relative to the ecliptic plane. The ecliptic (the plane of Earth's orbit) makes an angle of approximately $23.44^{\circ}$ to the celestial equator (the plane perpendicular to Earth's rotation axis). This obliquity causes the Sun to move north and south of the celestial equator as it traverses the year.
 
 When the Sun is far from the equator (near the solstices), a given change in its ecliptic longitude corresponds to a smaller change in equatorial longitude. Near the equinoxes, when the Sun is crossing the equator, the same change in ecliptic longitude corresponds to a larger change in equatorial longitude. This geometric effect creates a second contribution to the equation of time, independent of orbital eccentricity.
 
@@ -51,7 +51,7 @@ where $\epsilon$ is the obliquity and $\delta$ is the declination. For the Sun o
   E_{\text{obliq}} = -\tan^2 \left(\frac{\epsilon}{2}\right) \sin 2\lambda.
 \]
 
-The maximum effect occurs near the equinoxes (when $\sin 2\lambda = 1$), giving $E_{\text{obliq}} \approx -\tan^2(11.7°) \approx -0.043$ radians $\approx \SI{-9.9}{\minute}$. This is larger in magnitude than the eccentricity effect.
+The maximum effect occurs near the equinoxes (when $\sin 2\lambda = 1$), giving $E_{\text{obliq}} \approx -\tan^2(11.7^{\circ}) \approx -0.043$ radians $\approx \SI{-9.9}{\minute}$. This is larger in magnitude than the eccentricity effect.
 
 \section{The Total Equation of Time}
 
@@ -88,7 +88,7 @@ A graph of the equation of time over a year shows a characteristic wave-like pat
 
 \section{The Analemma: The Figure-Eight in the Sky}
 
-If an observer marks the position of the Sun at the same clock time each day for a full year, the plotted positions trace a figure-eight pattern in the sky called the analemma. The vertical extent of the analemma (north-south extent) is due to the obliquity of the ecliptic: the Sun moves from declination $+23.44°$ at the summer solstice to $-23.44°$ at the winter solstice. The horizontal extent (east-west) is due to the equation of time: the Sun is sometimes ahead of clock time, sometimes behind.
+If an observer marks the position of the Sun at the same clock time each day for a full year, the plotted positions trace a figure-eight pattern in the sky called the analemma. The vertical extent of the analemma (north-south extent) is due to the obliquity of the ecliptic: the Sun moves from declination $+23.44^{\circ}$ at the summer solstice to $-23.44^{\circ}$ at the winter solstice. The horizontal extent (east-west) is due to the equation of time: the Sun is sometimes ahead of clock time, sometimes behind.
 
 The analemma is a powerful visualization of the two effects. At the top (summer solstice, June), the Sun is far north, and the Sun is running ahead of clock time (positive equation of time). At the bottom (winter solstice, December), the Sun is far south, and the Sun is running behind clock time (negative equation of time). The shape is not a circle or an ellipse, but a figure-eight, because the relationship between obliquity effect and eccentricity effect varies with the season.
 
@@ -103,10 +103,10 @@ The analemma appears on some sundials, printed or marked to show the correction 
 
 \section{A Worked Example: The Equation of Time on May 12}
 
-Suppose we wish to calculate the equation of time for May 12, a date near one of the secondary maxima. First, we convert the date to the mean anomaly $M$. The mean anomaly increases linearly from 0 at perihelion (January 3, year 2000 epoch) to $360°$ over the course of the year. Dividing the year into 365.25 days:
+Suppose we wish to calculate the equation of time for May 12, a date near one of the secondary maxima. First, we convert the date to the mean anomaly $M$. The mean anomaly increases linearly from 0 at perihelion (January 3, year 2000 epoch) to $360^{\circ}$ over the course of the year. Dividing the year into 365.25 days:
 
 \[
-  M = 360° \times \frac{\text{day of year} - 2}{365.25} = 360° \times \frac{132 - 2}{365.25} \approx 130.1°.
+  M = 360^{\circ} \times \frac{\text{day of year} - 2}{365.25} = 360^{\circ} \times \frac{132 - 2}{365.25} \approx 130.1^{\circ}.
 \]
 
 Converting to radians: $M \approx 2.27$ rad.
@@ -114,7 +114,7 @@ Converting to radians: $M \approx 2.27$ rad.
 Next, we calculate the ecliptic longitude. The relationship between mean anomaly $M$ and ecliptic longitude $\lambda$ for small eccentricity is:
 
 \[
-  \lambda = M + 2e \sin M + \cdots \approx 2.27 + 2(0.0167) \sin(2.27) \approx 2.27 + 0.0278 \approx 2.298 \text{ rad} \approx 131.7°.
+  \lambda = M + 2e \sin M + \cdots \approx 2.27 + 2(0.0167) \sin(2.27) \approx 2.27 + 0.0278 \approx 2.298 \text{ rad} \approx 131.7^{\circ}.
 \]
 
 Now we calculate the eccentricity component:
@@ -132,7 +132,7 @@ And the obliquity component:
   &\approx 0.0414 \text{ rad} \approx \SI{+2.4}{\minute}.
 \end{align*}
 
-Wait: this gives a net value of $-1.6 + 2.4 = +0.8$ minutes, which is small. Let me recalculate more carefully. The ecliptic longitude for May 12 is approximately $52°$ beyond the vernal equinox, so $\lambda = 90° + 52° = 142°$. Actually, I should use the more accurate formula. At May 12 (day 132), $M \approx 130.1°$ and 
+Wait: this gives a net value of $-1.6 + 2.4 = +0.8$ minutes, which is small. Let me recalculate more carefully. The ecliptic longitude for May 12 is approximately $52^{\circ}$ beyond the vernal equinox, so $\lambda = 90^{\circ} + 52^{\circ} = 142^{\circ}$. Actually, I should use the more accurate formula. At May 12 (day 132), $M \approx 130.1^{\circ}$ and 
 
 \begin{align*}
   \lambda &\approx M + 2e \sin M \\
@@ -165,7 +165,7 @@ Consulting tables of the equation of time, the value for May 12 is approximately
 
 \section{Mean Solar Time: The Clock's Abstraction}
 
-The invention of the clock—a device that ticks at a uniform rate, unaffected by the actual position of the Sun—created the possibility of mean solar time: time that is uniform, abstract, and independent of the Sun's irregular motion. A perfectly adjusted clock keeping mean solar time advances by exactly 24 hours between successive transits of the mean Sun. The mean Sun is a fictitious point that moves uniformly along the ecliptic, traveling $360°$ in 365.25 days.
+The invention of the clock—a device that ticks at a uniform rate, unaffected by the actual position of the Sun—created the possibility of mean solar time: time that is uniform, abstract, and independent of the Sun's irregular motion. A perfectly adjusted clock keeping mean solar time advances by exactly 24 hours between successive transits of the mean Sun. The mean Sun is a fictitious point that moves uniformly along the ecliptic, traveling $360^{\circ}$ in 365.25 days.
 
 Mean solar time is the time shown on a sundial corrected by the equation of time—or equivalently, the time kept by a clock that has been set to correspond to solar noon on the day of observation, then left to run uniformly.
 

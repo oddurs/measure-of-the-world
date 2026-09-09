@@ -96,7 +96,7 @@ For an educated navigator with training in mathematics, this might take 30 minut
 
 \textsc{Step 5: Convert discrepancy to longitude.} A small angle discrepancy in the Moon's position corresponds to a time discrepancy, which in turn corresponds to a longitude error. Specifically, the Moon moves at roughly 0.55 degrees per hour, so a 0.55-degree error in the Moon's position corresponds to a 1-hour error in time, which corresponds to 15 degrees of longitude (or about 900 nautical miles at the equator). The conversion was:
 \[
-  \Delta t = \frac{\Delta\text{distance}}{0.55°/\text{hour}} \quad \Rightarrow \quad \Delta\lambda = \Delta t \times 15°/\text{hour}.
+  \Delta t = \frac{\Delta\text{distance}}{0.55^{\circ}/\text{hour}} \quad \Rightarrow \quad \Delta\lambda = \Delta t \times 15^{\circ}/\text{hour}.
 \]
 
 \textsc{Step 6: Determine the navigator's position.} Combining the longitude from the lunar distance with an independently determined latitude (obtained from the Sun's altitude at noon, a much simpler procedure), the navigator could determine his position and check it against the dead reckoning.
@@ -114,10 +114,10 @@ The entire procedure, from observation to final result, might occupy 2--3 hours 
 
 The Nautical Almanac's computations employed the mathematical tools of the era: logarithms, trigonometric tables, and difference tables for interpolation.
 
-Logarithms (recently popularized by John Napier's 1617 work and improved by subsequent mathematicians) allowed multiplication and division to be replaced by table lookups and addition/subtraction. To compute $\sin(45.3°) \times \cos(22.1°)$, a computer would:
+Logarithms (recently popularized by John Napier's 1617 work and improved by subsequent mathematicians) allowed multiplication and division to be replaced by table lookups and addition/subtraction. To compute $\sin(45.3^{\circ}) \times \cos(22.1^{\circ})$, a computer would:
 \begin{enumerate}
-\item Look up $\log \sin(45.3°)$ in a table
-\item Look up $\log \cos(22.1°)$ in a table
+\item Look up $\log \sin(45.3^{\circ})$ in a table
+\item Look up $\log \cos(22.1^{\circ})$ in a table
 \item Add the two logarithms
 \item Look up the antilogarithm in a table to obtain the result
 \end{enumerate}

@@ -34,7 +34,7 @@ where $\alpha_0$ is the sidereal time at the epoch (found in astronomical tables
 
 Declination was determined from the altitude angle of the telescope when the star crossed the central vertical wire. This altitude was read from the graduated circle using two reading microscopes, one on each side of the axis, to average out effects of the circle's graduation errors. The altitude angle $h_{\text{obs}}$ was then corrected for refraction to obtain the true altitude $h_{\text{true}}$, and the declination was computed:
 \[
-  \delta = \phi + (90° - h_{\text{true}}) \cos(\text{latitude})
+  \delta = \phi + (90^{\circ} - h_{\text{true}}) \cos(\text{latitude})
 \]
 where $\phi$ is the latitude of Greenwich. For stars observed near the zenith, the refraction correction was minimal (less than 1 arcsecond), rendering the declination determination very precise—often accurate to within 1 arcsecond or better.
 
@@ -88,9 +88,9 @@ To make the measurement procedure concrete, consider a real observation from Air
   \item Clock reading at transit: $14^{\text{h}} 29^{\text{m}} 45^{\text{s}}$ (Greenwich Mean Time)
   \item Airy's call (reaction time included): $14^{\text{h}} 29^{\text{m}} 45^{\text{s}}$
   \item Assistant's call: $14^{\text{h}} 29^{\text{m}} 45.3^{\text{s}}$
-  \item Altitude of transit: $63° 15' 22''$ (read from graduated circle)
-  \item Mean of reading microscope readings: $63° 15' 24''$ (more precise; reading microscopes averaged)
-  \item Observatory latitude: $\phi = 51° 28' 40''$
+  \item Altitude of transit: $63^{\circ} 15' 22''$ (read from graduated circle)
+  \item Mean of reading microscope readings: $63^{\circ} 15' 24''$ (more precise; reading microscopes averaged)
+  \item Observatory latitude: $\phi = 51^{\circ} 28' 40''$
   \item Airy's personal equation: $-0.32$ seconds (Airy is early relative to mean)
   \item Assistant's personal equation: $+0.18$ seconds (assistant is late)
 \end{itemize}
@@ -129,24 +129,24 @@ Therefore, $\alpha_{\text{Arcturus}} = 16^{\text{h}} 47^{\text{m}} 49^{\text{s}}
 
 \textsc{Converting altitude to declination:}
 
-The altitude reading from the graduated circle is $63° 15' 24''$. Applying a refraction correction for this altitude (approximately $32''$ at sea level):
+The altitude reading from the graduated circle is $63^{\circ} 15' 24''$. Applying a refraction correction for this altitude (approximately $32''$ at sea level):
 \[
-  h_{\text{true}} = 63° 15' 24'' - 32'' = 63° 14' 52''
+  h_{\text{true}} = 63^{\circ} 15' 24'' - 32'' = 63^{\circ} 14' 52''
 \]
 
 The zenith distance is:
 \[
-  z = 90° - h_{\text{true}} = 90° - 63° 14' 52'' = 26° 45' 8''
+  z = 90^{\circ} - h_{\text{true}} = 90^{\circ} - 63^{\circ} 14' 52'' = 26^{\circ} 45' 8''
 \]
 
 The declination is:
 \[
-  \delta = \phi - z = 51° 28' 40'' - 26° 45' 8'' = 24° 43' 32''
+  \delta = \phi - z = 51^{\circ} 28' 40'' - 26^{\circ} 45' 8'' = 24^{\circ} 43' 32''
 \]
 
 \textsc{Comparison to modern values:}
 
-Arcturus's position in modern catalogs is $\alpha = 14^{\text{h}} 29^{\text{m}} 43.4^{\text{s}}$ and $\delta = +19° 10' 57''$ (J2000.0 epoch). Airy's observed position differs by approximately 3 hours in right ascension and 5 degrees in declination. This discrepancy is not an error in Airy's method but reflects precession (the slow wobble of Earth's axis) and proper motion (Arcturus's intrinsic motion through space), which shift stellar positions over the 150+ years between Airy's observation and the modern J2000.0 epoch. Correcting for these effects brings the values into agreement, confirming the precision of the transit circle method.
+Arcturus's position in modern catalogs is $\alpha = 14^{\text{h}} 29^{\text{m}} 43.4^{\text{s}}$ and $\delta = +19^{\circ} 10' 57''$ (J2000.0 epoch). Airy's observed position differs by approximately 3 hours in right ascension and 5 degrees in declination. This discrepancy is not an error in Airy's method but reflects precession (the slow wobble of Earth's axis) and proper motion (Arcturus's intrinsic motion through space), which shift stellar positions over the 150+ years between Airy's observation and the modern J2000.0 epoch. Correcting for these effects brings the values into agreement, confirming the precision of the transit circle method.
 
 \section{Error Budget and Achieved Precision}
 
@@ -167,7 +167,7 @@ The transit circle represented the apex of positional astronomy prior to photogr
     Graduation errors & $\pm 0.5''$ to $2''$ & Systematic; detected via multiple reversals \\
     Flexure from gravity & $\pm 0.5''$ to $1''$ & Varies with telescope altitude \\
     Pivot irregularity & $\pm 0.2''$ to $0.5''$ & Detected by striding level \\
-    Thermal drift & $\pm 0.1''$ to $0.3''$ per $1°$C & Significant over long exposure \\
+    Thermal drift & $\pm 0.1''$ to $0.3''$ per $1^{\circ}$C & Significant over long exposure \\
     Atmospheric turbulence & $\pm 0.5''$ to $2''$ & Random; larger near horizon \\
     \bottomrule
   \end{tabular}
