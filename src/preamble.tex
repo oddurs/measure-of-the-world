@@ -111,6 +111,29 @@
 % If you want paragraph breaks instead of indents, set this to 0.5\baselineskip
 \setlength{\parskip}{0\baselineskip}
 
+% --------- LINE BREAKING AT A NARROW MEASURE ---------
+% A 4.5 inch measure gives TeX far fewer break points than the US Letter
+% width this text was written against, and a paragraph carrying a long
+% technical word ("transformations", "chronometrical") can fail to break at
+% all, setting a line past the margin.
+%
+% \emergencystretch gives TeX one extra pass with additional glue, used only
+% when a paragraph would otherwise overflow. It costs nothing on paragraphs
+% that already fit. This is the standard remedy and it removes most overfull
+% lines in narrow settings without loosening the rest of the page.
+\setlength{\emergencystretch}{2.2em}
+
+% Slightly relax the badness TeX will accept before it complains. The default
+% of 200 is strict for a measure this narrow.
+\tolerance=800
+
+% Discourage, but do not forbid, consecutive hyphenated lines.
+\doublehyphendemerits=10000
+\finalhyphendemerits=10000
+% Never hyphenate the last word of a paragraph onto a line of its own.
+\widowpenalty=10000
+\clubpenalty=10000
+
 % =====================================================================
 % SECTION 4: MATHEMATICS AND SCIENTIFIC NOTATION
 % =====================================================================
@@ -252,6 +275,13 @@
 \usepackage[inline]{enumitem}
 \usepackage{booktabs,longtable,tabularx,array,etoolbox,caption}
 
+% tabularx's X column justifies its text. In a column only a couple of inches
+% wide that opens rivers of white space and forces bad hyphenation, so make
+% every X ragged-right. Redefining \tabularxcolumn is the supported way to do
+% this: X itself must keep its meaning for the width algorithm to work.
+% \arraybackslash restores \\ as the row separator, which \raggedright takes.
+\renewcommand{\tabularxcolumn}[1]{>{\raggedright\arraybackslash}p{#1}}
+
 % Apply table text size globally to all table environments
 \AtBeginEnvironment{table}{\tabletextsize}
 \AtBeginEnvironment{tabular}{\tabletextsize}
@@ -353,7 +383,9 @@
 % SECTION HEADING
 % 13pt small caps - primary hierarchical level below chapter
 % \setsecheadstyle sets font and sizing for \section{}
-\setsecheadstyle{\normalfont\scshape\fontsize{13}{15.6}\selectfont}
+% Ragged right: a long heading in small caps has few break points and will
+% otherwise set past the margin at a 4.5 inch measure.
+\setsecheadstyle{\normalfont\scshape\fontsize{13}{15.6}\selectfont\raggedright}
 
 % Section spacing:
 % \setbeforesecskip = space before section heading (can be negative)

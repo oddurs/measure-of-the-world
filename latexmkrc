@@ -26,6 +26,13 @@ sub makeglossaries {
 
 $recorder = 1;
 
+# A 456-page book with an index, a bibliography and a glossary needs more
+# passes to settle than latexmk's default of 5: makeindex and biber each
+# invalidate the page numbers the other depends on, so the document converges
+# only after several rounds. Raising this is cheaper than shipping a build
+# whose index points at the wrong pages.
+$max_repeat = 9;
+
 # Keep log lines unwrapped so warnings can be traced back to source files
 $ENV{'max_print_line'} = 10000;
 $ENV{'error_line'} = 254;
