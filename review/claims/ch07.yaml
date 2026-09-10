@@ -5,154 +5,224 @@
 
 - id: ch07-001
   type: date
-  status: unverified
+  status: corrected
   text: "In the spring of 1714, the House of Commons was seized by an unusual urgency."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, The original copy of the 1714 Longitude Act, https://www.royalobservatorygreenwich.org/articles.php?article=1312"
+  note: "Loosely right on the season but wrong in emphasis. The Commons Journals record a petition on 25 May 1714, a committee report on 7 June, evidence from Newton, Halley, Cotes and Clarke considered on 11 June, the bill presented 16 June, first reading 17 June, second 22 June, committee of the whole 30 June, report 1 July, third reading and passage 3 July, Lords 7 July, royal assent 9 July 1714. The proceedings were concentrated in a few sittings, not day after day of witnesses."
 
 - id: ch07-002
   type: measurement
-  status: unverified
+  status: corrected
   text: "The Act offered the enormous sum of £20,000—equivalent to roughly twenty years' wages for a skilled tradesman—to anyone who could devise a method to determine longitude at sea to within 30 nautical miles."
-  source: ""
-  note: ""
+  source: "Gregory Clark, The Condition of the Working-Class in England 1209-2004, Table 3, https://faculty.econ.ucdavis.edu/faculty/gclark/papers/Working%20Class.pdf ; Judy Stephenson, LSE Economic History Working Paper 231/2016, https://www.lse.ac.uk/asset-library/information/wp231.pdf"
+  note: "BADLY WRONG, by a factor of about 30. A building craftsmans day wage in 1710-19 was 22.1 pence, giving roughly 23 to 28 pounds a year. Twenty thousand pounds is therefore about 700 to 850 years of a skilled tradesmans wages, not twenty. Even at the top London rates of 30 to 42 pence a day it is 450 to 650 years. This also contradicts ch01, which puts the sum at the annual salary of several thousand working people."
 
 - id: ch07-003
   type: date
-  status: unverified
+  status: verified
   text: "This was the Longitude Act of 1714, and it inaugurated a new era in which the British state explicitly offered incentives for technological innovation."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, Transcripts of the 23 Longitude Acts, https://www.royalobservatorygreenwich.org/articles.php?article=1311 ; 1714 Longitude Act as printed in A Collection of all such Statutes (1755), https://archive.org/details/1714-longitude-act-1755-a-collection-of-all-such-statutes-and-pa"
+  note: "Correct. Both statute citations circulate: the Statutes at Large print it as 12 Anne St. 2 c. 15, the Statutes of the Realm as 13 Ann. c. 14. The chapters 12 Anne c. 15 is the Statutes at Large form and matches the printed Act."
 
 - id: ch07-004
   type: attribution
-  status: unverified
+  status: verified
   text: "The Act established three levels of achievement, each with corresponding rewards:"
-  source: ""
-  note: ""
+  source: "1714 Longitude Act as printed in A Collection of all such Statutes (1755), https://archive.org/details/1714-longitude-act-1755-a-collection-of-all-such-statutes-and-pa ; Royal Observatory Greenwich, Transcripts of the 23 Longitude Acts, https://www.royalobservatorygreenwich.org/articles.php?article=1311"
+  note: "Correct. The Act gives 10,000 pounds for a method accurate to one degree of a great circle or sixty geographical miles, 15,000 pounds for two thirds of that distance, and 20,000 pounds for one half of the same distance. The chapters 60, 40 and 30 nautical miles are the right equivalents. Note the Act says geographical miles, not nautical miles, and expresses the tiers as fractions of one degree rather than as absolute distances."
 
 - id: ch07-005
   type: measurement
-  status: unverified
+  status: verified
   text: "At the equator, where a degree of longitude spans exactly 60 nautical miles: MATH"
-  source: ""
-  note: ""
+  source: "Definition: one nautical mile is one minute of arc of a great circle; 360 x 60 = 21,600"
+  note: "Correct."
 
 - id: ch07-006
   type: measurement
-  status: unverified
+  status: corrected
   text: "For the lunar distance method (the astronomical approach), 30 nautical miles corresponds to requiring the Moon's position to be known to approximately 1 arcsecond precision."
-  source: ""
-  note: ""
+  source: "Arithmetic: 30 nm = 0.5 deg of longitude = 2 min of time; Moon moves 0.549 deg/hour = 33 arcmin/hour"
+  note: "WRONG by a factor of about 60. Two minutes of time at the Moons rate of motion corresponds to about 1 ARCMINUTE of lunar position, not 1 arcsecond. Chapter 8 states the arcminute figure correctly, so the two chapters contradict each other. One arcsecond in the Moons position would correspond to about half a nautical mile."
 
 - id: ch07-007
   type: measurement
-  status: unverified
+  status: corrected
   text: "For the chronometer approach, 30 nautical miles at the equator corresponds to a clock error of 2 minutes of time accumulated over a 6-week voyage—an error rate of roughly 0.5 seconds per day."
-  source: ""
-  note: ""
+  source: "Arithmetic: 120 s over 42 days = 2.86 s/day; scripts/verify/derivations.py already checks 3 s/day over six weeks giving 31.5 nautical miles"
+  note: "WRONG. Two minutes of time accumulated over six weeks is 2.86 seconds a day, conventionally quoted as three seconds a day. At 0.5 s/day the accumulated error over 42 days would be only 21 seconds, about 5 nautical miles, six times tighter than the Act required. The books own verification script uses 3 s/day for exactly this calculation. Separately, the six-week voyage is not in the Act; see ch07-025."
 
 - id: ch07-008
   type: measurement
   status: unverified
   text: "Parliamentary testimony had established that navigational errors beyond 60 nautical miles posed unacceptable risks to merchant vessels and naval squadrons."
   source: ""
-  note: ""
+  note: "COULD NOT SOURCE. The 60 geographical mile figure in the Act is one degree of a great circle, a round unit rather than a risk threshold derived from testimony. Nothing in the Commons Journals summary of the 1714 proceedings supports the claim that testimony established this specific number as the limit of acceptable risk."
 
 - id: ch07-009
   type: measurement
-  status: unverified
+  status: corrected
   text: "The Moon moves approximately 0.5 degrees per hour through the celestial sphere."
-  source: ""
-  note: ""
+  source: "Arithmetic: 360 deg / 27.3217 days sidereal month = 0.549 deg/hour; NASA Moon Fact Sheet"
+  note: "The Moon moves 0.55 degrees an hour, about 33 arcminutes or roughly one lunar diameter, not 0.5. This books ch10 uses 0.55 correctly, so ch07 and ch08 contradict ch10. The 10 per cent error propagates into the arcsecond/arcminute claim in ch07-006 and into the error budget in ch08."
 
 - id: ch07-010
   type: measurement
   status: unverified
   text: "Its drawback is computational burden: a complete calculation from raw sextant reading to longitude determination required 30 minutes of mental arithmetic using logarithms."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, Nevil Maskelyne, https://www.royalobservatorygreenwich.org/articles.php?article=1290"
+  note: "COULD NOT SOURCE the 30 minute figure. What is documented is that before the Nautical Almanac Maskelyne himself took up to four hours over a lunar; after 1767 Maskelyne described the remaining work as an operation equal to that of an azimuth. The 30 minutes is widely repeated but no primary or scholarly attribution was found. Note the same figure recurs three times in ch08."
 
 - id: ch07-011
   type: quotation
   status: unverified
   text: "Jupiter's Moons: When Galileo discovered the four large moons of Jupiter orbiting the planet, he recognized them as a celestial clock: the moons undergo regular eclipses, and the times of these eclipses depend only on Jupiter's true position, not on the observer's location."
   source: ""
-  note: ""
+  note: "The physics is garbled. What makes a Jovian satellite eclipse useful is that it is an event at Jupiter, so all observers on Earth see it at essentially the same instant apart from light time; what differs is the local clock time at which each observer sees it. Saying the times depend only on Jupiters true position, not on the observers location conflates these. The historical attribution to Galileo is sound but no source was checked for it here."
 
 - id: ch07-012
   type: measurement
-  status: unverified
+  status: corrected
   text: "Magnetic variation changes with location—in London it might be 12 degrees west of true north, while in Jamaica it might be 3 degrees east."
-  source: ""
-  note: ""
+  source: "gufm1 historical field model via NOAA/NCEI declination calculator, https://www.ngdc.noaa.gov/geomag/calculators/magcalc.shtml (Jackson, Jonkers and Walker 2000)"
+  note: "London is roughly right for the 1720s but Jamaica is wrong. gufm1 gives London 7.5 deg W in 1700, 10.3 deg W in 1714 and 11.8 deg W in 1720; Kingston, Jamaica gives 5.0 deg E in 1700 and 5.3 deg E in 1714. Jamaica should be about 5 degrees east, not 3."
 
 - id: ch07-013
   type: measurement
-  status: unverified
+  status: verified
   text: "The Chronometer (Mechanical Clock): A sufficiently accurate clock, compared against a reference clock set to Greenwich time before departure, could directly yield longitude: the time difference multiplied by 15 degrees per hour gives the longitude difference."
-  source: ""
-  note: ""
+  source: "Earth rotates 360 degrees in 24 hours, so 15 degrees per hour"
+  note: "Correct."
 
 - id: ch07-014
   type: date
-  status: unverified
+  status: verified
   text: "The Board of Longitude, established by the 1714 Act, consisted of astronomers, naval officers, mathematicians, and royal officials."
-  source: ""
-  note: ""
+  source: "1714 Longitude Act as printed in A Collection of all such Statutes (1755), https://archive.org/details/1714-longitude-act-1755-a-collection-of-all-such-statutes-and-pa ; Royal Observatory Greenwich, Transcripts of the 23 Longitude Acts, https://www.royalobservatorygreenwich.org/articles.php?article=1311"
+  note: "Correct, and the Astronomer Royal was indeed ex officio: the Act names the Royal Astronomer of Greenwich among the standing commissioners, together with the Lord High Admiral or First Commissioner of the Admiralty, the Speaker of the Commons, the First Commissioner of the Navy, the First Commissioner of Trade, the Admirals of the Red, White and Blue Squadrons, the Master of Trinity House, the President of the Royal Society, and the Savilian, Lucasian and Plumian Professors. Quorum was five."
 
 - id: ch07-015
   type: date
-  status: unverified
+  status: verified
   text: "Maskelyne, who became Astronomer Royal in 1765, was a passionate advocate for the method and invested enormous effort in refining lunar tables and computing the Nautical Almanac."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, Nevil Maskelyne, https://www.royalobservatorygreenwich.org/articles.php?article=1290"
+  note: "Correct. Maskelyne became the fifth Astronomer Royal in February 1765 and arrived at Greenwich in March 1765."
 
 - id: ch07-016
   type: quotation
-  status: unverified
+  status: verified
   text: "This interpretation, championed by popular histories and Dava Sobel's influential Longitude (1995), contains truth but oversimplifies. emphasizes Harrison's forty-year struggle and the Board's repeated demands for additional trials."
-  source: ""
-  note: ""
+  source: "Dava Sobel, Longitude, Walker and Company, 1995; resolved in review/refs/verification.yaml"
+  note: "Bibliographic details correct. The characterisation of Sobels argument is a reading of the book, not a checkable fact."
 
 - id: ch07-017
   type: date
-  status: unverified
+  status: verified
   text: "The lunar distance method was operationalized in Maskelyne's Nautical Almanac (first published in 1767) and taught to mariners for decades."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, The Nautical Almanac, https://www.royalobservatorygreenwich.org/articles.php?article=935"
+  note: "Correct with a wrinkle worth stating: the first edition was for the year 1767 and carries an imprint date of 1766, but copies were not received from the printer until 6 January 1767. This books ch10 states the wrinkle; ch07 does not."
 
 - id: ch07-018
   type: measurement
-  status: unverified
+  status: corrected
   text: "At sea, skilled navigators using the method achieved accuracies on the order of 1–2 degrees—worse than the 30-nautical-mile standard, but sufficient for many purposes."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, Nevil Maskelyne, https://www.royalobservatorygreenwich.org/articles.php?article=1290 ; Nautical Almanac prefaces, https://archive.org/details/nauticalalmanac00admigoog"
+  note: "Too pessimistic, and contradicts ch08. Maskelynes own preface says the tables were brought to a sufficient exactness to determine the longitude at sea within a Degree; the 1779 preface gives a typical combined error of about 50 minutes of longitude; Maskelynes St Helena voyage of 1761-62 gave results generally better than 1 degree. Half a degree to one degree, or 30 to 60 nautical miles, is the defensible range. Chapter 8 says plus or minus 0.5 degrees, so the two chapters disagree."
 
 - id: ch07-019
   type: attribution
   status: unverified
   text: "It established precedent for government investment in technological innovation."
   source: ""
-  note: ""
+  note: "Interpretive claim about the significance of the Act, not a checkable fact. Left as is."
 
 - id: ch07-020
   type: attribution
   status: unverified
   text: "It showed that substantial prizes could mobilize talent and resources."
   source: ""
-  note: ""
+  note: "Interpretive claim, not a checkable fact. Left as is."
 
 - id: ch07-021
   type: attribution
   status: unverified
   text: "It demonstrated that the path from scientific problem to practical solution was rarely straight—both the astronomical and mechanical approaches had merit, and wisdom lay in supporting multiple efforts rather than betting exclusively on one."
   source: ""
-  note: ""
+  note: "Interpretive claim, not a checkable fact. Left as is."
 
 - id: ch07-022
   type: attribution
   status: unverified
   text: "With the Longitude Act established and multiple methods under active development, the stage was set for the detailed investigation of individual approaches."
   source: ""
-  note: ""
+  note: "Transitional prose, nothing to check."
+
+- id: ch07-023
+  type: date
+  status: corrected
+  text: "In the summer, with remarkable speed and unusually broad support, Parliament passed the Act; timeline entry 1714 (June): Longitude Act passes with overwhelming parliamentary support."
+  source: "Royal Observatory Greenwich, The original copy of the 1714 Longitude Act, https://www.royalobservatorygreenwich.org/articles.php?article=1312"
+  note: "The month is wrong. The bill passed the Commons on 3 July 1714, the Lords on 7 July, and received royal assent on 9 July 1714. The timeline entry should read 1714 (July). The bill was introduced on 16 June, which may be the source of the confusion."
+
+- id: ch07-024
+  type: measurement
+  status: corrected
+  text: "William Whiston and Humphry Ditton had submitted a proposal: use signal fires and rockets visible from heights of forty miles to communicate time across the ocean."
+  source: "Whiston and Ditton, A New Method for Discovering the Longitude (1714), https://archive.org/details/bim_eighteenth-century_a-new-method-for-discove_whiston-william-ma_1714 ; Royal Museums Greenwich, https://www.rmg.co.uk/stories/time/projectors-pranks-perpetual-motion"
+  note: "Wrong on every number. The scheme used unrigged hulls of ships moored at known stations, firing a shell timed to burst at 6,440 feet, the height a body falls in 20 seconds. The pamphlet states such a light would be visible about 100 measured, or 85 geographical miles, that is one whole degree. Forty miles appears nowhere. The distance was recovered from the flash-to-report interval, the bearing from the compass."
+
+- id: ch07-025
+  type: measurement
+  status: corrected
+  text: "The Act established three levels of achievement: 10,000 pounds for accuracy to 60 nautical miles at the end of a 6-week voyage, 15,000 for 40, 20,000 for 30."
+  source: "1714 Longitude Act as printed in A Collection of all such Statutes (1755), https://archive.org/details/1714-longitude-act-1755-a-collection-of-all-such-statutes-and-pa ; Royal Observatory Greenwich, Transcripts of the 23 Longitude Acts, https://www.royalobservatorygreenwich.org/articles.php?article=1311"
+  note: "The six-week voyage is not in the statute. The phrase six weeks appears nowhere in the 1714 Act, nor anywhere in the transcripts of all 23 Longitude Acts. What the Act requires is that a ship shall thereby actually sail over the Ocean, from Great-Britain to any Port in the West-Indies, as those Commissioners shall choose or nominate for the Experiment, without losing their Longitude beyond the Limits before mentioned, and that the method be tried and found practicable and useful at Sea. Half the reward was tied to keeping ships within eighty geographical miles of the shore. The six weeks is a popular gloss on the typical West Indies passage and should not be presented as a statutory condition. It appears three times in the chapter."
+
+- id: ch07-026
+  type: date
+  status: corrected
+  text: "Timeline: 1730 - Harrison completes H1 (first sea clock); Board provides modest funding."
+  source: "Royal Museums Greenwich, Harrisons clocks and the longitude problem, https://www.rmg.co.uk/stories/time/harrisons-clocks-longitude-problem ; Royal Museums Greenwich object record, https://www.rmg.co.uk/collections/objects/rmgc-object-79139"
+  note: "Wrong by five years. H1 was built between 1730 and 1735 and Harrison brought it to London in 1735. What happened in 1730 was that Harrison first came to London with his proposal, met Halley, and was sent on to George Graham. The Board provided no funding in 1730; its first payment, 500 pounds, was voted on 30 June 1737 after the Lisbon trial. This contradicts ch09, which says correctly that H1 was completed in 1735."
+
+- id: ch07-027
+  type: date
+  status: verified
+  text: "Timeline: 1736 - H1 tested at sea; performance promising but not meeting full Act requirements."
+  source: "Royal Museums Greenwich, Harrisons clocks and the longitude problem, https://www.rmg.co.uk/stories/time/harrisons-clocks-longitude-problem"
+  note: "Correct. H1 went out on HMS Centurion in May 1736 and returned on HMS Orford; Harrison corrected the ships landfall by about 60 miles. The Board met on 30 June 1737 and voted 500 pounds. Note the destination was Lisbon, which the chapter does not say and which ch09 gets wrong by adding a Jamaica voyage for H1."
+
+- id: ch07-028
+  type: measurement
+  status: corrected
+  text: "Timeline: 1772 - H5 tested before King George III; error of 4.5 seconds over ten weeks."
+  source: "Antiquarian Horological Society, John Harrison, https://antiquarian-horology.com/john-harrison-3-4-1693-24-3-1776/ ; Science Museum Group, https://collection.sciencemuseumgroup.org.uk/objects/co8448183"
+  note: "COULD NOT SOURCE the 4.5 seconds. The documented result of the ten weeks of daily observations by George III at Richmond between May and July 1772 is that the watch was accurate to within one third of one second per day. Over ten weeks that is roughly 23 seconds, not 4.5. Either quote the rate or find a source for the total."
+
+- id: ch07-029
+  type: measurement
+  status: corrected
+  text: "Timeline: 1773 - Board finally awards Harrison 4,400 pounds as a gift; Parliament subsequently awards additional 8,750 pounds."
+  source: "Royal Observatory Greenwich, Transcripts of the 23 Longitude Acts, https://www.royalobservatorygreenwich.org/articles.php?article=1311 (Act 10 in that transcript, 13 Geo. 3 c. 77 s. XXIX, from Statutes at Large vol. 11 p. 839)"
+  note: "The 4,400 pound Board gift could not be sourced and appears to be invented; nothing resembling it appears in the 1773 statute or in the transcripts of the 23 Longitude Acts. The 8,750 pounds is right but the attribution is backwards: it was awarded by Act of Parliament (13 Geo. 3 c. 77, section XXIX, marginal note Not exceeding 8750l. to be paid to Mr. Harrison for his invention of a Time-keeper), over the Boards head, not by the Board. Harrisons lifetime total from all grants was about 23,065 pounds; see Derek Howse, Britains Board of Longitude: The Finances 1714-1828, Mariners Mirror 84 (1998)."
+
+- id: ch07-030
+  type: date
+  status: verified
+  text: "Timeline: 1828 - Board of Longitude formally dissolved; prizes system discontinued."
+  source: "Nautical Almanack Act 1828 (9 Geo. 4 c. 66), https://www.legislation.gov.uk/ukpga/Geo4/9/66"
+  note: "Correct. An Act for repealing the Laws now in force relating to the Discovery of the Longitude at Sea, royal assent 15 July 1828."
+
+- id: ch07-031
+  type: attribution
+  status: corrected
+  text: "Henry Gellibrand and others had attempted to map magnetic variation."
+  source: "MacTutor, Henry Gellibrand, https://mathshistory.st-andrews.ac.uk/Biographies/Gellibrand/ ; Royal Museums Greenwich, Halleys 1702 world variation chart, https://www.rmg.co.uk/collections/objects/rmgc-object-540213"
+  note: "Misattributed. Gellibrand did not map variation: in 1634 he discovered SECULAR variation, that declination changes over time, by comparing his Deptford measurement with Gunters twelve years earlier, and published A Discourse Mathematical on the Variation of the Magneticall Needle in 1635. The isogonic charts were Edmond Halleys, the Atlantic chart of 1701 and the world chart of 1702, the first published maps to use curves of equal magnetic variation. Halley is the right name here, and he is already a character in the chapter."
+
+- id: ch07-032
+  type: attribution
+  status: verified
+  text: "Citation Andrewes1998, The Quest for Longitude."
+  source: "Crossref DOI 10.2307/3060390; review/refs/verification.yaml marks it resolved with score 1.0"
+  note: "Bibliographic entry resolves. The volume is the proceedings of the 1993 Longitude Symposium at Harvard, first issued 1996 with a 1998 printing, so the year is defensible but a page reference would be better than a bare cite."

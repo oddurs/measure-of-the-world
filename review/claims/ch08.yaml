@@ -5,259 +5,322 @@
 
 - id: ch08-001
   type: date
-  status: unverified
+  status: corrected
   text: "The evening of July 21, 1770, somewhere in the Atlantic west of Ireland."
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "IMPOSSIBLE SCENE. At 1770 July 21 18:30 UT the Moon was 13.0 degrees from the Sun, a waning crescent about 21 hours before new moon (new moon fell on 1770 July 22 at about 16h UT; the nearest full moon was 1770 July 7). The chapter says two days past full. The Moon-Regulus distance at that instant was 40.5 degrees and closing at 0.63 deg/hour, not 87 deg 22 arcmin and opening. At latitude 45 N and longitude 1 deg 07 arcmin E, the position the chapter itself derives, the Sun was still 9.5 degrees above the horizon at 18:34 local, the Moon was on the horizon at -0.4 degrees and Regulus, only 1.9 hours of right ascension from the Sun, was invisible in daylight. Even taking the stated setting west of Ireland (53 N, 12 W) the Sun is 19.7 degrees up. The whole worked example needs rebuilding around a date and a star that actually work. Note also that the scene is set west of Ireland while the calculation ends 1 deg 07 arcmin EAST of Greenwich, which is in southern England, and gives latitude 45 N, which is south of Bordeaux rather than west of Ireland."
 
 - id: ch08-002
   type: quotation
-  status: unverified
+  status: verified
   text: "He steadies his eye at the sextant's eyepiece and brings the Moon's image down, slowly, until its limb just touches the star."
-  source: ""
-  note: ""
+  source: "Standard lunar-distance practice; Nevil Maskelyne, The British Mariners Guide, London 1763, https://archive.org/details/bim_eighteenth-century_the-british-mariners-gu_maskelyne-nevil_1763"
+  note: "Correct practice: the observed distance is taken to the Moons bright limb and then reduced to the centre using the semi-diameter. But the chapters clearing procedure never applies that semi-diameter correction, even though table tab:mayer-data lists the semi-diameter as one of the four tabulated quantities. The omitted step is worth about 15 arcminutes."
 
 - id: ch08-003
   type: measurement
-  status: unverified
+  status: corrected
   text: "The Moon completes one circuit of the zodiac—$360^ $ of arc—in approximately 27.3 days ."
-  source: ""
-  note: ""
+  source: "Arithmetic; NASA Moon Fact Sheet, https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+  note: "The sidereal month of 27.3 days is right (27.3217 days). The arithmetic that follows is not: 360 deg / (27.3 x 24 h) = 0.549 deg/hour, which rounds to 0.55, not 0.5. The printed equation asserts a value its own left-hand side does not give. The 10 per cent shortfall propagates through the error budget later in the chapter and contradicts ch10, which uses 0.55."
 
 - id: ch08-004
   type: superlative
-  status: unverified
+  status: corrected
   text: "It is the only celestial body that advances noticeably on a navigator's timescale."
-  source: ""
-  note: ""
+  source: "Arithmetic"
+  note: "Overstated. The Sun advances about 1 degree a day against the stars and the inner planets move by degrees over days, both noticeable on a voyage. The defensible claim is that the Moon is by far the fastest, at about 13 degrees a day, and the only body whose motion is fast enough to serve as a clock over hours rather than weeks."
 
 - id: ch08-005
   type: measurement
-  status: unverified
+  status: corrected
   text: "For the Moon, the horizontal parallax is approximately 57.3 arcmin (about one degree)."
-  source: ""
-  note: ""
+  source: "NASA Moon Fact Sheet, https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+  note: "The mean equatorial horizontal parallax is 57.04 arcmin, ranging from about 54.1 arcmin at apogee to 60.4 arcmin at perigee. 57.3 arcmin is not the mean and looks like a slip for 57.2958, the number of degrees in a radian. About one degree is also misleading: 57 arcmin is 0.95 degrees, and the whole point of the section is that arcminutes matter."
 
 - id: ch08-006
   type: superlative
-  status: unverified
+  status: verified
   text: "Refraction is most pronounced near the horizon, where light rays pass through the greatest thickness of atmosphere, and vanishes at the zenith."
-  source: ""
-  note: ""
+  source: "Standard atmospheric refraction behaviour; R = 58.3 arcsec cot(h), as used in ch04 and appendix A"
+  note: "Correct as stated."
 
 - id: ch08-007
   type: measurement
-  status: unverified
+  status: verified
   text: "At the horizon ($h = 0^ $), refraction amounts to approximately $35'$ (35 arcminutes)—more than half a degree."
-  source: ""
-  note: ""
+  source: "R = 58.3 arcsec cot(h) breaks down at the horizon; standard horizon refraction is 34 to 35 arcmin"
+  note: "Correct. 35 arcmin at the horizon is the standard figure."
 
 - id: ch08-008
   type: quotation
-  status: unverified
+  status: verified
   text: "However, the parallax correction—which applies to the Moon but not to the star—must be paired with a refraction correction to put the Moon's position on the same footing as the star's."
-  source: ""
-  note: ""
+  source: "Standard clearing theory"
+  note: "Correct as stated."
 
 - id: ch08-009
   type: quotation
-  status: unverified
+  status: verified
   text: "The Moon's motion is complex, perturbed by the Sun's gravity, subject to multiple periodic inequalities, and difficult to predict from first principles."
-  source: ""
-  note: ""
+  source: "Standard lunar theory"
+  note: "Correct as stated."
 
 - id: ch08-010
   type: date
-  status: unverified
+  status: verified
   text: "The result was the *Tabulae Motuum Solis et Lunae* (Tables of the Motions of the Sun and Moon), published in 1770, after his death."
-  source: ""
-  note: ""
+  source: "Tobias Mayer, Tabulae Motuum Solis et Lunae Novae et Correctae, London 1770, ed. Nevil Maskelyne, https://archive.org/details/bim_eighteenth-century_tabulae-motuum-solis-et-_mayer-tobias_1770"
+  note: "Correct. Full title Tabulae Motuum Solis et Lunae Novae et Correctae, London, printed by W. and J. Richardson for the Commissioners of Longitude, 1770; Mayer died in 1762. The chapter omits two facts worth adding: the editor was Nevil Maskelyne, whose preface is signed Greenwich, 23 February 1770, and the Board awarded Mayers widow 3,000 pounds in May 1765, with 300 pounds to Leonhard Euler for the underlying theorems."
 
 - id: ch08-011
   type: measurement
-  status: unverified
+  status: corrected
   text: "With such tables, a navigator could compute the lunar distance to the precision of a few arcminutes, yielding a longitude accurate to within 30 nautical miles or better—a remarkable improvement over dead reckoning."
-  source: ""
-  note: ""
+  source: "Nautical Almanac prefaces, https://archive.org/details/nauticalalmanac00admigoog ; Royal Observatory Greenwich, Nevil Maskelyne, https://www.royalobservatorygreenwich.org/articles.php?article=1290"
+  note: "Overstated. The Commissioners own claim in the first Nautical Almanac was that the tables determined the longitude at sea within a Degree, that is 60 nautical miles. The 1779 preface gives an explicit budget: a 45 arcsecond table error plus a 1 arcminute observing error produces at a medium only an Error of 50 Minutes of Longitude, about 50 nautical miles. Within 30 nautical miles or better is not what the period sources claim."
 
 - id: ch08-012
   type: date
-  status: unverified
+  status: corrected
   text: "They specified the Moon's position every 12 hours of Greenwich time, for the years 1750 to 1800."
-  source: ""
-  note: ""
+  source: "Tobias Mayer, Tabulae Motuum Solis et Lunae Novae et Correctae, London 1770, ed. Nevil Maskelyne, https://archive.org/details/bim_eighteenth-century_tabulae-motuum-solis-et-_mayer-tobias_1770 ; Nevil Maskelyne, The British Mariners Guide, London 1763, https://archive.org/details/bim_eighteenth-century_the-british-mariners-gu_maskelyne-nevil_1763 ; Royal Observatory Greenwich, The Nautical Almanac, https://www.royalobservatorygreenwich.org/articles.php?article=935"
+  note: "Wrong in kind, not just in interval. Mayers tables were tables of mean motions and equations, with arguments in anomaly, elongation and so on, from which a computer calculated the Moons place for any instant. They were not a time-indexed ephemeris, contained no pre-computed lunar distances, and had no 12-hour interval and no 1750 to 1800 date range. The twelve hours appears to come from Maskelynes proposal in the British Mariners Guide (1763) that the Moons longitude and latitude be computed for every twelve hours in the year. The Nautical Almanac from 1767 tabulated lunar distances every three hours."
 
 - id: ch08-013
   type: attribution
-  status: unverified
+  status: verified
   text: "The observed distance includes the Moon at its apparent position (affected by parallax) and the star at its true position (parallax is negligible for a distant star)."
-  source: ""
-  note: ""
+  source: "Standard clearing theory"
+  note: "Correct as stated."
 
 - id: ch08-014
   type: quotation
-  status: unverified
+  status: verified
   text: "1. Compute the refraction for the Moon's measured altitude: $R_ moon (h_ moon )$ 2. Compute the refraction for the star's measured altitude: $R_ star (h_ star )$ 3. If the parallax correction was applied using altitude-based tables, the refraction has been partially accounted for."
-  source: ""
-  note: ""
+  source: "Standard clearing theory; Maskelynes combined tables"
+  note: "The procedure described is right in outline. The refraction values the chapter then uses are wrong; see ch08-041."
 
 - id: ch08-015
   type: measurement
-  status: unverified
+  status: corrected
   text: "The tables are organized by Greenwich time, typically every 3 hours."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, The Nautical Almanac, https://www.royalobservatorygreenwich.org/articles.php?article=935 ; Nautical Almanac prefaces, https://archive.org/details/nauticalalmanac00admigoog"
+  note: "Right for the Nautical Almanac, wrong for Mayers tables, and inconsistent with the rest of the chapter. The Almanac tabulated lunar distances at three-hourly intervals of Greenwich time. Mayers tables had no such interval (see ch08-012). The chapter states three different intervals for the same tables: every 12 hours here in the Mayer section, every 3 hours in this sentence and in the error analysis, and every 30 minutes in the worked-example extract, tab:mayer-example."
 
 - id: ch08-016
   type: quotation
-  status: unverified
+  status: verified
   text: "Table accuracy: Mayer's tables are accurate to about $1'$ in lunar position."
-  source: ""
-  note: ""
+  source: "Nautical Almanac prefaces, https://archive.org/details/nauticalalmanac00admigoog"
+  note: "Defensible. Maskelyne states the improved tables gave the Moons longitude within 45 seconds of a degree, that is 45 arcseconds, and the Commissioners claimed longitude within one degree. About 1 arcminute is a fair round figure for the tables as used."
 
 - id: ch08-017
   type: quotation
-  status: unverified
+  status: verified
   text: "At the rate of Moon's motion ($ 0.5^ / hour = 30'/ hour $), a $1'$ error in lunar distance corresponds to about $2$ minutes of time error, or $0.5^ $ of longitude, or roughly $30$ nautical miles at the equator."
-  source: ""
-  note: ""
+  source: "Arithmetic"
+  note: "The chain is internally consistent as written: 1 arcmin at 30 arcmin/hour is 2 minutes of time, 0.5 degrees of longitude, 30 nautical miles. On the correct lunar rate of 33 arcmin/hour it becomes 1.8 minutes of time and 27 nautical miles. Keep the chain but fix the rate."
 
 - id: ch08-018
   type: measurement
-  status: unverified
+  status: corrected
   text: "Interpolation error: The tables give lunar distance every 3 hours; the navigator must interpolate to find the exact Greenwich time."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, The Nautical Almanac, https://www.royalobservatorygreenwich.org/articles.php?article=935"
+  note: "The three-hour interval is right for the Nautical Almanac but contradicts the chapters own statements of 12 hours and of 30 minutes; see ch08-015. The chapter should settle on the Almanacs three hours and stop calling the tables Mayers."
 
 - id: ch08-019
   type: measurement
   status: unverified
   text: "The calculation took 30 minutes under the best conditions—an eternity in a ship's officer's working day."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, Nevil Maskelyne, https://www.royalobservatorygreenwich.org/articles.php?article=1290"
+  note: "COULD NOT SOURCE. What is documented is that before the Almanac Maskelyne himself took up to four hours over a lunar, and that after 1767 he described what remained as an operation equal to that of an azimuth. The 30 minutes is widely repeated but no primary or scholarly source was found. The figure appears three times in this chapter and once in ch07."
 
 - id: ch08-020
   type: quotation
   status: unverified
   text: "That simplicity—that shift of labor from the navigator's brain to the chronometer's mechanism—would win in the end."
   source: ""
-  note: ""
+  note: "Rhetorical, nothing to check."
 
 - id: ch08-021
   type: tabular
-  status: unverified
+  status: verified
   text: "Moon's longitude — Symbol: _ moon"
-  source: ""
-  note: ""
+  source: "Tobias Mayer, Tabulae Motuum Solis et Lunae Novae et Correctae, London 1770, ed. Nevil Maskelyne, https://archive.org/details/bim_eighteenth-century_tabulae-motuum-solis-et-_mayer-tobias_1770"
+  note: "Moons longitude is among the quantities the tables yield."
 
 - id: ch08-022
   type: tabular
-  status: unverified
+  status: verified
   text: "Moon's latitude — Symbol: _ moon"
-  source: ""
-  note: ""
+  source: "Tobias Mayer, Tabulae Motuum Solis et Lunae Novae et Correctae, London 1770, ed. Nevil Maskelyne, https://archive.org/details/bim_eighteenth-century_tabulae-motuum-solis-et-_mayer-tobias_1770"
+  note: "Moons latitude is among the quantities the tables yield."
 
 - id: ch08-023
   type: tabular
-  status: unverified
+  status: verified
   text: "Moon's horizontal parallax — Symbol: HP"
-  source: ""
-  note: ""
+  source: "Tobias Mayer, Tabulae Motuum Solis et Lunae Novae et Correctae, London 1770, ed. Nevil Maskelyne, https://archive.org/details/bim_eighteenth-century_tabulae-motuum-solis-et-_mayer-tobias_1770"
+  note: "Horizontal parallax is among the quantities the tables yield."
 
 - id: ch08-024
   type: tabular
-  status: unverified
+  status: corrected
   text: "Sextant angle (Moon--Regulus) — Value: 87^ 22'"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "The true Moon-Regulus distance at 1770 July 21 18:30 UT was 40.5 degrees, not 87 deg 22 arcmin. See ch08-001."
 
 - id: ch08-025
   type: tabular
-  status: unverified
+  status: corrected
   text: "Time of observation (ship's chronometer) — Value: 18^ h 34^ m 27^ s"
-  source: ""
-  note: ""
+  source: "Internal logic of the lunar distance method; Nevil Maskelyne, The British Mariners Guide, London 1763, https://archive.org/details/bim_eighteenth-century_the-british-mariners-gu_maskelyne-nevil_1763"
+  note: "Two problems. First, the method needs LOCAL time, obtained from an altitude of the Sun or a star, and the chapter says so in the geometry section, yet the worked example uses a chronometer reading as if it were local time. If the chronometer were set to Greenwich the difference would be zero by construction. Second, the chapter later argues that the navigator need not trust the ships chronometer at all, which sits badly with an example that depends on one. A 1770 East Indiaman would in any case rarely have carried a chronometer."
 
 - id: ch08-026
   type: tabular
-  status: unverified
+  status: corrected
   text: "Moon's measured altitude — Value: 35^"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "The Moons computed altitude at that instant was -0.4 degrees at 45 N, 1.1 E and 10.6 degrees at 53 N, 12 W. 35 degrees is not attainable anywhere consistent with the scene."
 
 - id: ch08-027
   type: tabular
-  status: unverified
+  status: corrected
   text: "Regulus's measured altitude — Value: 28^"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "Regulus was at 23.9 degrees altitude at 45 N, 1.1 E, but the Sun was 9.5 degrees above the horizon at the same moment, so the star was not observable."
 
 - id: ch08-028
   type: tabular
   status: unverified
   text: "Azimuthal separation — Value: 70^ (south and east)"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "Consequent on the impossible geometry in ch08-001; there is no point checking the azimuth difference until the scene is rebuilt."
 
 - id: ch08-029
   type: tabular
-  status: unverified
+  status: corrected
   text: "Ship's latitude — Value: 45^"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "Latitude 45 N contradicts the chapters own setting, somewhere in the Atlantic west of Ireland, which is 51 to 55 N."
 
 - id: ch08-030
   type: tabular
-  status: unverified
+  status: corrected
   text: "Date — Value: 1770 July 21"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "On 1770 July 21 the Moon was a waning crescent about 21 hours before new, not two days past full. See ch08-001."
 
 - id: ch08-031
   type: tabular
-  status: unverified
+  status: corrected
   text: "Lunar horizontal parallax (from tables) — Value: 56.8'"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes) ; NASA Moon Fact Sheet, https://nssdc.gsfc.nasa.gov/planetary/factsheet/moonfact.html"
+  note: "On 1770 July 21 the Moon was near perigee at about 357,800 km, giving a horizontal parallax of 61.3 arcmin, not 56.8. Note the chapter uses 57.3 in the theory section, 57.0 in the parallax example and 56.8 in the worked example, three different values for the same quantity."
 
 - id: ch08-032
   type: tabular
-  status: unverified
+  status: corrected
   text: "1 c (^ ) — 1 c Rate of Change: 1 c (^ /hour)"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "Table header. The tabulated distances and the rate column disagree; see ch08-033 to ch08-037."
 
 - id: ch08-033
   type: tabular
-  status: unverified
+  status: corrected
   text: "18:00 — 1 c Lunar Distance: 86.85; 1 c Rate of Change: 0.497"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "The tabulated values advance 0.125 degrees per half hour, that is 0.25 deg/hour, which contradicts the Rate of Change column in the same table (0.497 deg/hour). The true rate on that date was 0.63 deg/hour and the distance was DECREASING, since the Moon at RA 7.1h was closing on Regulus at RA 9.9h. Every value in this table is invented."
 
 - id: ch08-034
   type: tabular
-  status: unverified
+  status: corrected
   text: "18:30 — 1 c Lunar Distance: 86.98; 1 c Rate of Change: 0.498"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "See ch08-033. The value 86.98 at 18:30 is the one the worked example depends on and it does not correspond to any real configuration."
 
 - id: ch08-035
   type: tabular
-  status: unverified
+  status: corrected
   text: "19:00 — 1 c Lunar Distance: 87.10; 1 c Rate of Change: 0.498"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "See ch08-033."
 
 - id: ch08-036
   type: tabular
-  status: unverified
+  status: corrected
   text: "19:30 — 1 c Lunar Distance: 87.22; 1 c Rate of Change: 0.497"
-  source: ""
-  note: ""
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "See ch08-033."
 
 - id: ch08-037
   type: tabular
-  status: unverified
+  status: corrected
   text: "20:00 — 1 c Lunar Distance: 87.35; 1 c Rate of Change: 0.497"
+  source: "Recomputed with a truncated Meeus ELP-2000/82 lunar theory validated against Meeus Astronomical Algorithms example 47.a (agrees to 1e-5 deg) and against the published time of the 2024-01-25 full moon (agrees to 2 minutes)"
+  note: "See ch08-033."
+
+- id: ch08-038
+  type: measurement
+  status: corrected
+  text: "R(h) approx 58.3 arcsec tan((90 deg - h)/7.5)"
+  source: "src/chapters/04.tex line 53 and src/appendices/appendix-a.tex line 96, both of which use R = 58.3 arcsec cot(h); scripts/verify/derivations.py checks that formula"
+  note: "The formula is corrupted. The standard form, used correctly twice elsewhere in this book, is R = 58.3 arcsec tan(z) = 58.3 arcsec cot(h). Dividing the zenith distance by 7.5 has no basis. At h = 35 degrees the printed formula gives 7.5 arcseconds; the correct value is 83 arcseconds, eleven times larger. The sentence that follows the formula, claiming it captures the essential behaviour, is therefore false as printed."
+
+- id: ch08-039
+  type: measurement
+  status: corrected
+  text: "Delta rho_par = HP(sin h_moon - sin h_star cos alpha)"
+  source: "Internal inconsistency with the chapters own p_alt = HP cos h; standard first-order clearing theory"
+  note: "Inconsistent with the chapters own parallax equation. Six paragraphs earlier the chapter states, correctly, that the parallax in altitude is HP cos h, largest at the horizon and zero at the zenith. This formula uses sin h_moon, which is largest at the ZENITH. The first-order correction to the distance is the Moons parallax in altitude times the cosine of the angle at the Moon between its vertical circle and the great circle to the star, so it must go as cos h_moon. The chapter also calls the formula an approximation valid for small distances (a few degrees) and then applies it at 87 degrees."
+
+- id: ch08-040
+  type: measurement
+  status: corrected
+  text: "The parallax correction is 23.5 arcmin. This is substantial: nearly half a degree."
+  source: "Arithmetic"
+  note: "The arithmetic inside the brackets is right but the gloss is not: 23.5 arcmin is 0.39 degrees, and calling it nearly half a degree stretches it. Compare the earlier example, where 49.4 arcmin is described as of order the width of the full Moon, which is 31 arcmin. The two glosses are inconsistent with each other. The underlying figure is wrong anyway because the formula is wrong; see ch08-039."
+
+- id: ch08-041
+  type: measurement
+  status: corrected
+  text: "Refraction at h_moon = 35 degrees is approximately 2.5 arcmin. Refraction at h_star = 28 degrees is approximately 3.1 arcmin."
+  source: "R = 58.3 arcsec cot(h), the formula used in ch04 and appendix A"
+  note: "Both are too large by about 70 per cent. At 35 degrees R = 1.4 arcmin; at 28 degrees R = 1.8 arcmin. The relative ordering, star lower so refraction greater, is right."
+
+- id: ch08-042
+  type: measurement
+  status: corrected
+  text: "t_Greenwich = 18:30 + (86.975 - 86.98)/0.498 x 30 min, approx 18:30 - 0.3 min, approx 18:29:48"
+  source: "Arithmetic"
+  note: "Dimensionally wrong and internally inconsistent. Dividing degrees by degrees per hour already gives hours; multiplying by 30 minutes as well is an error. The correct interpolation on the chapters own table is (86.975 - 86.98)/0.498 = -0.010 hour = -0.60 minutes, giving 18:29:24. The chapter computes -0.3 minutes and then writes 18:29:48, which is -0.2 minutes, so even its own two answers disagree."
+
+- id: ch08-043
+  type: measurement
+  status: corrected
+  text: "Figure caption: Combined root-sum-square error of approximately 4 arcminutes translates to roughly 30 nautical miles of longitude uncertainty."
+  source: "Arithmetic, using the chapters own conversion in the error analysis section"
+  note: "Contradicts the chapter text. The chapter establishes that 1 arcminute of lunar distance corresponds to 30 nautical miles, so 4 arcminutes corresponds to about 120 nautical miles. Either the caption or the 4 arcminute budget is wrong; the surrounding prose then claims plus or minus 30 nautical miles again, which only follows from a 1 arcminute error."
+
+- id: ch08-044
+  type: attribution
+  status: corrected
+  text: "A star-catalogue (Chapter 3) allows us to know where the stars are."
+  source: "src/main.tex chapter order: chapter 3 is Instruments and Methods of the Observatory; the star catalogue is chapter 5, Building the Historia Coelestis Britannica"
+  note: "Wrong cross-reference: should be Chapter 5. This chapter also hardcodes Chapter 9 and Chapter 10 rather than using cref, which the rest of the book does; if the chapter order ever changes these will silently go wrong."
+
+- id: ch08-045
+  type: measurement
+  status: unverified
+  text: "inferior to a good chronometer, which can achieve accuracy of plus or minus 5 arcmin of arc or better"
   source: ""
-  note: ""
+  note: "Units muddle. A chronometers accuracy is a time error, and 5 arcminutes of longitude is 5 nautical miles at the equator, which is roughly what a good chronometer gave. Say 5 nautical miles, or give the time error, rather than arcminutes of arc."
+
+- id: ch08-046
+  type: measurement
+  status: verified
+  text: "Longitude east of Greenwich = 4.45 min x 0.25 deg/min = 1.11 deg = 1 deg 7 arcmin; distance 1.11 x 60 x cos(45 deg) = 47 nm."
+  source: "Arithmetic"
+  note: "This last stretch of arithmetic is correct: 4m 27s is 4.45 minutes, 1.1125 degrees, 1 deg 06.75 arcmin, and 47.2 nautical miles of departure at latitude 45. It is the only part of the worked example that survives checking, and it rests on inputs that do not."
