@@ -244,68 +244,77 @@ Both aberration and nutation cause stellar positions to oscillate. However, they
 
 Observational separation of the two effects requires data spanning multiple years. Bradley's observations, conducted primarily over a span of months to a few years, could not have definitively resolved the 18.6-year nutation period. It was only after data from decades of observation had been accumulated that the longer-period nutation became apparent.
 
-\section{Worked Example: Determining $\kappa$ from Bradley's Observations}
+\section{Worked Example: Recovering $\kappa$ from a Year of Zenith Distances}
 
-Bradley's systematic observations of $\gamma$ Draconis from December 1725 through December 1726 provide a concrete example of how the constant of aberration can be extracted from zenith distance measurements.
+Bradley's observations of $\gamma$ Draconis show how the constant of aberration can be extracted from a year of zenith-distance measurements. This section reconstructs that calculation.
 
-\textsc{Data selection:} Bradley selected 23 clear nights of observation. The zenith distances measured are (in arcseconds, with north taken as positive):
+\textsc{A note on the data.} The series below is a reconstruction, not a transcription. It is generated from the modern value of $\kappa$ with random errors of about one arcsecond added, matching the precision Molyneux's sector achieved, and it reproduces the behaviour Bradley describes: the star stood some twenty arcseconds farther south in March 1726 than at the start of the series, had returned to its December position by June, and stood twenty arcseconds north by September.\footnote{\textcite{Bradley1729}. Bradley's own tabulated observations are printed in that letter and in \textcite{Rigaud1832}; a reader wanting the historical figures should take them from there rather than from the reconstruction used here, which exists to make the arithmetic followable.} Using a reconstruction rather than the original numbers means the fit below can be checked line by line against the table, which is the point of a worked example.
+
+\textsc{Data.} Eighteen nights, with $t$ counted in days from Molyneux's first observation of the star on 3~December 1725. North is positive.
 
 \begin{table}[htbp]
   \centering
-  \caption{Selected zenith distances of $\gamma$ Draconis from Bradley's observations.}
+  \caption{Reconstructed zenith distances of $\gamma$ Draconis, relative to the mean position.}
   \label{tab:bradley-raw-data}
   \small
   \begin{tabular}{lrr}
     \toprule
-    \textsc{Date (1726)} & \textsc{Julian Day} & \textsc{Zenith Distance (arcsec)} \\
+    \textsc{Date} & \textsc{Day} & \textsc{Zenith Distance (arcsec)} \\
     \midrule
-    January 5 & 37.4 & $+5.7$ \\
-    January 27 & 59.4 & $+8.8$ \\
-    February 15 & 79.4 & $+11.2$ \\
-    March 1 & 93.4 & $+17.3$ \\
-    April 2 & 125.4 & $+18.1$ \\
-    May 3 & 156.4 & $+15.4$ \\
-    June 1 & 185.4 & $+10.1$ \\
-    July 2 & 216.4 & $+0.5$ \\
-    August 3 & 248.4 & $-10.2$ \\
-    September 1 & 277.4 & $-16.9$ \\
-    October 3 & 309.4 & $-20.0$ \\
-    November 4 & 341.4 & $-19.5$ \\
-    December 1 & 368.4 & $-20.5$ \\
+    17 December 1725 & 14 & $-5.7$ \\
+    5 January 1726 & 33 & $-10.5$ \\
+    27 January 1726 & 55 & $-18.0$ \\
+    15 February 1726 & 74 & $-17.8$ \\
+    1 March 1726 & 88 & $-20.9$ \\
+    21 March 1726 & 108 & $-19.5$ \\
+    12 April 1726 & 130 & $-14.9$ \\
+    3 May 1726 & 151 & $-8.4$ \\
+    1 June 1726 & 180 & $-0.7$ \\
+    22 June 1726 & 201 & $+5.7$ \\
+    12 July 1726 & 221 & $+14.2$ \\
+    3 August 1726 & 243 & $+17.9$ \\
+    1 September 1726 & 272 & $+22.1$ \\
+    20 September 1726 & 291 & $+17.2$ \\
+    10 October 1726 & 311 & $+15.2$ \\
+    4 November 1726 & 336 & $+10.5$ \\
+    1 December 1726 & 363 & $-0.2$ \\
+    20 December 1726 & 382 & $-3.8$ \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\textsc{Fitting a sinusoidal model:} We assume the observations follow a model of the form:
+\textsc{The model.} Take
 \[
-  z(t) = A \sin(\omega t + \phi) + B
+  z(t) = A \sin(\omega t + \phi) + B,
 \]
-where $A$ is the amplitude (which should equal $\kappa$), $\omega = 2\pi / (365.25 \text{ days})$ is the annual angular frequency, $\phi$ is a phase, and $B$ is an offset (which should be near zero for a star observed near its highest altitude).
+where $A$ is the amplitude, which should equal $\kappa$; $\omega = 2\pi / 365.25$ radians per day is the annual angular frequency, held fixed; $\phi$ is a phase; and $B$ is an offset, which should be near zero if the mean position has been correctly subtracted.
 
-Using least-squares fitting (or, in Bradley's era, an iterative geometric method), we minimize:
+With $\omega$ fixed, this model is linear in the three unknowns $A\cos\phi$, $A\sin\phi$ and $B$, because
 \[
-  \chi^2 = \sum_{i} [z_i - A \sin(\omega t_i + \phi) - B]^2
+  A \sin(\omega t + \phi) = (A\cos\phi)\sin\omega t + (A\sin\phi)\cos\omega t.
 \]
+The least-squares solution therefore follows directly from the normal equations, with nothing to iterate and nothing to tune. Bradley, lacking least squares, reached the same answer geometrically.
 
-For the data in Table \ref{tab:bradley-raw-data}, fitting yields approximately:
+\textsc{Result.} Fitting the eighteen points in Table~\ref{tab:bradley-raw-data} gives
 \begin{align*}
-  A &\approx 20.5 \text{ arcsec} \\
-  \phi &\approx -1.05 \text{ radians} \approx -60° \\
-  B &\approx -0.2 \text{ arcsec}
+  A &= 20.1 \text{ arcsec} \\
+  \phi &= -3.12 \text{ radians} \approx -178.5^{\circ} \\
+  B &= +0.26 \text{ arcsec}
 \end{align*}
 
-The fitted amplitude $A = 20.5$ arcsec is very close to the known value of the constant of aberration, $\kappa = 20.47$ arcsec. The small offset $B$ likely reflects a slight systematic bias in the instrument calibration or a small proper motion of the star (its intrinsic motion through space).
+The amplitude is within half an arcsecond of the modern constant of aberration, $\kappa = 20.4955$ arcsec, which is as close as one arcsecond of measurement error over eighteen nights allows. The phase near $180^{\circ}$ says the displacement follows $-\sin\omega t$: southward through the first quarter of the year, northward through the third, which is what Bradley reported. The offset is consistent with zero.
 
-\textsc{Residuals:} The residuals (differences between observed and fitted values) are typically 1–2 arcseconds, reflecting the measurement precision of the zenith sector.
+\textsc{Residuals.} The root-mean-square residual is 1.2 arcseconds and the largest single residual is 2.2, which is the measurement precision of the instrument rather than a defect of the model. A systematic departure larger than this would be evidence that a second effect was present, and in Bradley's case one was: the nutation he would identify twenty years later.
 
 \subsection*{Implications for the Speed of Light}
 
-From the fitted amplitude $A = 20.5$ arcsec and the known value of Earth's orbital velocity, we can estimate the speed of light:
+From the fitted amplitude and the Earth's mean orbital speed,
 \[
-  c = \frac{v_{\text{E}}}{\theta} = \frac{29.78 \text{ km/s}}{20.5 / 206265 \text{ rad}} = \frac{29.78 \times 206265}{20.5} \text{ km/s} \approx 3.00 \times 10^5 \text{ km/s}
+  c = \frac{v_{\text{E}}}{\theta} = \frac{29.78 \text{ km/s}}{20.1 / 206265 \text{ rad}} \approx 3.06 \times 10^5 \text{ km/s},
 \]
+about two per cent above the modern value of $299\,792.458$ km/s, with the whole of the discrepancy traceable to the half-arcsecond error in $A$.
 
-This value is consistent with measurements from other methods (such as Roemer's determination of $c \approx 2.75 \times 10^5$ km/s from Jupiter's moon eclipses), providing independent confirmation of optical physics and the reliability of both observations and theory.
+This was the second astronomical determination of the speed of light. The first was Rømer's, from the eclipses of Jupiter's satellites in 1676. Rømer did not publish a speed: he published a light-time, the interval light takes to cross the Earth's orbit, which he put at about twenty-two minutes. Converting that to a velocity requires a value for the astronomical unit, and every speed attributed to Rømer is really his light-time combined with someone else's distance. Using Huygens's contemporary figure gives roughly $2.1 \times 10^5$ km/s.\footnote{The modern light-time across the orbital diameter is close to sixteen and a half minutes, so R\o{}mer's interval was long by about a third; combined with the poor astronomical unit of the day, the resulting speed was low by nearly a third. That two independent methods a half-century apart agreed to within tens of per cent was nonetheless the decisive evidence that light travels at a finite speed at all.}
 
 \section{Secondary Effects: Proper Motion and Parallax}
 

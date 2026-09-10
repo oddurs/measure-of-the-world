@@ -188,23 +188,28 @@ def bradley_observations():
     setup_style()
     fig, ax = plt.subplots(figsize=(6.55, 3.80))
 
-    # Time axis (months from Jan 1726)
-    months = np.array([0, 2, 5, 8, 11, 14, 17])  # Selected observation epochs
-    month_labels = ['Dec 1725', 'Feb', 'May', 'Aug', 'Nov 1726', 'Feb 1727', 'May']
+    # Months from Molyneux's first observation of the star, 3 December 1725.
+    # The same reconstruction tabulated in Appendix A, so the two agree.
+    months = np.array([0.46, 1.08, 1.81, 2.43, 2.89, 3.55, 4.27,
+                       4.96, 5.92, 6.61, 7.26, 7.99, 8.94, 9.56,
+                       10.22, 11.04, 11.93, 12.55])
+    month_labels = ['Dec 1725', 'Mar', 'Jun', 'Sep', 'Dec 1726']
+    label_at = [0, 3, 6, 9, 12]
 
-    # Zenith distance observations (illustrative, based on text)
-    # Positive = north of zenith
-    observations = np.array([-20.5, -10, 15, 20, 5, -15, -20])
+    # Positive is north of the zenith.
+    observations = np.array([-5.7, -10.5, -18.0, -17.8, -20.9, -19.5, -14.9,
+                             -8.4, -0.7, 5.7, 14.2, 17.9, 22.1, 17.2,
+                             15.2, 10.5, -0.2, -3.8])
 
-    # Model: z = kappa * sin(2*pi*t/12 + phi)
-    t_model = np.linspace(0, 18, 200)
+    # Bradley reported the star farthest south in March and farthest north in
+    # September, which is a negative sine from a December epoch.
+    t_model = np.linspace(0, 13, 300)
     kappa = 20.5
-    phi = -0.5  # Phase offset
-    z_model = kappa * np.sin(2 * np.pi * t_model / 12 + phi)
+    z_model = -kappa * np.sin(2 * np.pi * t_model / 12)
 
     # Plot
     ax.plot(t_model, z_model, 'b-', linewidth=1.5, label='Aberration model')
-    ax.plot(months, observations, 'ko', markersize=8, label="Bradley's observations")
+    ax.plot(months, observations, 'ko', markersize=8, label='Reconstructed observations')
 
     # Zero line
     ax.axhline(0, color='gray', linestyle='--', linewidth=0.5)
@@ -212,18 +217,19 @@ def bradley_observations():
     # Amplitude markers
     ax.axhline(20.5, color='red', linestyle=':', linewidth=1, alpha=0.5)
     ax.axhline(-20.5, color='red', linestyle=':', linewidth=1, alpha=0.5)
-    ax.text(18.5, 20.5, r'$+\kappa$', fontsize=9, va='center', color='red')
-    ax.text(18.5, -20.5, r'$-\kappa$', fontsize=9, va='center', color='red')
+    ax.text(13.3, 20.5, r'$+\kappa$', fontsize=9, va='center', color='red')
+    ax.text(13.3, -20.5, r'$-\kappa$', fontsize=9, va='center', color='red')
 
-    ax.set_xlabel('Months from December 1725', fontsize=10)
     ax.set_ylabel('Zenith distance (arcseconds)', fontsize=10)
-    ax.set_xlim(-1, 19)
-    ax.set_ylim(-30, 30)
-    ax.legend(loc='upper right', fontsize=9)
+    ax.set_xticks(label_at)
+    ax.set_xticklabels(month_labels)
+    ax.set_xlim(-0.6, 13.6)
+    ax.set_ylim(-31, 30)
+    ax.legend(loc='lower right', fontsize=9, framealpha=0.95)
     ax.grid(True, alpha=0.3)
 
     # Annotation
-    ax.text(9, -26, r'$z(t) = 20.5 \sin(2\pi t/T + \phi)$ where $T = 1$ year',
+    ax.text(3.4, -27, r'$z(t) = -20.5 \sin(2\pi t/T)$, $T = 1$ year',
             fontsize=9, ha='center',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='white',
                       edgecolor='#cccccc'))

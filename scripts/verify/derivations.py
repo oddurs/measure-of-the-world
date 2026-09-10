@@ -54,8 +54,8 @@ def check(name, where, printed_value, computed_value, tol, unit="", note=""):
 def aberration_constant():
     """kappa = v_earth / c, in arc-seconds.
 
-    The book quotes 20.47 arcsec as the known value and 20.5 as Bradley's
-    result. The modern IAU value is 20.49552 arcsec.
+    The appendix quotes 20.47 as the known value and recovers 20.1 from the
+    reconstructed series. The modern IAU value is 20.49552.
     """
     au = 149_597_870.7  # km, IAU 2012 definition
     year = 365.25636 * 86400  # sidereal year, seconds
@@ -74,30 +74,36 @@ def aberration_constant():
 # ---------------------------------------------------------------------------
 
 BRADLEY = [
-    # (label, julian day as printed, zenith distance arcsec)
-    ("January 5", 37.4, +5.7),
-    ("January 27", 59.4, +8.8),
-    ("February 15", 79.4, +11.2),
-    ("March 1", 93.4, +17.3),
-    ("April 2", 125.4, +18.1),
-    ("May 3", 156.4, +15.4),
-    ("June 1", 185.4, +10.1),
-    ("July 2", 216.4, +0.5),
-    ("August 3", 248.4, -10.2),
-    ("September 1", 277.4, -16.9),
-    ("October 3", 309.4, -20.0),
-    ("November 4", 341.4, -19.5),
-    ("December 1", 368.4, -20.5),
+    # (date, day from 3 December 1725, zenith distance arcsec, north positive)
+    ("17 Dec 1725", 14, -5.7),
+    ("5 Jan 1726", 33, -10.5),
+    ("27 Jan 1726", 55, -18.0),
+    ("15 Feb 1726", 74, -17.8),
+    ("1 Mar 1726", 88, -20.9),
+    ("21 Mar 1726", 108, -19.5),
+    ("12 Apr 1726", 130, -14.9),
+    ("3 May 1726", 151, -8.4),
+    ("1 Jun 1726", 180, -0.7),
+    ("22 Jun 1726", 201, 5.7),
+    ("12 Jul 1726", 221, 14.2),
+    ("3 Aug 1726", 243, 17.9),
+    ("1 Sep 1726", 272, 22.1),
+    ("20 Sep 1726", 291, 17.2),
+    ("10 Oct 1726", 311, 15.2),
+    ("4 Nov 1726", 336, 10.5),
+    ("1 Dec 1726", 363, -0.2),
+    ("20 Dec 1726", 382, -3.8),
 ]
 
 
 def bradley_fit():
     """Least-squares fit of z(t) = A sin(wt + phi) + B to the printed table.
 
-    The book states A = 20.5, phi = -1.05 rad, B = -0.2, and residuals of
-    1 to 2 arcsec. With omega fixed, the model is linear in
-    (A cos phi, A sin phi, B), so the fit is exact and there is nothing to
-    tune.
+    With omega fixed, the model is linear in (A cos phi, A sin phi, B), so the
+    fit is exact and there is nothing to tune. That is what makes this a useful
+    check: if the appendix's stated result differs from what the table gives,
+    one of the two is wrong, and no choice of method can reconcile them. It
+    caught exactly that in the version before this one.
     """
     t = np.array([row[1] for row in BRADLEY])
     z = np.array([row[2] for row in BRADLEY])
@@ -111,41 +117,25 @@ def bradley_fit():
     rms = float(np.sqrt(np.mean(residuals**2)))
 
     check("Bradley fit: amplitude A", "app A, worked example",
-          20.5, amplitude, 0.5, '"')
+          20.1, amplitude, 0.15, '"')
     check("Bradley fit: phase phi", "app A, worked example",
-          -1.05, phase, 0.15, " rad")
+          -3.12, phase, 0.05, " rad")
     check("Bradley fit: offset B", "app A, worked example",
-          -0.2, offset, 0.5, '"')
+          0.26, offset, 0.1, '"')
     check("Bradley fit: residual RMS", "app A, worked example",
-          "1 to 2 arcsec",
-          f"{rms:.2f} arcsec (max {np.abs(residuals).max():.2f})",
-          0, note="book says residuals are typically 1-2 arcsec")
-
+          1.2, rms, 0.15, '"',
+          f"largest single residual {np.abs(residuals).max():.2f} arcsec; "
+          "the text quotes 1.2 and 2.2")
     check("Bradley: number of observations", "app A, worked example",
-          23, len(BRADLEY), 0, " nights",
-          "text says 23 clear nights; the table prints 13 rows")
+          18, len(BRADLEY), 0, " nights")
 
-    # The dates are labelled 1726 but the Julian days run past 365, so the
-    # series must span more than one calendar year.
-    check("Bradley: date labels consistent with day numbers",
-          "app A, table of raw data",
-          "all dates in 1726", "day 368.4 labelled 1 December 1726",
-          0, note="day 368 is past the end of the year the table's header gives")
-
-    # Phase check: aberration in zenith distance should peak when the Earth's
-    # velocity is perpendicular to the line of sight. The printed phase and
-    # the fitted one must at least agree in sign and rough size.
+    # Bradley reported the star farthest south in March and farthest north in
+    # September. With north positive and t counted from December, that is a
+    # negative sine, so the phase must be near 180 degrees.
     degrees = math.degrees(phase)
-    check("Bradley fit: phase in degrees", "app A, worked example",
-          -60.0, degrees, 8.0, " deg",
-          "book writes phi = -1.05 rad = -60 deg")
-
-
-def phase_conversion():
-    """The book writes 'phi = -1.05 radians = -60 degrees'."""
-    check("Radian to degree conversion", "app A, worked example",
-          -60.0, math.degrees(-1.05), 0.5, " deg",
-          "-1.05 rad is -60.16 deg, so the rounding is fine")
+    check("Bradley fit: phase near 180 deg", "app A, worked example",
+          -178.5, degrees, 2.0, " deg",
+          "south in March, north in September, as Bradley described")
 
 
 # ---------------------------------------------------------------------------
@@ -162,11 +152,10 @@ def speed_of_light():
     # The book compares against Roemer. Roemer himself gave a light-crossing
     # time, not a speed; the figure attributed to him depends on the value of
     # the astronomical unit then in use.
-    check("Roemer's speed of light", "app A, implications",
-          2.75e5, 2.20e5, 0.1e5, " km/s",
-          "book says Roemer got 2.75e5 km/s; the figure usually derived from "
-          "his 1676 light-time with Huygens's AU is about 2.1-2.2e5 km/s. "
-          "Needs a source or correction")
+    check("Roemer's speed of light, with Huygens's AU", "app A, implications",
+          2.1e5, 2.1e5, 0.15e5, " km/s",
+          "the appendix now gives Roemer's light-time and says whose value of "
+          "the astronomical unit converts it, rather than quoting a bare speed")
 
 
 # ---------------------------------------------------------------------------
@@ -251,7 +240,7 @@ def parallax():
 
 def main() -> int:
     print("Recomputing the book's worked examples\n")
-    for section in (aberration_constant, bradley_fit, phase_conversion,
+    for section in (aberration_constant, bradley_fit,
                     speed_of_light, refraction, pendulum, time_and_longitude,
                     parallax):
         section()
