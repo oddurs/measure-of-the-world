@@ -5,308 +5,308 @@
 
 - id: ch12-001
   type: date
-  status: unverified
+  status: verified
   text: "On a December evening in 1725 at Kew, in the house of Samuel Molyneux, James Bradley lowered his eye to the telescope of a zenith sector and awaited the moment when the star $ $ Draconis would cross the vertical wire."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley, https://mathshistory.st-andrews.ac.uk/Biographies/Bradley/"
+  note: "Correct as now written. Bradley was invited by Samuel Molyneux in December 1725 to Molyneux's estate at Kew to assist with observations of gamma Draconis; the first observation was made on 3 December 1725. This matches the Appendix G finding that the December 1725 series used Molyneux's sector at Kew."
 
 - id: ch12-002
   type: quotation
-  status: unverified
+  status: corrected
   text: "He had planned this observation with mathematical precision. $ $ Draconis passes nearly overhead at Kew's latitude; if any star would reveal stellar parallax—the tiny shift in position caused by Earth's orbital motion—this should be the one."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley"
+  note: "The attribution is backwards. It was MOLYNEUX who was interested in measuring annual stellar parallax, who commissioned the sector from George Graham, and who invited Bradley to assist. Bradley did not plan it. The choice of gamma Draconis was also not Bradley's initiative: it culminates almost overhead at Kew, which is why Robert Hooke had chosen the same star for his 1669 attempt. Recast the vignette so Molyneux is the principal and Bradley the invited observer."
 
 - id: ch12-003
   type: measurement
-  status: unverified
+  status: verified
   text: "For a star 10 parsecs away (a moderate distance by modern standards), the parallax is 0.1 arcsecond—small but potentially measurable with careful observation."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, parsec definition check"
+  note: "1/10 pc = 0.1 arcsec. Correct."
 
 - id: ch12-004
   type: superlative
-  status: unverified
+  status: verified
   text: "The brightest stars, being relatively nearby, should show the largest parallaxes."
   source: ""
-  note: ""
+  note: "Correct as a statement of the eighteenth-century working assumption, which is how the chapter uses it."
 
 - id: ch12-005
   type: date
-  status: unverified
+  status: corrected
   text: "By 1725, James Bradley and Samuel Molyneux decided to mount a systematic campaign."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley"
+  note: "Same attribution problem as ch12-002. Molyneux had the wealth, the instrument and the parallax programme; Bradley was brought in. The chapter's Together, they would attempt what earlier astronomers had not also overstates the novelty: Hooke had attempted the same star in 1669."
 
 - id: ch12-006
   type: attribution
-  status: unverified
+  status: verified
   text: "When $ $ Draconis crossed the meridian at its highest altitude, Bradley measured its angular distance from the zenith using the sector."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley"
+  note: "Correct: gamma Draconis was observed at meridian transit near the zenith with the sector."
 
 - id: ch12-007
   type: measurement
   status: unverified
   text: "The expected parallax for $ $ Draconis was estimated at roughly 0.3 arcsecond, assuming the star was within a few parsecs."
-  source: ""
-  note: ""
+  source: "SIMBAD, gamma Draconis (HD 164058), parallax 21.14 mas, https://simbad.u-strasbg.fr/simbad/sim-basic?Ident=gamma+Draconis"
+  note: "No source found for a contemporary expectation of 0.3 arcsecond. The true parallax is 0.0211 arcsecond, so the star is about 47 parsecs away, not within a few parsecs. If the 0.3 figure is the author's reconstruction of what Bradley might have hoped for, say so; it recurs three more times in the chapter as though it were Bradley's own number."
 
 - id: ch12-008
   type: measurement
-  status: unverified
+  status: corrected
   text: "This was small but detectable: the zenith sector, with its radius of about 12 feet and carefully graduated scale, could resolve motions of a few arcseconds."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, Bradley's 12.5-foot Zenith Sector (1727), https://www.royalobservatorygreenwich.org/articles.php?article=1065; MacTutor, James Bradley"
+  note: "MUST FIX, two instruments conflated. Molyneux's sector at Kew, the one used in December 1725, was made by GEORGE GRAHAM and its telescope was about 24 feet long. It was not built by John Hadley (that error is in the preceding paragraph and must go too), and it is not the 12-foot instrument. The 12.5-foot sector is a DIFFERENT instrument, also by Graham, made in 1727 for Bradley's own use at Wanstead; Bradley later sold it to the Government for 45 pounds when he came to Greenwich in 1742. Appendix G has already established this distinction; the chapter still contradicts it. Also fix the same paragraph's telescope of short focal length: 24 feet is not short."
 
 - id: ch12-009
   type: date
-  status: unverified
+  status: verified
   text: "Bradley's observations began in December 1725."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley"
+  note: "Correct: the series began in December 1725."
 
 - id: ch12-010
   type: measurement
-  status: unverified
+  status: corrected
   text: "Its north-south position changed by roughly 20 arcseconds over the course of a year."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley"
+  note: "MUST FIX, and it is the hinge of the chapter's narrative. Theory predicted the star would culminate farthest SOUTH in December and farthest NORTH in June. What Bradley saw was that after December it kept moving south, reaching its most southerly point in MARCH and its most northerly in SEPTEMBER: three months out of phase with parallax, not opposite to it. The chapter's account, that it moved south in December as expected and continued moving south even in June, is wrong in both halves. By June the star was back near its December position and heading north. The total swing over six months was about one hundredth of a degree, roughly 36 to 40 arcseconds peak to peak, so the amplitude is 20 arcseconds but the range is 40, and changed by roughly 20 arcseconds over the course of a year understates it. Note that the figure caption at line 128 already states the correct phasing, so the body text now contradicts its own caption."
 
 - id: ch12-011
   type: quotation
-  status: unverified
+  status: verified
   text: "The pennant was moving not because the wind changed but because the boat's motion combined with the wind's direction to produce a new apparent direction."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley"
+  note: "The traditional account: sailing on the Thames, Bradley noticed a vane atop the mast change direction as the boat turned while the wind held steady. The chapter's pennant at the bow is a harmless variant."
 
 - id: ch12-012
   type: quotation
-  status: unverified
+  status: verified
   text: "Bradley realized that light must work the same way: Earth's motion combines with the direction from which starlight arrives to produce an apparent shift in the star's position."
-  source: ""
-  note: ""
+  source: "Bradley, A Letter to Dr Edmond Halley giving an Account of a New Discovered Motion of the Fix'd Stars, Philosophical Transactions 35, no. 406 (1729), 637-661, doi 10.1098/rstl.1727.0064"
+  note: "Correct statement of Bradley's insight."
 
 - id: ch12-013
   type: quotation
-  status: unverified
+  status: verified
   text: "If light travels at angle $ _0$ to Earth's velocity in the reference frame of the star, then in Earth's reference frame the light appears to come from a different angle $ $."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, constant of aberration check"
+  note: "Correct."
 
 - id: ch12-014
   type: quotation
-  status: unverified
+  status: verified
   text: "In Earth's moving reference frame, the photon's velocity is not $ c $ (in Earth's frame light moves at speed $c$ regardless of observer motion, according to special relativity), but the apparent direction from which the photon arrives is shifted due to Earth's motion."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py"
+  note: "The relativistic caveat is correctly stated and correctly set aside for v much less than c."
 
 - id: ch12-015
   type: superlative
-  status: unverified
+  status: corrected
   text: "Bradley's measurements confirmed the value to roughly this precision, making his discovery one of the earliest precision verifications of celestial physics."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley; scripts/verify/derivations.py"
+  note: "Overstated. Bradley's own result was not 20.4955 arcseconds. From his aberration measurement he derived a light-time from the Sun of 8 minutes 12 seconds against the modern 8 minutes 20, which implies a constant of aberration of about 20.2 arcseconds, roughly 1.5 per cent low. Say that Bradley's value was about 20.2 arcseconds, within a couple of per cent of the modern 20.4955, rather than that he confirmed the value to roughly this precision. SEPARATE POINT: the footnote cites Feingold1984, The Newtonian Moment. Feingold's book of that title is 2004, not 1984, and it is a cultural history of Newton's reception with nothing on the constant of aberration. That citation should be replaced by Bradley's own 1729 paper."
 
 - id: ch12-016
   type: date
-  status: unverified
+  status: corrected
   text: "He observed $ $ Draconis on multiple nights over the period December 1725 to December 1726, measuring its angular distance from the zenith."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley"
+  note: "The Kew series ran from December 1725 through 1726, so December 1725 to December 1726 is right for it, but the chapter's opening paragraph says the next eighteen months, which does not match. Bradley's broader survey of other stars began in August 1727 with his own instrument at Wanstead. Pick one span and make the opening agree with the worked example. MUST ALSO FIX the four data points in this section: they are inverted in phase. As printed they put the star farthest NORTH in March (+17.26) and farthest SOUTH in December (-20.47). History and the chapter's own figure caption put it farthest SOUTH in March and farthest NORTH in September. The September value printed here (-7.06, south) is where the caption says the northern maximum belongs, and Appendix I's reconstruction gives +20.5 for the northern maximum in autumn. The three files now disagree with one another."
 
 - id: ch12-017
   type: date
-  status: unverified
+  status: corrected
   text: "Fitting this sinusoidal model to Bradley's data: MATH with $t$ measured from some reference date (say, the beginning of 1726)."
-  source: ""
-  note: ""
+  source: "recomputed with the chapter's own model; scripts/verify/derivations.py, Bradley fit checks"
+  note: "MUST FIX, every number in this fit is wrong and the conclusion is false. With the chapter's own z(t) = 20.5 sin(2 pi t + phi) and phi = -1.06 rad, the model gives June 1 = +20.5 arcsec (the chapter needs +10.1), December 1 = -17.9 arcsec (the chapter claims -20.5), and March 1 = +0.17 arcsec (the chapter claims +17.3). So phi = -1.06 does not even satisfy the June equation it was derived from. The two phases that DO satisfy sin(2.64 + phi) = 0.492 are phi = -0.013 and phi = -2.124, and neither reproduces the other three data points either, which means the four printed observations are not consistent with any single sinusoid of amplitude 20.5. The sentence These predictions match the observations almost exactly is false as printed. Note that scripts/verify/derivations.py independently flags the related fit in the appendices: it computes phi = -0.634 rad against the book's -1.05, an offset of -1.02 against the book's -0.2, and residuals of 3.15 arcsec RMS against the book's claimed 1 to 2."
 
 - id: ch12-018
   type: measurement
-  status: unverified
+  status: verified
   text: "Superimposed on the annual aberration circle was a smaller oscillation with a period of 18.6 years."
-  source: ""
-  note: ""
+  source: "Encyclopaedia Britannica, Nutation, https://www.britannica.com/science/nutation-astronomy"
+  note: "Correct: the nutation period is 18.6 years."
 
 - id: ch12-019
   type: measurement
-  status: unverified
+  status: verified
   text: "The cause is gravitational: the Moon orbits Earth in a plane inclined by roughly 5 degrees to Earth's orbital plane (the ecliptic)."
-  source: ""
-  note: ""
+  source: "Encyclopaedia Britannica, Nutation"
+  note: "Correct: the Moon's orbit is inclined 5.15 degrees to the ecliptic."
 
 - id: ch12-020
   type: quotation
-  status: unverified
+  status: verified
   text: "This inclined lunar orbit exerts a torque on Earth's equatorial bulge, causing Earth's rotational axis to wobble."
-  source: ""
-  note: ""
+  source: "Encyclopaedia Britannica, Nutation"
+  note: "Correct."
 
 - id: ch12-021
   type: quotation
-  status: unverified
+  status: verified
   text: "The wobble has a period of 18.6 years—the period of the Moon's nodal regression (the time it takes for the Moon's ascending and descending nodes to return to the same position relative to the stars)."
-  source: ""
-  note: ""
+  source: "Encyclopaedia Britannica, Nutation"
+  note: "Correct: 18.6 years is the period of regression of the lunar nodes."
 
 - id: ch12-022
   type: quotation
   status: unverified
   text: "The torque on Earth's equatorial bulge due to the Moon is: MATH where $a_ E $ is Earth's equatorial bulge parameter, $m_ Moon $ is the Moon's mass, $r_ Moon $ is the Earth-Moon distance, and $ $ is the angle between the Moon's orbital plane and Earth's rotational axis."
   source: ""
-  note: ""
+  note: "The printed torque expression is not a standard result and appears garbled. It multiplies by e_Moon, the lunar eccentricity, for no stated reason; it calls a_E an equatorial bulge parameter without defining it; and the standard expression for the lunisolar torque on the Earth depends on the dynamical ellipticity (C - A)/C, which does not appear. Replace it with a sourced form or cut it. The footnote's citation is also broken: Vallado2013, Revisiting Spacetrack Report 3, is a 2006 AIAA conference paper by Vallado and others about SGP4 orbit propagation, not a 2013 American Astronautical Society book, and it contains no chapter on nutation physics. Vallado's actual textbook is Fundamentals of Astrodynamics and Applications."
 
 - id: ch12-023
   type: measurement
-  status: unverified
+  status: verified
   text: "The torque causes Earth's axis to precess (over the 26,000-year precessional period) and to nutate (wobble) with the lunar nodal period of 18.6 years."
-  source: ""
-  note: ""
+  source: "IERS Conventions (2010)"
+  note: "Correct: general precession completes a cycle in about 25,772 years, so 26,000 is right to the precision given."
 
 - id: ch12-024
   type: measurement
-  status: unverified
+  status: corrected
   text: "The nutation amplitude, derived from perturbation theory, is: MATH where $ = 2 / (18.6 years )$ is the angular frequency of lunar nodal regression, and the amplitude of 9.2 arcseconds results from the relative magnitudes of Earth's moment of inertia, the equatorial bulge, and the lunar mass."
-  source: ""
-  note: ""
+  source: "Encyclopaedia Britannica, Nutation; IERS Conventions (2010)"
+  note: "MUST FIX, the two nutation amplitudes are swapped and mislabelled. The principal nutation is 17.2 arcseconds in LONGITUDE and 9.2 arcseconds in OBLIQUITY. The chapter's bullet list says roughly 9.2 arcseconds in longitude and 7.5 arcseconds in obliquity: the 9.2 belongs to obliquity and the 7.5 is not a nutation amplitude at all. The derivation here then attaches 9.2 to a quantity written Delta alpha (nutation), described as longitude, which repeats the same swap. The figure caption and the table row (ch12-043) carry it too. Bradley's own announced figure was about 9 arcseconds, which is the obliquity term, so getting the labels right also gets the history right."
 
 - id: ch12-025
   type: measurement
-  status: unverified
+  status: corrected
   text: "The zenith sector achieved a precision of roughly 2–3 arcseconds for individual observations."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py; src/appendices/appendix-a.tex as corrected"
+  note: "Contradicts the chapter's own later text, which says the arc was read to a fraction of an arcsecond, and contradicts the corrected Appendix A, which speaks of one arcsecond of measurement error over eighteen nights. Bradley's sector was good to about one arcsecond per observation. A 2-to-3-arcsecond figure would not have let him separate a 9-arcsecond nutation from a 20-arcsecond aberration as cleanly as he did."
 
 - id: ch12-026
   type: quotation
-  status: unverified
+  status: corrected
   text: "Over a year's worth of data (perhaps 50–100 observations), systematic errors in the instrument's calibration or orientation could easily be identified and corrected, allowing the mean position to be determined to perhaps 1 arcsecond."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py; src/appendices/appendix-a.tex as corrected"
+  note: "Follows from ch12-025. If single observations are good to about 1 arcsecond, the mean of an epoch is good to better than that, and the paragraph's arithmetic should be restated from the corrected single-observation precision."
 
 - id: ch12-027
   type: measurement
-  status: unverified
+  status: corrected
   text: "With such precision, both aberration (amplitude 20 arcseconds) and nutation (amplitude 9 arcseconds) were easily detectable."
-  source: ""
-  note: ""
+  source: "Encyclopaedia Britannica, Nutation"
+  note: "The conclusion holds but the nutation amplitude needs the ch12-024 correction: 9 arcseconds is the obliquity term, not longitude."
 
 - id: ch12-028
   type: measurement
   status: unverified
   text: "But parallax—the expected shift for $ $ Draconis—was predicted to be roughly 0.3 arcseconds, based on rough distance estimates."
-  source: ""
-  note: ""
+  source: "SIMBAD, gamma Draconis, parallax 21.14 mas"
+  note: "Same unsourced 0.3-arcsecond expectation as ch12-007."
 
 - id: ch12-029
   type: quotation
-  status: unverified
+  status: verified
   text: "More fundamentally, parallax requires distinguishing the annual shift due to Earth's orbital motion from proper motion (the star's actual motion through space) and systematic instrument errors."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley"
+  note: "Correct in substance. Bradley himself concluded that the parallax he and Molyneux had set out to find was beyond the accuracy of the instruments available."
 
 - id: ch12-030
   type: measurement
   status: unverified
   text: "He designed an experiment to detect parallax (amplitude 0.3 arcsec) and instead detected aberration (amplitude 20 arcsec)—a phenomenon entirely unsuspected before his observations."
   source: ""
-  note: ""
+  note: "The aberration amplitude of 20 arcseconds is right; the 0.3-arcsecond parallax expectation is the unsourced figure of ch12-007. The rhetorical point survives either way."
 
 - id: ch12-031
   type: superlative
-  status: unverified
+  status: verified
   text: "First, it provided an independent confirmation that Earth indeed moves in an orbit around the sun—a fact known from Copernican theory and Newton's physics, but never before demonstrated directly by stellar observation."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley"
+  note: "Confirmed: Bradley offered the first observational proof that the Earth revolves around the Sun."
 
 - id: ch12-032
   type: quotation
-  status: unverified
+  status: corrected
   text: "This value agrees closely with the speed of light measured by other methods (such as Roemer's determination from the eclipses of Jupiter's moons, which gave $c 2.75 10^5$ km/s)."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, Roemer's speed of light check"
+  note: "MUST FIX. The script computes 2.2e5 km/s, not 2.75e5, and flags this as needing a source or a correction. Roemer did not publish a speed at all: he gave a light-time for the Earth's orbit, and Huygens turned it into a speed using his own value for the solar distance, arriving at roughly 2.1 to 2.2e5 km/s. Either give 2.2e5 km/s and attribute it to Huygens from Roemer's data, or state the light-time instead."
 
 - id: ch12-033
   type: quotation
-  status: unverified
+  status: verified
   text: "This was confirmation of Newton's gravitational law at a level of precision that would have been impossible without Bradley's instruments and persistence."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley"
+  note: "Bradley's 1748 nutation letter did confirm the Newtonian model of an Earth flattened at the poles, so the claim holds."
 
 - id: ch12-034
   type: measurement
-  status: unverified
+  status: verified
   text: "Refraction: Near the zenith, refraction is minimal (less than 1 arcsecond), but it must still be corrected."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, refraction at 90 degrees check"
+  note: "Refraction is zero at the zenith and rises to about 58 arcseconds at 45 degrees altitude. Correct."
 
 - id: ch12-035
   type: superlative
-  status: unverified
+  status: verified
   text: "The fit yielded not only confirmation of the aberration phenomenon but also the first quantitative determination of the constant of aberration."
-  source: ""
-  note: ""
+  source: "Bradley, Philosophical Transactions 35, no. 406 (1729), 637-661"
+  note: "Correct: the 1729 paper gave the first quantitative determination of the constant of aberration. NOTE A GAP: the chapter never states when Bradley's letter was published. Appendix G has established it as Philosophical Transactions volume 35 for 1729, read to the Society in January 1729, not 1728. The chapter should say so, since the 1728 date circulates widely and the book will be checked against it."
 
 - id: ch12-036
   type: attribution
-  status: unverified
+  status: corrected
   text: "Following Flamsteed's cataloging effort and building on the precision methods of the mural arc, Bradley demonstrated that careful observation with refined instruments could reveal phenomena unanticipated by theory."
-  source: ""
-  note: ""
+  source: "Allan Chapman, Dividing the Circle (Wiley-Praxis, 1990)"
+  note: "The lineage claim is fine, but the same section opens with Unlike the mural arc, which measured both altitude and azimuth. A mural arc or mural quadrant is fixed in the plane of the meridian and measures altitude (or zenith distance) only; it cannot measure azimuth. That is the whole point of mounting it on a meridian wall. Cut the azimuth clause."
 
 - id: ch12-037
   type: date
-  status: unverified
+  status: verified
   text: "His contributions were recognized: in 1742, he was appointed Astronomer Royal, a position he held until his death in 1762."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, James Bradley; Royal Museums Greenwich, History of the Royal Observatory and the Astronomers Royal"
+  note: "Appointed third Astronomer Royal in 1742; died 13 July 1762. Correct."
 
 - id: ch12-038
   type: measurement
-  status: unverified
+  status: verified
   text: "Parallax angles this small—roughly 1 arcsecond or less—would require observational precision orders of magnitude beyond even Bradley's zenith sector."
-  source: ""
-  note: ""
+  source: "SIMBAD; scripts/verify/derivations.py, parsec check"
+  note: "Correct in substance."
 
 - id: ch12-039
   type: quotation
-  status: unverified
+  status: verified
   text: "Not until 1838, more than a century after Bradley's work, would Friedrich Wilhelm Bessel successfully measure the parallax of the star 61 Cygni, finally confirming stellar distances and answering definitively the question that had motivated Bradley's original search."
-  source: ""
-  note: ""
+  source: "Bessel, Bestimmung der Entfernung des 61sten Sterns des Schwans, Astronomische Nachrichten 16 (1838), 65-96"
+  note: "Correct: Bessel announced the 61 Cygni parallax in 1838 using the Koenigsberg heliometer."
 
 - id: ch12-040
   type: date
-  status: unverified
+  status: corrected
   text: "( announced the first reliable parallax measurement in 1838."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, 61 Cygni distance check"
+  note: "The 1838 date and the 0.314-arcsecond parallax are right, but the distance is not. Bessel's 0.3136 arcsec implies 3.19 parsecs, or 10.4 light-years; the modern parallax of 0.286 arcsec gives 3.5 parsecs, or 11.4 light-years. The chapter's about 3.4 parsecs matches neither. The verification script flags this and notes that the book gives the parallax but never the distance it implies."
 
 - id: ch12-041
   type: tabular
-  status: unverified
+  status: verified
   text: "Parallax — Amplitude: p (depends on distance); Period: Annual; Physical Cause: Earth's orbital motion relative to star"
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py"
+  note: "Table row correct."
 
 - id: ch12-042
   type: tabular
-  status: unverified
+  status: verified
   text: "Aberration — Amplitude: 20.5''; Period: Annual; Physical Cause: Earth's velocity combined with light velocity"
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, constant of aberration check"
+  note: "Table row correct: the script computes 20.4927 arcsec against the IAU 20.49552."
 
 - id: ch12-043
   type: tabular
-  status: unverified
+  status: corrected
   text: "Nutation — Amplitude: 9'' (longitude); Period: 18.6 years; Physical Cause: Lunar torque on Earth's equatorial bulge"
-  source: ""
-  note: ""
+  source: "Encyclopaedia Britannica, Nutation; IERS Conventions (2010)"
+  note: "MUST FIX, same swap as ch12-024. The table row reads approximately 9 arcsec (longitude). The 9.2-arcsecond amplitude is the nutation in OBLIQUITY; the nutation in longitude is 17.2 arcseconds. Either relabel the row as obliquity or change the figure to 17.2."
 
 - id: ch12-044
   type: tabular
-  status: unverified
+  status: verified
   text: "Proper motion — Amplitude: Variable; Period: Decades--centuries; Physical Cause: Star's actual motion through space"
   source: ""
-  note: ""
+  note: "Table row correct: proper motion is variable in amplitude and secular in period."

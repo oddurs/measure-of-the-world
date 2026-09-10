@@ -5,161 +5,285 @@
 
 - id: ch04-001
   type: date
-  status: unverified
+  status: corrected
   text: "On a clear night in the winter of 1690, with the temperature dropping below freezing and frost forming on the brass arc, John Flamsteed stood at the eyepiece of the mural arc and waited for Polaris to cross the meridian wire."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045 ; 'Flamsteed House', https://www.royalobservatorygreenwich.org/articles.php?article=916"
+  note: "The date is workable, the setting is not. The arc was in use from 11 September 1689 and Sharp was at Greenwich until autumn 1690, so a winter 1690 observation is possible, and Polaris culminates at about 54 degrees altitude from Greenwich, so it is observable. But the arc was NOT in Flamsteed House. It hung on the west wall of the Quadrant House, a small detached building aligned to the meridian in the south-east corner of the garden; the chapter says later in the same section that the arc was 'attached to the meridian wall of Flamsteed House', which is wrong, and the Octagon Room's walls were in any case not aligned to a meridian. Also in this paragraph: reading the altitude 'with a filar micrometer ... to perhaps one-tenth of a degree' is absurd. One tenth of a degree is six arcminutes, some twenty times coarser than the ten to fifteen arcsecond graduation the same chapter claims two paragraphs later."
 
 - id: ch04-002
   type: date
-  status: unverified
+  status: corrected
   text: "The mural arc that Flamsteed designed with Abraham Sharp between 1689 and 1691 was the principal instrument of the Greenwich Observatory."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045 ; 'People: Abraham Sharp', https://www.royalobservatorygreenwich.org/articles.php?article=1148"
+  note: "Built 1688-1689, not 1689-1691. Construction began in 1688 with money Flamsteed inherited, Sharp worked at Greenwich from August 1688 to autumn 1690, and the first observation with the arc was on 11 September 1689. Chapter 2 gives yet another span, 1679-1691, for the same instrument."
 
 - id: ch04-003
   type: measurement
-  status: unverified
+  status: corrected
   text: "It consisted of a curved wall of iron, 140 degrees of arc, with a radius of approximately 6.75 feet."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045"
+  note: "Wrong material, and the radius should be given as measured. The arc was BRASS, carried on iron support bands with wooden reinforcing pieces; describing it as 'a curved wall of iron' inverts that, and the same chapter later has Sharp 'cutting the lines into brass', contradicting itself. The measured radius is 79 and a half inches, that is 6 feet 7.5 inches or 6.63 feet, not 6.75 feet. The 140-degree angular extent could not be confirmed from the Royal Observatory Greenwich record or the Royal Museums Greenwich model entry, neither of which states the arc's span; treat it as unverified until a source is found."
 
 - id: ch04-004
   type: measurement
-  status: unverified
+  status: verified
   text: "If the clock loses or gains one second over the course of an observation, the right ascension will be in error by $1^ s 15 arcsec/s = 15$ arcseconds—a severe error."
-  source: ""
-  note: ""
+  source: "One second of time equals fifteen seconds of arc in right ascension, by the definition of right ascension in hours"
+  note: "Correct and exact."
 
 - id: ch04-005
   type: quotation
-  status: unverified
+  status: verified
   text: "Bessel's formula approximates it as: MATH to adequate accuracy for Flamsteed's purposes."
-  source: ""
-  note: ""
+  source: "Standard mean refraction constant: about 58.3 arcseconds times the tangent of the zenith distance, i.e. 58.3 arcseconds at 45 degrees altitude"
+  note: "The formula is right, but the chapter should say where it fails. It is a good approximation only above roughly 15 degrees altitude. At 1 degree it gives 55.7 arcminutes and at the horizon it diverges, whereas true horizon refraction is about 35 arcminutes. That matters because this chapter's own figure caption claims refraction 'exceeds five arcminutes' near the horizon, which its own formula contradicts."
 
 - id: ch04-006
   type: superlative
   status: unverified
   text: "The largest source of error here is refraction."
   source: ""
-  note: ""
+  note: "Plausible and internally consistent with the chapter's own error budget, where refraction uncertainty at 5-20 arcseconds is the largest declination term, but I found no source ranking Flamsteed's error terms. Would need Chapman, Dividing the Circle, or a Journal for the History of Astronomy analysis of the mural-arc residuals."
 
 - id: ch04-007
   type: measurement
   status: unverified
   text: "For a declination near the zenith (close to the observer's latitude), refraction was minimal, typically a few arcseconds, and the declination could be determined to 10–20 arcseconds."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)' (catalogue accuracy generally)"
+  note: "The 10-20 arcsecond figure is consistent with the accuracy generally attributed to Flamsteed's catalogue, but I found no source giving it specifically as the near-zenith declination uncertainty. Needs a citation."
 
 - id: ch04-008
   type: superlative
   status: unverified
   text: "Refraction uncertainty: As noted above, the refraction correction was the largest source of declination error, particularly at low altitudes."
   source: ""
-  note: ""
+  note: "See ch04-006: same unsourced ranking of error terms."
 
 - id: ch04-009
   type: measurement
   status: unverified
   text: "Flamsteed's refraction tables, derived from accumulated observations rather than from a well-developed theory, were accurate to perhaps 5–10 arcseconds."
   source: ""
-  note: ""
+  note: "No source found for 5-10 arcsecond accuracy in Flamsteed's refraction tables. Royal Observatory Greenwich's study of his clock work notes he never incorporated seasonal temperature variation into his refraction corrections, which suggests the true figure was worse. Needs a citation or should be softened."
 
 - id: ch04-010
   type: measurement
-  status: unverified
+  status: verified
   text: "Over hundreds of observations, these errors averaged to near zero, but individual observations could carry errors of a second or more—equivalent to 15 arcseconds in right ascension."
-  source: ""
-  note: ""
+  source: "One second of time equals fifteen arcseconds of right ascension"
+  note: "The conversion is right. But note the internal contradiction in the surrounding sentence: here 'Flamsteed called the clock reading to the nearest second; the assistant recorded it', whereas the chapter opens with the assistant calling the time and Flamsteed reading the arc, and chapter 3 also has the assistant call the time. Fix one way or the other."
 
 - id: ch04-011
   type: date
-  status: unverified
+  status: corrected
   text: "Thomas Tompion's two regulators, commissioned by Jonas Moore in 1676 and delivered to Flamsteed in 1677, were among the finest timekeepers in the world."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, 'Year-Going Clock', RMGC object 202113, https://www.rmg.co.uk/collections/objects/rmgc-object-202113 ; Royal Observatory Greenwich, 'Private Patronage', https://www.royalobservatorygreenwich.org/articles.php?article=961"
+  note: "Dates wrong. Moore commissioned the two clocks from Tompion in late 1675, and they were delivered to the Octagon Room in the summer of 1676, probably on 7 July, in time for the Observatory's opening. Not commissioned 1676 and delivered 1677. Chapter 2's caption gives 1676 for the commission, so the book contradicts itself here too."
 
 - id: ch04-012
   type: quotation
-  status: unverified
+  status: corrected
   text: "Each clock embodied innovations that Tompion had developed and refined over a lifetime of work: the anchor escapement (a mechanism allowing the pendulum to regulate the escape of energy from the clock's falling weights, enabling precise control at moderate swing amplitudes), a thirteen-foot pendulum (providing a period of approximately two seconds per swing), and brass and steel construction (minimizing thermal effects—the clock's sensitivity to temperature changes—by employing differential expansion, where the metals' different rates of thermal expansion partially cancel out timing errors)."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, 'Year-Going Clock', https://www.rmg.co.uk/collections/objects/rmgc-object-202113 ; Royal Observatory Greenwich, 'Decoding Flamsteed', https://www.royalobservatorygreenwich.org/articles.php?article=1381"
+  note: "Two of the three specifications are wrong. (1) Escapement: Royal Museums Greenwich describes a prototype DEAD-BEAT escapement, not the anchor escapement. This also contradicts chapter 2's footnote, corrected earlier today to read dead-beat. The book now attributes four different escapements to the same two clocks: dead-beat in chapter 2, anchor here, remontoire at chapter 6 line 52 and constant-force in chapter 6's table. (2) Temperature compensation: there was NONE. Compensated pendulums begin with Graham's mercury pendulum of 1721 and Harrison's gridiron of about 1726, decades after these clocks; the claim that brass and steel construction cancelled thermal error 'by employing differential expansion' is an anachronism and directly contradicts chapter 2's corrected footnote. (3) The thirteen-foot pendulum and its two-second swing are correct."
 
 - id: ch04-013
   type: measurement
-  status: unverified
+  status: corrected
   text: "Temperature variations of 10–15 degrees Celsius could introduce errors of a second or more per day."
-  source: ""
-  note: ""
+  source: "Coefficient of linear thermal expansion of steel, about 11.5 parts per million per kelvin; pendulum period varies as the square root of length"
+  note: "Understated by roughly a factor of six. For an uncompensated steel-rod pendulum a 12 K change gives a fractional period change of about 6.9 parts in 100,000, which is about 6 seconds a day, not 'a second or more'. A wooden rod would be less but still several seconds. The rod material of these particular clocks is not documented in the sources I reached, so give the figure as an order of magnitude with the material stated."
 
 - id: ch04-014
-  type: date
+  type: quotation
   status: unverified
-  text: "On the night of November 8, 1680, Flamsteed observed the bright star Aldebaran (Alpha Tauri) crossing the meridian."
+  text: "The figures below are a reconstruction: they are what Flamsteed's instruments would have given for Aldebaran on this night, computed from the star's known position, rather than a transcription from the manuscript observation books."
   source: ""
   note: ""
 
 - id: ch04-015
   type: date
   status: unverified
-  text: "From astronomical tables for 1680 November 8, $ _0 = 2^ h 18^ m 24^ s $."
+  text: "A reconstruction is used here so that every number can be checked against the one before it, which is the point of a worked example.) The date is 8 November 1690, Old Style, England still keeping the Julian calendar; the mural arc had been in use for a year."
   source: ""
   note: ""
 
 - id: ch04-016
-  type: attribution
+  type: date
   status: unverified
-  text: "The observed altitude is $h_ obs = 61^ 24' 32''$."
+  text: "Precessing the modern position back to 1690 gives $ = 4^ h 18^ m 14^ s $, $ = +15^ 50' 40''$: the reconstruction closes on itself, as it must."
   source: ""
   note: ""
 
 - id: ch04-017
-  type: quotation
-  status: unverified
-  text: "The refraction correction from Flamsteed's tables, for this altitude and the season, is approximately $R 50''$ (arcseconds)."
-  source: ""
-  note: ""
-
-- id: ch04-018
-  type: quotation
-  status: unverified
-  text: "Aldebaran's position in modern catalogs is $ = 4^ h 35^ m 55^ s $ and $ = +16^ 30' 33''$ (J2000.0 epoch)."
-  source: ""
-  note: ""
-
-- id: ch04-019
-  type: quotation
-  status: unverified
-  text: "Flamsteed's observation gives $ = 19^ h 20^ m 24^ s $ and $ = +22^ 52' 22''$, which differs by roughly 9 hours in right ascension and 6 degrees in declination."
-  source: ""
-  note: ""
-
-- id: ch04-020
-  type: quotation
-  status: unverified
-  text: "This disparity is not an error in Flamsteed's method but reflects precession (the slow wobble of Earth's axis causing a gradual shift in star positions over centuries) and the proper motion of Aldebaran itself."
-  source: ""
-  note: ""
-
-- id: ch04-021
   type: measurement
   status: unverified
   text: "The combined typical error for a single high-altitude transit observation was thus on the order of 15–20 arcseconds."
   source: ""
-  note: ""
+  note: "Consistent with the catalogue accuracy generally attributed to Flamsteed, and with the chapter's own itemised budget, but I found no source giving a per-observation combined error of 15-20 arcseconds. Needs a citation to Chapman or a modern residual analysis."
 
-- id: ch04-022
+- id: ch04-018
   type: measurement
-  status: unverified
+  status: corrected
   text: "By observing each star many times over years, averaging the results to cancel random errors, and applying careful systematic corrections, Flamsteed achieved typical errors of 10 arcseconds in his final catalog—an improvement by a factor of 3 or more over the best prior work (Tycho Brahe's catalog, with its 1–3 arcminute errors)."
-  source: ""
-  note: ""
+  source: "Tycho's accuracy 'approaching one arcminute', University of Oxford, 'Hven, 1576-97: Tycho Brahe's observatory', https://www.cabinet.ox.ac.uk/hven-1576-97-tycho-brahes-observatory"
+  note: "The comparison figure for Tycho is inflated. His accuracy approached one arcminute rather than 1-3 arcminutes, which makes the improvement factor about 4 to 6 rather than 'a factor of 3 or more'. This is the fourth different figure the book gives for the same ratio; see ch02-018."
 
-- id: ch04-023
+- id: ch04-019
   type: superlative
   status: unverified
   text: "Armed with this method, the Greenwich Observatory would accumulate a star catalog of unprecedented accuracy, a resource that would anchor positional astronomy for two centuries."
   source: ""
-  note: ""
+  note: "Rhetorical closing claim, no separately checkable content."
+
+- id: ch04-014
+  type: date
+  status: stale
+  text: "On the night of November 8, 1680, Flamsteed observed the bright star Aldebaran (Alpha Tauri) crossing the meridian."
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045 (first observation 11 September 1689)"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-015
+  type: date
+  status: stale
+  text: "From astronomical tables for 1680 November 8, $ _0 = 2^ h 18^ m 24^ s $."
+  source: "Computed Greenwich mean sidereal time at 0h Universal Time for the date, using the standard GMST polynomial"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-016
+  type: attribution
+  status: stale
+  text: "The observed altitude is $h_ obs = 61^ 24' 32''$."
+  source: "Aldebaran position precessed from the J2000 catalogue position (04h 35m 55.24s, +16d 30m 33.5s, proper motion 63.45 and -188.94 milliarcseconds per year) back to epoch 1680 using the IAU 1976 precession angles; Greenwich latitude 51d 28m 40s"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-017
+  type: quotation
+  status: stale
+  text: "The refraction correction from Flamsteed's tables, for this altitude and the season, is approximately $R 50''$ (arcseconds)."
+  source: "The chapter's own Bessel formula, 58.3 arcseconds times the cotangent of the altitude"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-018
+  type: quotation
+  status: stale
+  text: "Aldebaran's position in modern catalogs is $ = 4^ h 35^ m 55^ s $ and $ = +16^ 30' 33''$ (J2000.0 epoch)."
+  source: "Aldebaran, Alpha Tauri, J2000.0 position: right ascension 04h 35m 55.24s, declination +16d 30m 33.5s"
+  note: "sentence no longer present; was verified"
+
+- id: ch04-019
+  type: quotation
+  status: stale
+  text: "Flamsteed's observation gives $ = 19^ h 20^ m 24^ s $ and $ = +22^ 52' 22''$, which differs by roughly 9 hours in right ascension and 6 degrees in declination."
+  source: "Computed from the J2000 position precessed to 1680 (see ch04-016)"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-020
+  type: quotation
+  status: stale
+  text: "This disparity is not an error in Flamsteed's method but reflects precession (the slow wobble of Earth's axis causing a gradual shift in star positions over centuries) and the proper motion of Aldebaran itself."
+  source: "General precession about 1.4 degrees per century along the ecliptic; Aldebaran's proper motion about 0.2 arcseconds per year; rigorous precession of the J2000 position to 1680"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-101
+  type: quotation
+  status: stale
+  text: "Wait---I made an error. Refraction makes the star appear higher, so we subtract the refraction to get the true altitude. Let me correct:"
+  source: "Internal reading of src/chapters/04.tex, section 'A Worked Example: The Observation of Aldebaran, 1680'"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-102
+  type: attribution
+  status: stale
+  text: "the longitude correction accounts for the observer being at Greenwich rather than the Prime Meridian"
+  source: "The Prime Meridian is defined at Greenwich"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-103
+  type: superlative
+  status: stale
+  text: "Tompion's clocks achieved an accuracy of a few seconds per day---a performance that would not be surpassed until the 19th century."
+  source: "George Graham's mercury-compensated regulator, 1721; John Harrison's wooden regulators of the later 1720s, reported to keep time to about one second a month"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-104
+  type: attribution
+  status: stale
+  text: "comparing them regularly against the Sun's noon transit (using a gnomon---a simple vertical stick casting a shadow---and a marked scale on the floor of Flamsteed House) was essential"
+  source: "Royal Observatory Greenwich, 'Decoding Flamsteed: Flamsteed's modus operandi and the methods used to compare, regulate, rate and determine the errors of his clocks (1676-1719)', https://www.royalobservatorygreenwich.org/articles.php?article=1381"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-105
+  type: measurement
+  status: stale
+  text: "Near the zenith, refraction is negligible; near the horizon, it exceeds five arcminutes."
+  source: "Standard mean atmospheric refraction at the horizon, about 34 to 35 arcminutes; the chapter's own formula, 58.3 arcseconds times the cotangent of the altitude, gives 55.7 arcminutes at 1 degree altitude"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-106
+  type: measurement
+  status: stale
+  text: "The eye itself ... could resolve perhaps one or two arcseconds on a favorable night"
+  source: "Human visual acuity is about one arcminute under good conditions; see chapter 3 of this book, which states the correct figure"
+  note: "sentence no longer present; was corrected"
+
+- id: ch04-107
+  type: attribution
+  status: stale
+  text: "Clock reading at transit: 16h 58m 37s (in Greenwich Mean Time)"
+  source: "Royal Observatory Greenwich, 'Decoding Flamsteed', https://www.royalobservatorygreenwich.org/articles.php?article=1381"
+  note: "sentence no longer present; was corrected"
+
+# --------------------------------------------------------------------
+# Hand-added claims. Written by a checker reading the chapter, not by
+# this script, and preserved verbatim when it re-runs.
+# --------------------------------------------------------------------
+
+- id: ch04-101
+  type: quotation
+  status: corrected
+  text: "Wait---I made an error. Refraction makes the star appear higher, so we subtract the refraction to get the true altitude. Let me correct:"
+  source: "Internal reading of src/chapters/04.tex, section 'A Worked Example: The Observation of Aldebaran, 1680'"
+  note: "EDITORIAL ARTIFACT LEFT IN THE MANUSCRIPT. A first-person self-correction, in the drafting voice, sits in the middle of the worked example, together with the wrong intermediate line it corrects (61 deg 24 arcmin 42 arcsec, which is the observed altitude plus 50 arcseconds rather than minus). This must not go to print. The whole example needs rebuilding in any case; see ch04-014 to ch04-020."
+
+- id: ch04-102
+  type: attribution
+  status: corrected
+  text: "the longitude correction accounts for the observer being at Greenwich rather than the Prime Meridian"
+  source: "The Prime Meridian is defined at Greenwich"
+  note: "Self-contradictory. Greenwich IS the prime meridian, so for a Greenwich observer the longitude correction is identically zero. The sentence should either be deleted or rewritten to explain that the term exists for observers elsewhere and vanishes at Greenwich. The preceding clause, that the clock reading is converted to sidereal time 'via the equation of time and the UT-to-sidereal conversion', is also confused: the equation of time relates apparent to mean solar time and plays no part in a mean-solar to sidereal conversion."
+
+- id: ch04-103
+  type: superlative
+  status: corrected
+  text: "Tompion's clocks achieved an accuracy of a few seconds per day---a performance that would not be surpassed until the 19th century."
+  source: "George Graham's mercury-compensated regulator, 1721; John Harrison's wooden regulators of the later 1720s, reported to keep time to about one second a month"
+  note: "Wrong by a century. Graham's mercury pendulum of 1721 and Harrison's wooden regulators of the later 1720s, which are credited with about a second a month, both surpassed Tompion's 1676 clocks well inside the eighteenth century, and Graham's dead-beat regulators became the observatory standard. The accuracy figure itself also conflicts with chapters 2, 3 and 6; see ch03-104."
+
+- id: ch04-104
+  type: attribution
+  status: corrected
+  text: "comparing them regularly against the Sun's noon transit (using a gnomon---a simple vertical stick casting a shadow---and a marked scale on the floor of Flamsteed House) was essential"
+  source: "Royal Observatory Greenwich, 'Decoding Flamsteed: Flamsteed's modus operandi and the methods used to compare, regulate, rate and determine the errors of his clocks (1676-1719)', https://www.royalobservatorygreenwich.org/articles.php?article=1381"
+  note: "Not how Flamsteed rated his clocks. He determined clock error from ALTITUDE observations of the Sun or of selected stars, taking three to five readings over about five minutes with a small quadrant in the Octagon Room, and published thirty to fifty such sets a year between 1676 and 1689; when he needed better accuracy he used equal-altitude observations before and after noon, on the reasoning that refraction would be the same at matching altitudes. No gnomon-and-floor-scale method appears in that account. Chapter 5 repeats the same claim and needs the same correction."
+
+- id: ch04-105
+  type: measurement
+  status: corrected
+  text: "Near the zenith, refraction is negligible; near the horizon, it exceeds five arcminutes."
+  source: "Standard mean atmospheric refraction at the horizon, about 34 to 35 arcminutes; the chapter's own formula, 58.3 arcseconds times the cotangent of the altitude, gives 55.7 arcminutes at 1 degree altitude"
+  note: "Figure caption understates horizon refraction by about a factor of seven. True horizon refraction is about 35 arcminutes, which is what chapter 3 and chapter 8 both say. The chapter's own Bessel formula, two paragraphs above the caption, gives 5.5 arcminutes at 10 degrees altitude and 55.7 arcminutes at 1 degree, so the caption contradicts the equation printed alongside it. The body text's 'several arcminutes at the horizon' has the same problem."
+
+- id: ch04-106
+  type: measurement
+  status: corrected
+  text: "The eye itself ... could resolve perhaps one or two arcseconds on a favorable night"
+  source: "Human visual acuity is about one arcminute under good conditions; see chapter 3 of this book, which states the correct figure"
+  note: "Wrong by a factor of thirty to sixty, and it contradicts chapter 3 of this book, which correctly gives about one arcminute. Note the distinction the passage needs: the eye cannot resolve one or two arcseconds ON THE SKY, but an observer estimating a fraction of a division on a 6.6-foot-radius arc is judging a linear distance on brass, where ten arcseconds corresponds to about a tenth of a millimetre. Rewrite to make that distinction rather than asserting arcsecond visual acuity."
+
+- id: ch04-107
+  type: attribution
+  status: corrected
+  text: "Clock reading at transit: 16h 58m 37s (in Greenwich Mean Time)"
+  source: "Royal Observatory Greenwich, 'Decoding Flamsteed', https://www.royalobservatorygreenwich.org/articles.php?article=1381"
+  note: "Anachronistic label. Greenwich Mean Time as a named standard does not exist in 1680; Flamsteed's clocks kept local mean solar time at Greenwich, which is what the reading should be called. Note also that chapter 3 says the clocks were set to SIDEREAL time, which is both wrong in itself and in direct contradiction with this chapter's treatment of the reading as mean solar. See ch03-013."

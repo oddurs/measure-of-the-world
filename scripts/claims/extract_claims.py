@@ -185,6 +185,11 @@ def classify(sentence: str) -> str | None:
     return None
 
 
+# Ids at or above this number are written by hand, not by this script, and
+# are preserved verbatim across re-extraction.
+HAND_ADDED_FROM = 101
+
+
 def parse_existing(path: Path) -> dict[str, dict]:
     """Read a previous ledger so verification work survives re-extraction."""
     if not path.exists():
@@ -206,6 +211,20 @@ def parse_existing(path: Path) -> dict[str, dict]:
 
 def yq(value: str) -> str:
     return '"' + str(value).replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+def hand_added_blocks(path: Path) -> list[str]:
+    """Return the raw text of every hand-added entry, to re-emit unchanged."""
+    if not path.exists():
+        return []
+    text = path.read_text(encoding="utf-8")
+    blocks = re.split(r"\n(?=- id:)", text)
+    kept = []
+    for block in blocks[1:]:
+        match = re.match(r"- id: \S+?-(\d+)", block)
+        if match and int(match.group(1)) >= HAND_ADDED_FROM:
+            kept.append(block.rstrip("\n"))
+    return kept
 
 
 def process(tex: Path, prefix: str) -> tuple[int, int]:
@@ -262,6 +281,17 @@ def process(tex: Path, prefix: str) -> tuple[int, int]:
         lines.append(f"  source: {yq(record.get('source', ''))}")
         lines.append(f"  note: {yq('sentence no longer present; was ' + record.get('status', ''))}")
         lines.append("")
+
+    hand = hand_added_blocks(out_path)
+    if hand:
+        lines.append("# " + "-" * 68)
+        lines.append("# Hand-added claims. Written by a checker reading the chapter, not by")
+        lines.append("# this script, and preserved verbatim when it re-runs.")
+        lines.append("# " + "-" * 68)
+        lines.append("")
+        for block in hand:
+            lines.append(block)
+            lines.append("")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
     out_path.write_text("\n".join(lines), encoding="utf-8")

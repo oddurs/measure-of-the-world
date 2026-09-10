@@ -5,238 +5,238 @@
 
 - id: ch11-001
   type: date
-  status: unverified
+  status: corrected
   text: "In November 1676, the nineteen-year-old Edmond Halley boarded a ship bound for the South Atlantic."
-  source: ""
-  note: ""
+  source: "Verbunt and van Gent, Early star catalogues of the southern sky, Astronomy and Astrophysics 530 (2011) A93, https://arxiv.org/abs/1104.0946; Ian Ridpath, Star Tales, Edmond Halley's southern star catalogue, http://www.ianridpath.com/startales/halley.html"
+  note: "MUST FIX. Halley was TWENTY, not nineteen. He was born on 29 October 1656 and sailed from London in late October or early November 1676, so he had just turned twenty. Verbunt and van Gent state it plainly: Halley was 20 years and a bachelor student when he left."
 
 - id: ch11-002
   type: date
-  status: unverified
+  status: corrected
   text: "Born in 1656, the son of a wealthy London merchant, he possessed both mathematical training and the means to pursue it."
-  source: ""
-  note: ""
+  source: "Ian Ridpath, Star Tales, Edmond Halley's southern star catalogue; Alan Cook, Edmond Halley: Charting the Heavens and the Seas (Oxford: Clarendon Press, 1998)"
+  note: "Born 1656, correct. His father was a wealthy soap-boiler and salter in London rather than a merchant in the general sense; he paid for the St Helena instruments. Worth making specific."
 
 - id: ch11-003
   type: date
-  status: unverified
+  status: corrected
   text: "Accompanied by a servant and equipped with the finest instruments available—including a telescope and a precision pendulum clock—Halley was to observe the transit of Mercury predicted for 1677 and to construct a catalog of southern stars for comparison with Flamsteed's northern measurements."
-  source: ""
-  note: ""
+  source: "Ian Ridpath, Star Tales, Edmond Halley's southern star catalogue"
+  note: "The instrument list is wrong. Halley took a large sextant with telescopic sights, a smaller quadrant and several refracting telescopes, all bought by his father. No precision pendulum clock is recorded. The transit of Mercury was indeed one of three 1677 events (a solar eclipse, a lunar eclipse and the transit) he went south partly to catch."
 
 - id: ch11-004
   type: date
-  status: unverified
+  status: verified
   text: "(Flamsteed's catalog of northern stars, the Historia Coelestis Britannica, would not be published until 1725, but by 1676 Flamsteed had completed his observations and shared results with interested Fellows of the Society."
-  source: ""
-  note: ""
+  source: "John Flamsteed, Historia Coelestis Britannica (London, 1725)"
+  note: "Published posthumously in 1725, six years after Flamsteed's death. Correct."
 
 - id: ch11-005
   type: attribution
-  status: unverified
+  status: corrected
   text: "He measured star positions using the meridian method, identical to Flamsteed's technique: determining when each star crossed the meridian and recording its altitude above the horizon."
-  source: ""
-  note: ""
+  source: "Verbunt and van Gent, Early star catalogues of the southern sky, A and A 530 (2011) A93"
+  note: "MUST FIX. Halley did not use Flamsteed's meridian method. Persistent bad weather stopped him making the planetary observations he needed to fix the obliquity, so he fell back on measuring the ANGULAR DISTANCE of each southern star from stars in Tycho Brahe's catalogue, keeping Brahe's ecliptic positions. That is a different technique with a different error structure, and it is why his catalogue's errors are dominated by errors in Brahe's reference stars."
 
 - id: ch11-006
   type: date
-  status: unverified
+  status: corrected
   text: "The Catalogus Stellarum Australium, published in 1679, contained 341 stars observed with sufficient precision to fix their positions to within a minute of arc."
-  source: ""
-  note: ""
+  source: "Verbunt and van Gent, Early star catalogues of the southern sky, A and A 530 (2011) A93"
+  note: "The 341 stars and the 1679 publication are right. The accuracy claim is not: comparison against Hipparcos gives error distributions about 3 ARCMINUTES wide, made up of a systematic sextant deviation rising to 2 arcmin at 60 degrees plus random errors of 0.7 arcmin. Within a minute of arc describes only the random component. SEPARATE MUST-FIX IN THE SAME PARAGRAPH: the chapter says the most brilliant southern stars were absent from his sample, victims of cloud cover. That is backwards. The bad weather made Halley SKIP the faint stars of Piscis Austrinus and all of Indus precisely so as to keep the brighter, more important stars. Canopus, Achernar, Alpha Centauri and Fomalhaut are all in the catalogue. Also: he observed for just over a year, roughly February 1677 to February 1678, not a nine-month sojourn."
 
 - id: ch11-007
   type: measurement
-  status: unverified
+  status: verified
   text: "A modern reanalysis comparing Halley's positions with modern star catalogs shows systematic accuracy within 1–2 arcminutes for his best observations.)"
-  source: ""
-  note: ""
+  source: "Verbunt and van Gent, Early star catalogues of the southern sky, A and A 530 (2011) A93"
+  note: "A modern reanalysis does exist and it is this one, not anything in Cook 1998. Its numbers are about 3 arcmin overall with 0.7 arcmin random, so the footnote's 1-2 arcminutes should be restated and re-attributed."
 
 - id: ch11-008
   type: date
-  status: unverified
+  status: corrected
   text: "Among Halley's observations at St. Helena was a transit of Mercury in November 1677—an event he captured with careful measurement of timing and geometry."
-  source: ""
-  note: ""
+  source: "Ian Ridpath, Star Tales; Transit of Venus, historical record of Halley's 1677 Mercury observation"
+  note: "The date is 28 October 1677 Old Style, which is 7 November New Style. The chapter's November is only right if New Style is meant, which it does not say. Give the Old Style date, as the sources do."
 
 - id: ch11-009
   type: quotation
-  status: unverified
+  status: verified
   text: "If two observers simultaneously measure the transit from widely separated locations, and if they accurately record the times at which the planet enters and exits the Sun's disk, then the parallactic shift—the difference in the event's geometry as viewed from different locations—reveals the planet's distance."
-  source: ""
-  note: ""
+  source: "Halley, Methodus singularis qua Solis parallaxis sive distantia a Terra, ope Veneris intra Solem conspiciendae, tuto determinari poterit, Philosophical Transactions 29 (1714-16), 454-464, published 1716, https://royalsocietypublishing.org/doi/10.1098/rstl.1714.0056"
+  note: "Correct statement of the principle."
 
 - id: ch11-010
   type: quotation
-  status: unverified
+  status: verified
   text: "If the two positions are separated by a baseline $B = |AB|$ (comparable to Earth's radius), the baseline produces an apparent shift in the planet's position across the solar disk."
-  source: ""
-  note: ""
+  source: "Halley, Methodus singularis, Philosophical Transactions 29 (1716), 454-464"
+  note: "Correct."
 
 - id: ch11-011
   type: date
-  status: unverified
+  status: corrected
   text: "It would not be fully exploited until the transits of Venus in 1761 and 1769, more than eighty years later."
-  source: ""
-  note: ""
+  source: "Halley, Methodus singularis, Philosophical Transactions 29 (1716), 454-464; Halley, De visibili conjunctione inferiorum planetarum cum Sole, Philosophical Transactions 17 (1691), 511-522"
+  note: "The interval is right measured from 1677 (84 years), but the footnote it hangs on cites Halley1693 for the method paper, and there is no 1693 method paper. Halley set out the transit method in a paper read to the Society on 23 September 1691 and published it in refined form in 1716 as Methodus singularis, Philosophical Transactions 29, 454-464. MUST FIX the bibliography entry Halley1693 (A Method of Determining the Parallax of the Sun, Phil Trans 18, 1-14), which is fabricated: those volume and page numbers belong to no such paper."
 
 - id: ch11-012
   type: date
-  status: unverified
+  status: corrected
   text: "Halley's observation of Mercury's transit in 1677 confirmed the feasibility of the method."
-  source: ""
-  note: ""
+  source: "Transit of Venus historical record of the 1677 Mercury transit; Halley, Methodus singularis (1716)"
+  note: "MUST FIX, the opposite of what happened. The 1677 Mercury transit did not confirm the feasibility of the method. Halley was disappointed: only Richard Towneley at Burnley made another usable observation, and Gallet at Avignon recorded merely that the transit had occurred. The solar parallax of 45 arcseconds that came out of the comparison was one Halley did not accept. The episode taught him that the method needed many coordinated observers, which is the argument he made in 1691 and 1716."
 
 - id: ch11-013
   type: date
-  status: unverified
+  status: verified
   text: "But the next Venus transit would not occur until 1761—decades after his death."
-  source: ""
-  note: ""
+  source: "Halley, Methodus singularis (1716)"
+  note: "Correct. Halley died in 1742; the next Venus transit was 6 June 1761."
 
 - id: ch11-014
   type: date
-  status: unverified
+  status: verified
   text: "In 1682, a bright comet appeared in the sky—the comet now bearing his name."
-  source: ""
-  note: ""
+  source: "Halley, Astronomiae Cometicae Synopsis (Oxford, 1705)"
+  note: "The comet of 1682 is the one Halley identified with the returns of 1531 and 1607."
 
 - id: ch11-015
   type: date
   status: unverified
   text: "Halley selected three good observations from different nights during the comet's 1682 apparition and applied the methods of orbital mechanics."
-  source: ""
-  note: ""
+  source: "Halley, Astronomiae Cometicae Synopsis (1705)"
+  note: "Halley computed parabolic elements for twenty-four comets in the Synopsis, using three observations apiece as Newton's method required. The specific claim that he picked three good nights from the 1682 apparition is plausible but I found no source that states it in those terms."
 
 - id: ch11-016
   type: quotation
-  status: unverified
+  status: verified
   text: "With the orbital elements in hand, Halley could compute the orbital period using Kepler's third law: MATH where $G$ is the gravitational constant and $M_ $ is the Sun's mass."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py; standard form of Kepler's third law"
+  note: "The formula as printed is correct."
 
 - id: ch11-017
   type: date
-  status: unverified
+  status: corrected
   text: "If Halley predicted a return in 1757 based on orbital elements from 1682, but Jupiter happened to be nearby as the comet approached, the actual return date might differ by weeks or months."
-  source: ""
-  note: ""
+  source: "Halley, Astronomiae Cometicae Synopsis (1705); Ian Ridpath, The Comet returns, http://www.ianridpath.com/halley/halley5.html"
+  note: "The year 1757 is wrong here and again two sentences later. Halley's published prediction was for a return about the end of 1758, not 1757. Change both."
 
 - id: ch11-018
   type: quotation
-  status: unverified
+  status: corrected
   text: "He noted that Jupiter's mass is roughly $1/1000$ of the Sun's mass, and that the gravitational force on the comet from Jupiter (when at moderate distance) is therefore comparable in magnitude to the solar force when the comet is at a particular configuration."
-  source: ""
-  note: ""
+  source: "standard planetary masses; Jupiter is 1/1047 of the solar mass"
+  note: "The mass ratio is right (roughly 1/1000). The physics that follows is not: Jupiter's pull on the comet is never comparable in magnitude to the Sun's at any point on this orbit. At the comet's closest approach to Jupiter the ratio is of order a few parts in a thousand. That is enough to shift the period by a year or more over 76 years, which is the real point, and the chapter should make that point instead."
 
 - id: ch11-019
   type: date
-  status: unverified
+  status: corrected
   text: "He estimated that Jupiter's perturbation could delay the 1757 return by as much as several months."
-  source: ""
-  note: ""
+  source: "Ian Ridpath, The Comet returns; MacTutor History of Mathematics, Nicole-Reine Lepaute, https://mathshistory.st-andrews.ac.uk/Biographies/Lepaute/"
+  note: "MUST FIX, and the footnote with it. The year should be 1758, not 1757. More seriously, the footnote credits the later refinement to Delaunay and Adams a century later. The perturbation calculation was done BEFORE the return, in 1757-58, by Alexis Clairaut with Jerome Lalande and Nicole-Reine Lepaute, who worked from dawn to dusk for six months and found a delay of 518 days from Jupiter and 100 days from Saturn, predicting perihelion on 13 April 1759. The comet reached perihelion on 13 March 1759, a month early. Delaunay and Adams worked on lunar theory and Neptune respectively and have no place here. This is the single most consequential misattribution in the chapter."
 
 - id: ch11-020
   type: date
-  status: unverified
+  status: verified
   text: "Halley's prediction: the comet would return around 1758, give or take a few months."
-  source: ""
-  note: ""
+  source: "Halley, Astronomiae Cometicae Synopsis (1705)"
+  note: "Correct: Halley predicted a return about the end of 1758."
 
 - id: ch11-021
   type: date
-  status: unverified
+  status: verified
   text: "He published this prediction in 1705, in a paper that amounted to a challenge to future astronomers."
-  source: ""
-  note: ""
+  source: "Halley, Astronomiae Cometicae Synopsis (Oxford, 1705)"
+  note: "Correct."
 
 - id: ch11-022
   type: date
-  status: unverified
+  status: corrected
   text: "When the comet returned in December 1758—nearly precisely as he had foreseen—Halley had been deceased for fourteen years."
-  source: ""
-  note: ""
+  source: "Ian Ridpath, The Comet returns; Royal Museums Greenwich biography of Edmond Halley"
+  note: "MUST FIX. Halley died on 14 January 1742. Johann Palitzsch first sighted the comet on Christmas night, 25 December 1758, and it reached perihelion on 13 March 1759. That is sixteen years and eleven months after Halley's death, not fourteen. Say sixteen years, or nearly seventeen."
 
 - id: ch11-023
   type: date
-  status: unverified
+  status: corrected
   text: "Between 1698 and 1700, he commanded the naval vessel HMS Paramour on two voyages dedicated to measuring magnetic variation at numerous ocean locations."
-  source: ""
-  note: ""
+  source: "Alan Cook, Edmond Halley: Charting the Heavens and the Seas (Clarendon, 1998); Allan Chapman on Halley's magnetic surveys"
+  note: "The two Atlantic voyages of 1698-1700 are correct. The vessel's name is spelled Paramore, and she was a pink rather than a conventional naval vessel; Halley held a temporary Royal Navy commission to command her. Fix the spelling."
 
 - id: ch11-024
   type: date
-  status: unverified
+  status: verified
   text: "Halley published his observations as a map in 1701—the first magnetic variation chart to display isogonic lines."
-  source: ""
-  note: ""
+  source: "Halley, A New and Correct Chart Shewing the Variations of the Compass in the Western and Southern Oceans (London, 1701)"
+  note: "Correct: the 1701 Atlantic chart is the first published chart of isogonic lines. A world chart followed in 1702."
 
 - id: ch11-025
   type: date
-  status: unverified
+  status: corrected
   text: "In 1693, he analyzed the mortality records of the city of Breslau (modern Wrocław, Poland), compiled by the city clerk over several years."
-  source: ""
-  note: ""
+  source: "Bellhouse, A new look at Halley's life table, Journal of the Royal Statistical Society A 174(3) (2011), 823-832, https://jhanley.biostat.mcgill.ca/c609/material/BellhouseHalleyTable2011JRSS.pdf"
+  note: "MUST FIX. The Breslau data were not compiled by the city clerk. They were collected from the town's PARISH REGISTERS by Caspar Neumann, the Protestant pastor of Breslau, covering the years 1687-1691, and reached Halley by way of Leibniz, Henri Justel and the Royal Society. Naming Neumann matters: the chapter's own thesis is that the unnamed labour behind these achievements deserves credit."
 
 - id: ch11-026
   type: superlative
-  status: unverified
+  status: corrected
   text: "Using these records—which gave the number of deaths by age for a large population—Halley constructed the first life table: a systematic table showing, for each age, the fraction of a birth cohort that could be expected to survive to that age."
-  source: ""
-  note: ""
+  source: "Bellhouse, A new look at Halley's life table, JRSS A 174(3) (2011), 823-832"
+  note: "Needs one qualifier. Halley's is the first life table built from POPULATION DATA; John Graunt's table of 1662 came first but was not derived from recorded ages at death. Bellhouse's formula, arguably the first in the world based on population data, is the safe wording. Also note for the figure caption: Halley set the radix at 1000 survivors at age one, drawn from about 1238 annual births, so a cohort of 1000 BIRTHS is not quite what the table shows."
 
 - id: ch11-027
   type: date
-  status: unverified
+  status: verified
   text: "Edmond Halley died in 1742 at age eighty-five, having served as Astronomer Royal and superintendent of the Royal Observatory."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, History of the Royal Observatory and the Astronomers Royal; Alan Cook, Edmond Halley (Clarendon, 1998)"
+  note: "Died 14 January 1742 aged 85; second Astronomer Royal, 1720-1742. Correct."
 
 - id: ch11-028
   type: superlative
-  status: unverified
+  status: verified
   text: "His contributions spanned from the discovery of stellar proper motion (comparing ancient star catalogs with his own observations, he noticed that some bright stars had shifted positions slightly—the first demonstration that stars are not fixed) to foundational work in oceanography, magnetism, and actuarial mathematics."
-  source: ""
-  note: ""
+  source: "Halley, Considerations on the Change of the Latitudes of Some of the Principal Fixt Stars, Philosophical Transactions 30 (1718), 736-738"
+  note: "Halley detected proper motion in 1718 by comparing Sirius, Arcturus and Aldebaran against the ancient catalogues. Correct."
 
 - id: ch11-029
   type: date
-  status: unverified
+  status: verified
   text: "This ambition would be realized in the great international collaborations of 1761 and 1769, when astronomers from every scientific nation coordinated observations of Venus's transit from locations spanning the globe."
-  source: ""
-  note: ""
+  source: "Sigismondi and Oliveira, Transits of Venus and the Astronomical Unit, https://arxiv.org/abs/1301.0296"
+  note: "Correct: France and Britain organised worldwide expeditions for both 1761 and 1769."
 
 - id: ch11-030
   type: date
-  status: unverified
+  status: corrected
   text: "To illustrate the method of transit parallax and its application to determining the solar distance, consider the Venus transit of 1761."
-  source: ""
-  note: ""
+  source: "Sigismondi and Oliveira, Transits of Venus and the Astronomical Unit; recomputed"
+  note: "MUST FIX, the whole worked example is invented. Two specific breakages. First, Tobolsk at 68.2 degrees east is 4h 33m ahead of Greenwich, not 3h, so a local contact at 08:41:06 is 04:08 GMT, not 05:41:06, and the 19.3-minute difference the example is built on is an artefact of the wrong conversion. Second, contact-time differences between stations in a real Venus transit are minutes, not nineteen minutes. Either rebuild the example from published 1761 contact timings or drop it."
 
 - id: ch11-031
   type: superlative
   status: unverified
   text: "Halley predicted (and his intellectual successors confirmed) that integration of data from many such observations, distributed across the globe, would yield a measurement of $ _ $ to unprecedented precision."
   source: ""
-  note: ""
+  note: "Vague and unfalsifiable as written. In fact the 1761 results did NOT converge: derived parallaxes ranged from about 8.3 to 10.6 arcseconds, which is why the 1769 transit was mounted."
 
 - id: ch11-032
   type: date
-  status: unverified
+  status: corrected
   text: "The actual 1761 transit observations, conducted by expeditions to locations including Nortonshire (England), Tobolsk, and Nandi Island (Polynesia), yielded a solar parallax of approximately $8.76$ arcseconds, corresponding to an astronomical unit of: MATH remarkably close to the modern value of $3.496 10^9$ km (or $1.496 10^ 11 $ m in SI units)."
-  source: ""
-  note: ""
+  source: "Sigismondi and Oliveira, Transits of Venus and the Astronomical Unit; recomputed; modern solar parallax 8.794148 arcsec and 1 AU = 1.495979e8 km"
+  note: "THE WORST ERROR IN CHAPTER 11, four separate faults in one sentence. (1) Nortonshire is not an English county and never was; there is no such place. (2) There was no 1761 station called Nandi Island in Polynesia; the actual 1761 stations include St Helena (Maskelyne), the Cape of Good Hope (Mason and Dixon), Tobolsk (Chappe d'Auteroche), Rodrigues (Pingre), Madras and St John's Newfoundland (Winthrop). Given that verification of the appendices turned up a person who does not exist, two places that do not exist should be treated as the same defect. (3) 206265/8.76 = 23,546 is a number of EARTH RADII, not astronomical units; calling the astronomical unit 23,540 AU is self-referentially absurd. (4) 23,546 Earth radii is 1.50e8 km, and the modern AU is 1.496e8 km, so the chapter's modern value of 3.496e9 km is wrong by a factor of 23.4 and contradicts its own parenthesis in the same line, which gives 1.496e11 m. The identical unit error appears earlier in the chapter (206265/8.8 approx 23,440 AU approx 3.5e9 km). The formula above them, d_sun = 1 AU / sin(pi_sun), is also wrong: the correct relation is d_sun = R_Earth / sin(pi_sun). Fix all of it. Also: the 8.76 arcsec figure is not the 1761 result; the 1761 analyses scattered between about 8.3 and 10.6 arcseconds, and 8.78 comes from Hornsby's 1771 reduction of the 1769 transit."
 
 - id: ch11-033
   type: date
   status: unverified
   text: "(The 1761 and 1769 transit observations involved more than 150 observers at 77 locations distributed across the globe."
   source: ""
-  note: ""
+  note: "No source found that assigns 150-plus observers at 77 locations to the 1761 and 1769 transits jointly. Figures of that order are usually quoted for 1769 alone; 1761 is generally given as roughly 120 observers at about 60 stations. Split the two transits or drop the numbers."
 
 - id: ch11-034
   type: superlative
   status: unverified
   text: "The coordination of this observational campaign—the first truly international scientific project—represented an unprecedented institutional achievement."
   source: ""
-  note: ""
+  note: "Common characterisation but a superlative. Note that the chapter elsewhere calls Halley's advocacy an ambition articulated in the 1690s when the next convenient transit was still sixty years away; from the 1690s to 1761 is about seventy years, and Halley's fullest statement of the method is the 1716 paper, forty-five years before."

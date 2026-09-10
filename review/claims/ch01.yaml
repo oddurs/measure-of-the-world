@@ -5,112 +5,180 @@
 
 - id: ch01-001
   type: date
-  status: unverified
+  status: verified
   text: "The fog rolled across the Atlantic in October 1707, thick as wool. hms Association, the flagship of Admiral Sir Cloudesley Shovell, cut through black water with the English fleet returning from Gibraltar—weeks at sea, the navigators' calculations checked and rechecked, the officers confident they had a safe margin west of the Scilly Isles."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, collection object RMGC-140657 'Sir Cloudesly Shovel in the Association with the Eagle, Rumney and the Firebrand, Lost on the Rocks of Scilly, October 22, 1707', https://www.rmg.co.uk/collections/objects/rmgc-object-140657"
+  note: "Date, flagship, admiral and the return from Gibraltar after the Toulon expedition all check out. The ships struck at about 8 p.m. on 22 October 1707 (Old Style). Note that modern scholarship attributes the fleet's error principally to LATITUDE, not longitude: the surviving log evidence has the fleet 'much to ye Northward of what was expected', compounded by charts placing Scilly up to 15 nautical miles north of its true position. The chapter's framing of the wreck as a pure longitude failure overstates the case."
 
 - id: ch01-002
   type: date
-  status: unverified
+  status: corrected
   text: "(The most detailed account of the disaster is from the Weekly Journal of 3 November 1707 and the court of inquiry transcript, preserved in Admiralty Records."
-  source: ""
-  note: ""
+  source: "Library of Congress catalogue record for 'The Weekly Journal, or, Saturday's Post' (London, 1716-1725), https://www.loc.gov/item/2014218664/ ; Wikipedia/DNB on Nathaniel Mist (lead only, confirmed by LoC holdings)"
+  note: "FABRICATED SOURCE. Two errors. (1) No 'Weekly Journal' existed in 1707. The Weekly Journal, or Saturday's Post was founded by Nathaniel Mist on 15 December 1716, nine years after the wreck; it became Mist's Weekly Journal in May 1725. There can be no issue of 3 November 1707. (2) There was no general court of inquiry. Only the officers of the Firebrand were court-martialled, as a formality, and were acquitted; the commanding officers of the other three lost ships all died, so no inquiry into them was held. The footnote should be replaced with the surviving Admiralty and log evidence, e.g. the sources catalogued by Royal Museums Greenwich, and with W. E. May's study of the last voyage."
 
 - id: ch01-003
   type: superlative
   status: unverified
   text: "For three centuries, mariners could determine the first coordinate with reasonable accuracy but had no practical means to determine the second."
   source: ""
-  note: ""
+  note: "Could not source the specific span 'three centuries'. The periodisation is defensible if measured from Portuguese latitude sailing in the mid-fifteenth century to Harrison's H4 sea trials of 1761-1764, but no source I reached states it as three centuries. Suggest rewording to a dated range rather than a round figure."
 
 - id: ch01-004
   type: quotation
-  status: unverified
+  status: verified
   text: "The declination $ $ is the Sun's angular distance north ($+$) or south ($-$) of the celestial equator, measured in degrees; at the moment of meridian transit (the instant when the Sun crosses the observer's meridian, also called true solar noon), the relationship is:"
-  source: ""
-  note: ""
+  source: "Standard meridian-altitude latitude relation; consistent with the transit geometry set out in Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045"
+  note: "The formula phi = delta + (90 deg - h_sun) is correct, but ONLY when the Sun transits south of the observer's zenith. North of the zenith the sign of the zenith distance reverses and the formula becomes phi = delta - (90 deg - h_sun). The chapter states the relation without that restriction. Recommend adding the caveat."
 
 - id: ch01-005
   type: quotation
-  status: unverified
+  status: corrected
   text: "Willmoth's Flamsteed's Stars traces the Observatory's role in the institutional response.)"
-  source: ""
-  note: ""
+  source: "Boydell and Brewer catalogue entry for 'Flamsteed's Stars: New Perspectives on the Life and Work of the First Astronomer Royal, 1646-1719', ed. Frances Willmoth, Boydell Press, 1997, ISBN 9780851157061, https://boydellandbrewer.com/9780851157061/flamsteeds-stars/"
+  note: "The bibliography entry WilmothFlamsteeds2002 is wrong in title, year and author role. Correct: Frances Willmoth (EDITOR), 'Flamsteed's Stars: New Perspectives on the Life and Work of the First Astronomer Royal, 1646-1719', Boydell Press, 1997. The subtitle 'The Catalogue of the Brightest Stars' in the .bib does not exist. The key also misspells the surname as Wilmoth. It is an edited conference volume, so a chapter and author should be cited, not the book as a whole."
 
 - id: ch01-006
   type: date
-  status: unverified
+  status: verified
   text: "In 1714, less than seven years after Shovell's death, Parliament passed the Longitude Act, offering a prize of £20,000—a sum equivalent to the cost of a large warship or the annual salary of several thousand working people—to anyone who could devise a method of determining longitude at sea to within thirty nautical miles."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Transcripts of the 23 Longitude Acts', https://www.royalobservatorygreenwich.org/articles.php?article=1311"
+  note: "The 20,000 pound top prize and the half-degree threshold are correct. The Act set three tiers: 10,000 pounds for one degree of a great circle (sixty geographical miles), 15,000 pounds for two thirds of that distance, and 20,000 pounds for one half of it, i.e. thirty geographical miles. Half the money was payable only after a trial voyage to the West Indies. The chapter quotes the top tier alone, which is defensible but reads as if a single threshold applied; consider naming the tiers."
 
 - id: ch01-007
   type: date
-  status: unverified
+  status: corrected
   text: "(The Longitude Act of 1714 (12 Anne c. 15) established the Board of Longitude in perpetuity."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Longitude Acts', https://www.royalobservatorygreenwich.org/articles.php?article=1309 (Board 'dissolved by Act of Parliament in 1828')"
+  note: "'In perpetuity' is wrong. The Board of Longitude was dissolved by Act of Parliament in 1828. The 1714 Act named 24 commissioners rather than constituting a standing body, and the commissioners did not meet formally until 1737. On the citation: the Act is traditionally cited 12 Anne, Stat. 2, c. 15 and under modern short-title practice 13 Ann. c. 14; 12 Anne c. 15 without the statute number is incomplete."
 
 - id: ch01-008
   type: quotation
-  status: unverified
+  status: verified
   text: "The astronomers believed the answer lay in the heavens—that careful observation of the Moon's motion against the stars, or the motion of Jupiter's moons, could provide a time signal that would propagate across the ocean in the form of ephemerides and tables."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Longitude Acts', https://www.royalobservatorygreenwich.org/articles.php?article=1309 ; Royal Museums Greenwich, 'The founding of the Royal Observatory', https://www.rmg.co.uk/stories/space-astronomy/curatorial/founding-royal-observatory"
+  note: "The two astronomical proposals, lunar distance and the eclipses of Jupiter's satellites, are correctly described. The Greenwich foundation was itself prompted by the Sieur de St Pierre's lunar proposal of December 1674."
 
 - id: ch01-009
   type: date
-  status: unverified
+  status: verified
   text: "The Royal Observatory at Greenwich, founded in 1675 by Charles II, had been established in part to lay the groundwork for astronomical solutions."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Royal Warrants', https://www.royalobservatorygreenwich.org/articles.php?article=909 ; warrant text at https://www.royalobservatorygreenwich.org/articles.php?article=977"
+  note: "Founded 1675 by Charles II is correct. The founding instrument is the warrant of 22 June 1675 authorising construction; its stated purpose is 'the finding out of the longitude of places for perfecting navigation and astronomy'."
 
 - id: ch01-010
   type: quotation
-  status: unverified
+  status: corrected
   text: "(Charles II's warrant of 4 March 1675 is the founding document; excerpts appear in Howse, Greenwich Observatory: A History, vol. 1. Flamsteed's *Historia Coelestis Britannica* (1725) was the first major output to feed the astronomical solution to longitude.) The observations that would enable lunar distance tables were only just beginning to accumulate, gathered by John Flamsteed with laborious care."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Royal Warrants', https://www.royalobservatorygreenwich.org/articles.php?article=909 ; text of the building warrant, https://www.royalobservatorygreenwich.org/articles.php?article=977"
+  note: "Two errors. (1) The warrant of 4 March 1675 is NOT the founding document: it appointed Flamsteed 'our astronomical observator' and authorised his salary. The founding document is the SECOND warrant, of 22 June 1675, which ordered a small observatory to be built in Greenwich Park. Chapter 2 states this correctly, so chapter 1 contradicts chapter 2. (2) Calling the Historia Coelestis Britannica of 1725 'the first major output' is doubtful: Halley's unauthorised 'Historia Coelestis' of 1712 appeared first, and Flamsteed's observations had been circulating in manuscript for decades."
 
 - id: ch01-011
   type: superlative
   status: unverified
   text: "But before any solution could be attempted, two things had to be understood: what instruments and knowledge existed to pursue solutions, and what precision was already achievable with the best tools the age had developed."
   source: ""
-  note: ""
+  note: "Rhetorical bridge sentence, no checkable factual content."
 
 - id: ch01-012
   type: tabular
   status: unverified
   text: "5 — Typical Error (nm): 10--20; Characteristics: Random direction"
   source: ""
-  note: ""
+  note: "The dead-reckoning error table is unsourced. The tablenote attributes it to Howse, 'Greenwich Time', but gives no page, and I could not reach a copy to check. The figures are presented as 'approximate estimates from analysis of 17th-18th century navigation records' without naming those records. Either cite a page and a dataset or mark the table explicitly as illustrative."
 
 - id: ch01-013
   type: tabular
   status: unverified
   text: "10 — Typical Error (nm): 30--50; Characteristics: Emerging systematic bias"
   source: ""
-  note: ""
+  note: "See ch01-012: same unsourced table."
 
 - id: ch01-014
   type: tabular
   status: unverified
   text: "20 — Typical Error (nm): 60--100; Characteristics: Strongly westward"
   source: ""
-  note: ""
+  note: "See ch01-012: same unsourced table."
 
 - id: ch01-015
   type: tabular
   status: unverified
   text: "30 — Typical Error (nm): 100--150; Characteristics: Westward systematic error"
   source: ""
-  note: ""
+  note: "See ch01-012: same unsourced table."
 
 - id: ch01-016
   type: tabular
   status: unverified
   text: "40 (typical Atlantic) — Typical Error (nm): 150--250; Characteristics: Westward, rapidly growing"
   source: ""
-  note: ""
+  note: "See ch01-012. This row is also internally inconsistent with the chapter: the text says a one-degree longitude error at Channel latitudes is about forty nautical miles and marks that as 'the distance between safe harbor and a reef', yet the table's typical 40-day Atlantic crossing error is 150-250 nautical miles, four to six times that threshold. If the table were right, essentially every crossing would have ended in wreck. One of the two figures needs revising."
+# ---------------------------------------------------------------------------
+# Entries below were added by hand during the chapters 1-4 fact check.
+# extract_claims.py did not pick these sentences up. Re-running the extractor
+# will DROP them; copy them out first.
+# ---------------------------------------------------------------------------
+
+- id: ch01-101
+  type: measurement
+  status: corrected
+  text: "A careful observer ... can achieve latitude accurate to within one degree, the apparent diameter of the full Moon."
+  source: "Mean apparent angular diameter of the Moon, about 31 arcminutes, ranging roughly 29.4 to 33.5 arcminutes"
+  note: "The Moon is about HALF a degree across, not one degree. Either change the comparison to half a degree of latitude, or keep one degree and compare it to twice the Moon's diameter."
+
+- id: ch01-102
+  type: measurement
+  status: corrected
+  text: "Polaris, which lies within about 1 degree of the true pole in the epoch of the 17th century"
+  source: "Computed by precessing the Polaris J2000 position (02h 31m 49.09s, +89d 15m 50.8s, proper motion 44.48 and -11.85 milliarcseconds per year) with the IAU 1976 precession angles; cross-checked against the known 1900.0 declination of +88d 46m, which the same computation reproduces"
+  note: "Wrong by a factor of about two and a half. Polaris was 2 deg 52 arcmin from the pole in 1600, 2 deg 27 arcmin in 1675, 2 deg 18 arcmin in 1700 and 2 deg 16 arcmin at the time of the Scilly wreck in 1707. It did not come within one degree of the pole until the late nineteenth century. This matters: the Polaris correction a seventeenth-century navigator had to apply was of order two and a half degrees, which is the whole reason regiment-of-the-pole-star tables existed."
+
+- id: ch01-103
+  type: measurement
+  status: corrected
+  text: "Delta lambda = integral of v cos(theta) dtau (eastward component); Delta phi = integral of v sin(theta) dtau (northward component)"
+  source: "Standard plane-sailing relations: with heading measured clockwise from north, northing = v cos(theta) and easting = v sin(theta); departure converts to difference of longitude by dividing by the cosine of the latitude"
+  note: "The two components are SWAPPED. A compass heading is measured clockwise from north, so the northward component is v cos(theta) and the eastward component is v sin(theta), the reverse of what the chapter prints. There is a second error: the left-hand side of the first equation is Delta lambda, an ANGLE, but the right-hand side is a distance. Departure must be divided by cos(phi) to become a difference of longitude. As printed the equations are dimensionally inconsistent."
+
+- id: ch01-104
+  type: attribution
+  status: corrected
+  text: "The court of inquiry that followed found nobody obviously at fault ... The court of inquiry concluded that no one was obviously at fault."
+  source: "Scilly naval disaster of 1707: only the officers of HMS Firebrand faced a court martial, a formality, and were acquitted; the commanding officers of Association, Eagle and Romney all died"
+  note: "There was no court of inquiry into the disaster. The only proceeding was the pro forma court martial of the surviving Firebrand officers, who were acquitted. No inquiry was held into the other three ships because their commanders had drowned. The claim appears twice in chapter 1, in the opening vignette and in item 5 of the disaster list, and both need rewriting."
+
+- id: ch01-105
+  type: measurement
+  status: unverified
+  text: "yet the fleet had been more than forty nautical miles off course in precisely the direction that put them on the rocks"
+  source: ""
+  note: "Could not source the forty-nautical-mile figure. Accounts of the fleet's error vary widely and the surviving evidence points to a LATITUDE error, the fleet being further north than reckoned, compounded by charts that placed Scilly up to fifteen nautical miles north of its true position. W. E. May's study of the last voyage argues the error was in latitude, not longitude. Either source the figure and the direction, or state the error as a latitude failure and adjust the chapter's framing accordingly."
+
+- id: ch01-106
+  type: date
+  status: corrected
+  text: "1591: the Sao Thome. Portuguese galleon bound for India struck the coast near Sumatra and sank. The crew believed themselves to be six hundred nautical miles to the east. The ship carried nine hundred and forty-four people; fewer than two hundred survived."
+  source: "The nau Sao Thome, captained by Dom Paulo de Lima, foundered off the Terra dos Fumos, southern Mozambique, in March 1589; the wreck narrative was written by Diogo do Couto in 1611 and printed in the Historia Tragico-Maritima"
+  note: "Four errors in one entry. The year was 1589, not 1591. The ship was HOMEWARD BOUND from India, not bound for India. She was lost off south-east Africa, off southern Mozambique near the Natal-Tongaland coast, not near Sumatra. And the survivors who eventually reached Mozambique Island in July 1593, ninety-one Portuguese and sixty-five Asian slaves, do not match the figures given. The complement of 944 and the 600-nautical-mile misreckoning could not be sourced at all."
+
+- id: ch01-107
+  type: date
+  status: corrected
+  text: "1615: the Eendracht. Dutch East Indiaman, separated from her convoy in the Indian Ocean, made unexpected landfall on the coast of Western Australia. The ship was lost, but the accidental discovery added an entire continent to European geographic knowledge."
+  source: "Dirk Hartog and the Eendracht: landfall at what is now Dirk Hartog Island, Shark Bay, on 25 October 1616; the ship reached Batavia on 14 December 1616. Western Australian Museum and National Museum of Australia accounts of the 1616 landing and the Hartog plate"
+  note: "The ship was NOT lost. Dirk Hartog's Eendracht made landfall on 25 October 1616, left the inscribed pewter plate at Cape Inscription, then sailed on and reached Batavia safely on 14 December 1616. The date is also wrong: 1616, not 1615 (1615 is the year the ship was built and Hartog appointed her master). Since the ship survived, the entry does not belong in a catalogue of maritime losses at all, though it is a good illustration of longitude error."
+
+- id: ch01-108
+  type: date
+  status: corrected
+  text: "1656: the Tryall. English East Indiaman struck rocks off Western Australia, having misjudged her longitude severely. Forty men survived on a desolate island; only a handful were ever rescued."
+  source: "Tryall, English East India Company, wrecked on the Tryal Rocks off the Montebello Islands, Western Australia, on the evening of 25 May 1622 under Captain John Brooke; Western Australian Museum maritime archaeology record"
+  note: "Wrong year and wrong outcome. The Tryall was wrecked on 25 May 1622, not 1656; she is Australia's oldest known shipwreck. More than ninety men died, but the survivors were not marooned: Brooke and nine men took the skiff, the factor Thomas Bright and thirty-five others took the longboat and spent seven days on the Montebello Islands before sailing to Java, and forty-four survivors reached Bantam on 21 June 1622. 'Only a handful were ever rescued' is false."
+
+- id: ch01-109
+  type: date
+  status: corrected
+  text: "1691. A squadron of English ships, attempting to make port at Plymouth in fog, struck rocks near the English coast. Five ships lost; the incident provoked outrage in Parliament and naval circles."
+  source: "Loss of HMS Coronation off Rame Head and HMS Harwich off Mount Edgcumbe, 3 September 1691, in a south-south-east gale while the fleet bore up for Plymouth Sound; about 900 killed"
+  note: "Two ships were lost, not five. On 3 September 1691 the Coronation was dismasted and wrecked off Rame Head with about 600 dead and roughly twenty survivors, and the Harwich was wrecked off Mount Edgcumbe; eleven ships of the line were driven ashore under Mount Edgcumbe but only the Harwich was a total loss. The cause was a full gale, not fog, and not a longitude error: the fleet bore up for Plymouth Sound precisely because it knew it was near the Eddystone. This entry does not support the chapter's thesis and should either be recast honestly as a storm loss or removed."

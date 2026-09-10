@@ -5,147 +5,187 @@
 
 - id: ch03-001
   type: date
-  status: unverified
+  status: corrected
   text: "On the afternoon of 22 June 1675, with the royal warrant signed and the site selected, John Flamsteed stood in the empty rooms of Flamsteed House and confronted a practical reality: he possessed almost nothing with which to observe the heavens."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, 'The founding of the Royal Observatory', https://www.rmg.co.uk/stories/space-astronomy/curatorial/founding-royal-observatory ; Royal Observatory Greenwich, 'Flamsteed House', https://www.royalobservatorygreenwich.org/articles.php?article=916 ; Royal Museums Greenwich, 'Year-Going Clock', https://www.rmg.co.uk/collections/objects/rmgc-object-202113"
+  note: "IMPOSSIBLE SCENE, three errors. On 22 June 1675 Flamsteed cannot have stood in the rooms of Flamsteed House: the building did not exist. Its foundation stone was laid on 10 August 1675 and it was completed in the summer of 1676, Flamsteed moving in on 10 July 1676. Nor could he have had the two Tompion clocks, which were delivered to the Octagon Room in summer 1676. And the site was NOT yet 'selected' in the sense implied; the warrant of that date is what fixed it. Also in this paragraph: 'He had inherited some transit instruments from earlier observers' is false. Greenwich was a new foundation with no predecessor; what he had came from Jonas Moore in 1676. Rewrite the scene to summer 1676."
 
 - id: ch03-002
   type: superlative
   status: unverified
   text: "What he lacked was an instrument of his own design—something that would allow him to measure stellar positions with unprecedented accuracy, constrained only by the resolution of his eye and the steadiness of his hand."
   source: ""
-  note: ""
+  note: "Rhetorical. The verifiable part of the surrounding paragraph, the claim about inherited transit instruments, is wrong and is recorded at ch03-001 and ch03-102."
 
 - id: ch03-003
   type: date
-  status: unverified
+  status: corrected
   text: "Tycho, observing from his private observatory Uraniborg on the Danish island of Hven from 1576 until his death in 1601, had measured the positions of approximately one thousand bright stars using a large mural quadrant mounted in the north-south meridian plane (the vertical plane running due north and south through the zenith, the point directly overhead)."
-  source: ""
-  note: ""
+  source: "University of Oxford, 'Hven, 1576-97: Tycho Brahe's observatory', https://www.cabinet.ox.ac.uk/hven-1576-97-tycho-brahes-observatory ; Dreyer, Tycho Brahe (1890)"
+  note: "Wrong on the observing period. Tycho observed on Hven from 1576 until he was forced to leave the island in 1597 after quarrelling with Christian IV; he then moved through Germany and died in PRAGUE on 24 October 1601. He did not observe from Uraniborg until his death. Two smaller points: much of the later precision work was done at Stjerneborg, the sunken observatory beside Uraniborg, not in Uraniborg itself; and the star count is defensible either way, the well-observed catalogue printed in 1602 holding 777 stars and the extended version about 1,000."
 
 - id: ch03-004
   type: date
-  status: unverified
+  status: verified
   text: "But by 1675, Tycho's positions were known to be imperfect."
-  source: ""
-  note: ""
+  source: "University of Oxford, 'Hven, 1576-97: Tycho Brahe's observatory' ; Chapman, Dividing the Circle, 2nd edn 1995"
+  note: "Supported in substance: Tycho's accuracy approached one arcminute and was known by the 1670s to be insufficient, with fainter stars worse. See ch03-016 for the specific error figures, which are overstated."
 
 - id: ch03-005
   type: quotation
-  status: unverified
+  status: verified
   text: "And the accumulation of observations over decades had revealed systematic changes in stellar positions—effects like precession (the slow drift of the reference zero point of right ascension, the celestial coordinate system's starting position, at roughly 50 arc-seconds per year) and aberration (the apparent shift of star positions due to Earth's orbital motion, a phenomenon not fully understood until Bradley's work in the 1720s) that Tycho's measurements did not account for."
-  source: ""
-  note: ""
+  source: "General precession in right ascension and declination, about 50.3 arcseconds per year; Bradley announced stellar aberration in 1728 from observations of 1725-1728"
+  note: "Both figures check out: precession is close to 50 arcseconds per year, and Bradley's work on aberration falls in the 1720s. One definitional quibble: precession is the motion of the Earth's axis, and the drift of the equinox is its consequence rather than its definition, so the parenthetical gloss inverts cause and effect."
 
 - id: ch03-006
   type: date
-  status: unverified
+  status: corrected
   text: "Between 1689 and 1691, working with his principal assistant Abraham Sharp (one of the finest craftsmen-astronomers of the age), Flamsteed designed and constructed a new instrument: a mural arc (a quarter-circle of graduated metal) with a radius of nearly seven feet, mounted permanently in the meridian plane of Greenwich."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045 ; 'People: Abraham Sharp', https://www.royalobservatorygreenwich.org/articles.php?article=1148"
+  note: "Dates wrong at both ends. Sharp was at Greenwich from August 1688 to autumn 1690; construction began in 1688 and the first observation with the arc was on 11 September 1689. Correct: designed and built 1688-1689. The radius is fine: 79 and a half inches, about 6 feet 7 inches, and the instrument is conventionally called the 7-foot mural arc. Note that chapter 2 gives 1679-1691 for the same instrument, which is a straight contradiction."
 
 - id: ch03-007
   type: quotation
   status: unverified
   text: "But Flamsteed's design and the precision he achieved with it represented a major advance. , Chapter 4, provides a detailed technical description with reproductions of Flamsteed's working drawings.)"
   source: ""
-  note: ""
+  note: "Could not check Howse's chapter numbering; no accessible copy of Greenwich Time and the Discovery of the Longitude. Flag for the copy editor: chapter 2 cites Howse chapter 3 for the mural arc and chapter 3 cites Howse chapter 4 for the same instrument. One of the two is wrong. Separately, the bibliography gives the 1980 title as 'Greenwich Time and the Longitude'; the 1980 Oxford University Press edition is titled 'Greenwich Time and the Discovery of the Longitude', the shortened title belonging to the 1997 revision."
 
 - id: ch03-008
   type: quotation
-  status: unverified
+  status: verified
   text: "From the clock time, Flamsteed could calculate the star's right ascension (the celestial coordinate measuring the star's position east-west along the celestial equator, analogous to longitude on Earth) with a precision limited primarily by the clock's accuracy and the observer's reaction time, not by the resolution of an engraved scale."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045"
+  note: "The method and the reasoning about where the precision comes from are correct."
 
 - id: ch03-009
   type: quotation
-  status: unverified
+  status: verified
   text: "Thus, two coordinates could be obtained from a single observation: one limited by the clock's precision, the other by the arc's graduations and the eye's ability to read them."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045"
+  note: "Correct description of a meridian instrument yielding both coordinates from one transit."
 
 - id: ch03-010
   type: quotation
-  status: unverified
+  status: corrected
   text: "Each was a large long-case clock with a thirteen-foot pendulum, regulated by Huygens's principle of isochronous oscillation (the property that the pendulum's period remains constant regardless of oscillation amplitude, enabling consistent timekeeping)."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, 'Year-Going Clock', https://www.rmg.co.uk/collections/objects/rmgc-object-202113 ; Huygens, Horologium Oscillatorium (1673)"
+  note: "The thirteen-foot pendulum is right, and it is a two-second pendulum, period about four seconds. But the physics attribution is backwards. Huygens PROVED that the circular pendulum is not isochronous, and his response was the cycloidal cheek, set out in the Horologium Oscillatorium of 1673. There is no 'Huygens's principle of isochronous oscillation' under which the period is independent of amplitude; the independence is only an approximation at small amplitude, as this chapter's own next footnote and chapter 6 both concede. Reword to attribute the cycloidal correction, not an isochronism principle, to Huygens."
 
 - id: ch03-011
   type: quotation
-  status: unverified
+  status: corrected
   text: "( , pp. 45–60; also , the National Maritime Museum's conservation report on Tompion's clocks at Greenwich.)"
-  source: ""
-  note: ""
+  source: "Jonathan Betts biography: appointed senior horology conservator at the National Maritime Museum in 1980; his book 'Harrison' was published by the National Maritime Museum (1993, repr. 2007)"
+  note: "BOTH CITATIONS ARE UNSOUND. (1) Betts1978 cannot exist. Jonathan Betts did not join the National Maritime Museum until 1980, and no book called 'Harrison: The Cabinet of Arts and Sciences' exists under his name; his Harrison monograph is 1993. The relevant Betts title for Greenwich horology is 'Marine Chronometers at Greenwich' (2017), and in any case a book about Harrison is the wrong source for Tompion's 1676 regulators. (2) NMGMT, given as 'Conservation Report: Thomas Tompion's Clocks at Greenwich Observatory', National Maritime Museum, 1999, could not be traced in any catalogue. Replace both with the Royal Museums Greenwich object record for the year-going clock and with the Royal Observatory Greenwich study 'Decoding Flamsteed', article 1381."
 
 - id: ch03-012
   type: quotation
-  status: unverified
+  status: verified
   text: "A pendulum's period of oscillation—the time required for one complete swing—depends, to first approximation, on the pendulum's length and the gravitational acceleration: $T = 2 L/g $."
-  source: ""
-  note: ""
+  source: "Standard small-amplitude simple-pendulum period T = 2 pi sqrt(L/g)"
+  note: "Formula correct. Consistency check: for L = 13 feet (3.96 m) this gives a period of about 4.0 seconds, that is a two-second swing, which matches the Royal Museums Greenwich description of a two-second pendulum. One wording point: 'one complete swing' should be 'one complete back-and-forth cycle', since a two-second pendulum takes two seconds per half-swing."
 
 - id: ch03-013
   type: quotation
-  status: unverified
+  status: corrected
   text: "Each clock at Greenwich had been adjusted and set to sidereal time (time measured by the stars' apparent rotation around the celestial pole, which runs at a constant rate, unlike the varying length of solar days due to Earth's elliptical orbit and axial tilt)."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Decoding Flamsteed: Flamsteed's modus operandi and the methods used to compare, regulate, rate and determine the errors of his clocks (1676-1719)', https://www.royalobservatorygreenwich.org/articles.php?article=1381"
+  note: "FLATLY WRONG. That study states that all Flamsteed's clocks apart from the unsuccessful Degree Clock were set to MEAN SOLAR TIME, not sidereal time. The Degree Clock of 1691 was the one sidereal instrument and the records suggest it was rarely if ever used. The chapter's further claim that Flamsteed's adoption of sidereal timekeeping 'set a precedent that eventually led to the definition of Greenwich Sidereal Time as a world standard' therefore has no basis. This also contradicts the book itself: chapter 4 and chapter 5 both treat the clock reading as mean solar time requiring conversion."
 
 - id: ch03-014
   type: attribution
-  status: unverified
+  status: verified
   text: "He established a routine: on clear nights, he would observe stars as they crossed the meridian, recording clock times and arc readings."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Decoding Flamsteed', https://www.royalobservatorygreenwich.org/articles.php?article=1381"
+  note: "The routine is supported. Detail worth using: Flamsteed rated the clocks by taking three to five altitude readings of the Sun or of selected stars over about five minutes with a small quadrant in the Octagon Room, publishing thirty to fifty such sets a year between 1676 and 1689, and used equal-altitude observations before and after noon when he needed better accuracy. This contradicts the gnomon-on-the-floor method described in chapter 4 and chapter 5."
 
 - id: ch03-015
   type: superlative
   status: unverified
   text: "The first years of observations revealed the power of his method."
   source: ""
-  note: ""
+  note: "Rhetorical link sentence, no checkable content."
 
 - id: ch03-016
   type: quotation
-  status: unverified
+  status: corrected
   text: "Most showed improvements of a factor of five to ten in precision compared to Tycho; Flamsteed's typical errors were in the range of ten to twenty arc-seconds, compared to Tycho's one to three arc-minutes."
-  source: ""
-  note: ""
+  source: "Tycho's accuracy 'approaching one arcminute', University of Oxford, 'Hven, 1576-97: Tycho Brahe's observatory', https://www.cabinet.ox.ac.uk/hven-1576-97-tycho-brahes-observatory ; Flamsteed catalogue accuracy, Royal Observatory Greenwich article 1045"
+  note: "Both halves overstated. Tycho's positional accuracy approached one arcminute; '1 to 3 arcminutes' inflates his error, and it makes Flamsteed's gain look larger than it was. 10-20 arcseconds against 60 arcseconds is a factor of about 4, not 'five to ten'. See ch02-018: the book gives five different figures for the same ratio across chapters 2, 3, 4 and 5."
 
 - id: ch03-017
   type: quotation
   status: unverified
   text: "( , pp. 95–105, reproduces Flamsteed's own comparison of his early observations with Tycho's."
   source: ""
-  note: ""
+  note: "Could not obtain Baily to check. Flag for the copy editor: chapter 3 cites Baily pp. 95-105 for Flamsteed's comparison of his observations with Tycho's, while chapter 2 cites Baily pp. 102-110 for the construction and cost of the mural arc. The ranges overlap for unrelated subject matter, so at least one is wrong."
 
 - id: ch03-018
   type: date
-  status: unverified
+  status: verified
   text: "Flamsteed's systematic program, ultimately consuming observation from 1676 to his death in 1719, would eventually produce positions for nearly 3,000 stars, many observed multiple times to check for systematic errors or to detect any changes in position (such as proper motion, though Flamsteed did not detect this effect)."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045 ; Flamsteed died 31 December 1719"
+  note: "Supported. Flamsteed died on 31 December 1719 and the last mural-arc observation was on 27 December 1719; the printed catalogue holds 2,935 stars, so 'nearly 3,000' is fair; over 28,000 observations were made with the arc alone. The parenthetical about proper motion is right for Flamsteed, whose data Halley later used to detect it."
 
 - id: ch03-019
   type: measurement
-  status: unverified
+  status: verified
   text: "Due to the precession of the Earth's spin axis, it moves slowly westward at a rate of roughly 50 arc-seconds per year."
-  source: ""
-  note: ""
+  source: "General precession of the equinoxes, about 50.3 arcseconds per year"
+  note: "Correct."
 
 - id: ch03-020
   type: superlative
   status: unverified
   text: "The mural arc and the transit method, supported by Tompion's precise clocks and enabled by careful reduction procedures, were producing a catalog of star positions of unprecedented accuracy."
   source: ""
-  note: ""
+  note: "Rhetorical summary sentence, no separately checkable content."
 
 - id: ch03-021
   type: quotation
-  status: unverified
+  status: corrected
   text: "The next chapter traces Flamsteed's steady progress through the first decades of the 18th century, the accumulation of observations, the computational challenges of reducing them into a coherent catalog, and the bitter controversy with Isaac Newton and Edmond Halley over the publication of Flamsteed's work before he deemed it complete."
+  source: "Internal check against src/chapters/04.tex and src/chapters/05.tex"
+  note: "WRONG FORWARD REFERENCE. The next chapter is chapter 4, 'The Mural Arc and the Method of Transits', which covers the instrument and the transit method. The material this sentence promises, the accumulation of observations, the computational challenge of reduction and the quarrel with Newton and Halley over publication, is chapter 5. Either renumber the pointer to chapter 5 or rewrite it to describe chapter 4."
+# ---------------------------------------------------------------------------
+# Entries below were added by hand during the chapters 1-4 fact check.
+# extract_claims.py did not pick these sentences up. Re-running the extractor
+# will DROP them; copy them out first.
+# ---------------------------------------------------------------------------
+
+- id: ch03-101
+  type: measurement
+  status: corrected
+  text: "The human eye, under good light conditions, can resolve features separated by roughly one arc-minute---about the angular width of a grain of wheat held at arm's length."
+  source: "One arcminute subtended at arm's length, about 60 centimetres, corresponds to 0.17 millimetres; a grain of wheat is roughly 3 millimetres across, which subtends about 17 arcminutes at the same distance"
+  note: "The resolution figure of about one arcminute is right; the illustration is wrong by a factor of roughly twenty. One arcminute at arm's length is about a sixth of a millimetre, the thickness of a sheet of paper seen edge-on, not the width of a grain of wheat. Chapter 4 gives a different and much worse figure for the same quantity, claiming the eye 'could resolve perhaps one or two arcseconds'; the two chapters need reconciling on the correct value."
+
+- id: ch03-102
+  type: attribution
+  status: corrected
+  text: "He had inherited some transit instruments from earlier observers, useful but not the precision instrument he envisioned."
+  source: "Royal Observatory Greenwich, 'Private Patronage', https://www.royalobservatorygreenwich.org/articles.php?article=961 ; Royal Museums Greenwich, 'The founding of the Royal Observatory'"
+  note: "There were no earlier observers and nothing to inherit. Greenwich was a new foundation on the site of the old castle; the warrant of 22 June 1675 made no provision for instruments at all. Everything Flamsteed had at the start came from Jonas Moore's own pocket in 1676, or from his own purse thereafter. The first true transit instrument at Greenwich came much later."
+
+- id: ch03-103
+  type: measurement
+  status: unverified
+  text: "The arc was finely graduated to perhaps one quarter of an arc-minute, and Tycho's skilled assistants could read it to interpolations placing uncertainty at roughly one arc-minute."
   source: ""
-  note: ""
+  note: "Could not source the quarter-arcminute graduation. The reading uncertainty of about one arcminute is supported. Tycho's instruments used transversal dot scales, which is the mechanism by which sub-division readings were obtained, and that is the fact worth stating; a page reference to Chapman, Dividing the Circle, chapter 4, or to Dreyer would settle it."
+
+- id: ch03-104
+  type: measurement
+  status: unverified
+  text: "Tompion's clocks achieved an accuracy of roughly ten to fifteen seconds per day---more than a hundred times better than the foliot and verge escapement clocks that had preceded them."
+  source: "Royal Museums Greenwich, 'Year-Going Clock', https://www.rmg.co.uk/collections/objects/rmgc-object-202113 ; Royal Observatory Greenwich, 'Decoding Flamsteed', https://www.royalobservatorygreenwich.org/articles.php?article=1381"
+  note: "The book gives four incompatible figures for the same two clocks: ten to fifteen seconds a day here and in chapter 2, 'a few seconds per day' in chapter 4, and plus or minus 5 seconds in chapter 6's table. Royal Museums Greenwich claims two seconds a day. Flamsteed's own records, as analysed in the Royal Observatory Greenwich study of his clock work, show one clock losing 8 seconds at a winding on 9 October 1676 and the two Octagon Room clocks differing from each other by between 6 seconds and over a minute between October and December 1676, which suggests the day-to-day performance was worse than any of these figures. Pick one figure, cite it, and use it in all four places. The hundredfold comparison with verge clocks is of the right order but also uncited."
+
+- id: ch03-105
+  type: measurement
+  status: verified
+  text: "The effect increases dramatically near the horizon, reaching approximately 35 arc-minutes at the horizon itself."
+  source: "Standard mean atmospheric refraction at the horizon, about 34 to 35 arcminutes"
+  note: "Correct, and consistent with chapter 8, which also gives about 35 arcminutes at the horizon. Chapter 4's refraction figure caption contradicts both, claiming refraction near the horizon merely 'exceeds five arcminutes'. Chapter 4 is the one that needs fixing."

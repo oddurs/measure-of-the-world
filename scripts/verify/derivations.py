@@ -159,6 +159,73 @@ def speed_of_light():
 
 
 # ---------------------------------------------------------------------------
+# Chapter 4: the Aldebaran worked example
+# ---------------------------------------------------------------------------
+
+def aldebaran():
+    """Every number the chapter 4 example prints, recomputed.
+
+    The version before this one was fabricated: its altitude was seven degrees
+    too high, its right ascension was not a position the star has ever held,
+    and its own two lines of arithmetic disagreed with each other. It also
+    carried a first-person drafting note into the manuscript.
+    """
+    # Aldebaran J2000 (Hipparcos), precessed to 1690 with proper motion applied.
+    ra_1690_h = 4 + 18/60 + 13.7/3600
+    dec_1690 = 15 + 50/60 + 40.1/3600
+    latitude = 51 + 28/60 + 38/3600
+
+    check("Aldebaran RA at 1690", "ch 4, worked example",
+          4 + 18/60 + 14/3600, ra_1690_h, 1/3600, " h",
+          "precessed from J2000 with proper motion")
+    check("Aldebaran declination at 1690", "ch 4, worked example",
+          15 + 50/60 + 40/3600, dec_1690, 2/3600, " deg")
+
+    h_true = 90 - latitude + dec_1690
+    check("Meridian altitude", "ch 4, worked example",
+          54 + 22/60 + 2/3600, h_true, 2/3600, " deg")
+
+    refraction_arcsec = 58.3 / math.tan(math.radians(h_true))
+    check("Refraction at that altitude", "ch 4, worked example",
+          42.0, refraction_arcsec, 1.0, '"')
+
+    h_obs = h_true + refraction_arcsec / 3600
+    check("Observed (refracted) altitude", "ch 4, worked example",
+          54 + 22/60 + 44/3600, h_obs, 2/3600, " deg")
+
+    # Run the chapter's own procedure forward and see whether it returns the
+    # catalogue declination. If it does not, the example does not close.
+    zenith_distance = 90 - (h_obs - refraction_arcsec / 3600)
+    derived = latitude - zenith_distance
+    check("Example closes: derived declination", "ch 4, worked example",
+          dec_1690, derived, 1/3600, " deg",
+          "observed altitude, minus refraction, through z = 90 - h and "
+          "delta = phi - z, must return the position it started from")
+
+    # And the sidereal side, from the Julian day of 8 November 1690 Old Style.
+    jd0 = 2338641.5
+    T = (jd0 - 2451545.0) / 36525.0
+    gmst0_h = ((100.46061837 + 36000.770053608*T + 0.000387933*T*T
+                - T**3/38710000.0) % 360) / 15.0
+    check("Sidereal time at midnight", "ch 4, worked example",
+          3 + 49/60 + 42/3600, gmst0_h, 1/3600, " h",
+          "8 November 1690 Old Style is 18 November Gregorian")
+
+    clock_h = 0 + 28/60 + 27/3600
+    lst = (gmst0_h + 1.0027379 * clock_h) % 24
+    check("Example closes: LST at transit equals RA", "ch 4, worked example",
+          ra_1690_h, lst, 1/3600, " h")
+
+    # Precession over three centuries, the chapter's explanation for the gap.
+    check("Precession in three centuries", "ch 4, comparison",
+          4.0, 50.29 * 310 / 3600, 0.4, " deg",
+          "about 50 arcsec a year along the ecliptic")
+    check("Aldebaran proper motion in three centuries", "ch 4, comparison",
+          62.0, 0.199 * 310, 6.0, '"',
+          "0.199 arcsec a year; an order of magnitude below the precession term")
+
+
+# ---------------------------------------------------------------------------
 # Refraction
 # ---------------------------------------------------------------------------
 
@@ -240,7 +307,7 @@ def parallax():
 
 def main() -> int:
     print("Recomputing the book's worked examples\n")
-    for section in (aberration_constant, bradley_fit,
+    for section in (aberration_constant, bradley_fit, aldebaran,
                     speed_of_light, refraction, pendulum, time_and_longitude,
                     parallax):
         section()

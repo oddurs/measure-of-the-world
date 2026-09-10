@@ -82,55 +82,49 @@ At the heart of the transit method lay the clock. Thomas Tompion's two regulator
 
 Tompion's clocks achieved an accuracy of a few seconds per day—a performance that would not be surpassed until the 19th century. Yet even this level of accuracy required constant vigilance. Temperature variations of 10–15 degrees Celsius could introduce errors of a second or more per day. Maintaining the clocks in a stable environment and comparing them regularly against the Sun's noon transit (using a gnomon—a simple vertical stick casting a shadow—and a marked scale on the floor of Flamsteed House) was essential. Flamsteed recorded these comparisons meticulously, creating a record that allowed later reduction of the data to account for clock drift.
 
-\section{A Worked Example: The Observation of Aldebaran, 1680}
+\section{A Worked Example: The Observation of Aldebaran}
 
-To make the transit method concrete, consider a specific observation from Flamsteed's records. On the night of November 8, 1680, Flamsteed observed the bright star Aldebaran (Alpha Tauri) crossing the meridian.
+To make the transit method concrete, work an observation through from the readings to the catalogue entry. The figures below are a reconstruction: they are what Flamsteed's instruments would have given for Aldebaran on this night, computed from the star's known position, rather than a transcription from the manuscript observation books.\footnote{Flamsteed's own observations are printed in \textcite{Flamsteed1725} and discussed in \textcite{Baily1835}. A reconstruction is used here so that every number can be checked against the one before it, which is the point of a worked example.} The date is 8 November 1690, Old Style, England still keeping the Julian calendar; the mural arc had been in use for a year.
 
 \textsc{Raw measurements:}
 \begin{itemize}
-  \item Clock reading at transit: $16^{\text{h}} 58^{\text{m}} 37^{\text{s}}$ (in Greenwich Mean Time)
-  \item Altitude reading from mural arc: $61^\circ 24' 32''$ (degrees, minutes, and seconds of arc)
-  \item Observer's latitude (Greenwich): $\phi = 51^\circ 28' 40''$
+  \item Clock reading at transit: $0^{\text{h}} 28^{\text{m}} 27^{\text{s}}$ mean time
+  \item Altitude reading from the mural arc: $54^\circ 22' 44''$
+  \item Observer's latitude (Greenwich): $\phi = 51^\circ 28' 38''$
 \end{itemize}
 
-\textsc{Conversion to sidereal time:}
+\textsc{Right ascension from the clock:}
 
-The clock reads mean solar time. To convert to local sidereal time, we use the relation:
+At the instant a star crosses the meridian its right ascension equals the local sidereal time. Sidereal time runs fast against mean time by the ratio $1.0027379$, so
 \[
-\alpha_{\text{LST}} = \alpha_0 + 1.0027379 \times t_c
+\alpha_{\text{LST}} = \alpha_0 + 1.0027379 \, t_c,
 \]
-where $\alpha_0$ is the sidereal time at midnight Greenwich Mean Time. From astronomical tables for 1680 November 8, $\alpha_0 = 2^{\text{h}} 18^{\text{m}} 24^{\text{s}}$. Thus:
+where $t_c$ is the clock reading and $\alpha_0$ is the sidereal time at midnight. For this date $\alpha_0 = 3^{\text{h}} 49^{\text{m}} 42^{\text{s}}$, so
 \[
-\alpha_{\text{LST}} = 2^{\text{h}} 18^{\text{m}} 24^{\text{s}} + 1.0027379 \times 16^{\text{h}} 58^{\text{m}} 37^{\text{s}}
-\]
-\[
-= 2^{\text{h}} 18^{\text{m}} 24^{\text{s}} + 17^{\text{h}} 2^{\text{m}} 0^{\text{s}} = 19^{\text{h}} 20^{\text{m}} 24^{\text{s}}
+\alpha_{\text{LST}} = 3^{\text{h}} 49^{\text{m}} 42^{\text{s}} + 1.0027379 \times 0^{\text{h}} 28^{\text{m}} 27^{\text{s}} = 4^{\text{h}} 18^{\text{m}} 14^{\text{s}}.
 \]
 
-Therefore, $\alpha_{\text{Aldebaran}} = 19^{\text{h}} 20^{\text{m}} 24^{\text{s}}$.
+Therefore $\alpha_{\text{Aldebaran}} = 4^{\text{h}} 18^{\text{m}} 14^{\text{s}}$.
 
-\textsc{Declination from altitude:}
+\textsc{Declination from the altitude:}
 
-The observed altitude is $h_{\text{obs}} = 61^\circ 24' 32''$. The refraction correction from Flamsteed's tables, for this altitude and the season, is approximately $R \approx 50''$ (arcseconds). The corrected altitude is:
+Refraction lifts a star above its true position, so the correction is subtracted from the reading. At this altitude Bessel's approximation $R \approx 58.3'' \cot h$ gives $R \approx 42''$, and
 \[
-h_{\text{true}} = 61^\circ 24' 32'' - 50'' = 61^\circ 24' 42''
+h_{\text{true}} = 54^\circ 22' 44'' - 42'' = 54^\circ 22' 02''.
 \]
 
-Wait—I made an error. Refraction makes the star appear higher, so we subtract the refraction to get the true altitude. Let me correct:
+The zenith distance is $z = 90^\circ - h_{\text{true}} = 35^\circ 37' 58''$, and since the star transits south of the zenith,
 \[
-h_{\text{true}} = 61^\circ 24' 32'' - 50'' = 61^\circ 23' 42''
+\delta = \phi - z = 51^\circ 28' 38'' - 35^\circ 37' 58'' = +15^\circ 50' 40''.
 \]
 
-The zenith distance is $z = 90^\circ - h_{\text{true}} = 90^\circ - 61^\circ 23' 42'' = 28^\circ 36' 18''$.
+\textsc{Comparison to the modern value:}
 
-Using $\delta = \phi - z$:
-\[
-\delta_{\text{Aldebaran}} = 51^\circ 28' 40'' - 28^\circ 36' 18'' = 22^\circ 52' 22''
-\]
+Aldebaran stands today at $\alpha = 4^{\text{h}} 35^{\text{m}} 55^{\text{s}}$, $\delta = +16^\circ 30' 33''$ for epoch J2000.0. The two positions differ by about eighteen minutes of right ascension and forty minutes of declination, and almost all of that difference is precession. The equinox from which right ascension is measured drifts westward at roughly fifty arcseconds a year, which over the three centuries between the observation and the catalogue amounts to some four degrees along the ecliptic. Precessing the modern position back to 1690 gives $\alpha = 4^{\text{h}} 18^{\text{m}} 14^{\text{s}}$, $\delta = +15^\circ 50' 40''$: the reconstruction closes on itself, as it must.
 
-\textsc{Comparison to modern value:}
+Aldebaran's proper motion contributes almost nothing at this precision. The star moves about $0.2''$ a year across the sky, some sixty arcseconds in three centuries, which is an order of magnitude below the difference precession accounts for and at the edge of what Flamsteed could have detected at all.
 
-Aldebaran's position in modern catalogs is $\alpha = 4^{\text{h}} 35^{\text{m}} 55^{\text{s}}$ and $\delta = +16^\circ 30' 33''$ (J2000.0 epoch). Flamsteed's observation gives $\alpha = 19^{\text{h}} 20^{\text{m}} 24^{\text{s}}$ and $\delta = +22^\circ 52' 22''$, which differs by roughly 9 hours in right ascension and 6 degrees in declination. This disparity is not an error in Flamsteed's method but reflects precession (the slow wobble of Earth's axis causing a gradual shift in star positions over centuries) and the proper motion of Aldebaran itself. Correcting for these effects brings the values into agreement, validating the method.
+The point of the exercise is what it demands. Two readings, a clock and a graduated arc, yield a position on the celestial sphere only after the observer knows the sidereal rate to seven figures, the refraction at that altitude, and the latitude of the instrument to a few arcseconds. Every one of those was itself the product of a measurement campaign.
 
 \section{Error Budget}
 

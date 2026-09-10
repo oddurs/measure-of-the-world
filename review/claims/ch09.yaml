@@ -5,287 +5,287 @@
 
 - id: ch09-001
   type: date
-  status: unverified
+  status: corrected
   text: "At Richmond, on a winter morning in 1772, an old man placed a small watch in the palm of a king."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found: the story of Harrison's timekeepers, https://www.rmg.co.uk/stories/time/harrisons-clocks-longitude-problem"
+  note: "Already fixed in the chapter today (Kew, spring 1772). Ledger text is stale. SEPARATE ERROR STILL IN THE CHAPTER: Harrison was seventy-NINE at the Kew trial, not seventy-eight. Born 3 April 1693 NS (24 March OS), he turned 79 five weeks before the trial began in May 1772."
 
 - id: ch09-002
   type: quotation
   status: unverified
   text: "The accumulated error: 4.5 seconds. ``By God, Harrison,'' the King declared, ``I will see you righted!'' Here was the final vindication of a forty-year quest that had consumed a craftsman, frustrated a Board, and challenged every assumption about how the problem of longitude should be solved."
   source: ""
-  note: ""
+  note: "Ledger text is stale (the chapter now gives a third of a second per day, not 4.5 seconds). The quotation itself could not be sourced. By God, Harrison, I will see you righted is not in any contemporary document I could find; it descends through family tradition and appears in Sobel 1995 without a primary citation. Given that all six primary-source quotations in the appendices were fabricated, this one should be attributed as traditional or cut."
 
 - id: ch09-003
   type: date
-  status: unverified
+  status: verified
   text: "John Harrison was born in 1693 in Yorkshire, the son of a carpenter."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found, https://www.rmg.co.uk/stories/time/harrisons-clocks-longitude-problem; Oxford DNB entry for John Harrison"
+  note: "Born 3 April 1693 NS (24 March 1693 OS) at Foulby, Wakefield, West Riding of Yorkshire; father a carpenter. Died 24 March 1776 aged 82, on his 83rd birthday OS."
 
 - id: ch09-004
   type: date
-  status: unverified
+  status: corrected
   text: "Then, in 1714, came the Act—and with it, the clear specification of the problem: produce a timekeeper that would not lose or gain more than two minutes over the course of a voyage to the West Indies and back."
-  source: ""
-  note: ""
+  source: "Longitude Act 1714 (13 Anne c. 14); Royal Museums Greenwich, Longitude found"
+  note: "The Act set a graded prize: 20,000 pounds for a method good to half a degree of longitude, 15,000 for two thirds of a degree, 10,000 for one degree, tested on a voyage to a port in the West Indies. Half a degree is two minutes of TIME, so the two-minute figure is right, but it is a derived equivalent, not the Act's wording, and the Act specifies the outward voyage, not a round trip. Recommend: not lose or gain more than two minutes of time (half a degree of longitude) on a voyage to the West Indies."
 
 - id: ch09-005
   type: quotation
-  status: unverified
+  status: verified
   text: "The ship's motion would disrupt the pendulum's regular swing; worse, pendulums lose synchronization as the vessel changes latitude and hence local gravity."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, seconds-pendulum checks"
+  note: "The script computes that a seconds pendulum carried from London to the equator gains 139.5 s/day and to the pole loses 89.2 s/day, confirming the latitude/gravity argument."
 
 - id: ch09-006
   type: date
-  status: unverified
+  status: corrected
   text: "Its mechanism is beautifully illustrated in , Chapter 4. Harrison describes the design in his own words in the memorial submitted to the Board in 1735.)"
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found; Board of Longitude papers, RGO 14, Cambridge Digital Library, https://cudl.lib.cam.ac.uk/collections/longitude"
+  note: "No memorial to the Board dated 1735 is documented. Harrison brought H1 to London in 1735, but the Commissioners of Longitude did not meet on his business until 30 June 1737, when eight of them assembled and voted him 500 pounds. Recommend replacing the 1735 memorial with the 30 June 1737 Board minute."
 
 - id: ch09-007
   type: date
-  status: unverified
+  status: corrected
   text: "Sea trials and initial success: H1 was completed in 1735 and tested at sea on voyages to Portugal and Jamaica."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found; Royal Museums Greenwich collection record for H1 (ZAA0034), https://www.rmg.co.uk/collections/objects/rmgc-object-79139"
+  note: "MUST FIX. H1 was built at Barrow-on-Humber between 1730 and 1735 and had exactly ONE sea trial: to Lisbon and back in 1736, out on HMS Centurion under Captain George Proctor and home on HMS Orford after Proctor died at Lisbon on 4 October 1736. H1 never went to Jamaica. The Jamaica voyage belongs to H4 in 1761-62."
 
 - id: ch09-008
   type: measurement
-  status: unverified
+  status: corrected
   text: "On the Jamaica voyage, the accumulated error over several months was less than 54 seconds—far better than the two-minute tolerance demanded by the Board, and superior to any chronometer then in existence."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found; Society for Nautical Research, The Sea-Trial of John Harrison's Chronometer 1736, https://snr.org.uk/sea-trial-john-harrisons-chronometer-1736/"
+  note: "MUST FIX. Fabricated. There was no Jamaica voyage for H1 and no accumulated-error figure in seconds survives for the 1736 Lisbon trial. The documented result is navigational, not horological: on the return leg Harrison told the officers that a headland they took for the Start was in fact the Lizard, putting the ship about 60 miles from its reckoned position. He was right. That is the evidence the Board acted on."
 
 - id: ch09-009
   type: date
-  status: unverified
+  status: corrected
   text: "(Primary source: Harrison's memorial to the Board of Longitude, 1735, reproduced in full in , pp. 75–82.)"
-  source: ""
-  note: ""
+  source: "Board of Longitude papers, RGO 14, Cambridge Digital Library, https://cudl.lib.cam.ac.uk/collections/longitude"
+  note: "Sobel 1995 is a 184-page trade narrative with no documentary appendix; it reproduces no memorial at pp. 75-82 or anywhere else. Harrison's petitions and the Board's minutes are in RGO 14 at Cambridge. Cite that."
 
 - id: ch09-010
   type: date
-  status: unverified
+  status: verified
   text: "H2, completed in 1739, was larger and more refined."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found"
+  note: "H2 begun after the June 1737 award and finished within the two years the Board allowed, so 1737-1739 is right."
 
 - id: ch09-011
   type: quotation
-  status: unverified
+  status: corrected
   text: "Harrison recognized the problem empirically: H2's rate varied with its amplitude of swing, and this variation was significant enough to degrade performance below the Board's tolerance."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found; Oxford DNB entry for John Harrison"
+  note: "MUST FIX. The chapter's account of why H2 was abandoned is wrong. The documented flaw is not amplitude-dependent centrifugal stiffening: Harrison found that the period of the BAR balances was disturbed by the ship's YAW, the rotation about its vertical axis when coming about while tacking. That is what made him adopt circular balances in H3. H2 also missed its trial because the war with Spain kept it ashore; the Board granted a further 500 pounds while he waited."
 
 - id: ch09-012
   type: date
-  status: unverified
+  status: corrected
   text: "H3 (completed in 1757) was a machine of remarkable complexity, embodying a solution to a different but equally pressing problem: temperature compensation."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found"
+  note: "MUST FIX. RMG dates H3 to 1740-1759, nineteen years of work, not completed in 1757 after eighteen years. The chapter's section heading (1740--1757) and its eighteen years both need changing to 1740--1759 and nineteen years. Note that the ch09 figure caption also says the H3 development was 18 years."
 
 - id: ch09-013
   type: measurement
-  status: unverified
+  status: corrected
   text: "Over a temperature swing of 50 K (typical for a ship in tropical waters), this yields a fractional change in period of $ T / T 0.0006$, corresponding to a time error of about 50 seconds per day—catastrophic for a marine chronometer."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py; recomputed from the chapter's own formula"
+  note: "MUST FIX, arithmetic. Substituting the chapter's own alpha = 19e-6 /K and Delta T = 50 K into its own result T = T0(1 + 2.5 alpha Delta T) gives a fractional change of 2.375e-3, not 0.0006, and therefore 205 s/day, not 50 s/day. Separately, the moment-of-inertia step above it is wrong: with r scaling as (1 + alpha Delta T), I scales as I0(1 + alpha Delta T)^2, approximately I0(1 + 2 alpha Delta T). The chapter writes I0(1 + 2 alpha Delta T)^2, approximately I0(1 + 4 alpha Delta T), double-counting the expansion, and the 2.5 coefficient depends on that error. With the correct I the coefficient is 1.5."
 
 - id: ch09-014
   type: date
   status: unverified
   text: "Harrison's own account is in his memorial to the Board dated 1757.)"
   source: ""
-  note: ""
+  note: "No memorial to the Board dated 1757 could be found in the RGO 14 catalogue or in the RMG account. Since H3 was not finished until 1759, a 1757 memorial describing it is doubtful."
 
 - id: ch09-015
   type: date
   status: unverified
   text: "In 1755, while still building H3, Harrison began H4."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found"
+  note: "RMG does not date the start of H4 to 1755. It records that John Jefferys built the watch with the innovative balance around 1751-52 that H4 grew from, and that the first sea watch took six years to construct before its 1759 completion, which points to about 1753. The 1755 date needs a source or should be softened."
 
 - id: ch09-016
   type: measurement
-  status: unverified
+  status: corrected
   text: "Instead, it would be a watch—a portable timepiece no larger than a pocket watch, approximately 5 inches in diameter and 1.75 inches thick."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found; NMM object record for H4 (ZAA0037)"
+  note: "H4 is 5.2 inches (13 cm) in diameter in silver pair cases, not 5 inches; no source gives a 1.75-inch thickness and it is too thin for a pair-cased watch of that diameter. SEPARATE MUST-FIX IN THE SAME SECTION, src/chapters/09.tex line 122: the chapter calls H4's escapement a DETENT escapement. It is a modified verge with diamond pallets. The spring detent is Arnold's and Earnshaw's from about 1780, as Appendix B now states. Line 122 also gives the balance frequency as about 20 Hz; H4 runs at five beats per second, so the balance frequency is 2.5 Hz. Line 194 compounds this with a claimed 15--20 Hz range for the whole series, and line 34 gives H1 about 15 oscillations per second, which no source supports for a pair of large dumbbell balances."
 
 - id: ch09-017
   type: quotation
-  status: unverified
+  status: corrected
   text: "The remontoire serves two purposes: it prevents the varying torque of the main spring from affecting the balance wheel's frequency, and it decouples the balance wheel's motion from the load on the escapement, reducing the escapement's influence on the rate."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found"
+  note: "H4 does carry a remontoire and the stated purpose is right, but it is a SPRING remontoire rewound every seven and a half seconds, not a small weighted wheel."
 
 - id: ch09-018
   type: date
-  status: unverified
+  status: verified
   text: "The sea trials: H4 was first tested at sea in 1761 on a voyage to Jamaica."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found"
+  note: "William Harrison sailed with H4 on HMS Deptford from Portsmouth on 18 November 1761 and reached Jamaica on 19 January 1762."
 
 - id: ch09-019
   type: measurement
-  status: unverified
+  status: verified
   text: "Over a voyage time of 81 days, H4's accumulated error was merely 5.1 seconds."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found"
+  note: "H4 was 5.1 seconds slow on arrival after 81 days. The Board nevertheless resolved on 17 August 1762 that the experiments were not sufficient to determine the longitude at sea."
 
 - id: ch09-020
   type: measurement
-  status: unverified
+  status: corrected
   text: "Converting this to longitude error: an error of 5.1 seconds corresponds to an error in time, which at the equator translates to: MATH"
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py"
+  note: "MUST FIX, editorial. The final numbers in this section are all correct, but the chapter prints a wrong first attempt, then the sentence Wait---this seems too large. Let me recalculate. A first-person false start of this kind cannot go to press. Cut the failed conversion and the recalculation aside and keep only the correct chain. The specific error in the discarded step is that 1.3 was treated as degrees when it is arcminutes."
 
 - id: ch09-021
   type: measurement
-  status: unverified
+  status: verified
   text: "The error of 5.1 seconds over 81 days corresponds to a rate error of: MATH"
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py; recomputed"
+  note: "5.1 / (81 x 86400) = 7.29e-7, so 0.727 ppm is right."
 
 - id: ch09-022
   type: measurement
-  status: unverified
+  status: verified
   text: "So H4 would accumulate 0.063 seconds per day."
-  source: ""
-  note: ""
+  source: "recomputed"
+  note: "0.727e-6 x 86400 = 0.0628 s/day."
 
 - id: ch09-023
   type: measurement
-  status: unverified
+  status: verified
   text: "To convert to longitude: the Earth rotates $360^ $ in 24 hours, or $15^ $ per hour."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, Earth rotation rate check"
+  note: "Confirmed at 15 deg/hour."
 
 - id: ch09-024
   type: measurement
-  status: unverified
+  status: verified
   text: "A time error of 5.1 seconds corresponds to: MATH"
-  source: ""
-  note: ""
+  source: "recomputed"
+  note: "5.1 s x 15 arcsec/s = 76.5 arcsec = 1.275 arcmin."
 
 - id: ch09-025
   type: measurement
-  status: unverified
+  status: verified
   text: "At the equator, this is approximately $1.3 1.85 \\, km 2.4 \\, km $ (since 1 nautical mile = 1.85 km and 1 arcminute of longitude at the equator = 1 nautical mile)."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, one hour of longitude check"
+  note: "1.275 arcmin = 1.275 nautical miles = 2.36 km at the equator; at 20 deg N, x cos 20 = 2.2 km. The book's 2.4 and 2.3 km are within rounding."
 
 - id: ch09-026
   type: date
-  status: unverified
+  status: verified
   text: "The second trial, in 1764 (the Barbados trial), was less successful."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found"
+  note: "H4 sailed for Bridgetown, Barbados in March 1764 and arrived in May 1764; Maskelyne had gone ahead on the Princess Louisa in September 1763 to test lunar distances."
 
 - id: ch09-027
   type: measurement
-  status: unverified
+  status: corrected
   text: "H4 accumulated an error of 39.2 seconds over five months."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found; Board of Longitude minutes, February 1765, RGO 14"
+  note: "MUST FIX. The error was 39.2 seconds over a voyage of 47 DAYS, not five months. The Board met in February 1765 and agreed H4 had kept time within the limits of the 1714 Act, three times better than the Act required."
 
 - id: ch09-028
   type: superlative
   status: unverified
   text: "This larger error may have been due to changes in H4's rate caused by settling of the mechanism or creep in the materials after the first voyage."
   source: ""
-  note: ""
+  note: "Speculation about settling or creep after the first voyage. No source offers this explanation; the difference between the trials is more usually put down to the different rate allowance the Board permitted. Attribute or cut."
 
 - id: ch09-029
   type: attribution
-  status: unverified
+  status: verified
   text: "Undeterred, Harrison built H5, incorporating lessons from H4's trials."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found"
+  note: "Harrison began H5 while H4 was held for long-term testing at Greenwich, which he regarded as holding it hostage."
 
 - id: ch09-030
   type: date
-  status: unverified
+  status: corrected
   text: "H5 was completed in 1770 and handed to the Board for official testing."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found; Longitude Act 1773 (13 Geo. III c. 77)"
+  note: "MUST FIX. H5 was finished in 1770 but was NOT handed to the Board for official testing. The Board would not test it. George III tested it himself at his own observatory over ten weeks in May, June and July 1772, and afterwards the Board still refused to recognise the trial. John and William Harrison then petitioned Parliament, which voted them 8,750 pounds in June 1773. The chapter's sentence inverts the central fact of the episode."
 
 - id: ch09-031
   type: date
-  status: unverified
+  status: corrected
   text: "The result was the December 1772 trial with King George III, already recounted."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found"
+  note: "Already fixed in the chapter today (May to July 1772). Ledger text is stale."
 
 - id: ch09-032
   type: quotation
   status: unverified
   text: "The King's own verification—observing H5 directly against the motions of the stars over ten weeks—carried an authority that official Board testing could not. ``By God, Harrison, I will see you righted!''"
   source: ""
-  note: ""
+  note: "Same quotation as ch09-002; no contemporary source found. The ten weeks of daily observation and the one-third-of-a-second daily rate ARE documented; the King's exclamation is not."
 
 - id: ch09-033
   type: measurement
-  status: unverified
+  status: corrected
   text: "Over a 50 K temperature swing, this reduces the accumulated error from 50 seconds per day to 0.2 seconds per day—a 250-fold improvement."
-  source: ""
-  note: ""
+  source: "recomputed from the chapter's own figures"
+  note: "MUST FIX. Three mutually inconsistent numbers for the same improvement. The stated coefficients (2.5e-4 /K down to 5e-6 /K) give a factor of 50. The stated daily errors (50 s/day down to 0.2 s/day) give 250, which is what the text claims. The figure caption for fig:temperature-compensation says a factor of 25. Also, 2.5e-4 /K over a 50 K swing is 1.25e-2, which is 1080 s/day, not the 50 s/day the same paragraph asserts. Pick one coefficient and derive the rest from it."
 
 - id: ch09-034
   type: measurement
-  status: unverified
+  status: verified
   text: "Why did H4 accumulate 5.1 seconds over 81 days, rather than zero?"
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found"
+  note: "The 5.1 seconds over 81 days is documented; only the error budget that follows is invented."
 
 - id: ch09-035
   type: measurement
   status: unverified
   text: "Although the bimetallic compensation responds to temperature changes, it does so with a finite time constant (typically 30 minutes to an hour)."
   source: ""
-  note: ""
+  note: "No source found for a 30-minute-to-one-hour thermal time constant for H4's bimetallic curb. Plausible but unsupported."
 
 - id: ch09-036
   type: measurement
   status: unverified
   text: "Over the course of 81 days, the accumulation of wear might produce a rate change of $10^ -7 $ in the best cases, but more typically $10^ -6 $."
   source: ""
-  note: ""
+  note: "No source found for these wear rates. Note also that H4 requires oil, which is why RMG keeps it stopped, so an argument resting on lignum vitae and diamond being nearly wear-free does not apply to H4."
 
 - id: ch09-037
   type: measurement
   status: unverified
   text: "If we assume that thermal lag and escapement friction dominate, contributing a fractional rate error of approximately $10^ -6 $ per day, we would expect an accumulated error of: MATH which is consistent with the observed 5.1 seconds."
-  source: ""
-  note: ""
+  source: "recomputed"
+  note: "The arithmetic is self-consistent (1e-6 x 81 x 86400 = 7.0 s) but every input is invented, so the agreement with 5.1 s is circular. Present it as an illustration or cut it."
 
 - id: ch09-038
   type: quotation
-  status: unverified
+  status: corrected
   text: "( , Introduction, p. xxiii, makes this point forcefully: ``The Board's insistence on reproducibility and independent testing was not obstruction; it was the correct scientific standard for the 18th century and remains so today.'')"
-  source: ""
-  note: ""
+  source: "William J. H. Andrewes (ed.), The Quest for Longitude: The Proceedings of the Longitude Symposium (Cambridge MA: Collection of Historical Scientific Instruments, Harvard University, 1996)"
+  note: "MUST FIX. Fabricated quotation. The book is the 1996 symposium volume from Harvard's Collection of Historical Scientific Instruments, not a 1998 Harvard University Press book, and the bibliography carries the same work twice under Andrewes1996 and Andrewes1998. No sentence of this wording appears in its introduction, and the phrase remains so today is not language a 1996 editor's introduction uses. Cut the quotation or replace it with a paraphrase and a page number someone has checked."
 
 - id: ch09-039
   type: quotation
-  status: unverified
+  status: verified
   text: "From the Board's perspective, the problem was real: what if the first H4's success was an artifact of the particular conditions of the 1762 voyage?"
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found; Board of Longitude minutes, 17 August 1762, RGO 14"
+  note: "The Board did resolve on 17 August 1762 that one trial was insufficient, and gave no reason. The chapter's characterisation of the Board's position is fair."
 
 - id: ch09-040
   type: quotation
   status: unverified
   text: "The conflict between Harrison and the Board reflects a deeper tension in the history of innovation: the tension between individual genius and institutional verification, between the craftsman's intuition and the scientist's demand for reproducibility."
   source: ""
-  note: ""
+  note: "Interpretive framing rather than a checkable claim. No action needed beyond noting it is the author's argument, not a sourced finding."
 
 - id: ch09-041
   type: date
-  status: unverified
+  status: verified
   text: "Harrison died in 1776, having received a substantial financial settlement from the Board (though never the full prize amount he believed he deserved)."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, Longitude found; Longitude Act 1773 (13 Geo. III c. 77)"
+  note: "Died 24 March 1776. Payments: 4,315 pounds in increments from the Board over the years, 10,000 pounds as an interim award for H4 in 1765, and 8,750 pounds from Parliament in 1773, about 23,065 in all. He never received the 20,000-pound prize, which was never awarded to anyone. Consider giving these figures rather than a substantial financial settlement."

@@ -5,154 +5,201 @@
 
 - id: ch02-001
   type: date
-  status: unverified
+  status: verified
   text: "On March 4, 1675, King Charles II appointed a 28-year-old self-taught astronomer from Derbyshire to an unprecedented position: ``Astronomical Observator to His Majesty.'' The title was invented for the occasion, the salary absurdly modest, the expectations revolutionary."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Royal Warrants', https://www.royalobservatorygreenwich.org/articles.php?article=909 ; Royal Museums Greenwich, 'The founding of the Royal Observatory', https://www.rmg.co.uk/stories/space-astronomy/curatorial/founding-royal-observatory"
+  note: "Date, king, age and origin all check out. Flamsteed was born 19 August 1646 at Denby, Derbyshire, so he was 28 on 4 March 1675, and the warrant of that date names him 'our astronomical observator'. Two wording points: the warrant uses lower case, and the phrase 'to His Majesty' is not in it, so the quotation marks around 'Astronomical Observator to His Majesty' overstate what the document says."
 
 - id: ch02-002
   type: date
-  status: unverified
+  status: corrected
   text: "John Flamsteed (1835), p. 7. The position was officially created by Royal Warrant, 22 June 1675."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Royal Warrants', https://www.royalobservatorygreenwich.org/articles.php?article=909"
+  note: "The footnote reverses the two warrants. The POSITION was created by the warrant of 4 March 1675, which appointed Flamsteed and set his 100 pound salary; the warrant of 22 June 1675 founded the OBSERVATORY and authorised its construction. So it is false that 'the position was officially created by Royal Warrant, 22 June 1675' and false that Flamsteed 'did not receive the formal appointment document until that date, though he had been working informally since March'. Correct text: appointed by warrant of 4 March 1675; the Observatory itself was authorised on 22 June 1675."
 
 - id: ch02-003
   type: date
-  status: unverified
+  status: verified
   text: "The founding of a royal observatory in 1675 was an act of strategic ambition."
-  source: ""
-  note: ""
+  source: "Text of the warrant for building the Observatory, 22 June 1675, https://www.royalobservatorygreenwich.org/articles.php?article=977"
+  note: "Supported. The warrant's own stated purpose is 'in order to the finding out of the longitude of places for perfecting navigation and astronomy'."
 
 - id: ch02-004
   type: superlative
-  status: unverified
+  status: corrected
   text: "Yet such institutions were rare, and the investment was unprecedented."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, 'The founding of the Royal Observatory', https://www.rmg.co.uk/stories/space-astronomy/curatorial/founding-royal-observatory ; Paris Observatory foundation 1667"
+  note: "'Unprecedented' is too strong: the Observatoire de Paris had been founded in 1667 on the same state model, as the chapter's own next footnote concedes. The supportable superlative is the one Royal Museums Greenwich uses, that Greenwich was Britain's FIRST STATE-FUNDED scientific research institution. Recommend that wording."
 
 - id: ch02-005
   type: date
-  status: unverified
+  status: verified
   text: "(The Observatoire de Paris had been founded eight years earlier, in 1667, under Louis XIV's patronage."
-  source: ""
-  note: ""
+  source: "Paris Observatory founding: authorised by Louis XIV in 1666, foundation stone laid on Midsummer's Day, 24 June 1667, under Colbert's patronage"
+  note: "Correct. 1667 is eight years before 1675, and Louis XIV's patronage is right."
 
 - id: ch02-006
   type: quotation
-  status: unverified
+  status: corrected
   text: "The warrant, issued on 22 June 1675, was terse: the King had ``resolved to establish an observatory'' and to employ an ``astronomical observator'' charged with ``rectifying the tables of the motions of the heavens.'' The term was deliberate."
-  source: ""
-  note: ""
+  source: "Text of the warrant for building the Observatory, 22 June 1675, https://www.royalobservatorygreenwich.org/articles.php?article=977 ; Royal Observatory Greenwich, 'Royal Warrants', https://www.royalobservatorygreenwich.org/articles.php?article=909"
+  note: "MISQUOTED WARRANT, two errors. (1) The 22 June 1675 warrant does not say 'resolved to establish an observatory'. It says: 'Whereas, in order to the finding out of the longitude of places for perfecting navigation and astronomy, we have resolved to build a small observatory within our park at Greenwich, upon the highest ground, at or near the place where the castle stood, with lodging-rooms for our astronomical observator and assistant...'. (2) The phrase 'rectifying the tables of the motions of the heavens' does NOT appear in the 22 June warrant. It comes from Flamsteed's instructions under the 4 March 1675 warrant, which directed him 'to the rectifying the tables of the motions of the heavens, and the places of the fixed stars, so as to find out the so much desired longitude of places for the perfecting the art of navigation'. The footnote's claim that the phrase 'appears in the original document' is therefore false as written. (3) 'Terse' is also wrong; the building warrant is a long single sentence of detailed instructions to the Ordnance."
 
 - id: ch02-007
   type: quotation
-  status: unverified
+  status: verified
   text: "Wren's brief was paradoxical: he was given a budget of 500 and asked to produce a structure that would house precision instruments, living quarters for an observer, and an assistant's rooms."
-  source: ""
-  note: ""
+  source: "Text of the warrant, 22 June 1675, https://www.royalobservatorygreenwich.org/articles.php?article=977 ; Royal Observatory Greenwich, 'Flamsteed House', https://www.royalobservatorygreenwich.org/articles.php?article=916"
+  note: "The 500 pound figure is correct and was indeed set by the warrant, funded from the sale of old and decayed gunpowder. BUT the footnote attached to this sentence has two problems that need fixing in the .tex. (a) The quotation attributing to Wren a complaint that the sum was 'far too little' could not be traced to Baily or anywhere else, and it sits awkwardly against Wren's one recorded remark on the design, that he built it 'for the observator's habitation and a little for pompe'. Treat the quotation as unverified. (b) The actual outturn was 520 pounds 9s 1d, a 20 pound overspend; the claim that 'Moore supplied additional funds' for the BUILDING is unsupported. Moore paid for INSTRUMENTS, not fabric."
 
 - id: ch02-008
   type: date
-  status: unverified
+  status: verified
   text: "The result was Flamsteed House, completed in 1676."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Flamsteed House', https://www.royalobservatorygreenwich.org/articles.php?article=916 ; Royal Museums Greenwich, 'The founding of the Royal Observatory'"
+  note: "Correct. Foundation stone laid by Flamsteed on 10 August 1675; the building was completed in the summer of 1676 and Flamsteed moved in on 10 July 1676."
 
 - id: ch02-009
   type: date
-  status: unverified
+  status: verified
   text: "When Flamsteed arrived at Greenwich in the summer of 1675, the Observatory was incomplete."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, 'The founding of the Royal Observatory', https://www.rmg.co.uk/stories/space-astronomy/curatorial/founding-royal-observatory"
+  note: "Supported: the foundation stone was not laid until 10 August 1675 and Flamsteed did not move in until 10 July 1676, so the Observatory was certainly incomplete in the summer of 1675. Worth noting that Flamsteed lodged in the Queen's House meanwhile."
 
 - id: ch02-010
   type: quotation
-  status: unverified
+  status: corrected
   text: "Specifications: a 13-foot pendulum regulated each clock's swing; the mechanism incorporated Harrison's grasshopper escapement principles, though Harrison's work came later.) With these clocks, Flamsteed could time observations to a precision previously unimaginable."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, 'Year-Going Clock', RMGC object 202113, https://www.rmg.co.uk/collections/objects/rmgc-object-202113 ; Royal Observatory Greenwich, 'Decoding Flamsteed', https://www.royalobservatorygreenwich.org/articles.php?article=1381"
+  note: "LEDGER TEXT IS STALE. The extracted sentence still shows the old footnote about 'Harrison's grasshopper escapement principles'; the .tex footnote was corrected earlier today and now reads dead-beat escapement with no temperature compensation, which matches the sources: Royal Museums Greenwich describes a prototype dead-beat escapement, a 13-foot two-second pendulum, and delivery to the Octagon Room in summer 1676. Two residual problems remain in the chapter body, however. (a) The accuracy figure 'ten or fifteen seconds per day' is not supported; Royal Museums Greenwich claims two seconds a day, chapter 4 says 'a few seconds', and chapter 6's table says plus or minus 5 seconds. Pick one and source it. (b) The chapter says the clocks were 'mounted on the ground floor with long pendulums hanging through carefully designed voids'; in fact they stood in the Octagon Room on the FIRST floor, with the 13-foot pendulums hanging behind the wainscot."
 
 - id: ch02-011
   type: superlative
-  status: unverified
+  status: corrected
   text: "His great achievement was not to invent new principles, but to work within stringent constraints to produce instruments of unprecedented precision."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Private Patronage', https://www.royalobservatorygreenwich.org/articles.php?article=961"
+  note: "The premise is wrong. Flamsteed DID have instruments commissioned from professional makers: Jonas Moore paid, out of his own pocket, for the 7-foot equatorial sextant (1676), Hooke's 10-foot mural quadrant (1676) and the two Tompion year-going clocks (1676). What Flamsteed later funded himself, from an inheritance, was the mural arc of 1689. The contrast drawn with Tycho does not hold in the form the chapter states it."
 
 - id: ch02-012
   type: date
-  status: unverified
+  status: corrected
   text: "Between 1679 and 1691, Flamsteed designed and constructed his greatest instrument: the mural arc."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045 ; 'People: Abraham Sharp', https://www.royalobservatorygreenwich.org/articles.php?article=1148"
+  note: "Dates wrong. Construction began in 1688, after Flamsteed inherited money on his father's death; Abraham Sharp was at Greenwich from August 1688 to autumn 1690 and did the work; the first observation with the arc was on 11 September 1689 and the last on 27 December 1719. Correct span: designed and built 1688-1689, in service 1689-1719. Note this also contradicts chapters 3 and 4 of this book, which both say 1689 to 1691."
 
 - id: ch02-013
   type: superlative
   status: unverified
   text: "But Flamsteed's refinements to the design, and the precision he achieved, were unprecedented."
   source: ""
-  note: ""
+  note: "The precision achieved (roughly 10 to 20 arcseconds) is separately supported, but 'unprecedented' as applied to the design refinements is the book's own gloss and I found no source making that comparative claim. The related factual statement, that mural quadrants existed in antiquity, is standard."
 
 - id: ch02-014
   type: quotation
-  status: unverified
+  status: verified
   text: "As a star crossed the meridian (the north-south line), he could measure both its right ascension (the celestial coordinate measured along the celestial equator, determined from the time of transit across the meridian, which he recorded on Tompion's clocks) and its declination (from the arc's graduated scale)."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045"
+  note: "The transit principle is correctly described. One caution: Flamsteed's clocks were set to MEAN SOLAR time, not sidereal time (see ch03-013), so the transit time had to be converted before it gave right ascension. The chapter reads as if the clock gave right ascension directly."
 
 - id: ch02-015
   type: quotation
-  status: unverified
+  status: corrected
   text: "( , p. 102–110, reproduces Flamsteed's detailed account of the mural arc's construction, including the costs incurred and the difficulties encountered.)"
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045 ; 'Private Patronage', https://www.royalobservatorygreenwich.org/articles.php?article=961 ; Jonas Moore died 27 August 1679"
+  note: "The sentence this footnote supports is impossible. It says the mural arc's expense was one 'that Moore and other patrons helped defray'. Sir Jonas Moore died on 27 August 1679, nine years before construction began. The arc cost Flamsteed over 120 pounds and fourteen months of Sharp's work, and he paid for it HIMSELF out of an inheritance, which is the documented point and a better one for the chapter's argument about the salary. The Baily page range 102-110 could not be checked."
 
 - id: ch02-016
   type: attribution
   status: unverified
   text: "They observed circumpolar stars (near the north celestial pole), then stars at lower declinations, gradually building a comprehensive and precise catalog."
   source: ""
-  note: ""
+  note: "No source found for the claim that the observing programme worked circumpolar stars first and then descended in declination. Royal Observatory Greenwich describes the routine but not this ordering. Needs a citation to Baily or to the Historia prolegomena, or removal."
 
 - id: ch02-017
   type: date
   status: unverified
   text: "By 1712, Flamsteed had completed observations of approximately 3,000 stars."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045 (catalogue of 2,935 stars)"
+  note: "Partly checkable. The printed catalogue in volume 3 of the Historia Coelestis Britannica contains 2,935 stars, so 'approximately 3,000' is fair. The milestone date of 1712 is unsourced; 1712 is the year of Halley's unauthorised edition, which may be where the figure came from. Either date the claim to the 1725 catalogue or cite the 1712 edition explicitly. NOTE: the footnote on this sentence says the Historia lists 'exactly 2,934 stars'. That is wrong by one: the figure is 2,935."
 
 - id: ch02-018
   type: measurement
-  status: unverified
+  status: corrected
   text: "The positions were accurate to typically 10–20 arc-seconds, an order of magnitude improvement over Tycho's century-old catalog."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)' ; Tycho's positional accuracy 'approaching one arcminute' (Dreyer, Tycho Brahe, 1890; summarised at https://www.cabinet.ox.ac.uk/hven-1576-97-tycho-brahes-observatory)"
+  note: "'An order of magnitude' is wrong. Tycho's accuracy approached one arcminute, i.e. 60 arcseconds. Against Flamsteed's 10 to 20 arcseconds that is a factor of about 3 to 6, not 10. The book states this ratio four different ways: 'order of magnitude' here, 'approximately four times' in this chapter's own figure caption, 'a factor of five to ten' in chapter 3, 'a factor of 3 or more' in chapter 4 and 'threefold' in chapter 5. Settle on about four to six and use it everywhere."
 
 - id: ch02-019
   type: date
   status: unverified
   text: "In 1709, Flamsteed petitioned the Admiralty, noting that his salary had never been increased in the 34 years since his appointment, while prices had risen and his assistants' wages had increased."
   source: ""
-  note: ""
+  note: "Could not source a petition to the Admiralty in 1709. Royal Observatory Greenwich's account of Board of Ordnance funding records no salary petition and no increase; oversight of the Observatory passed to a Board of Visitors drawn from the Royal Society in 1710, and the Ordnance, not the Admiralty, was the paying department throughout. The arithmetic is fine (1675 to 1709 is 34 years) and the 100 pound salary demonstrably never rose. Verify the petition in Baily or drop the attribution to the Admiralty."
 
 - id: ch02-020
   type: date
   status: unverified
   text: "He notes that the cost of living had roughly doubled since 1675, while his income remained fixed.) He requested an increase to 200."
   source: ""
-  note: ""
+  note: "Two unsourced elements. The request for an increase to 200 pounds could not be traced. The claim that the cost of living 'had roughly doubled since 1675' needs a price-index citation; standard English price series for 1675 to 1709 do not show a doubling. Cite a page in Baily and a price series, or soften the claim."
 
 - id: ch02-021
   type: superlative
-  status: unverified
+  status: corrected
   text: "What emerged by the early 18th century was something unprecedented in the history of astronomy: a national institution dedicated to systematic observation, funded (albeit inadequately) by the state, staffed by capable observers, and directed toward a specific practical aim—furnishing the accurate stellar positions required for solving longitude."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, 'The founding of the Royal Observatory', https://www.rmg.co.uk/stories/space-astronomy/curatorial/founding-royal-observatory"
+  note: "'Unprecedented in the history of astronomy' does not survive contact with the Paris Observatory, founded 1667, which was also state-funded, systematic and navigationally motivated. Use the supportable claim instead: Britain's first state-funded scientific research institution. Same problem as ch02-004."
 
 - id: ch02-022
   type: attribution
-  status: unverified
+  status: verified
   text: "(The modern definition of ``Greenwich Mean Time'' traces directly to the Observatory that Flamsteed founded."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, 'Royal Warrants' and Longitude Acts pages; Royal Museums Greenwich history of the Royal Observatory"
+  note: "Broadly right. One point of precision: the Prime Meridian as internationally adopted in 1884 is defined by the Airy Transit Circle of 1850, not by Flamsteed's instruments, though the chapter's phrase 'a direct descendant of Flamsteed's work' fairly covers that."
+# ---------------------------------------------------------------------------
+# Entries below were added by hand during the chapters 1-4 fact check.
+# extract_claims.py did not pick these sentences up. Re-running the extractor
+# will DROP them; copy them out first.
+# ---------------------------------------------------------------------------
+
+- id: ch02-101
+  type: measurement
+  status: corrected
+  text: "It was a compact structure of brick and stone, four stories tall, with a distinctive octagonal turret rising from the northwest corner."
+  source: "Royal Observatory Greenwich, 'Flamsteed House', https://www.royalobservatorygreenwich.org/articles.php?article=916"
+  note: "Wrong on both counts. The original building had THREE storeys: basement, ground floor and first floor. And it had FOUR turrets, one at each corner, not a single one at the north-west; the eastern and western turrets later carried Maskelyne's camera obscura and the time ball."
+
+- id: ch02-102
+  type: attribution
+  status: corrected
+  text: "The Octagon Room, on the top floor, was designed to house long-focus telescopes and the great mural arc that would become Flamsteed's principal instrument."
+  source: "Royal Observatory Greenwich, 'Flamsteed House', https://www.royalobservatorygreenwich.org/articles.php?article=916 ; Royal Museums Greenwich, 'Flamsteed House', https://www.rmg.co.uk/royal-observatory/attractions/flamsteed-house"
+  note: "The mural arc was never in the Octagon Room and could not have been. The Octagon Room's walls are not aligned to a meridian, which is why it was largely useless for positional work; Flamsteed's meridian instruments lived in a small detached building in the south-east corner of the garden, the Quadrant House and Sextant House, and the arc hung on the Quadrant House's west wall. The Octagon Room did house the Tompion clocks and long telescopes. Chapter 4 repeats the same error, placing the arc on 'the meridian wall of Flamsteed House'."
+
+- id: ch02-103
+  type: superlative
+  status: corrected
+  text: "His assistant, Abraham Sharp (who would later become the second-best observational astronomer in Britain), was paid 20 pounds per year---leaving Flamsteed less than 80 pounds for his own subsistence."
+  source: "Royal Observatory Greenwich, 'People: Abraham Sharp', https://www.royalobservatorygreenwich.org/articles.php?article=1148 ; 'Board of Ordnance Funding (1675-1818)', https://www.royalobservatorygreenwich.org/articles.php?article=957"
+  note: "Three errors and an unsupportable superlative. (1) Sharp was not Flamsteed's assistant in 1675. He was at Greenwich in 1684-1685 and again from August 1688 to autumn 1690, and returned as a calculator from 1705. (2) The pay is wrong: the Observatory assistant was carried by the Ordnance as an extraordinary labourer at eighteen pence a day, about 27 pounds 4s 6d a year, and Sharp's later rate as calculator is estimated at 40 pounds. (3) The assistant was paid by the Board of Ordnance, not out of Flamsteed's 100 pound salary, so the subtraction leaving him 'less than 80 pounds' does not follow. (4) 'The second-best observational astronomer in Britain' is a ranking no source makes and cannot be supported; delete it."
+
+- id: ch02-104
+  type: measurement
+  status: corrected
+  text: "The final Historia Coelestis Britannica lists exactly 2,934 stars."
+  source: "Royal Observatory Greenwich, 'Telescope: Flamsteed's Mural Arc (1689)', https://www.royalobservatorygreenwich.org/articles.php?article=1045 ; catalogue in volume 3 of the Historia Coelestis Britannica (1725)"
+  note: "Off by one. The catalogue contains 2,935 stars. Given that the sentence says 'exactly', the digit matters."
+
+- id: ch02-105
+  type: attribution
+  status: corrected
+  text: "He also inherited a sextant of seven-foot radius, an instrument capable of measuring angles between celestial objects but ill-suited to the work of building a star catalog."
+  source: "Royal Observatory Greenwich, 'Private Patronage', https://www.royalobservatorygreenwich.org/articles.php?article=961"
+  note: "'Inherited' is misleading. The 7-foot equatorial sextant was newly made in 1676 at Jonas Moore's personal expense, along with Hooke's 10-foot mural quadrant and the two Tompion clocks; Flamsteed inherited nothing from a predecessor because there was none. The sextant was also the most used instrument at the Observatory until the mural arc came into service in 1689, so calling it 'ill-suited to the work of building a star catalog' understates its role."
+
+- id: ch02-106
+  type: attribution
+  status: corrected
+  text: "Abraham Sharp remained his indispensable assistant."
+  source: "Royal Observatory Greenwich, 'People: Abraham Sharp', https://www.royalobservatorygreenwich.org/articles.php?article=1148"
+  note: "Written in the context of the funding crisis of 1709, by which time Sharp had left Greenwich nineteen years earlier, in autumn 1690, for Portsmouth dockyard and then Yorkshire. He corresponded with Flamsteed and worked as a calculator from 1705, and he prepared material for the Atlas Coelestis, but he was not the resident assistant. Reword to reflect the correspondence relationship."

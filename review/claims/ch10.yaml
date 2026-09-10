@@ -5,182 +5,182 @@
 
 - id: ch10-001
   type: date
-  status: unverified
+  status: corrected
   text: "In the parlor of a country house at Ludlow, Shropshire, in the year 1767, a woman named Mary Edwards sat at a wooden table with pen, ink, and freshly printed ephemerides."
-  source: ""
-  note: ""
+  source: "Mary Croarken, Mary Edwards: Computing for a Living in 18th-Century England, IEEE Annals of the History of Computing 25(4) (2003), 9-15, https://ieeexplore.ieee.org/document/1253886/"
+  note: "MUST FIX. Mary Edwards (c.1750 to September 1815) lived at 4 Brand Lane, Ludlow, but she was not computing in 1767. Her husband, the Rev. John Edwards (c.1748-1784), was the computer of record; Mary did much of the work under his name and, after he died in 1784, was employed in her own right until her death in 1815. The opening vignette therefore places her at the desk about seventeen years too early. Move it to the 1790s or drop the year."
 
 - id: ch10-002
   type: superlative
   status: unverified
   text: "This was how the greatest navigational tool of the 18th century was built—not by a single genius, but by a distributed network of human minds, each working in isolation, each checked against the others."
   source: ""
-  note: ""
+  note: "Unfalsifiable superlative. No action needed beyond noting it is rhetoric."
 
 - id: ch10-003
   type: date
-  status: unverified
+  status: corrected
   text: "The Nautical Almanac, published annually starting in 1767, was the first computational enterprise of its kind: a machine built of people."
-  source: ""
-  note: ""
+  source: "The Nautical Almanac and Astronomical Ephemeris, for the Year 1767 (London: Commissioners of Longitude, 1766), https://archive.org/details/bim_eighteenth-century_the-nautical-almanac-and_great-britain-commissio_1766"
+  note: "Already fixed in the chapter today: first edition for the year 1767, imprint 1766, distributed 6 January 1767. This sentence still reads published annually starting in 1767, which is defensible for the run but blurs the imprint distinction the chapter now draws correctly two sections later."
 
 - id: ch10-004
   type: quotation
-  status: unverified
+  status: verified
   text: "Before Harrison's final vindication (which would come in the 1770s, and even then reluctantly), the Board of Longitude had placed substantial resources behind a different approach: determining longitude from the Moon's position in the sky."
-  source: ""
-  note: ""
+  source: "Longitude Act 1773 (13 Geo. III c. 77); Royal Museums Greenwich, Longitude found"
+  note: "Parliament voted Harrison 8,750 pounds in June 1773, and the Board never conceded the prize, so in the 1770s and reluctantly is accurate."
 
 - id: ch10-005
   type: measurement
-  status: unverified
+  status: verified
   text: "The Moon orbits the Earth with a period of approximately 27.3 days, and its apparent motion across the background stars is roughly 13.2 degrees per day (or 0.55 degrees per hour)."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py; standard lunar elements"
+  note: "Sidereal month 27.32 days; mean motion 13.176 deg/day = 0.549 deg/hour. The chapter's 13.2 and 0.55 are correct to the precision given."
 
 - id: ch10-006
   type: quotation
-  status: unverified
+  status: verified
   text: "If the observer knew the exact time when the Moon should be at a particular position (as given by the tables, calibrated to Greenwich mean time), and observed the Moon's actual angular distance from a bright star or the Sun, the difference in observed versus tabulated positions would reveal the observer's longitude."
-  source: ""
-  note: ""
+  source: "Nevil Maskelyne, The British Mariner's Guide (London, 1763)"
+  note: "Correct description of the lunar distance principle."
 
 - id: ch10-007
   type: quotation
-  status: unverified
+  status: corrected
   text: "The angle between the Moon's observed position and its tabulated position depends not only on the observer's time error but also on numerous small corrections: parallax (because the observer is not at the Earth's center), refraction (atmospheric bending of light), and several perturbation terms in lunar theory."
   source: ""
-  note: ""
+  note: "The list of corrections is right, but the sentence before it names Jean-Baptiste Joseph Fourier among the mathematicians who worked on lunar theory. MUST FIX: Fourier was born in 1768, a year after the first Almanac, and never worked on lunar theory. The names that belong here are Newton, Euler, Clairaut, d'Alembert and above all Tobias Mayer, whose tables Maskelyne actually used."
 
 - id: ch10-008
   type: date
-  status: unverified
+  status: corrected
   text: "In 1765, Maskelyne was appointed Astronomer Royal, succeeding John Flamsteed's successor James Bradley."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, History of the Royal Observatory and the Astronomers Royal, https://www.rmg.co.uk/collections/research-guides/royal-observatory-history"
+  note: "MUST FIX, wrong twice in one clause. Bradley was not Flamsteed's successor: the order is Flamsteed (1675-1719), Halley (1720-1742), Bradley (1742-1762), Bliss (1762-1764), Maskelyne (1765-1811). And Maskelyne did not succeed Bradley: he succeeded Nathaniel Bliss, the fourth Astronomer Royal, who died in 1764. Correct reading: In 1765 Maskelyne was appointed Astronomer Royal, succeeding Nathaniel Bliss, who had held the post for two years after James Bradley's death."
 
 - id: ch10-009
   type: measurement
   status: unverified
   text: "To compute positions for every 3 hours throughout a year would require thousands of person-hours of labor."
   source: ""
-  note: ""
+  note: "No source found for a thousands-of-person-hours estimate. Croarken 2002 and 2003 give the actual establishment: a handful of computers each paid for a year's work, which is the figure to use if a number is wanted."
 
 - id: ch10-010
   type: superlative
-  status: unverified
+  status: corrected
   text: "The computations returned would be checked against other results, and the best versions incorporated into the Almanac."
-  source: ""
-  note: ""
+  source: "Mary Croarken, Providing longitude for all: the eighteenth century computers of the Nautical Almanac, Journal for Maritime Research 4(1) (2002); Croarken, Tabulating the Heavens, IEEE Annals 25(3) (2003), 48-61"
+  note: "MUST FIX. The mechanism the chapter describes, Maskelyne sorting all submissions and rejecting outliers and reassigning to a third computer, is not what happened. Each month's work was computed independently by TWO computers, and a third man, the COMPARER, reconciled the two sets and prepared copy for the press. Richard Dunthorne and then Malachy Hitchins (comparer from 1767 until his death in 1809) held that post. Maskelyne administered and paid; he did not personally adjudicate every number. The chapter's opening vignette repeats the same invented procedure."
 
 - id: ch10-011
   type: date
-  status: unverified
+  status: corrected
   text: "The Nautical Almanac, first published in 1767 for the year 1768, contained several types of tables:"
-  source: ""
-  note: ""
+  source: "The Nautical Almanac and Astronomical Ephemeris, for the Year 1767 (London: Commissioners of Longitude, 1766)"
+  note: "Already fixed in the chapter today. Ledger text is stale (it still reads first published in 1767 for the year 1768)."
 
 - id: ch10-012
   type: quotation
-  status: unverified
+  status: verified
   text: "The navigator recorded the ship's chronometer reading (or, if no chronometer was available, the best estimate of time based on the rate of a marine clock or the Sun's altitude)."
-  source: ""
-  note: ""
+  source: "Nevil Maskelyne, The British Mariner's Guide (London, 1763)"
+  note: "Accurate in outline. Note the mild anachronism: in 1767 almost no ship carried a chronometer, so the alternative branch was the normal case."
 
 - id: ch10-013
   type: measurement
-  status: unverified
+  status: corrected
   text: "Time was critical: an error of 1 minute in the assumed time would produce an error of about 15 minutes of arc in the Moon's position—far larger than the observational uncertainty."
-  source: ""
-  note: ""
+  source: "recomputed from the chapter's own lunar rate; scripts/verify/derivations.py"
+  note: "MUST FIX, off by a factor of about 27. The Moon moves 0.549 deg/hour, which is 0.55 ARCMINUTES per minute of time. An error of one minute in the assumed time therefore displaces the Moon by about half an arcminute, not fifteen. The fifteen-arcminutes figure is Earth's rotation rate (15 arcmin of LONGITUDE per minute of time) and has been attached to the wrong body. The correct statement of the sensitivity runs the other way: an error of one arcminute in the cleared lunar distance costs about two minutes of time, and so about half a degree of longitude."
 
 - id: ch10-014
   type: quotation
-  status: unverified
+  status: verified
   text: "The navigator used the Nautical Almanac tables to find the Moon's and star's positions as they would appear from the Earth's center, correcting for the observer's geographic location (parallax), atmospheric refraction, and the Moon's and star's motions."
-  source: ""
-  note: ""
+  source: "Nevil Maskelyne, The British Mariner's Guide (London, 1763)"
+  note: "Correct account of clearing the distance."
 
 - id: ch10-015
   type: quotation
-  status: unverified
+  status: verified
   text: "The result was the ``cleared distance''—the angle between Moon and star as measured from the Earth's center at the assumed time."
-  source: ""
-  note: ""
+  source: "Nevil Maskelyne, The British Mariner's Guide (London, 1763)"
+  note: "Correct definition of the cleared distance."
 
 - id: ch10-016
   type: measurement
   status: unverified
   text: "For an educated navigator with training in mathematics, this might take 30 minutes to an hour."
   source: ""
-  note: ""
+  note: "No source found for the 30-to-60-minute figure. Contemporary manuals imply a comparable order but none I could reach states it."
 
 - id: ch10-017
   type: measurement
-  status: unverified
+  status: verified
   text: "Specifically, the Moon moves at roughly 0.55 degrees per hour, so a 0.55-degree error in the Moon's position corresponds to a 1-hour error in time, which corresponds to 15 degrees of longitude (or about 900 nautical miles at the equator)."
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, one hour of longitude at the equator check"
+  note: "15 degrees x 60 nautical miles per degree = 900 nautical miles. Confirmed."
 
 - id: ch10-018
   type: measurement
   status: unverified
   text: "The entire procedure, from observation to final result, might occupy 2–3 hours of the navigator's time, assuming competence and access to the necessary tables."
   source: ""
-  note: ""
+  note: "No source found for the 2-to-3-hour total. Consistent with the chapter's own step estimates, which are themselves unsourced."
 
 - id: ch10-019
   type: date
-  status: unverified
+  status: corrected
   text: "Logarithms (recently popularized by John Napier's 1617 work and improved by subsequent mathematicians) allowed multiplication and division to be replaced by table lookups and addition/subtraction."
-  source: ""
-  note: ""
+  source: "MacTutor History of Mathematics, John Napier, https://mathshistory.st-andrews.ac.uk/Biographies/Napier/"
+  note: "MUST FIX. Napier published logarithms in Mirifici Logarithmorum Canonis Descriptio in 1614. The 1617 work is Rabdologiae, which describes the numbering rods (Napier's bones) and has nothing to do with logarithms; 1617 is also the year Napier died. Change 1617 to 1614."
 
 - id: ch10-020
   type: measurement
-  status: unverified
+  status: verified
   text: "If the Nautical Almanac provided lunar positions at 12-hour intervals, and a navigator needed the position at, say, 13 hours, the navigator could interpolate."
-  source: ""
-  note: ""
+  source: "The Nautical Almanac and Astronomical Ephemeris, for the Year 1767 (London: Commissioners of Longitude, 1766)"
+  note: "The Almanac tabulated the Moon's place for noon and midnight (12-hour intervals) and lunar distances every three hours, as the chapter's own contents list states."
 
 - id: ch10-021
   type: superlative
-  status: unverified
+  status: verified
   text: "The structure of difference tables made certain types of errors apparent: if the first differences were not approximately linear, it suggested an error in the underlying data or in the difference calculation."
-  source: ""
-  note: ""
+  source: "Croarken, Tabulating the Heavens, IEEE Annals 25(3) (2003)"
+  note: "Difference-table checking is well attested as the period's standard error control."
 
 - id: ch10-022
   type: quotation
-  status: unverified
+  status: corrected
   text: "To speak of Maskelyne's Nautical Almanac is to invite a misunderstanding; it would be more accurate to speak of the Nautical Almanac as an institution that Maskelyne founded and led.'')"
-  source: ""
-  note: ""
+  source: "Mary Croarken, Mary Edwards: Computing for a Living in 18th-Century England, IEEE Annals 25(4) (2003), 9-15; Croarken, Tabulating the Heavens, IEEE Annals 25(3) (2003), 48-61; Croarken, Providing longitude for all, Journal for Maritime Research 4(1) (2002)"
+  note: "MUST FIX, fabricated quotation from a non-existent book. The bibliography entry Croarken2007 is Computers for the People: Computing and Society in the Twentieth Century (Oxford University Press, 2007). No such book exists, no catalogue holds it, and a twentieth-century title could not carry the eighteenth-century chapters the note claims. It is cited five times in this chapter (chapters 3-4, chapter 5, pp. 145-150, the introduction, and once unpaged), and every one of those locators is invented, including this quotation. Croarken's real work on this subject is the three items in the source field. Every claim now resting on Croarken2007 must be re-sourced to those, or dropped."
 
 - id: ch10-023
   type: date
-  status: unverified
+  status: verified
   text: "The Nautical Almanac, first published in 1767, continues to be published today."
-  source: ""
-  note: ""
+  source: "HM Nautical Almanac Office, history of the Nautical Almanac; The Nautical Almanac for the Year 1767"
+  note: "The series has run continuously from the volume for 1767 to the present."
 
 - id: ch10-024
   type: date
-  status: unverified
+  status: verified
   text: "Maskelyne died in 1811, having led the Royal Observatory for 46 years."
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, History of the Royal Observatory and the Astronomers Royal"
+  note: "Maskelyne was Astronomer Royal from 1765 until his death on 9 February 1811, which is 46 years."
 
 - id: ch10-025
   type: date
-  status: unverified
+  status: verified
   text: "When the world adopted a standard time system at the 1884 International Meridian Conference, Greenwich was the reference."
-  source: ""
-  note: ""
+  source: "Proceedings of the International Meridian Conference (Washington DC, October 1884)"
+  note: "Correct."
 
 - id: ch10-026
   type: attribution
   status: unverified
   text: "Where Maskelyne built institutions, Halley illuminated principles."
   source: ""
-  note: ""
+  note: "Rhetorical bridge, no factual claim."
