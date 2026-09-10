@@ -305,7 +305,7 @@ def emission_absorption():
     for i, wl in enumerate(wavelengths):
         color = wavelength_to_rgb(wl)
         ax.axvline(wl, color=color, linewidth=1.2)
-    ax.set_xlim(400, 700)
+    ax.set_xlim(393, 700)
     ax.set_ylabel('Continuous', fontsize=9)
     ax.text(350, 0.5, '(hot solid)', fontsize=8, ha='right', va='center',
             transform=ax.get_xaxis_transform())
@@ -318,7 +318,7 @@ def emission_absorption():
     for line in emission_lines:
         color = wavelength_to_rgb(line)
         ax.axvline(line, color=color, linewidth=3)
-    ax.set_xlim(400, 700)
+    ax.set_xlim(393, 700)
     ax.set_ylabel('Emission', fontsize=9)
     ax.text(350, 0.5, '(hot gas)', fontsize=8, ha='right', va='center',
             transform=ax.get_xaxis_transform())
@@ -332,7 +332,7 @@ def emission_absorption():
     # Dark lines at same positions
     for line in emission_lines:
         ax.axvline(line, color='black', linewidth=3)
-    ax.set_xlim(400, 700)
+    ax.set_xlim(393, 700)
     ax.set_ylabel('Absorption', fontsize=9)
     ax.text(350, 0.5, '(cool gas)', fontsize=8, ha='right', va='center',
             transform=ax.get_xaxis_transform())

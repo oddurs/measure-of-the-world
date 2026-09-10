@@ -72,7 +72,7 @@ def temperature_compensation():
     """Diagram showing how bimetallic compensation works.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.5, 3.7))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.17, 3.52))
 
     # Left: Bimetallic strip behavior
     ax1.set_xlim(-0.5, 2.5)
@@ -227,7 +227,7 @@ def error_sources():
     """Pie chart showing sources of residual error in H4.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(4.2, 4.2))
+    fig, ax = plt.subplots(figsize=(3.57, 3.57))
 
     sources = ['Thermal lag', 'Escapement\nfriction', 'Bearing\nwear', 'Elasticity\ncreep']
     contributions = [35, 30, 20, 15]  # Approximate percentages

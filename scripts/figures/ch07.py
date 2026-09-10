@@ -168,8 +168,9 @@ def competing_methods():
     ax.grid(True, axis='y', alpha=0.3)
 
     # Annotation
-    ax.text(0.5, -0.12, 'Each method had distinct trade-offs; none was obviously superior',
-            ha='center', fontsize=8, style='italic', transform=ax.transAxes)
+    ax.text(0.5, -0.30, 'Each method had distinct trade-offs; none was obviously superior',
+            ha='center', va='top', fontsize=8, style='italic',
+            transform=ax.transAxes)
 
     plt.tight_layout()
 

@@ -4,14 +4,14 @@
 from common import setup_style, save_figure
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
-from matplotlib.patches import FancyBboxPatch, Circle, Rectangle, Wedge, Polygon, Arrow
+from matplotlib.patches import FancyBboxPatch, Circle, Rectangle, Wedge, Polygon, Arrow, RegularPolygon
 import numpy as np
 
 
 def precision_evolution():
     """Evolution of positional precision from ancient to modern times."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.8, 3.8))
+    fig, ax = plt.subplots(figsize=(6.12, 3.42))
 
     # Data: (year, precision in arcseconds, method, color)
     data = [
@@ -32,12 +32,21 @@ def precision_evolution():
     # Log scale for precision
     ax.semilogy(years, precision, 'k-', linewidth=2, marker='o', markersize=10)
 
+    # The first three points sit close together on both axes, so their captions
+    # alternate side and are pushed off centre rather than stacked.
+    placement = {
+        1600: ('center', 'bottom', 0, 1.6),
+        1675: ('left', 'bottom', 14, 1.3),
+        1750: ('left', 'top', 14, 0.75),
+        1850: ('center', 'top', 0, 0.42),
+    }
     for year, prec, label, color in data:
         ax.semilogy(year, prec, 'o', color=color, markersize=12, zorder=5)
-        va = 'bottom' if prec > 1 else 'top'
-        offset = 1.5 if prec > 1 else 0.7
-        ax.text(year, prec * offset if va == 'bottom' else prec / offset,
-                f'{label}\n({prec}\")', fontsize=7, ha='center', va=va, color=color)
+        ha, va, dx, factor = placement.get(
+            year, ('center', 'bottom' if prec > 1 else 'top',
+                   0, 1.5 if prec > 1 else 0.7))
+        ax.text(year + dx, prec * factor, f'{label}\n({prec}\")', fontsize=7,
+                ha=ha, va=va, color=color)
 
     # Reference lines
     ax.axhline(1, color='gray', linestyle='--', alpha=0.5)
@@ -50,7 +59,7 @@ def precision_evolution():
     ax.set_ylabel('Positional Precision (arcseconds)', fontsize=10)
     ax.set_title('Four Centuries of Improving Precision', fontsize=11)
     ax.set_xlim(1550, 2050)
-    ax.set_ylim(1e-6, 200)
+    ax.set_ylim(1e-6, 900)
     ax.grid(True, alpha=0.3, which='both')
 
     plt.tight_layout()
@@ -60,24 +69,28 @@ def precision_evolution():
 def patronage_models():
     """Different models of scientific patronage through history."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7.2, 4.5))
+    fig, ax = plt.subplots(figsize=(6.48, 4.05))
 
     # Timeline base
     ax.axhline(2, color='black', linewidth=2, xmin=0.05, xmax=0.95)
 
     # Eras
+    # The shortest era carries the longest name, so the captions sit above the
+    # bands, with the last one raised clear of its neighbour.
     eras = [
-        (1675, 1850, 'Royal Patronage', '#9467bd', 3.5),
-        (1850, 1950, 'Imperial Science', '#1f77b4', 3.5),
-        (1950, 2020, 'Government Funding', '#2ca02c', 3.5),
+        (1675, 1850, 'Royal Patronage', '#9467bd', 3.25),
+        (1850, 1950, 'Imperial Science', '#1f77b4', 3.25),
+        (1950, 2020, 'Government Funding', '#2ca02c', 3.85),
     ]
 
     for start, end, label, color, y in eras:
         width = end - start
         ax.add_patch(Rectangle((start, 2.1), width, 1,
                                 facecolor=color, edgecolor='black', alpha=0.7))
-        ax.text((start + end) / 2, 2.6, label, fontsize=8, ha='center',
-                va='center', color='white', fontweight='bold')
+        ax.plot([(start + end) / 2, (start + end) / 2], [3.1, y - 0.04],
+                '-', color=color, linewidth=0.8)
+        ax.text((start + end) / 2, y, label, fontsize=8, ha='center',
+                va='bottom', color=color, fontweight='bold')
 
     # Key events
     events = [
@@ -88,23 +101,29 @@ def patronage_models():
         (1998, 'RGO\ncloses', '#d62728'),
     ]
 
+    row_edges = [1650.0, 1650.0]
     for year, label, color in events:
+        row = 0 if year - 22 >= row_edges[0] else 1
+        row_edges[row] = year + 22
+        text_y = 1.0 - 1.25 * row
         ax.plot(year, 2, 'o', color=color, markersize=10, zorder=5)
-        ax.plot([year, year], [2, 1.3], '-', color=color, linewidth=1)
-        ax.text(year, 1.0, label, fontsize=7, ha='center', va='top', color=color)
-        ax.text(year, 0.4, str(year), fontsize=7, ha='center', color='gray')
+        ax.plot([year, year], [2, text_y + 0.06], '-', color=color, linewidth=1)
+        ax.text(year, text_y, label, fontsize=7, ha='center', va='top',
+                color=color)
+        ax.text(year, text_y - 0.70, str(year), fontsize=7, ha='center',
+                va='top', color='gray')
 
     # Lessons box
     lessons = ('Key Lessons:\n'
                '• Long-term vision requires stable funding\n'
                '• Navigation needs drove practical astronomy\n'
                '• International cooperation superseded competition')
-    ax.text(1850, 4.5, lessons, fontsize=8, ha='center', va='top',
+    ax.text(1850, 5.7, lessons, fontsize=8, ha='center', va='top',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='#f0f0f0',
                       edgecolor='gray'))
 
     ax.set_xlim(1650, 2030)
-    ax.set_ylim(0, 5)
+    ax.set_ylim(-1.5, 5.9)
     ax.set_xlabel('Year', fontsize=10)
     ax.set_yticks([])
 
@@ -115,7 +134,7 @@ def patronage_models():
 def standards_infrastructure():
     """The invisible infrastructure of global standards."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7.5, 5.6))
+    fig, ax = plt.subplots(figsize=(7.12, 5.32))
 
     # Layers of standards (pyramid)
     layers = [
@@ -126,15 +145,17 @@ def standards_infrastructure():
         ('Applications (Aviation, Maritime, Finance)', '#66b3ff', 4),
     ]
 
-    pyramid_base = 6
+    # The narrowest layer carries the longest caption, so the pyramid is wide
+    # and shallow: the top course still has to hold 42 characters.
+    pyramid_base = 9
     layer_height = 0.8
 
     for label, color, level in layers:
         # Trapezoid shape
-        shrink = level * 0.4
+        shrink = level * 0.32
         bottom_left = -pyramid_base/2 + shrink
         bottom_right = pyramid_base/2 - shrink
-        top_shrink = (level + 1) * 0.4
+        top_shrink = (level + 1) * 0.32
         top_left = -pyramid_base/2 + top_shrink
         top_right = pyramid_base/2 - top_shrink
 
@@ -150,19 +171,20 @@ def standards_infrastructure():
                 va='center', color='white', fontweight='bold')
 
     # Greenwich connection
-    ax.annotate('Greenwich\ncontributions', xy=(0, 2), xytext=(-4, 3),
-                fontsize=8, ha='center',
+    ax.annotate('Greenwich\ncontributions', xy=(-3.5, 2.2), xytext=(-5.1, 2.9),
+                fontsize=8, ha='left', va='center',
                 arrowprops=dict(arrowstyle='->', color='red', lw=2),
                 color='red')
 
     # Arrows showing dependencies
-    ax.annotate('', xy=(3.5, 0.4), xytext=(3.5, 3.6),
+    ax.annotate('', xy=(4.9, 0.4), xytext=(4.9, 3.6),
                 arrowprops=dict(arrowstyle='<-', color='black', lw=2))
-    ax.text(4, 2, 'Depends\non', fontsize=8, ha='left', va='center')
+    ax.text(5.1, 2, 'Depends\non', fontsize=8, ha='left', va='center')
 
-    ax.set_xlim(-5, 5)
-    ax.set_ylim(-0.5, 5)
-    ax.set_aspect('equal')
+    ax.set_xlim(-5.2, 6.4)
+    ax.set_ylim(-0.5, 4.3)
+    # No equal aspect: the courses are a schematic stack, not a measured shape,
+    # and squaring them shrinks every caption below the print floor.
     ax.axis('off')
 
     save_figure(fig, 'standards-infrastructure', chapter=25)
@@ -171,7 +193,7 @@ def standards_infrastructure():
 def international_cooperation():
     """Timeline of international scientific cooperation."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.4, 2.8))
+    fig, ax = plt.subplots(figsize=(6.08, 2.66))
 
     # Timeline
     ax.axhline(1.5, color='black', linewidth=2, xmin=0.03, xmax=0.97)
@@ -200,11 +222,11 @@ def international_cooperation():
     # Trend arrow
     ax.annotate('', xy=(2020, 1.5), xytext=(1870, 1.5),
                 arrowprops=dict(arrowstyle='->', color='green', lw=3, alpha=0.3))
-    ax.text(1950, 0.2, 'Increasing global coordination', fontsize=9,
-            ha='center', color='green', alpha=0.7)
+    ax.text(1950, 0.02, 'Increasing global coordination', fontsize=9,
+            ha='center', va='top', color='green', alpha=0.7)
 
     ax.set_xlim(1850, 2030)
-    ax.set_ylim(0, 3)
+    ax.set_ylim(-0.5, 3)
     ax.set_xlabel('Year', fontsize=10)
     ax.set_yticks([])
     ax.set_title('From National to International Standards', fontsize=11)
@@ -216,10 +238,12 @@ def international_cooperation():
 def greenwich_legacy():
     """Summary diagram of Greenwich's enduring legacy."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 6))
+    # Taller than wide-ish: every node caption is set inside its circle, so the
+    # circles have to be big enough to hold two lines of eight point type.
+    fig, ax = plt.subplots(figsize=(7.31, 6.37))
 
     # Central circle - Greenwich
-    ax.add_patch(Circle((0, 0), 1, facecolor='#003366', edgecolor='black',
+    ax.add_patch(Circle((0, 0), 1.25, facecolor='#003366', edgecolor='black',
                         linewidth=2))
     ax.text(0, 0, 'Greenwich\nObservatory\n(1675-1998)', fontsize=9, ha='center',
             va='center', color='white', fontweight='bold')
@@ -239,18 +263,18 @@ def greenwich_legacy():
     for angle, label in achievements:
         rad = np.radians(angle)
         # Outer circle for achievement
-        x = 2.5 * np.cos(rad)
-        y = 2.5 * np.sin(rad)
-        ax.add_patch(Circle((x, y), 0.6, facecolor='#ff7f0e', edgecolor='black',
+        x = 3.25 * np.cos(rad)
+        y = 3.25 * np.sin(rad)
+        ax.add_patch(Circle((x, y), 1.16, facecolor='#ff7f0e', edgecolor='black',
                             alpha=0.8))
-        ax.text(x, y, label, fontsize=6, ha='center', va='center',
+        ax.text(x, y, label, fontsize=7, ha='center', va='center',
                 fontweight='bold')
 
         # Connection line
-        x1 = 1.1 * np.cos(rad)
-        y1 = 1.1 * np.sin(rad)
-        x2 = 1.9 * np.cos(rad)
-        y2 = 1.9 * np.sin(rad)
+        x1 = 1.32 * np.cos(rad)
+        y1 = 1.32 * np.sin(rad)
+        x2 = 2.05 * np.cos(rad)
+        y2 = 2.05 * np.sin(rad)
         ax.plot([x1, x2], [y1, y2], 'k-', linewidth=1.5)
 
     # Modern continuations (outer ring)
@@ -263,26 +287,20 @@ def greenwich_legacy():
 
     for angle, label, color in modern:
         rad = np.radians(angle)
-        x = 3.8 * np.cos(rad)
-        y = 3.8 * np.sin(rad)
-        ax.add_patch(Circle((x, y), 0.45, facecolor=color, edgecolor='black',
-                            alpha=0.7))
-        ax.text(x, y, label, fontsize=6, ha='center', va='center',
-                color='white', fontweight='bold')
+        x = 5.20 * np.cos(rad)
+        y = 5.20 * np.sin(rad)
+        # A hexagon, not a circle: the historical/modern distinction has to
+        # survive a greyscale printing, and shape does where hue does not.
+        ax.add_patch(RegularPolygon((x, y), numVertices=6, radius=0.86,
+                                    orientation=np.radians(30),
+                                    facecolor=color, edgecolor='black',
+                                    linewidth=1.2, alpha=0.35))
+        ax.text(x, y, label, fontsize=7, ha='center', va='center',
+                color='black', fontweight='bold')
 
-        # Dashed line from achievement to modern
-        x1 = 3.1 * np.cos(rad)
-        y1 = 3.1 * np.sin(rad)
-        x2 = 3.35 * np.cos(rad)
-        y2 = 3.35 * np.sin(rad)
-        ax.plot([x1, x2], [y1, y2], 'g--', linewidth=1)
 
-    # Legend
-    ax.text(0, -4.2, 'Orange: Historical achievements    Green: Modern continuations',
-            fontsize=8, ha='center')
-
-    ax.set_xlim(-4.8, 4.8)
-    ax.set_ylim(-4.6, 4.6)
+    ax.set_xlim(-6.2, 6.2)
+    ax.set_ylim(-4.7, 6.2)
     ax.set_aspect('equal')
     ax.axis('off')
 

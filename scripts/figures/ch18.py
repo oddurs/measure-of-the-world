@@ -14,7 +14,7 @@ def sidereal_vs_solar():
     Shows why a sidereal day is ~4 minutes shorter than a solar day.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(7.8, 4.9))
+    fig, ax = plt.subplots(figsize=(7.02, 4.41))
 
     # Sun at center
     sun = Circle((0, 0), 0.4, facecolor='#FFD700', edgecolor='black', linewidth=1.5)
@@ -130,7 +130,7 @@ def ut_variants():
 def atomic_second():
     """Diagram of cesium atom hyperfine transition defining the SI second."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.3, 3.6))
+    fig, ax = plt.subplots(figsize=(5.98, 3.42))
 
     # Energy levels
     ax.plot([0.5, 2.5], [0, 0], 'b-', linewidth=3)
@@ -150,7 +150,8 @@ def atomic_second():
     wave_x = np.linspace(3.5, 5, 50)
     wave_y = 1 + 0.15 * np.sin(20 * (wave_x - 3.5))
     ax.plot(wave_x, wave_y, 'r-', linewidth=1.5)
-    ax.text(4.25, 0.5, 'Microwave\nradiation', fontsize=8, ha='center')
+    ax.text(4.25, 0.62, 'Microwave\nradiation', fontsize=8, ha='center',
+            va='top')
 
     # SI definition box
     ax.text(3, -0.8, 'SI Definition (1967):\nThe second is 9,192,631,770 periods\n'
@@ -169,7 +170,7 @@ def atomic_second():
 def leap_second():
     """Diagram showing how leap seconds work."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7.9, 3.9))
+    fig, ax = plt.subplots(figsize=(7.50, 3.70))
 
     # Timeline
     ax.axhline(2, color='black', linewidth=2, xmin=0.05, xmax=0.95)
@@ -225,7 +226,7 @@ def leap_second():
 def timekeeping_stack():
     """The layers of time abstraction from Sun to atomic."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(5.5, 6.5))
+    fig, ax = plt.subplots(figsize=(5.22, 6.17))
 
     layers = [
         ('Apparent Solar Time', 'Sun position in sky', '#ffcc00', 6),

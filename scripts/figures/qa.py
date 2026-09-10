@@ -179,7 +179,7 @@ def _container_groups(fig) -> list[set[int]]:
 
 
 def _offscreen_tick_labels(fig) -> set[int]:
-    """Tick labels for locations outside the view interval are never drawn.
+    """Tick and axis labels that are never drawn, at stale positions.
 
     ``findobj`` still returns them, at stale positions, so they have to be
     excluded or they masquerade as collisions.
@@ -191,6 +191,18 @@ def _offscreen_tick_labels(fig) -> set[int]:
                 low, high = sorted(axis.get_view_interval())
                 ticks = list(axis.get_major_ticks()) + list(axis.get_minor_ticks())
             except Exception:
+                continue
+            if not axis.get_visible() or not getattr(axes, 'axison', True):
+                # ax.axis('off') clears Axes.axison rather than touching the
+                # Axis artists, so their tick labels keep visible=True and are
+                # never drawn.
+                for tick in ticks:
+                    for label in (tick.label1, tick.label2):
+                        if label is not None:
+                            excluded.add(id(label))
+                for extra in (axis.label, axis.offsetText):
+                    if extra is not None:
+                        excluded.add(id(extra))
                 continue
             span = high - low
             eps = span * 1e-6 if span else 0.0

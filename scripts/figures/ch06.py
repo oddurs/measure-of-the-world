@@ -12,7 +12,7 @@ def pendulum_physics():
     """Diagram showing pendulum geometry, forces, and the restoring torque.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.7, 3.8))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.37, 3.61))
 
     # Left panel: Pendulum geometry and forces
     L = 1.0  # pendulum length (normalized)
@@ -102,7 +102,7 @@ def temperature_error():
     """Show how thermal expansion accumulates into clock error over a day.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.6, 3.3))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.27, 3.13))
 
     # Left: Temperature change vs daily error for brass pendulum
     delta_T = np.linspace(0, 20, 100)  # Temperature change in Celsius
@@ -158,7 +158,7 @@ def gravity_latitude():
     """Show how gravitational acceleration varies with latitude.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.3, 3.1))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(5.67, 2.79))
 
     # Left: g vs latitude
     latitude = np.linspace(0, 90, 100)
@@ -230,7 +230,7 @@ def ship_motion():
     """Show how ship acceleration affects effective gravity and pendulum behavior.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.4, 3.7))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.08, 3.52))
 
     # Left: Vector diagram of effective gravity
     ax1.set_xlim(-1.5, 1.5)
@@ -289,7 +289,6 @@ def ship_motion():
                     linewidth=0.5, height=0.6)
 
     ax2.set_xlabel('Pendulum stability (arbitrary units)')
-    ax2.set_title('Why Pendulums Fail at Sea', fontsize=10)
     ax2.set_xlim(0, 110)
     ax2.grid(True, axis='x', alpha=0.3)
 

@@ -14,7 +14,7 @@ def candidate_meridians():
     Shows Greenwich, Paris, Washington, Ferro, and Atlantic meridians.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.4, 4))
+    fig, ax = plt.subplots(figsize=(6.08, 3.80))
 
     # Simple world outline (very simplified)
     # Europe/Africa
@@ -59,7 +59,7 @@ def candidate_meridians():
         ax.text(lon + 5, lat + dy, name, fontsize=7, va=va, zorder=6)
 
     # Ocean labels
-    ax.text(-45, 25, 'Atlantic\nOcean', fontsize=9, ha='center', va='top',
+    ax.text(-35, 58, 'Atlantic\nOcean', fontsize=9, ha='center', va='top',
             color='#4169E1', alpha=0.7)
     ax.text(80, 30, 'Indian\nOcean', fontsize=9, ha='center',
             color='#4169E1', alpha=0.7)
@@ -118,7 +118,7 @@ def conference_vote():
 def time_zones():
     """Diagram showing the 15-degree time zone concept."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.9, 3.4))
+    fig, ax = plt.subplots(figsize=(6.20, 3.05))
 
     # Draw simplified Earth as rectangle (Mercator-like)
     # Time zone bands
@@ -139,13 +139,15 @@ def time_zones():
             # Low inside the band: the upper half carries the Greenwich
             # callout and the three city labels.
             ax.text((lon_start + lon_end) / 2, -15,
-                    f'UTC{sign}{offset}', fontsize=6, ha='center', va='top',
+                    f'UTC{sign}{offset}', fontsize=8, ha='center', va='top',
                     rotation=90)
 
     # Greenwich meridian (bold)
     ax.axvline(0, color='black', linewidth=3)
-    ax.text(0, 63, 'Greenwich\n(UTC+0)', fontsize=9, ha='center', va='bottom',
-            fontweight='bold')
+    ax.text(0, 64, 'Greenwich\n(UTC+0)', fontsize=9, ha='center', va='bottom',
+            fontweight='bold', zorder=6,
+            bbox=dict(boxstyle='square,pad=0.15', facecolor='white',
+                      edgecolor='none', alpha=0.85))
 
     # Example cities
     cities = [
@@ -156,15 +158,18 @@ def time_zones():
 
     for lon, lat, name in cities:
         ax.plot(lon, lat, 'ko', markersize=6)
-        ax.text(lon, lat - 15, name, fontsize=7, ha='center')
+        ax.text(lon, lat - 8, name, fontsize=7, ha='center', va='top',
+                zorder=6,
+                bbox=dict(boxstyle='square,pad=0.15', facecolor='white',
+                      edgecolor='none', alpha=0.85))
 
     # 15 degree annotation
     ax.annotate('', xy=(15, -70), xytext=(0, -70),
                 arrowprops=dict(arrowstyle='<->', color='black', lw=2))
-    ax.text(7.5, -78, '15° = 1 hour', fontsize=9, ha='center')
+    ax.text(24, -74, '15° = 1 hour', fontsize=9, ha='left', va='top')
 
     ax.set_xlim(-180, 180)
-    ax.set_ylim(-85, 85)
+    ax.set_ylim(-88, 112)
     ax.set_xlabel('Longitude (degrees)', fontsize=10)
     ax.set_xticks([-180, -90, 0, 90, 180])
 
@@ -175,7 +180,7 @@ def time_zones():
 def adoption_timeline():
     """Timeline showing adoption of Greenwich meridian by various nations."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.5, 3.2))
+    fig, ax = plt.subplots(figsize=(6.17, 3.04))
 
     events = [
         (1850, 'UK Railways begin\nusing Greenwich', '#1f77b4'),

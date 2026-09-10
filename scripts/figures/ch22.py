@@ -11,7 +11,7 @@ import numpy as np
 def transit_instrument():
     """Diagram of a transit instrument showing key components."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 6))
+    fig, ax = plt.subplots(figsize=(7.20, 5.40))
 
     # Piers (stone pillars)
     pier_color = '#808080'
@@ -226,7 +226,9 @@ def pivot_bearing():
 def level_and_collimator():
     """Diagram showing striding level and collimator for alignment."""
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.1, 2.8))
+    # Stacked, not side by side: two panels across a 4.3 inch slot leave each
+    # of them a 1.2 inch strip on the page.
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(5.60, 5.30))
 
     # Left: Striding level
     ax1.set_title('Striding Level', fontsize=11, fontweight='bold')
@@ -269,12 +271,13 @@ def level_and_collimator():
 
     # Objective lens
     ax2.add_patch(Rectangle((1, -0.3), 0.15, 0.6, facecolor='#87CEEB', edgecolor='black'))
-    ax2.text(1.4, 0, 'Objective', fontsize=7, ha='left', va='center')
+    ax2.text(1.08, -0.45, 'Objective', fontsize=7, ha='center', va='top')
 
     # Crosshair at focal point
     ax2.plot([-2, -2], [-0.15, 0.15], 'r-', linewidth=1)
     ax2.plot([-2.1, -1.9], [0, 0], 'r-', linewidth=1)
-    ax2.text(-2, -0.5, 'Illuminated\nCrosshair', fontsize=7, ha='center')
+    ax2.text(-2.6, -0.62, 'Illuminated\nCrosshair', fontsize=7, ha='left',
+             va='top')
 
     # Parallel rays emerging
     for y in [-0.1, 0, 0.1]:
@@ -286,10 +289,10 @@ def level_and_collimator():
 
     # Mounting suggestion
     ax2.add_patch(Rectangle((-2.3, -0.5), 0.3, 1, facecolor='gray', edgecolor='black'))
-    ax2.text(-2.3, -0.8, 'Fixed\nMount', fontsize=6, ha='center')
+    ax2.text(-2.85, 0.72, 'Fixed\nMount', fontsize=6, ha='left', va='bottom')
 
     ax2.set_xlim(-3, 4)
-    ax2.set_ylim(-1.5, 1.5)
+    ax2.set_ylim(-1.7, 1.5)
     ax2.set_aspect('equal')
     ax2.axis('off')
 
@@ -300,7 +303,7 @@ def level_and_collimator():
 def airy_transit_circle():
     """The Airy Transit Circle that defined the Prime Meridian."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7, 6))
+    fig, ax = plt.subplots(figsize=(6.65, 5.70))
 
     # Room outline
     ax.add_patch(Rectangle((-3.5, 0), 7, 5, facecolor='#f5f5dc',
@@ -365,11 +368,13 @@ def airy_transit_circle():
 def meridian_observation():
     """Sequence showing how a transit observation is made."""
     setup_style()
-    fig, axes = plt.subplots(1, 4, figsize=(7.2, 2.1))
+    # Two by two rather than a four-wide strip: read row-major, the sequence
+    # still runs in order and each frame is twice the size on the page.
+    fig, axes = plt.subplots(2, 2, figsize=(5.20, 3.40))
 
     titles = ['1. Star Approaching', '2. First Wire', '3. Central Wire', '4. Last Wire']
 
-    for i, (ax, title) in enumerate(zip(axes, titles)):
+    for i, (ax, title) in enumerate(zip(axes.flat, titles)):
         # Eyepiece view (dark circle)
         ax.add_patch(Circle((0, 0), 1, facecolor='black', edgecolor='gray'))
 

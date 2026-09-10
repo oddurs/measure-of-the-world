@@ -15,7 +15,7 @@ def celestial_coordinates():
     and declination (Dec) measured north/south from it.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(5.5, 5.5))
+    fig, ax = plt.subplots(figsize=(5.22, 5.22))
 
     # Draw celestial sphere as a circle
     theta = np.linspace(0, 2 * np.pi, 100)
@@ -204,7 +204,7 @@ def instrument_precision():
     Larger instruments allow finer scale divisions while remaining readable.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(5.6, 3.8))
+    fig, ax = plt.subplots(figsize=(5.32, 3.61))
 
     # Instrument radii (feet)
     radii = np.array([1, 2, 3, 4, 5, 6, 7, 8])

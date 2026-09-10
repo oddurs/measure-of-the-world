@@ -11,7 +11,7 @@ import numpy as np
 def meridian_offset_detail():
     """Detailed diagram of the 102m offset between Airy and WGS84 meridians."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(6.80, 4.25))
 
     # Ground representation
     ax.fill([-50, 150, 150, -50], [-0.5, -0.5, 0, 0], color='#90EE90', alpha=0.5)
@@ -30,9 +30,9 @@ def meridian_offset_detail():
             fontweight='bold')
 
     # WGS84 meridian
-    ax.plot([102, 102], [-6, 26], color='#1f77b4', linewidth=4,
+    ax.plot([102, 102], [-26, 26], color='#1f77b4', linewidth=4,
             linestyle='--', zorder=1)
-    ax.text(102, -2, "WGS84 Meridian\n(GPS Zero)\n0° 0' 0\" (Geodetic)",
+    ax.text(102, -28, "WGS84 Meridian\n(GPS Zero)\n0° 0' 0\" (Geodetic)",
             fontsize=8, ha='center', va='top', color='#1f77b4',
             fontweight='bold')
 
@@ -41,7 +41,7 @@ def meridian_offset_detail():
     # GPS readout box.
     ax.annotate('', xy=(102, 22), xytext=(0, 22),
                 arrowprops=dict(arrowstyle='<->', color='red', lw=2))
-    ax.text(51, 21.2, '102.478 meters', fontsize=10, ha='center', va='top',
+    ax.text(51, 18.5, '102.478 meters', fontsize=10, ha='center', va='top',
             color='red', fontweight='bold')
 
     # Tourists at brass line
@@ -50,17 +50,17 @@ def meridian_offset_detail():
         ax.plot([x, x], [2, 5], 'k-', linewidth=1)  # body
     ax.text(0, 8, 'Tourists straddle\n"wrong" line', fontsize=7, ha='center',
             color='#ff7f0e', zorder=4,
-            bbox=dict(boxstyle='square,pad=0.15', facecolor='#f5f5dc',
-                      edgecolor='none', alpha=0.9))
+            bbox=dict(boxstyle='square,pad=0.3', facecolor='#f5f5dc',
+                      edgecolor='none', alpha=0.95))
 
     # GPS reading indication
     # Three stacked lines need about twenty data units of height here.
-    ax.add_patch(Rectangle((82, 1), 38, 20, facecolor='white',
+    ax.add_patch(Rectangle((74, -22), 58, 31, facecolor='white',
                             edgecolor='black', linewidth=1))
-    ax.text(101, 19, 'GPS Reading:', fontsize=7, ha='center', va='top')
-    ax.text(101, 10.7, "0° 0' 5.31\" W", fontsize=9, ha='center', va='center',
+    ax.text(103, 7, 'GPS Reading:', fontsize=7, ha='center', va='top')
+    ax.text(103, -6.0, "0° 0' 5.31\" W", fontsize=9, ha='center', va='center',
             fontweight='bold', color='red')
-    ax.text(101, 3, '(at brass line)', fontsize=6, ha='center', va='bottom',
+    ax.text(103, -19, '(at brass line)', fontsize=6, ha='center', va='bottom',
             color='gray')
 
     # Explanation
@@ -68,12 +68,12 @@ def meridian_offset_detail():
                    '1. Local gravity anomalies (deflection of vertical)\n'
                    '2. Different reference frames (geoid vs ellipsoid)')
     # Below the plan: to the right of it the box ran past the axes limit.
-    ax.text(-55, -23, explanation, fontsize=7, ha='left', va='top',
+    ax.text(-60, -52, explanation, fontsize=7, ha='left', va='top',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='#f0f0f0',
                       edgecolor='gray'))
 
     ax.set_xlim(-60, 170)
-    ax.set_ylim(-42, 34)
+    ax.set_ylim(-74, 34)
     ax.set_aspect('equal')
     ax.axis('off')
 
@@ -161,10 +161,9 @@ def deflection_of_vertical():
 def time_ball():
     """The Greenwich Time Ball mechanism and purpose."""
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.1, 3.6))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.39, 3.24))
 
     # Left: Time ball sequence
-    ax1.set_title('Time Ball Signal Sequence', fontsize=11, fontweight='bold')
 
     times = ['12:55', '12:58', '13:00']
     positions = [0.3, 0.8, 0.2]  # Height on mast
@@ -185,24 +184,26 @@ def time_ball():
         ax1.add_patch(Circle((x, ball_y), 0.2, facecolor=color, edgecolor='black'))
 
         # Time label
-        ax1.text(x, -0.3, time, fontsize=10, ha='center', fontweight='bold')
+        ax1.text(x, -0.35, time, fontsize=10, ha='center', va='top',
+                 fontweight='bold')
 
         # Description
-        ax1.text(x, -0.8, label, fontsize=7, ha='center')
+        # Staggered: three captions of this length will not sit in one row
+        # across a panel this narrow.
+        ax1.text(x, -1.05 if i % 2 == 0 else -1.95, label, fontsize=9,
+                 ha='center', va='top')
 
         # Drop arrow for last frame
         if i == 2:
             ax1.annotate('', xy=(x, 0.5), xytext=(x, 1.5),
                         arrowprops=dict(arrowstyle='->', color='green', lw=2))
 
-    ax1.set_xlim(-1, 5)
-    ax1.set_ylim(-1.5, 2.8)
+    ax1.set_xlim(-1.2, 5.2)
+    ax1.set_ylim(-3.1, 2.8)
     ax1.set_aspect('equal')
     ax1.axis('off')
 
     # Right: Ships waiting for signal
-    ax2.set_title('Ships in Thames Synchronized Chronometers', fontsize=11,
-                  fontweight='bold')
 
     # Water
     ax2.fill([-3, 3, 3, -3], [-0.5, -0.5, 0, 0], color='#4169E1', alpha=0.5)
@@ -229,11 +230,12 @@ def time_ball():
     for sx, sy in ship_positions:
         ax2.plot([sx, 0], [sy+0.5, 2.3], 'r--', linewidth=1, alpha=0.5)
 
-    ax2.text(0, 2.8, 'Time Ball visible\nfrom river', fontsize=7, ha='center')
+    ax2.text(0.35, 2.5, 'Time Ball visible\nfrom river', fontsize=9, ha='left',
+             va='center')
 
     # Chronometer on ship
     ax2.add_patch(Circle((-2, 0.6), 0.15, facecolor='#FFD700', edgecolor='black'))
-    ax2.text(-2, 0.9, 'Chronometer\nset to 13:00', fontsize=6, ha='center')
+    ax2.text(-2, 0.9, 'Chronometer\nset to 13:00', fontsize=9, ha='center')
 
     ax2.set_xlim(-3, 3)
     ax2.set_ylim(-0.8, 3.2)
@@ -247,7 +249,7 @@ def time_ball():
 def visitor_experience():
     """The tourist experience at the Prime Meridian."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 5))
+    fig, ax = plt.subplots(figsize=(7.60, 4.75))
 
     # Courtyard layout (top view)
     ax.add_patch(Rectangle((-3, -2), 6, 4, facecolor='#d4d4d4',
@@ -276,12 +278,12 @@ def visitor_experience():
     # Buildings around
     ax.add_patch(Rectangle((-3.5, -2.5), 0.5, 5, facecolor='#f5f5dc',
                            edgecolor='black'))
-    ax.text(-3.25, 0, 'F\nl\na\nm\ns\nt\ne\ne\nd', fontsize=5, ha='center',
+    ax.text(-3.25, 0, 'F\nl\na\nm\ns\nt\ne\ne\nd', fontsize=6, ha='center',
             va='center')
 
     ax.add_patch(Rectangle((3, -2.5), 0.5, 5, facecolor='#f5f5dc',
                            edgecolor='black'))
-    ax.text(3.25, 0, 'M\ne\nr\ni\nd\ni\na\nn\n\nB\nl\nd\ng', fontsize=5,
+    ax.text(3.25, 0, 'M\ne\nr\ni\nd\ni\na\nn\n\nB\nl\nd\ng', fontsize=6,
             ha='center', va='center')
 
     # Laser beam (at night)

@@ -75,7 +75,7 @@ def skyglow_physics():
 def limiting_magnitude():
     """Chart showing limiting magnitude vs sky brightness."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.5, 4.6))
+    fig, ax = plt.subplots(figsize=(6.17, 4.37))
 
     # Sky brightness (mag/arcsec^2)
     sky_brightness = np.array([22, 21, 20, 19, 18, 17, 16])
@@ -129,7 +129,7 @@ def limiting_magnitude():
 def observatory_migration():
     """Timeline showing observatory moves to escape light pollution."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7.2, 3.2))
+    fig, ax = plt.subplots(figsize=(6.48, 2.88))
 
     # Timeline
     ax.axhline(1.5, color='black', linewidth=2, xmin=0.05, xmax=0.95)
@@ -148,7 +148,7 @@ def observatory_migration():
     for year, label, color, pos, lane in events:
         y_marker = 1.5
         side = 1 if pos == 'above' else -1
-        y_text = y_marker + side * (0.7 + 0.55 * lane)
+        y_text = y_marker + side * (0.7 + 0.78 * lane)
         y_line = y_text - side * 0.3
 
         ax.plot(year, y_marker, 'o', color=color, markersize=12, zorder=5)
@@ -160,16 +160,16 @@ def observatory_migration():
 
     # Light pollution growth indication
     # Its own strip below the event lanes, which now reach down to y = -0.1.
-    band_base = -1.05
+    band_base = -1.6
     x_pollution = np.linspace(1900, 1990, 50)
     y_pollution = band_base + 0.55 * (1 - np.exp(-(x_pollution - 1900) / 30))
     ax.fill_between(x_pollution, band_base, y_pollution, color='orange',
                     alpha=0.3)
-    ax.text(1945, -0.9, 'Growing light\npollution', fontsize=7, ha='center',
+    ax.text(1945, -1.4, 'Growing light\npollution', fontsize=7, ha='center',
             va='center', color='orange', alpha=0.8)
 
     ax.set_xlim(1650, 2010)
-    ax.set_ylim(-1.15, 3.3)
+    ax.set_ylim(-1.8, 3.9)
     ax.set_xlabel('Year', fontsize=10)
     ax.set_yticks([])
 
@@ -182,7 +182,8 @@ def observatory_migration():
 def herstmonceux_site():
     """Comparison of Greenwich and Herstmonceux sites."""
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(7.1, 2.8))
+    # Stacked: side by side, each sky view is a 2 inch strip on the page.
+    fig, (ax1, ax2) = plt.subplots(2, 1, figsize=(5.60, 5.20))
 
     # Greenwich (polluted)
     ax1.set_title('Greenwich (1950s)', fontsize=11, fontweight='bold')
@@ -260,7 +261,7 @@ def herstmonceux_site():
 def canary_islands_sites():
     """Map showing modern observatory sites in the Canary Islands."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.4, 4.6))
+    fig, ax = plt.subplots(figsize=(6.08, 4.37))
 
     # Simplified map of Canary Islands
     # La Palma

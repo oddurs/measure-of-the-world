@@ -14,7 +14,7 @@ def double_reflection():
     Rotating mirror by theta rotates reflected ray by 2*theta.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.8, 4.8))
+    fig, ax = plt.subplots(figsize=(6.46, 4.56))
 
     # Index mirror
     mirror1_x, mirror1_y = 0, 0
@@ -173,7 +173,7 @@ def sextant_components():
 def vernier_scale():
     """How the vernier scale allows precise angle reading."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.8, 2.9))
+    fig, ax = plt.subplots(figsize=(5.78, 2.46))
 
     # Main scale
     main_start = 0
@@ -233,7 +233,7 @@ def vernier_scale():
 def sextant_errors():
     """Error sources in sextant observation."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(5.4, 4.5))
+    fig, ax = plt.subplots(figsize=(5.13, 4.27))
 
     errors = [
         ('Reading error', 30, 'Random, reduces with averaging'),
@@ -283,10 +283,13 @@ def sextant_evolution():
 
     ax.semilogy(years, precision, 'b-o', linewidth=2, markersize=8)
 
-    for year, prec, label in zip(years, precision, labels):
+    # 1760 and 1780 share a precision and are twenty years apart, so the
+    # captions alternate above and below the curve.
+    for i, (year, prec, label) in enumerate(zip(years, precision, labels)):
+        above = i % 2 == 1
         ax.annotate(label, xy=(year, prec),
-                    xytext=(year, prec * 1.5),
-                    fontsize=7, ha='center', va='bottom')
+                    xytext=(year, prec * 1.45 if above else prec / 1.45),
+                    fontsize=7, ha='center', va='bottom' if above else 'top')
 
     ax.set_xlabel('Year', fontsize=10)
     ax.set_ylabel('Typical precision (arcseconds)', fontsize=10)
@@ -296,7 +299,8 @@ def sextant_evolution():
 
     # Reference line
     ax.axhline(60, color='gray', linestyle=':', linewidth=1, alpha=0.7)
-    ax.text(1720, 65, "1' (1 nautical mile)", fontsize=7, color='gray')
+    ax.text(1912, 66, "1' (1 nautical mile)", fontsize=7, ha='right',
+            color='gray')
 
     plt.tight_layout()
     save_figure(fig, 'sextant-evolution', chapter=19)

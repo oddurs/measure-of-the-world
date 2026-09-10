@@ -14,7 +14,7 @@ def precision_comparison():
     an order of magnitude in precision.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(5.6, 3.7))
+    fig, ax = plt.subplots(figsize=(5.32, 3.52))
 
     # Historical catalog precision data (arc-seconds)
     catalogs = [
@@ -73,7 +73,7 @@ def mural_arc_principle():
     (from transit time) and declination (from altitude reading).
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(4.9, 5.8))
+    fig, ax = plt.subplots(figsize=(4.66, 5.51))
 
     # Draw the mural arc (quarter circle)
     arc_radius = 1.0

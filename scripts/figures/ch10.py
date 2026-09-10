@@ -148,11 +148,29 @@ def chronometer_vs_almanac():
     ax.set_title('Method Comparison', fontsize=10)
 
     # Note
-    ax.text(0.5, -0.18, 'Each method had advantages; ships often carried both',
+    ax.text(0.5, -0.32, 'Each method had advantages; ships often carried both',
             fontsize=8, style='italic', ha='center', transform=ax.transAxes)
 
     plt.tight_layout()
     save_figure(fig, 'chronometer-vs-almanac', chapter=10)
+
+
+def _radial_ha(cos_a: float) -> str:
+    """Horizontal alignment for a label placed radially outward."""
+    if cos_a > 0.3:
+        return 'left'
+    if cos_a < -0.3:
+        return 'right'
+    return 'center'
+
+
+def _radial_va(sin_a: float) -> str:
+    """Vertical alignment for a label placed radially outward."""
+    if sin_a > 0.3:
+        return 'bottom'
+    if sin_a < -0.3:
+        return 'top'
+    return 'center'
 
 
 def computer_network():
@@ -162,42 +180,54 @@ def computer_network():
     fig, ax = plt.subplots(figsize=(6, 5))
 
     # Central hub (Maskelyne at Greenwich)
-    hub = Circle((0, 0), 0.4, facecolor='#1f77b4', edgecolor='black', linewidth=2)
+    hub = Circle((0, 0), 0.42, facecolor='#1f77b4', edgecolor='black', linewidth=2)
     ax.add_patch(hub)
-    ax.text(0, 0, 'Maskelyne\nGreenwich', ha='center', va='center',
-            fontsize=8, color='white', fontweight='bold')
+    ax.text(0, -0.58, 'Maskelyne\nGreenwich', ha='center', va='top',
+            fontsize=8, fontweight='bold', zorder=5,
+            bbox=dict(boxstyle='square,pad=0.15', facecolor='white',
+                      edgecolor='none'))
 
-    # Distributed computers
+    # Distributed computers, evenly spaced around the hub.  The names run to
+    # thirteen characters, far wider than any node that would fit on the ring,
+    # so each caption sits outside its marker and reads radially outward.
     computers = [
-        ('Mary Edwards\nLudlow', -1.5, 1.2),
-        ('Rupert Cotes\nBristol', -1.8, -0.3),
-        ('Clergy\nYorkshire', 0, 1.8),
-        ('Schoolmasters\nLincolnshire', 1.5, 1.2),
-        ('Surveyors\nLondon', 1.8, -0.3),
-        ('Other\nComputers', 0, -1.5),
+        ('Clergy\nYorkshire', 90),
+        ('Mary Edwards\nLudlow', 150),
+        ('Rupert Cotes\nBristol', 210),
+        ('Other\nComputers', 270),
+        ('Surveyors\nLondon', 330),
+        ('Schoolmasters\nLincolnshire', 30),
     ]
 
-    for name, x, y in computers:
-        comp = Circle((x, y), 0.3, facecolor='#ff7f0e', edgecolor='black', linewidth=1)
-        ax.add_patch(comp)
-        ax.text(x, y, name, ha='center', va='center', fontsize=6, color='white')
+    ring, node_r = 1.35, 0.17
+    for name, angle in computers:
+        rad = np.radians(angle)
+        x, y = ring * np.cos(rad), ring * np.sin(rad)
+        ax.add_patch(Circle((x, y), node_r, facecolor='#ff7f0e',
+                            edgecolor='black', linewidth=1))
 
-        # Connection line
-        ax.plot([0, x * 0.7], [0, y * 0.7], 'k-', linewidth=0.8, alpha=0.5)
+        # Connection line, stopping at both circles' edges
+        ax.plot([0.42 * np.cos(rad), (ring - node_r) * np.cos(rad)],
+                [0.42 * np.sin(rad), (ring - node_r) * np.sin(rad)],
+                'k-', linewidth=0.8, alpha=0.5)
+
+        lx, ly = (ring + node_r + 0.12) * np.cos(rad), (ring + node_r + 0.12) * np.sin(rad)
+        ax.text(lx, ly, name, fontsize=7, ha=_radial_ha(np.cos(rad)),
+                va=_radial_va(np.sin(rad)))
 
     # Arrows showing correspondence
-    ax.annotate('', xy=(0.3, 0.3), xytext=(1.2, 0.9),
+    ax.annotate('', xy=(0.48, 0.28), xytext=(1.12, 0.65),
                 arrowprops=dict(arrowstyle='<->', color='#2ca02c', lw=1.5))
 
     # Legend
-    ax.text(0, -2.3, 'Redundant computation: same calculation\n' +
+    ax.text(0, -2.75, 'Redundant computation: same calculation\n' +
             'assigned to multiple computers independently',
-            fontsize=8, ha='center', style='italic',
+            fontsize=8, ha='center', va='top', style='italic',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='white',
                       edgecolor='#cccccc'))
 
-    ax.set_xlim(-2.5, 2.5)
-    ax.set_ylim(-2.8, 2.3)
+    ax.set_xlim(-3.4, 3.4)
+    ax.set_ylim(-3.5, 2.4)
     ax.set_aspect('equal')
     ax.axis('off')
 

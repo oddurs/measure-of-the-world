@@ -160,7 +160,9 @@ def gridiron_pendulum():
 def escapement_types():
     """Comparison of escapement mechanisms."""
     setup_style()
-    fig, axes = plt.subplots(1, 3, figsize=(7.2, 2.8))
+    # Side by side: three escapement wheels are meant to be compared across,
+    # and stacking three circles gives a narrow column instead.
+    fig, axes = plt.subplots(1, 3, figsize=(5.76, 2.24))
 
     # Verge escapement
     ax = axes[0]

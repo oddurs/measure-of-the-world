@@ -107,7 +107,7 @@ def error_budget():
     Shows both right ascension and declination error sources.
     """
     setup_style()
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.5, 3.7))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(6.17, 3.52))
 
     # Right ascension errors
     ra_sources = ['Clock drift', 'Reaction time']
@@ -162,7 +162,7 @@ def refraction_curve():
     Shows how refraction increases dramatically near the horizon.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(5.7, 3.8))
+    fig, ax = plt.subplots(figsize=(5.42, 3.61))
 
     # Altitude range (degrees)
     altitude = np.linspace(5, 90, 100)

@@ -186,7 +186,7 @@ def bradley_observations():
     Plots the sinusoidal variation due to aberration with the fitted model.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.9, 4))
+    fig, ax = plt.subplots(figsize=(6.55, 3.80))
 
     # Time axis (months from Jan 1726)
     months = np.array([0, 2, 5, 8, 11, 14, 17])  # Selected observation epochs
@@ -238,7 +238,7 @@ def stellar_effects_comparison():
     Bar chart showing the relative sizes of these effects.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(5.8, 3.9))
+    fig, ax = plt.subplots(figsize=(5.51, 3.70))
 
     effects = ['Parallax\n(nearby star)', 'Aberration', 'Nutation']
     amplitudes = [0.3, 20.5, 9.2]  # arcseconds
@@ -421,7 +421,7 @@ def speed_of_light():
     Shows the relationship between aberration angle, Earth velocity, and c.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(5.5, 3.7))
+    fig, ax = plt.subplots(figsize=(5.22, 3.52))
 
     # Flow diagram
     boxes = [
@@ -432,7 +432,8 @@ def speed_of_light():
     ]
 
     box_width = 2.5
-    box_height = 0.7
+    # Three lines of nine point type need a shade more than 0.7 units here.
+    box_height = 0.82
 
     for label, x, y, color in boxes:
         box = FancyBboxPatch((x - box_width/2, y - box_height/2),

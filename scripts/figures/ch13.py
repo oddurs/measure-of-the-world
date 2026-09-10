@@ -186,7 +186,7 @@ def precision_evolution():
     Log-scale showing improvement from Tycho to Gaia.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.9, 4.5))
+    fig, ax = plt.subplots(figsize=(6.21, 4.05))
 
     # Data from table in chapter
     instruments = [

@@ -14,7 +14,7 @@ def equation_of_time_graph():
     Shows both components (eccentricity and obliquity) and total.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(7.2, 4.5))
+    fig, ax = plt.subplots(figsize=(6.48, 4.05))
 
     # Calculate equation of time for each day
     days = np.arange(1, 366)
@@ -85,7 +85,7 @@ def analemma():
     Shows position of Sun at same clock time throughout the year.
     """
     setup_style()
-    fig, ax = plt.subplots(figsize=(4.4, 6.1))
+    fig, ax = plt.subplots(figsize=(4.18, 5.79))
 
     # Calculate analemma points
     days = np.arange(1, 366)
@@ -304,7 +304,7 @@ def obliquity_effect():
 def mean_vs_apparent():
     """Diagram comparing mean solar time to apparent solar time."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(6.7, 3.8))
+    fig, ax = plt.subplots(figsize=(6.37, 3.61))
 
     # Timeline
     hours = np.arange(0, 25)

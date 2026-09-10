@@ -11,7 +11,7 @@ import numpy as np
 def chromatic_aberration():
     """Diagram showing chromatic aberration in a simple lens."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(8, 4))
+    fig, ax = plt.subplots(figsize=(7.60, 3.80))
 
     # Lens
     lens_x = 2
@@ -61,7 +61,7 @@ def chromatic_aberration():
     ax.text(4, 1, 'Blue bends more than red', fontsize=8, ha='center', color='gray')
 
     ax.set_xlim(-0.5, 7)
-    ax.set_ylim(-1.8, 2)
+    ax.set_ylim(-2.6, 2)
     ax.set_aspect('equal')
     ax.axis('off')
 
@@ -130,7 +130,7 @@ def achromatic_doublet():
 def reflector_design():
     """Newton's reflecting telescope design."""
     setup_style()
-    fig, ax = plt.subplots(figsize=(7.8, 4.9))
+    fig, ax = plt.subplots(figsize=(7.41, 4.66))
 
     # Tube
     tube_length = 5
@@ -145,7 +145,8 @@ def reflector_design():
     mirror_curve = 0.1 * theta**2  # parabola
     ax.fill(mirror_x + mirror_curve, mirror_y, color='#C0C0C0', edgecolor='black',
             linewidth=2)
-    ax.text(0.1, -1, 'Primary mirror\n(parabolic)', fontsize=8, ha='center')
+    ax.text(0.1, -0.85, 'Primary mirror\n(parabolic)', fontsize=8, ha='center',
+            va='top')
 
     # Secondary mirror (flat, angled)
     sec_x, sec_y = 4, 0
@@ -155,14 +156,16 @@ def reflector_design():
                             sec_size, sec_size*1.4,
                             angle=angle, facecolor='#C0C0C0',
                             edgecolor='black', linewidth=1.5))
-    ax.text(sec_x + 0.5, sec_y + 0.5, 'Secondary\n(flat)', fontsize=7, ha='left')
+    ax.text(sec_x + 0.35, sec_y + 0.95, 'Secondary\n(flat)', fontsize=7,
+            ha='left', va='bottom')
 
     # Incoming parallel rays
     for y in [-0.4, 0, 0.4]:
         ax.annotate('', xy=(tube_length - 0.2, y), xytext=(tube_length + 1, y),
                     arrowprops=dict(arrowstyle='<-', color='orange', lw=1.5))
 
-    ax.text(tube_length + 0.5, 0.8, 'Starlight', fontsize=8, ha='center', color='orange')
+    ax.text(tube_length + 0.5, 0.55, 'Starlight', fontsize=8, ha='center',
+            va='bottom', color='orange')
 
     # Rays to primary
     for y in [-0.4, 0, 0.4]:
@@ -190,13 +193,13 @@ def reflector_design():
     ax.text(sec_x - 0.3, -0.3, 'Focus', fontsize=7, ha='right', color='green')
 
     # Note
-    ax.text(2.5, -1.3, 'No chromatic aberration:\nmirrors reflect all wavelengths equally',
-            fontsize=8, ha='center',
+    ax.text(2.5, -1.55, 'No chromatic aberration:\nmirrors reflect all wavelengths equally',
+            fontsize=8, ha='center', va='top',
             bbox=dict(boxstyle='round,pad=0.3', facecolor='white',
                       edgecolor='#cccccc'))
 
     ax.set_xlim(-0.5, 7)
-    ax.set_ylim(-1.8, 2)
+    ax.set_ylim(-2.6, 2)
     ax.set_aspect('equal')
     ax.axis('off')
 
@@ -206,7 +209,8 @@ def reflector_design():
 def optical_aberrations():
     """Common optical aberrations: spherical, coma, astigmatism."""
     setup_style()
-    fig, axes = plt.subplots(1, 3, figsize=(7.1, 2.4))
+    # Stacked: three panels across a 4.3 inch slot leave each one 1.4 inches.
+    fig, axes = plt.subplots(3, 1, figsize=(4.60, 6.60))
 
     # Spherical aberration
     ax = axes[0]
@@ -242,7 +246,8 @@ def optical_aberrations():
     ax.annotate('', xy=(1.5, 0.5), xytext=(1.5, 0.2),
                 arrowprops=dict(arrowstyle='->', color='gray', lw=1))
     ax.text(0.5, 0.4, 'Off-axis\npoint', fontsize=7, ha='center')
-    ax.text(2.2, 0.8, 'Comet-shaped\nblur', fontsize=7, ha='left', color='red')
+    ax.text(1.55, 1.22, 'Comet-shaped\nblur', fontsize=7, ha='left', va='top',
+            color='red')
 
     ax.set_xlim(-0.2, 3)
     ax.set_ylim(-0.5, 1.5)
@@ -278,7 +283,7 @@ def optical_aberrations():
 def mount_comparison():
     """Comparison of altazimuth and equatorial mounts."""
     setup_style()
-    fig, axes = plt.subplots(1, 2, figsize=(7.1, 4.4))
+    fig, axes = plt.subplots(1, 2, figsize=(6.39, 3.96))
 
     # Altazimuth mount
     ax = axes[0]
@@ -411,8 +416,10 @@ def telescope_evolution():
     # Lick and Yerkes are nine years and four inches apart, so Lick's label
     # goes under its marker.
     below = {'Lick'}
+    above = {'Mt. Wilson'}
     for year, ap, name, typ in data:
-        offset = -5 if (ap >= 50 or name in below) else 3
+        offset = 3 if name in above else (
+            -5 if (ap >= 50 or name in below) else 3)
         ax.annotate(f'{name}\n({ap}")',
                     xy=(year, ap), xytext=(year, ap + offset),
                     fontsize=7, ha='center', va='bottom' if offset > 0 else 'top')
