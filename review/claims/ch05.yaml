@@ -5,175 +5,210 @@
 
 - id: ch05-001
   type: date
-  status: unverified
+  status: corrected
   text: "In the spring of 1712, John Flamsteed was informed that Isaac Newton and Edmond Halley had seized his observation books and, without his consent or knowledge, had prepared them for publication."
-  source: ""
-  note: ""
+  source: "Francis Baily, An Account of the Revd John Flamsteed (1835), https://archive.org/stream/anaccountrevdjo00bailgoog/anaccountrevdjo00bailgoog_djvu.txt ; https://www.royalobservatorygreenwich.org/articles.php?article=1319"
+  note: "Wrong on date and on mechanism. Flamsteed was not informed in spring 1712 that his books had been seized. Under the Prince George of Denmark printing scheme (referees Newton, Wren, Arbuthnot, Gregory, Roberts, appointed end of 1704) Newton demanded the catalogue sealed up, and it was sealed in Wrens presence and delivered to Newton in 1706; on 20 March 1707/8 Flamsteed left a further 175 sheets of mural-arc observations with Newton. Flamsteed learned the sealed catalogue was in the press from Arbuthnots letter of 14 March 1710/11, having already been privately informed before that. Halley edited the volume that appeared in 1712."
 
 - id: ch05-002
   type: date
-  status: unverified
+  status: corrected
   text: "When the legitimate three-volume Historia Coelestis Britannica appeared thirteen years later in 1725, it bore Flamsteed's name alone and embodied not a collection of raw sightings but a rigorously reduced catalog of stellar positions, the product of computational work that would occupy him until his death."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, https://www.royalobservatorygreenwich.org/articles.php?article=932 ; Royal Museums Greenwich, https://www.rmg.co.uk/stories/space-astronomy/who-was-john-flamsteed-first-astronomer-royal"
+  note: "Year (1725), three volumes and thirteen-year gap are correct. Wrong that the work occupied him until his death and bore his name alone as sole product of his own labour: the 1725 edition was completed posthumously by his widow Margaret Flamsteed with his former assistants Joseph Crosthwait and Abraham Sharp. Catalogue contains 2,935 star entries (Baily; 22 duplicates, at least 61 non-existent)."
 
 - id: ch05-003
   type: date
-  status: unverified
+  status: verified
   text: "From 1676 until his death in 1719, Flamsteed conducted continuous telescopic observations at Greenwich."
-  source: ""
-  note: ""
+  source: "Francis Baily, An Account of the Revd John Flamsteed (1835), https://archive.org/stream/anaccountrevdjo00bailgoog/anaccountrevdjo00bailgoog_djvu.txt ; Royal Museums Greenwich, https://www.rmg.co.uk/stories/space-astronomy/who-was-john-flamsteed-first-astronomer-royal"
+  note: "Flamsteed entered the Observatory 10 July 1676 and began measuring distances with the sextant 19 September 1676; he died 31 December 1719. Note appendix H gives the span as 1675-1719 (44 years) against this chapters 1676-1719 (43 years)."
 
 - id: ch05-004
   type: superlative
   status: unverified
   text: "This vast accumulation of data posed an unprecedented problem: how to reduce raw measurements to meaningful astronomical information."
   source: ""
-  note: ""
+  note: "Rhetorical superlative, not a sourceable claim. Reduction of large observational data sets was not unprecedented in 1700 - Tycho and Hevelius faced the same problem at smaller scale. Recommend softening rather than sourcing."
 
 - id: ch05-005
   type: quotation
   status: unverified
   text: "Every observation was a two-dimensional measurement—a time recorded by Tompion's clock and an altitude recorded from the mural arc's graduated scale."
   source: ""
-  note: ""
+  note: "Partly wrong as a general statement. Abraham Sharps mural arc was not erected until 1689 (this books own ch22 dates it 1689-1712), so observations from 1676 to 1689 were sextant distances, not arc altitudes. Could not source the claim that the clock readings were in mean solar time; Flamsteeds Tompion regulators had 13-foot pendulums beating 2 seconds and the worked example later multiplies by 1.0027379, which is only valid for a mean-solar clock."
 
 - id: ch05-006
   type: superlative
   status: unverified
   text: "The first step is to account for variations in Tompion's clocks."
   source: ""
-  note: ""
+  note: "Procedural statement, not independently checkable. Left as is."
 
 - id: ch05-007
   type: attribution
-  status: unverified
+  status: verified
   text: "The observed altitude $h_ obs $ must be corrected for atmospheric refraction before it yields declination."
-  source: ""
-  note: ""
+  source: "src/appendices/appendix-a.tex and src/chapters/04.tex, which use R = 58.3 arcsec cot(h); scripts/verify/derivations.py checks this formula"
+  note: "Correct physics and correct order of operations."
 
 - id: ch05-008
   type: measurement
-  status: unverified
+  status: verified
   text: "For an intermediate altitude like $60^ $, a typical refraction correction is 30–50 arcseconds."
-  source: ""
-  note: ""
+  source: "R = 58.3 arcsec cot(h), the formula used in ch04 and appendix A of this book"
+  note: "Computed: 58.3 cot(60 deg) = 33.7 arcsec, inside the stated 30-50 arcsec band. The band is loose but not wrong."
 
 - id: ch05-009
   type: quotation
-  status: unverified
+  status: verified
   text: "The cause was precession—the slow wobble of Earth's axis caused by the gravitational torque of the Sun and Moon on Earth's equatorial bulge."
-  source: ""
-  note: ""
+  source: "Standard result; consistent with the books own treatment in ch12 and appendix A"
+  note: "Correct as stated."
 
 - id: ch05-010
   type: measurement
-  status: unverified
+  status: verified
   text: "By Flamsteed's time, it was established at approximately 50 arcseconds per year."
-  source: ""
-  note: ""
+  source: "IAU general precession 50.29 arcsec per year"
+  note: "Correct to the precision claimed."
 
 - id: ch05-011
   type: date
-  status: unverified
+  status: corrected
   text: "A star at $ = 0^ h 0^ m 0^ s $ and $ = 0^ $ in 1680 will be at $ 0^ h 0^ m 3.3^ s $ and $ 0^ 0' 15''$ in 1700, a shift of $3.3^ s $ (50 arcseconds) in right ascension and 15 arcseconds in declination."
-  source: ""
-  note: ""
+  source: "Recomputed: annual precession in RA m = 3.075 s of time = 46.1 arcsec, in dec n = 20.04 arcsec"
+  note: "WRONG by a factor of 20. Over 1680 to 1700 (20 years) a star at alpha = 0h, delta = 0 moves 61.5 s of time in RA (922 arcsec) and 401 arcsec in declination. The printed 3.3 s and 15 arcsec are roughly ONE-year values (one year gives 3.07 s and 20.0 arcsec). The internal equivalence 3.3 s = 50 arcsec is itself fine (3.3 x 15 = 49.5)."
 
 - id: ch05-012
   type: quotation
-  status: unverified
+  status: corrected
   text: "The formula he used (derived from spherical trigonometry) relates coordinates at epoch $t_1$ to coordinates at epoch $t_2$: MATH MATH where $m 46.1''$ is the precession in right ascension and $n 20.0''$ is the precession in declination per century."
-  source: ""
-  note: ""
+  source: "Recomputed; standard precession constants for the epoch"
+  note: "Units wrong. m = 46.1 arcsec and n = 20.0 arcsec are ANNUAL values, not per century; per century they are about 4610 arcsec and 2004 arcsec. As printed the constants are inconsistent with the divisor 36525 days, which is one Julian century. Separately, attributing this rigorous-precession approximation to Flamsteed needs a source; could not find one."
 
 - id: ch05-013
   type: date
-  status: unverified
+  status: verified
   text: "By applying this correction, Flamsteed could reduce all observations to a common epoch—he chose the year 1690—allowing observations from 1676 through 1719 to be meaningfully averaged and compared."
-  source: ""
-  note: ""
+  source: "Francis Baily, An Account of the Revd John Flamsteed (1835), https://archive.org/stream/anaccountrevdjo00bailgoog/anaccountrevdjo00bailgoog_djvu.txt"
+  note: "Correct. Baily records Flamsteed reducing positions to the epoch 1690 throughout, and reduced Bradleys catalogue to 1690 to match."
 
 - id: ch05-014
   type: quotation
-  status: unverified
+  status: corrected
   text: "The transformation between equatorial and ecliptic coordinates involves a rotation by the obliquity of the ecliptic $ 23^ 27'$, the angle between Earth's equatorial plane and orbital plane."
-  source: ""
-  note: ""
+  source: "Computed mean obliquity (IAU expression): 23 deg 28 arcmin 46 arcsec at 1690; 23 deg 26 arcmin 21 arcsec at J2000"
+  note: "For Flamsteeds epoch the mean obliquity was about 23 deg 29 arcmin, not 23 deg 27 arcmin. The printed value sits between the 1690 and the modern figure and matches neither. The transformation equations themselves are correct."
 
 - id: ch05-015
   type: date
-  status: unverified
+  status: corrected
   text: "From astronomical tables, the sidereal time at midnight on 1690 June 12 was $ _0 = 17^ h 58^ m 42^ s $."
-  source: ""
-  note: ""
+  source: "Computed GMST from the IAU expression"
+  note: "Could not reproduce. GMST at 0h UT on 1690 June 12 (Gregorian) is 17h 22m 50s; for the Julian-calendar (Old Style) 12 June, which is 22 June Gregorian, it is 18h 02m 16s. The printed 17h 58m 42s matches neither. The chapter also does not say whether the date is Old or New Style, which matters by 10 days in 1690."
 
 - id: ch05-016
   type: measurement
-  status: unverified
+  status: corrected
   text: "Subtracting 24 hours (since we've gone beyond a full rotation): $ = 13^ h 51^ m 20^ s $."
-  source: ""
-  note: ""
+  source: "Recomputed from the chapters own inputs"
+  note: "WRONG. 19h 48m 15.8s x 1.0027379 = 19h 51m 31s, not 19h 52m 38s. Adding the printed alpha_0 gives 37h 50m 13s, so alpha = 13h 50m 13s, not 13h 51m 20s. More seriously, this result is then abandoned: the section headed Final catalog position prints alpha = 18h 36m 41s, which does not follow from any step shown."
 
 - id: ch05-017
   type: date
-  status: unverified
+  status: verified
   text: "The observation was taken on 1690 June 12, so no precession correction is needed (we're already at epoch 1690)."
-  source: ""
-  note: ""
+  source: "Trivially true given the stated epoch"
+  note: "Correct as stated."
 
 - id: ch05-018
   type: date
-  status: unverified
+  status: corrected
   text: "The differences reflect precession from 1690 to 2000 and proper motion of Vega itself."
-  source: ""
-  note: ""
+  source: "SIMBAD alpha Lyr, https://simbad.u-strasbg.fr/simbad/sim-id?Ident=vega ; position at 1690 recomputed by rigorous precession plus proper motion"
+  note: "Both the modern values and the inference are wrong. Vega J2000 is RA 18h 36m 56.34s, Dec +38 deg 47 arcmin 01.3 arcsec, not 18h 36m 55.8s / +38 deg 47 arcmin 05.3 arcsec. Vega at epoch 1690 was RA 18h 26m 28s, Dec +38 deg 31 arcmin 18 arcsec, so precession plus proper motion from 1690 to 2000 amounts to about 10.5 minutes of time in RA and 16 arcmin in declination - not the 15 s and 5 arcsec the chapter shows. The claim that Flamsteeds values align precisely with modern measurements is not supported by anything in the example."
 
 - id: ch05-019
   type: attribution
   status: unverified
   text: "Flamsteed observed each bright star not once but many times—sometimes dozens of times over the 43-year campaign."
   source: ""
-  note: ""
+  note: "The 43-year span is right (see ch05-003) but could not source the claim that bright stars were observed dozens of times each. Baily 1835 gives no such count."
 
 - id: ch05-020
   type: quotation
-  status: unverified
+  status: corrected
   text: "The typical precision achieved in the final Historia was $ 10$–$20$ arcseconds in both coordinates—a threefold improvement over Tycho Brahe's 1 to 3 arcminute errors, despite Tycho's innovations."
-  source: ""
-  note: ""
+  source: "Verbunt and van Gent, Astronomy and Astrophysics 516 A28 (2010), https://arxiv.org/pdf/1003.3836 ; Verbunt and Schrimpf (2021), https://arxiv.org/pdf/2103.10801"
+  note: "The multiplier is wrong and contradicts this books own ch02. Modern statistical work puts Tycho at about 1 to 2 arcmin (rms 2 arcmin). On the chapters own numbers, 1-3 arcmin down to 10-20 arcsec is a 3-fold to 18-fold improvement; ch02 line 83 calls the same comparison an order of magnitude improvement. The +/-10-20 arcsec figure for Flamsteed is itself unsourced - no modern Hipparcos-comparison study of Flamsteeds catalogue was found."
 
 - id: ch05-021
   type: date
-  status: unverified
+  status: verified
   text: "The bitter dispute over the pirated 1712 publication illuminates a fundamental tension in scientific practice: data ownership and scientific credit."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, https://www.royalobservatorygreenwich.org/articles.php?article=932 ; https://www.royalobservatorygreenwich.org/articles.php?article=1319"
+  note: "The 1712 Historia Coelestis was printed in 400 copies with an unsigned preface by Halley, over Flamsteeds objection. Note Newton was President of the Royal Society at the time; Halley was Savilian Professor at Oxford and did not become Secretary of the Royal Society until 13 November 1713 (see ch05-026)."
 
 - id: ch05-022
   type: attribution
-  status: unverified
+  status: corrected
   text: "Newton and Halley published their imperfect version; Flamsteed burned copies and proceeded with his own publication."
-  source: ""
-  note: ""
+  source: "Francis Baily, An Account of the Revd John Flamsteed (1835), https://archive.org/stream/anaccountrevdjo00bailgoog/anaccountrevdjo00bailgoog_djvu.txt ; Royal Observatory Greenwich, https://www.royalobservatorygreenwich.org/articles.php?article=932 ; https://www.lindahall.org/about/news/new-acquisition-john-flamsteed-historia-coelestis/"
+  note: "Wrong on date, quantity and what was burned. After the deaths of Queen Anne (1714) and the Earl of Halifax (May 1715) Flamsteed got a royal order for 300 of the 400 copies; his letter to Sharp of 29 March 1715/16 says they had just been delivered. In late April 1716 he burned the SHEETS he objected to - Halleys preface, the catalogue of fixed stars and the mural-arc observations, about 13,500 sheets - after first extracting the sextant observations, which he kept and reused in the 1725 edition. He described it as a Sacrifice to Heavenly Truth. The chapters page by page in his fireplace in 1712 is not supported."
 
 - id: ch05-023
   type: date
   status: unverified
   text: "When the Historia appeared in 1725, it superseded the pirated edition entirely."
   source: ""
-  note: ""
+  note: "The 1725 three-volume publication is verified (ch05-002). Superseded the pirated edition entirely is an interpretive claim; no source found. It is also loosely worded given that Flamsteed had already destroyed three quarters of the 1712 print run in 1716."
 
 - id: ch05-024
   type: date
-  status: unverified
+  status: corrected
   text: "The pirated 1712 edition faded from use within decades, leaving Flamsteed's authorized catalog as the definitive work."
-  source: ""
-  note: ""
+  source: "Royal Observatory Greenwich, https://www.royalobservatorygreenwich.org/articles.php?article=932 ; Francis Baily, An Account of the Revd John Flamsteed (1835), https://archive.org/stream/anaccountrevdjo00bailgoog/anaccountrevdjo00bailgoog_djvu.txt"
+  note: "Wrong mechanism. The 1712 edition did not fade from use within decades: 300 of the 400 copies were destroyed by Flamsteed in 1716, nine years before the authorised edition appeared, leaving roughly 100 copies in circulation."
 
 - id: ch05-025
   type: attribution
-  status: unverified
+  status: corrected
   text: "Bradley discovered stellar aberration and precession by comparing his observations against Flamsteed's, detecting systematic shifts that revealed previously unknown phenomena."
+  source: "Bradley, Philosophical Transactions 35 (1728) 637-661, https://doi.org/10.1098/rstl.1727.0064 ; Bradley, Philosophical Transactions 45 (1748) 1-41, https://doi.org/10.1098/rstl.1748.0002"
+  note: "Wrong on both the phenomena and the method. Bradley discovered the aberration of light (announced 1728/29) and nutation (1748). He did not discover precession, which was known from Hipparchus and is discussed as long-established earlier in this same chapter. Both discoveries came from his own zenith-sector observations of gamma Draconis with Samuel Molyneux at Kew and Wanstead from 1725, not from comparison against Flamsteeds catalogue. This chapter therefore contradicts ch12 and appendix H, which give the aberration story correctly."
+
+- id: ch05-026
+  type: attribution
+  status: corrected
+  text: "Halley, as Secretary of the Royal Society, had facilitated the appropriation."
+  source: "Dictionary of National Biography, Halley; Royal Society records, https://en.wikisource.org/wiki/Dictionary_of_National_Biography,_1885-1900/Halley,_Edmund"
+  note: "Anachronism. Halley became Secretary of the Royal Society on 13 November 1713, more than a year after the 1712 publication. In 1712 he was Savilian Professor of Geometry at Oxford. It was Newton who held office at the Royal Society, as President."
+
+- id: ch05-027
+  type: measurement
+  status: unverified
+  text: "Over this period, he accumulated approximately 50,000 individual measurements."
   source: ""
-  note: ""
+  note: "COULD NOT SOURCE. Searched the full text of Baily 1835, the RMG and ROG Flamsteed pages, the Linda Hall Library account and Crossref. The figure 50,000 appears in none of them. Either drop it or attribute it explicitly."
+
+- id: ch05-028
+  type: measurement
+  status: corrected
+  text: "The star catalog alone contained positions for approximately 3,000 stars, nearly three times the number in Tychos century-old catalog."
+  source: "Baily 1835 (2,935 entries); Verbunt and van Gent, https://arxiv.org/pdf/1003.3836 (Tycho: 777 printed 1602, 1,004 in the Rudolphine Tables 1627)"
+  note: "The star count is close: 2,935 entries as published, of which 22 are duplicates and at least 61 do not exist. The comparison is the problem. Against Tychos 1,004 stars the ratio is under 3; against the 777 printed in 1602 it is 3.8. Nearly three times is defensible only for the 1,004 figure. Specify which Tycho catalogue is meant."
+
+- id: ch05-029
+  type: measurement
+  status: corrected
+  text: "where phi = 51 deg 28 arcmin 40 arcsec is the latitude of Greenwich."
+  source: "IAU/Minor Planet Center observatory code 000 Greenwich, https://www.minorplanetcenter.net/iau/lists/ObsCodes.html"
+  note: "The standard latitude of the Royal Observatory (Airy Transit Circle) is 51 deg 28 arcmin 38 arcsec. 51 deg 28 arcmin 40 arcsec is acceptable for Flamsteed House but should be stated as such. Flamsteeds own determination was 51 deg 28 arcmin 10 arcsec in 1676, revised to 51 deg 28 arcmin 30 arcsec by 1690, so using a modern value in a reconstruction of his reduction is itself questionable."
+
+- id: ch05-030
+  type: measurement
+  status: corrected
+  text: "delta = 51 deg 28 arcmin 40 arcsec - 33 deg 18 arcmin 35 arcsec = +38 deg 10 arcmin 5 arcsec"
+  source: "Arithmetic; Vega position from SIMBAD, https://simbad.u-strasbg.fr/simbad/sim-id?Ident=vega"
+  note: "ARITHMETIC ERROR. 51 deg 28 arcmin 40 arcsec minus 33 deg 18 arcmin 35 arcsec is +18 deg 10 arcmin 05 arcsec, not +38 deg 10 arcmin 05 arcsec. Beyond the subtraction, the input altitude is impossible: Vega at epoch 1690 had declination +38 deg 31 arcmin, so its meridian altitude at Greenwich was 77 deg 03 arcmin, not the 56 deg 42 arcmin the example assumes. The entire Vega worked example needs rebuilding from a real ephemeris."

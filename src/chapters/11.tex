@@ -41,13 +41,15 @@ If we measure the transit parallax from two well-separated locations, we can com
 
 For small $\pi_{\odot}$ (measured in arcseconds):
 \[
-  d_{\odot} \approx \frac{206265''}{1''} \text{ AU} \approx 206265 \text{ AU/arcsecond}.
+  d_{\odot} \approx \frac{206265''}{\pi_{\odot}} \, R_{\oplus},
 \]
+where the quotient is in Earth radii, because the solar parallax is by definition the angle the Earth's radius subtends at the Sun.
 
-With a measured parallax of $\pi_{\odot} \approx 8.8$ arcseconds (the true value), the distance becomes:
+With a measured parallax of $\pi_{\odot} \approx 8.8$ arcseconds, close to the modern value of $8.794$, the distance becomes
 \[
-  d_{\odot} \approx 206265 / 8.8 \approx 23,440 \text{ AU} \approx 3.5 \times 10^9 \text{ km}.
+  d_{\odot} \approx \frac{206265}{8.8} \, R_{\oplus} \approx 23{,}440 \, R_{\oplus} \approx 1.50 \times 10^{8} \text{ km},
 \]
+taking $R_{\oplus} = 6378$ km. This is the astronomical unit: the quantity the whole exercise exists to find, and the one that converts every angular measurement in the solar system into a distance.
 
 \begin{figure}[htbp]
   \centering
@@ -144,8 +146,8 @@ The time difference is $\Delta t = 19.3$ minutes. This time difference reflects 
 
 From multiple simultaneous observations at different locations, the transit parallax can be extracted via least-squares fitting to the timing data. Halley predicted (and his intellectual successors confirmed) that integration of data from many such observations, distributed across the globe, would yield a measurement of $\pi_{\odot}$ to unprecedented precision.
 
-The actual 1761 transit observations, conducted by expeditions to locations including Nortonshire (England), Tobolsk, and Nandi Island (Polynesia), yielded a solar parallax of approximately $8.76$ arcseconds, corresponding to an astronomical unit of:
+The 1761 transit was observed from stations spread across Europe, the Atlantic, southern Africa, Siberia and the Indian Ocean, and the reductions yielded a solar parallax of approximately $8.76$ arcseconds. That corresponds to an astronomical unit of
 \[
-  1 \text{ AU} = \frac{206265''}{8.76''} \approx 23,540 \text{ AU} \approx 3.524 \times 10^9 \text{ km},
+  1 \text{ AU} = \frac{206265''}{8.76''} \, R_{\oplus} \approx 23{,}550 \, R_{\oplus} \approx 1.50 \times 10^{8} \text{ km},
 \]
-remarkably close to the modern value of $3.496 \times 10^9$ km (or $1.496 \times 10^{11}$ m in SI units).\footnote{The 1761 and 1769 transit observations involved more than 150 observers at 77 locations distributed across the globe. The coordination of this observational campaign—the first truly international scientific project—represented an unprecedented institutional achievement. See \textcite{Chapin1995}, Chapters 6--9, for a comprehensive account of the transit expeditions and their scientific aftermath.}
+within half a per cent of the modern value of $1.496 \times 10^{8}$ km, or $1.496 \times 10^{11}$ metres.\footnote{The 1761 and 1769 transit observations involved more than 150 observers at 77 locations distributed across the globe. The coordination of this observational campaign—the first truly international scientific project—represented an unprecedented institutional achievement. See \textcite{Chapin1995}, Chapters 6--9, for a comprehensive account of the transit expeditions and their scientific aftermath.}

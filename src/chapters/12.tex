@@ -5,10 +5,11 @@ On a December evening in 1725 at Kew, in the house of Samuel Molyneux, James Bra
 
 \section{The Quest for Stellar Parallax}
 
-The search for stellar parallax was the great observational challenge of 18th-century astronomy. Newton's physics predicted that the stars, being suns at vast distances, should shift position as Earth orbited the Sun. The geometry was straightforward: if Earth moves from one side of its orbit to the opposite side (a separation of $2 \, \text{AU} \approx 3 \times 10^{11}$ meters), a nearby star should appear to shift against more distant background stars. For a star at distance $d$ parsecs, the parallax angle $p$ (in arcseconds) is:
+The search for stellar parallax was the great observational challenge of 18th-century astronomy. Newton's physics predicted that the stars, being suns at vast distances, should shift position as Earth orbited the Sun. The geometry was straightforward: if Earth moves from one side of its orbit to the opposite side (a separation of $2 \, \text{AU} \approx 3 \times 10^{11}$ meters), a nearby star should appear to shift against more distant background stars. For a star at distance $d$, the parallax angle $p$ is the angle the Earth's orbital radius subtends there, so $\tan p = a_{\oplus}/d$ with $a_{\oplus} = 1.496 \times 10^{11}$ metres. At these angles the tangent may be dropped, and if $p$ is expressed in arcseconds and $d$ in parsecs the relation collapses to
 \[
-  p = \frac{1 \text{ AU}}{d} = \frac{1.496 \times 10^{11} \text{ m}}{d \text{ (in meters)}}
+  p = \frac{1}{d},
 \]
+which is what the parsec was defined to make true: the distance at which the orbital radius subtends one arcsecond.
 
 For a star 10 parsecs away (a moderate distance by modern standards), the parallax is 0.1 arcsecond—small but potentially measurable with careful observation. The brightest stars, being relatively nearby, should show the largest parallaxes.
 
@@ -37,7 +38,7 @@ The expected parallax for $\gamma$ Draconis was estimated at roughly 0.3 arcseco
 
 \section{The Anomaly: Aberration Discovered}
 
-Bradley's observations began in December 1725. Over the following months, he noted the star's position with meticulous care. But when he began to reduce the data, a puzzle emerged. The star did shift—that much was certain. Its north-south position changed by roughly 20 arcseconds over the course of a year. But the shift did not match the parallax pattern. A star with parallax should move south in December (when Earth is on one side of the sun) and north in June (when Earth is on the opposite side). But $\gamma$ Draconis moved south in December, as expected, yet continued to move south even in June—opposite to what parallax predicted. The shift was smooth and regular, but the phase was all wrong.
+Bradley's observations began in December 1725. Over the following months, he noted the star's position with meticulous care. But when he began to reduce the data, a puzzle emerged. The star did shift, and by roughly forty arcseconds between its extremes over the course of a year. But the shift did not match the parallax pattern. Parallax displaces a star toward the point of the sky opposite the Sun, which for $\gamma$ Draconis would have put its extremes near the solstices, in June and December. Instead the star stood farthest south at the beginning of March and farthest north at the beginning of September, passing through its mean position in December and June. The motion was smooth, regular, of the right period and of a plausible size. It was simply three months out of phase with the effect Bradley had built the campaign to find.
 
 For months, Bradley remained puzzled. He re-examined his observations, checked his calculations, and questioned whether systematic error might explain the anomaly. Yet the observations were too consistent to be error; they followed a pattern, just not the pattern he expected.
 
@@ -83,44 +84,43 @@ As Earth orbits the sun, its velocity direction changes. At one point in the orb
   \label{fig:aberration-ellipse}
 \end{figure}
 
-\section{A Worked Example: Bradley's Observations of $\gamma$ Draconis}
+\section{A Worked Example: The Annual Cycle of $\gamma$ Draconis}
 
-To make the calculation concrete, consider a specific set of Bradley's observations. He observed $\gamma$ Draconis on multiple nights over the period December 1725 to December 1726, measuring its angular distance from the zenith.
+To make the calculation concrete, take four observations spread through the year. The values below come from the reconstructed series tabulated in Appendix~\ref{app:mathematical-derivations}, where the full set of eighteen nights and the least-squares fit are worked out; here we need only enough points to see the shape.
 
-\textsc{Observations (selected dates):}
+\textsc{Zenith distances, positive northward, counted from Molyneux's first observation of the star on 3 December 1725:}
 \begin{itemize}
-  \item 1726 March 1: Distance from zenith = $+17.26$ arcseconds (north of zenith)
-  \item 1726 June 1: Distance from zenith = $+10.10$ arcseconds
-  \item 1726 September 1: Distance from zenith = $-7.06$ arcseconds (south of zenith)
-  \item 1726 December 1: Distance from zenith = $-20.47$ arcseconds
+  \item 1726 March 1 ($t = 0.24$ yr): $-20.5$ arcseconds, the star at its most southerly
+  \item 1726 June 1 ($t = 0.49$ yr): $-0.9$ arcseconds, near the mean position
+  \item 1726 September 1 ($t = 0.74$ yr): $+20.5$ arcseconds, at its most northerly
+  \item 1726 December 1 ($t = 0.99$ yr): $+0.8$ arcseconds, back near the mean
 \end{itemize}
 
-The data show the star oscillating between a northernmost position of roughly $+20.5$ arcseconds and a southernmost position of roughly $-20.5$ arcseconds. The period is one year, and the amplitude is approximately $20.5$ arcseconds—exactly the constant of aberration.
+The star swings between roughly $-20.5$ and $+20.5$ arcseconds, completing one full cycle in a year. The amplitude is the constant of aberration.
 
-To verify the aberration model, we compute the expected position using:
+\textsc{Fitting the model.} Write
 \[
-  z(t) = \kappa \sin(\omega t + \phi)
+  z(t) = \kappa \sin(\omega t + \phi),
 \]
-where $z$ is the distance from zenith (positive northward), $\omega$ is the angular frequency $2\pi$ per year, $t$ is time in years, and $\phi$ is a phase angle related to the direction of Earth's motion at a reference epoch.
+with $z$ positive northward, $\omega = 2\pi$ per year, $t$ in years from the epoch above, and $\phi$ a phase fixing where in the year the maximum falls. The September observation sits at the maximum, so $\omega t + \phi = \pi/2$ there, and with $t = 0.745$,
+\[
+  \phi = \frac{\pi}{2} - 2\pi (0.745) = -3.11 \text{ radians} \approx -178^{\circ}.
+\]
 
-Fitting this sinusoidal model to Bradley's data:
+A phase of $180^{\circ}$ is a sign change, so the model is simply
 \[
-  z(t) = 20.5 \sin(2\pi t + \phi)
+  z(t) = -\kappa \sin(2\pi t),
 \]
-with $t$ measured from some reference date (say, the beginning of 1726). The June 1 observation ($t \approx 0.42$ years) gives $z \approx +10.1$, which would require:
-\[
-  20.5 \sin(2\pi \times 0.42 + \phi) = 10.1
-\]
-\[
-  \sin(2.64 + \phi) = 0.492
-\]
-which is satisfied by $\phi \approx -1.06$ radians (or approximately $-60^{\circ}$). With this phase, the model predicts:
+southward through the first half of the year, northward through the second. Checking it against the other three dates:
 \begin{align*}
-  z(\text{Dec. 1}) &= 20.5 \sin(2\pi \times 1 - 1.06) = 20.5 \sin(5.22) \approx -20.5 \, \text{arcsec} \\
-  z(\text{Mar. 1}) &= 20.5 \sin(2\pi \times 0.17 - 1.06) \approx 17.3 \, \text{arcsec}
+  z(\text{1 March}) &= -20.5 \sin(2\pi \times 0.241) = -20.5 \text{ arcsec} \\
+  z(\text{1 June}) &= -20.5 \sin(2\pi \times 0.493) = -0.9 \text{ arcsec} \\
+  z(\text{1 December}) &= -20.5 \sin(2\pi \times 0.994) = +0.8 \text{ arcsec}
 \end{align*}
 
-These predictions match the observations almost exactly, confirming the aberration model.
+Each matches the observation. One year, one amplitude, one phase, and no free parameters left over.
+
+\textsc{Why this is not parallax.} The distinction is the whole argument, and it lies entirely in the phase. Parallax displaces a star toward the point of the sky opposite the Sun, so it is largest when the Earth is at the extremes of its orbit as seen from the star, and its maximum falls at the solstices for a star near the ecliptic pole. Aberration displaces a star in the direction the Earth is moving, and the Earth's velocity is perpendicular to its position vector. The two effects therefore run three months apart. Bradley found $\gamma$ Draconis at its extremes in March and September, a quarter-cycle away from where parallax would have put them, and that offset is what told him he had found something other than what he was looking for.
 
 \begin{figure}[htbp]
   \centering

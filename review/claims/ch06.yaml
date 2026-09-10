@@ -5,63 +5,126 @@
 
 - id: ch06-001
   type: date
-  status: unverified
+  status: corrected
   text: "On the morning of 25 December 1656, in his workshop in The Hague, Christiaan Huygens set a newly constructed timepiece into motion."
-  source: ""
-  note: ""
+  source: "Ben Hordijk and Rob Memel, Salomon Coster, the clockmaker of Christiaan Huygens, http://www.antique-horology.org/Invention/Coster-the-Clockmaker-of-Huygens.HTM ; Science Museum, Huygens Clocks, https://web.archive.org/web/20071010034250/http://www.sciencemuseum.org.uk/onlinestuff/stories/huygens_clocks.aspx"
+  note: "Wrong. On 25 December 1656 Huygens made the first MODEL, that is the design, of a pendulum-controlled escapement. He was not a clockmaker and had no workshop; the clocks were built by Salomon Coster in The Hague. The dating rests on Huygens to Boulliau, 26 December 1657: it was a year ago yesterday exactly that I made the first model of this kind of clockwork. A working clock was being rated by 31 May 1657; Coster applied for the privilege in early May 1657 and the States-General granted it on 16 June 1657."
 
 - id: ch06-002
   type: measurement
-  status: unverified
+  status: verified
   text: "Over a day of 86,400 seconds (43,200 oscillations), the accumulated error is: MATH"
-  source: ""
-  note: ""
+  source: "scripts/verify/derivations.py, check Brass pendulum error 10 K swing: computes 8.208 s/day"
+  note: "The arithmetic here is right: 43,200 x 1.9e-4 = 8.2 s/day. But the sentence immediately after this calculation says a 10 degC temperature swing thus causes an error of roughly one second per day, which contradicts the 8 seconds just derived. See ch06-010."
 
 - id: ch06-003
   type: measurement
-  status: unverified
+  status: verified
   text: "The equatorial radius is approximately 21 kilometers larger than the polar radius."
-  source: ""
-  note: ""
+  source: "WGS84 / IERS: equatorial radius 6378.137 km, polar radius 6356.752 km"
+  note: "Difference is 21.4 km. Correct as stated. The related figures in the same section are also right: centrifugal acceleration at the equator omega^2 R = 0.0339 m/s^2, g = 9.780 at the equator and 9.832 at the poles, a spread of 0.53 per cent."
 
 - id: ch06-004
   type: superlative
   status: unverified
   text: "The only remedy is to physically adjust the pendulum length (by moving the bob or the pivot) after arrival at a new latitude, or to employ an automatic compensator."
   source: ""
-  note: ""
+  note: "Physically defensible but stated as an absolute without a source. Note that Huygens did propose and test a triangular-suspension marine pendulum clock, and Huygens-type sea clocks were tried on voyages in the 1660s, so the only remedy framing needs qualifying."
 
 - id: ch06-005
   type: tabular
-  status: unverified
+  status: corrected
   text: "Huygens pendulum — Year: 1656; Daily Error: ±15 s; Location: The Hague; Notes: First pendulum clock; revolutionary"
-  source: ""
-  note: ""
+  source: "Ben Hordijk and Rob Memel, Salomon Coster, the clockmaker of Christiaan Huygens, http://www.antique-horology.org/Invention/Coster-the-Clockmaker-of-Huygens.HTM ; Science Museum, Huygens Clocks, https://web.archive.org/web/20071010034250/http://www.sciencemuseum.org.uk/onlinestuff/stories/huygens_clocks.aspx"
+  note: "Year should be 1657, not 1656 (see ch06-001). The accuracy figure is within the documented range but the range is wide: the Science Museum gives about one second in three hours (roughly 8 s/day) and Huygenss own May-June 1657 rating note gives one third of a minute a day (about 20 s/day)."
 
 - id: ch06-006
   type: tabular
-  status: unverified
+  status: corrected
   text: "Tompion regulator — Year: 1676; Daily Error: ±5 s; Location: Greenwich; Notes: Constant-force escapement"
-  source: ""
-  note: ""
+  source: "Royal Museums Greenwich, https://www.rmg.co.uk/stories/space-astronomy/history-royal-observatory-six-objects ; object ZAA0885 https://www.rmg.co.uk/collections/objects/rmgc-object-202113 ; Francis Baily, An Account of the Revd John Flamsteed (1835), p. 45, https://archive.org/stream/anaccountrevdjo00bailgoog/anaccountrevdjo00bailgoog_djvu.txt"
+  note: "Both the number and the note are unsupported. This books own ch02 and ch03 give Tompions Greenwich clocks as accurate to ten or fifteen seconds a day, not five. RMG describes only an innovative escapement design to reduce friction and names no escapement; constant-force escapement is not sourceable, and Grahams dead-beat dates from 1715, 39 years later. What is documented, in Flamsteeds own words, is that the pendulums were 13 feet long, made each single vibration in two seconds of time, and the weights needed winding only once in twelve months."
 
 - id: ch06-007
   type: tabular
-  status: unverified
+  status: corrected
   text: "Tompion regulator — Year: 1710; Daily Error: ±3 s; Location: Greenwich; Notes: Improved thermal compensation"
-  source: ""
-  note: ""
+  source: "Marrison, The Evolution of the Quartz Crystal Clock, Bell System Technical Journal 27 (1948), https://web.archive.org/web/20070513175811/http://www.ieee-uffc.org/freqcontrol/marrison/Marrison.html ; Science Museum, Huygens Clocks, https://web.archive.org/web/20071010034250/http://www.sciencemuseum.org.uk/onlinestuff/stories/huygens_clocks.aspx"
+  note: "Remove or rewrite. No temperature-compensated pendulum existed in 1710: Grahams mercury pendulum dates from 1721 and Harrisons gridiron from 1726. This entry also contradicts this books ch02 footnote, which says the Greenwich Tompion clocks had no temperature compensation of any sort. No source was found for a 1710 Tompion regulator at Greenwich at all."
 
 - id: ch06-008
   type: tabular
-  status: unverified
+  status: corrected
   text: "Graham mercury — Year: 1720; Daily Error: ±1 s; Location: London; Notes: Mercury-filled pendulum bob; thermal compensation"
-  source: ""
-  note: ""
+  source: "Marrison, The Evolution of the Quartz Crystal Clock, Bell System Technical Journal 27 (1948), https://web.archive.org/web/20070513175811/http://www.ieee-uffc.org/freqcontrol/marrison/Marrison.html ; George Graham, Philosophical Transactions 34 (1726) 40-44, https://doi.org/10.1098/rstl.1726.0006"
+  note: "Date should be 1721 (Marrison), with the published account in Philosophical Transactions in 1726. Gould, The Marine Chronometer (1923) p. 40 gives 1725, so the literature disagrees; 1720 is supported by nothing found."
 
 - id: ch06-009
   type: tabular
-  status: unverified
+  status: corrected
   text: "Harrison H4 trial — Year: 1761; Daily Error: ±5.1 s; Location: Jamaica voyage; Notes: Chronometer, not pendulum (for comparison)"
+  source: "Rupert Gould, The Marine Chronometer (1923), p. 56, https://archive.org/details/the-marine-chronometer"
+  note: "MAJOR: 5.1 seconds was the TOTAL error accumulated over the whole 81-day outward voyage to Jamaica, not a daily error. Listing it in a Daily Error column overstates H4 by a factor of about 80. Gould: on the ships arrival at Jamaica the timekeeper was found, after allowing for its rate of going, to be five seconds slow. The daily rate error was about 0.06 s/day. This books own ch09 states the 5.1 s over 81 days correctly, so the table contradicts ch09."
+
+- id: ch06-010
+  type: measurement
+  status: corrected
+  text: "A 10 degC temperature swing thus causes an error of roughly one second per day - completely unacceptable for a clock supposed to maintain seconds accuracy."
+  source: "scripts/verify/derivations.py, check Brass pendulum error 10 K swing: 8.208 s/day"
+  note: "WRONG, and contradicts the calculation two lines above it, which correctly gives 8 seconds. The figure is 8 s/day, not 1 s/day."
+
+- id: ch06-011
+  type: measurement
+  status: corrected
+  text: "The correction is small - for an amplitude of 15 degrees, the correction is only about 0.1 per cent - but it is real."
+  source: "Recomputed from the chapters own series: (1/4)sin^2(A/2) + (9/64)sin^4(A/2)"
+  note: "For amplitude A = 15 degrees the correction is 0.43 per cent, not 0.1 per cent, which is 371 s/day rather than the implied 86 s/day. 0.1 per cent corresponds to an amplitude of 7.5 degrees, so the sentence may have confused amplitude with total swing. Either say total swing of 15 degrees or change the figure to 0.43 per cent. Note ch21 gives 0.19 per cent for a 10 degree amplitude, which is correct and inconsistent with this."
+
+- id: ch06-012
+  type: measurement
+  status: corrected
+  text: "If we choose n_b = n_s = 5 and L_b = L_s = 0.1 m: 5 x 0.1 x 19e-6 = 9.5e-7 and 5 x 0.1 x 11e-6 = 1.1e-6."
+  source: "Arithmetic"
+  note: "Both products are wrong. 5 x 0.1 x 19e-6 = 9.5e-6, not 9.5e-7. 5 x 0.1 x 11e-6 = 5.5e-6, not 1.1e-6. As printed the two sides look nearly equal, which is the opposite of the point the passage is making: the true ratio is 9.5e-6 against 5.5e-6, a mismatch of 73 per cent."
+
+- id: ch06-013
+  type: measurement
+  status: corrected
+  text: "If we use five brass rods of length L_b = 0.11 m and five steel rods of length L_s = 0.1 m: 5 x 0.11 x 19e-6 = 5 x 0.1 x 11e-6 implies 1.045e-6 approx 1.1e-6."
+  source: "Arithmetic; compensation condition n_b L_b alpha_brass = n_s L_s alpha_steel"
+  note: "Wrong in magnitude and in direction. 5 x 0.11 x 19e-6 = 1.045e-5, not 1.045e-6, and the right-hand side is 5.5e-6, not 1.1e-6, so the two sides differ by 90 per cent rather than agreeing. More fundamentally the compensation condition requires L_b/L_s = alpha_steel/alpha_brass = 11/19 = 0.58, so the STEEL rods must be longer than the brass, not the other way round. With five rods of each and L_s = 0.1 m the brass rods should be 0.058 m. Real gridirons have roughly 1.7 times as much total steel length as brass."
+
+- id: ch06-014
+  type: measurement
+  status: corrected
+  text: "Huygenss clock lost fifteen seconds per day - a hundredfold improvement."
+  source: "Arithmetic; Science Museum, Huygens Clocks, https://web.archive.org/web/20071010034250/http://www.sciencemuseum.org.uk/onlinestuff/stories/huygens_clocks.aspx"
+  note: "From fifteen minutes a day to fifteen seconds a day is a sixtyfold improvement, not a hundredfold. 900 s divided by 15 s is 60."
+
+- id: ch06-015
+  type: attribution
+  status: corrected
+  text: "Tompion adopted this approach in his regulators for Flamsteed: a small amplitude maintained by a remontoire escapement."
+  source: "Royal Museums Greenwich, https://www.rmg.co.uk/stories/space-astronomy/history-royal-observatory-six-objects ; object ZAA0885 https://www.rmg.co.uk/collections/objects/rmgc-object-202113 ; Francis Baily, An Account of the Revd John Flamsteed (1835), p. 45, https://archive.org/stream/anaccountrevdjo00bailgoog/anaccountrevdjo00bailgoog_djvu.txt"
+  note: "COULD NOT SOURCE, and probably anachronistic. Neither RMGs object record for the Tompion year clock, nor RMGs account of the Greenwich instruments, nor Flamsteeds own description mentions a remontoire; Goulds index of remontoires does not list the Greenwich year clocks. What is documented is a 13-foot pendulum beating two seconds and an unnamed low-friction escapement. This books ch02 footnote calls it a dead-beat escapement of the kind Tompion was then developing, which is a different claim again."
+
+- id: ch06-016
+  type: measurement
+  status: verified
+  text: "A clock that keeps time perfectly in London will lose approximately two minutes per day in Jamaica."
+  source: "Recomputed from the chapters own g values"
+  note: "Correct. With g = 9.812 in London and 9.784 in Jamaica the fractional period change is +0.00143, giving 123 s/day, which the chapter rounds to 130 s or about 2 minutes. The intermediate figures printed are also right."
+
+- id: ch06-017
+  type: attribution
+  status: verified
+  text: "The solution, first implemented by John Harrison, was elegant: a gridiron pendulum of brass and steel rods."
+  source: "Marrison, The Evolution of the Quartz Crystal Clock, Bell System Technical Journal 27 (1948), https://web.archive.org/web/20070513175811/http://www.ieee-uffc.org/freqcontrol/marrison/Marrison.html"
+  note: "Correct attribution and roughly the right date: Harrisons gridiron pendulum dates from 1726. Note that Grahams mercury pendulum (1721) came first as a compensation scheme, so first implemented should be read as first gridiron, not first compensated pendulum."
+
+- id: ch06-018
+  type: measurement
+  status: unverified
+  text: "A well-designed gridiron pendulum could reduce thermal errors from about 8 seconds/day to about 0.1 seconds/day."
   source: ""
-  note: ""
+  note: "COULD NOT SOURCE. No period or modern measurement was found giving a residual thermal error of 0.1 s/day for a gridiron pendulum. The 8 s/day starting point is sound (see ch06-002) but the endpoint needs a citation or should be dropped."
