@@ -346,60 +346,9 @@ def error_budget():
     save_figure(fig, 'error-budget', chapter=13)
 
 
-def observation_reduction():
-    """Flowchart showing the data reduction process for a transit observation."""
-    setup_style()
-    fig, ax = plt.subplots(figsize=(7, 5))
-
-    steps = [
-        ('Raw observation:\nClock time + altitude', 0, 4, '#e6f3ff'),
-        ('Personal equation\ncorrection', 0, 3, '#fff2e6'),
-        ('Refraction\ncorrection', 0, 2, '#ffe6e6'),
-        ('Sidereal time\nconversion', 0, 1, '#e6ffe6'),
-        ('Final coordinates:\nRA and Dec', 0, 0, '#f0e6ff'),
-    ]
-
-    box_width = 2.2
-    box_height = 0.6
-
-    for label, x, y, color in steps:
-        box = FancyBboxPatch((x - box_width/2, y - box_height/2),
-                             box_width, box_height,
-                             boxstyle="round,pad=0.05,rounding_size=0.1",
-                             facecolor=color, edgecolor='black', linewidth=1)
-        ax.add_patch(box)
-        ax.text(x, y, label, ha='center', va='center', fontsize=9)
-
-    # Arrows
-    for i in range(len(steps) - 1):
-        y1 = steps[i][2] - box_height/2
-        y2 = steps[i+1][2] + box_height/2
-        ax.annotate('', xy=(0, y2), xytext=(0, y1),
-                    arrowprops=dict(arrowstyle='->', color='black', lw=1.2))
-
-    # Side annotations
-    annotations = [
-        (1.5, 3, r'$t_{corr} = t_{obs} + PE$'),
-        (1.5, 2, r'$h_{true} = h_{obs} - R$'),
-        (1.5, 1, r'$\alpha = \alpha_0 + 1.0027 \times t$'),
-    ]
-
-    for x, y, text in annotations:
-        ax.text(x, y, text, fontsize=9, ha='left', va='center',
-                bbox=dict(boxstyle='round,pad=0.2', facecolor='white',
-                          edgecolor='#cccccc', alpha=0.8))
-
-    ax.set_xlim(-2.5, 3.5)
-    ax.set_ylim(-0.8, 4.8)
-    ax.axis('off')
-
-    save_figure(fig, 'observation-reduction', chapter=13)
-
-
 if __name__ == "__main__":
     transit_circle_schematic()
     personal_equation()
     precision_evolution()
     prime_meridian_offset()
     error_budget()
-    observation_reduction()
